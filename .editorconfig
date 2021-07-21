@@ -1,0 +1,19 @@
+﻿[*.{cs,vb}]
+
+# IDE0017: 简化对象初始化
+dotnet_diagnostic.IDE0017.severity = none
+
+# IDE0018: 内联变量声明
+dotnet_diagnostic.IDE0018.severity = none
+
+# IDE0059: 不需要赋值
+dotnet_diagnostic.IDE0059.severity = none
+
+# IDE0044: 添加只读修饰符
+dotnet_diagnostic.IDE0044.severity = none
+
+# IDE0052: 删除未读的私有成员
+dotnet_diagnostic.IDE0052.severity = none
+
+# CS0618: 类型或成员已过时
+dotnet_diagnostic.CS0618.severity = none

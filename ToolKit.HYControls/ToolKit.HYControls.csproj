@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{10627050-9265-4AE7-8D63-E631717F963F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ToolKit.HYControls</RootNamespace>
+    <AssemblyName>ToolKit.HYControls</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Bin\X64\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="halcondotnet, Version=20.11.1.1, Culture=neutral, PublicKeyToken=4973bed59ddbf2b8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\halcondotnet.dll</HintPath>
+    </Reference>
+    <Reference Include="RevDeBug, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4ad54dda477a611b" />
+    <Reference Include="RevDeBug.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4ad54dda477a611b" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GlobalVariable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GlobalVariable.Designer.cs">
+      <DependentUpon>GlobalVariable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalVariableUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlobalVariableUpdate.Designer.cs">
+      <DependentUpon>GlobalVariableUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HYForm\Form_Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HYForm\Form_Edit.Designer.cs">
+      <DependentUpon>Form_Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HYForm\Form_Log.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HYForm\Form_Log.Designer.cs">
+      <DependentUpon>Form_Log.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HYInputDialog.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="GlobalVariable.resx">
+      <DependentUpon>GlobalVariable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalVariableUpdate.resx">
+      <DependentUpon>GlobalVariableUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HYForm\Form_Edit.resx">
+      <DependentUpon>Form_Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HYForm\Form_Log.resx">
+      <DependentUpon>Form_Log.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ToolKit.DisplayWindow\ToolKit.DisplayWindow.csproj">
+      <Project>{353758C9-ED22-474B-8B66-6DB421370F3C}</Project>
+      <Name>ToolKit.DisplayWindow</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
