@@ -55,6 +55,9 @@ namespace ToolKit.DisplayWindow
         private Dictionary<int, DisplayWindow> HWindows = new Dictionary<int, DisplayWindow>();
         private int count;
 
+        /// <summary>
+        /// 窗口个数
+        /// </summary>
         public int Count
         {
             get
@@ -64,7 +67,11 @@ namespace ToolKit.DisplayWindow
 
             set
             {
-                this.count = value;
+                if (value > 12)
+                    this.count = 12;
+                else
+                    this.count = value;
+
                 lock (HWindows) { Init(); }
 
             }
@@ -72,38 +79,71 @@ namespace ToolKit.DisplayWindow
 
         private void Init()
         {
-            foreach (DisplayWindow item in HWindows.Values)
+            lock (HWindows)
             {
-                item.HalconWindow.Dispose();
-                item.Dispose();
-            }
-            HWindows.Clear();
-            flowLayoutPanel1.Controls.Clear();
-
-            if (count == 1)
-            {
-                Panel panel = new Panel()
+                foreach (DisplayWindow item in HWindows.Values)
                 {
-                    Margin = new Padding(0, 0, 0, 0),
-                    Padding = new Padding(1, 1, 1, 1),
-                    Size = new Size(this.Width, this.Height)
-                };
-                DisplayWindow hWinControl = new DisplayWindow() { Margin = new Padding(0, 0, 0, 0), Dock = DockStyle.Fill, Name = "1" };
-                hWinControl.Size = new Size(panel.Width, panel.Height);
-                panel.Controls.Add(hWinControl);
-                flowLayoutPanel1.Controls.Add(panel);
-                HWindows.Add(0, hWinControl);
-            }
-            else if (count == 2)
-            {
+                    item.HalconWindow.Dispose();
+                    item.Dispose();
+                }
+                HWindows.Clear();
+                flowLayoutPanel1.Controls.Clear();
 
-                for (int i = 0; i < 2; i++)
+                switch (count)
+                {
+                    case 1:
+                        row = 1;
+                        col = 1;
+                        count = 1;
+                        break;
+                    case 2:
+                        row = 1;
+                        col = 2;
+                        count = 2;
+                        break;
+                    case 3:
+                        row = 1;
+                        col = 3;
+                        count = 4;
+                        break;
+                    case 4:
+                        row = 2;
+                        col = 2;
+                        count = 4;
+                        break;
+                    case 5:
+                    case 6:
+                        row = 2;
+                        col = 3;
+                        count = 6;
+                        break;
+                    case 7:
+                    case 8:
+                        row = 2;
+                        col = 4;
+                        count = 8;
+                        break;
+                    case 9:
+                        row = 3;
+                        col = 3;
+                        count = 9;
+                        break;
+                    case 10:
+                    case 11:
+                    case 12:
+                        row = 3;
+                        col = 4;
+                        count = 12;
+                        break;
+
+                }
+                for (int i = 0; i < count; i++)
                 {
                     Panel panel = new Panel()
                     {
                         Margin = new Padding(0, 0, 0, 0),
                         Padding = new Padding(1, 1, 1, 1),
-                        Size = new Size((int)(i % 2 == 0 ? Math.Ceiling(this.Width / 2.0) : Math.Floor(this.Width / 2.0)), this.Height)
+                        Size = new Size((int)(i % 2 == 0 ? Math.Ceiling(this.Width / col) : Math.Floor(this.Width / col)) - 1, (int)(this.Height / row))
                     };
                     DisplayWindow hWinControl = new DisplayWindow() { Margin = new Padding(0, 0, 0, 0), Dock = DockStyle.Fill, Name = "1" };
                     panel.Controls.Add(hWinControl);
@@ -111,150 +151,17 @@ namespace ToolKit.DisplayWindow
                     HWindows.Add(i, hWinControl);
                 }
             }
-
-
-
-
-
-
-
-
-
-
-            //if (count == 1)
-            //{
-            //    Panel panel = new Panel()
-            //    {
-            //        Margin = new Padding(0, 0, 0, 0),
-            //        Padding = new Padding(1, 1, 1, 1),
-            //        Size = new Size(this.Width, this.Height)
-            //    };
-            //    DisplayWindow hWinControl = new DisplayWindow() { Margin = new Padding(0, 0, 0, 0), Dock = DockStyle.Fill, Name = "1" };
-            //    int col = (int)Math.Ceiling(count / 2.0);
-            //    hWinControl.Size = new Size(this.Width, this.Height);
-            //    panel.Controls.Add(hWinControl);
-            //    flowLayoutPanel1.Controls.Add(panel);
-            //    HWindows.Add(0, hWinControl);
-            //}
-            //else if (count == 2)
-            //{
-            //    for (int i = 0; i < count; i++)
-            //    {
-            //        Panel panel = new Panel()
-            //        {
-            //            Margin = new Padding(0, 0, 0, 0),
-            //            Padding = new Padding(1, 1, 1, 1),
-            //            Size = new Size(flowLayoutPanel1.Width / 2 - 1, this.Height - 1)
-            //        };
-            //        DisplayWindow hWinControl = new DisplayWindow() { Margin = new Padding(0, 0, 0, 0), Dock = DockStyle.Fill, Name = "" + i };
-            //        int col = (int)Math.Ceiling(count / 2.0);
-            //        hWinControl.Size = new Size(flowLayoutPanel1.Width / 2, this.Height);
-            //        panel.Controls.Add(hWinControl);
-            //        flowLayoutPanel1.Controls.Add(panel);
-            //        HWindows.Add(i, hWinControl);
-            //    }
-            //}
-            //else
-            //{
-            //    for (int i = 0; i < count; i++)
-            //    {
-            //        int row = 2;
-            //        if (count >= 9)
-            //        {
-            //            row = 3;
-            //        }
-            //        if (count >= 16)
-            //        {
-            //            row = 4;
-            //        }
-            //        int col = (int)Math.Ceiling(count / (double)row);
-            //        Panel panel = new Panel()
-            //        {
-            //            Margin = new Padding(0, 0, 0, 0),
-            //            Padding = new Padding(1, 1, 1, 1),
-            //            Size = new Size(flowLayoutPanel1.Width / col - 1, this.Height / row - 1),
-            //        };
-            //        DisplayWindow hWinControl = new DisplayWindow() { Margin = new Padding(0, 0, 0, 0), Dock = DockStyle.Fill, Name = "" + i };
-            //        hWinControl.Size = new Size(flowLayoutPanel1.Width / col, this.Height / row);
-            //        panel.Controls.Add(hWinControl);
-            //        flowLayoutPanel1.Controls.Add(panel);
-            //        HWindows.Add(i, hWinControl);
-            //    }
-            //}
         }
+
+        private double row = 1.0, col = 1.0;
 
         private void AutoAddDisplayWindowControl_Resize(object sender, EventArgs e)
         {
-            if (count == 1)
+
+            for (int i = 0; i < flowLayoutPanel1.Controls.Count; i++)
             {
-                foreach (Control item in flowLayoutPanel1.Controls)
-                {
-                    item.Size = new Size(this.Width, this.Height);
-                }
-
+                flowLayoutPanel1.Controls[i].Size = new Size((int)(i % 2 == 0 ? Math.Ceiling(this.Width / col) : Math.Floor(this.Width / col)) - 1, (int)(this.Height / row));
             }
-            else if (count == 2)
-            {
-                for (int i = 0; i < flowLayoutPanel1.Controls.Count; i++)
-                {
-
-                    flowLayoutPanel1.Controls[i].Size = new Size((int)(i % 2 == 0 ? Math.Ceiling(this.Width / 2.0) : Math.Floor(this.Width / 2.0)), this.Height);
-                }
-
-            }
-
-
-
-            //if (count == 1)
-            //{
-            //    foreach (Control item in flowLayoutPanel1.Controls)
-            //    {
-            //        item.Size = new Size(this.Width, this.Height);
-            //    }
-            //}
-            //else if (count == 2)
-            //{
-            //    foreach (Control item in flowLayoutPanel1.Controls)
-            //    {
-            //        item.Size = new Size(flowLayoutPanel1.Width / 2 - 1, this.Height - 1);
-            //    }
-            //}
-            //else
-            //{
-            //    int row = 2;
-            //    if (count >= 9)
-            //    {
-            //        row = 3;
-            //    }
-            //    if (count >= 16)
-            //    {
-            //        row = 4;
-            //    }
-            //    double col = Math.Ceiling(count / (double)row);
-            //    int index = 1;
-
-            //    foreach (Control item in flowLayoutPanel1.Controls)
-            //    {
-            //        int width = 0;
-            //        if (index % 2 == 0 ? true : false)
-            //        {//偶数
-            //            width = (int)Math.Ceiling(((double)this.flowLayoutPanel1.Width / col));
-            //        }
-            //        else
-            //        {//奇数
-            //            width = (int)Math.Floor(((double)this.flowLayoutPanel1.Width / col));
-            //        }
-
-            //        if (index == col)
-            //        {
-            //            index = 0;
-            //        }
-            //        index++;
-
-
-            //        item.Size = new Size(width - 1, this.Height / row - 1);
-            //    }
-            //}
 
 
 

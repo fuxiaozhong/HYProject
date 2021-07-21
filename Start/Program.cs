@@ -41,9 +41,7 @@ namespace HYProject
             if (processes.Length <= 1)
             {
                 if (new Welcome().ShowDialog() == DialogResult.OK)
-                {
-                    Application.Run(new MainForm());
-                }
+                    Application.Run(MainForm.Instance);
                 else
                     Application.Exit();
             }
@@ -76,7 +74,7 @@ namespace HYProject
                 errorMessage = errorMessage.Replace("HALCON", "图像操作");
             }
 
-            //Log4NetHelper.WriteErrorLog(errorMessage, e.Exception);
+            Log.WriteErrorLog(errorMessage, e.Exception);
         }
 
         private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
@@ -87,7 +85,7 @@ namespace HYProject
                 errorMessage = errorMessage.Replace("HALCON", "图像操作");
             }
 
-            //Log4NetHelper.WriteErrorLog(errorMessage, e.ExceptionObject as Exception);
+            Log.WriteErrorLog(errorMessage, e.ExceptionObject as Exception);
         }
     }
 }
