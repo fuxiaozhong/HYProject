@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ToolKit.DisplayWindow
@@ -21,6 +16,7 @@ namespace ToolKit.DisplayWindow
                 return cp;
             }
         }
+
         public AutoAddDisplayWindowControl()
         {
             InitializeComponent();
@@ -51,7 +47,6 @@ namespace ToolKit.DisplayWindow
             }
         }
 
-
         private Dictionary<int, DisplayWindow> HWindows = new Dictionary<int, DisplayWindow>();
         private int count;
 
@@ -73,7 +68,6 @@ namespace ToolKit.DisplayWindow
                     this.count = value;
 
                 lock (HWindows) { Init(); }
-
             }
         }
 
@@ -96,38 +90,45 @@ namespace ToolKit.DisplayWindow
                         col = 1;
                         count = 1;
                         break;
+
                     case 2:
                         row = 1;
                         col = 2;
                         count = 2;
                         break;
+
                     case 3:
                         row = 1;
                         col = 3;
                         count = 4;
                         break;
+
                     case 4:
                         row = 2;
                         col = 2;
                         count = 4;
                         break;
+
                     case 5:
                     case 6:
                         row = 2;
                         col = 3;
                         count = 6;
                         break;
+
                     case 7:
                     case 8:
                         row = 2;
                         col = 4;
                         count = 8;
                         break;
+
                     case 9:
                         row = 3;
                         col = 3;
                         count = 9;
                         break;
+
                     case 10:
                     case 11:
                     case 12:
@@ -135,7 +136,6 @@ namespace ToolKit.DisplayWindow
                         col = 4;
                         count = 12;
                         break;
-
                 }
                 for (int i = 0; i < count; i++)
                 {
@@ -157,14 +157,10 @@ namespace ToolKit.DisplayWindow
 
         private void AutoAddDisplayWindowControl_Resize(object sender, EventArgs e)
         {
-
             for (int i = 0; i < flowLayoutPanel1.Controls.Count; i++)
             {
                 flowLayoutPanel1.Controls[i].Size = new Size((int)(i % 2 == 0 ? Math.Ceiling(this.Width / col) : Math.Floor(this.Width / col)) - 1, (int)(this.Height / row));
             }
-
-
-
         }
     }
 }

@@ -1,24 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 using ToolKit.DisplayWindow;
-
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
 namespace HYProject.ToolForm
 {
     public partial class DisplayForm : Form
     {
         private static DisplayForm instance;
+
         //程序运行时创建一个静态只读的进程辅助对象
         private static readonly object syncRoot = new object();
+
         public static DisplayForm Instance
         {
             get
@@ -41,6 +33,7 @@ namespace HYProject.ToolForm
                 return instance;
             }
         }
+
         protected override CreateParams CreateParams
         {
             get
@@ -50,10 +43,12 @@ namespace HYProject.ToolForm
                 return cp;
             }
         }
+
         private DisplayForm()
         {
             InitializeComponent();
         }
+
         public int DisplayWindowCount
         {
             get
@@ -64,8 +59,8 @@ namespace HYProject.ToolForm
             {
                 autoAddDisplayWindowControl1.Count = value;
             }
-
         }
+
         public DisplayWindow this[int key]
         {
             get

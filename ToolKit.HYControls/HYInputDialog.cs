@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using ToolKit.HYControls.HYForm;
+﻿using ToolKit.HYControls.HYForm;
 
 namespace ToolKit.HYControls
 {
     public class HYInputDialog
     {
-
         /// <summary>
         /// 输入字符串弹窗
         /// </summary>
@@ -33,7 +26,6 @@ namespace ToolKit.HYControls
             {
                 return false;
             }
-
         }
 
         /// <summary>
@@ -58,7 +50,6 @@ namespace ToolKit.HYControls
             {
                 return false;
             }
-
         }
 
         /// <summary>
@@ -83,8 +74,6 @@ namespace ToolKit.HYControls
             {
                 return false;
             }
-
         }
-
     }
 }

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ToolKit.HYControls.HYForm
@@ -14,12 +7,12 @@ namespace ToolKit.HYControls.HYForm
     {
         public Form_Edit(string text, bool checkEmpty = true, string type = "string")
         {
-
             InitializeComponent();
             this.RheckEmpty = checkEmpty;
             label1.Text = text;
             Type = type;
         }
+
         private string value;
         private string Type = "string";
         private bool RheckEmpty = true;
@@ -61,7 +54,6 @@ namespace ToolKit.HYControls.HYForm
                     MessageBox.Show("输入类型有误", "输入提示", MessageBoxButtons.OK);
                     return;
                 }
-
             }
             else if (Type == "double")
             {
@@ -76,7 +68,6 @@ namespace ToolKit.HYControls.HYForm
                     return;
                 }
             }
-
 
             DialogResult = DialogResult.OK;
         }

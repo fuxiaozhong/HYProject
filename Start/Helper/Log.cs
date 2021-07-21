@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using ToolKit.HYControls.HYForm;
 
@@ -33,7 +30,6 @@ namespace HYProject
             {
                 m_lstLog["info_logo"].Info(strInfoLog);
                 Form_Log.Instance.OutputMsg(strInfoLog, System.Drawing.Color.Green);
-
             }
         }
 
@@ -63,6 +59,7 @@ namespace HYProject
                 Form_Log.Instance.OutputMsg(strErrLog, System.Drawing.Color.Red);
             }
         }
+
         public static void RunLog(string runmessage)
         {
             if (m_lstLog["run"].IsErrorEnabled)

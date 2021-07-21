@@ -1,17 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
-using System.Xml.Linq;
 
 using HalconDotNet;
 
 using MvCamCtrl.NET;
-
-using static ToolKit.CamreaSDK.ICamera;
 
 namespace ToolKit.CamreaSDK
 {
@@ -23,11 +16,12 @@ namespace ToolKit.CamreaSDK
 
         //为读取、保存图像创建的数组
         private UInt32 m_nBufSizeForDriver = 4096 * 3000;
+
         private MyCamera.MVCC_INTVALUE stParam;//用于接收特定的参数
         private byte[] m_pBufForDriver = new byte[4096 * 3000];
 
-
         public override event ImageProcess ImageProcessEvent;
+
         public override event CameraLog CameraLogs;
 
         public override bool Close()
@@ -166,7 +160,6 @@ namespace ToolKit.CamreaSDK
             }
             if (work == null && flag)
             {
-
                 myCamera.MV_CC_StartGrabbing_NET();
                 work = new Thread(ReceiveThreadProcess);
                 work.Start();
@@ -182,9 +175,8 @@ namespace ToolKit.CamreaSDK
                 WriteLog("相机打开失败...");
             }
             return flag;
-
-
         }
+
         private bool IsMonoData(MyCamera.MvGvspPixelType enGvspPixelType)
         {
             switch (enGvspPixelType)
@@ -200,6 +192,7 @@ namespace ToolKit.CamreaSDK
                     return false;
             }
         }
+
         private void ReceiveThreadProcess()
         {
             while (true)
@@ -349,7 +342,6 @@ namespace ToolKit.CamreaSDK
 
         public override bool Set_Exposure_Time(double value)
         {
-
             myCamera.MV_CC_SetEnumValue_NET("ExposureAuto", 0);
             int nRet = myCamera.MV_CC_SetFloatValue_NET("ExposureTime", (float)value);
             if (nRet != MyCamera.MV_OK)
@@ -474,7 +466,6 @@ namespace ToolKit.CamreaSDK
 
         public override bool Soft_Trigger()
         {
-
             int nRet = myCamera.MV_CC_SetCommandValue_NET("TriggerSoftware");
             if (MyCamera.MV_OK != nRet)
             {
@@ -486,14 +477,12 @@ namespace ToolKit.CamreaSDK
             {
                 CameraLogs?.Invoke(_CameraNmae, "执行软触发指令--失败");
                 WriteLog("执行软触发指令--成功");
-
             }
             return true;
         }
 
         public override bool Start_Real_Mode()
         {
-
             if (Set_TriggerMode("Off"))
             {
                 CameraLogs?.Invoke(_CameraNmae, "开始实时采集 -- 成功");
@@ -506,7 +495,6 @@ namespace ToolKit.CamreaSDK
                 WriteLog("开始实时采集 -- 失败");
                 return false;
             }
-
         }
     }
 }

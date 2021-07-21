@@ -1,25 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 using Basler.Pylon;
 
 using HalconDotNet;
-
-using static ToolKit.CamreaSDK.ICamera;
 
 namespace ToolKit.CamreaSDK
 {
     public class BaslerPylonGigE : ICamera
     {
         public override event ImageProcess ImageProcessEvent;
+
         public override event CameraLog CameraLogs;
 
         private Basler.Pylon.Camera camera = null;
@@ -35,9 +29,9 @@ namespace ToolKit.CamreaSDK
         private IntPtr latestFrameAddress = IntPtr.Zero;
 
         private static System.Version Sfnc2_0_0 = new System.Version(2, 0, 0);
+
         public override bool Close()
         {
-
             if (camera.IsOpen)
             {
                 camera.Parameters[PLCamera.TriggerMode].SetValue("On");
@@ -142,7 +136,6 @@ namespace ToolKit.CamreaSDK
             camera.Open();
             if (camera.IsOpen)
             {
-
                 imageWidth = camera.Parameters[PLCamera.Width].GetValue();               // 获取图像宽
                 imageHeight = camera.Parameters[PLCamera.Height].GetValue();              // 获取图像高
                 GetMinMaxExposureTime();
@@ -155,6 +148,7 @@ namespace ToolKit.CamreaSDK
 
             return camera.IsOpen;
         }
+
         private void SetHeartBeatTime(long value)
         {
             try
@@ -214,7 +208,9 @@ namespace ToolKit.CamreaSDK
             {
             }
         }
+
         private HObject ho_image = new HObject();
+
         private void OnImageGrabbed(object sender, ImageGrabbedEventArgs e)
         {
             lock (ho_image)
@@ -238,6 +234,7 @@ namespace ToolKit.CamreaSDK
                 }
             }
         }
+
         public void GetMinMaxExposureTime()
         {
             try
@@ -277,6 +274,7 @@ namespace ToolKit.CamreaSDK
             {
             }
         }
+
         public override bool Set_Exposure_Time(double value)
         {
             if (!camera.IsOpen)
@@ -408,7 +406,6 @@ namespace ToolKit.CamreaSDK
         {
             if (!camera.IsOpen)
                 return false;
-
 
             camera.ExecuteSoftwareTrigger();
             return true;

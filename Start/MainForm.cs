@@ -5,8 +5,6 @@ using HalconDotNet;
 
 using HYProject.ToolForm;
 
-using ToolKit.CamreaSDK;
-using ToolKit.HYControls;
 using ToolKit.HYControls.HYForm;
 
 namespace HYProject
@@ -14,6 +12,7 @@ namespace HYProject
     public partial class MainForm : Form
     {
         private static MainForm instance;
+
         //程序运行时创建一个静态只读的进程辅助对象
         private static readonly object syncRoot = new object();
 
@@ -37,7 +36,6 @@ namespace HYProject
             }
         }
 
-
         protected override CreateParams CreateParams
         {
             get
@@ -47,6 +45,7 @@ namespace HYProject
                 return cp;
             }
         }
+
         private MainForm()
         {
             InitializeComponent();
@@ -68,7 +67,6 @@ namespace HYProject
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-
             if (MessageBox.Show("确认退出系统?", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
                 System.Diagnostics.Process.GetCurrentProcess().Kill();

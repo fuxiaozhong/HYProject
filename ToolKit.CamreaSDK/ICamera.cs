@@ -1,5 +1,5 @@
-﻿using System.IO;
-using System;
+﻿using System;
+using System.IO;
 
 using HalconDotNet;
 
@@ -11,6 +11,7 @@ namespace ToolKit.CamreaSDK
         /// 是否保存日志到本地
         /// </summary>
         public bool IsSaveLog2Disk = false;
+
         /// <summary>
         /// 相机图像输出声明委托
         /// </summary>
@@ -49,8 +50,6 @@ namespace ToolKit.CamreaSDK
         /// 当前相机增益
         /// </summary>
         public double _Gain;
-
-
 
         /// <summary>
         /// 获取当前曝光时间
@@ -152,8 +151,6 @@ namespace ToolKit.CamreaSDK
         {
             if (IsSaveLog2Disk)
             {
-
-
                 string filePath = AppDomain.CurrentDomain.BaseDirectory + "Logs\\" + _CameraNmae;
                 if (!Directory.Exists(filePath))
                 {

@@ -14,10 +14,12 @@ namespace ToolKit.CamreaSDK
         public override event CameraLog CameraLogs;
 
         private IDevice m_dev;
+
         /// <summary>
         /// 是否是彩色
         /// </summary>
         public bool _IsColor;
+
         public override bool Close()
         {
             if (m_dev != null)
@@ -48,7 +50,6 @@ namespace ToolKit.CamreaSDK
                 return 0;
             using (IFloatParameter p = m_dev.ParameterCollection[ParametrizeNameSet.ExposureTime])
             {
-
                 _Exposure_Time = p.GetValue();
                 WriteLog("相机获取曝光时间:" + _Exposure_Time);
                 CameraLogs?.Invoke(_CameraNmae, "相机获取曝光时间:" + _Exposure_Time);

@@ -20,8 +20,6 @@ namespace HYProject
             {
                 Log.RunLog("开始加载配置文件");
 
-
-
                 Log.RunLog("数据配置加载完成");
                 //等待进度条加载完成
                 while (flag) { }

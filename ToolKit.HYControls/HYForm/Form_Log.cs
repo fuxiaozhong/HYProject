@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ToolKit.HYControls.HYForm
@@ -29,13 +24,13 @@ namespace ToolKit.HYControls.HYForm
                             _Form_Logs.TopLevel = false;
                             _Form_Logs.TopMost = false;
                             _Form_Logs.Dock = DockStyle.Fill;
-
                         }
                     }
                 }
                 return _Form_Logs;
             }
         }
+
         protected override CreateParams CreateParams
         {
             get
@@ -45,16 +40,17 @@ namespace ToolKit.HYControls.HYForm
                 return cp;
             }
         }
+
         private Form_Log()
         {
             InitializeComponent();
         }
+
         private List<OutputItem> L_outputItem = new List<OutputItem>();
         private int numGreen = 0;
         private int numOrange = 0;
         private int numRed = 0;
         private object obj = new object();
-
 
         internal void ClearLog()
         {
@@ -130,7 +126,6 @@ namespace ToolKit.HYControls.HYForm
 
                         UpdateCount();
                         this.listView1.Items[this.listView1.Items.Count - 1].EnsureVisible();
-
                     }
                     Application.DoEvents();
                 }
@@ -271,6 +266,7 @@ namespace ToolKit.HYControls.HYForm
             }
         }
     }
+
     public struct OutputItem
     {
         public int index;
