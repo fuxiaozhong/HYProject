@@ -31,6 +31,8 @@ namespace HYProject
             Application.ThreadException += new System.Threading.ThreadExceptionEventHandler(Application_ThreadException);
             //处理非UI线程异常
             AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
+            AppParam.Instance.Read_From_File();
+
             //初始化Log4j日志
             Log.InitLog4Net(Application.StartupPath + "\\Log4jConfig.xml");
             Application.EnableVisualStyles();

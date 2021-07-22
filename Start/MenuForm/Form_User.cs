@@ -1,14 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
-using HYProject.Model;
 
 using ToolKit.HYControls;
 
@@ -20,7 +11,9 @@ namespace HYProject.MenuForm
         {
             InitializeComponent();
         }
+
         public string Power;
+
         private void Button2_Click(object sender, EventArgs e)
         {
             MessageTip.ShowWarning("取消登陆");
@@ -59,7 +52,7 @@ namespace HYProject.MenuForm
 
         private void Form_User_Load(object sender, EventArgs e)
         {
-            comboBox1.Text = AppParam.Power == "管理员" ? "管理员" : "操作员";
+            comboBox1.Text = AppParam.Instance.Power == "管理员" ? "管理员" : "操作员";
         }
     }
 }

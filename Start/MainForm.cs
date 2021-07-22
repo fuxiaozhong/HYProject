@@ -72,6 +72,8 @@ namespace HYProject
         {
             if (MessageBox.Show("确认退出系统?", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
+                Log.RunLog("退出程序...");
+                AppParam.Instance.Save_To_File();
                 System.Diagnostics.Process.GetCurrentProcess().Kill();
             }
             else
@@ -85,9 +87,9 @@ namespace HYProject
             Form_User form_User = new Form_User();
             if (form_User.ShowDialog() == DialogResult.OK)
             {
-                AppParam.Power = form_User.Power;
-                Log.RunLog("切换用户:" + AppParam.Power);
-                Text = "视觉软件 -- " + AppParam.Power;
+                AppParam.Instance.Power = form_User.Power;
+                Log.RunLog("切换用户:" + AppParam.Instance.Power);
+                Text = "视觉软件 -- " + AppParam.Instance.Power;
             }
         }
 
@@ -103,11 +105,13 @@ namespace HYProject
             {
                 button_Run.ForeColor = Color.Green;
                 button_Run.Text = "停    止";
+                Log.RunLog("开始运行...");
             }
             else
             {
                 button_Run.ForeColor = Color.Red;
                 button_Run.Text = "运    行";
+                Log.RunLog("停止运行...");
             }
         }
     }

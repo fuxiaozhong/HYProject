@@ -1,23 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ToolKit.HYControls
 {
     public partial class ProcessEllipse : UserControl
     {
-
         [Description("值改变事件"), Category("自定义")]
         public event EventHandler ValueChanged;
 
         private Color m_backEllipseColor = Color.FromArgb(22, 160, 133);
+
         /// <summary>
         /// 圆背景色
         /// </summary>
@@ -33,6 +28,7 @@ namespace ToolKit.HYControls
         }
 
         private Color m_coreEllipseColor = Color.FromArgb(180, 180, 180);
+
         /// <summary>
         /// 内圆颜色，ShowType=Ring 有效
         /// </summary>
@@ -61,6 +57,7 @@ namespace ToolKit.HYControls
         }
 
         private bool m_isShowCoreEllipseBorder = true;
+
         /// <summary>
         /// 内圆是否显示边框，ShowType=Ring 有效
         /// </summary>
@@ -76,6 +73,7 @@ namespace ToolKit.HYControls
         }
 
         private ValueType m_valueType = ValueType.Percent;
+
         /// <summary>
         /// 值文字类型
         /// </summary>
@@ -91,6 +89,7 @@ namespace ToolKit.HYControls
         }
 
         private int m_valueWidth = 30;
+
         /// <summary>
         /// 外圆值宽度
         /// </summary>
@@ -108,6 +107,7 @@ namespace ToolKit.HYControls
         }
 
         private int m_valueMargin = 5;
+
         /// <summary>
         /// 外圆值间距
         /// </summary>
@@ -125,6 +125,7 @@ namespace ToolKit.HYControls
         }
 
         private int m_maxValue = 100;
+
         /// <summary>
         /// 最大值
         /// </summary>
@@ -142,6 +143,7 @@ namespace ToolKit.HYControls
         }
 
         private int m_value = 0;
+
         /// <summary>
         /// 当前值
         /// </summary>
@@ -158,7 +160,9 @@ namespace ToolKit.HYControls
                 Refresh();
             }
         }
+
         private Font m_font = new Font("Arial Unicode MS", 12);
+
         [Description("文字字体"), Category("自定义")]
         public override Font Font
         {
@@ -172,7 +176,9 @@ namespace ToolKit.HYControls
                 Refresh();
             }
         }
-        Color m_foreColor = Color.White;
+
+        private Color m_foreColor = Color.White;
+
         [Description("文字颜色"), Category("自定义")]
         public override Color ForeColor
         {
@@ -265,15 +271,16 @@ namespace ToolKit.HYControls
                     g.DrawString(strValueText, this.Font, new SolidBrush(this.ForeColor), new PointF((intWidth - _txtSize.Width) / 2 + 1, (intWidth - _txtSize.Height) / 2 + 1));
                 }
             }
-
         }
     }
+
     public enum ValueType
     {
         /// <summary>
         /// 百分比
         /// </summary>
         Percent,
+
         /// <summary>
         /// 数值
         /// </summary>
@@ -286,6 +293,7 @@ namespace ToolKit.HYControls
         /// 圆环
         /// </summary>
         Ring,
+
         /// <summary>
         /// 扇形
         /// </summary>

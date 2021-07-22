@@ -137,12 +137,12 @@ namespace ToolKit.HYControls.HYForm
 
         private void UpdateCount()
         {
-            tsb_tip.Text = string.Format("提示({0})", numGreen);
+            tsb_tip.Text = string.Format("运行日志({0})", numGreen);
             tsb_warn.Text = string.Format("警告({0})", numOrange);
             tsb_error.Text = string.Format("错误({0})", numRed);
         }
 
-        private void tsb_tip_Click(object sender, EventArgs e)
+        private void Tsb_tip_Click(object sender, EventArgs e)
         {
             if (tsb_tip.Checked)
             {
@@ -181,7 +181,7 @@ namespace ToolKit.HYControls.HYForm
             }
         }
 
-        private void tsb_warn_Click(object sender, EventArgs e)
+        private void Tsb_warn_Click(object sender, EventArgs e)
         {
             if (tsb_warn.Checked)
             {
@@ -219,7 +219,7 @@ namespace ToolKit.HYControls.HYForm
             }
         }
 
-        private void tsb_error_Click(object sender, EventArgs e)
+        private void Tsb_error_Click(object sender, EventArgs e)
         {
             if (tsb_error.Checked)
             {

@@ -106,7 +106,7 @@ namespace ToolKit.HYControls.HYForm
             this.tsb_tip.Name = "tsb_tip";
             this.tsb_tip.Size = new System.Drawing.Size(91, 21);
             this.tsb_tip.Text = "运行日志(0)";
-            this.tsb_tip.Click += new System.EventHandler(this.tsb_tip_Click);
+            this.tsb_tip.Click += new System.EventHandler(this.Tsb_tip_Click);
             // 
             // tsb_warn
             // 
@@ -116,7 +116,7 @@ namespace ToolKit.HYControls.HYForm
             this.tsb_warn.Name = "tsb_warn";
             this.tsb_warn.Size = new System.Drawing.Size(67, 21);
             this.tsb_warn.Text = "警告(0)";
-            this.tsb_warn.Click += new System.EventHandler(this.tsb_warn_Click);
+            this.tsb_warn.Click += new System.EventHandler(this.Tsb_warn_Click);
             // 
             // tsb_error
             // 
@@ -126,7 +126,7 @@ namespace ToolKit.HYControls.HYForm
             this.tsb_error.Name = "tsb_error";
             this.tsb_error.Size = new System.Drawing.Size(67, 21);
             this.tsb_error.Text = "错误(0)";
-            this.tsb_error.Click += new System.EventHandler(this.tsb_error_Click);
+            this.tsb_error.Click += new System.EventHandler(this.Tsb_error_Click);
             // 
             // Form_Log
             // 

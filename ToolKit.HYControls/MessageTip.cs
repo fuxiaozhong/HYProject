@@ -5,14 +5,13 @@ using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 
-
 namespace ToolKit.HYControls
 {
     public static class MessageTip
     {
-        static readonly Image _iconOk;
-        static readonly Image _iconWarning;
-        static readonly Image _iconError;
+        private static readonly Image _iconOk;
+        private static readonly Image _iconWarning;
+        private static readonly Image _iconError;
 
         /// <summary>
         /// 全局停留时长（毫秒），影响后续弹出的tip。默认500
@@ -94,7 +93,7 @@ namespace ToolKit.HYControls
         /// <summary>
         /// 内置图标数据：√ ! X
         /// </summary>
-        const string DefaultIconData = @"R0lGODlhYAAgANUAAOrcJ9LORebm5tJKShPLJLczM/z3s/XrkNfSOhS2JKaYMezeaMoREfhwcNS3
+        private const string DefaultIconData = @"R0lGODlhYAAgANUAAOrcJ9LORebm5tJKShPLJLczM/z3s/XrkNfSOhS2JKaYMezeaMoREfhwcNS3
 t7IREVSkWpWQZjCpPfz8+zS4RN3PZdTU1EjLWG9uaO/w7/Dke1HVYfHsx5UzM8Q8PLjYuqmmn8bl
 yeO3txsbD+fck9DAUeDaVV1cHuHXMDGTOO3iSeHy4+BYWDvGTPn25O/hN5PIl8K1Pbfhu/z78nW/
 fPb39lbeZ5/WpIAzM2HpcqITExGiIjV/N8S9luLbqf///yH5BAAAAAAALAAAAABgACAAAAb/wJ9w
@@ -126,14 +125,15 @@ MUEPCkQu+eSUV255DwrrS65Kum4eyRJNAy304aSXXrriTk8wOgg4gIB22okbjjbrICC9E/jnuEcR
             /// <summary>
             /// 图标和文本之间的间距（像素）
             /// </summary>
-            const int IconTextSpacing = 3;
+            private const int IconTextSpacing = 3;
 
             /// <summary>
             /// 基准点。用于指导本窗体显示位置
             /// </summary>
             public Point BasePoint { get; set; }
 
-            string _tipText;
+            private string _tipText;
+
             /// <summary>
             /// 提示图标
             /// </summary>
@@ -231,7 +231,7 @@ MUEPCkQu+eSUV255DwrrS65Kum4eyRJNAy304aSXXrriTk8wOgg4gIB22okbjjbrICC9E/jnuEcR
                 this.Location = p;
             }
 
-            void TipForm_Load(object sender, EventArgs e)
+            private void TipForm_Load(object sender, EventArgs e)
             {
                 ProcessClientSize();
                 ProcessLocation();
@@ -265,7 +265,7 @@ MUEPCkQu+eSUV255DwrrS65Kum4eyRJNAy304aSXXrriTk8wOgg4gIB22okbjjbrICC9E/jnuEcR
                 }
             }
 
-            void TipForm_Shown(object sender, EventArgs e)
+            private void TipForm_Shown(object sender, EventArgs e)
             {
                 //因为timer.Interval不能为0
                 if (Delay > 0)
@@ -279,13 +279,13 @@ MUEPCkQu+eSUV255DwrrS65Kum4eyRJNAy304aSXXrriTk8wOgg4gIB22okbjjbrICC9E/jnuEcR
                 }
             }
 
-            void Timer_Tick(object sender, EventArgs e)
+            private void Timer_Tick(object sender, EventArgs e)
             {
                 _timer.Stop();
                 this.Close();
             }
 
-            void TipForm_FormClosing(object sender, FormClosingEventArgs e)
+            private void TipForm_FormClosing(object sender, FormClosingEventArgs e)
             {
                 //透明渐隐动画
                 while (this.Opacity > 0)
@@ -371,8 +371,7 @@ MUEPCkQu+eSUV255DwrrS65Kum4eyRJNAy304aSXXrriTk8wOgg4gIB22okbjjbrICC9E/jnuEcR
 
             private System.Windows.Forms.Timer _timer;
 
-            #endregion
+            #endregion 设计器内容
         }
-
     }
 }

@@ -10,9 +10,11 @@ namespace ToolKit.HYControls
         {
             InitializeComponent();
         }
+
         private int _ok;
         private int _ng;
         private int _total;
+
         [Description("OK"), Category("自定义")]
         public int Ok
         {
@@ -42,6 +44,7 @@ namespace ToolKit.HYControls
                 _total = _ng + _ok;
             }
         }
+
         [Description("TOTAL"), Category("自定义")]
         public int Total
         {
