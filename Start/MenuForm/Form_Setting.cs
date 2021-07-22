@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 
+using HYProject.Helper;
+
 namespace HYProject.MenuForm
 {
     public partial class Form_Setting : Form
@@ -45,6 +47,9 @@ namespace HYProject.MenuForm
             AppParam.Instance.PowerBoot = checkBox2.Checked;
             AppParam.Instance.RunStateMax = checkBox3.Checked;
             AppParam.Instance.StartBeforeLogin = checkBox4.Checked;
+            PowerBoot.SetMeAutoStart(AppParam.Instance.PowerBoot);
+            PowerBoot.CreateDesktopShortcut(AppParam.Instance.DesktopShortcut);
+            AppParam.Instance.Save_To_File();
         }
 
         private void Form_Setting_Load(object sender, EventArgs e)
@@ -56,6 +61,9 @@ namespace HYProject.MenuForm
             checkBox2.Checked = AppParam.Instance.PowerBoot;
             checkBox3.Checked = AppParam.Instance.RunStateMax;
             checkBox4.Checked = AppParam.Instance.StartBeforeLogin;
+
+
+
         }
     }
 }

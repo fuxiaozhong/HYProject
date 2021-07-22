@@ -223,10 +223,11 @@ namespace HYProject.MenuForm
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("宋体", 12F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form_Setting";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "设置";
             this.Load += new System.EventHandler(this.Form_Setting_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();

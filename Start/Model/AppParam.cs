@@ -117,14 +117,6 @@ namespace HYProject
             {
                 AppParam.instance = AppParam.Instance;
             }
-            if (!Directory.Exists(instance.Save_Image_Path))
-            {
-                Directory.CreateDirectory(instance.Save_Image_Path);
-            }
-            if (!Directory.Exists(instance.Save_Data_Path))
-            {
-                Directory.CreateDirectory(instance.Save_Data_Path);
-            }
         }
 
         /// <summary>
@@ -138,6 +130,7 @@ namespace HYProject
             BinaryFormatter bFormat = new BinaryFormatter();
             bFormat.Serialize(stream, obj);
             stream.Close();
+            stream.Dispose();
         }
 
         /// <summary>
@@ -148,13 +141,14 @@ namespace HYProject
         private object Deserialize_From_File(string path)
         {
             if (!File.Exists(path))
-            {
                 return null;
-            }
 
             FileStream stream = new FileStream(path, FileMode.Open);
             BinaryFormatter bFormat = new BinaryFormatter();
-            return bFormat.Deserialize(stream);
+            object obj = bFormat.Deserialize(stream);
+            stream.Close();
+            stream.Dispose();
+            return obj;
         }
     }
 }

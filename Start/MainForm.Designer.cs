@@ -35,6 +35,10 @@ namespace HYProject
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel_Data = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.processEllipse1 = new ToolKit.HYControls.ProcessEllipse();
+            this.processEllipse2 = new ToolKit.HYControls.ProcessEllipse();
+            this.processEllipse3 = new ToolKit.HYControls.ProcessEllipse();
+            this.dataStatisticsControl1 = new ToolKit.HYControls.DataStatisticsControl();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panel_Log = new System.Windows.Forms.Panel();
             this.panel_Main = new System.Windows.Forms.Panel();
@@ -46,10 +50,6 @@ namespace HYProject
             this.button_Exit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.processEllipse1 = new ToolKit.HYControls.ProcessEllipse();
-            this.processEllipse2 = new ToolKit.HYControls.ProcessEllipse();
-            this.processEllipse3 = new ToolKit.HYControls.ProcessEllipse();
-            this.dataStatisticsControl1 = new ToolKit.HYControls.DataStatisticsControl();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel_Buttom.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -134,6 +134,73 @@ namespace HYProject
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(711, 118);
             this.tableLayoutPanel3.TabIndex = 1;
+            // 
+            // processEllipse1
+            // 
+            this.processEllipse1.BackEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
+            this.processEllipse1.CoreEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.processEllipse1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.processEllipse1.IsShowCoreEllipseBorder = true;
+            this.processEllipse1.Location = new System.Drawing.Point(475, 3);
+            this.processEllipse1.MaxValue = 100;
+            this.processEllipse1.Name = "processEllipse1";
+            this.processEllipse1.ShowType = ToolKit.HYControls.ShowType.Ring;
+            this.processEllipse1.Size = new System.Drawing.Size(112, 112);
+            this.processEllipse1.TabIndex = 0;
+            this.processEllipse1.Value = 20;
+            this.processEllipse1.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.processEllipse1.ValueMargin = 5;
+            this.processEllipse1.ValueType = ToolKit.HYControls.ValueType.Percent;
+            this.processEllipse1.ValueWidth = 30;
+            // 
+            // processEllipse2
+            // 
+            this.processEllipse2.BackEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
+            this.processEllipse2.CoreEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.processEllipse2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.processEllipse2.IsShowCoreEllipseBorder = true;
+            this.processEllipse2.Location = new System.Drawing.Point(593, 3);
+            this.processEllipse2.MaxValue = 100;
+            this.processEllipse2.Name = "processEllipse2";
+            this.processEllipse2.ShowType = ToolKit.HYControls.ShowType.Ring;
+            this.processEllipse2.Size = new System.Drawing.Size(115, 112);
+            this.processEllipse2.TabIndex = 1;
+            this.processEllipse2.Value = 80;
+            this.processEllipse2.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.processEllipse2.ValueMargin = 5;
+            this.processEllipse2.ValueType = ToolKit.HYControls.ValueType.Percent;
+            this.processEllipse2.ValueWidth = 30;
+            // 
+            // processEllipse3
+            // 
+            this.processEllipse3.BackEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
+            this.processEllipse3.CoreEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.processEllipse3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.processEllipse3.IsShowCoreEllipseBorder = true;
+            this.processEllipse3.Location = new System.Drawing.Point(357, 3);
+            this.processEllipse3.MaxValue = 100;
+            this.processEllipse3.Name = "processEllipse3";
+            this.processEllipse3.ShowType = ToolKit.HYControls.ShowType.Ring;
+            this.processEllipse3.Size = new System.Drawing.Size(112, 112);
+            this.processEllipse3.TabIndex = 2;
+            this.processEllipse3.Value = 50;
+            this.processEllipse3.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.processEllipse3.ValueMargin = 5;
+            this.processEllipse3.ValueType = ToolKit.HYControls.ValueType.Percent;
+            this.processEllipse3.ValueWidth = 30;
+            // 
+            // dataStatisticsControl1
+            // 
+            this.tableLayoutPanel3.SetColumnSpan(this.dataStatisticsControl1, 3);
+            this.dataStatisticsControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataStatisticsControl1.Font = new System.Drawing.Font("宋体", 20F, System.Drawing.FontStyle.Bold);
+            this.dataStatisticsControl1.Location = new System.Drawing.Point(4, 4);
+            this.dataStatisticsControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataStatisticsControl1.Name = "dataStatisticsControl1";
+            this.dataStatisticsControl1.Ng = 0;
+            this.dataStatisticsControl1.Ok = 0;
+            this.dataStatisticsControl1.Size = new System.Drawing.Size(346, 110);
+            this.dataStatisticsControl1.TabIndex = 3;
             // 
             // splitter1
             // 
@@ -278,73 +345,6 @@ namespace HYProject
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // processEllipse1
-            // 
-            this.processEllipse1.BackEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
-            this.processEllipse1.CoreEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.processEllipse1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.processEllipse1.IsShowCoreEllipseBorder = true;
-            this.processEllipse1.Location = new System.Drawing.Point(475, 3);
-            this.processEllipse1.MaxValue = 100;
-            this.processEllipse1.Name = "processEllipse1";
-            this.processEllipse1.ShowType = ToolKit.HYControls.ShowType.Ring;
-            this.processEllipse1.Size = new System.Drawing.Size(112, 112);
-            this.processEllipse1.TabIndex = 0;
-            this.processEllipse1.Value = 20;
-            this.processEllipse1.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.processEllipse1.ValueMargin = 5;
-            this.processEllipse1.ValueType = ToolKit.HYControls.ValueType.Percent;
-            this.processEllipse1.ValueWidth = 30;
-            // 
-            // processEllipse2
-            // 
-            this.processEllipse2.BackEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
-            this.processEllipse2.CoreEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.processEllipse2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.processEllipse2.IsShowCoreEllipseBorder = true;
-            this.processEllipse2.Location = new System.Drawing.Point(593, 3);
-            this.processEllipse2.MaxValue = 100;
-            this.processEllipse2.Name = "processEllipse2";
-            this.processEllipse2.ShowType = ToolKit.HYControls.ShowType.Ring;
-            this.processEllipse2.Size = new System.Drawing.Size(115, 112);
-            this.processEllipse2.TabIndex = 1;
-            this.processEllipse2.Value = 80;
-            this.processEllipse2.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.processEllipse2.ValueMargin = 5;
-            this.processEllipse2.ValueType = ToolKit.HYControls.ValueType.Percent;
-            this.processEllipse2.ValueWidth = 30;
-            // 
-            // processEllipse3
-            // 
-            this.processEllipse3.BackEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
-            this.processEllipse3.CoreEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.processEllipse3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.processEllipse3.IsShowCoreEllipseBorder = true;
-            this.processEllipse3.Location = new System.Drawing.Point(357, 3);
-            this.processEllipse3.MaxValue = 100;
-            this.processEllipse3.Name = "processEllipse3";
-            this.processEllipse3.ShowType = ToolKit.HYControls.ShowType.Ring;
-            this.processEllipse3.Size = new System.Drawing.Size(112, 112);
-            this.processEllipse3.TabIndex = 2;
-            this.processEllipse3.Value = 50;
-            this.processEllipse3.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.processEllipse3.ValueMargin = 5;
-            this.processEllipse3.ValueType = ToolKit.HYControls.ValueType.Percent;
-            this.processEllipse3.ValueWidth = 30;
-            // 
-            // dataStatisticsControl1
-            // 
-            this.tableLayoutPanel3.SetColumnSpan(this.dataStatisticsControl1, 3);
-            this.dataStatisticsControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataStatisticsControl1.Font = new System.Drawing.Font("宋体", 20F, System.Drawing.FontStyle.Bold);
-            this.dataStatisticsControl1.Location = new System.Drawing.Point(4, 4);
-            this.dataStatisticsControl1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataStatisticsControl1.Name = "dataStatisticsControl1";
-            this.dataStatisticsControl1.Ng = 0;
-            this.dataStatisticsControl1.Ok = 0;
-            this.dataStatisticsControl1.Size = new System.Drawing.Size(346, 110);
-            this.dataStatisticsControl1.TabIndex = 3;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -380,7 +380,6 @@ namespace HYProject
         private System.Windows.Forms.Panel panel_Log;
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button_Exit;
         private System.Windows.Forms.Button button_UserLogin;
         private System.Windows.Forms.Button button_Setting;
@@ -391,6 +390,7 @@ namespace HYProject
         private ToolKit.HYControls.ProcessEllipse processEllipse2;
         private ToolKit.HYControls.ProcessEllipse processEllipse3;
         private ToolKit.HYControls.DataStatisticsControl dataStatisticsControl1;
+        public System.Windows.Forms.Label label1;
     }
 }
 
