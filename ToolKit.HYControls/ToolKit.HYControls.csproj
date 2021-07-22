@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataStatisticsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DataStatisticsControl.Designer.cs">
+      <DependentUpon>DataStatisticsControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="GlobalVariable.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -73,10 +79,20 @@
       <DependentUpon>Form_Log.cs</DependentUpon>
     </Compile>
     <Compile Include="HYInputDialog.cs" />
+    <Compile Include="MessageTip.cs" />
+    <Compile Include="ProcessEllipse.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProcessEllipse.Designer.cs">
+      <DependentUpon>ProcessEllipse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DataStatisticsControl.resx">
+      <DependentUpon>DataStatisticsControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GlobalVariable.resx">
       <DependentUpon>GlobalVariable.cs</DependentUpon>
     </EmbeddedResource>
@@ -88,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HYForm\Form_Log.resx">
       <DependentUpon>Form_Log.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcessEllipse.resx">
+      <DependentUpon>ProcessEllipse.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 using HalconDotNet;
 
+using HYProject.MenuForm;
+using HYProject.Model;
 using HYProject.ToolForm;
 
 using ToolKit.HYControls.HYForm;
@@ -74,6 +77,37 @@ namespace HYProject
             else
             {
                 e.Cancel = true;
+            }
+        }
+
+        private void Button_UserLogin_Click(object sender, EventArgs e)
+        {
+            Form_User form_User = new Form_User();
+            if (form_User.ShowDialog() == DialogResult.OK)
+            {
+                AppParam.Power = form_User.Power;
+                Log.RunLog("切换用户:" + AppParam.Power);
+                Text = "视觉软件 -- " + AppParam.Power;
+            }
+        }
+
+        private void Button_Setting_Click(object sender, EventArgs e)
+        {
+            Form_Setting form_Setting = new Form_Setting();
+            form_Setting.ShowDialog();
+        }
+
+        private void Button_Run_Click(object sender, EventArgs e)
+        {
+            if (button_Run.ForeColor == Color.Red)
+            {
+                button_Run.ForeColor = Color.Green;
+                button_Run.Text = "停    止";
+            }
+            else
+            {
+                button_Run.ForeColor = Color.Red;
+                button_Run.Text = "运    行";
             }
         }
     }
