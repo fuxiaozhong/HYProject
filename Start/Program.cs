@@ -3,6 +3,10 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
+using HYProject.MenuForm;
+
+using Application = System.Windows.Forms.Application;
+
 namespace HYProject
 {
     internal static class Program
@@ -43,9 +47,28 @@ namespace HYProject
             if (processes.Length <= 1)
             {
                 if (new Welcome().ShowDialog() == DialogResult.OK)
-                    Application.Run(MainForm.Instance);
+                {
+                    if (AppParam.Instance.StartBeforeLogin)
+                    {
+                        Form_User form_User = new Form_User();
+                        if (form_User.ShowDialog() == DialogResult.OK)
+                        {
+                            AppParam.Instance.Power = form_User.Power;
+                            Log.RunLog("用户登录:" + AppParam.Instance.Power);
+                            MainForm.Instance.Text = "视觉软件 -- " + AppParam.Instance.Power;
+                            Application.Run(MainForm.Instance);
+                        }
+                    }
+                    else
+                    {
+                        Application.Run(MainForm.Instance);
+                    }
+
+                }
                 else
+                {
                     Application.Exit();
+                }
             }
             else
             {

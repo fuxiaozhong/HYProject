@@ -10,6 +10,8 @@ using HYProject.ToolForm;
 
 using ToolKit.HYControls.HYForm;
 
+using static System.Net.Mime.MediaTypeNames;
+
 namespace HYProject
 {
     public partial class MainForm : Form
@@ -55,8 +57,14 @@ namespace HYProject
             HOperatorSet.SetSystem("clip_region", "false");
         }
 
+
+
         private void MainForm_Load(object sender, EventArgs e)
         {
+            if (AppParam.Instance.RunStateMax)
+                this.WindowState = FormWindowState.Maximized;
+            else
+                this.WindowState = FormWindowState.Normal;
             panel_Main.Controls.Add(DisplayForm.Instance);
             DisplayForm.Instance.DisplayWindowCount = 4;
             panel_Log.Controls.Add(Form_Log.Instance);
@@ -73,6 +81,7 @@ namespace HYProject
             if (MessageBox.Show("确认退出系统?", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
                 Log.RunLog("退出程序...");
+                Cameras.Instance.CloseCamera();
                 AppParam.Instance.Save_To_File();
                 System.Diagnostics.Process.GetCurrentProcess().Kill();
             }
@@ -104,6 +113,7 @@ namespace HYProject
             if (button_Run.ForeColor == Color.Red)
             {
                 button_Run.ForeColor = Color.Green;
+                AppParam.Instance.Runing = true;
                 button_Run.Text = "停    止";
                 Log.RunLog("开始运行...");
             }
@@ -111,8 +121,15 @@ namespace HYProject
             {
                 button_Run.ForeColor = Color.Red;
                 button_Run.Text = "运    行";
+                AppParam.Instance.Runing = false;
                 Log.RunLog("停止运行...");
             }
+        }
+
+        private void Button_Camera_Click(object sender, EventArgs e)
+        {
+            Form_Camera form_Camera = new Form_Camera();
+            form_Camera.ShowDialog();
         }
     }
 }

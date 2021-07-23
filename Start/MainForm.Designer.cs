@@ -50,6 +50,7 @@ namespace HYProject
             this.button_Exit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button_Camera = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel_Buttom.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -234,6 +235,7 @@ namespace HYProject
             // panel_Title
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.panel_Title, 2);
+            this.panel_Title.Controls.Add(this.button_Camera);
             this.panel_Title.Controls.Add(this.button_UserLogin);
             this.panel_Title.Controls.Add(this.button_Setting);
             this.panel_Title.Controls.Add(this.button3);
@@ -254,7 +256,7 @@ namespace HYProject
             this.button_UserLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_UserLogin.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold);
             this.button_UserLogin.Image = ((System.Drawing.Image)(resources.GetObject("button_UserLogin.Image")));
-            this.button_UserLogin.Location = new System.Drawing.Point(688, 7);
+            this.button_UserLogin.Location = new System.Drawing.Point(542, 7);
             this.button_UserLogin.Name = "button_UserLogin";
             this.button_UserLogin.Size = new System.Drawing.Size(140, 63);
             this.button_UserLogin.TabIndex = 6;
@@ -345,6 +347,21 @@ namespace HYProject
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // button_Camera
+            // 
+            this.button_Camera.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_Camera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Camera.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold);
+            this.button_Camera.Image = ((System.Drawing.Image)(resources.GetObject("button_Camera.Image")));
+            this.button_Camera.Location = new System.Drawing.Point(688, 7);
+            this.button_Camera.Name = "button_Camera";
+            this.button_Camera.Size = new System.Drawing.Size(140, 63);
+            this.button_Camera.TabIndex = 7;
+            this.button_Camera.Text = "相    机";
+            this.button_Camera.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button_Camera.UseVisualStyleBackColor = true;
+            this.button_Camera.Click += new System.EventHandler(this.Button_Camera_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -391,6 +408,7 @@ namespace HYProject
         private ToolKit.HYControls.ProcessEllipse processEllipse3;
         private ToolKit.HYControls.DataStatisticsControl dataStatisticsControl1;
         public System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button_Camera;
     }
 }
 

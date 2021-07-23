@@ -41,10 +41,18 @@ namespace HYProject.Model
             }
         }
 
+        public Dictionary<string, ICamera> GetCameras
+        {
+            get
+            {
+                return cameras;
+            }
+        }
+
         /// <summary>
         /// 相机列表
         /// </summary>
-        private static Dictionary<string, ICamera> cameras = new Dictionary<string, ICamera>();
+        private Dictionary<string, ICamera> cameras = new Dictionary<string, ICamera>();
 
         private Cameras()
         {
@@ -85,7 +93,7 @@ namespace HYProject.Model
         /// </summary>
         /// <param name="cameraName">相机名称</param>
         /// <param name="camera">相机</param>
-        public static void AddCamera(string cameraName, ICamera camera)
+        public void AddCamera(string cameraName, ICamera camera)
         {
             bool isExis = false;
             foreach (var item in cameras.Keys)

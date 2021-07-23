@@ -81,6 +81,12 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuForm\Form_Camera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForm\Form_Camera.Designer.cs">
+      <DependentUpon>Form_Camera.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuForm\Form_Setting.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForm\Form_Camera.resx">
+      <DependentUpon>Form_Camera.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuForm\Form_Setting.resx">
       <DependentUpon>Form_Setting.cs</DependentUpon>

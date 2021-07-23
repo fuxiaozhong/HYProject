@@ -92,6 +92,11 @@ namespace HYProject
         /// </summary>
         internal bool StartBeforeLogin = false;
 
+        /// <summary>
+        /// 运行状态
+        /// </summary>
+        internal bool Runing = false;
+
 
         /// <summary>
         /// 保存的文件名
