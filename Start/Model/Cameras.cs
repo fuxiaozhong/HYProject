@@ -187,7 +187,7 @@ namespace HYProject.Model
         /// </summary>
         /// <param name="cameraName">相机名称</param>
         /// <param name="ho_image">图片</param>
-        private void Dahua_ImageProcessEvent(string cameraName, HalconDotNet.HObject ho_image)
+        public void Dahua_ImageProcessEvent(string cameraName, HalconDotNet.HObject ho_image)
         {
             DisplayForm.Instance[0].Disp_Image(ho_image);
             DisplayForm.Instance[1].Disp_Image(ho_image);

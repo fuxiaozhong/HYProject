@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Reflection;
 
 using HalconDotNet;
 
@@ -185,6 +186,38 @@ namespace ToolKit.CamreaSDK
                         sw.Dispose();
                     }
                 }
+            }
+        }
+        /// <summary>
+        /// 清除事件绑定的函数
+        /// </summary>
+        /// <param name="objectHasEvents">拥有事件的实例</param>
+        /// <param name="eventName">事件名称</param>
+        public void ClearImageProcessEvents()
+        {
+            try
+            {
+                EventInfo[] events = this.GetType().GetEvents(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+                if (events == null || events.Length < 1)
+                {
+                    return;
+                }
+                for (int i = 0; i < events.Length; i++)
+                {
+                    EventInfo ei = events[i];
+                    if (ei.Name == "ImageProcessEvent")
+                    {
+                        FieldInfo fi = ei.DeclaringType.GetField("ImageProcessEvent", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+                        if (fi != null)
+                        {
+                            fi.SetValue(this, null);
+                        }
+                        break;
+                    }
+                }
+            }
+            catch
+            {
             }
         }
     }

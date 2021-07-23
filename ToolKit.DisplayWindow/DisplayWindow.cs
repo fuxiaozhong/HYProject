@@ -6,6 +6,8 @@ using System.Windows.Forms;
 
 using HalconDotNet;
 
+using RevDeBug.Common.Statements;
+
 namespace ToolKit.DisplayWindow
 {
     public partial class DisplayWindow : UserControl
@@ -822,11 +824,15 @@ namespace ToolKit.DisplayWindow
 
         private Control control;
         private Form form = null;
+        private Point OldLocation;
+        private Size OldSize;
+
 
         private DockStyle thisStyle;
 
         private void 全屏显示ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             if (form == null || form.IsDisposed)
             {
                 form = new Form()
@@ -855,6 +861,8 @@ namespace ToolKit.DisplayWindow
 
             if (全屏显示ToolStripMenuItem.Checked)
             {
+                OldLocation = this.Location;
+                OldSize = this.Size;
                 control = this.Parent;
                 thisStyle = this.Dock;
                 this.Dock = DockStyle.Fill;
@@ -872,6 +880,8 @@ namespace ToolKit.DisplayWindow
                     form.Hide();
                     this.Dock = thisStyle;
                     control.Controls.Add(this);
+                    this.Location = OldLocation;
+                    this.Size = OldSize;
 
                     form.Controls.Clear();
                     if (ho_image == null)
@@ -887,8 +897,12 @@ namespace ToolKit.DisplayWindow
             {
                 全屏显示ToolStripMenuItem.Checked = false;
                 form.Hide();
+
                 this.Dock = thisStyle;
                 control.Controls.Add(this);
+                this.Location = OldLocation;
+                this.Size = OldSize;
+
                 form.Controls.Clear();
                 if (ho_image == null)
                     return;
@@ -913,6 +927,8 @@ namespace ToolKit.DisplayWindow
                     form.Hide();
                     this.Dock = thisStyle;
                     control.Controls.Add(this);
+                    this.Location = OldLocation;
+                    this.Size = OldSize;
                     form.Controls.Clear();
                     if (ho_image == null)
                         return;

@@ -104,6 +104,11 @@ namespace HYProject.MenuForm
             // num__exposuretime
             // 
             this.num__exposuretime.Location = new System.Drawing.Point(840, 227);
+            this.num__exposuretime.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.num__exposuretime.Name = "num__exposuretime";
             this.num__exposuretime.Size = new System.Drawing.Size(141, 26);
             this.num__exposuretime.TabIndex = 4;
@@ -111,6 +116,11 @@ namespace HYProject.MenuForm
             // num_gain
             // 
             this.num_gain.Location = new System.Drawing.Point(840, 259);
+            this.num_gain.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.num_gain.Name = "num_gain";
             this.num_gain.Size = new System.Drawing.Size(141, 26);
             this.num_gain.TabIndex = 6;
@@ -204,6 +214,7 @@ namespace HYProject.MenuForm
             this.button_Save.TabIndex = 12;
             this.button_Save.Text = "保    存";
             this.button_Save.UseVisualStyleBackColor = true;
+            this.button_Save.Click += new System.EventHandler(this.Button_Save_Click);
             // 
             // button2
             // 
@@ -214,6 +225,7 @@ namespace HYProject.MenuForm
             this.button2.TabIndex = 13;
             this.button2.Text = "拍    照";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // button3
             // 
@@ -224,6 +236,7 @@ namespace HYProject.MenuForm
             this.button3.TabIndex = 14;
             this.button3.Text = "实时模式";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // label6
             // 
@@ -337,6 +350,7 @@ namespace HYProject.MenuForm
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form_Camera";
             this.Text = "相机";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Camera_FormClosing);
             this.Load += new System.EventHandler(this.Form_Camera_Load);
             ((System.ComponentModel.ISupportInitialize)(this.num__exposuretime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_gain)).EndInit();
