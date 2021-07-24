@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 
 using HYProject.Helper;
+using HYProject.ToolForm;
 
 namespace HYProject.MenuForm
 {
@@ -64,6 +65,12 @@ namespace HYProject.MenuForm
 
 
 
+        }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            Form_GlobalOptions.Instance.globalVariable1.Read();
+            Form_GlobalOptions.Instance.ShowDialog();
         }
     }
 }
