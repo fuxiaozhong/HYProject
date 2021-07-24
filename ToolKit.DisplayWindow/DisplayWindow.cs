@@ -826,6 +826,7 @@ namespace ToolKit.DisplayWindow
         private Form form = null;
         private Point OldLocation;
         private Size OldSize;
+        private AnchorStyles anchor;
 
 
         private DockStyle thisStyle;
@@ -850,7 +851,7 @@ namespace ToolKit.DisplayWindow
                     //ShowDragStretch = true,
                     StartPosition = FormStartPosition.CenterScreen,
                     ShowIcon = true,
-                    TopMost = true,
+                    //TopMost = true,
                     //Icon = ((System.Drawing.Icon)(new System.ComponentModel.ComponentResourceManager(typeof(MainForm)).GetObject("$this.Icon"))),
                     Text = "显示窗口 - " + this.Name,
                 };
@@ -865,6 +866,7 @@ namespace ToolKit.DisplayWindow
                 OldSize = this.Size;
                 control = this.Parent;
                 thisStyle = this.Dock;
+                anchor = this.Anchor;
                 this.Dock = DockStyle.Fill;
                 form.Controls.Add(this);
                 form.Show();
@@ -882,7 +884,7 @@ namespace ToolKit.DisplayWindow
                     control.Controls.Add(this);
                     this.Location = OldLocation;
                     this.Size = OldSize;
-
+                    this.Anchor = anchor;
                     form.Controls.Clear();
                     if (ho_image == null)
                         return;
@@ -902,6 +904,7 @@ namespace ToolKit.DisplayWindow
                 control.Controls.Add(this);
                 this.Location = OldLocation;
                 this.Size = OldSize;
+                this.Anchor = anchor;
 
                 form.Controls.Clear();
                 if (ho_image == null)
@@ -929,6 +932,9 @@ namespace ToolKit.DisplayWindow
                     control.Controls.Add(this);
                     this.Location = OldLocation;
                     this.Size = OldSize;
+                    this.Anchor = anchor;
+
+
                     form.Controls.Clear();
                     if (ho_image == null)
                         return;

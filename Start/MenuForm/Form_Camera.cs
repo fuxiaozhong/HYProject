@@ -57,7 +57,7 @@ namespace HYProject.MenuForm
         private void Refresh()
         {
             label_exposuretime.Text = Cameras.Instance[comboBox_CamList.Text].Get_Exposure_Time().ToString();
-            label_Gain.Text = Cameras.Instance[comboBox_CamList.Text].Get_Gain().ToString();
+            label_Gain.Text = Cameras.Instance[comboBox_CamList.Text].Get_Gain().ToString("0");
             label_TriggerMode.Text = Cameras.Instance[comboBox_CamList.Text].Get_TriggerMode().ToString();
             label_TriggerSource.Text = Cameras.Instance[comboBox_CamList.Text].Get_TriggerSource().ToString();
         }
@@ -88,6 +88,7 @@ namespace HYProject.MenuForm
                 button3.Text = "实时模式";
                 Cameras.Instance[comboBox_CamList.Text].End_Real_Mode();
             }
+            Refresh();
         }
 
         private void Form_Camera_FormClosing(object sender, FormClosingEventArgs e)

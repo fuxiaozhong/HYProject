@@ -29,7 +29,7 @@ namespace HYProject.MenuForm
         /// </summary>
         private void InitializeComponent()
         {
-            this.displayWindow1 = new ToolKit.DisplayWindow.DisplayWindow();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Camera));
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox_CamList = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,33 +41,22 @@ namespace HYProject.MenuForm
             this.comboBox_TriggerSource = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button_Save = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label_TriggerSource = new System.Windows.Forms.Label();
             this.label_TriggerMode = new System.Windows.Forms.Label();
             this.label_Gain = new System.Windows.Forms.Label();
             this.label_exposuretime = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.button_Save = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.displayWindow1 = new ToolKit.DisplayWindow.DisplayWindow();
             ((System.ComponentModel.ISupportInitialize)(this.num__exposuretime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_gain)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // displayWindow1
-            // 
-            this.displayWindow1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.displayWindow1.BackColor = System.Drawing.Color.Transparent;
-            this.displayWindow1.Location = new System.Drawing.Point(3, 3);
-            this.displayWindow1.Margin = new System.Windows.Forms.Padding(0);
-            this.displayWindow1.Name = "displayWindow1";
-            this.displayWindow1.Size = new System.Drawing.Size(735, 608);
-            this.displayWindow1.TabIndex = 0;
             // 
             // label1
             // 
@@ -82,6 +71,7 @@ namespace HYProject.MenuForm
             // 
             // comboBox_CamList
             // 
+            this.comboBox_CamList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox_CamList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_CamList.FormattingEnabled = true;
             this.comboBox_CamList.Location = new System.Drawing.Point(840, 6);
@@ -103,6 +93,7 @@ namespace HYProject.MenuForm
             // 
             // num__exposuretime
             // 
+            this.num__exposuretime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.num__exposuretime.Location = new System.Drawing.Point(840, 227);
             this.num__exposuretime.Maximum = new decimal(new int[] {
             100000,
@@ -115,6 +106,7 @@ namespace HYProject.MenuForm
             // 
             // num_gain
             // 
+            this.num_gain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.num_gain.Location = new System.Drawing.Point(840, 259);
             this.num_gain.Maximum = new decimal(new int[] {
             100000,
@@ -149,6 +141,7 @@ namespace HYProject.MenuForm
             // 
             // comboBox_TriggerMode
             // 
+            this.comboBox_TriggerMode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox_TriggerMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_TriggerMode.FormattingEnabled = true;
             this.comboBox_TriggerMode.Items.AddRange(new object[] {
@@ -161,6 +154,7 @@ namespace HYProject.MenuForm
             // 
             // comboBox_TriggerSource
             // 
+            this.comboBox_TriggerSource.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox_TriggerSource.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_TriggerSource.FormattingEnabled = true;
             this.comboBox_TriggerSource.Items.AddRange(new object[] {
@@ -190,6 +184,7 @@ namespace HYProject.MenuForm
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.label_TriggerSource);
             this.groupBox1.Controls.Add(this.label_TriggerMode);
             this.groupBox1.Controls.Add(this.label_Gain);
@@ -204,83 +199,6 @@ namespace HYProject.MenuForm
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "相机参数";
-            // 
-            // button_Save
-            // 
-            this.button_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Save.Location = new System.Drawing.Point(795, 370);
-            this.button_Save.Name = "button_Save";
-            this.button_Save.Size = new System.Drawing.Size(159, 32);
-            this.button_Save.TabIndex = 12;
-            this.button_Save.Text = "保    存";
-            this.button_Save.UseVisualStyleBackColor = true;
-            this.button_Save.Click += new System.EventHandler(this.Button_Save_Click);
-            // 
-            // button2
-            // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(795, 423);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(159, 32);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "拍    照";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(795, 478);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(159, 32);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "实时模式";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.Button3_Click);
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(10, 134);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 16);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "触 发 源:";
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(10, 104);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(80, 16);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "触发模式:";
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(10, 72);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(80, 16);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "增    益:";
-            // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(10, 40);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(80, 16);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "曝光时间:";
             // 
             // label_TriggerSource
             // 
@@ -326,6 +244,98 @@ namespace HYProject.MenuForm
             this.label_exposuretime.TabIndex = 14;
             this.label_exposuretime.Text = "0";
             // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(10, 134);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(80, 16);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "触 发 源:";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(10, 104);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(80, 16);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "触发模式:";
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(10, 72);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(80, 16);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "增    益:";
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(10, 40);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(80, 16);
+            this.label9.TabIndex = 10;
+            this.label9.Text = "曝光时间:";
+            // 
+            // button_Save
+            // 
+            this.button_Save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Save.Location = new System.Drawing.Point(795, 370);
+            this.button_Save.Name = "button_Save";
+            this.button_Save.Size = new System.Drawing.Size(159, 32);
+            this.button_Save.TabIndex = 12;
+            this.button_Save.Text = "保    存";
+            this.button_Save.UseVisualStyleBackColor = true;
+            this.button_Save.Click += new System.EventHandler(this.Button_Save_Click);
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(795, 423);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(159, 32);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "拍    照";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(795, 475);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(159, 32);
+            this.button3.TabIndex = 14;
+            this.button3.Text = "实时模式";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
+            // 
+            // displayWindow1
+            // 
+            this.displayWindow1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.displayWindow1.BackColor = System.Drawing.Color.Transparent;
+            this.displayWindow1.Location = new System.Drawing.Point(3, 3);
+            this.displayWindow1.Margin = new System.Windows.Forms.Padding(0);
+            this.displayWindow1.Name = "displayWindow1";
+            this.displayWindow1.Size = new System.Drawing.Size(735, 608);
+            this.displayWindow1.TabIndex = 0;
+            // 
             // Form_Camera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -347,8 +357,11 @@ namespace HYProject.MenuForm
             this.Controls.Add(this.label1);
             this.Controls.Add(this.displayWindow1);
             this.Font = new System.Drawing.Font("宋体", 12F);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "Form_Camera";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "相机";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Camera_FormClosing);
             this.Load += new System.EventHandler(this.Form_Camera_Load);
