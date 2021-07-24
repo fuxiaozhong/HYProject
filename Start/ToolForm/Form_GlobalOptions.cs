@@ -35,6 +35,7 @@ namespace HYProject.ToolForm
                         }
                     }
                 }
+
                 return instance;
             }
         }
@@ -43,7 +44,7 @@ namespace HYProject.ToolForm
         {
             get
             {
-                return globalVariable1.GetValue(key);
+                return globalVariable.GetValue(key);
             }
         }
 
@@ -54,7 +55,7 @@ namespace HYProject.ToolForm
 
         private void Form_GlobalOptions_FormClosing(object sender, FormClosingEventArgs e)
         {
-            globalVariable1.Save();
+            globalVariable.Save();
         }
     }
 }

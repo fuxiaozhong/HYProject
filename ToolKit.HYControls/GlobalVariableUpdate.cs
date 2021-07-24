@@ -11,7 +11,9 @@ namespace ToolKit.HYControls
             comboBox1.Text = type;
             textBox_Name.Text = name;
             textBox_mark.Text = mark;
-            textBox_value.Text = value;
+
+
+
             if (name == "")
             {
                 Text = "添加";
@@ -21,6 +23,23 @@ namespace ToolKit.HYControls
                 Text = "修改";
                 textBox_Name.Enabled = false;
                 comboBox1.Enabled = false;
+                if (comboBox1.Text == "Bool")
+                {
+                    comboBox2.Text = value;
+                }
+                else if (comboBox1.Text == "String")
+                {
+                    textBox_value.Text = value;
+                }
+                else if (comboBox1.Text == "Int")
+                {
+                    numericUpDown1.Value = int.Parse(value);
+                }
+                else if (comboBox1.Text == "Double")
+                {
+                    numericUpDown1.Value = (decimal)double.Parse(value);
+                }
+
             }
         }
 
@@ -30,24 +49,84 @@ namespace ToolKit.HYControls
 
         public string type = "", name = "", value = "", mark = "";
 
-        private void button2_Click(object sender, EventArgs e)
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (textBox_value.Text.Trim() == "" || textBox_Name.Text.Trim() == "")
+            if (comboBox1.Text == "Bool")
             {
-                MessageBox.Show("请输入必填项");
-                return;
+                comboBox2.Visible = true;
+                textBox_value.Visible = false;
+                numericUpDown1.Visible = false;
             }
+            else if (comboBox1.Text == "String")
+            {
+                comboBox2.Visible = false;
+                textBox_value.Visible = true;
+                numericUpDown1.Visible = false;
+            }
+            else if (comboBox1.Text == "Int")
+            {
+                comboBox2.Visible = false;
+                textBox_value.Visible = false;
+                numericUpDown1.Visible = true;
+                numericUpDown1.DecimalPlaces = 0;
+            }
+            else if (comboBox1.Text == "Double")
+            {
+                comboBox2.Visible = false;
+                textBox_value.Visible = false;
+                numericUpDown1.Visible = true;
+                numericUpDown1.DecimalPlaces = 3;
+            }
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.Text == "Bool")
+            {
+                if (textBox_Name.Text.Trim() == "" || comboBox2.Text.Trim() == "")
+                {
+                    MessageBox.Show("请输入必填项");
+                    return;
+                }
+            }
+            else if (comboBox1.Text == "String")
+            {
+                if (textBox_value.Text.Trim() == "" || textBox_Name.Text.Trim() == "")
+                {
+                    MessageBox.Show("请输入必填项");
+                    return;
+                }
+            }
+            else if (comboBox1.Text == "Int")
+            {
+                if (textBox_Name.Text.Trim() == "" || numericUpDown1.Value.ToString().Trim() == "")
+                {
+                    MessageBox.Show("请输入必填项");
+                    return;
+                }
+            }
+            else if (comboBox1.Text == "Double")
+            {
+                if (textBox_Name.Text.Trim() == "" || numericUpDown1.Value.ToString().Trim() == "")
+                {
+                    MessageBox.Show("请输入必填项");
+                    return;
+                }
+            }
+
+
+
             name = textBox_Name.Text.Trim(); mark = textBox_mark.Text.Trim();
             try
             {
                 switch (comboBox1.Text)
                 {
                     case "Int":
-                        type = "Int"; value = int.Parse(textBox_value.Text.Trim()).ToString();
+                        type = "Int"; value = numericUpDown1.Value.ToString();
                         break;
 
                     case "Double":
-                        type = "Double"; value = double.Parse(textBox_value.Text.Trim()).ToString();
+                        type = "Double"; value = numericUpDown1.Value.ToString();
                         break;
 
                     case "String":
@@ -55,7 +134,7 @@ namespace ToolKit.HYControls
                         break;
 
                     case "Bool":
-                        type = "Bool"; value = bool.Parse(textBox_value.Text.Trim()).ToString();
+                        type = "Bool"; value = bool.Parse(comboBox2.Text).ToString();
                         break;
                 }
             }
@@ -68,7 +147,7 @@ namespace ToolKit.HYControls
             DialogResult = DialogResult.OK;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
         }

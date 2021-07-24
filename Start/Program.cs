@@ -36,7 +36,7 @@ namespace HYProject
             //处理非UI线程异常
             AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
             AppParam.Instance.Read_From_File();
-
+            AppParam.Instance.Power = "未登录";
             //初始化Log4j日志
             Log.InitLog4Net(Application.StartupPath + "\\Log4jConfig.xml");
             Application.EnableVisualStyles();

@@ -30,23 +30,23 @@ namespace HYProject.ToolForm
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_GlobalOptions));
-            this.globalVariable1 = new ToolKit.HYControls.GlobalVariable();
+            this.globalVariable = new ToolKit.HYControls.GlobalVariable();
             this.SuspendLayout();
             // 
-            // globalVariable1
+            // globalVariable
             // 
-            this.globalVariable1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.globalVariable1.Location = new System.Drawing.Point(0, 0);
-            this.globalVariable1.Name = "globalVariable1";
-            this.globalVariable1.Size = new System.Drawing.Size(800, 450);
-            this.globalVariable1.TabIndex = 0;
+            this.globalVariable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.globalVariable.Location = new System.Drawing.Point(0, 0);
+            this.globalVariable.Name = "globalVariable";
+            this.globalVariable.Size = new System.Drawing.Size(800, 450);
+            this.globalVariable.TabIndex = 0;
             // 
             // Form_GlobalOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.globalVariable1);
+            this.Controls.Add(this.globalVariable);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_GlobalOptions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -58,6 +58,6 @@ namespace HYProject.ToolForm
 
         #endregion
 
-        public ToolKit.HYControls.GlobalVariable globalVariable1;
+        public ToolKit.HYControls.GlobalVariable globalVariable;
     }
 }

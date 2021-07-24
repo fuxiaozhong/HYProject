@@ -69,8 +69,16 @@ namespace HYProject.MenuForm
 
         private void Button5_Click(object sender, EventArgs e)
         {
-            Form_GlobalOptions.Instance.globalVariable1.Read();
-            Form_GlobalOptions.Instance.ShowDialog();
+            if (AppParam.Instance.Power == "管理员")
+            {
+                Form_GlobalOptions.Instance.globalVariable.Read();
+                Form_GlobalOptions.Instance.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("当前用户: " + AppParam.Instance.Power + ",无权限操作,请登录管理员账户,在进行操作", "权限提示", MessageBoxButtons.OK);
+            }
+
         }
     }
 }

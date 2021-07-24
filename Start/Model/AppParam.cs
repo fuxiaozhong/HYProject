@@ -56,6 +56,7 @@ namespace HYProject
         /// <summary>
         /// 当前登陆用户
         /// </summary>
+        [NonSerialized]
         internal string Power = "未登录";
 
         /// <summary>
@@ -95,6 +96,7 @@ namespace HYProject
         /// <summary>
         /// 运行状态
         /// </summary>
+        [NonSerialized]
         internal bool Runing = false;
 
 
