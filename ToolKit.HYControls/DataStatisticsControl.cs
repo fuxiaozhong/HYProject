@@ -27,6 +27,11 @@ namespace ToolKit.HYControls
             {
                 this._ok = value;
                 _total = _ng + _ok;
+                label4.Text = _ok.ToString();
+                label5.Text = _ng.ToString();
+                label6.Text = _total.ToString();
+
+
             }
         }
 
@@ -42,6 +47,9 @@ namespace ToolKit.HYControls
             {
                 this._ng = value;
                 _total = _ng + _ok;
+                label4.Text = _ok.ToString();
+                label5.Text = _ng.ToString();
+                label6.Text = _total.ToString();
             }
         }
 
@@ -70,6 +78,17 @@ namespace ToolKit.HYControls
             label6.Refresh();
         }
 
+        private void 清空ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Ok = 0;
+            Ng = 0;
+        }
+
+        public void Clear()
+        {
+            Ok = 0;
+            Ng = 0;
+        }
         //private Font m_font = new Font("Arial Unicode MS", 12);
         //[Description("文字字体"), Category("自定义")]
         //public override Font Font

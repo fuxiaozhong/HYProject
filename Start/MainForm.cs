@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Globalization;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -16,6 +17,10 @@ namespace HYProject
 {
     public partial class MainForm : Form
     {
+
+
+
+
         private static MainForm instance;
 
         //程序运行时创建一个静态只读的进程辅助对象
@@ -59,6 +64,7 @@ namespace HYProject
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+
             if (AppParam.Instance.RunStateMax)
                 this.WindowState = FormWindowState.Maximized;
             else
@@ -69,8 +75,29 @@ namespace HYProject
             Form_Log.Instance.Show();
             Thread AutoDeleteImage = new Thread(AutoCheckImage.DeleteFile);
             AutoDeleteImage.IsBackground = true;
+            AutoDeleteImage.Name = "DeleteFile";
             AutoDeleteImage.Start();
 
+            Thread _Refresh_Work = new Thread(Refresh_Work);
+            _Refresh_Work.IsBackground = true;
+            _Refresh_Work.Name = "Refresh_Work";
+            _Refresh_Work.Start();
+
+
+        }
+
+        private void Refresh_Work()
+        {
+            while (true)
+            {
+                try
+                {
+                    SystemInfo systemInfo = new SystemInfo();
+                    processEllipse3.Value = (int)Math.Ceiling(((double)((systemInfo.PhysicalMemory - systemInfo.MemoryAvailable)) / (double)(systemInfo.PhysicalMemory) * 100));
+                }
+                catch { }
+                Thread.Sleep(50);
+            }
         }
 
         private void Button_Exit_Click(object sender, EventArgs e)
@@ -82,6 +109,7 @@ namespace HYProject
         {
             if (MessageBox.Show("确认退出系统?", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
+
                 Log.RunLog("退出程序...");
                 Cameras.Instance.CloseCamera();
                 AppParam.Instance.Save_To_File();
@@ -132,6 +160,30 @@ namespace HYProject
         {
             Form_Camera form_Camera = new Form_Camera();
             form_Camera.ShowDialog();
+        }
+
+        private void MainForm_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F5)
+            {
+                Button_Run_Click(button_Run, e);
+            }
+            else if (ModifierKeys == Keys.Alt && e.KeyCode == Keys.C)
+            {
+                Button_Camera_Click(button_Camera, e);
+            }
+            else if (ModifierKeys == Keys.Alt && e.KeyCode == Keys.S)
+            {
+                Button_Setting_Click(button_Setting, e);
+            }
+            else if (ModifierKeys == Keys.Control && e.KeyCode == Keys.E)
+            {
+                Button_Exit_Click(sender, e);
+            }
+            else if (ModifierKeys == Keys.Control && e.KeyCode == Keys.Enter)
+            {
+                Button_UserLogin_Click(sender, e);
+            }
         }
     }
 }

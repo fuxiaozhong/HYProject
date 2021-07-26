@@ -62,6 +62,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -74,8 +75,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helper\AutoCheckImage.cs" />
+    <Compile Include="Helper\HotKey.cs" />
     <Compile Include="Helper\Log.cs" />
     <Compile Include="Helper\PowerBoot.cs" />
+    <Compile Include="Helper\QueueSaveImage.cs" />
+    <Compile Include="Helper\SystemInfo.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

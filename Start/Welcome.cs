@@ -6,6 +6,8 @@ using System.Windows.Forms;
 
 using HYProject.Model;
 
+using ToolKit.DisplayWindow;
+
 namespace HYProject
 {
     public partial class Welcome : Form
@@ -28,10 +30,9 @@ namespace HYProject
                     Directory.CreateDirectory(AppParam.Instance.Save_Image_Path);
 
 
-
                 Log.RunLog("开始加载配置文件");
                 Cameras.Instance.InitCamera("Cam1", CameraType.海康威视);
-                //Cameras.Instance["Cam1"].Start_Real_Mode();
+
                 Log.RunLog("数据配置加载完成");
                 //等待进度条加载完成
                 while (flag) { }

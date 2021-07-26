@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
+using HYProject.Helper;
 using HYProject.Model;
 
 namespace HYProject.MenuForm
@@ -31,6 +32,7 @@ namespace HYProject.MenuForm
 
         private void Form_Camera_ImageProcessEvent(string cameraName, HalconDotNet.HObject ho_image)
         {
+            QueueSaveImage.Instance.QueueEnqueue2(ho_image);
             displayWindow1.Disp_Image(ho_image);
         }
 

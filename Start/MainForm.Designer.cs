@@ -29,12 +29,17 @@ namespace HYProject
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel_Buttom = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel_Data = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.processEllipse1 = new ToolKit.HYControls.ProcessEllipse();
+            this.processEllipse2 = new ToolKit.HYControls.ProcessEllipse();
+            this.processEllipse3 = new ToolKit.HYControls.ProcessEllipse();
+            this.dataStatisticsControl1 = new ToolKit.HYControls.DataStatisticsControl();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panel_Log = new System.Windows.Forms.Panel();
             this.panel_Main = new System.Windows.Forms.Panel();
@@ -47,10 +52,7 @@ namespace HYProject
             this.button_Exit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.processEllipse1 = new ToolKit.HYControls.ProcessEllipse();
-            this.processEllipse2 = new ToolKit.HYControls.ProcessEllipse();
-            this.processEllipse3 = new ToolKit.HYControls.ProcessEllipse();
-            this.dataStatisticsControl1 = new ToolKit.HYControls.DataStatisticsControl();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.panel_Buttom.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -136,6 +138,75 @@ namespace HYProject
             this.tableLayoutPanel3.Size = new System.Drawing.Size(711, 118);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
+            // processEllipse1
+            // 
+            this.processEllipse1.BackEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
+            this.processEllipse1.CoreEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.processEllipse1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.processEllipse1.IsShowCoreEllipseBorder = true;
+            this.processEllipse1.Location = new System.Drawing.Point(475, 3);
+            this.processEllipse1.MaxValue = 100;
+            this.processEllipse1.Name = "processEllipse1";
+            this.processEllipse1.ShowType = ToolKit.HYControls.ShowType.Ring;
+            this.processEllipse1.Size = new System.Drawing.Size(112, 112);
+            this.processEllipse1.TabIndex = 0;
+            this.processEllipse1.Value = 20;
+            this.processEllipse1.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.processEllipse1.ValueMargin = 5;
+            this.processEllipse1.ValueType = ToolKit.HYControls.ValueType.Percent;
+            this.processEllipse1.ValueWidth = 30;
+            // 
+            // processEllipse2
+            // 
+            this.processEllipse2.BackEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
+            this.processEllipse2.CoreEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.processEllipse2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.processEllipse2.IsShowCoreEllipseBorder = true;
+            this.processEllipse2.Location = new System.Drawing.Point(593, 3);
+            this.processEllipse2.MaxValue = 100;
+            this.processEllipse2.Name = "processEllipse2";
+            this.processEllipse2.ShowType = ToolKit.HYControls.ShowType.Ring;
+            this.processEllipse2.Size = new System.Drawing.Size(115, 112);
+            this.processEllipse2.TabIndex = 1;
+            this.processEllipse2.Value = 80;
+            this.processEllipse2.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.processEllipse2.ValueMargin = 5;
+            this.processEllipse2.ValueType = ToolKit.HYControls.ValueType.Percent;
+            this.processEllipse2.ValueWidth = 30;
+            // 
+            // processEllipse3
+            // 
+            this.processEllipse3.BackEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
+            this.processEllipse3.CoreEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.processEllipse3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.processEllipse3.IsShowCoreEllipseBorder = true;
+            this.processEllipse3.Location = new System.Drawing.Point(357, 3);
+            this.processEllipse3.MaxValue = 100;
+            this.processEllipse3.Name = "processEllipse3";
+            this.processEllipse3.ShowType = ToolKit.HYControls.ShowType.Ring;
+            this.processEllipse3.Size = new System.Drawing.Size(112, 112);
+            this.processEllipse3.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.processEllipse3, "内存使用率\r\n");
+            this.processEllipse3.Value = 50;
+            this.processEllipse3.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.processEllipse3.ValueMargin = 5;
+            this.processEllipse3.ValueType = ToolKit.HYControls.ValueType.Percent;
+            this.processEllipse3.ValueWidth = 30;
+            // 
+            // dataStatisticsControl1
+            // 
+            this.tableLayoutPanel3.SetColumnSpan(this.dataStatisticsControl1, 3);
+            this.dataStatisticsControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataStatisticsControl1.Font = new System.Drawing.Font("宋体", 20F, System.Drawing.FontStyle.Bold);
+            this.dataStatisticsControl1.Location = new System.Drawing.Point(4, 4);
+            this.dataStatisticsControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataStatisticsControl1.Name = "dataStatisticsControl1";
+            this.dataStatisticsControl1.Ng = 0;
+            this.dataStatisticsControl1.Ok = 0;
+            this.dataStatisticsControl1.Size = new System.Drawing.Size(346, 110);
+            this.dataStatisticsControl1.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.dataStatisticsControl1, "统计面板(右击菜单清零)");
+            // 
             // splitter1
             // 
             this.splitter1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -195,6 +266,7 @@ namespace HYProject
             this.button_Camera.TabIndex = 7;
             this.button_Camera.Text = "相    机";
             this.button_Camera.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.button_Camera, "相机操作");
             this.button_Camera.UseVisualStyleBackColor = true;
             this.button_Camera.Click += new System.EventHandler(this.Button_Camera_Click);
             // 
@@ -210,6 +282,7 @@ namespace HYProject
             this.button_UserLogin.TabIndex = 6;
             this.button_UserLogin.Text = "用    户";
             this.button_UserLogin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.button_UserLogin, "切换用户");
             this.button_UserLogin.UseVisualStyleBackColor = true;
             this.button_UserLogin.Click += new System.EventHandler(this.Button_UserLogin_Click);
             // 
@@ -225,6 +298,7 @@ namespace HYProject
             this.button_Setting.TabIndex = 5;
             this.button_Setting.Text = "设    置";
             this.button_Setting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.button_Setting, "系统设置");
             this.button_Setting.UseVisualStyleBackColor = true;
             this.button_Setting.Click += new System.EventHandler(this.Button_Setting_Click);
             // 
@@ -240,6 +314,7 @@ namespace HYProject
             this.button3.TabIndex = 4;
             this.button3.Text = "产 品 库";
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.button3, "产品切换");
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button_Run
@@ -255,6 +330,7 @@ namespace HYProject
             this.button_Run.TabIndex = 3;
             this.button_Run.Text = "运    行";
             this.button_Run.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.button_Run, "开始运行/停止运行(F5)");
             this.button_Run.UseVisualStyleBackColor = true;
             this.button_Run.Click += new System.EventHandler(this.Button_Run_Click);
             // 
@@ -270,6 +346,7 @@ namespace HYProject
             this.button_Exit.TabIndex = 2;
             this.button_Exit.Text = "退出系统";
             this.button_Exit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.button_Exit, "退出系统");
             this.button_Exit.UseVisualStyleBackColor = true;
             this.button_Exit.Click += new System.EventHandler(this.Button_Exit_Click);
             // 
@@ -283,6 +360,7 @@ namespace HYProject
             this.label1.TabIndex = 1;
             this.label1.Text = "视觉软件";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.label1, "视觉检测软件");
             // 
             // pictureBox1
             // 
@@ -294,73 +372,7 @@ namespace HYProject
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // processEllipse1
-            // 
-            this.processEllipse1.BackEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
-            this.processEllipse1.CoreEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.processEllipse1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.processEllipse1.IsShowCoreEllipseBorder = true;
-            this.processEllipse1.Location = new System.Drawing.Point(475, 3);
-            this.processEllipse1.MaxValue = 100;
-            this.processEllipse1.Name = "processEllipse1";
-            this.processEllipse1.ShowType = ToolKit.HYControls.ShowType.Ring;
-            this.processEllipse1.Size = new System.Drawing.Size(112, 112);
-            this.processEllipse1.TabIndex = 0;
-            this.processEllipse1.Value = 20;
-            this.processEllipse1.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.processEllipse1.ValueMargin = 5;
-            this.processEllipse1.ValueType = ToolKit.HYControls.ValueType.Percent;
-            this.processEllipse1.ValueWidth = 30;
-            // 
-            // processEllipse2
-            // 
-            this.processEllipse2.BackEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
-            this.processEllipse2.CoreEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.processEllipse2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.processEllipse2.IsShowCoreEllipseBorder = true;
-            this.processEllipse2.Location = new System.Drawing.Point(593, 3);
-            this.processEllipse2.MaxValue = 100;
-            this.processEllipse2.Name = "processEllipse2";
-            this.processEllipse2.ShowType = ToolKit.HYControls.ShowType.Ring;
-            this.processEllipse2.Size = new System.Drawing.Size(115, 112);
-            this.processEllipse2.TabIndex = 1;
-            this.processEllipse2.Value = 80;
-            this.processEllipse2.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.processEllipse2.ValueMargin = 5;
-            this.processEllipse2.ValueType = ToolKit.HYControls.ValueType.Percent;
-            this.processEllipse2.ValueWidth = 30;
-            // 
-            // processEllipse3
-            // 
-            this.processEllipse3.BackEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
-            this.processEllipse3.CoreEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.processEllipse3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.processEllipse3.IsShowCoreEllipseBorder = true;
-            this.processEllipse3.Location = new System.Drawing.Point(357, 3);
-            this.processEllipse3.MaxValue = 100;
-            this.processEllipse3.Name = "processEllipse3";
-            this.processEllipse3.ShowType = ToolKit.HYControls.ShowType.Ring;
-            this.processEllipse3.Size = new System.Drawing.Size(112, 112);
-            this.processEllipse3.TabIndex = 2;
-            this.processEllipse3.Value = 50;
-            this.processEllipse3.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.processEllipse3.ValueMargin = 5;
-            this.processEllipse3.ValueType = ToolKit.HYControls.ValueType.Percent;
-            this.processEllipse3.ValueWidth = 30;
-            // 
-            // dataStatisticsControl1
-            // 
-            this.tableLayoutPanel3.SetColumnSpan(this.dataStatisticsControl1, 3);
-            this.dataStatisticsControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataStatisticsControl1.Font = new System.Drawing.Font("宋体", 20F, System.Drawing.FontStyle.Bold);
-            this.dataStatisticsControl1.Location = new System.Drawing.Point(4, 4);
-            this.dataStatisticsControl1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataStatisticsControl1.Name = "dataStatisticsControl1";
-            this.dataStatisticsControl1.Ng = 0;
-            this.dataStatisticsControl1.Ok = 0;
-            this.dataStatisticsControl1.Size = new System.Drawing.Size(346, 110);
-            this.dataStatisticsControl1.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.pictureBox1, "深圳市恒越自动化科技有限公司");
             // 
             // MainForm
             // 
@@ -370,12 +382,15 @@ namespace HYProject
             this.Controls.Add(this.tableLayoutPanel1);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MinimumSize = new System.Drawing.Size(1200, 700);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "视觉软件 -- 未登录";
+            this.toolTip1.SetToolTip(this, "视觉检测软件");
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyUp);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel_Buttom.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -407,9 +422,10 @@ namespace HYProject
         private ToolKit.HYControls.ProcessEllipse processEllipse1;
         private ToolKit.HYControls.ProcessEllipse processEllipse2;
         private ToolKit.HYControls.ProcessEllipse processEllipse3;
-        private ToolKit.HYControls.DataStatisticsControl dataStatisticsControl1;
         public System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button_Camera;
+        public ToolKit.HYControls.DataStatisticsControl dataStatisticsControl1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 
