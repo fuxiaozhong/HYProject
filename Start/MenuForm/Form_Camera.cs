@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using HYProject.Model;
-
-using ToolKit.CamreaSDK;
 
 namespace HYProject.MenuForm
 {
@@ -51,7 +41,6 @@ namespace HYProject.MenuForm
             num_gain.Value = (decimal)Cameras.Instance[this.comboBox_CamList.Text].Get_Gain();
             comboBox_TriggerMode.Text = Cameras.Instance[this.comboBox_CamList.Text].Get_TriggerMode();
             comboBox_TriggerSource.Text = Cameras.Instance[this.comboBox_CamList.Text].Get_TriggerSource();
-
         }
 
         private void Refresh()

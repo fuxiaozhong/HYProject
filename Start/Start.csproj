@@ -73,6 +73,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helper\AutoCheckImage.cs" />
     <Compile Include="Helper\Log.cs" />
     <Compile Include="Helper\PowerBoot.cs" />
     <Compile Include="MainForm.cs">

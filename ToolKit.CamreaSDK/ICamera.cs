@@ -188,6 +188,7 @@ namespace ToolKit.CamreaSDK
                 }
             }
         }
+
         /// <summary>
         /// 清除事件绑定的函数
         /// </summary>

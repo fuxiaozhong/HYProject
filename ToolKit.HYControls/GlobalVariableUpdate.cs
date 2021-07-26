@@ -12,8 +12,6 @@ namespace ToolKit.HYControls
             textBox_Name.Text = name;
             textBox_mark.Text = mark;
 
-
-
             if (name == "")
             {
                 Text = "添加";
@@ -39,7 +37,6 @@ namespace ToolKit.HYControls
                 {
                     numericUpDown1.Value = (decimal)double.Parse(value);
                 }
-
             }
         }
 
@@ -113,8 +110,6 @@ namespace ToolKit.HYControls
                     return;
                 }
             }
-
-
 
             name = textBox_Name.Text.Trim(); mark = textBox_mark.Text.Trim();
             try

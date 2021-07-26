@@ -63,7 +63,6 @@ namespace HYProject
                     {
                         Application.Run(MainForm.Instance);
                     }
-
                 }
                 else
                 {

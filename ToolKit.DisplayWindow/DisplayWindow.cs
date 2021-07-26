@@ -6,8 +6,6 @@ using System.Windows.Forms;
 
 using HalconDotNet;
 
-using RevDeBug.Common.Statements;
-
 namespace ToolKit.DisplayWindow
 {
     public partial class DisplayWindow : UserControl
@@ -828,12 +826,10 @@ namespace ToolKit.DisplayWindow
         private Size OldSize;
         private AnchorStyles anchor;
 
-
         private DockStyle thisStyle;
 
         private void 全屏显示ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             if (form == null || form.IsDisposed)
             {
                 form = new Form()
@@ -933,7 +929,6 @@ namespace ToolKit.DisplayWindow
                     this.Location = OldLocation;
                     this.Size = OldSize;
                     this.Anchor = anchor;
-
 
                     form.Controls.Clear();
                     if (ho_image == null)

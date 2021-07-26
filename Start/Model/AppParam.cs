@@ -1,16 +1,12 @@
 ﻿using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Xml.Serialization;
-
-using HYProject.Model;
 
 namespace HYProject
 {
     [Serializable]
     public class AppParam
     {
-
         private static AppParam instance;
 
         //程序运行时创建一个静态只读的进程辅助对象
@@ -47,8 +43,6 @@ namespace HYProject
             }
         }
 
-
-
         private AppParam()
         {
         }
@@ -63,6 +57,7 @@ namespace HYProject
         /// 图像保存路径
         /// </summary>
         internal string Save_Image_Path = System.Windows.Forms.Application.StartupPath + "\\Images";
+
         /// <summary>
         /// 图像保存天数
         /// </summary>
@@ -99,7 +94,6 @@ namespace HYProject
         [NonSerialized]
         internal bool Runing = false;
 
-
         /// <summary>
         /// 保存的文件名
         /// </summary>
@@ -111,7 +105,6 @@ namespace HYProject
         public void Save_To_File()
         {
             Serialize_To_File(SerializePath, AppParam.Instance);
-
         }
 
         /// <summary>

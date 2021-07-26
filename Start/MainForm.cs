@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 
 using HalconDotNet;
 
+using HYProject.Helper;
 using HYProject.MenuForm;
 using HYProject.Model;
 using HYProject.ToolForm;
 
 using ToolKit.HYControls.HYForm;
-
-using static System.Net.Mime.MediaTypeNames;
 
 namespace HYProject
 {
@@ -57,8 +57,6 @@ namespace HYProject
             HOperatorSet.SetSystem("clip_region", "false");
         }
 
-
-
         private void MainForm_Load(object sender, EventArgs e)
         {
             if (AppParam.Instance.RunStateMax)
@@ -69,6 +67,10 @@ namespace HYProject
             DisplayForm.Instance.DisplayWindowCount = 4;
             panel_Log.Controls.Add(Form_Log.Instance);
             Form_Log.Instance.Show();
+            Thread AutoDeleteImage = new Thread(AutoCheckImage.DeleteFile);
+            AutoDeleteImage.IsBackground = true;
+            AutoDeleteImage.Start();
+
         }
 
         private void Button_Exit_Click(object sender, EventArgs e)

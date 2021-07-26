@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,6 +21,14 @@ namespace HYProject
             bool flag = true;
             Task.Factory.StartNew(() =>
             {
+                if (!Directory.Exists(AppParam.Instance.Save_Data_Path))
+                    Directory.CreateDirectory(AppParam.Instance.Save_Data_Path);
+
+                if (!Directory.Exists(AppParam.Instance.Save_Image_Path))
+                    Directory.CreateDirectory(AppParam.Instance.Save_Image_Path);
+
+
+
                 Log.RunLog("开始加载配置文件");
                 Cameras.Instance.InitCamera("Cam1", CameraType.海康威视);
                 //Cameras.Instance["Cam1"].Start_Real_Mode();
