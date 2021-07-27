@@ -31,7 +31,7 @@ namespace HYProject
 
 
                 Log.RunLog("开始加载配置文件");
-                Cameras.Instance.InitCamera("Cam1", CameraType.海康威视);
+                Cameras.Instance.InitializeCamera();
 
                 Log.RunLog("数据配置加载完成");
                 //等待进度条加载完成

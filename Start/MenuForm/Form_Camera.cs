@@ -15,6 +15,7 @@ namespace HYProject.MenuForm
 
         private void Form_Camera_Load(object sender, EventArgs e)
         {
+            ///初始化相机  列举相机列表
             comboBox_CamList.Items.Clear();
             foreach (var item in Cameras.Instance.GetCameras.Keys)
             {
@@ -26,20 +27,32 @@ namespace HYProject.MenuForm
             {
                 comboBox_CamList.SelectedIndex = 0;
             }
+            else
+            {
+                num_gain.Enabled = false;
+                num_exposuretime.Enabled = false;
+                comboBox_TriggerMode.Enabled = false;
+                comboBox_TriggerSource.Enabled = false;
+                button2.Enabled = false;
+                button3.Enabled = false;
+                button_Save.Enabled = false;
+            }
             comboBox_TriggerMode.SelectedIndex = 0;
             comboBox_TriggerSource.SelectedIndex = 0;
         }
 
         private void Form_Camera_ImageProcessEvent(string cameraName, HalconDotNet.HObject ho_image)
         {
-            QueueSaveImage.Instance.QueueEnqueue2(ho_image);
+            //显示图像
+            //QueueSaveImage.Instance.QueueEnqueue2(ho_image);
             displayWindow1.Disp_Image(ho_image);
         }
 
         private void ComboBox_CamList_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //刷新数据
             Refresh();
-            num__exposuretime.Value = (decimal)Cameras.Instance[this.comboBox_CamList.Text].Get_Exposure_Time();
+            num_exposuretime.Value = (decimal)Cameras.Instance[this.comboBox_CamList.Text].Get_Exposure_Time();
             num_gain.Value = (decimal)Cameras.Instance[this.comboBox_CamList.Text].Get_Gain();
             comboBox_TriggerMode.Text = Cameras.Instance[this.comboBox_CamList.Text].Get_TriggerMode();
             comboBox_TriggerSource.Text = Cameras.Instance[this.comboBox_CamList.Text].Get_TriggerSource();
@@ -55,7 +68,8 @@ namespace HYProject.MenuForm
 
         private void Button_Save_Click(object sender, EventArgs e)
         {
-            Cameras.Instance[comboBox_CamList.Text].Set_Exposure_Time((double)this.num__exposuretime.Value);
+            //设置相机参数
+            Cameras.Instance[comboBox_CamList.Text].Set_Exposure_Time((double)this.num_exposuretime.Value);
             Cameras.Instance[comboBox_CamList.Text].Set_Gain((double)this.num_gain.Value);
             Cameras.Instance[comboBox_CamList.Text].Set_TriggerMode(this.comboBox_TriggerMode.Text);
             Cameras.Instance[comboBox_CamList.Text].Set_TriggerSource(this.comboBox_TriggerSource.Text);
@@ -64,6 +78,7 @@ namespace HYProject.MenuForm
 
         private void Button2_Click(object sender, EventArgs e)
         {
+            //软触发
             Cameras.Instance[comboBox_CamList.Text].Soft_Trigger();
         }
 
@@ -84,10 +99,13 @@ namespace HYProject.MenuForm
 
         private void Form_Camera_FormClosing(object sender, FormClosingEventArgs e)
         {
+            this.Hide();
             foreach (var item in Cameras.Instance.GetCameras.Keys)
             {
+                Cameras.Instance[item].End_Real_Mode();
+                System.Threading.Thread.Sleep(300);
                 Cameras.Instance[item].ClearImageProcessEvents();
-                Cameras.Instance[item].ImageProcessEvent += Cameras.Instance.Dahua_ImageProcessEvent;
+                Cameras.Instance[item].ImageProcessEvent += Cameras.Instance.Camera_ImageProcessEvent;
             }
         }
     }

@@ -265,6 +265,12 @@ namespace ToolKit.HYControls.HYForm
                                           "详情：" + listView1.SelectedItems[0].SubItems[2].Text, "日志详情");
             }
         }
+
+
+        private void Tsb_clear_Click(object sender, EventArgs e)
+        {
+            ClearLog();
+        }
     }
 
     public struct OutputItem

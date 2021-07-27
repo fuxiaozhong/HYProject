@@ -119,17 +119,40 @@ namespace HYProject.Model
         {
             foreach (ICamera item in cameras.Values)
             {
-                Log.RunLog("相机: " + item._CameraNmae + "关闭成功");
+                Log.RunLog("相机:" + item._CameraNmae + "关闭成功");
                 item.Close();
             }
+
+            cameras.Clear();
         }
+
+        /// <summary>
+        /// 集中初始化相机
+        /// </summary>
+        public void InitializeCamera()
+        {
+            InitCamera("Cam1", CameraType.海康威视);
+            InitCamera("Cam2", CameraType.大华相机);
+
+
+        }
+        /// <summary>
+        /// 重新初始化相机
+        /// </summary>
+        public void ReInitializeCamera()
+        {
+            CloseCamera();
+            InitializeCamera();
+        }
+
+
 
         /// <summary>
         /// 初始化打开相机
         /// </summary>
         /// <param name="cameraName">相机名称</param>
         /// <param name="type">相机类型</param>
-        public void InitCamera(string cameraName, CameraType type)
+        private void InitCamera(string cameraName, CameraType type)
         {
             switch (type)
             {
@@ -140,7 +163,7 @@ namespace HYProject.Model
                         Log.RunLog("相机:" + cameraName + "打开成功");
                         AddCamera(cameraName, dahua);
                         dahua.IsSaveLog2Disk = true;
-                        dahua.ImageProcessEvent += Dahua_ImageProcessEvent;
+                        dahua.ImageProcessEvent += Camera_ImageProcessEvent;
                     }
                     else
                     {
@@ -154,7 +177,7 @@ namespace HYProject.Model
                     {
                         Log.RunLog("相机:" + cameraName + "打开成功");
                         AddCamera(cameraName, haikang); haikang.IsSaveLog2Disk = true;
-                        haikang.ImageProcessEvent += Dahua_ImageProcessEvent;
+                        haikang.ImageProcessEvent += Camera_ImageProcessEvent;
                     }
                     else
                     {
@@ -168,7 +191,7 @@ namespace HYProject.Model
                     {
                         Log.RunLog("相机:" + cameraName + "打开成功");
                         AddCamera(cameraName, basler); basler.IsSaveLog2Disk = true;
-                        basler.ImageProcessEvent += Dahua_ImageProcessEvent;
+                        basler.ImageProcessEvent += Camera_ImageProcessEvent;
                     }
                     else
                     {
@@ -183,7 +206,7 @@ namespace HYProject.Model
         /// </summary>
         /// <param name="cameraName">相机名称</param>
         /// <param name="ho_image">图片</param>
-        public void Dahua_ImageProcessEvent(string cameraName, HalconDotNet.HObject ho_image)
+        public void Camera_ImageProcessEvent(string cameraName, HalconDotNet.HObject ho_image)
         {
             DisplayForm.Instance[0].Disp_Image(ho_image);
             DisplayForm.Instance[1].Disp_Image(ho_image);

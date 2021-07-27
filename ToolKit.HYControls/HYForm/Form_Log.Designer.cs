@@ -38,6 +38,7 @@ namespace ToolKit.HYControls.HYForm
             this.tsb_tip = new System.Windows.Forms.ToolStripButton();
             this.tsb_warn = new System.Windows.Forms.ToolStripButton();
             this.tsb_error = new System.Windows.Forms.ToolStripButton();
+            this.tsb_clear = new System.Windows.Forms.ToolStripButton();
             this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,13 +89,13 @@ namespace ToolKit.HYControls.HYForm
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsb_tip,
             this.tsb_warn,
+            this.tsb_clear,
             this.tsb_error});
-            this.toolStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.toolStrip2.Location = new System.Drawing.Point(0, 0);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Padding = new System.Windows.Forms.Padding(0);
             this.toolStrip2.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip2.Size = new System.Drawing.Size(648, 24);
+            this.toolStrip2.Size = new System.Drawing.Size(648, 25);
             this.toolStrip2.TabIndex = 5;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -104,7 +105,7 @@ namespace ToolKit.HYControls.HYForm
             this.tsb_tip.Image = ((System.Drawing.Image)(resources.GetObject("tsb_tip.Image")));
             this.tsb_tip.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsb_tip.Name = "tsb_tip";
-            this.tsb_tip.Size = new System.Drawing.Size(91, 21);
+            this.tsb_tip.Size = new System.Drawing.Size(91, 22);
             this.tsb_tip.Text = "运行日志(0)";
             this.tsb_tip.Click += new System.EventHandler(this.Tsb_tip_Click);
             // 
@@ -114,7 +115,7 @@ namespace ToolKit.HYControls.HYForm
             this.tsb_warn.Image = ((System.Drawing.Image)(resources.GetObject("tsb_warn.Image")));
             this.tsb_warn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsb_warn.Name = "tsb_warn";
-            this.tsb_warn.Size = new System.Drawing.Size(67, 21);
+            this.tsb_warn.Size = new System.Drawing.Size(67, 22);
             this.tsb_warn.Text = "警告(0)";
             this.tsb_warn.Click += new System.EventHandler(this.Tsb_warn_Click);
             // 
@@ -124,9 +125,20 @@ namespace ToolKit.HYControls.HYForm
             this.tsb_error.Image = ((System.Drawing.Image)(resources.GetObject("tsb_error.Image")));
             this.tsb_error.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsb_error.Name = "tsb_error";
-            this.tsb_error.Size = new System.Drawing.Size(67, 21);
+            this.tsb_error.Size = new System.Drawing.Size(67, 22);
             this.tsb_error.Text = "错误(0)";
             this.tsb_error.Click += new System.EventHandler(this.Tsb_error_Click);
+            // 
+            // tsb_clear
+            // 
+            this.tsb_clear.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsb_clear.CheckOnClick = true;
+            this.tsb_clear.Image = ((System.Drawing.Image)(resources.GetObject("tsb_clear.Image")));
+            this.tsb_clear.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsb_clear.Name = "tsb_clear";
+            this.tsb_clear.Size = new System.Drawing.Size(52, 22);
+            this.tsb_clear.Text = "清除";
+            this.tsb_clear.Click += new System.EventHandler(this.Tsb_clear_Click);
             // 
             // Form_Log
             // 
@@ -155,5 +167,6 @@ namespace ToolKit.HYControls.HYForm
         private System.Windows.Forms.ToolStripButton tsb_tip;
         private System.Windows.Forms.ToolStripButton tsb_warn;
         private System.Windows.Forms.ToolStripButton tsb_error;
+        private System.Windows.Forms.ToolStripButton tsb_clear;
     }
 }

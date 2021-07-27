@@ -47,6 +47,7 @@ namespace HYProject.ToolForm
         private DisplayForm()
         {
             InitializeComponent();
+            CheckForIllegalCrossThreadCalls = false;
         }
 
         public int DisplayWindowCount

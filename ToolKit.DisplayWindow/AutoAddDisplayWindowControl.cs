@@ -148,6 +148,7 @@ namespace ToolKit.DisplayWindow
                     DisplayWindow hWinControl = new DisplayWindow() { Margin = new Padding(0, 0, 0, 0), Dock = DockStyle.Fill, Name = "1" };
                     panel.Controls.Add(hWinControl);
                     flowLayoutPanel1.Controls.Add(panel);
+
                     HWindows.Add(i, hWinControl);
                 }
             }

@@ -483,7 +483,7 @@ namespace ToolKit.DisplayWindow
                             str_value = "";
                         }
                     }
-                    label1.Text = value;
+                    this.Text = value;
                 }
                 catch
                 {

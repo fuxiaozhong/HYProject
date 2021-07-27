@@ -33,7 +33,7 @@ namespace HYProject.MenuForm
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox_CamList = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.num__exposuretime = new System.Windows.Forms.NumericUpDown();
+            this.num_exposuretime = new System.Windows.Forms.NumericUpDown();
             this.num_gain = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,7 +53,7 @@ namespace HYProject.MenuForm
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.displayWindow1 = new ToolKit.DisplayWindow.DisplayWindow();
-            ((System.ComponentModel.ISupportInitialize)(this.num__exposuretime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_exposuretime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_gain)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -91,18 +91,18 @@ namespace HYProject.MenuForm
             this.label2.TabIndex = 3;
             this.label2.Text = "曝光时间:";
             // 
-            // num__exposuretime
+            // num_exposuretime
             // 
-            this.num__exposuretime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.num__exposuretime.Location = new System.Drawing.Point(840, 227);
-            this.num__exposuretime.Maximum = new decimal(new int[] {
+            this.num_exposuretime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.num_exposuretime.Location = new System.Drawing.Point(840, 227);
+            this.num_exposuretime.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
-            this.num__exposuretime.Name = "num__exposuretime";
-            this.num__exposuretime.Size = new System.Drawing.Size(141, 26);
-            this.num__exposuretime.TabIndex = 4;
+            this.num_exposuretime.Name = "num_exposuretime";
+            this.num_exposuretime.Size = new System.Drawing.Size(141, 26);
+            this.num_exposuretime.TabIndex = 4;
             // 
             // num_gain
             // 
@@ -351,7 +351,7 @@ namespace HYProject.MenuForm
             this.Controls.Add(this.label4);
             this.Controls.Add(this.num_gain);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.num__exposuretime);
+            this.Controls.Add(this.num_exposuretime);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox_CamList);
             this.Controls.Add(this.label1);
@@ -365,7 +365,7 @@ namespace HYProject.MenuForm
             this.Text = "相机";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Camera_FormClosing);
             this.Load += new System.EventHandler(this.Form_Camera_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.num__exposuretime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_exposuretime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_gain)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -380,7 +380,7 @@ namespace HYProject.MenuForm
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox_CamList;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown num__exposuretime;
+        private System.Windows.Forms.NumericUpDown num_exposuretime;
         private System.Windows.Forms.NumericUpDown num_gain;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

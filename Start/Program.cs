@@ -39,8 +39,10 @@ namespace HYProject
             AppParam.Instance.Power = "未登录";
             //初始化Log4j日志
             Log.InitLog4Net(Application.StartupPath + "\\Log4jConfig.xml");
+            //加快主窗体弹出
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            MainForm.Instance.ShowIcon = true;
             Log.RunLog(DateTime.Now.ToString() + " - 程序启动"); ;
             string proc = Process.GetCurrentProcess().ProcessName;
             Process[] processes = Process.GetProcessesByName(proc);

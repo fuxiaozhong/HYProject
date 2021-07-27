@@ -60,6 +60,7 @@ namespace HYProject
         {
             InitializeComponent();
             HOperatorSet.SetSystem("clip_region", "false");
+            CheckForIllegalCrossThreadCalls = false;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -70,7 +71,8 @@ namespace HYProject
             else
                 this.WindowState = FormWindowState.Normal;
             panel_Main.Controls.Add(DisplayForm.Instance);
-            DisplayForm.Instance.DisplayWindowCount = 4;
+
+            DisplayForm.Instance.DisplayWindowCount = Cameras.Instance.GetCameras.Count;
             panel_Log.Controls.Add(Form_Log.Instance);
             Form_Log.Instance.Show();
             Thread AutoDeleteImage = new Thread(AutoCheckImage.DeleteFile);
@@ -110,9 +112,10 @@ namespace HYProject
             if (MessageBox.Show("确认退出系统?", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
 
-                Log.RunLog("退出程序...");
+
                 Cameras.Instance.CloseCamera();
                 AppParam.Instance.Save_To_File();
+                Log.RunLog("退出程序...");
                 System.Diagnostics.Process.GetCurrentProcess().Kill();
             }
             else
@@ -158,6 +161,14 @@ namespace HYProject
 
         private void Button_Camera_Click(object sender, EventArgs e)
         {
+            if (Cameras.Instance.GetCameras.Count == 0)
+            {
+                if (MessageBox.Show("无相机连接!点击确认重新初始化相机.", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Error) == DialogResult.OK)
+                {
+                    Cameras.Instance.ReInitializeCamera();
+                }
+                return;
+            }
             Form_Camera form_Camera = new Form_Camera();
             form_Camera.ShowDialog();
         }
@@ -184,6 +195,13 @@ namespace HYProject
             {
                 Button_UserLogin_Click(sender, e);
             }
+        }
+
+        private void 重新加载相机ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //DisplayForm.Instance.DisplayWindowCount = 0;
+            Cameras.Instance.ReInitializeCamera();
+            DisplayForm.Instance.DisplayWindowCount = Cameras.Instance.GetCameras.Count;
         }
     }
 }
