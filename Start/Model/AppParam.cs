@@ -48,7 +48,7 @@ namespace HYProject
         }
 
         /// <summary>
-        /// 当前登陆用户
+        /// 当前登陆用户/不序列化保存
         /// </summary>
         [NonSerialized]
         internal string Power = "未登录";
@@ -89,7 +89,7 @@ namespace HYProject
         internal bool StartBeforeLogin = false;
 
         /// <summary>
-        /// 运行状态
+        /// 运行状态/不序列化保存
         /// </summary>
         [NonSerialized]
         internal bool Runing = false;

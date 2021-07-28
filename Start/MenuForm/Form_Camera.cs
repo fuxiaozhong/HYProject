@@ -97,6 +97,11 @@ namespace HYProject.MenuForm
             Refresh();
         }
 
+        /// <summary>
+        /// 退出小计操作 绑定运行事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form_Camera_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Hide();

@@ -50,6 +50,10 @@ namespace HYProject.ToolForm
             CheckForIllegalCrossThreadCalls = false;
         }
 
+
+        /// <summary>
+        /// 窗口个数
+        /// </summary>
         public int DisplayWindowCount
         {
             get
@@ -62,6 +66,11 @@ namespace HYProject.ToolForm
             }
         }
 
+        /// <summary>
+        /// 获取窗口个数
+        /// </summary>
+        /// <param name="key">窗口下标 0 开始</param>
+        /// <returns></returns>
         public DisplayWindow this[int key]
         {
             get

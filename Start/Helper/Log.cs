@@ -59,7 +59,11 @@ namespace HYProject
                 Form_Log.Instance.OutputMsg(strErrLog, System.Drawing.Color.Red);
             }
         }
-
+        /// <summary>
+        /// 功能描述:写入运行日志
+        /// </summary>
+        /// <param name="strErrLog">strErrLog</param>
+        /// <param name="ex">ex</param>
         public static void RunLog(string runmessage)
         {
             if (m_lstLog["run"].IsErrorEnabled)

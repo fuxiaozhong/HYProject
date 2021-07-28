@@ -93,10 +93,19 @@ namespace HYProject.Helper
             }
         }
 
+        /// <summary>
+        /// 添加要保存的图像加名称
+        /// </summary>
+        /// <param name="image"></param>
         public void QueueEnqueue(ImageParam image)
         {
             queues.Enqueue(image);
         }
+
+        /// <summary>
+        /// 添加要保存的图像,当前时间格式化作为文件名  存在默认文件夹下
+        /// </summary>
+        /// <param name="ho_image"></param>
         public void QueueEnqueue2(HObject ho_image)
         {
             ImageParam image = new ImageParam()

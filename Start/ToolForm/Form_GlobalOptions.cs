@@ -30,6 +30,11 @@ namespace HYProject.ToolForm
             }
         }
 
+        /// <summary>
+        /// 获取全局变量
+        /// </summary>
+        /// <param name="key">全局变量名称</param>
+        /// <returns></returns>
         public object this[string key]
         {
             get

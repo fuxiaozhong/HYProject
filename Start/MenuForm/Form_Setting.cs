@@ -18,6 +18,10 @@ namespace HYProject.MenuForm
             textBox1.Text = SelectPath();
         }
 
+        /// <summary>
+        /// 选择文件夹
+        /// </summary>
+        /// <returns></returns>
         public string SelectPath()
         {
             string path = string.Empty;
@@ -39,6 +43,11 @@ namespace HYProject.MenuForm
             DialogResult = DialogResult.Cancel;
         }
 
+        /// <summary>
+        /// 保存 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button3_Click(object sender, EventArgs e)
         {
             AppParam.Instance.Save_Image_Path = textBox1.Text;
@@ -53,6 +62,11 @@ namespace HYProject.MenuForm
             AppParam.Instance.Save_To_File();
         }
 
+        /// <summary>
+        /// 加载
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form_Setting_Load(object sender, EventArgs e)
         {
             textBox1.Text = AppParam.Instance.Save_Image_Path;
@@ -64,6 +78,11 @@ namespace HYProject.MenuForm
             checkBox4.Checked = AppParam.Instance.StartBeforeLogin;
         }
 
+        /// <summary>
+        /// 操作全局变量
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button5_Click(object sender, EventArgs e)
         {
             if (AppParam.Instance.Power == "管理员")

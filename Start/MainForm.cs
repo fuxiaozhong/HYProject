@@ -71,15 +71,17 @@ namespace HYProject
             else
                 this.WindowState = FormWindowState.Normal;
             panel_Main.Controls.Add(DisplayForm.Instance);
-
+            //初始化显示窗口个数
             DisplayForm.Instance.DisplayWindowCount = Cameras.Instance.GetCameras.Count;
+            //添加日志窗口
             panel_Log.Controls.Add(Form_Log.Instance);
             Form_Log.Instance.Show();
+            //开启图像储存到期检测
             Thread AutoDeleteImage = new Thread(AutoCheckImage.DeleteFile);
             AutoDeleteImage.IsBackground = true;
             AutoDeleteImage.Name = "DeleteFile";
             AutoDeleteImage.Start();
-
+            //开启系统信息刷新
             Thread _Refresh_Work = new Thread(Refresh_Work);
             _Refresh_Work.IsBackground = true;
             _Refresh_Work.Name = "Refresh_Work";
@@ -175,22 +177,27 @@ namespace HYProject
 
         private void MainForm_KeyUp(object sender, KeyEventArgs e)
         {
+            //F5运行
             if (e.KeyCode == Keys.F5)
             {
                 Button_Run_Click(button_Run, e);
             }
+            //Alt + C 打开相机操作窗口
             else if (ModifierKeys == Keys.Alt && e.KeyCode == Keys.C)
             {
                 Button_Camera_Click(button_Camera, e);
             }
+            //Alt + S 打开设置窗口
             else if (ModifierKeys == Keys.Alt && e.KeyCode == Keys.S)
             {
                 Button_Setting_Click(button_Setting, e);
             }
+            //Ctrl + E 退出
             else if (ModifierKeys == Keys.Control && e.KeyCode == Keys.E)
             {
                 Button_Exit_Click(sender, e);
             }
+            //Ctrl + Enter 登陆
             else if (ModifierKeys == Keys.Control && e.KeyCode == Keys.Enter)
             {
                 Button_UserLogin_Click(sender, e);
@@ -200,7 +207,9 @@ namespace HYProject
         private void 重新加载相机ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //DisplayForm.Instance.DisplayWindowCount = 0;
+            //重新初始化相机
             Cameras.Instance.ReInitializeCamera();
+            //重新初始化显示窗口个数
             DisplayForm.Instance.DisplayWindowCount = Cameras.Instance.GetCameras.Count;
         }
     }

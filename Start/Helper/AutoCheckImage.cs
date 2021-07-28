@@ -11,6 +11,9 @@ namespace HYProject.Helper
     public class AutoCheckImage
     {
 
+        /// <summary>
+        /// 自动判断图像储存是否到期
+        /// </summary>
         public static void DeleteFile()
         {
             while (true)

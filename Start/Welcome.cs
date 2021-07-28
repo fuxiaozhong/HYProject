@@ -31,6 +31,7 @@ namespace HYProject
 
 
                 Log.RunLog("开始加载配置文件");
+                ///初始化相机
                 Cameras.Instance.InitializeCamera();
 
                 Log.RunLog("数据配置加载完成");
@@ -38,7 +39,7 @@ namespace HYProject
                 while (flag) { }
                 DialogResult = DialogResult.OK;
             });
-
+            ///进度条
             Task.Factory.StartNew(() =>
             {
                 while (label3.Width <= this.Width)
