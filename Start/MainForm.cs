@@ -88,6 +88,8 @@ namespace HYProject
             {
                 try
                 {
+                    tsl_nowtime.Text = DateTime.Now.ToString("yyyy-MM-dd  HH:mm:ss");
+                    tsl_nowuser.Text = "当前用户: " + AppParam.Instance.Power;
                     SystemInfo systemInfo = new SystemInfo();
                     processEllipse3.Value = (int)Math.Ceiling(((double)((systemInfo.PhysicalMemory - systemInfo.MemoryAvailable)) / (double)(systemInfo.PhysicalMemory) * 100));
                 }

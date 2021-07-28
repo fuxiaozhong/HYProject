@@ -41,6 +41,8 @@ namespace HYProject
             this.panel_Main = new System.Windows.Forms.Panel();
             this.panel_Title = new System.Windows.Forms.Panel();
             this.button_Camera = new System.Windows.Forms.Button();
+            this.ctms_camera = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.重新加载相机ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button_UserLogin = new System.Windows.Forms.Button();
             this.button_Setting = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -49,21 +51,23 @@ namespace HYProject
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
-            this.ctms_camera = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.重新加载相机ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsl_nowtime = new System.Windows.Forms.ToolStripLabel();
             this.processEllipse2 = new ToolKit.HYControls.ProcessEllipse();
             this.processEllipse1 = new ToolKit.HYControls.ProcessEllipse();
             this.dataStatisticsControl1 = new ToolKit.HYControls.DataStatisticsControl();
             this.processEllipse3 = new ToolKit.HYControls.ProcessEllipse();
+            this.tsl_nowuser = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel_Buttom.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel_Data.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel_Title.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.ctms_camera.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -74,13 +78,15 @@ namespace HYProject
             this.tableLayoutPanel1.Controls.Add(this.panel_Buttom, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.panel_Main, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel_Title, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.toolStrip1, 0, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1424, 861);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
@@ -89,10 +95,10 @@ namespace HYProject
             this.tableLayoutPanel1.SetColumnSpan(this.panel_Buttom, 2);
             this.panel_Buttom.Controls.Add(this.tableLayoutPanel2);
             this.panel_Buttom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_Buttom.Location = new System.Drawing.Point(0, 743);
+            this.panel_Buttom.Location = new System.Drawing.Point(0, 721);
             this.panel_Buttom.Margin = new System.Windows.Forms.Padding(0);
             this.panel_Buttom.Name = "panel_Buttom";
-            this.panel_Buttom.Size = new System.Drawing.Size(1424, 118);
+            this.panel_Buttom.Size = new System.Drawing.Size(1424, 120);
             this.panel_Buttom.TabIndex = 2;
             // 
             // tableLayoutPanel2
@@ -107,7 +113,7 @@ namespace HYProject
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1424, 118);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1424, 120);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // panel_Data
@@ -118,7 +124,7 @@ namespace HYProject
             this.panel_Data.Location = new System.Drawing.Point(712, 0);
             this.panel_Data.Margin = new System.Windows.Forms.Padding(0);
             this.panel_Data.Name = "panel_Data";
-            this.panel_Data.Size = new System.Drawing.Size(712, 118);
+            this.panel_Data.Size = new System.Drawing.Size(712, 120);
             this.panel_Data.TabIndex = 1;
             // 
             // tableLayoutPanel3
@@ -139,7 +145,7 @@ namespace HYProject
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(711, 118);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(711, 120);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // splitter1
@@ -148,7 +154,7 @@ namespace HYProject
             this.splitter1.Enabled = false;
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(1, 118);
+            this.splitter1.Size = new System.Drawing.Size(1, 120);
             this.splitter1.TabIndex = 0;
             this.splitter1.TabStop = false;
             // 
@@ -158,7 +164,7 @@ namespace HYProject
             this.panel_Log.Location = new System.Drawing.Point(0, 0);
             this.panel_Log.Margin = new System.Windows.Forms.Padding(0);
             this.panel_Log.Name = "panel_Log";
-            this.panel_Log.Size = new System.Drawing.Size(712, 118);
+            this.panel_Log.Size = new System.Drawing.Size(712, 120);
             this.panel_Log.TabIndex = 0;
             // 
             // panel_Main
@@ -168,7 +174,7 @@ namespace HYProject
             this.panel_Main.Location = new System.Drawing.Point(0, 75);
             this.panel_Main.Margin = new System.Windows.Forms.Padding(0);
             this.panel_Main.Name = "panel_Main";
-            this.panel_Main.Size = new System.Drawing.Size(1424, 668);
+            this.panel_Main.Size = new System.Drawing.Size(1424, 646);
             this.panel_Main.TabIndex = 1;
             // 
             // panel_Title
@@ -205,6 +211,20 @@ namespace HYProject
             this.toolTip1.SetToolTip(this.button_Camera, "相机操作");
             this.button_Camera.UseVisualStyleBackColor = true;
             this.button_Camera.Click += new System.EventHandler(this.Button_Camera_Click);
+            // 
+            // ctms_camera
+            // 
+            this.ctms_camera.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.重新加载相机ToolStripMenuItem});
+            this.ctms_camera.Name = "contextMenuStrip1";
+            this.ctms_camera.Size = new System.Drawing.Size(149, 26);
+            // 
+            // 重新加载相机ToolStripMenuItem
+            // 
+            this.重新加载相机ToolStripMenuItem.Name = "重新加载相机ToolStripMenuItem";
+            this.重新加载相机ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.重新加载相机ToolStripMenuItem.Text = "重新加载相机";
+            this.重新加载相机ToolStripMenuItem.Click += new System.EventHandler(this.重新加载相机ToolStripMenuItem_Click);
             // 
             // button_UserLogin
             // 
@@ -310,19 +330,26 @@ namespace HYProject
             this.pictureBox1.TabStop = false;
             this.toolTip1.SetToolTip(this.pictureBox1, "深圳市恒越自动化科技有限公司");
             // 
-            // ctms_camera
+            // toolStrip1
             // 
-            this.ctms_camera.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.重新加载相机ToolStripMenuItem});
-            this.ctms_camera.Name = "contextMenuStrip1";
-            this.ctms_camera.Size = new System.Drawing.Size(181, 48);
+            this.tableLayoutPanel1.SetColumnSpan(this.toolStrip1, 2);
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsl_nowtime,
+            this.tsl_nowuser,
+            this.toolStripSeparator1});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 841);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1424, 20);
+            this.toolStrip1.TabIndex = 3;
+            this.toolStrip1.Text = "toolStrip1";
             // 
-            // 重新加载相机ToolStripMenuItem
+            // tsl_nowtime
             // 
-            this.重新加载相机ToolStripMenuItem.Name = "重新加载相机ToolStripMenuItem";
-            this.重新加载相机ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.重新加载相机ToolStripMenuItem.Text = "重新加载相机";
-            this.重新加载相机ToolStripMenuItem.Click += new System.EventHandler(this.重新加载相机ToolStripMenuItem_Click);
+            this.tsl_nowtime.Name = "tsl_nowtime";
+            this.tsl_nowtime.Size = new System.Drawing.Size(130, 18);
+            this.tsl_nowtime.Text = "2021-07-28  08:50:00";
             // 
             // processEllipse2
             // 
@@ -334,7 +361,7 @@ namespace HYProject
             this.processEllipse2.MaxValue = 100;
             this.processEllipse2.Name = "processEllipse2";
             this.processEllipse2.ShowType = ToolKit.HYControls.ShowType.Ring;
-            this.processEllipse2.Size = new System.Drawing.Size(112, 112);
+            this.processEllipse2.Size = new System.Drawing.Size(112, 114);
             this.processEllipse2.TabIndex = 1;
             this.processEllipse2.Value = 80;
             this.processEllipse2.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
@@ -352,7 +379,7 @@ namespace HYProject
             this.processEllipse1.MaxValue = 100;
             this.processEllipse1.Name = "processEllipse1";
             this.processEllipse1.ShowType = ToolKit.HYControls.ShowType.Ring;
-            this.processEllipse1.Size = new System.Drawing.Size(112, 112);
+            this.processEllipse1.Size = new System.Drawing.Size(112, 114);
             this.processEllipse1.TabIndex = 0;
             this.processEllipse1.Value = 20;
             this.processEllipse1.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
@@ -370,7 +397,7 @@ namespace HYProject
             this.dataStatisticsControl1.Name = "dataStatisticsControl1";
             this.dataStatisticsControl1.Ng = 0;
             this.dataStatisticsControl1.Ok = 0;
-            this.dataStatisticsControl1.Size = new System.Drawing.Size(346, 110);
+            this.dataStatisticsControl1.Size = new System.Drawing.Size(346, 112);
             this.dataStatisticsControl1.TabIndex = 3;
             this.toolTip1.SetToolTip(this.dataStatisticsControl1, "统计面板(右击菜单清零)");
             // 
@@ -384,7 +411,7 @@ namespace HYProject
             this.processEllipse3.MaxValue = 100;
             this.processEllipse3.Name = "processEllipse3";
             this.processEllipse3.ShowType = ToolKit.HYControls.ShowType.Ring;
-            this.processEllipse3.Size = new System.Drawing.Size(115, 112);
+            this.processEllipse3.Size = new System.Drawing.Size(115, 114);
             this.processEllipse3.TabIndex = 2;
             this.toolTip1.SetToolTip(this.processEllipse3, "内存使用率\r\n");
             this.processEllipse3.Value = 50;
@@ -392,6 +419,19 @@ namespace HYProject
             this.processEllipse3.ValueMargin = 5;
             this.processEllipse3.ValueType = ToolKit.HYControls.ValueType.Percent;
             this.processEllipse3.ValueWidth = 30;
+            // 
+            // tsl_nowuser
+            // 
+            this.tsl_nowuser.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsl_nowuser.Name = "tsl_nowuser";
+            this.tsl_nowuser.Size = new System.Drawing.Size(99, 18);
+            this.tsl_nowuser.Text = "当前用户: 未登录";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 21);
             // 
             // MainForm
             // 
@@ -401,12 +441,10 @@ namespace HYProject
             this.Controls.Add(this.tableLayoutPanel1);
             this.DoubleBuffered = true;
             this.HelpButton = true;
-            this.helpProvider1.SetHelpString(this, "帮助");
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MinimumSize = new System.Drawing.Size(1200, 700);
             this.Name = "MainForm";
-            this.helpProvider1.SetShowHelp(this, true);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "视觉软件 -- 未登录";
             this.toolTip1.SetToolTip(this, "视觉检测软件");
@@ -414,13 +452,16 @@ namespace HYProject
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyUp);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.panel_Buttom.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel_Data.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.panel_Title.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ctms_camera.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -449,9 +490,12 @@ namespace HYProject
         private System.Windows.Forms.Button button_Camera;
         public ToolKit.HYControls.DataStatisticsControl dataStatisticsControl1;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.HelpProvider helpProvider1;
         private System.Windows.Forms.ContextMenuStrip ctms_camera;
         private System.Windows.Forms.ToolStripMenuItem 重新加载相机ToolStripMenuItem;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripLabel tsl_nowtime;
+        private System.Windows.Forms.ToolStripLabel tsl_nowuser;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
 

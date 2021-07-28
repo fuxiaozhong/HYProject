@@ -49,6 +49,14 @@ namespace HYProject.MenuForm
 
         private void ComboBox_CamList_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (button3.Text == "停止实时")
+            {
+                foreach (var item in Cameras.Instance.GetCameras.Keys)
+                {
+                    Cameras.Instance[item].End_Real_Mode();
+                }
+                button3.Text = "实时模式";
+            }
             //刷新数据
             Refresh();
             num_exposuretime.Value = (decimal)Cameras.Instance[this.comboBox_CamList.Text].Get_Exposure_Time();
@@ -87,11 +95,13 @@ namespace HYProject.MenuForm
             {
                 button3.Text = "停止实时";
                 Cameras.Instance[comboBox_CamList.Text].Start_Real_Mode();
+                comboBox_CamList.Enabled = false;
             }
             else
             {
                 button3.Text = "实时模式";
                 Cameras.Instance[comboBox_CamList.Text].End_Real_Mode();
+                comboBox_CamList.Enabled = true;
             }
             Refresh();
         }
@@ -106,9 +116,12 @@ namespace HYProject.MenuForm
             this.Hide();
             foreach (var item in Cameras.Instance.GetCameras.Keys)
             {
+                //关闭实时
                 Cameras.Instance[item].End_Real_Mode();
                 System.Threading.Thread.Sleep(300);
+                //清空事件
                 Cameras.Instance[item].ClearImageProcessEvents();
+                //重新绑定运行事件
                 Cameras.Instance[item].ImageProcessEvent += Cameras.Instance.Camera_ImageProcessEvent;
             }
         }
