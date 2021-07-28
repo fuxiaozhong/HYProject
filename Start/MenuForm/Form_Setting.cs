@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Windows.Forms;
 
 using HYProject.Helper;
@@ -11,6 +12,7 @@ namespace HYProject.MenuForm
         public Form_Setting()
         {
             InitializeComponent();
+            CheckForIllegalCrossThreadCalls = false;
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -74,6 +76,7 @@ namespace HYProject.MenuForm
         /// <param name="e"></param>
         private void Form_Setting_Load(object sender, EventArgs e)
         {
+
             textBox1.Text = AppParam.Instance.Save_Image_Path;
             textBox2.Text = AppParam.Instance.Save_Data_Path;
             numericUpDown1.Value = AppParam.Instance.Save_Image_Days;
@@ -86,6 +89,72 @@ namespace HYProject.MenuForm
             checkBox7.Checked = AppParam.Instance.IsSaveImage_NG;
             checkBox8.Checked = AppParam.Instance.IsSaveImage_BmpImage;
             checkBox9.Checked = AppParam.Instance.IsSaveImage_DumpImage;
+            Thread thread = new Thread(DiskRefresh)
+            {
+                IsBackground = true
+            };
+            thread.Start();
+        }
+        public static long GetHardDiskFreeSpace(string str_HardDiskName) //磁盘号
+        {
+            long freeSpace = new long();
+            str_HardDiskName = str_HardDiskName + ":\\";
+            System.IO.DriveInfo[] drives = System.IO.DriveInfo.GetDrives();
+            foreach (System.IO.DriveInfo drive in drives)
+            {
+                if (drive.Name == str_HardDiskName)
+                {
+                    freeSpace = drive.TotalFreeSpace;//剩余容量
+                    freeSpace = drive.TotalSize; //总容量
+                }
+            }
+            return freeSpace;
+        }
+
+        /// <summary>
+        /// 图像、数据保存磁盘检测
+        /// </summary>
+        private void DiskRefresh()
+        {
+            while (true)
+            {
+                try
+                {
+                    long TotalFreeSpace = new long();
+                    long TotalSize = new long();
+                    string sidkName = AppParam.Instance.Save_Image_Path.Substring(0, 1) + ":\\";
+                    System.IO.DriveInfo[] drives = System.IO.DriveInfo.GetDrives();
+                    foreach (System.IO.DriveInfo drive in drives)
+                    {
+                        if (drive.Name == sidkName)
+                        {
+                            TotalFreeSpace = drive.TotalFreeSpace / 1024 / 1024 / 1024;//剩余容量
+                            TotalSize = drive.TotalSize / 1024 / 1024 / 1024; //总容量
+                            label7.Text = "剩余：" + TotalFreeSpace + "/总：" + TotalSize;
+                            progressBar1.Value = 100 - (int)((double)TotalFreeSpace / (double)TotalSize * 100);
+                            break;
+                        }
+                    }
+                    sidkName = AppParam.Instance.Save_Data_Path.Substring(0, 1) + ":\\";
+                    foreach (System.IO.DriveInfo drive in drives)
+                    {
+                        if (drive.Name == sidkName)
+                        {
+                            TotalFreeSpace = drive.TotalFreeSpace / 1024 / 1024 / 1024;//剩余容量
+                            TotalSize = drive.TotalSize / 1024 / 1024 / 1024; //总容量
+                            label8.Text = "剩余：" + TotalFreeSpace + "/总：" + TotalSize;
+                            progressBar2.Value = 100 - (int)((double)TotalFreeSpace / (double)TotalSize * 100);
+                            break;
+                        }
+
+                    }
+                }
+                catch (Exception)
+                {
+
+                }
+                Thread.Sleep(100);
+            }
         }
 
         /// <summary>
@@ -110,5 +179,7 @@ namespace HYProject.MenuForm
         {
             groupBox1.Visible = checkBox5.Checked;
         }
+
+
     }
 }

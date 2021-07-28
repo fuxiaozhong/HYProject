@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Reflection.Emit;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -11,6 +12,8 @@ using HYProject.Model;
 using HYProject.ToolForm;
 
 using ToolKit.HYControls.HYForm;
+
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace HYProject
 {
@@ -80,6 +83,11 @@ namespace HYProject
             _Refresh_Work.IsBackground = true;
             _Refresh_Work.Name = "Refresh_Work";
             _Refresh_Work.Start();
+            //数据/图像磁盘检测
+            Thread disk = new Thread(DiskRefresh);
+            disk.IsBackground = true;
+            disk.Name = "disk";
+            disk.Start();
         }
 
         private void Refresh_Work()
@@ -98,6 +106,57 @@ namespace HYProject
             }
         }
 
+        /// <summary>
+        /// 实时刷新磁盘剩余量报警检测
+        /// </summary>
+        private void DiskRefresh()
+        {
+            while (true)
+            {
+                try
+                {
+                    long TotalFreeSpace = new long();
+                    long TotalSize = new long();
+                    string sidkName = AppParam.Instance.Save_Image_Path.Substring(0, 1) + ":\\";
+                    System.IO.DriveInfo[] drives = System.IO.DriveInfo.GetDrives();
+                    foreach (System.IO.DriveInfo drive in drives)
+                    {
+                        if (drive.Name == sidkName)
+                        {
+                            TotalFreeSpace = drive.TotalFreeSpace / 1024 / 1024 / 1024;//剩余容量
+                            TotalSize = drive.TotalSize / 1024 / 1024 / 1024; //总容量
+                            if ((int)(((double)TotalSize - (double)TotalFreeSpace) / (double)TotalSize * 100) >= 95)
+                            {
+                                Log.WriteWarnLog("图像保存磁盘空间不足，空间剩余量低于5%，请清理磁盘");
+                                Thread.Sleep(5 * 60 * 1000);
+                            }
+                            break;
+                        }
+                    }
+                    sidkName = AppParam.Instance.Save_Data_Path.Substring(0, 1) + ":\\";
+                    foreach (System.IO.DriveInfo drive in drives)
+                    {
+                        if (drive.Name == sidkName)
+                        {
+                            TotalFreeSpace = drive.TotalFreeSpace / 1024 / 1024 / 1024;//剩余容量
+                            TotalSize = drive.TotalSize / 1024 / 1024 / 1024; //总容量
+                            if ((int)(((double)TotalSize - (double)TotalFreeSpace) / (double)TotalSize * 100) >= 95)
+                            {
+                                Log.WriteWarnLog("数据保存磁盘空间不足，空间剩余量低于5%，请清理磁盘");
+                                Thread.Sleep(5 * 60 * 1000);
+                            }
+                            break;
+                        }
+
+                    }
+                }
+                catch (Exception)
+                {
+
+                }
+                Thread.Sleep(100);
+            }
+        }
         private void Button_Exit_Click(object sender, EventArgs e)
         {
             this.Close();

@@ -42,7 +42,7 @@ namespace HYProject
             if (m_lstLog["warn_logo"].IsWarnEnabled)
             {
                 m_lstLog["warn_logo"].Warn(strWarnLog);
-                Form_Log.Instance.OutputMsg(strWarnLog, System.Drawing.Color.Yellow);
+                Form_Log.Instance.OutputMsg(strWarnLog, System.Drawing.Color.Orange);
             }
         }
 

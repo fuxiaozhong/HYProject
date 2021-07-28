@@ -56,6 +56,7 @@ namespace HYProject
 
         private void Label4_Click(object sender, EventArgs e)
         {
+            Cameras.Instance.CloseCamera();
             DialogResult = DialogResult.Cancel;
         }
     }
