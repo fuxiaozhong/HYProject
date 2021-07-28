@@ -45,7 +45,9 @@ namespace ToolKit.DisplayWindow
                 return;
             Adaptive_Display();
         }
-
+        /// <summary>
+        /// 自适应显示
+        /// </summary>
         private void Adaptive_Display()
         {
             try
@@ -79,13 +81,22 @@ namespace ToolKit.DisplayWindow
             }
         }
 
+        /// <summary>
+        /// 保存团团
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="format"></param>
         public void SaveImage(string path, HSaveImageFormat format)
         {
             if (ho_image == null)
                 return;
             HOperatorSet.WriteImage(ho_image, format.ToString(), 0, path);
         }
-
+        /// <summary>
+        /// 保存截图
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="format"></param>
         public void SaveDumpImage(string path, HSaveImageFormat format)
         {
             if (ho_image == null)
@@ -172,6 +183,9 @@ namespace ToolKit.DisplayWindow
             }
         }
 
+        /// <summary>
+        /// 内部重新显示
+        /// </summary>
         private void Disp()
         {
             if (ho_image != null)
@@ -242,6 +256,11 @@ namespace ToolKit.DisplayWindow
             return null;
         }
 
+        /// <summary>
+        /// 打开对话框保存图像
+        /// </summary>
+        /// <param name="image"></param>
+        /// <returns></returns>
         public bool Save_Image(HObject image)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -272,7 +291,11 @@ namespace ToolKit.DisplayWindow
             timer1.Enabled = 显示中心线ToolStripMenuItem.Checked;
             Disp();
         }
-
+        /// <summary>
+        /// 设置线宽
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             ToolStripMenuItem toolStripItem = sender as ToolStripMenuItem;
@@ -498,6 +521,11 @@ namespace ToolKit.DisplayWindow
             }
         }
 
+        /// <summary>
+        /// 中心线
+        /// </summary>
+        /// <param name="hv_Height"></param>
+        /// <param name="hv_Width"></param>
         private void CenterCross(HTuple hv_Height, HTuple hv_Width)
         {
             HOperatorSet.SetDraw(HalconWindow, "margin");

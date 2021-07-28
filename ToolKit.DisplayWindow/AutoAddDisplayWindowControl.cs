@@ -22,6 +22,11 @@ namespace ToolKit.DisplayWindow
             InitializeComponent();
         }
 
+        /// <summary>
+        /// 获取窗口
+        /// </summary>
+        /// <param name="key">下标0开始</param>
+        /// <returns></returns>
         public DisplayWindow this[int key]
         {
             get

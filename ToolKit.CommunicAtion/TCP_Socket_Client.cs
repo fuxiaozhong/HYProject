@@ -11,6 +11,9 @@ namespace ToolKit.CommunicAtion
     {
         public delegate void _SocketReceiveMessage(string serverSocketIp, string message);
 
+        /// <summary>
+        /// 消息回调函数
+        /// </summary>
         public event _SocketReceiveMessage SocketReceiveMessage;
 
         private string _ip = string.Empty;
@@ -40,6 +43,10 @@ namespace ToolKit.CommunicAtion
             this._port = port;
         }
 
+        /// <summary>
+        /// 连接服务器
+        /// </summary>
+        /// <returns></returns>
         public bool Connect_server()
         {
             try

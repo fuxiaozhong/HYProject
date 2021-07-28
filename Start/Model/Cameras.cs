@@ -208,10 +208,7 @@ namespace HYProject.Model
         /// <param name="ho_image">图片</param>
         public void Camera_ImageProcessEvent(string cameraName, HalconDotNet.HObject ho_image)
         {
-            DisplayForm.Instance[0].Disp_Image(ho_image);
-            DisplayForm.Instance[1].Disp_Image(ho_image);
-            DisplayForm.Instance[2].Disp_Image(ho_image);
-            DisplayForm.Instance[3].Disp_Image(ho_image);
+            Work.CameraWork(cameraName, ho_image);
         }
     }
 

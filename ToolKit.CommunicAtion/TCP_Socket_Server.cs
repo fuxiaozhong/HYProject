@@ -12,6 +12,9 @@ namespace ToolKit.CommunicAtion
     {
         public delegate void _SocketReceiveMessage(Socket client, string clientSocketIp, string message);
 
+        /// <summary>
+        /// 接受消息回调函数
+        /// </summary>
         public event _SocketReceiveMessage SocketReceiveMessage;
 
         private string _ip = string.Empty;
@@ -42,6 +45,10 @@ namespace ToolKit.CommunicAtion
             this._port = port;
         }
 
+        /// <summary>
+        /// 开始监听
+        /// </summary>
+        /// <returns></returns>
         public bool StartListen()
         {
             try
@@ -73,7 +80,9 @@ namespace ToolKit.CommunicAtion
 
             return isOpen;
         }
-
+        /// <summary>
+        /// 客户端状态监听
+        /// </summary>
         private void ListenClientState()
         {
             while (isOpen)
@@ -150,7 +159,11 @@ namespace ToolKit.CommunicAtion
                 }
             }
         }
-
+        /// <summary>
+        /// 发送消息
+        /// </summary>
+        /// <param name="clientSocket"></param>
+        /// <param name="message"></param>
         public void SendMessage(Socket clientSocket, string message)
         {
             try

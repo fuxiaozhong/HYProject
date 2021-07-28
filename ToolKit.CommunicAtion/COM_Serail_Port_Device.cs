@@ -6,6 +6,9 @@ namespace ToolKit.CommunicAtion
 {
     internal class COM_Serail_Port_Device
     {
+        /// <summary>
+        /// 接受消息回调事件
+        /// </summary>
         public event EventHandler<SerialEventArgs> SigDataReceived;
 
         private enum SerialDataType
@@ -19,6 +22,15 @@ namespace ToolKit.CommunicAtion
         private SerialPort m_serialPort = null;
         private int m_type = (int)SerialDataType.ASCII;
 
+        /// <summary>
+        /// 打开串口
+        /// </summary>
+        /// <param name="portName">串口名称</param>
+        /// <param name="baudRate">波特率</param>
+        /// <param name="parity"> 奇偶校验</param>
+        /// <param name="dataBits">数据位</param>
+        /// <param name="stopBits">停止位</param>
+        /// <returns></returns>
         public bool OpenSerialPort(string portName, int baudRate = 9600, Parity parity = Parity.None, int dataBits = 8, StopBits stopBits = StopBits.One)
         {
             try
@@ -38,7 +50,9 @@ namespace ToolKit.CommunicAtion
                 return false;
             }
         }
-
+        /// <summary>
+        /// 关闭串口
+        /// </summary>
         public void CloseSerialPort()
         {
             if (IsOpen)
@@ -48,6 +62,9 @@ namespace ToolKit.CommunicAtion
             }
         }
 
+        /// <summary>
+        /// 是否打开
+        /// </summary>
         public bool IsOpen
         {
             get
@@ -55,12 +72,19 @@ namespace ToolKit.CommunicAtion
                 return (m_serialPort != null && m_serialPort.IsOpen);
             }
         }
-
+        /// <summary>
+        /// 枚举全部串口
+        /// </summary>
+        /// <returns></returns>
         public static string[] AllSerialPort()
         {
             return SerialPort.GetPortNames();
         }
-
+        /// <summary>
+        /// 发送消息
+        /// </summary>
+        /// <param name="msg"></param>
+        /// <returns></returns>
         public bool SendSerailData(string msg)
         {
             if (IsOpen)
@@ -81,7 +105,9 @@ namespace ToolKit.CommunicAtion
                 return false;
             }
         }
-
+        /// <summary>
+        /// 设置编码类型
+        /// </summary>
         public int SetSerailType
         {
             get { return m_type; }
