@@ -20,3 +20,6 @@ dotnet_diagnostic.CS0618.severity = none
 
 # CS0114: 成员隐藏继承的成员；缺少关键字 override
 dotnet_diagnostic.CS0114.severity = none
+
+# Default severity for analyzer diagnostics with category 'Style'
+dotnet_analyzer_diagnostic.category-Style.severity = none

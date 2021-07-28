@@ -28,23 +28,8 @@ namespace ToolKit.CommunicAtion
         public static extern int GetLastError();
 
         private const int ERROR_ALREADY_EXISTS = 183;
-
-        private const int FILE_MAP_COPY = 0x0001;
         private const int FILE_MAP_WRITE = 0x0002;
-        private const int FILE_MAP_READ = 0x0004;
-        private const int FILE_MAP_ALL_ACCESS = 0x0002 | 0x0004;
-
-        private const int PAGE_READONLY = 0x02;
         private const int PAGE_READWRITE = 0x04;
-        private const int PAGE_WRITECOPY = 0x08;
-        private const int PAGE_EXECUTE = 0x10;
-        private const int PAGE_EXECUTE_READ = 0x20;
-        private const int PAGE_EXECUTE_READWRITE = 0x40;
-
-        private const int SEC_COMMIT = 0x8000000;
-        private const int SEC_IMAGE = 0x1000000;
-        private const int SEC_NOCACHE = 0x10000000;
-        private const int SEC_RESERVE = 0x4000000;
 
         private const int INVALID_HANDLE_VALUE = -1;
 
