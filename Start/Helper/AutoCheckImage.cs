@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace HYProject.Helper
 {
     public class AutoCheckImage
     {
-
         /// <summary>
         /// 自动判断图像储存是否到期
         /// </summary>
@@ -56,6 +52,5 @@ namespace HYProject.Helper
                 Thread.Sleep(10000);//10S检查一次
             }
         }
-
     }
 }

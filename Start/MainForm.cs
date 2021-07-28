@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using System.Globalization;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -17,10 +16,6 @@ namespace HYProject
 {
     public partial class MainForm : Form
     {
-
-
-
-
         private static MainForm instance;
 
         //程序运行时创建一个静态只读的进程辅助对象
@@ -65,7 +60,6 @@ namespace HYProject
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
             if (AppParam.Instance.RunStateMax)
                 this.WindowState = FormWindowState.Maximized;
             else
@@ -86,8 +80,6 @@ namespace HYProject
             _Refresh_Work.IsBackground = true;
             _Refresh_Work.Name = "Refresh_Work";
             _Refresh_Work.Start();
-
-
         }
 
         private void Refresh_Work()
@@ -113,8 +105,6 @@ namespace HYProject
         {
             if (MessageBox.Show("确认退出系统?", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
-
-
                 Cameras.Instance.CloseCamera();
                 AppParam.Instance.Save_To_File();
                 Log.RunLog("退出程序...");

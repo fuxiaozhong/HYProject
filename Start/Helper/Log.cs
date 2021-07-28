@@ -59,6 +59,7 @@ namespace HYProject
                 Form_Log.Instance.OutputMsg(strErrLog, System.Drawing.Color.Red);
             }
         }
+
         /// <summary>
         /// 功能描述:写入运行日志
         /// </summary>

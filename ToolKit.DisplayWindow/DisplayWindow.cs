@@ -45,6 +45,7 @@ namespace ToolKit.DisplayWindow
                 return;
             Adaptive_Display();
         }
+
         /// <summary>
         /// 自适应显示
         /// </summary>
@@ -92,6 +93,7 @@ namespace ToolKit.DisplayWindow
                 return;
             HOperatorSet.WriteImage(ho_image, format.ToString(), 0, path);
         }
+
         /// <summary>
         /// 保存截图
         /// </summary>
@@ -291,6 +293,7 @@ namespace ToolKit.DisplayWindow
             timer1.Enabled = 显示中心线ToolStripMenuItem.Checked;
             Disp();
         }
+
         /// <summary>
         /// 设置线宽
         /// </summary>

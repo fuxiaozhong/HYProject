@@ -266,7 +266,6 @@ namespace ToolKit.HYControls.HYForm
             }
         }
 
-
         private void Tsb_clear_Click(object sender, EventArgs e)
         {
             ClearLog();

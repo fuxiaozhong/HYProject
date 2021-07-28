@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Management;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace HYProject.Helper
 {
@@ -22,6 +20,7 @@ namespace HYProject.Helper
         private const int WS_BORDER = 8388608;
 
         #region AIP声明
+
         [DllImport("IpHlpApi.dll")]
         extern static public uint GetIfTable(byte[] pIfTable, ref uint pdwSize, bool bOrder);
 
@@ -36,9 +35,11 @@ namespace HYProject.Helper
 
         [DllImport("user32", CharSet = CharSet.Auto)]
         private extern static int GetWindowTextLength(IntPtr hWnd);
-        #endregion
+
+        #endregion AIP声明
 
         #region 构造函数
+
         /// <summary>
         /// 构造函数，初始化计数器等
         /// </summary>
@@ -63,9 +64,11 @@ namespace HYProject.Helper
                 }
             }
         }
-        #endregion
+
+        #endregion 构造函数
 
         #region CPU个数
+
         /// <summary>
         /// 获取CPU个数
         /// </summary>
@@ -76,9 +79,11 @@ namespace HYProject.Helper
                 return m_ProcessorCount;
             }
         }
-        #endregion
+
+        #endregion CPU个数
 
         #region CPU占用率
+
         /// <summary>
         /// 获取CPU占用率
         /// </summary>
@@ -89,9 +94,11 @@ namespace HYProject.Helper
                 return pcCpuLoad.NextValue();
             }
         }
-        #endregion
+
+        #endregion CPU占用率
 
         #region 可用内存
+
         /// <summary>
         /// 获取可用内存
         /// </summary>
@@ -116,9 +123,11 @@ namespace HYProject.Helper
                 return availablebytes;
             }
         }
-        #endregion
+
+        #endregion 可用内存
 
         #region 物理内存
+
         /// <summary>
         /// 获取物理内存
         /// </summary>
@@ -129,9 +138,11 @@ namespace HYProject.Helper
                 return m_PhysicalMemory;
             }
         }
-        #endregion
+
+        #endregion 物理内存
 
         #region 结束指定进程
+
         /// <summary>
         /// 结束指定进程
         /// </summary>
@@ -145,10 +156,11 @@ namespace HYProject.Helper
             }
             catch { }
         }
-        #endregion
 
+        #endregion 结束指定进程
 
         #region 查找所有应用程序标题
+
         /// <summary>
         /// 查找所有应用程序标题
         /// </summary>
@@ -181,6 +193,7 @@ namespace HYProject.Helper
 
             return Apps;
         }
-        #endregion
+
+        #endregion 查找所有应用程序标题
     }
 }

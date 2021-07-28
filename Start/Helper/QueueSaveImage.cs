@@ -2,9 +2,6 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -20,8 +17,6 @@ namespace HYProject.Helper
 
     public class QueueSaveImage
     {
-
-
         private static QueueSaveImage instance;
 
         //程序运行时创建一个静态只读的进程辅助对象
@@ -49,18 +44,6 @@ namespace HYProject.Helper
                 return instance;
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
 
         /// <summary>
         /// 线程总数

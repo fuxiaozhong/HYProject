@@ -50,7 +50,6 @@ namespace HYProject.ToolForm
             CheckForIllegalCrossThreadCalls = false;
         }
 
-
         /// <summary>
         /// 窗口个数
         /// </summary>

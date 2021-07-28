@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using HYProject.ToolForm;
+﻿using HYProject.ToolForm;
 
 namespace HYProject.Model
 {
     public class Work
     {
-
         /// <summary>
         /// 相机正常工作方法(数据处理)
         /// </summary>

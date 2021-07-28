@@ -6,8 +6,6 @@ using System.Windows.Forms;
 
 using HYProject.Model;
 
-using ToolKit.DisplayWindow;
-
 namespace HYProject
 {
     public partial class Welcome : Form
@@ -28,7 +26,6 @@ namespace HYProject
 
                 if (!Directory.Exists(AppParam.Instance.Save_Image_Path))
                     Directory.CreateDirectory(AppParam.Instance.Save_Image_Path);
-
 
                 Log.RunLog("开始加载配置文件");
                 ///初始化相机

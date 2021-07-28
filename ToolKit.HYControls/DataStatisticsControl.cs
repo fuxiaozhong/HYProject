@@ -30,8 +30,6 @@ namespace ToolKit.HYControls
                 label4.Text = _ok.ToString();
                 label5.Text = _ng.ToString();
                 label6.Text = _total.ToString();
-
-
             }
         }
 
@@ -89,6 +87,7 @@ namespace ToolKit.HYControls
             Ok = 0;
             Ng = 0;
         }
+
         //private Font m_font = new Font("Arial Unicode MS", 12);
         //[Description("文字字体"), Category("自定义")]
         //public override Font Font

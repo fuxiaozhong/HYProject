@@ -44,7 +44,7 @@ namespace HYProject.MenuForm
         }
 
         /// <summary>
-        /// 保存 
+        /// 保存
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

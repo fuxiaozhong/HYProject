@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-using HYProject.ToolForm;
-
 using ToolKit.CamreaSDK;
 
 namespace HYProject.Model
@@ -133,9 +131,8 @@ namespace HYProject.Model
         {
             InitCamera("Cam1", CameraType.海康威视);
             InitCamera("Cam2", CameraType.大华相机);
-
-
         }
+
         /// <summary>
         /// 重新初始化相机
         /// </summary>
@@ -144,8 +141,6 @@ namespace HYProject.Model
             CloseCamera();
             InitializeCamera();
         }
-
-
 
         /// <summary>
         /// 初始化打开相机

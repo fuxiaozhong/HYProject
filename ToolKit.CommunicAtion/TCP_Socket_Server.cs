@@ -80,6 +80,7 @@ namespace ToolKit.CommunicAtion
 
             return isOpen;
         }
+
         /// <summary>
         /// 客户端状态监听
         /// </summary>
@@ -159,6 +160,7 @@ namespace ToolKit.CommunicAtion
                 }
             }
         }
+
         /// <summary>
         /// 发送消息
         /// </summary>

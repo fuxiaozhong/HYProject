@@ -50,6 +50,7 @@ namespace ToolKit.CommunicAtion
                 return false;
             }
         }
+
         /// <summary>
         /// 关闭串口
         /// </summary>
@@ -72,6 +73,7 @@ namespace ToolKit.CommunicAtion
                 return (m_serialPort != null && m_serialPort.IsOpen);
             }
         }
+
         /// <summary>
         /// 枚举全部串口
         /// </summary>
@@ -80,6 +82,7 @@ namespace ToolKit.CommunicAtion
         {
             return SerialPort.GetPortNames();
         }
+
         /// <summary>
         /// 发送消息
         /// </summary>
@@ -105,6 +108,7 @@ namespace ToolKit.CommunicAtion
                 return false;
             }
         }
+
         /// <summary>
         /// 设置编码类型
         /// </summary>

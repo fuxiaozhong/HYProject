@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 
-using HYProject.Helper;
 using HYProject.Model;
 
 namespace HYProject.MenuForm
