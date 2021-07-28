@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-
+using System.IO;
 using HalconDotNet;
 
 namespace ToolKit.DisplayWindow
@@ -93,6 +93,71 @@ namespace ToolKit.DisplayWindow
                 return;
             HOperatorSet.WriteImage(ho_image, format.ToString(), 0, path);
         }
+
+        public void SaveImage(string patn, string camName, bool ok = true, bool savedump = true, bool savebmp = true)
+        {
+            if (!Directory.Exists(patn))
+            {
+                Directory.CreateDirectory(patn);
+            }
+            if (!Directory.Exists(patn + "\\" + camName))
+            {
+                Directory.CreateDirectory(patn + "\\" + camName);
+            }
+            if (savedump)
+            {
+                if (!Directory.Exists(patn + "\\" + camName + "\\截图"))
+                {
+                    Directory.CreateDirectory(patn + "\\" + camName + "\\截图");
+                }
+                if (ok)
+                {
+                    if (!Directory.Exists(patn + "\\" + camName + "\\截图\\OK"))
+                    {
+                        Directory.CreateDirectory(patn + "\\" + camName + "\\截图\\OK");
+                    }
+                    SaveDumpImage(patn + "\\" + camName + "\\截图\\OK" + DateTime.Now.ToString("yyyyMMddHHmmssffff"), HSaveImageFormat.png);
+
+                }
+                else
+                {
+                    if (!Directory.Exists(patn + "\\" + camName + "\\截图\\NG"))
+                    {
+                        Directory.CreateDirectory(patn + "\\" + camName + "\\截图\\NG");
+                    }
+                    SaveDumpImage(patn + "\\" + camName + "\\截图\\NG" + DateTime.Now.ToString("yyyyMMddHHmmssffff"), HSaveImageFormat.png);
+                }
+            }
+
+            if (savebmp)
+            {
+                if (!Directory.Exists(patn + "\\" + camName + "\\原图"))
+                {
+                    Directory.CreateDirectory(patn + "\\" + camName + "\\原图");
+                }
+                if (ok)
+                {
+                    if (!Directory.Exists(patn + "\\" + camName + "\\原图\\OK"))
+                    {
+                        Directory.CreateDirectory(patn + "\\" + camName + "\\原图\\OK");
+                    }
+                    SaveImage(patn + "\\" + camName + "\\原图\\OK" + DateTime.Now.ToString("yyyyMMddHHmmssffff"), HSaveImageFormat.png);
+                }
+                else
+                {
+                    if (!Directory.Exists(patn + "\\" + camName + "\\原图\\NG"))
+                    {
+                        Directory.CreateDirectory(patn + "\\" + camName + "\\原图\\NG");
+                    }
+                    SaveImage(patn + "\\" + camName + "\\原图\\NG" + DateTime.Now.ToString("yyyyMMddHHmmssffff"), HSaveImageFormat.png);
+                }
+
+            }
+
+
+
+        }
+
 
         /// <summary>
         /// 保存截图

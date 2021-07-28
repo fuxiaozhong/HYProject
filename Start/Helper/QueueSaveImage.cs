@@ -5,6 +5,8 @@ using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 
+using System.IO;
+
 using HalconDotNet;
 
 namespace HYProject.Helper
@@ -75,6 +77,8 @@ namespace HYProject.Helper
                 thread.Start();
             }
         }
+
+
 
         /// <summary>
         /// 添加要保存的图像加名称

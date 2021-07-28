@@ -57,6 +57,11 @@ namespace HYProject.MenuForm
             AppParam.Instance.PowerBoot = checkBox2.Checked;
             AppParam.Instance.RunStateMax = checkBox3.Checked;
             AppParam.Instance.StartBeforeLogin = checkBox4.Checked;
+            AppParam.Instance.IsSaveImage = checkBox5.Checked;
+            AppParam.Instance.IsSaveImage_OK = checkBox6.Checked;
+            AppParam.Instance.IsSaveImage_NG = checkBox7.Checked;
+            AppParam.Instance.IsSaveImage_BmpImage = checkBox8.Checked;
+            AppParam.Instance.IsSaveImage_DumpImage = checkBox9.Checked;
             PowerBoot.SetMeAutoStart(AppParam.Instance.PowerBoot);
             PowerBoot.CreateDesktopShortcut(AppParam.Instance.DesktopShortcut);
             AppParam.Instance.Save_To_File();
@@ -76,6 +81,11 @@ namespace HYProject.MenuForm
             checkBox2.Checked = AppParam.Instance.PowerBoot;
             checkBox3.Checked = AppParam.Instance.RunStateMax;
             checkBox4.Checked = AppParam.Instance.StartBeforeLogin;
+            checkBox5.Checked = AppParam.Instance.IsSaveImage;
+            checkBox6.Checked = AppParam.Instance.IsSaveImage_OK;
+            checkBox7.Checked = AppParam.Instance.IsSaveImage_NG;
+            checkBox8.Checked = AppParam.Instance.IsSaveImage_BmpImage;
+            checkBox9.Checked = AppParam.Instance.IsSaveImage_DumpImage;
         }
 
         /// <summary>
@@ -94,6 +104,11 @@ namespace HYProject.MenuForm
             {
                 MessageBox.Show("当前用户: " + AppParam.Instance.Power + ",无权限操作,请登录管理员账户,在进行操作", "权限提示", MessageBoxButtons.OK);
             }
+        }
+
+        private void CheckBox5_CheckedChanged(object sender, EventArgs e)
+        {
+            groupBox1.Visible = checkBox5.Checked;
         }
     }
 }
