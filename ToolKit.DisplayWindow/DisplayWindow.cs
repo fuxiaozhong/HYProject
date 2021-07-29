@@ -1164,6 +1164,15 @@ namespace ToolKit.DisplayWindow
             Disp();
         }
 
+        private void 打开图像ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HObject image = Open_Image();
+            if (image != null)
+            {
+                Disp_Image(image);
+            }
+        }
+
         private void Set_display_font(HTuple hv_WindowHandle, HTuple hv_Size, HTuple hv_Font, HTuple hv_Bold, HTuple hv_Slant)
         {
             // Local iconic variables
