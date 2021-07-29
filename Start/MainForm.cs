@@ -67,7 +67,7 @@ namespace HYProject
                 this.WindowState = FormWindowState.Maximized;
             else
                 this.WindowState = FormWindowState.Normal;
-            panel_Main.Controls.Add(DisplayForm.Instance);
+           /// panel_Main.Controls.Add(DisplayForm.Instance);
             //初始化显示窗口个数
             DisplayForm.Instance.DisplayWindowCount = Cameras.Instance.GetCameras.Count;
             //添加日志窗口
@@ -167,7 +167,7 @@ namespace HYProject
             if (MessageBox.Show("确认退出系统?", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
 
-                Form_Waiting form_Waiting = new Form_Waiting(Test, "数据保存中,请等待!");
+                Form_Waiting form_Waiting = new Form_Waiting(CloseEvent, "数据保存中,请等待!");
                 if (form_Waiting.ShowDialog(this) == DialogResult.OK)
                 {
                     System.Diagnostics.Process.GetCurrentProcess().Kill();
@@ -183,7 +183,7 @@ namespace HYProject
             }
         }
 
-        private void Test(object sender, EventArgs e)
+        private void CloseEvent(object sender, EventArgs e)
         {
             Cameras.Instance.CloseCamera();
             AppParam.Instance.Save_To_File();

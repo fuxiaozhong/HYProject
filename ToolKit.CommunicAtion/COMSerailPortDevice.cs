@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ToolKit.CommunicAtion
 {
-    internal class COM_Serail_Port_Device
+    public class COMSerailPortDevice
     {
         /// <summary>
         /// 接受消息回调事件

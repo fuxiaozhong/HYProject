@@ -62,10 +62,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="COM_Serail_Port_Device.cs" />
+    <Compile Include="COMSerailPortDevice.cs" />
     <Compile Include="Memory_Shared.cs" />
-    <Compile Include="TCP_Socket_Client.cs" />
-    <Compile Include="TCP_Socket_Server.cs" />
+    <Compile Include="TCPSocketClient.cs" />
+    <Compile Include="TCPSocketServer.cs" />
     <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>
     </Compile>

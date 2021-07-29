@@ -59,11 +59,13 @@ namespace HYProject
             this.processEllipse1 = new ToolKit.HYControls.ProcessEllipse();
             this.dataStatisticsControl1 = new ToolKit.HYControls.DataStatisticsControl();
             this.processEllipse3 = new ToolKit.HYControls.ProcessEllipse();
+            this.tcpSocketControl1 = new ToolKit.HYControls.TCPSocketControl();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel_Buttom.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel_Data.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.panel_Main.SuspendLayout();
             this.panel_Title.SuspendLayout();
             this.ctms_camera.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -170,6 +172,7 @@ namespace HYProject
             // panel_Main
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.panel_Main, 2);
+            this.panel_Main.Controls.Add(this.tcpSocketControl1);
             this.panel_Main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Main.Location = new System.Drawing.Point(0, 75);
             this.panel_Main.Margin = new System.Windows.Forms.Padding(0);
@@ -433,6 +436,14 @@ namespace HYProject
             this.processEllipse3.ValueType = ToolKit.HYControls.ValueType.Percent;
             this.processEllipse3.ValueWidth = 30;
             // 
+            // tcpSocketControl1
+            // 
+            this.tcpSocketControl1.Location = new System.Drawing.Point(12, 14);
+            this.tcpSocketControl1.MinimumSize = new System.Drawing.Size(417, 206);
+            this.tcpSocketControl1.Name = "tcpSocketControl1";
+            this.tcpSocketControl1.Size = new System.Drawing.Size(417, 206);
+            this.tcpSocketControl1.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -457,6 +468,7 @@ namespace HYProject
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel_Data.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
+            this.panel_Main.ResumeLayout(false);
             this.panel_Title.ResumeLayout(false);
             this.ctms_camera.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -496,6 +508,7 @@ namespace HYProject
         private System.Windows.Forms.ToolStripLabel tsl_nowtime;
         private System.Windows.Forms.ToolStripLabel tsl_nowuser;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private ToolKit.HYControls.TCPSocketControl tcpSocketControl1;
     }
 }
 

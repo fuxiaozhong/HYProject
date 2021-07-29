@@ -98,6 +98,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SerialPortControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SerialPortControl.Designer.cs">
+      <DependentUpon>SerialPortControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TCPSocketControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TCPSocketControl.Designer.cs">
+      <DependentUpon>TCPSocketControl.cs</DependentUpon>
+    </Compile>
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
@@ -126,8 +138,18 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="SerialPortControl.resx">
+      <DependentUpon>SerialPortControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TCPSocketControl.resx">
+      <DependentUpon>TCPSocketControl.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ToolKit.CommunicAtion\ToolKit.CommunicAtion.csproj">
+      <Project>{ED64FA6F-727D-451F-AE7D-AAC30EFD7159}</Project>
+      <Name>ToolKit.CommunicAtion</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ToolKit.DisplayWindow\ToolKit.DisplayWindow.csproj">
       <Project>{353758C9-ED22-474B-8B66-6DB421370F3C}</Project>
       <Name>ToolKit.DisplayWindow</Name>

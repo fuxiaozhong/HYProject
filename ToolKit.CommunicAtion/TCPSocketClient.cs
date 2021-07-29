@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ToolKit.CommunicAtion
 {
-    public class TCP_Socket_Client
+    public class TCPSocketClient
     {
         public delegate void _SocketReceiveMessage(string serverSocketIp, string message);
 
@@ -27,7 +27,7 @@ namespace ToolKit.CommunicAtion
         /// </summary>
         /// <param name="ip">连接服务器的IP</param>
         /// <param name="port">连接服务器的端口</param>
-        public TCP_Socket_Client(string ip, int port)
+        public TCPSocketClient(string ip, int port)
         {
             this._ip = ip;
             this._port = port;
@@ -37,7 +37,7 @@ namespace ToolKit.CommunicAtion
         /// 默认本机127.0.0.1
         /// </summary>
         /// <param name="port"></param>
-        public TCP_Socket_Client(int port)
+        public TCPSocketClient(int port)
         {
             this._ip = "127.0.0.1";
             this._port = port;
