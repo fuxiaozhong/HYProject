@@ -67,7 +67,7 @@ namespace HYProject
                 this.WindowState = FormWindowState.Maximized;
             else
                 this.WindowState = FormWindowState.Normal;
-           /// panel_Main.Controls.Add(DisplayForm.Instance);
+            panel_Main.Controls.Add(DisplayForm.Instance);
             //初始化显示窗口个数
             DisplayForm.Instance.DisplayWindowCount = Cameras.Instance.GetCameras.Count;
             //添加日志窗口

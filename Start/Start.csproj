@@ -117,6 +117,12 @@
     <Compile Include="ToolForm\DisplayForm.Designer.cs">
       <DependentUpon>DisplayForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ToolForm\Form_Communication_Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolForm\Form_Communication_Test.Designer.cs">
+      <DependentUpon>Form_Communication_Test.cs</DependentUpon>
+    </Compile>
     <Compile Include="ToolForm\Form_GlobalOptions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     </Compile>
     <EmbeddedResource Include="ToolForm\DisplayForm.resx">
       <DependentUpon>DisplayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolForm\Form_Communication_Test.resx">
+      <DependentUpon>Form_Communication_Test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ToolForm\Form_GlobalOptions.resx">
       <DependentUpon>Form_GlobalOptions.cs</DependentUpon>

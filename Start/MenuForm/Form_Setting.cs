@@ -190,6 +190,10 @@ namespace HYProject.MenuForm
             groupBox1.Visible = checkBox5.Checked;
         }
 
-
+        private void Button6_Click(object sender, EventArgs e)
+        {
+            Form_Communication_Test form_Communication_Test = new Form_Communication_Test();
+            form_Communication_Test.ShowDialog();
+        }
     }
 }

@@ -58,6 +58,7 @@ namespace HYProject.MenuForm
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -218,9 +219,9 @@ namespace HYProject.MenuForm
             // button5
             // 
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(474, 100);
+            this.button5.Location = new System.Drawing.Point(16, 326);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(170, 62);
+            this.button5.Size = new System.Drawing.Size(141, 38);
             this.button5.TabIndex = 15;
             this.button5.Text = "全局参数";
             this.button5.UseVisualStyleBackColor = true;
@@ -243,7 +244,7 @@ namespace HYProject.MenuForm
             this.groupBox1.Controls.Add(this.checkBox8);
             this.groupBox1.Controls.Add(this.checkBox7);
             this.groupBox1.Controls.Add(this.checkBox6);
-            this.groupBox1.Location = new System.Drawing.Point(194, 100);
+            this.groupBox1.Location = new System.Drawing.Point(307, 65);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(245, 62);
             this.groupBox1.TabIndex = 17;
@@ -347,11 +348,23 @@ namespace HYProject.MenuForm
             this.label8.Size = new System.Drawing.Size(0, 16);
             this.label8.TabIndex = 23;
             // 
+            // button6
+            // 
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Location = new System.Drawing.Point(16, 370);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(139, 38);
+            this.button6.TabIndex = 24;
+            this.button6.Text = "通讯测试页";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.Button6_Click);
+            // 
             // Form_Setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(896, 498);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.progressBar2);
@@ -424,5 +437,6 @@ namespace HYProject.MenuForm
         private System.Windows.Forms.ProgressBar progressBar2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button button6;
     }
 }

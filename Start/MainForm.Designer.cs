@@ -43,7 +43,6 @@ namespace HYProject
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panel_Log = new System.Windows.Forms.Panel();
             this.panel_Main = new System.Windows.Forms.Panel();
-            this.tcpSocketControl1 = new ToolKit.HYControls.TCPSocketControl();
             this.panel_Title = new System.Windows.Forms.Panel();
             this.button_Camera = new System.Windows.Forms.Button();
             this.ctms_camera = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -60,15 +59,11 @@ namespace HYProject
             this.tsl_nowuser = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.tcpSocketControl2 = new ToolKit.HYControls.TCPSocketControl();
-            this.tcpSocketControl3 = new ToolKit.HYControls.TCPSocketControl();
-            this.tcpSocketControl4 = new ToolKit.HYControls.TCPSocketControl();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel_Buttom.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel_Data.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            this.panel_Main.SuspendLayout();
             this.panel_Title.SuspendLayout();
             this.ctms_camera.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -244,24 +239,12 @@ namespace HYProject
             // panel_Main
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.panel_Main, 2);
-            this.panel_Main.Controls.Add(this.tcpSocketControl4);
-            this.panel_Main.Controls.Add(this.tcpSocketControl3);
-            this.panel_Main.Controls.Add(this.tcpSocketControl2);
-            this.panel_Main.Controls.Add(this.tcpSocketControl1);
             this.panel_Main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Main.Location = new System.Drawing.Point(0, 75);
             this.panel_Main.Margin = new System.Windows.Forms.Padding(0);
             this.panel_Main.Name = "panel_Main";
             this.panel_Main.Size = new System.Drawing.Size(1424, 646);
             this.panel_Main.TabIndex = 1;
-            // 
-            // tcpSocketControl1
-            // 
-            this.tcpSocketControl1.Location = new System.Drawing.Point(12, 3);
-            this.tcpSocketControl1.MinimumSize = new System.Drawing.Size(417, 206);
-            this.tcpSocketControl1.Name = "tcpSocketControl1";
-            this.tcpSocketControl1.Size = new System.Drawing.Size(417, 206);
-            this.tcpSocketControl1.TabIndex = 0;
             // 
             // panel_Title
             // 
@@ -450,30 +433,6 @@ namespace HYProject
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 20);
             // 
-            // tcpSocketControl2
-            // 
-            this.tcpSocketControl2.Location = new System.Drawing.Point(435, 3);
-            this.tcpSocketControl2.MinimumSize = new System.Drawing.Size(417, 206);
-            this.tcpSocketControl2.Name = "tcpSocketControl2";
-            this.tcpSocketControl2.Size = new System.Drawing.Size(417, 206);
-            this.tcpSocketControl2.TabIndex = 1;
-            // 
-            // tcpSocketControl3
-            // 
-            this.tcpSocketControl3.Location = new System.Drawing.Point(12, 215);
-            this.tcpSocketControl3.MinimumSize = new System.Drawing.Size(417, 206);
-            this.tcpSocketControl3.Name = "tcpSocketControl3";
-            this.tcpSocketControl3.Size = new System.Drawing.Size(417, 206);
-            this.tcpSocketControl3.TabIndex = 2;
-            // 
-            // tcpSocketControl4
-            // 
-            this.tcpSocketControl4.Location = new System.Drawing.Point(435, 215);
-            this.tcpSocketControl4.MinimumSize = new System.Drawing.Size(417, 206);
-            this.tcpSocketControl4.Name = "tcpSocketControl4";
-            this.tcpSocketControl4.Size = new System.Drawing.Size(417, 206);
-            this.tcpSocketControl4.TabIndex = 3;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -498,7 +457,6 @@ namespace HYProject
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel_Data.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
-            this.panel_Main.ResumeLayout(false);
             this.panel_Title.ResumeLayout(false);
             this.ctms_camera.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -538,10 +496,6 @@ namespace HYProject
         private System.Windows.Forms.ToolStripLabel tsl_nowtime;
         private System.Windows.Forms.ToolStripLabel tsl_nowuser;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private ToolKit.HYControls.TCPSocketControl tcpSocketControl1;
-        private ToolKit.HYControls.TCPSocketControl tcpSocketControl4;
-        private ToolKit.HYControls.TCPSocketControl tcpSocketControl3;
-        private ToolKit.HYControls.TCPSocketControl tcpSocketControl2;
     }
 }
 
