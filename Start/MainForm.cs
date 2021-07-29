@@ -166,15 +166,30 @@ namespace HYProject
         {
             if (MessageBox.Show("确认退出系统?", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
-                Cameras.Instance.CloseCamera();
-                AppParam.Instance.Save_To_File();
-                Log.RunLog("退出程序...");
-                System.Diagnostics.Process.GetCurrentProcess().Kill();
+
+                Form_Waiting form_Waiting = new Form_Waiting(Test, "数据保存中,请等待!");
+                if (form_Waiting.ShowDialog(this) == DialogResult.OK)
+                {
+                    System.Diagnostics.Process.GetCurrentProcess().Kill();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
             }
             else
             {
                 e.Cancel = true;
             }
+        }
+
+        private void Test(object sender, EventArgs e)
+        {
+            Cameras.Instance.CloseCamera();
+            AppParam.Instance.Save_To_File();
+            Log.RunLog("退出程序...");
+            Thread.Sleep(1000);
+
         }
 
         private void Button_UserLogin_Click(object sender, EventArgs e)

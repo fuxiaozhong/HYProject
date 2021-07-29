@@ -50,15 +50,15 @@ namespace HYProject
             this.button_Exit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsl_nowtime = new System.Windows.Forms.ToolStripLabel();
+            this.tsl_nowuser = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.processEllipse2 = new ToolKit.HYControls.ProcessEllipse();
             this.processEllipse1 = new ToolKit.HYControls.ProcessEllipse();
             this.dataStatisticsControl1 = new ToolKit.HYControls.DataStatisticsControl();
             this.processEllipse3 = new ToolKit.HYControls.ProcessEllipse();
-            this.tsl_nowuser = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel_Buttom.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -310,7 +310,7 @@ namespace HYProject
             // 
             this.label1.Font = new System.Drawing.Font("华文新魏", 35F);
             this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label1.Location = new System.Drawing.Point(81, 7);
+            this.label1.Location = new System.Drawing.Point(81, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(325, 66);
             this.label1.TabIndex = 1;
@@ -321,7 +321,7 @@ namespace HYProject
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 1);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(75, 72);
@@ -348,8 +348,21 @@ namespace HYProject
             // tsl_nowtime
             // 
             this.tsl_nowtime.Name = "tsl_nowtime";
-            this.tsl_nowtime.Size = new System.Drawing.Size(130, 18);
+            this.tsl_nowtime.Size = new System.Drawing.Size(130, 17);
             this.tsl_nowtime.Text = "2021-07-28  08:50:00";
+            // 
+            // tsl_nowuser
+            // 
+            this.tsl_nowuser.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsl_nowuser.Name = "tsl_nowuser";
+            this.tsl_nowuser.Size = new System.Drawing.Size(99, 17);
+            this.tsl_nowuser.Text = "当前用户: 未登录";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 20);
             // 
             // processEllipse2
             // 
@@ -419,19 +432,6 @@ namespace HYProject
             this.processEllipse3.ValueMargin = 5;
             this.processEllipse3.ValueType = ToolKit.HYControls.ValueType.Percent;
             this.processEllipse3.ValueWidth = 30;
-            // 
-            // tsl_nowuser
-            // 
-            this.tsl_nowuser.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.tsl_nowuser.Name = "tsl_nowuser";
-            this.tsl_nowuser.Size = new System.Drawing.Size(99, 18);
-            this.tsl_nowuser.Text = "当前用户: 未登录";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 21);
             // 
             // MainForm
             // 

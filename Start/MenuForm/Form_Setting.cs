@@ -171,7 +171,17 @@ namespace HYProject.MenuForm
             }
             else
             {
-                MessageBox.Show("当前用户: " + AppParam.Instance.Power + ",无权限操作,请登录管理员账户,在进行操作", "权限提示", MessageBoxButtons.OK);
+                DialogResult dialogResult = MessageBox.Show("当前用户: " + AppParam.Instance.Power + ",无权限操作,请登录管理员账户,在进行操作", "权限提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (dialogResult == DialogResult.OK)
+                {
+                    Form_User form_User = new Form_User();
+                    if (form_User.ShowDialog() == DialogResult.OK)
+                    {
+                        AppParam.Instance.Power = form_User.Power;
+                        Log.RunLog("切换用户:" + AppParam.Instance.Power);
+                        MainForm.Instance.Text = "视觉软件 -- " + AppParam.Instance.Power;
+                    }
+                }
             }
         }
 

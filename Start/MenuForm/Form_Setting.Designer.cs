@@ -218,9 +218,9 @@ namespace HYProject.MenuForm
             // button5
             // 
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(423, 201);
+            this.button5.Location = new System.Drawing.Point(474, 100);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(170, 25);
+            this.button5.Size = new System.Drawing.Size(170, 62);
             this.button5.TabIndex = 15;
             this.button5.Text = "全局参数";
             this.button5.UseVisualStyleBackColor = true;

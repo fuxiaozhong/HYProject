@@ -78,6 +78,12 @@
     <Compile Include="HYForm\Form_Log.Designer.cs">
       <DependentUpon>Form_Log.cs</DependentUpon>
     </Compile>
+    <Compile Include="HYForm\Form_Waiting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HYForm\Form_Waiting.Designer.cs">
+      <DependentUpon>Form_Waiting.cs</DependentUpon>
+    </Compile>
     <Compile Include="HYInputDialog.cs" />
     <Compile Include="MessageTip.cs" />
     <Compile Include="ProcessEllipse.cs">
@@ -109,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HYForm\Form_Log.resx">
       <DependentUpon>Form_Log.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HYForm\Form_Waiting.resx">
+      <DependentUpon>Form_Waiting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProcessEllipse.resx">
       <DependentUpon>ProcessEllipse.cs</DependentUpon>
