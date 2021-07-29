@@ -85,6 +85,12 @@
       <DependentUpon>Form_Waiting.cs</DependentUpon>
     </Compile>
     <Compile Include="HYInputDialog.cs" />
+    <Compile Include="ListViewEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ListViewEx.Designer.cs">
+      <DependentUpon>ListViewEx.cs</DependentUpon>
+    </Compile>
     <Compile Include="MessageTip.cs" />
     <Compile Include="ProcessEllipse.cs">
       <SubType>UserControl</SubType>

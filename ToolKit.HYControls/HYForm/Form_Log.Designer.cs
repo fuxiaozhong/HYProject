@@ -30,22 +30,22 @@ namespace ToolKit.HYControls.HYForm
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Log));
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listView1 = new ListViewEx();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.tsb_tip = new System.Windows.Forms.ToolStripButton();
             this.tsb_warn = new System.Windows.Forms.ToolStripButton();
-            this.tsb_error = new System.Windows.Forms.ToolStripButton();
             this.tsb_clear = new System.Windows.Forms.ToolStripButton();
+            this.tsb_error = new System.Windows.Forms.ToolStripButton();
             this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // listView1
             // 
-            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listView1.BackColor = System.Drawing.SystemColors.Control;
             this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -119,16 +119,6 @@ namespace ToolKit.HYControls.HYForm
             this.tsb_warn.Text = "警告(0)";
             this.tsb_warn.Click += new System.EventHandler(this.Tsb_warn_Click);
             // 
-            // tsb_error
-            // 
-            this.tsb_error.CheckOnClick = true;
-            this.tsb_error.Image = ((System.Drawing.Image)(resources.GetObject("tsb_error.Image")));
-            this.tsb_error.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsb_error.Name = "tsb_error";
-            this.tsb_error.Size = new System.Drawing.Size(67, 22);
-            this.tsb_error.Text = "错误(0)";
-            this.tsb_error.Click += new System.EventHandler(this.Tsb_error_Click);
-            // 
             // tsb_clear
             // 
             this.tsb_clear.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -139,6 +129,16 @@ namespace ToolKit.HYControls.HYForm
             this.tsb_clear.Size = new System.Drawing.Size(52, 22);
             this.tsb_clear.Text = "清除";
             this.tsb_clear.Click += new System.EventHandler(this.Tsb_clear_Click);
+            // 
+            // tsb_error
+            // 
+            this.tsb_error.CheckOnClick = true;
+            this.tsb_error.Image = ((System.Drawing.Image)(resources.GetObject("tsb_error.Image")));
+            this.tsb_error.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsb_error.Name = "tsb_error";
+            this.tsb_error.Size = new System.Drawing.Size(67, 22);
+            this.tsb_error.Text = "错误(0)";
+            this.tsb_error.Click += new System.EventHandler(this.Tsb_error_Click);
             // 
             // Form_Log
             // 
@@ -159,7 +159,7 @@ namespace ToolKit.HYControls.HYForm
 
         #endregion
 
-        public System.Windows.Forms.ListView listView1;
+        public ListViewEx listView1;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
