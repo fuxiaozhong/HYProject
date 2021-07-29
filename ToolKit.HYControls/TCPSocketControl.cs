@@ -26,9 +26,10 @@ namespace ToolKit.HYControls
         {
             socketServer = new TCPSocketServer(textBox_severIP.Text, int.Parse(textBox_severport.Text));
             socketServer.SocketReceiveMessage += SocketServer_SocketReceiveMessage;
+            socketServer.ClientsConnect += this.SocketServer_ClientsConnect;
             if (socketServer.StartListen())
             {
-                timer1.Enabled = true;
+
                 button6.Enabled = true;
                 button5.Enabled = true;
                 button4.Enabled = false;
@@ -37,6 +38,15 @@ namespace ToolKit.HYControls
             else
             {
                 MessageBox.Show("打开失败");
+            }
+        }
+
+        private void SocketServer_ClientsConnect(Dictionary<string, Socket> clients)
+        {
+            cmb_clientList.DataSource = clients.Keys.ToArray();
+            if (clients.Keys.ToArray().Length == 0)
+            {
+                cmb_clientList.Text = "";
             }
         }
 
@@ -63,7 +73,7 @@ namespace ToolKit.HYControls
         {
             if (socketServer != null && socketServer.Close())
             {
-                timer1.Enabled = false;
+
                 button6.Enabled = false;
                 button5.Enabled = false;
                 button4.Enabled = true;
@@ -75,14 +85,6 @@ namespace ToolKit.HYControls
             }
         }
 
-        private void Timer1_Tick(object sender, EventArgs e)
-        {
-            cmb_clientList.DataSource = socketServer.clients.Keys.ToArray();
-            if (socketServer.clients.Keys.ToArray().Length == 0)
-            {
-                cmb_clientList.Text = "";
-            }
-        }
 
         private void Button1_Click(object sender, EventArgs e)
         {
@@ -104,6 +106,8 @@ namespace ToolKit.HYControls
         private void SocketClient_SocketReceiveMessage(string serverSocketIp, string message)
         {
             richTextBox2.AppendText(serverSocketIp + " : " + message + "\n");
+            richTextBox2.SelectionStart = richTextBox2.TextLength;
+            richTextBox2.ScrollToCaret();
         }
 
         private void Button2_Click(object sender, EventArgs e)

@@ -6,16 +6,23 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 
+using static ToolKit.CommunicAtion.TCPSocketServer;
+
 namespace ToolKit.CommunicAtion
 {
     public class TCPSocketServer
     {
         public delegate void _SocketReceiveMessage(Socket client, string clientSocketIp, string message);
+        public delegate void _ClientsConnect(Dictionary<string, Socket> clients);
 
         /// <summary>
         /// 接受消息回调函数
         /// </summary>
         public event _SocketReceiveMessage SocketReceiveMessage;
+        /// <summary>
+        /// 客户端连接触发事件
+        /// </summary>
+        public event _ClientsConnect ClientsConnect;
 
         private string _ip = string.Empty;
         private int _port = 0;
@@ -121,6 +128,7 @@ namespace ToolKit.CommunicAtion
                     Socket clientSocket = _socket.Accept();
 
                     clients.Add(clientSocket.RemoteEndPoint.ToString(), clientSocket);
+                    ClientsConnect?.Invoke(clients);
                     Console.WriteLine("客户端{0}连接成功", clientSocket.RemoteEndPoint.ToString());
                     Thread thread = new Thread(ReceiveMessage);
                     thread.Name = "ReceiveMessage";
@@ -162,7 +170,7 @@ namespace ToolKit.CommunicAtion
         }
 
         /// <summary>
-        /// 发送消息
+        /// 发送消息(指定客户端)
         /// </summary>
         /// <param name="clientSocket"></param>
         /// <param name="message"></param>
@@ -174,6 +182,31 @@ namespace ToolKit.CommunicAtion
                 {
                     clientSocket.Send(Encoding.UTF8.GetBytes(message));
                 }
+            }
+            catch (Exception)
+            {
+            }
+        }
+        /// <summary>
+        /// 发送消息(默认第一个客户端)
+        /// </summary>
+        /// <param name="message"></param>
+        public void SendMessage(string message)
+        {
+            try
+            {
+                if (clients.Values.Count > 0)
+                {
+                    if (!clients.Values.First().Poll(1000, SelectMode.SelectRead))
+                    {
+                        clients.Values.First().Send(Encoding.UTF8.GetBytes(message));
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("没有客户端连接");
+                }
+
             }
             catch (Exception)
             {
