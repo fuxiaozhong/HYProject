@@ -1,7 +1,7 @@
 ﻿
 namespace ToolKit.DisplayWindow
 {
-    partial class DisplayWindow
+    partial class HalconDisplayWindow
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -32,6 +32,7 @@ namespace ToolKit.DisplayWindow
             this.components = new System.ComponentModel.Container();
             this.hWindowControl1 = new HalconDotNet.HWindowControl();
             this.contextMenu_Hal = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.打开图像ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.自适应ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.显示中心线ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.线宽ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,7 +54,6 @@ namespace ToolKit.DisplayWindow
             this.缩放ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.打开图像ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenu_Hal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,12 +87,19 @@ namespace ToolKit.DisplayWindow
             this.全屏显示ToolStripMenuItem,
             this.缩放ToolStripMenuItem});
             this.contextMenu_Hal.Name = "contextMenuStrip1";
-            this.contextMenu_Hal.Size = new System.Drawing.Size(181, 202);
+            this.contextMenu_Hal.Size = new System.Drawing.Size(176, 180);
+            // 
+            // 打开图像ToolStripMenuItem
+            // 
+            this.打开图像ToolStripMenuItem.Name = "打开图像ToolStripMenuItem";
+            this.打开图像ToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.打开图像ToolStripMenuItem.Text = "打开图像";
+            this.打开图像ToolStripMenuItem.Click += new System.EventHandler(this.打开图像ToolStripMenuItem_Click);
             // 
             // 自适应ToolStripMenuItem
             // 
             this.自适应ToolStripMenuItem.Name = "自适应ToolStripMenuItem";
-            this.自适应ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.自适应ToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.自适应ToolStripMenuItem.Text = "自适应";
             this.自适应ToolStripMenuItem.Click += new System.EventHandler(this.自适应ToolStripMenuItem_Click);
             // 
@@ -100,7 +107,7 @@ namespace ToolKit.DisplayWindow
             // 
             this.显示中心线ToolStripMenuItem.CheckOnClick = true;
             this.显示中心线ToolStripMenuItem.Name = "显示中心线ToolStripMenuItem";
-            this.显示中心线ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.显示中心线ToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.显示中心线ToolStripMenuItem.Text = "显示中心线";
             this.显示中心线ToolStripMenuItem.Click += new System.EventHandler(this.显示中心线ToolStripMenuItem_Click);
             // 
@@ -117,7 +124,7 @@ namespace ToolKit.DisplayWindow
             this.toolStripMenuItem9,
             this.toolStripMenuItem10});
             this.线宽ToolStripMenuItem.Name = "线宽ToolStripMenuItem";
-            this.线宽ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.线宽ToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.线宽ToolStripMenuItem.Text = "线宽";
             // 
             // toolStripMenuItem2
@@ -197,7 +204,7 @@ namespace ToolKit.DisplayWindow
             this.设置ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.拖动缩放屏蔽文字ToolStripMenuItem});
             this.设置ToolStripMenuItem.Name = "设置ToolStripMenuItem";
-            this.设置ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.设置ToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.设置ToolStripMenuItem.Text = "设置";
             // 
             // 拖动缩放屏蔽文字ToolStripMenuItem
@@ -213,7 +220,7 @@ namespace ToolKit.DisplayWindow
             this.保存原图ToolStripMenuItem,
             this.保存截图ToolStripMenuItem});
             this.保存图像ToolStripMenuItem.Name = "保存图像ToolStripMenuItem";
-            this.保存图像ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.保存图像ToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.保存图像ToolStripMenuItem.Text = "保存图像";
             // 
             // 保存原图ToolStripMenuItem
@@ -234,7 +241,7 @@ namespace ToolKit.DisplayWindow
             // 
             this.全屏显示ToolStripMenuItem.CheckOnClick = true;
             this.全屏显示ToolStripMenuItem.Name = "全屏显示ToolStripMenuItem";
-            this.全屏显示ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.全屏显示ToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.全屏显示ToolStripMenuItem.Text = "全屏显示(Esc退出)";
             this.全屏显示ToolStripMenuItem.Click += new System.EventHandler(this.全屏显示ToolStripMenuItem_Click);
             // 
@@ -242,7 +249,7 @@ namespace ToolKit.DisplayWindow
             // 
             this.缩放ToolStripMenuItem.Enabled = false;
             this.缩放ToolStripMenuItem.Name = "缩放ToolStripMenuItem";
-            this.缩放ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.缩放ToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.缩放ToolStripMenuItem.Text = "缩放";
             this.缩放ToolStripMenuItem.Visible = false;
             this.缩放ToolStripMenuItem.Click += new System.EventHandler(this.缩放ToolStripMenuItem_Click);
@@ -261,13 +268,6 @@ namespace ToolKit.DisplayWindow
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 11);
             this.label1.TabIndex = 1;
-            // 
-            // 打开图像ToolStripMenuItem
-            // 
-            this.打开图像ToolStripMenuItem.Name = "打开图像ToolStripMenuItem";
-            this.打开图像ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.打开图像ToolStripMenuItem.Text = "打开图像";
-            this.打开图像ToolStripMenuItem.Click += new System.EventHandler(this.打开图像ToolStripMenuItem_Click);
             // 
             // DisplayWindow
             // 

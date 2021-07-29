@@ -197,6 +197,10 @@
       <Project>{353758C9-ED22-474B-8B66-6DB421370F3C}</Project>
       <Name>ToolKit.DisplayWindow</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ToolKit.HalconTool\ToolKit.HalconTool.csproj">
+      <Project>{AC8426E8-E67F-418C-87B8-7C847C1FC98B}</Project>
+      <Name>ToolKit.HalconTool</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ToolKit.HYControls\ToolKit.HYControls.csproj">
       <Project>{10627050-9265-4AE7-8D63-E631717F963F}</Project>
       <Name>ToolKit.HYControls</Name>

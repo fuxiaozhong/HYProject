@@ -49,7 +49,7 @@ namespace ToolKit.DisplayWindow
             this.label_Row = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.displayWindow1 = new ToolKit.DisplayWindow.DisplayWindow();
+            this.displayWindow1 = new ToolKit.DisplayWindow.HalconDisplayWindow();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -336,6 +336,6 @@ namespace ToolKit.DisplayWindow
         public System.Windows.Forms.Label label_r;
         public System.Windows.Forms.Label label_b;
         public System.Windows.Forms.Label label_g;
-        public DisplayWindow displayWindow1;
+        public HalconDisplayWindow displayWindow1;
     }
 }

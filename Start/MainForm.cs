@@ -167,7 +167,7 @@ namespace HYProject
             if (MessageBox.Show("确认退出系统?", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
 
-                Form_Waiting form_Waiting = new Form_Waiting(CloseEvent, "数据保存中,请等待!");
+                Form_Waiting form_Waiting = new Form_Waiting(CloseEvent, "正在保存相关数据,请稍等!");
                 if (form_Waiting.ShowDialog(this) == DialogResult.OK)
                 {
                     System.Diagnostics.Process.GetCurrentProcess().Kill();

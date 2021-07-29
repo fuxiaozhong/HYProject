@@ -70,7 +70,7 @@ namespace HYProject.ToolForm
         /// </summary>
         /// <param name="key">窗口下标 0 开始</param>
         /// <returns></returns>
-        public DisplayWindow this[int key]
+        public HalconDisplayWindow this[int key]
         {
             get
             {

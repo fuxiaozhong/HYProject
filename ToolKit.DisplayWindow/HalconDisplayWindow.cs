@@ -8,9 +8,9 @@ using HalconDotNet;
 
 namespace ToolKit.DisplayWindow
 {
-    public partial class DisplayWindow : UserControl
+    public partial class HalconDisplayWindow : UserControl
     {
-        public DisplayWindow()
+        public HalconDisplayWindow()
         {
             InitializeComponent();
         }
@@ -390,6 +390,10 @@ namespace ToolKit.DisplayWindow
         /// <param name="colorName"></param>
         public void Disp_Region(HObject region, string colorName, string draw)
         {
+            if (region == null)
+            {
+                return;
+            }
             if (draw != "fill" && draw != "margin")
             {
                 draw = "margin";
@@ -546,7 +550,7 @@ namespace ToolKit.DisplayWindow
                         {
                             HTuple grayVal;
                             HOperatorSet.GetGrayval(ho_image, (int)positionY, (int)positionX, out grayVal);
-                            str_value = String.Format("\nVal: {0:000}", grayVal.D);
+                            str_value = String.Format("\nGray: {0:000}", grayVal.D);
                             value += str_value;
                         }
                         else if ((int)channel_count == 3)
@@ -574,7 +578,7 @@ namespace ToolKit.DisplayWindow
                             str_value = "";
                         }
                     }
-                    this.Text = value;
+                    label1.Text = value;
                 }
                 catch
                 {

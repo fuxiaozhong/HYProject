@@ -54,6 +54,12 @@
     <Compile Include="DataStatisticsControl.Designer.cs">
       <DependentUpon>DataStatisticsControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateModelControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CreateModelControl.Designer.cs">
+      <DependentUpon>CreateModelControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="GlobalVariable.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -84,6 +90,7 @@
     <Compile Include="HYForm\Form_Waiting.Designer.cs">
       <DependentUpon>Form_Waiting.cs</DependentUpon>
     </Compile>
+    <Compile Include="HYForm\ModelParameter.cs" />
     <Compile Include="HYInputDialog.cs" />
     <Compile Include="ListViewEx.cs">
       <SubType>Component</SubType>
@@ -122,6 +129,9 @@
     <EmbeddedResource Include="DataStatisticsControl.resx">
       <DependentUpon>DataStatisticsControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CreateModelControl.resx">
+      <DependentUpon>CreateModelControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GlobalVariable.resx">
       <DependentUpon>GlobalVariable.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +169,10 @@
     <ProjectReference Include="..\ToolKit.DisplayWindow\ToolKit.DisplayWindow.csproj">
       <Project>{353758C9-ED22-474B-8B66-6DB421370F3C}</Project>
       <Name>ToolKit.DisplayWindow</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ToolKit.HalconTool\ToolKit.HalconTool.csproj">
+      <Project>{AC8426E8-E67F-418C-87B8-7C847C1FC98B}</Project>
+      <Name>ToolKit.HalconTool</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

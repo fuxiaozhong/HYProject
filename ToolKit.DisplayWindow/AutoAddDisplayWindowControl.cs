@@ -27,7 +27,7 @@ namespace ToolKit.DisplayWindow
         /// </summary>
         /// <param name="key">下标0开始</param>
         /// <returns></returns>
-        public DisplayWindow this[int key]
+        public HalconDisplayWindow this[int key]
         {
             get
             {
@@ -52,7 +52,7 @@ namespace ToolKit.DisplayWindow
             }
         }
 
-        private Dictionary<int, DisplayWindow> HWindows = new Dictionary<int, DisplayWindow>();
+        private Dictionary<int, HalconDisplayWindow> HWindows = new Dictionary<int, HalconDisplayWindow>();
         private int count;
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace ToolKit.DisplayWindow
         {
             lock (HWindows)
             {
-                foreach (DisplayWindow item in HWindows.Values)
+                foreach (HalconDisplayWindow item in HWindows.Values)
                 {
                     item.HalconWindow.Dispose();
                     item.Dispose();
@@ -150,7 +150,7 @@ namespace ToolKit.DisplayWindow
                         Padding = new Padding(1, 1, 1, 1),
                         Size = new Size((int)(i % 2 == 0 ? Math.Ceiling(this.Width / col) : Math.Floor(this.Width / col)) - 1, (int)(this.Height / row))
                     };
-                    DisplayWindow hWinControl = new DisplayWindow() { Margin = new Padding(0, 0, 0, 0), Dock = DockStyle.Fill, Name = "1" };
+                    HalconDisplayWindow hWinControl = new HalconDisplayWindow() { Margin = new Padding(0, 0, 0, 0), Dock = DockStyle.Fill, Name = "1" };
                     panel.Controls.Add(hWinControl);
                     flowLayoutPanel1.Controls.Add(panel);
 

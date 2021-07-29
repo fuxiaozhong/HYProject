@@ -5,4 +5,4 @@
 
 using System.Diagnostics.CodeAnalysis;
 
-[assembly: SuppressMessage("Style", "IDE0059:不需要赋值", Justification = "<挂起>", Scope = "member", Target = "~M:ToolKit.DisplayWindow.DisplayWindow.CenterCross(HalconDotNet.HTuple,HalconDotNet.HTuple)")]
+[assembly: SuppressMessage("Style", "IDE0059:不需要赋值", Justification = "<挂起>", Scope = "member", Target = "~M:ToolKit.DisplayWindow.HalconDisplayWindow.CenterCross(HalconDotNet.HTuple,HalconDotNet.HTuple)")]
