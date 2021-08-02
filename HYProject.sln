@@ -23,7 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolKit.HalconTool", "ToolKit.HalconTool\ToolKit.HalconTool.csproj", "{AC8426E8-E67F-418C-87B8-7C847C1FC98B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaterialSkin", "MaterialSkin\MaterialSkin.csproj", "{8EB7611B-68CD-4B8B-987A-11717E2B250C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolKit.MaterialSkin", "MaterialSkin\ToolKit.MaterialSkin.csproj", "{8EB7611B-68CD-4B8B-987A-11717E2B250C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
