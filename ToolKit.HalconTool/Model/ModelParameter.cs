@@ -8,6 +8,9 @@ using HalconDotNet;
 
 namespace ToolKit.HalconTool.Model
 {
+    /// <summary>
+    /// 模板类型
+    /// </summary>
     public enum MatchMode
     {
         /// <summary>
@@ -20,6 +23,9 @@ namespace ToolKit.HalconTool.Model
         BasedGray,
     }
 
+    /// <summary>
+    /// 模板参数 可序列化保存
+    /// </summary>
     [Serializable]
     public class ModelParameter
     {

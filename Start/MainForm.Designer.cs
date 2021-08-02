@@ -43,6 +43,7 @@ namespace HYProject
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panel_Log = new System.Windows.Forms.Panel();
             this.panel_Main = new System.Windows.Forms.Panel();
+            this.userControl11 = new ToolKit.HalconTool.UserControl1();
             this.panel_Title = new System.Windows.Forms.Panel();
             this.button_Camera = new System.Windows.Forms.Button();
             this.ctms_camera = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -59,7 +60,6 @@ namespace HYProject
             this.tsl_nowuser = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.userControl11 = new ToolKit.HalconTool.UserControl1();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel_Buttom.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -249,6 +249,14 @@ namespace HYProject
             this.panel_Main.Size = new System.Drawing.Size(1424, 646);
             this.panel_Main.TabIndex = 1;
             // 
+            // userControl11
+            // 
+            this.userControl11.Location = new System.Drawing.Point(4, 2);
+            this.userControl11.Name = "userControl11";
+            this.userControl11.Size = new System.Drawing.Size(10, 10);
+            this.userControl11.TabIndex = 0;
+            this.userControl11.Visible = false;
+            // 
             // panel_Title
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.panel_Title, 2);
@@ -344,6 +352,7 @@ namespace HYProject
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.toolTip1.SetToolTip(this.button3, "产品切换");
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // button_Run
             // 
@@ -435,14 +444,6 @@ namespace HYProject
             this.toolStripSeparator1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 20);
-            // 
-            // userControl11
-            // 
-            this.userControl11.Location = new System.Drawing.Point(4, 2);
-            this.userControl11.Name = "userControl11";
-            this.userControl11.Size = new System.Drawing.Size(10, 10);
-            this.userControl11.TabIndex = 0;
-            this.userControl11.Visible = false;
             // 
             // MainForm
             // 

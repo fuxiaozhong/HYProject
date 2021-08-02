@@ -195,5 +195,11 @@ namespace HYProject.MenuForm
             Form_Communication_Test form_Communication_Test = new Form_Communication_Test();
             form_Communication_Test.ShowDialog();
         }
+
+        private void Button7_Click(object sender, EventArgs e)
+        {
+            Form_Measure measure = new Form_Measure();
+            measure.ShowDialog();
+        }
     }
 }

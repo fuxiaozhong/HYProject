@@ -94,6 +94,12 @@
     <Compile Include="MenuForm\Form_Camera.Designer.cs">
       <DependentUpon>Form_Camera.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuForm\Form_ProjectLibrary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForm\Form_ProjectLibrary.Designer.cs">
+      <DependentUpon>Form_ProjectLibrary.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuForm\Form_Setting.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,12 @@
     <Compile Include="ToolForm\Form_GlobalOptions.Designer.cs">
       <DependentUpon>Form_GlobalOptions.cs</DependentUpon>
     </Compile>
+    <Compile Include="ToolForm\Form_Measure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolForm\Form_Measure.Designer.cs">
+      <DependentUpon>Form_Measure.cs</DependentUpon>
+    </Compile>
     <Compile Include="Welcome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuForm\Form_Camera.resx">
       <DependentUpon>Form_Camera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForm\Form_ProjectLibrary.resx">
+      <DependentUpon>Form_ProjectLibrary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuForm\Form_Setting.resx">
       <DependentUpon>Form_Setting.cs</DependentUpon>
@@ -164,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ToolForm\Form_GlobalOptions.resx">
       <DependentUpon>Form_GlobalOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolForm\Form_Measure.resx">
+      <DependentUpon>Form_Measure.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Welcome.resx">
       <DependentUpon>Welcome.cs</DependentUpon>

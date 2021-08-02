@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HalconUtils.cs" />
+    <Compile Include="Measure.cs" />
     <Compile Include="Model\ModelParameter.cs" />
     <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>

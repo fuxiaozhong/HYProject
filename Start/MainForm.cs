@@ -278,5 +278,11 @@ namespace HYProject
             //重新初始化显示窗口个数
             DisplayForm.Instance.DisplayWindowCount = Cameras.Instance.GetCameras.Count;
         }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            Form_ProjectLibrary form_ProjectLibrary = new Form_ProjectLibrary();
+            form_ProjectLibrary.ShowDialog();
+        }
     }
 }

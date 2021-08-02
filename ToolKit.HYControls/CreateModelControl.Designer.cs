@@ -31,6 +31,7 @@ namespace ToolKit.HYControls
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button8 = new System.Windows.Forms.Button();
             this.model_DispFindRegion = new System.Windows.Forms.CheckBox();
             this.model_DispModel = new System.Windows.Forms.CheckBox();
             this.model_findRegionEnable = new System.Windows.Forms.CheckBox();
@@ -62,6 +63,7 @@ namespace ToolKit.HYControls
             this.测试查找ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.displayWindow2 = new ToolKit.DisplayWindow.HalconDisplayWindow();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -77,8 +79,6 @@ namespace ToolKit.HYControls
             this.model_Shple = new System.Windows.Forms.RadioButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.displayWindow2 = new ToolKit.DisplayWindow.HalconDisplayWindow();
             this.displayWindow1 = new ToolKit.DisplayWindow.HalconDisplayWindow();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
@@ -131,6 +131,16 @@ namespace ToolKit.HYControls
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "匹配参数";
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(153, 207);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(87, 28);
+            this.button8.TabIndex = 16;
+            this.button8.Text = "框选搜索范围";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.Button8_Click);
             // 
             // model_DispFindRegion
             // 
@@ -514,6 +524,14 @@ namespace ToolKit.HYControls
             this.tabPage1.Text = "模板";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // displayWindow2
+            // 
+            this.displayWindow2.BackColor = System.Drawing.Color.Transparent;
+            this.displayWindow2.Location = new System.Drawing.Point(4, 3);
+            this.displayWindow2.Name = "displayWindow2";
+            this.displayWindow2.Size = new System.Drawing.Size(156, 128);
+            this.displayWindow2.TabIndex = 16;
+            // 
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(166, 10);
@@ -679,24 +697,6 @@ namespace ToolKit.HYControls
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.Button7_Click);
             // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(153, 207);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(87, 28);
-            this.button8.TabIndex = 16;
-            this.button8.Text = "框选搜索范围";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.Button8_Click);
-            // 
-            // displayWindow2
-            // 
-            this.displayWindow2.BackColor = System.Drawing.Color.Transparent;
-            this.displayWindow2.Location = new System.Drawing.Point(4, 3);
-            this.displayWindow2.Name = "displayWindow2";
-            this.displayWindow2.Size = new System.Drawing.Size(156, 128);
-            this.displayWindow2.TabIndex = 16;
-            // 
             // displayWindow1
             // 
             this.displayWindow1.BackColor = System.Drawing.Color.Transparent;
@@ -711,9 +711,8 @@ namespace ToolKit.HYControls
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(3, 338);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(47, 12);
+            this.label12.Size = new System.Drawing.Size(0, 12);
             this.label12.TabIndex = 12;
-            this.label12.Text = "label12";
             // 
             // CreateModelControl
             // 

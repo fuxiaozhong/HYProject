@@ -14,6 +14,11 @@ namespace ToolKit.HalconTool
 {
     public class HalconUtils
     {
+        /// <summary>
+        /// 创建模板(使用模板参数类)
+        /// </summary>
+        /// <param name="modelPar">模板参数</param>
+        /// <returns></returns>
         public static bool CreateModel(ref ModelParameter modelPar)
         {
             HObject grayImage;
@@ -69,7 +74,16 @@ namespace ToolKit.HalconTool
             return true;
         }
 
-
+        /// <summary>
+        /// 查找模板
+        /// </summary>
+        /// <param name="winControl">显示窗口</param>
+        /// <param name="image">要查找的图片</param>
+        /// <param name="modelPar">模板参数</param>
+        /// <param name="resultRow">返回row</param>
+        /// <param name="resultColumn">返回column</param>
+        /// <param name="resultAngle">返回angle</param>
+        /// <param name="resultScores">返回分数</param>
         public static void FindModel(HalconDisplayWindow winControl, HObject image, ModelParameter modelPar, out HTuple resultRow, out HTuple resultColumn, out HTuple resultAngle, out HTuple resultScores)
         {
             if (image == null)
@@ -254,6 +268,18 @@ namespace ToolKit.HalconTool
             }
         }
 
+        /// <summary>
+        /// 显示shape模板(halcon算子)
+        /// </summary>
+        /// <param name="winControl"></param>
+        /// <param name="hv_ModelID"></param>
+        /// <param name="hv_Color"></param>
+        /// <param name="hv_Row"></param>
+        /// <param name="hv_Column"></param>
+        /// <param name="hv_Angle"></param>
+        /// <param name="hv_ScaleR"></param>
+        /// <param name="hv_ScaleC"></param>
+        /// <param name="hv_Model"></param>
         public static void dev_display_shape_matching_results(HalconDisplayWindow winControl, HTuple hv_ModelID, HTuple hv_Color, HTuple hv_Row, HTuple hv_Column, HTuple hv_Angle, HTuple hv_ScaleR, HTuple hv_ScaleC, HTuple hv_Model)
         {
 
@@ -492,6 +518,16 @@ namespace ToolKit.HalconTool
             }
         }
 
+        /// <summary>
+        /// 显示NCC模板(halcon算子)
+        /// </summary>
+        /// <param name="winControl"></param>
+        /// <param name="hv_ModelID"></param>
+        /// <param name="hv_Color"></param>
+        /// <param name="hv_Row"></param>
+        /// <param name="hv_Column"></param>
+        /// <param name="hv_Angle"></param>
+        /// <param name="hv_Model"></param>
         public static void dev_display_ncc_matching_results(HalconDisplayWindow winControl, HTuple hv_ModelID, HTuple hv_Color, HTuple hv_Row, HTuple hv_Column, HTuple hv_Angle, HTuple hv_Model)
         {
 
