@@ -55,6 +55,9 @@
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="halcondotnet">
       <HintPath>..\DLL\halcondotnet.dll</HintPath>
@@ -204,6 +207,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MaterialSkin\MaterialSkin.csproj">
+      <Project>{8EB7611B-68CD-4B8B-987A-11717E2B250C}</Project>
+      <Name>MaterialSkin</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ToolKit.CamreaSDK\ToolKit.CamreaSDK.csproj">
       <Project>{F120EA33-4418-44A3-85CE-001D68FAA5CA}</Project>
       <Name>ToolKit.CamreaSDK</Name>

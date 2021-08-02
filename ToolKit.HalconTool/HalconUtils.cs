@@ -63,7 +63,7 @@ namespace ToolKit.HalconTool
                                                 out modelPar.modelID);
                 }
             }
-            catch (Exception e)
+            catch
             {
                 MessageBox.Show("状态：" + "特征过少，或者参数异常,无法完成训练", "提示");
                 return false;
