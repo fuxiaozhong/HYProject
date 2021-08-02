@@ -12,12 +12,13 @@ using HalconDotNet;
 
 using ToolKit.DisplayWindow;
 using ToolKit.HalconTool;
+using ToolKit.HalconTool.Model;
 
 namespace HYProject.ToolForm
 {
     public partial class Form_Measure : Form
     {
-        public Measure measure;
+        public MeasureParam measure;
         public Form_Measure()
         {
             InitializeComponent();
@@ -25,17 +26,15 @@ namespace HYProject.ToolForm
 
         private void Form_Measure_Load(object sender, EventArgs e)
         {
-            measure = new Measure();
-            measure.HWinControl = halconDisplayWindow1;
+            measure = new MeasureParam();
             propertyGrid1.SelectedObject = measure;
         }
-
+        HObject image;
         private void Button1_Click(object sender, EventArgs e)
         {
-            HObject image = halconDisplayWindow1.Open_Image();
+            image = halconDisplayWindow1.Open_Image();
             if (image != null)
             {
-                measure.Input_Image = image;
                 halconDisplayWindow1.Disp_Image(image);
             }
         }
@@ -68,6 +67,11 @@ namespace HYProject.ToolForm
 
 
 
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            HalconUtils.CaliperMeasure(halconDisplayWindow1, measure, image, out _, out _);
         }
     }
 }

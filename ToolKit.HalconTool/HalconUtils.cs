@@ -658,5 +658,411 @@ namespace ToolKit.HalconTool
             }
         }
 
+        /// <summary>
+        /// 创建箭头
+        /// </summary>
+        /// <param name="ho_Arrow">箭头区域</param>
+        /// <param name="hv_Row1">起始坐标row</param>
+        /// <param name="hv_Column1">起始坐标col</param>
+        /// <param name="hv_Row2">结束坐标row</param>
+        /// <param name="hv_Column2">结束坐标col</param>
+        /// <param name="hv_HeadLength">箭头长度</param>
+        /// <param name="hv_HeadWidth">箭头宽度</param>
+        public static void Gen_Arrow_Contour_XLD(out HObject ho_Arrow, HTuple hv_Row1, HTuple hv_Column1, HTuple hv_Row2, HTuple hv_Column2, HTuple hv_HeadLength, HTuple hv_HeadWidth)
+        {
+            // Stack for temporary objects
+            HObject[] OTemp = new HObject[20];
+
+            // Local iconic variables
+
+            HObject ho_TempArrow = null;
+
+            // Local control variables
+
+            HTuple hv_Length = new HTuple(), hv_ZeroLengthIndices = new HTuple();
+            HTuple hv_DR = new HTuple(), hv_DC = new HTuple(), hv_HalfHeadWidth = new HTuple();
+            HTuple hv_RowP1 = new HTuple(), hv_ColP1 = new HTuple();
+            HTuple hv_RowP2 = new HTuple(), hv_ColP2 = new HTuple();
+            HTuple hv_Index = new HTuple();
+            // Initialize local and output iconic variables
+            HOperatorSet.GenEmptyObj(out ho_Arrow);
+            HOperatorSet.GenEmptyObj(out ho_TempArrow);
+            //This procedure generates arrow shaped XLD contours,
+            //pointing from (Row1, Column1) to (Row2, Column2).
+            //If starting and end point are identical, a contour consisting
+            //of a single point is returned.
+            //
+            //input parameteres:
+            //Row1, Column1: Coordinates of the arrows' starting points
+            //Row2, Column2: Coordinates of the arrows' end points
+            //HeadLength, HeadWidth: Size of the arrow heads in pixels
+            //
+            //output parameter:
+            //Arrow: The resulting XLD contour
+            //
+            //The input tuples Row1, Column1, Row2, and Column2 have to be of
+            //the same length.
+            //HeadLength and HeadWidth either have to be of the same length as
+            //Row1, Column1, Row2, and Column2 or have to be a single element.
+            //If one of the above restrictions is violated, an error will occur.
+            //
+            //
+            //Init
+            ho_Arrow.Dispose();
+            HOperatorSet.GenEmptyObj(out ho_Arrow);
+            //
+            //Calculate the arrow length
+            hv_Length.Dispose();
+            HOperatorSet.DistancePp(hv_Row1, hv_Column1, hv_Row2, hv_Column2, out hv_Length);
+            //
+            //Mark arrows with identical start and end point
+            //(set Length to -1 to avoid division-by-zero exception)
+            hv_ZeroLengthIndices.Dispose();
+            using (HDevDisposeHelper dh = new HDevDisposeHelper())
+            {
+                hv_ZeroLengthIndices = hv_Length.TupleFind(
+                    0);
+            }
+            if ((int)(new HTuple(hv_ZeroLengthIndices.TupleNotEqual(-1))) != 0)
+            {
+                if (hv_Length == null)
+                    hv_Length = new HTuple();
+                hv_Length[hv_ZeroLengthIndices] = -1;
+            }
+            //
+            //Calculate auxiliary variables.
+            hv_DR.Dispose();
+            using (HDevDisposeHelper dh = new HDevDisposeHelper())
+            {
+                hv_DR = (1.0 * (hv_Row2 - hv_Row1)) / hv_Length;
+            }
+            hv_DC.Dispose();
+            using (HDevDisposeHelper dh = new HDevDisposeHelper())
+            {
+                hv_DC = (1.0 * (hv_Column2 - hv_Column1)) / hv_Length;
+            }
+            hv_HalfHeadWidth.Dispose();
+            using (HDevDisposeHelper dh = new HDevDisposeHelper())
+            {
+                hv_HalfHeadWidth = hv_HeadWidth / 2.0;
+            }
+            //
+            //Calculate end points of the arrow head.
+            hv_RowP1.Dispose();
+            using (HDevDisposeHelper dh = new HDevDisposeHelper())
+            {
+                hv_RowP1 = (hv_Row1 + ((hv_Length - hv_HeadLength) * hv_DR)) + (hv_HalfHeadWidth * hv_DC);
+            }
+            hv_ColP1.Dispose();
+            using (HDevDisposeHelper dh = new HDevDisposeHelper())
+            {
+                hv_ColP1 = (hv_Column1 + ((hv_Length - hv_HeadLength) * hv_DC)) - (hv_HalfHeadWidth * hv_DR);
+            }
+            hv_RowP2.Dispose();
+            using (HDevDisposeHelper dh = new HDevDisposeHelper())
+            {
+                hv_RowP2 = (hv_Row1 + ((hv_Length - hv_HeadLength) * hv_DR)) - (hv_HalfHeadWidth * hv_DC);
+            }
+            hv_ColP2.Dispose();
+            using (HDevDisposeHelper dh = new HDevDisposeHelper())
+            {
+                hv_ColP2 = (hv_Column1 + ((hv_Length - hv_HeadLength) * hv_DC)) + (hv_HalfHeadWidth * hv_DR);
+            }
+            //
+            //Finally create output XLD contour for each input point pair
+            for (hv_Index = 0; (int)hv_Index <= (int)((new HTuple(hv_Length.TupleLength())) - 1); hv_Index = (int)hv_Index + 1)
+            {
+                if ((int)(new HTuple(((hv_Length.TupleSelect(hv_Index))).TupleEqual(-1))) != 0)
+                {
+                    //Create_ single points for arrows with identical start and end point
+                    using (HDevDisposeHelper dh = new HDevDisposeHelper())
+                    {
+                        ho_TempArrow.Dispose();
+                        HOperatorSet.GenContourPolygonXld(out ho_TempArrow, hv_Row1.TupleSelect(hv_Index),
+                            hv_Column1.TupleSelect(hv_Index));
+                    }
+                }
+                else
+                {
+                    //Create arrow contour
+                    using (HDevDisposeHelper dh = new HDevDisposeHelper())
+                    {
+                        ho_TempArrow.Dispose();
+                        HOperatorSet.GenContourPolygonXld(out ho_TempArrow, ((((((((((hv_Row1.TupleSelect(
+                            hv_Index))).TupleConcat(hv_Row2.TupleSelect(hv_Index)))).TupleConcat(
+                            hv_RowP1.TupleSelect(hv_Index)))).TupleConcat(hv_Row2.TupleSelect(hv_Index)))).TupleConcat(
+                            hv_RowP2.TupleSelect(hv_Index)))).TupleConcat(hv_Row2.TupleSelect(hv_Index)),
+                            ((((((((((hv_Column1.TupleSelect(hv_Index))).TupleConcat(hv_Column2.TupleSelect(
+                            hv_Index)))).TupleConcat(hv_ColP1.TupleSelect(hv_Index)))).TupleConcat(
+                            hv_Column2.TupleSelect(hv_Index)))).TupleConcat(hv_ColP2.TupleSelect(
+                            hv_Index)))).TupleConcat(hv_Column2.TupleSelect(hv_Index)));
+                    }
+                }
+                {
+                    HObject ExpTmpOutVar_0;
+                    HOperatorSet.ConcatObj(ho_Arrow, ho_TempArrow, out ExpTmpOutVar_0);
+                    ho_Arrow.Dispose();
+                    ho_Arrow = ExpTmpOutVar_0;
+                }
+            }
+            ho_TempArrow.Dispose();
+
+            hv_Length.Dispose();
+            hv_ZeroLengthIndices.Dispose();
+            hv_DR.Dispose();
+            hv_DC.Dispose();
+            hv_HalfHeadWidth.Dispose();
+            hv_RowP1.Dispose();
+            hv_ColP1.Dispose();
+            hv_RowP2.Dispose();
+            hv_ColP2.Dispose();
+            hv_Index.Dispose();
+
+            return;
+        }
+
+        /// <summary>
+        /// 卡尺测量
+        /// </summary>
+        /// <param name="winControl">显示控件</param>
+        /// <param name="measure">卡尺参数</param>
+        /// <param name="image">输入图像</param>
+        /// <param name="_OutShapeRegion">返回的找到的边</param>
+        /// <param name="_OutShapeParam">返回的找到的边的参数</param>
+        public static void CaliperMeasure(HalconDisplayWindow winControl, MeasureParam measure, HObject image, out HObject _OutShapeRegion, out HTuple _OutShapeParam)
+        {
+            try
+            {
+                if (measure.InputShapeParam == null || image == null)
+                {
+                    _OutShapeParam = new HTuple(0, 0, 0, 0, 0, 0, 0);
+                    HOperatorSet.GenEmptyObj(out _OutShapeRegion);
+                    return;
+                }
+
+                HObject ho_Contours, ho_Cross, ho_Contour;
+                HTuple hv_MetrologyHandle = new HTuple();
+                HTuple hv_Index = new HTuple(), hv_Row = new HTuple();
+                HTuple hv_Column = new HTuple(), hv_Nr = new HTuple();
+                HTuple hv_Nc = new HTuple(), hv_Dist = new HTuple();
+                // Initialize local and output iconic variables
+                HOperatorSet.GenEmptyObj(out _OutShapeRegion);
+                HOperatorSet.GenEmptyObj(out ho_Contours);
+                HOperatorSet.GenEmptyObj(out ho_Cross);
+                HOperatorSet.GenEmptyObj(out ho_Contour);
+                //创建句柄
+                hv_MetrologyHandle.Dispose();
+                HOperatorSet.CreateMetrologyModel(out hv_MetrologyHandle);
+                HTuple hv_Width, hv_Height;
+                winControl?.Disp_Image(image);
+                HOperatorSet.GetImageSize(image, out hv_Width, out hv_Height);
+                //设置计量对象的图像大小
+                HOperatorSet.SetMetrologyModelImageSize(hv_MetrologyHandle, hv_Width, hv_Height);
+
+                //------------判断参数是否合法------------
+                HObject OldRegion = new HObject();
+                HOperatorSet.GenEmptyObj(out OldRegion);
+                OldRegion.Dispose();
+                if (measure.Shape == MeasureShapes.line)
+                {
+                    try
+                    {
+                        Gen_Arrow_Contour_XLD(out OldRegion, measure.InputShapeParam.TupleSelect(0), measure.InputShapeParam.TupleSelect(1), measure.InputShapeParam.TupleSelect(2), measure.InputShapeParam.TupleSelect(3), 10, 10);
+
+                        if (measure.IsDispCaliper)
+                        {
+                            HTuple hv_CenterRow = new HTuple(), hv_CenterCol = new HTuple();
+                            HTuple hv_DirectionRow = new HTuple();
+                            HTuple hv_DirectionCol = new HTuple();
+                            //计算该直线的中点
+                            hv_CenterRow.Dispose();
+                            using (HDevDisposeHelper dh = new HDevDisposeHelper())
+                            {
+                                hv_CenterRow = (measure.InputShapeParam.TupleSelect(0) + measure.InputShapeParam.TupleSelect(2)) / 2;
+                            }
+                            hv_CenterCol.Dispose();
+                            using (HDevDisposeHelper dh = new HDevDisposeHelper())
+                            {
+                                hv_CenterCol = (measure.InputShapeParam.TupleSelect(1) + measure.InputShapeParam.TupleSelect(3)) / 2;
+                            }
+
+                            HTuple ccrow = (hv_CenterRow + measure.InputShapeParam.TupleSelect(2)) / 2;
+                            HTuple cccol = (hv_CenterCol + measure.InputShapeParam.TupleSelect(3)) / 2;
+
+
+
+                            HTuple homMat2D = new HTuple();
+                            HOperatorSet.VectorAngleToRigid(hv_CenterRow, hv_CenterCol, 0, hv_CenterRow, hv_CenterCol, new HTuple(-90).TupleRad(), out homMat2D);
+                            HOperatorSet.AffineTransPoint2d(homMat2D, ccrow, cccol, out hv_DirectionRow, out hv_DirectionCol);
+
+                            ccrow = (hv_CenterRow + hv_DirectionRow) / 2;
+                            cccol = (hv_CenterCol + hv_DirectionCol) / 2;
+
+                            HOperatorSet.VectorAngleToRigid(hv_CenterRow, hv_CenterCol, 0, hv_CenterRow, hv_CenterCol, new HTuple(0).TupleRad(), out homMat2D);
+                            HOperatorSet.AffineTransPoint2d(homMat2D, ccrow, cccol, out hv_DirectionRow, out hv_DirectionCol);
+                            HObject vertical;
+                            HOperatorSet.GenEmptyObj(out vertical);
+                            vertical.Dispose();
+                            Gen_Arrow_Contour_XLD(out vertical, hv_CenterRow, hv_CenterCol, hv_DirectionRow, hv_DirectionCol, 20, 20);
+                            winControl?.Disp_Region(vertical.Clone(), "red", "margin");
+                            vertical.Dispose();
+                        }
+                    }
+                    catch { _OutShapeParam = new HTuple(0, 0, 0, 0); return; }
+                }
+                else if (measure.Shape == MeasureShapes.circle)
+                {
+                    try
+                    {
+                        HOperatorSet.GenCircle(out OldRegion, measure.InputShapeParam.TupleSelect(0), measure.InputShapeParam.TupleSelect(1), measure.InputShapeParam.TupleSelect(2));
+                    }
+                    catch { _OutShapeParam = new HTuple(0, 0, 0); return; }
+                }
+                else if (measure.Shape == MeasureShapes.rectangle2)
+                {
+                    try
+                    {
+                        HOperatorSet.GenRectangle2(out OldRegion, measure.InputShapeParam.TupleSelect(0), measure.InputShapeParam.TupleSelect(1), measure.InputShapeParam.TupleSelect(2), measure.InputShapeParam.TupleSelect(3), measure.InputShapeParam.TupleSelect(4));
+                    }
+                    catch { _OutShapeParam = new HTuple(0, 0, 0, 0, 0); return; }
+                }
+                else if (measure.Shape == MeasureShapes.ellipse)
+                {
+                    try
+                    {
+                        HOperatorSet.GenEllipse(out OldRegion, measure.InputShapeParam.TupleSelect(0), measure.InputShapeParam.TupleSelect(1), measure.InputShapeParam.TupleSelect(2), measure.InputShapeParam.TupleSelect(3), measure.InputShapeParam.TupleSelect(4));
+                    }
+                    catch { _OutShapeParam = new HTuple(0, 0, 0, 0, 0); return; }
+                }
+                //--------------------------------------
+                if (measure.IsDispInputRegion)
+                {
+                    winControl?.Disp_Region(OldRegion.Clone(), "turquoise", "margin");
+                }
+
+                OldRegion.Dispose();
+                //添加线模型
+                hv_Index.Dispose();
+                HOperatorSet.AddMetrologyObjectGeneric(hv_MetrologyHandle, new HTuple(measure.Shape.ToString()), measure.InputShapeParam, 20, 5, 1, 30, new HTuple(), new HTuple(), out hv_Index);
+                //all 全部    positive 黑到白(暗到亮)    'negative'白到黑(亮到暗)
+                HOperatorSet.SetMetrologyObjectParam(hv_MetrologyHandle, "all", "measure_transition", measure.Transition.ToString());
+                //指定所需度量区域的数量(卡尺数量  越小卡尺间隔越大)
+                HOperatorSet.SetMetrologyObjectParam(hv_MetrologyHandle, "all", "num_measures", measure.CaliperNumber);
+                //每个计量对象成功拟合实例的最大数量
+                HOperatorSet.SetMetrologyObjectParam(hv_MetrologyHandle, "all", "num_instances", measure.Num_Instances);
+                //西格玛
+                HOperatorSet.SetMetrologyObjectParam(hv_MetrologyHandle, "all", "measure_sigma", measure.Sigma);
+                //整个卡尺宽度（一半）
+                HOperatorSet.SetMetrologyObjectParam(hv_MetrologyHandle, "all", "measure_length1", measure.CaliperWidth / 2);
+                //单个卡尺的测量宽度
+                HOperatorSet.SetMetrologyObjectParam(hv_MetrologyHandle, "all", "measure_length2", measure.SingleCaliperWidth);
+                //阈值
+                HOperatorSet.SetMetrologyObjectParam(hv_MetrologyHandle, "all", "measure_threshold", measure.AmplitudeThreshold);
+                //参数指定要使用的插值类型   双立体
+                HOperatorSet.SetMetrologyObjectParam(hv_MetrologyHandle, "all", "measure_interpolation", "bicubic");
+                //'all' 全部  'first' 第一个点            last最后一个点
+                HOperatorSet.SetMetrologyObjectParam(hv_MetrologyHandle, "all", "measure_select", measure.Select.ToString());
+                //找的的最小分数
+                HOperatorSet.SetMetrologyObjectParam(hv_MetrologyHandle, "all", "min_score", measure.Min_Score);
+                HObject rgb1Image;
+                HOperatorSet.GenEmptyObj(out rgb1Image);
+                rgb1Image.Dispose();
+
+                HOperatorSet.Rgb1ToGray(image, out rgb1Image);
+
+                //开始找边
+                HOperatorSet.ApplyMetrologyModel(rgb1Image, hv_MetrologyHandle);
+                //获取计量模型中计量对象的测量区域和边缘位置的结果。（获取坐标）
+                ho_Contours.Dispose(); hv_Row.Dispose(); hv_Column.Dispose();
+                HOperatorSet.GetMetrologyObjectMeasures(out ho_Contours, hv_MetrologyHandle, "all", "all", out hv_Row, out hv_Column);
+                if (measure.IsDispCaliper)
+                {
+                    winControl?.Disp_Region(ho_Contours, "12", "margin");
+                }
+
+                //把点显示出来
+                ho_Cross.Dispose();
+                HOperatorSet.GenCrossContourXld(out ho_Cross, hv_Row, hv_Column, measure.CrossSize, new HTuple(45).TupleRad());
+                if (measure.IsDispCross)
+                {
+                    winControl?.Disp_Region(ho_Cross, "green", "margin");
+                }
+                //释放测量句柄
+                HOperatorSet.ClearMetrologyModel(hv_MetrologyHandle);
+                ho_Contour.Dispose();
+                HOperatorSet.GenContourPolygonXld(out ho_Contour, hv_Row, hv_Column);
+                if (measure.Shape == MeasureShapes.line)
+                {
+                    HTuple hv_RowBegin = new HTuple(), hv_ColumnBegin = new HTuple(), hv_RowEnd = new HTuple(), hv_ColumnEnd = new HTuple();
+                    hv_RowBegin.Dispose(); hv_ColumnBegin.Dispose(); hv_RowEnd.Dispose(); hv_ColumnEnd.Dispose(); hv_Nr.Dispose(); hv_Nc.Dispose(); hv_Dist.Dispose();
+                    HOperatorSet.FitLineContourXld(ho_Contour, "tukey", -1, 0, 5, 2, out hv_RowBegin, out hv_ColumnBegin, out hv_RowEnd, out hv_ColumnEnd, out hv_Nr, out hv_Nc, out hv_Dist);
+                    _OutShapeParam = new HTuple();
+                    _OutShapeParam[new HTuple(_OutShapeParam.TupleLength())] = hv_RowBegin;
+                    _OutShapeParam[new HTuple(_OutShapeParam.TupleLength())] = hv_ColumnBegin;
+                    _OutShapeParam[new HTuple(_OutShapeParam.TupleLength())] = hv_RowEnd;
+                    _OutShapeParam[new HTuple(_OutShapeParam.TupleLength())] = hv_ColumnEnd;
+                    _OutShapeRegion.Dispose();
+                    HOperatorSet.GenRegionLine(out _OutShapeRegion, hv_RowBegin, hv_ColumnBegin, hv_RowEnd, hv_ColumnEnd);
+                }
+                else if (measure.Shape == MeasureShapes.circle)
+                {
+                    HTuple Row, Column, Radius, StartPhi, EndPhi, PointOrder;
+                    HOperatorSet.FitCircleContourXld(ho_Contour, "algebraic", -1, 0, 0, 3, 2, out Row, out Column, out Radius, out StartPhi, out EndPhi, out PointOrder);
+                    _OutShapeParam = new HTuple();
+                    _OutShapeParam[new HTuple(_OutShapeParam.TupleLength())] = Row;
+                    _OutShapeParam[new HTuple(_OutShapeParam.TupleLength())] = Column;
+                    _OutShapeParam[new HTuple(_OutShapeParam.TupleLength())] = Radius;
+                    HOperatorSet.GenCircle(out _OutShapeRegion, Row, Column, Radius);
+                }
+                else if (measure.Shape == MeasureShapes.rectangle2)
+                {
+                    HTuple Row1, Column1, Phi, Length1, Length2, PointOrder1;
+                    HOperatorSet.FitRectangle2ContourXld(ho_Contour, "regression", -1, 0, 0, 3, 2, out Row1, out Column1, out Phi, out Length1, out Length2, out PointOrder1);
+                    _OutShapeParam = new HTuple();
+                    _OutShapeParam[new HTuple(_OutShapeParam.TupleLength())] = Row1;
+                    _OutShapeParam[new HTuple(_OutShapeParam.TupleLength())] = Column1;
+                    _OutShapeParam[new HTuple(_OutShapeParam.TupleLength())] = Phi;
+                    _OutShapeParam[new HTuple(_OutShapeParam.TupleLength())] = Length1;
+                    _OutShapeParam[new HTuple(_OutShapeParam.TupleLength())] = Length2;
+                    HOperatorSet.GenRectangle2(out _OutShapeRegion, Row1, Column1, Phi, Length1, Length2);
+                }
+                else if (measure.Shape == MeasureShapes.ellipse)
+                {
+                    HTuple Row2, Column2, Phi1, Radius1, Radius2, StartPhi1, EndPhi1, PointOrder2;
+                    HOperatorSet.FitEllipseContourXld(ho_Contour, "fitzgibbon", -1, 0, 0, 200, 3, 2, out Row2, out Column2, out Phi1, out Radius1, out Radius2, out StartPhi1, out EndPhi1, out PointOrder2);
+                    _OutShapeParam = new HTuple();
+                    _OutShapeParam[new HTuple(_OutShapeParam.TupleLength())] = Row2;
+                    _OutShapeParam[new HTuple(_OutShapeParam.TupleLength())] = Column2;
+                    _OutShapeParam[new HTuple(_OutShapeParam.TupleLength())] = Phi1;
+                    _OutShapeParam[new HTuple(_OutShapeParam.TupleLength())] = Radius1;
+                    _OutShapeParam[new HTuple(_OutShapeParam.TupleLength())] = Radius2;
+                    HOperatorSet.GenEllipse(out _OutShapeRegion, Row2, Column2, Phi1, Radius1, Radius2);
+                }
+                else
+                {
+                    _OutShapeParam = new HTuple(0, 0, 0, 0, 0, 0, 0);
+                }
+                winControl?.Disp_Region(_OutShapeRegion, "blue", "margin");
+                ho_Contours.Dispose();
+                ho_Cross.Dispose();
+                ho_Contour.Dispose();
+                rgb1Image.Dispose();
+                hv_MetrologyHandle.Dispose();
+                hv_Index.Dispose();
+                hv_Row.Dispose();
+                hv_Column.Dispose();
+                hv_Nr.Dispose();
+                hv_Nc.Dispose();
+                hv_Dist.Dispose();
+
+                return;
+            }
+            catch
+            {
+                _OutShapeParam = new HTuple(0, 0, 0, 0, 0, 0, 0);
+                HOperatorSet.GenEmptyObj(out _OutShapeRegion);
+
+            }
+        }
     }
 }

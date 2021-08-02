@@ -81,6 +81,7 @@
     <Compile Include="Helper\Log.cs" />
     <Compile Include="Helper\PowerBoot.cs" />
     <Compile Include="Helper\QueueSaveImage.cs" />
+    <Compile Include="Helper\Serialization.cs" />
     <Compile Include="Helper\SystemInfo.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
