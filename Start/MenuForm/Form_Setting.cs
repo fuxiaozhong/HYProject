@@ -76,7 +76,6 @@ namespace HYProject.MenuForm
         /// <param name="e"></param>
         private void Form_Setting_Load(object sender, EventArgs e)
         {
-
             textBox1.Text = AppParam.Instance.Save_Image_Path;
             textBox2.Text = AppParam.Instance.Save_Data_Path;
             numericUpDown1.Value = AppParam.Instance.Save_Image_Days;
@@ -95,6 +94,7 @@ namespace HYProject.MenuForm
             };
             thread.Start();
         }
+
         public static long GetHardDiskFreeSpace(string str_HardDiskName) //磁盘号
         {
             long freeSpace = new long();
@@ -146,12 +146,10 @@ namespace HYProject.MenuForm
                             progressBar2.Value = 100 - (int)((double)TotalFreeSpace / (double)TotalSize * 100);
                             break;
                         }
-
                     }
                 }
                 catch (Exception)
                 {
-
                 }
                 Thread.Sleep(100);
             }

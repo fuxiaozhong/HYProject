@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using System.IO;
+
 using HalconDotNet;
 
 namespace ToolKit.DisplayWindow
@@ -117,7 +118,6 @@ namespace ToolKit.DisplayWindow
                         Directory.CreateDirectory(patn + "\\" + camName + "\\截图\\OK");
                     }
                     SaveDumpImage(patn + "\\" + camName + "\\截图\\OK" + DateTime.Now.ToString("yyyyMMddHHmmssffff"), HSaveImageFormat.png);
-
                 }
                 else
                 {
@@ -151,13 +151,8 @@ namespace ToolKit.DisplayWindow
                     }
                     SaveImage(patn + "\\" + camName + "\\原图\\NG" + DateTime.Now.ToString("yyyyMMddHHmmssffff"), HSaveImageFormat.png);
                 }
-
             }
-
-
-
         }
-
 
         /// <summary>
         /// 保存截图

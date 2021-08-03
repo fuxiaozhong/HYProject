@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 using System.Windows.Forms;
+
 using MaterialSkin.Animations;
 
 namespace MaterialSkin.Controls
@@ -12,16 +13,18 @@ namespace MaterialSkin.Controls
         //Properties for managing the material design properties
         [Browsable(false)]
         public int Depth { get; set; }
+
         [Browsable(false)]
         public MaterialSkinManager SkinManager => MaterialSkinManager.Instance;
+
         [Browsable(false)]
         public MouseState MouseState { get; set; }
-
 
         internal AnimationManager AnimationManager;
         internal Point AnimationSource;
 
         public delegate void ItemClickStart(object sender, ToolStripItemClickedEventArgs e);
+
         public event ItemClickStart OnItemClickStart;
 
         public MaterialContextMenuStrip()
@@ -47,6 +50,7 @@ namespace MaterialSkin.Controls
         }
 
         private ToolStripItemClickedEventArgs _delayesArgs;
+
         protected override void OnItemClicked(ToolStripItemClickedEventArgs e)
         {
             if (e.ClickedItem != null && !(e.ClickedItem is ToolStripSeparator))
@@ -95,9 +99,9 @@ namespace MaterialSkin.Controls
     {
         //Properties for managing the material design properties
         public int Depth { get; set; }
+
         public MaterialSkinManager SkinManager => MaterialSkinManager.Instance;
         public MouseState MouseState { get; set; }
-
 
         protected override void OnRenderItemText(ToolStripItemTextRenderEventArgs e)
         {

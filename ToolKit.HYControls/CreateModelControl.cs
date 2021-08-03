@@ -1,17 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using HalconDotNet;
 
-using ToolKit.DisplayWindow;
 using ToolKit.HalconTool;
 using ToolKit.HalconTool.Model;
 
@@ -19,16 +10,15 @@ namespace ToolKit.HYControls
 {
     public partial class CreateModelControl : UserControl
     {
-        ModelParameter model = new ModelParameter();
+        private ModelParameter model = new ModelParameter();
+
         public CreateModelControl()
         {
             InitializeComponent();
-
         }
 
         private void GetConfig()
         {
-
             if (model_Shple.Checked)
                 model.matchMode = MatchMode.BasedShape;
             else
@@ -51,7 +41,6 @@ namespace ToolKit.HYControls
         private void Button5_Click(object sender, EventArgs e)
         {
             GetConfig();
-
 
             if (model.baseImage == null)
             {
@@ -91,12 +80,10 @@ namespace ToolKit.HYControls
                 MessageBox.Show("创建失败", "Tips");
                 label12.Text = "模板学习失败";
             }
-
         }
 
         private void Button6_Click(object sender, EventArgs e)
         {
-
             HObject image = displayWindow1.Open_Image();
             if (image != null)
             {
@@ -197,7 +184,6 @@ namespace ToolKit.HYControls
         private void 显示搜索区域ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             displayWindow1.Disp_Region(model.findModelRegion, "green", "margin");
-
         }
 
         private void 测试查找ToolStripMenuItem_Click(object sender, EventArgs e)

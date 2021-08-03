@@ -6,19 +6,19 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 
-using static ToolKit.CommunicAtion.TCPSocketServer;
-
 namespace ToolKit.CommunicAtion
 {
     public class TCPSocketServer
     {
         public delegate void _SocketReceiveMessage(Socket client, string clientSocketIp, string message);
+
         public delegate void _ClientsConnect(Dictionary<string, Socket> clients);
 
         /// <summary>
         /// 接受消息回调函数
         /// </summary>
         public event _SocketReceiveMessage SocketReceiveMessage;
+
         /// <summary>
         /// 客户端连接触发事件
         /// </summary>
@@ -187,6 +187,7 @@ namespace ToolKit.CommunicAtion
             {
             }
         }
+
         /// <summary>
         /// 发送消息(默认第一个客户端)
         /// </summary>
@@ -206,7 +207,6 @@ namespace ToolKit.CommunicAtion
                 {
                     Console.WriteLine("没有客户端连接");
                 }
-
             }
             catch (Exception)
             {

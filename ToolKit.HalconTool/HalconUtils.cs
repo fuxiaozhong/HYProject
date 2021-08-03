@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using HalconDotNet;
@@ -221,19 +217,15 @@ namespace ToolKit.HalconTool
                     }
                 }
             }
-
         }
 
         private static void get_hom_mat2d_from_matching_result(HTuple hv_Row, HTuple hv_Column, HTuple hv_Angle, HTuple hv_ScaleR, HTuple hv_ScaleC, out HTuple hv_HomMat2D)
         {
-
-
-
-            // Local control variables 
+            // Local control variables
 
             HTuple hv_HomMat2DIdentity = new HTuple();
             HTuple hv_HomMat2DScale = new HTuple(), hv_HomMat2DRotate = new HTuple();
-            // Initialize local and output iconic variables 
+            // Initialize local and output iconic variables
             hv_HomMat2D = new HTuple();
             try
             {
@@ -255,16 +247,12 @@ namespace ToolKit.HalconTool
                 hv_HomMat2DRotate.Dispose();
 
                 return;
-
-
             }
             catch
             {
-
                 hv_HomMat2DIdentity.Dispose();
                 hv_HomMat2DScale.Dispose();
                 hv_HomMat2DRotate.Dispose();
-
             }
         }
 
@@ -282,15 +270,12 @@ namespace ToolKit.HalconTool
         /// <param name="hv_Model"></param>
         public static void dev_display_shape_matching_results(HalconDisplayWindow winControl, HTuple hv_ModelID, HTuple hv_Color, HTuple hv_Row, HTuple hv_Column, HTuple hv_Angle, HTuple hv_ScaleR, HTuple hv_ScaleC, HTuple hv_Model)
         {
-
-
-
-            // Local iconic variables 
+            // Local iconic variables
 
             HObject ho_ClutterRegion = null, ho_ModelContours = null;
             HObject ho_ContoursAffinTrans = null, ho_RegionAffineTrans = null;
 
-            // Local control variables 
+            // Local control variables
 
             HTuple hv_UseClutter = new HTuple(), hv_UseClutter0 = new HTuple();
             HTuple hv_HomMat2D = new HTuple(), hv_ClutterContrast = new HTuple();
@@ -302,14 +287,13 @@ namespace ToolKit.HalconTool
             HTuple hv_ScaleC_COPY_INP_TMP = new HTuple(hv_ScaleC);
             HTuple hv_ScaleR_COPY_INP_TMP = new HTuple(hv_ScaleR);
 
-            // Initialize local and output iconic variables 
+            // Initialize local and output iconic variables
             HOperatorSet.GenEmptyObj(out ho_ClutterRegion);
             HOperatorSet.GenEmptyObj(out ho_ModelContours);
             HOperatorSet.GenEmptyObj(out ho_ContoursAffinTrans);
             HOperatorSet.GenEmptyObj(out ho_RegionAffineTrans);
             try
             {
-
                 //
                 hv_UseClutter.Dispose();
                 hv_UseClutter = "false";
@@ -336,14 +320,13 @@ namespace ToolKit.HalconTool
                         }
                     }
                 }
-                // catch (Exception) 
+                // catch (Exception)
                 catch (HalconException HDevExpDefaultException1)
                 {
                     HDevExpDefaultException1.ToHTuple(out hv_Exception);
                 }
                 if ((int)(new HTuple(hv_UseClutter.TupleEqual("true"))) != 0)
                 {
-
                     //For clutter-enabled models, the Color tuple should have either
                     //exactly 2 entries, or 2* the number of models. The first color
                     //is used for the match and the second for the clutter region,
@@ -450,14 +433,11 @@ namespace ToolKit.HalconTool
                                     HOperatorSet.AffineTransRegion(ho_ClutterRegion, out ho_RegionAffineTrans, hv_HomMat2DCompose, "constant");
                                     if ((int)(new HTuple((new HTuple(hv_Color.TupleLength())).TupleEqual(2))) != 0)
                                     {
-
                                         winControl.Disp_Region(ho_RegionAffineTrans, "blue", "margin");
                                     }
                                     else
                                     {
-
                                         winControl.Disp_Region(ho_RegionAffineTrans, "blue", "margin");
-
                                     }
                                 }
                                 winControl.Disp_Region(ho_ContoursAffinTrans, "blue", "margin");
@@ -514,7 +494,6 @@ namespace ToolKit.HalconTool
                 hv_Match.Dispose();
                 hv_HomMat2DTranslate.Dispose();
                 hv_HomMat2DCompose.Dispose();
-
             }
         }
 
@@ -530,15 +509,12 @@ namespace ToolKit.HalconTool
         /// <param name="hv_Model"></param>
         public static void dev_display_ncc_matching_results(HalconDisplayWindow winControl, HTuple hv_ModelID, HTuple hv_Color, HTuple hv_Row, HTuple hv_Column, HTuple hv_Angle, HTuple hv_Model)
         {
-
-
-
-            // Local iconic variables 
+            // Local iconic variables
 
             HObject ho_ModelRegion = null, ho_ModelContours = null;
             HObject ho_ContoursAffinTrans = null, ho_Cross = null;
 
-            // Local control variables 
+            // Local control variables
 
             HTuple hv_NumMatches = new HTuple(), hv_Index = new HTuple();
             HTuple hv_Match = new HTuple(), hv_HomMat2DIdentity = new HTuple();
@@ -546,7 +522,7 @@ namespace ToolKit.HalconTool
             HTuple hv_RowTrans = new HTuple(), hv_ColTrans = new HTuple();
             HTuple hv_Model_COPY_INP_TMP = new HTuple(hv_Model);
 
-            // Initialize local and output iconic variables 
+            // Initialize local and output iconic variables
             HOperatorSet.GenEmptyObj(out ho_ModelRegion);
             HOperatorSet.GenEmptyObj(out ho_ModelContours);
             HOperatorSet.GenEmptyObj(out ho_ContoursAffinTrans);
@@ -607,7 +583,6 @@ namespace ToolKit.HalconTool
                                 ho_ContoursAffinTrans.Dispose();
                                 HOperatorSet.AffineTransContourXld(ho_ModelContours, out ho_ContoursAffinTrans, hv_HomMat2DTranslate);
 
-
                                 winControl.Disp_Region(ho_ContoursAffinTrans, "red", "margin");
                                 hv_RowTrans.Dispose(); hv_ColTrans.Dispose();
                                 HOperatorSet.AffineTransPixel(hv_HomMat2DTranslate, 0, 0, out hv_RowTrans, out hv_ColTrans);
@@ -654,7 +629,6 @@ namespace ToolKit.HalconTool
                 hv_HomMat2DTranslate.Dispose();
                 hv_RowTrans.Dispose();
                 hv_ColTrans.Dispose();
-
             }
         }
 
@@ -889,8 +863,6 @@ namespace ToolKit.HalconTool
                             HTuple ccrow = (hv_CenterRow + measure.InputShapeParam.TupleSelect(2)) / 2;
                             HTuple cccol = (hv_CenterCol + measure.InputShapeParam.TupleSelect(3)) / 2;
 
-
-
                             HTuple homMat2D = new HTuple();
                             HOperatorSet.VectorAngleToRigid(hv_CenterRow, hv_CenterCol, 0, hv_CenterRow, hv_CenterCol, new HTuple(-90).TupleRad(), out homMat2D);
                             HOperatorSet.AffineTransPoint2d(homMat2D, ccrow, cccol, out hv_DirectionRow, out hv_DirectionCol);
@@ -1061,7 +1033,6 @@ namespace ToolKit.HalconTool
             {
                 _OutShapeParam = new HTuple(0, 0, 0, 0, 0, 0, 0);
                 HOperatorSet.GenEmptyObj(out _OutShapeRegion);
-
             }
         }
     }

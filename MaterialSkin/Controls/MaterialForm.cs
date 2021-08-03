@@ -13,10 +13,13 @@ namespace MaterialSkin.Controls
     {
         [Browsable(false)]
         public int Depth { get; set; }
+
         [Browsable(false)]
         public MaterialSkinManager SkinManager => MaterialSkinManager.Instance;
+
         [Browsable(false)]
         public MouseState MouseState { get; set; }
+
         public new FormBorderStyle FormBorderStyle { get { return base.FormBorderStyle; } set { base.FormBorderStyle = value; } }
         public bool Sizable { get; set; }
 
@@ -98,6 +101,7 @@ namespace MaterialSkin.Controls
             public RECT rcMonitor = new RECT();
             public RECT rcWork = new RECT();
             public int dwFlags = 0;
+
             [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)]
             public char[] szDevice = new char[32];
         }
@@ -381,7 +385,6 @@ namespace MaterialSkin.Controls
 
                     if (oldState == ButtonState.MaxDown && up)
                         MaximizeWindow(!_maximized);
-
                 }
                 else if (ControlBox && _xButtonBounds.Contains(e.Location))
                 {
@@ -417,7 +420,6 @@ namespace MaterialSkin.Controls
                 Size = _previousSize;
                 Location = _previousLocation;
             }
-
         }
 
         protected override void OnMouseUp(MouseEventArgs e)
@@ -438,15 +440,19 @@ namespace MaterialSkin.Controls
                 case ResizeDirection.BottomLeft:
                     dir = HTBOTTOMLEFT;
                     break;
+
                 case ResizeDirection.Left:
                     dir = HTLEFT;
                     break;
+
                 case ResizeDirection.Right:
                     dir = HTRIGHT;
                     break;
+
                 case ResizeDirection.BottomRight:
                     dir = HTBOTTOMRIGHT;
                     break;
+
                 case ResizeDirection.Bottom:
                     dir = HTBOTTOM;
                     break;
@@ -574,7 +580,6 @@ namespace MaterialSkin.Controls
 
         public bool PreFilterMessage(ref Message m)
         {
-
             if (m.Msg == WM_MOUSEMOVE)
             {
                 if (MouseMove != null)

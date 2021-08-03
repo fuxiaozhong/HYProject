@@ -5,6 +5,7 @@ using System.Drawing.Text;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+
 using MaterialSkin.Controls;
 using MaterialSkin.Properties;
 
@@ -20,6 +21,7 @@ namespace MaterialSkin
 
         //Theme
         private Themes _theme;
+
         public Themes Theme
         {
             get { return _theme; }
@@ -31,6 +33,7 @@ namespace MaterialSkin
         }
 
         private ColorScheme _colorScheme;
+
         public ColorScheme ColorScheme
         {
             get { return _colorScheme; }
@@ -49,6 +52,7 @@ namespace MaterialSkin
 
         //Constant color values
         private static readonly Color PRIMARY_TEXT_BLACK = Color.FromArgb(222, 0, 0, 0);
+
         private static readonly Brush PRIMARY_TEXT_BLACK_BRUSH = new SolidBrush(PRIMARY_TEXT_BLACK);
         public static Color SECONDARY_TEXT_BLACK = Color.FromArgb(138, 0, 0, 0);
         public static Brush SECONDARY_TEXT_BLACK_BRUSH = new SolidBrush(SECONDARY_TEXT_BLACK);
@@ -68,6 +72,7 @@ namespace MaterialSkin
 
         // Checkbox colors
         private static readonly Color CHECKBOX_OFF_LIGHT = Color.FromArgb(138, 0, 0, 0);
+
         private static readonly Brush CHECKBOX_OFF_LIGHT_BRUSH = new SolidBrush(CHECKBOX_OFF_LIGHT);
         private static readonly Color CHECKBOX_OFF_DISABLED_LIGHT = Color.FromArgb(66, 0, 0, 0);
         private static readonly Brush CHECKBOX_OFF_DISABLED_LIGHT_BRUSH = new SolidBrush(CHECKBOX_OFF_DISABLED_LIGHT);
@@ -79,6 +84,7 @@ namespace MaterialSkin
 
         //Raised button
         private static readonly Color RAISED_BUTTON_BACKGROUND = Color.FromArgb(255, 255, 255, 255);
+
         private static readonly Brush RAISED_BUTTON_BACKGROUND_BRUSH = new SolidBrush(RAISED_BUTTON_BACKGROUND);
         private static readonly Color RAISED_BUTTON_TEXT_LIGHT = PRIMARY_TEXT_WHITE;
         private static readonly Brush RAISED_BUTTON_TEXT_LIGHT_BRUSH = new SolidBrush(RAISED_BUTTON_TEXT_LIGHT);
@@ -87,6 +93,7 @@ namespace MaterialSkin
 
         //Flat button
         private static readonly Color FLAT_BUTTON_BACKGROUND_HOVER_LIGHT = Color.FromArgb(20.PercentageToColorComponent(), 0x999999.ToColor());
+
         private static readonly Brush FLAT_BUTTON_BACKGROUND_HOVER_LIGHT_BRUSH = new SolidBrush(FLAT_BUTTON_BACKGROUND_HOVER_LIGHT);
         private static readonly Color FLAT_BUTTON_BACKGROUND_PRESSED_LIGHT = Color.FromArgb(40.PercentageToColorComponent(), 0x999999.ToColor());
         private static readonly Brush FLAT_BUTTON_BACKGROUND_PRESSED_LIGHT_BRUSH = new SolidBrush(FLAT_BUTTON_BACKGROUND_PRESSED_LIGHT);
@@ -102,6 +109,7 @@ namespace MaterialSkin
 
         //ContextMenuStrip
         private static readonly Color CMS_BACKGROUND_LIGHT_HOVER = Color.FromArgb(255, 238, 238, 238);
+
         private static readonly Brush CMS_BACKGROUND_HOVER_LIGHT_BRUSH = new SolidBrush(CMS_BACKGROUND_LIGHT_HOVER);
 
         private static readonly Color CMS_BACKGROUND_DARK_HOVER = Color.FromArgb(38, 204, 204, 204);
@@ -109,6 +117,7 @@ namespace MaterialSkin
 
         //Application background
         private static readonly Color BACKGROUND_LIGHT = Color.FromArgb(255, 255, 255, 255);
+
         private static Brush BACKGROUND_LIGHT_BRUSH = new SolidBrush(BACKGROUND_LIGHT);
 
         private static readonly Color BACKGROUND_DARK = Color.FromArgb(255, 51, 51, 51);
@@ -116,6 +125,7 @@ namespace MaterialSkin
 
         //Application action bar
         public readonly Color ACTION_BAR_TEXT = Color.FromArgb(255, 255, 255, 255);
+
         public readonly Brush ACTION_BAR_TEXT_BRUSH = new SolidBrush(Color.FromArgb(255, 255, 255, 255));
         public readonly Color ACTION_BAR_TEXT_SECONDARY = Color.FromArgb(153, 255, 255, 255);
         public readonly Brush ACTION_BAR_TEXT_SECONDARY_BRUSH = new SolidBrush(Color.FromArgb(153, 255, 255, 255));
@@ -227,6 +237,7 @@ namespace MaterialSkin
 
         //Roboto font
         public Font ROBOTO_MEDIUM_12;
+
         public Font ROBOTO_REGULAR_11;
         public Font ROBOTO_MEDIUM_11;
         public Font ROBOTO_MEDIUM_10;
@@ -295,7 +306,6 @@ namespace MaterialSkin
                 control.BackColor = newBackColor;
                 if (control is MaterialToolStripMenuItem && (control as MaterialToolStripMenuItem).HasDropDown)
                 {
-
                     //recursive call
                     UpdateToolStrip((control as MaterialToolStripMenuItem).DropDown, newBackColor);
                 }
@@ -327,7 +337,6 @@ namespace MaterialSkin
             if (controlToUpdate is MaterialListView)
             {
                 controlToUpdate.BackColor = newBackColor;
-
             }
 
             //recursive call

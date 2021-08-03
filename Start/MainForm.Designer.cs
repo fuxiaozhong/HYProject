@@ -39,6 +39,7 @@ namespace HYProject
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panel_Log = new System.Windows.Forms.Panel();
             this.panel_Main = new System.Windows.Forms.Panel();
+            this.userControl11 = new ToolKit.HalconTool.UserControl1();
             this.panel_Title = new System.Windows.Forms.Panel();
             this.button_Camera = new System.Windows.Forms.Button();
             this.ctms_camera = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -59,7 +60,6 @@ namespace HYProject
             this.processEllipse1 = new ToolKit.HYControls.ProcessEllipse();
             this.dataStatisticsControl1 = new ToolKit.HYControls.DataStatisticsControl();
             this.processEllipse3 = new ToolKit.HYControls.ProcessEllipse();
-            this.userControl11 = new ToolKit.HalconTool.UserControl1();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel_Buttom.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -179,6 +179,14 @@ namespace HYProject
             this.panel_Main.Name = "panel_Main";
             this.panel_Main.Size = new System.Drawing.Size(1424, 646);
             this.panel_Main.TabIndex = 1;
+            // 
+            // userControl11
+            // 
+            this.userControl11.Location = new System.Drawing.Point(4, 2);
+            this.userControl11.Name = "userControl11";
+            this.userControl11.Size = new System.Drawing.Size(10, 10);
+            this.userControl11.TabIndex = 0;
+            this.userControl11.Visible = false;
             // 
             // panel_Title
             // 
@@ -436,14 +444,6 @@ namespace HYProject
             this.processEllipse3.ValueMargin = 5;
             this.processEllipse3.ValueType = ToolKit.HYControls.ValueType.Percent;
             this.processEllipse3.ValueWidth = 30;
-            // 
-            // userControl11
-            // 
-            this.userControl11.Location = new System.Drawing.Point(4, 2);
-            this.userControl11.Name = "userControl11";
-            this.userControl11.Size = new System.Drawing.Size(10, 10);
-            this.userControl11.TabIndex = 0;
-            this.userControl11.Visible = false;
             // 
             // MainForm
             // 

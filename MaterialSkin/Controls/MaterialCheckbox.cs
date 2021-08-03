@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 using System.Windows.Forms;
+
 using MaterialSkin.Animations;
 
 namespace MaterialSkin.Controls
@@ -12,14 +13,18 @@ namespace MaterialSkin.Controls
     {
         [Browsable(false)]
         public int Depth { get; set; }
+
         [Browsable(false)]
         public MaterialSkinManager SkinManager => MaterialSkinManager.Instance;
+
         [Browsable(false)]
         public MouseState MouseState { get; set; }
+
         [Browsable(false)]
         public Point MouseLocation { get; set; }
 
         private bool _ripple;
+
         [Category("Behavior")]
         public bool Ripple
         {
@@ -89,6 +94,7 @@ namespace MaterialSkin.Controls
 
         private static readonly Point[] CheckmarkLine = { new Point(3, 8), new Point(7, 12), new Point(14, 5) };
         private const int TEXT_OFFSET = 22;
+
         protected override void OnPaint(PaintEventArgs pevent)
         {
             var g = pevent.Graphics;
@@ -245,6 +251,5 @@ namespace MaterialSkin.Controls
                 Cursor = IsMouseInCheckArea() ? Cursors.Hand : Cursors.Default;
             };
         }
-
     }
 }

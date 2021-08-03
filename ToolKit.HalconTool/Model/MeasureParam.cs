@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using HalconDotNet;
-
-using ToolKit.DisplayWindow;
 
 namespace ToolKit.HalconTool.Model
 {
@@ -16,6 +10,7 @@ namespace ToolKit.HalconTool.Model
     {
         //卡尺宽度（卡尺一半的宽度）
         private int _CaliperWidth = 200;
+
         private int _SingleCaliperWidth = 2;
         private int num_Instances = 50;
 
@@ -48,7 +43,6 @@ namespace ToolKit.HalconTool.Model
         private bool isDispInputRegion = true;
 
         private int _CrossSize = 30;
-
 
         [CategoryAttribute("卡尺宽度"), DescriptionAttribute("卡尺宽度")]
         public int CaliperWidth
@@ -269,7 +263,6 @@ namespace ToolKit.HalconTool.Model
             }
         }
     }
-
 
     public enum MeasureShapes
     {

@@ -1,10 +1,11 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 using System.Windows.Forms;
+
 using MaterialSkin.Animations;
-using System;
 
 namespace MaterialSkin.Controls
 {
@@ -12,10 +13,13 @@ namespace MaterialSkin.Controls
     {
         [Browsable(false)]
         public int Depth { get; set; }
+
         [Browsable(false)]
         public MaterialSkinManager SkinManager => MaterialSkinManager.Instance;
+
         [Browsable(false)]
         public MouseState MouseState { get; set; }
+
         public bool Primary { get; set; }
 
         private readonly AnimationManager _animationManager;
@@ -23,6 +27,7 @@ namespace MaterialSkin.Controls
         private SizeF _textSize;
 
         private Image _icon;
+
         public Image Icon
         {
             get { return _icon; }

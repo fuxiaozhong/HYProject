@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace MaterialSkin.Animations
 {
-    class AnimationManager
+    internal class AnimationManager
     {
         public bool InterruptAnimation { get; set; }
         public double Increment { get; set; }
@@ -14,9 +14,11 @@ namespace MaterialSkin.Animations
         public bool Singular { get; set; }
 
         public delegate void AnimationFinished(object sender);
+
         public event AnimationFinished OnAnimationFinished;
 
         public delegate void AnimationProgress(object sender);
+
         public event AnimationProgress OnAnimationProgress;
 
         private readonly List<double> _animationProgresses;
@@ -148,11 +150,13 @@ namespace MaterialSkin.Animations
                         case AnimationDirection.In:
                             _animationProgresses.Add(MIN_VALUE);
                             break;
+
                         case AnimationDirection.InOutRepeatingOut:
                         case AnimationDirection.InOutOut:
                         case AnimationDirection.Out:
                             _animationProgresses.Add(MAX_VALUE);
                             break;
+
                         default:
                             throw new Exception("Invalid AnimationDirection");
                     }
@@ -166,7 +170,6 @@ namespace MaterialSkin.Animations
                 {
                     _animationDatas.Add(data ?? new object[] { });
                 }
-
             }
 
             _animationTimer.Start();
@@ -181,11 +184,13 @@ namespace MaterialSkin.Animations
                 case AnimationDirection.In:
                     IncrementProgress(index);
                     break;
+
                 case AnimationDirection.InOutRepeatingOut:
                 case AnimationDirection.InOutOut:
                 case AnimationDirection.Out:
                     DecrementProgress(index);
                     break;
+
                 default:
                     throw new Exception("No AnimationDirection has been set");
             }
@@ -253,16 +258,19 @@ namespace MaterialSkin.Animations
             {
                 case AnimationType.Linear:
                     return AnimationLinear.CalculateProgress(_animationProgresses[index]);
+
                 case AnimationType.EaseInOut:
                     return AnimationEaseInOut.CalculateProgress(_animationProgresses[index]);
+
                 case AnimationType.EaseOut:
                     return AnimationEaseOut.CalculateProgress(_animationProgresses[index]);
+
                 case AnimationType.CustomQuadratic:
                     return AnimationCustomQuadratic.CalculateProgress(_animationProgresses[index]);
+
                 default:
                     throw new NotImplementedException("The given AnimationType is not implemented");
             }
-
         }
 
         public Point GetSource(int index)

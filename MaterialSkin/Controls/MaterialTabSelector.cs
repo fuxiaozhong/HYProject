@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Windows.Forms;
+
 using MaterialSkin.Animations;
 
 namespace MaterialSkin.Controls
@@ -11,12 +12,15 @@ namespace MaterialSkin.Controls
     {
         [Browsable(false)]
         public int Depth { get; set; }
+
         [Browsable(false)]
         public MaterialSkinManager SkinManager => MaterialSkinManager.Instance;
+
         [Browsable(false)]
         public MouseState MouseState { get; set; }
 
         private MaterialTabControl _baseTabControl;
+
         public MaterialTabControl BaseTabControl
         {
             get { return _baseTabControl; }

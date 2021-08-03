@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using HalconDotNet;
 
@@ -14,6 +10,7 @@ namespace ToolKit.HalconUtil.Model
         /// 形状模板
         /// </summary>
         BasedShape,
+
         /// <summary>
         /// 灰度模板
         /// </summary>
@@ -97,26 +94,30 @@ namespace ToolKit.HalconUtil.Model
         /// 极性
         /// </summary>
         public string polarity = "use_polarity";
+
         /// <summary>
         /// 最小缩放
         /// </summary>
         public double minScale;
+
         /// <summary>
         /// 最大缩放
         /// </summary>
         public double maxScale;
+
         /// <summary>
         /// 模板中心点Row
         /// </summary>
         public HTuple modelCenterRow;
+
         /// <summary>
         /// 模板中心点Colimn
         /// </summary>
         public HTuple modelCenterColumn;
+
         /// <summary>
         /// 模板角度
         /// </summary>
         public HTuple modelCenterPhi;
-
     }
 }

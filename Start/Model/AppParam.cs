@@ -98,22 +98,27 @@ namespace HYProject
         /// 保存的文件名
         /// </summary>
         private string SerializePath = "AppParam.bin";
+
         /// <summary>
         /// 是否保存图像
         /// </summary>
         internal bool IsSaveImage;
+
         /// <summary>
         /// 保存OK图像
         /// </summary>
         internal bool IsSaveImage_OK;
+
         /// <summary>
         /// 保存NG图像
         /// </summary>
         internal bool IsSaveImage_NG;
+
         /// <summary>
         /// 保存为原图
         /// </summary>
         internal bool IsSaveImage_BmpImage;
+
         /// <summary>
         /// 保存为截图
         /// </summary>

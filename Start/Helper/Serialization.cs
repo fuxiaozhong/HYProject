@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-
-using ToolKit.HYControls;
 
 namespace HYProject.Helper
 {
-
     /// <summary>
     /// 序列化
     /// </summary>

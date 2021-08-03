@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO.Ports;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using ToolKit.CommunicAtion;
@@ -24,7 +17,9 @@ namespace ToolKit.HYControls
                 return cp;
             }
         }
+
         private COMSerailPortDevice serailPortDevice;
+
         public SerialPortControl()
         {
             InitializeComponent();
@@ -48,7 +43,6 @@ namespace ToolKit.HYControls
                 cmb_sjw.SelectedIndex = 2;
                 cmb_stop.SelectedIndex = 1;
             }
-
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -79,7 +73,6 @@ namespace ToolKit.HYControls
             richTextBox2.AppendText(DateTime.Now.ToString("HH.mm.ss.ffff : ") + e.Code + "\n");
             richTextBox2.SelectionStart = richTextBox2.TextLength;
             richTextBox2.ScrollToCaret();
-
         }
 
         private void Button3_Click(object sender, EventArgs e)
@@ -88,7 +81,6 @@ namespace ToolKit.HYControls
             {
                 serailPortDevice.SendSerailData(richTextBox1.Text);
             }
-
         }
 
         private void Button2_Click(object sender, EventArgs e)

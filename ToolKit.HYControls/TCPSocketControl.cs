@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using ToolKit.CommunicAtion;
@@ -27,6 +22,7 @@ namespace ToolKit.HYControls
 
         private TCPSocketServer socketServer;
         private TCPSocketClient socketClient;
+
         public TCPSocketControl()
         {
             InitializeComponent();
@@ -39,7 +35,6 @@ namespace ToolKit.HYControls
             socketServer.ClientsConnect += this.SocketServer_ClientsConnect;
             if (socketServer.StartListen())
             {
-
                 button6.Enabled = true;
                 button5.Enabled = true;
                 button4.Enabled = false;
@@ -76,14 +71,12 @@ namespace ToolKit.HYControls
             catch (Exception)
             {
             }
-
         }
 
         private void Button6_Click(object sender, EventArgs e)
         {
             if (socketServer != null && socketServer.Close())
             {
-
                 button6.Enabled = false;
                 button5.Enabled = false;
                 button4.Enabled = true;
@@ -94,7 +87,6 @@ namespace ToolKit.HYControls
                 MessageBox.Show("关闭失败");
             }
         }
-
 
         private void Button1_Click(object sender, EventArgs e)
         {
@@ -128,9 +120,7 @@ namespace ToolKit.HYControls
             }
             catch (Exception)
             {
-
             }
-
         }
 
         private void Button3_Click(object sender, EventArgs e)

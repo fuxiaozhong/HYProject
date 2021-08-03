@@ -11,6 +11,7 @@ using HYProject.MenuForm;
 using HYProject.Model;
 using HYProject.ToolForm;
 
+using ToolKit.CommunicAtion;
 using ToolKit.HYControls.HYForm;
 
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -88,7 +89,16 @@ namespace HYProject
             disk.IsBackground = true;
             disk.Name = "disk";
             disk.Start();
+
+            lightSource.OpenLightSource("COM4");
+
+            lightSource.CH1 = 0;
+            lightSource.CH2 = 0;
+            lightSource.CH3 = 0;
+            lightSource.CH4 = 0;
         }
+
+        private LightSource lightSource = new LightSource();
 
         private void Refresh_Work()
         {
@@ -147,16 +157,15 @@ namespace HYProject
                             }
                             break;
                         }
-
                     }
                 }
                 catch (Exception)
                 {
-
                 }
                 Thread.Sleep(100);
             }
         }
+
         private void Button_Exit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -166,7 +175,6 @@ namespace HYProject
         {
             if (MessageBox.Show("确认退出系统?", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
-
                 Form_Waiting form_Waiting = new Form_Waiting(CloseEvent, "正在保存相关数据,请稍等!");
                 if (form_Waiting.ShowDialog(this) == DialogResult.OK)
                 {
@@ -189,7 +197,6 @@ namespace HYProject
             AppParam.Instance.Save_To_File();
             Log.RunLog("退出程序...");
             Thread.Sleep(1000);
-
         }
 
         private void Button_UserLogin_Click(object sender, EventArgs e)
