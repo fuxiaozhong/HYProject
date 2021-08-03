@@ -4,6 +4,7 @@ using System.IO.Ports;
 
 namespace ToolKit.CommunicAtion
 {
+    [Serializable]
     public class LightSource
     {
         private int _CH1;
@@ -160,6 +161,25 @@ namespace ToolKit.CommunicAtion
             }
         }
 
+        /// <summary>
+        /// 光源通讯连接状态
+        /// </summary>
+        [CategoryAttribute("光源通讯连接状态"), DescriptionAttribute("光源通讯连接状态")]
+        public bool IsOpen
+        {
+            get
+            {
+
+                if (COMSerailPortDevice == null)
+                {
+                    return false;
+                }
+
+                return COMSerailPortDevice.IsOpen;
+            }
+        }
+
+        [NonSerialized]
         private COMSerailPortDevice COMSerailPortDevice;
 
         /// <summary>
@@ -176,7 +196,12 @@ namespace ToolKit.CommunicAtion
             try
             {
                 COMSerailPortDevice = new COMSerailPortDevice();
-                return COMSerailPortDevice.OpenSerialPort(portName, baudRate, parity, dataBits, stopBits);
+                bool sta = COMSerailPortDevice.OpenSerialPort(portName, baudRate, parity, dataBits, stopBits);
+                if (sta)
+                {
+                    Send();
+                }
+                return sta;
             }
             catch (Exception)
             {
@@ -251,7 +276,7 @@ namespace ToolKit.CommunicAtion
 
             order += "C#";
 
-            if (COMSerailPortDevice.IsOpen)
+            if (COMSerailPortDevice != null && COMSerailPortDevice.IsOpen)
             {
                 COMSerailPortDevice.SendSerailData(order);
             }
@@ -266,7 +291,7 @@ namespace ToolKit.CommunicAtion
             StateCH2 = false;
             StateCH3 = false;
             StateCH4 = false;
-            if (COMSerailPortDevice.IsOpen)
+            if (COMSerailPortDevice != null && COMSerailPortDevice.IsOpen)
             {
                 COMSerailPortDevice.CloseSerialPort();
             }

@@ -5,6 +5,8 @@ using System.Windows.Forms;
 using HYProject.Helper;
 using HYProject.ToolForm;
 
+using ToolKit.HYControls;
+
 namespace HYProject.MenuForm
 {
     public partial class Form_Setting : Form
@@ -64,6 +66,9 @@ namespace HYProject.MenuForm
             AppParam.Instance.IsSaveImage_NG = checkBox7.Checked;
             AppParam.Instance.IsSaveImage_BmpImage = checkBox8.Checked;
             AppParam.Instance.IsSaveImage_DumpImage = checkBox9.Checked;
+
+
+
             PowerBoot.SetMeAutoStart(AppParam.Instance.PowerBoot);
             PowerBoot.CreateDesktopShortcut(AppParam.Instance.DesktopShortcut);
             AppParam.Instance.Save_To_File();
@@ -88,6 +93,9 @@ namespace HYProject.MenuForm
             checkBox7.Checked = AppParam.Instance.IsSaveImage_NG;
             checkBox8.Checked = AppParam.Instance.IsSaveImage_BmpImage;
             checkBox9.Checked = AppParam.Instance.IsSaveImage_DumpImage;
+
+
+
             Thread thread = new Thread(DiskRefresh)
             {
                 IsBackground = true
@@ -151,6 +159,9 @@ namespace HYProject.MenuForm
                 catch (Exception)
                 {
                 }
+
+
+
                 Thread.Sleep(100);
             }
         }
@@ -198,6 +209,12 @@ namespace HYProject.MenuForm
         {
             Form_Measure measure = new Form_Measure();
             measure.ShowDialog();
+        }
+
+        private void Button8_Click(object sender, EventArgs e)
+        {
+            Form_LightSource form_LightSource = new Form_LightSource();
+            form_LightSource.ShowDialog();
         }
     }
 }

@@ -90,16 +90,10 @@ namespace HYProject
             disk.Name = "disk";
             disk.Start();
 
-            lightSource.OpenLightSource("COM4");
 
-            lightSource.CH1 = 0;
-            lightSource.CH2 = 0;
-            lightSource.CH3 = 0;
-            lightSource.CH4 = 0;
         }
 
-        private LightSource lightSource = new LightSource();
-
+        //刷新界面
         private void Refresh_Work()
         {
             while (true)
@@ -110,6 +104,13 @@ namespace HYProject
                     tsl_nowuser.Text = "当前用户: " + AppParam.Instance.Power;
                     SystemInfo systemInfo = new SystemInfo();
                     processEllipse3.Value = (int)Math.Ceiling(((double)((systemInfo.PhysicalMemory - systemInfo.MemoryAvailable)) / (double)(systemInfo.PhysicalMemory) * 100));
+                    toolStripLabel1.Text = AppParam.Instance.lightSource.IsOpen ? "光源:已连接" : "光源:未连接";
+
+                    if (AppParam.Instance.lightSource.IsOpen)
+                        toolStripLabel1.ForeColor = Color.Green;
+                    else
+                        toolStripLabel1.ForeColor = Color.Red;
+
                 }
                 catch { }
                 Thread.Sleep(50);
@@ -195,6 +196,7 @@ namespace HYProject
         {
             Cameras.Instance.CloseCamera();
             AppParam.Instance.Save_To_File();
+            AppParam.Instance.lightSource.CloseLightSource();
             Log.RunLog("退出程序...");
             Thread.Sleep(1000);
         }
@@ -290,6 +292,12 @@ namespace HYProject
         {
             Form_ProjectLibrary form_ProjectLibrary = new Form_ProjectLibrary();
             form_ProjectLibrary.ShowDialog();
+        }
+
+        private void 光源控制ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_LightSource form_LightSource = new Form_LightSource();
+            form_LightSource.ShowDialog();
         }
     }
 }

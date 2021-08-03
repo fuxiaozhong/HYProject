@@ -139,6 +139,12 @@
     <Compile Include="ToolForm\Form_GlobalOptions.Designer.cs">
       <DependentUpon>Form_GlobalOptions.cs</DependentUpon>
     </Compile>
+    <Compile Include="ToolForm\Form_LightSource.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolForm\Form_LightSource.Designer.cs">
+      <DependentUpon>Form_LightSource.cs</DependentUpon>
+    </Compile>
     <Compile Include="ToolForm\Form_Measure.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ToolForm\Form_GlobalOptions.resx">
       <DependentUpon>Form_GlobalOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolForm\Form_LightSource.resx">
+      <DependentUpon>Form_LightSource.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ToolForm\Form_Measure.resx">
       <DependentUpon>Form_Measure.cs</DependentUpon>

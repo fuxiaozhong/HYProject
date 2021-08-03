@@ -60,6 +60,7 @@ namespace HYProject.MenuForm
             this.label8 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -220,7 +221,7 @@ namespace HYProject.MenuForm
             // button5
             // 
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(16, 326);
+            this.button5.Location = new System.Drawing.Point(681, 142);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(141, 38);
             this.button5.TabIndex = 15;
@@ -352,7 +353,7 @@ namespace HYProject.MenuForm
             // button6
             // 
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(16, 370);
+            this.button6.Location = new System.Drawing.Point(683, 186);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(139, 38);
             this.button6.TabIndex = 24;
@@ -363,7 +364,7 @@ namespace HYProject.MenuForm
             // button7
             // 
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Location = new System.Drawing.Point(379, 230);
+            this.button7.Location = new System.Drawing.Point(683, 230);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(139, 38);
             this.button7.TabIndex = 25;
@@ -371,11 +372,23 @@ namespace HYProject.MenuForm
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.Button7_Click);
             // 
+            // button8
+            // 
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Location = new System.Drawing.Point(683, 274);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(139, 38);
+            this.button8.TabIndex = 26;
+            this.button8.Text = "光源";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.Button8_Click);
+            // 
             // Form_Setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(896, 498);
+            this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.label8);
@@ -452,5 +465,6 @@ namespace HYProject.MenuForm
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
     }
 }

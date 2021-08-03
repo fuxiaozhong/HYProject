@@ -111,11 +111,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SerialPortConfigurationControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SerialPortConfigurationControl.Designer.cs">
+      <DependentUpon>SerialPortConfigurationControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="SerialPortControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="SerialPortControl.Designer.cs">
       <DependentUpon>SerialPortControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SwitchControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SwitchControl.Designer.cs">
+      <DependentUpon>SwitchControl.cs</DependentUpon>
     </Compile>
     <Compile Include="TCPSocketControl.cs">
       <SubType>UserControl</SubType>
@@ -154,8 +166,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="SerialPortConfigurationControl.resx">
+      <DependentUpon>SerialPortConfigurationControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SerialPortControl.resx">
       <DependentUpon>SerialPortControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SwitchControl.resx">
+      <DependentUpon>SwitchControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TCPSocketControl.resx">
       <DependentUpon>TCPSocketControl.cs</DependentUpon>
@@ -174,6 +192,12 @@
       <Project>{AC8426E8-E67F-418C-87B8-7C847C1FC98B}</Project>
       <Name>ToolKit.HalconTool</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Open.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

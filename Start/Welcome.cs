@@ -30,6 +30,28 @@ namespace HYProject
                 Log.RunLog("开始加载配置文件");
                 ///初始化相机
                 Cameras.Instance.InitializeCamera();
+                if (AppParam.Instance.lightSource.OpenLightSource(AppParam.Instance.LightSourcePortName,
+                                                             AppParam.Instance.LightSourceBaudRate,
+                                                             AppParam.Instance.LightSourceParity,
+                                                             AppParam.Instance.LightSourceDataBits,
+                                                             AppParam.Instance.LightSourceStopBits))
+                {
+                    Log.RunLog("光源连接成功");
+                    AppParam.Instance.lightSource.StateCH1 = true;
+                    AppParam.Instance.lightSource.StateCH2 = true;
+                    AppParam.Instance.lightSource.StateCH3 = true;
+                    AppParam.Instance.lightSource.StateCH4 = true;
+                    Thread.Sleep(100);
+                    AppParam.Instance.lightSource.StateCH1 = false;
+                    AppParam.Instance.lightSource.StateCH2 = false;
+                    AppParam.Instance.lightSource.StateCH3 = false;
+                    AppParam.Instance.lightSource.StateCH4 = false;
+                }
+                else
+                {
+                    Log.WriteErrorLog("光源连接失败");
+
+                }
 
                 Log.RunLog("数据配置加载完成");
                 //等待进度条加载完成

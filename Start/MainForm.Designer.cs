@@ -56,10 +56,14 @@ namespace HYProject
             this.tsl_nowuser = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.materialContextMenuStrip1 = new MaterialSkin.Controls.MaterialContextMenuStrip();
+            this.光源控制ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.processEllipse2 = new ToolKit.HYControls.ProcessEllipse();
             this.processEllipse1 = new ToolKit.HYControls.ProcessEllipse();
             this.dataStatisticsControl1 = new ToolKit.HYControls.DataStatisticsControl();
             this.processEllipse3 = new ToolKit.HYControls.ProcessEllipse();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel_Buttom.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -70,6 +74,7 @@ namespace HYProject
             this.ctms_camera.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            this.materialContextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -191,6 +196,7 @@ namespace HYProject
             // panel_Title
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.panel_Title, 2);
+            this.panel_Title.ContextMenuStrip = this.materialContextMenuStrip1;
             this.panel_Title.Controls.Add(this.button_Camera);
             this.panel_Title.Controls.Add(this.button_UserLogin);
             this.panel_Title.Controls.Add(this.button_Setting);
@@ -350,7 +356,9 @@ namespace HYProject
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsl_nowtime,
             this.tsl_nowuser,
-            this.toolStripSeparator1});
+            this.toolStripSeparator1,
+            this.toolStripSeparator2,
+            this.toolStripLabel1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 841);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1424, 20);
@@ -375,6 +383,24 @@ namespace HYProject
             this.toolStripSeparator1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 20);
+            // 
+            // materialContextMenuStrip1
+            // 
+            this.materialContextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialContextMenuStrip1.Depth = 0;
+            this.materialContextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.光源控制ToolStripMenuItem});
+            this.materialContextMenuStrip1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialContextMenuStrip1.Name = "materialContextMenuStrip1";
+            this.materialContextMenuStrip1.Size = new System.Drawing.Size(125, 26);
+            // 
+            // 光源控制ToolStripMenuItem
+            // 
+            this.光源控制ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("光源控制ToolStripMenuItem.Image")));
+            this.光源控制ToolStripMenuItem.Name = "光源控制ToolStripMenuItem";
+            this.光源控制ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.光源控制ToolStripMenuItem.Text = "光源控制";
+            this.光源控制ToolStripMenuItem.Click += new System.EventHandler(this.光源控制ToolStripMenuItem_Click);
             // 
             // processEllipse2
             // 
@@ -445,6 +471,19 @@ namespace HYProject
             this.processEllipse3.ValueType = ToolKit.HYControls.ValueType.Percent;
             this.processEllipse3.ValueWidth = 30;
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 20);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(71, 17);
+            this.toolStripLabel1.Text = "光源:已连接";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -475,6 +514,7 @@ namespace HYProject
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.materialContextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -510,6 +550,10 @@ namespace HYProject
         private System.Windows.Forms.ToolStripLabel tsl_nowuser;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private ToolKit.HalconTool.UserControl1 userControl11;
+        private MaterialSkin.Controls.MaterialContextMenuStrip materialContextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 光源控制ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         // private ToolKit.HYControls.CreateModelControl createModelControl1;
     }
 }

@@ -1,6 +1,9 @@
 ﻿using System;
 using System.IO;
+using System.IO.Ports;
 using System.Runtime.Serialization.Formatters.Binary;
+
+using ToolKit.CommunicAtion;
 
 namespace HYProject
 {
@@ -123,6 +126,58 @@ namespace HYProject
         /// 保存为截图
         /// </summary>
         internal bool IsSaveImage_DumpImage;
+
+
+
+        /// <summary>
+        /// 光源串口名称
+        /// </summary>
+        internal string LightSourcePortName = "COM4";
+
+        /// <summary>
+        /// 光源串口波特率
+        /// </summary>
+        internal int LightSourceBaudRate = 19200;
+
+
+        /// <summary>
+        /// 光源串口奇偶校验
+        /// </summary>
+        internal Parity LightSourceParity = Parity.None;
+
+
+        /// <summary>
+        /// 光源串口数据位
+        /// </summary>
+        internal int LightSourceDataBits = 8;
+
+        /// <summary>
+        /// 光源串口停止位
+        /// </summary>
+        internal StopBits LightSourceStopBits = StopBits.One;
+
+
+        /// <summary>
+        /// 光源
+        /// </summary>
+        internal LightSource lightSource = new LightSource();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         /// <summary>
         /// 保存对象到文件
