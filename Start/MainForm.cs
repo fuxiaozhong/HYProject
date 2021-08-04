@@ -110,6 +110,16 @@ namespace HYProject
                         toolStripLabel1.ForeColor = Color.Green;
                     else
                         toolStripLabel1.ForeColor = Color.Red;
+                    if (AppParam.Instance.Fx3uPLCResult != null && AppParam.Instance.Fx3uPLCResult.IsSuccess)
+                    {
+                        toolStripLabel2.Text = "PLC:已连接";
+                        toolStripLabel2.ForeColor = Color.Green;
+                    }
+                    else
+                    {
+                        toolStripLabel2.ForeColor = Color.Red;
+                        toolStripLabel2.Text = "PLC:未连接";
+                    }
 
                 }
                 catch { }
@@ -197,6 +207,7 @@ namespace HYProject
             Cameras.Instance.CloseCamera();
             AppParam.Instance.Save_To_File();
             AppParam.Instance.lightSource.CloseLightSource();
+            DataLimit.Instance.Save();
             Log.RunLog("退出程序...");
             Thread.Sleep(1000);
         }
@@ -298,6 +309,18 @@ namespace HYProject
         {
             Form_LightSource form_LightSource = new Form_LightSource();
             form_LightSource.ShowDialog();
+        }
+
+        private void 参数设置ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_Limit form_Limit = new Form_Limit();
+            form_Limit.ShowDialog();
+        }
+
+        private void PLC通讯设置ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_PLC form_PLC = new Form_PLC();
+            form_PLC.ShowDialog();
         }
     }
 }

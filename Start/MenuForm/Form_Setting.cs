@@ -216,5 +216,17 @@ namespace HYProject.MenuForm
             Form_LightSource form_LightSource = new Form_LightSource();
             form_LightSource.ShowDialog();
         }
+
+        private void Button9_Click(object sender, EventArgs e)
+        {
+            Form_Limit form_Limit = new Form_Limit();
+            form_Limit.ShowDialog();
+        }
+
+        private void Button10_Click(object sender, EventArgs e)
+        {
+            Form_PLC form_PLC = new Form_PLC();
+            form_PLC.ShowDialog();
+        }
     }
 }

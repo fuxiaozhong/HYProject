@@ -3,6 +3,9 @@ using System.IO;
 using System.IO.Ports;
 using System.Runtime.Serialization.Formatters.Binary;
 
+using HslCommunication;
+using HslCommunication.Profinet.Melsec;
+
 using ToolKit.CommunicAtion;
 
 namespace HYProject
@@ -162,21 +165,26 @@ namespace HYProject
         /// </summary>
         internal LightSource lightSource = new LightSource();
 
+        /// <summary>
+        /// PLC
+        /// </summary>
+        [NonSerialized]
+        internal MelsecA1ENet Fx3uPLC = new MelsecA1ENet();
 
+        /// <summary>
+        /// PLC连接返回对象
+        /// </summary>
+        [NonSerialized]
+        internal OperateResult Fx3uPLCResult;
+        /// <summary>
+        /// PLC连接 ip
+        /// </summary>
+        internal string Fx3uPLC_IP = "127.0.0.1";
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+        /// <summary>
+        /// PLC连接 端口
+        /// </summary>
+        internal int Fx3uPLC_Port = 8080;
 
 
         /// <summary>

@@ -62,6 +62,12 @@
     <Reference Include="halcondotnet">
       <HintPath>..\DLL\halcondotnet.dll</HintPath>
     </Reference>
+    <Reference Include="HslCommunication">
+      <HintPath>..\DLL\HslCommunication.dll</HintPath>
+    </Reference>
+    <Reference Include="HslControls">
+      <HintPath>..\DLL\HslControls.dll</HintPath>
+    </Reference>
     <Reference Include="log4net">
       <HintPath>..\DLL\log4net.dll</HintPath>
     </Reference>
@@ -118,6 +124,7 @@
     </Compile>
     <Compile Include="Model\AppParam.cs" />
     <Compile Include="Model\Cameras.cs" />
+    <Compile Include="Model\DataLimit.cs" />
     <Compile Include="Model\Work.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -145,11 +152,23 @@
     <Compile Include="ToolForm\Form_LightSource.Designer.cs">
       <DependentUpon>Form_LightSource.cs</DependentUpon>
     </Compile>
+    <Compile Include="ToolForm\Form_Limit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolForm\Form_Limit.Designer.cs">
+      <DependentUpon>Form_Limit.cs</DependentUpon>
+    </Compile>
     <Compile Include="ToolForm\Form_Measure.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ToolForm\Form_Measure.Designer.cs">
       <DependentUpon>Form_Measure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolForm\Form_PLC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolForm\Form_PLC.Designer.cs">
+      <DependentUpon>Form_PLC.cs</DependentUpon>
     </Compile>
     <Compile Include="Welcome.cs">
       <SubType>Form</SubType>
@@ -193,8 +212,14 @@
     <EmbeddedResource Include="ToolForm\Form_LightSource.resx">
       <DependentUpon>Form_LightSource.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ToolForm\Form_Limit.resx">
+      <DependentUpon>Form_Limit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ToolForm\Form_Measure.resx">
       <DependentUpon>Form_Measure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolForm\Form_PLC.resx">
+      <DependentUpon>Form_PLC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Welcome.resx">
       <DependentUpon>Welcome.cs</DependentUpon>

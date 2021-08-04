@@ -1,10 +1,16 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using HYProject.Helper;
 using HYProject.Model;
+
+using MaterialSkin.Controls;
+
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace HYProject
 {
@@ -52,6 +58,28 @@ namespace HYProject
                     Log.WriteErrorLog("光源连接失败");
 
                 }
+
+                ///参数PLC
+                if (AppParam.Instance.Fx3uPLC == null)
+                {
+                    AppParam.Instance.Fx3uPLC = new HslCommunication.Profinet.Melsec.MelsecA1ENet();
+                }
+
+                AppParam.Instance.Fx3uPLC.IpAddress = AppParam.Instance.Fx3uPLC_IP;
+                AppParam.Instance.Fx3uPLC.Port = AppParam.Instance.Fx3uPLC_Port;
+                AppParam.Instance.Fx3uPLC.ConnectTimeOut = 1000;
+                AppParam.Instance.Fx3uPLCResult = AppParam.Instance.Fx3uPLC.ConnectServer();
+                if (AppParam.Instance.Fx3uPLCResult.IsSuccess)
+                {
+                    Log.RunLog("PLC连接成功");
+                }
+                else
+                {
+                    Log.WriteErrorLog("PLC连接失败");
+                }
+
+
+                DataLimit.Instance.Read();
 
                 Log.RunLog("数据配置加载完成");
                 //等待进度条加载完成
