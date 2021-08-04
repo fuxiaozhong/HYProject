@@ -58,63 +58,34 @@ namespace ToolKit.HYControls
 
 
             if (checkStyle == CheckStyle.style1)
-
             {
-
                 bitMapOn = global::ToolKit.HYControls.Properties.Resources.Close;
-
                 bitMapOff = global::ToolKit.HYControls.Properties.Resources.Open;
-
             }
-
             else if (checkStyle == CheckStyle.style2)
-
             {
-
                 bitMapOn = global::ToolKit.HYControls.Properties.Resources.Close;
-
                 bitMapOff = global::ToolKit.HYControls.Properties.Resources.Open;
-
             }
-
             else if (checkStyle == CheckStyle.style3)
-
             {
-
                 bitMapOn = global::ToolKit.HYControls.Properties.Resources.Close;
-
                 bitMapOff = global::ToolKit.HYControls.Properties.Resources.Open;
-
             }
-
             else if (checkStyle == CheckStyle.style4)
-
             {
-
                 bitMapOn = global::ToolKit.HYControls.Properties.Resources.Close;
-
                 bitMapOff = global::ToolKit.HYControls.Properties.Resources.Open;
-
             }
-
             else if (checkStyle == CheckStyle.style5)
-
             {
-
                 bitMapOn = global::ToolKit.HYControls.Properties.Resources.Close;
-
                 bitMapOff = global::ToolKit.HYControls.Properties.Resources.Open;
-
             }
-
             else if (checkStyle == CheckStyle.style6)
-
             {
-
                 bitMapOn = global::ToolKit.HYControls.Properties.Resources.Close;
-
                 bitMapOff = global::ToolKit.HYControls.Properties.Resources.Open;
-
             }
 
 

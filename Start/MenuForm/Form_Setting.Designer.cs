@@ -223,7 +223,7 @@ namespace HYProject.MenuForm
             // button5
             // 
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(275, 234);
+            this.button5.Location = new System.Drawing.Point(600, 259);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(139, 38);
             this.button5.TabIndex = 15;
@@ -355,7 +355,7 @@ namespace HYProject.MenuForm
             // button6
             // 
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(275, 278);
+            this.button6.Location = new System.Drawing.Point(600, 303);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(139, 38);
             this.button6.TabIndex = 24;
@@ -366,7 +366,7 @@ namespace HYProject.MenuForm
             // button7
             // 
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Location = new System.Drawing.Point(275, 322);
+            this.button7.Location = new System.Drawing.Point(600, 347);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(139, 38);
             this.button7.TabIndex = 25;
@@ -377,7 +377,7 @@ namespace HYProject.MenuForm
             // button8
             // 
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Location = new System.Drawing.Point(420, 234);
+            this.button8.Location = new System.Drawing.Point(745, 259);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(139, 38);
             this.button8.TabIndex = 26;
@@ -388,7 +388,7 @@ namespace HYProject.MenuForm
             // button9
             // 
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Location = new System.Drawing.Point(420, 278);
+            this.button9.Location = new System.Drawing.Point(745, 303);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(139, 38);
             this.button9.TabIndex = 27;
@@ -399,7 +399,7 @@ namespace HYProject.MenuForm
             // button10
             // 
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Location = new System.Drawing.Point(420, 322);
+            this.button10.Location = new System.Drawing.Point(745, 347);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(139, 38);
             this.button10.TabIndex = 28;

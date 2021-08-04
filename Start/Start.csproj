@@ -125,6 +125,7 @@
     <Compile Include="Model\AppParam.cs" />
     <Compile Include="Model\Cameras.cs" />
     <Compile Include="Model\DataLimit.cs" />
+    <Compile Include="Model\Product.cs" />
     <Compile Include="Model\Work.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -169,6 +170,12 @@
     </Compile>
     <Compile Include="ToolForm\Form_PLC.Designer.cs">
       <DependentUpon>Form_PLC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolForm\Form_ProductOperation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolForm\Form_ProductOperation.Designer.cs">
+      <DependentUpon>Form_ProductOperation.cs</DependentUpon>
     </Compile>
     <Compile Include="Welcome.cs">
       <SubType>Form</SubType>
@@ -220,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ToolForm\Form_PLC.resx">
       <DependentUpon>Form_PLC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolForm\Form_ProductOperation.resx">
+      <DependentUpon>Form_ProductOperation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Welcome.resx">
       <DependentUpon>Welcome.cs</DependentUpon>

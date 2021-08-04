@@ -33,6 +33,10 @@ namespace HYProject
                 if (!Directory.Exists(AppParam.Instance.Save_Image_Path))
                     Directory.CreateDirectory(AppParam.Instance.Save_Image_Path);
 
+                if (!Directory.Exists(AppParam.Instance.ProductLibrary))
+                    Directory.CreateDirectory(AppParam.Instance.ProductLibrary);
+
+
                 Log.RunLog("开始加载配置文件");
                 ///初始化相机
                 Cameras.Instance.InitializeCamera();

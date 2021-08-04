@@ -68,6 +68,7 @@ namespace HYProject
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.参数设置ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel_Buttom.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -292,16 +293,17 @@ namespace HYProject
             this.materialContextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.光源控制ToolStripMenuItem,
             this.参数设置ToolStripMenuItem,
-            this.pLC通讯设置ToolStripMenuItem});
+            this.pLC通讯设置ToolStripMenuItem,
+            this.参数设置ToolStripMenuItem1});
             this.materialContextMenuStrip1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialContextMenuStrip1.Name = "materialContextMenuStrip1";
-            this.materialContextMenuStrip1.Size = new System.Drawing.Size(146, 70);
+            this.materialContextMenuStrip1.Size = new System.Drawing.Size(181, 114);
             // 
             // 光源控制ToolStripMenuItem
             // 
             this.光源控制ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("光源控制ToolStripMenuItem.Image")));
             this.光源控制ToolStripMenuItem.Name = "光源控制ToolStripMenuItem";
-            this.光源控制ToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.光源控制ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.光源控制ToolStripMenuItem.Text = "光源控制";
             this.光源控制ToolStripMenuItem.Click += new System.EventHandler(this.光源控制ToolStripMenuItem_Click);
             // 
@@ -310,7 +312,7 @@ namespace HYProject
             this.参数设置ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("参数设置ToolStripMenuItem.Image")));
             this.参数设置ToolStripMenuItem.Name = "参数设置ToolStripMenuItem";
             this.参数设置ToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.参数设置ToolStripMenuItem.Text = "参数设置";
+            this.参数设置ToolStripMenuItem.Text = "上下限设置";
             this.参数设置ToolStripMenuItem.Click += new System.EventHandler(this.参数设置ToolStripMenuItem_Click);
             // 
             // pLC通讯设置ToolStripMenuItem
@@ -521,6 +523,14 @@ namespace HYProject
             this.toolStripLabel2.Size = new System.Drawing.Size(68, 17);
             this.toolStripLabel2.Text = "PLC:未连接";
             // 
+            // 参数设置ToolStripMenuItem1
+            // 
+            this.参数设置ToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("参数设置ToolStripMenuItem1.Image")));
+            this.参数设置ToolStripMenuItem1.Name = "参数设置ToolStripMenuItem1";
+            this.参数设置ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.参数设置ToolStripMenuItem1.Text = "全局变量";
+            this.参数设置ToolStripMenuItem1.Click += new System.EventHandler(this.参数设置ToolStripMenuItem1_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -595,6 +605,7 @@ namespace HYProject
         private System.Windows.Forms.ToolStripMenuItem pLC通讯设置ToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.ToolStripMenuItem 参数设置ToolStripMenuItem1;
         // private ToolKit.HYControls.CreateModelControl createModelControl1;
     }
 }

@@ -29,3 +29,6 @@ dotnet_diagnostic.CS0108.severity = none
 
 # CS0109: 成员不会隐藏继承的成员；不需要关键字 new
 dotnet_diagnostic.CS0109.severity = none
+
+# CS0649: Field 'SwitchControl.checkStyle' is never assigned to, and will always have its default value
+dotnet_diagnostic.CS0649.severity = none

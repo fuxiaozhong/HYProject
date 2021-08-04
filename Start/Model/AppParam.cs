@@ -63,6 +63,10 @@ namespace HYProject
         /// 图像保存路径
         /// </summary>
         internal string Save_Image_Path = System.Windows.Forms.Application.StartupPath + "\\Images";
+        /// <summary>
+        /// 产品库
+        /// </summary>
+        internal string ProductLibrary = System.Windows.Forms.Application.StartupPath + "\\ProductLibrary";
 
         /// <summary>
         /// 图像保存天数

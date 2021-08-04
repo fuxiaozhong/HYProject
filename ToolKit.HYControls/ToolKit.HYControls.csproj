@@ -105,6 +105,12 @@
     <Compile Include="ProcessEllipse.Designer.cs">
       <DependentUpon>ProcessEllipse.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProductInfo.Designer.cs">
+      <DependentUpon>ProductInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -161,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProcessEllipse.resx">
       <DependentUpon>ProcessEllipse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductInfo.resx">
+      <DependentUpon>ProductInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

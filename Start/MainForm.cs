@@ -322,5 +322,10 @@ namespace HYProject
             Form_PLC form_PLC = new Form_PLC();
             form_PLC.ShowDialog();
         }
+
+        private void 参数设置ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Form_GlobalOptions.Instance.ShowDialog();
+        }
     }
 }
