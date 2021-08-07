@@ -77,13 +77,6 @@
     <Compile Include="HalconDisplayWindow.Designer.cs">
       <DependentUpon>HalconDisplayWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_ImageZoom.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_ImageZoom.Designer.cs">
-      <DependentUpon>Form_ImageZoom.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
@@ -93,9 +86,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HalconDisplayWindow.resx">
       <DependentUpon>HalconDisplayWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_ImageZoom.resx">
-      <DependentUpon>Form_ImageZoom.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

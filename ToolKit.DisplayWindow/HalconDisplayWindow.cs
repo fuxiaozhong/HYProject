@@ -580,8 +580,6 @@ namespace ToolKit.DisplayWindow
                     //不处理
                 }
 
-                if (form_ImageZoom != null && !form_ImageZoom.IsDisposed && form_ImageZoom.Visible == true && form_ImageZoom.checkBox1.Checked == true)
-                    Refresh_the_zoom();
             }
             catch (Exception)
             {
@@ -1042,120 +1040,19 @@ namespace ToolKit.DisplayWindow
                 x = e.X;
                 y = e.Y;
             }
-            if (e.Button == MouseButtons.Left)
-            {
-                if (form_ImageZoom != null && !form_ImageZoom.IsDisposed && form_ImageZoom.Visible == true && form_ImageZoom.checkBox1.Checked == false)
-                    Refresh_the_zoom();
-            }
         }
 
-        public void Refresh_the_zoom()
-        {
-            if (form_ImageZoom != null && !form_ImageZoom.IsDisposed && form_ImageZoom.Visible == true)
-            {
-                int MethodsRatio = 0;
-                int.TryParse(form_ImageZoom.comboBox1.Text.Replace("%", ""), out MethodsRatio);
-                if (MethodsRatio == -1)
-                {
-                    return;
-                }
 
-                double width = ImageWidth / 2, height = ImageHeight / 2;
-                int button_state;
-                double positionX, positionY;
-                HalconWindow.GetMpositionSubPix(out positionY, out positionX, out button_state);
-
-                form_ImageZoom.displayWindow1.Disp_Image(ho_image);
-
-                try
-                {
-                    string str_value;
-                    string str_position;
-                    bool _isXOut = true, _isYOut = true;
-                    HTuple channel_count;
-
-                    HOperatorSet.CountChannels(ho_image, out channel_count);
-                    form_ImageZoom.label_Channel.Text = channel_count.ToString() + " 通道";
-                    HalconWindow.GetMpositionSubPix(out positionY, out positionX, out button_state);
-                    str_position = String.Format("RC: {0:0000},{1:0000}", positionY, positionX);
-                    form_ImageZoom.label_Row.Text = positionY.ToString("0");
-                    form_ImageZoom.label_Column.Text = positionX.ToString("0");
-                    _isXOut = (positionX < 0 || positionX >= ImageWidth);
-                    _isYOut = (positionY < 0 || positionY >= ImageHeight);
-
-                    if (!_isXOut && !_isYOut)
-                    {
-                        if ((int)channel_count == 1)
-                        {
-                            HTuple grayVal;
-                            HOperatorSet.GetGrayval(ho_image, (int)positionY, (int)positionX, out grayVal);
-                            str_value = String.Format("Val: {0:000}", grayVal.D);
-                            form_ImageZoom.label_Gray.Text = str_value;
-
-                            form_ImageZoom.label_r.BackColor = Color.Silver;
-                            form_ImageZoom.label_g.BackColor = Color.Silver;
-                            form_ImageZoom.label_b.BackColor = Color.Silver;
-
-                            form_ImageZoom.label_r.Width = (int)(form_ImageZoom.panel1.Width * (grayVal.D / 255));
-                            form_ImageZoom.label_g.Width = (int)(form_ImageZoom.panel1.Width * (grayVal.D / 255));
-                            form_ImageZoom.label_b.Width = (int)(form_ImageZoom.panel1.Width * (grayVal.D / 255));
-                        }
-                        else if ((int)channel_count == 3)
-                        {
-                            HTuple grayValRed = new HTuple(0), grayValGreen = new HTuple(0), grayValBlue = new HTuple(0);
-                            HObject _RedChannel, _GreenChannel, _BlueChannel;
-
-                            HOperatorSet.AccessChannel(ho_image, out _RedChannel, 1);
-                            HOperatorSet.AccessChannel(ho_image, out _GreenChannel, 2);
-                            HOperatorSet.AccessChannel(ho_image, out _BlueChannel, 3);
-
-                            HOperatorSet.GetGrayval(_RedChannel, (int)positionY, (int)positionX, out grayValRed);
-                            HOperatorSet.GetGrayval(_GreenChannel, (int)positionY, (int)positionX, out grayValGreen);
-                            HOperatorSet.GetGrayval(_BlueChannel, (int)positionY, (int)positionX, out grayValBlue);
-
-                            _RedChannel.Dispose();
-                            _GreenChannel.Dispose();
-                            _BlueChannel.Dispose();
-
-                            str_value = String.Format("Gray: ({0:000}, {1:000}, {2:000})", grayValRed, grayValGreen, grayValBlue);
-                            form_ImageZoom.label_Gray.Text = str_value;
-
-                            form_ImageZoom.label_r.BackColor = Color.Red;
-                            form_ImageZoom.label_g.BackColor = Color.Green;
-                            form_ImageZoom.label_b.BackColor = Color.Blue;
-
-                            form_ImageZoom.label_r.Width = (int)(form_ImageZoom.panel1.Width * (grayValRed.D / 255));
-                            form_ImageZoom.label_g.Width = (int)(form_ImageZoom.panel1.Width * (grayValGreen.D / 255));
-                            form_ImageZoom.label_b.Width = (int)(form_ImageZoom.panel1.Width * (grayValBlue.D / 255));
-                        }
-                        else
-                        {
-                            str_value = "";
-                        }
-                    }
-                }
-                catch
-                {
-                    //不处理
-                }
-            }
-        }
 
         private void HWindowControl1_MouseLeave(object sender, EventArgs e)
         {
             label1.Text = "";
         }
 
-        private Form_ImageZoom form_ImageZoom;
 
         private void 缩放ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (form_ImageZoom == null || form_ImageZoom.IsDisposed)
-            {
-                form_ImageZoom = new Form_ImageZoom();
-                form_ImageZoom.TopMost = true;
-            }
-            form_ImageZoom.Show();
+
         }
 
         private void DisplayWindow_Resize(object sender, EventArgs e)
