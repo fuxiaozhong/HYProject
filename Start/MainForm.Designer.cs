@@ -42,8 +42,6 @@ namespace HYProject
             this.processEllipse3 = new ToolKit.HYControls.ProcessEllipse();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panel_Log = new System.Windows.Forms.Panel();
-            this.panel_Main = new System.Windows.Forms.Panel();
-            this.userControl11 = new ToolKit.HalconTool.UserControl1();
             this.panel_Title = new System.Windows.Forms.Panel();
             this.materialContextMenuStrip1 = new MaterialSkin.Controls.MaterialContextMenuStrip();
             this.光源控制ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,26 +61,27 @@ namespace HYProject
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsl_nowtime = new System.Windows.Forms.ToolStripLabel();
             this.tsl_nowuser = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel_Main = new System.Windows.Forms.Panel();
+            this.userControl11 = new ToolKit.HalconTool.UserControl1();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.panel_Buttom.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel_Data.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            this.panel_Main.SuspendLayout();
             this.panel_Title.SuspendLayout();
             this.materialContextMenuStrip1.SuspendLayout();
             this.ctms_camera.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel_Main.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -255,26 +254,6 @@ namespace HYProject
             this.panel_Log.Name = "panel_Log";
             this.panel_Log.Size = new System.Drawing.Size(712, 120);
             this.panel_Log.TabIndex = 0;
-            // 
-            // panel_Main
-            // 
-            this.panel_Main.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel_Main.Controls.Add(this.userControl11);
-            this.panel_Main.Location = new System.Drawing.Point(-2, -2);
-            this.panel_Main.Margin = new System.Windows.Forms.Padding(0);
-            this.panel_Main.Name = "panel_Main";
-            this.panel_Main.Size = new System.Drawing.Size(1066, 514);
-            this.panel_Main.TabIndex = 1;
-            // 
-            // userControl11
-            // 
-            this.userControl11.Location = new System.Drawing.Point(4, 2);
-            this.userControl11.Name = "userControl11";
-            this.userControl11.Size = new System.Drawing.Size(10, 10);
-            this.userControl11.TabIndex = 0;
-            this.userControl11.Visible = false;
             // 
             // panel_Title
             // 
@@ -484,7 +463,6 @@ namespace HYProject
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsl_nowtime,
             this.tsl_nowuser,
-            this.toolStripSeparator1,
             this.toolStripSeparator2,
             this.toolStripLabel1,
             this.toolStripSeparator3,
@@ -507,12 +485,6 @@ namespace HYProject
             this.tsl_nowuser.Name = "tsl_nowuser";
             this.tsl_nowuser.Size = new System.Drawing.Size(99, 17);
             this.tsl_nowuser.Text = "当前用户: 未登录";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 20);
             // 
             // toolStripSeparator2
             // 
@@ -563,6 +535,26 @@ namespace HYProject
             this.panel2.Size = new System.Drawing.Size(359, 514);
             this.panel2.TabIndex = 2;
             // 
+            // panel_Main
+            // 
+            this.panel_Main.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_Main.Controls.Add(this.userControl11);
+            this.panel_Main.Location = new System.Drawing.Point(-2, -2);
+            this.panel_Main.Margin = new System.Windows.Forms.Padding(0);
+            this.panel_Main.Name = "panel_Main";
+            this.panel_Main.Size = new System.Drawing.Size(1066, 514);
+            this.panel_Main.TabIndex = 1;
+            // 
+            // userControl11
+            // 
+            this.userControl11.Location = new System.Drawing.Point(4, 2);
+            this.userControl11.Name = "userControl11";
+            this.userControl11.Size = new System.Drawing.Size(10, 10);
+            this.userControl11.TabIndex = 0;
+            this.userControl11.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -587,7 +579,6 @@ namespace HYProject
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel_Data.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
-            this.panel_Main.ResumeLayout(false);
             this.panel_Title.ResumeLayout(false);
             this.materialContextMenuStrip1.ResumeLayout(false);
             this.ctms_camera.ResumeLayout(false);
@@ -595,6 +586,7 @@ namespace HYProject
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel_Main.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -628,7 +620,6 @@ namespace HYProject
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel tsl_nowtime;
         private System.Windows.Forms.ToolStripLabel tsl_nowuser;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private ToolKit.HalconTool.UserControl1 userControl11;
         private MaterialSkin.Controls.MaterialContextMenuStrip materialContextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 光源控制ToolStripMenuItem;
