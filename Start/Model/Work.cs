@@ -12,7 +12,7 @@ namespace HYProject.Model
         public static void CameraWork(string cameraName, HalconDotNet.HObject ho_image)
         {
             DisplayForm.Instance[0].Disp_Image(ho_image);
-            DisplayForm.Instance[1].Disp_Image(ho_image);
+            //DisplayForm.Instance[1].Disp_Image(ho_image);
         }
     }
 }

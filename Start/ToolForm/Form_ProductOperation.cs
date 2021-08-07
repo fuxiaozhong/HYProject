@@ -17,18 +17,22 @@ namespace HYProject.ToolForm
 {
     public partial class Form_ProductOperation : Form
     {
-        public Form_ProductOperation(Product pro = null)
+        private bool isNew = true;
+
+        public Form_ProductOperation(string pro = "")
         {
             InitializeComponent();
-            if (pro == null)
+            if (pro == "")
             {
                 Text = "产品_添加";
+                isNew = true;
             }
             else
             {
-                product = pro;
+                product = (Product)Serialization.Read2(AppParam.Instance.ProductLibrary + "\\" + pro + ".pro");
                 ProductName = product.ProductName;
                 Text = "产品_修改" + ("-" + ProductName);
+                isNew = false;
             }
         }
 
@@ -61,7 +65,10 @@ namespace HYProject.ToolForm
 
         private void Save()
         {
-            product = new Product();
+            if (isNew)
+            {
+                product = new Product();
+            }
             Serialization.Save2(product, AppParam.Instance.ProductLibrary + "\\" + ProductName + ".pro");
             MessageBox.Show("保存成功");
         }

@@ -68,6 +68,7 @@ namespace HYProject
                 this.WindowState = FormWindowState.Maximized;
             else
                 this.WindowState = FormWindowState.Normal;
+            //添加主页面显示窗口
             panel_Main.Controls.Add(DisplayForm.Instance);
             //初始化显示窗口个数
             DisplayForm.Instance.DisplayWindowCount = Cameras.Instance.GetCameras.Count;
@@ -89,7 +90,8 @@ namespace HYProject
             disk.IsBackground = true;
             disk.Name = "disk";
             disk.Start();
-
+            //开启拍照信号检测线程
+            RunThread.Start();
 
         }
 

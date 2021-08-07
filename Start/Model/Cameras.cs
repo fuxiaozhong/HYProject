@@ -77,6 +77,7 @@ namespace HYProject.Model
                 }
                 else
                 {
+                    Log.WriteWarnLog("没有找到ID:" + cameraName + "的相机,默认使用第一个相机");
                     return cameras.Values.First();
                 }
             }
