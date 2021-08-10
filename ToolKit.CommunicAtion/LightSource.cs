@@ -182,6 +182,7 @@ namespace ToolKit.CommunicAtion
         [NonSerialized]
         private COMSerailPortDevice COMSerailPortDevice;
 
+
         /// <summary>
         /// 打开光源通讯
         /// </summary>
@@ -197,10 +198,7 @@ namespace ToolKit.CommunicAtion
             {
                 COMSerailPortDevice = new COMSerailPortDevice();
                 bool sta = COMSerailPortDevice.OpenSerialPort(portName, baudRate, parity, dataBits, stopBits);
-                if (sta)
-                {
-                    Send();
-                }
+
                 return sta;
             }
             catch (Exception)
