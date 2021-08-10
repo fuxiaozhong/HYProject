@@ -252,7 +252,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MaterialSkin\ToolKit.MaterialSkin.csproj">
+    <ProjectReference Include="..\ToolKit.MaterialSkin\ToolKit.MaterialSkin.csproj">
       <Project>{8EB7611B-68CD-4B8B-987A-11717E2B250C}</Project>
       <Name>ToolKit.MaterialSkin</Name>
     </ProjectReference>
