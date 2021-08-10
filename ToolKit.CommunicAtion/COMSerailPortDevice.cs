@@ -42,6 +42,7 @@ namespace ToolKit.CommunicAtion
                     m_serialPort.Close();
                 }
                 m_serialPort = new SerialPort(portName, baudRate, parity, dataBits, stopBits);
+                m_serialPort.WriteTimeout = 1000;
                 m_serialPort.Open();
                 m_serialPort.DataReceived += new SerialDataReceivedEventHandler(OnReceiveSerailData);
                 return true;
