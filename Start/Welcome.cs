@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Threading;
@@ -24,7 +25,25 @@ namespace HYProject
 
         private void Welcome_Load(object sender, EventArgs e)
         {
+
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
             bool flag = true;
+            Task.Factory.StartNew(() =>
+            {
+                while (flag)
+                {
+                    if (stopwatch.ElapsedMilliseconds >= 10 * 1000)
+                    {
+                        MessageBox.Show("程序初始化超时:10S");
+                        DialogResult = DialogResult.OK;
+                        break;
+                    }
+                }
+            });
+
+
+           
             Task.Factory.StartNew(() =>
             {
                 if (!Directory.Exists(AppParam.Instance.Save_Data_Path))
