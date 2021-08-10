@@ -206,9 +206,13 @@ namespace HYProject
 
         private void CloseEvent(object sender, EventArgs e)
         {
+            AppParam.Instance.Runing = false;
             Cameras.Instance.CloseCamera();
             AppParam.Instance.Save_To_File();
             AppParam.Instance.lightSource.CloseLightSource();
+            Log.RunLog("光源关闭...");
+            AppParam.Instance.Fx3uPLC.ConnectClose();
+            Log.RunLog("PLC关闭...");
             DataLimit.Instance.Save();
             Log.RunLog("退出程序...");
             Thread.Sleep(1000);

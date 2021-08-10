@@ -97,6 +97,7 @@ namespace ToolKit.HYControls.HYForm
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_Waiting";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_Waiting";
             this.Shown += new System.EventHandler(this.FrmWaitingBox_Shown);
