@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace MaterialSkin.Controls
+namespace ToolKit.MaterialSkin.Controls
 {
     public class MaterialTabControl : TabControl, IMaterialControl
     {

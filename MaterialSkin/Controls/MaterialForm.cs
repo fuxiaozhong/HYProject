@@ -7,7 +7,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace MaterialSkin.Controls
+namespace ToolKit.MaterialSkin.Controls
 {
     public class MaterialForm : Form, IMaterialControl
     {

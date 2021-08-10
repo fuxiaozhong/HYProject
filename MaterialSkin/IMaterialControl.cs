@@ -1,4 +1,4 @@
-﻿namespace MaterialSkin
+﻿namespace ToolKit.MaterialSkin
 {
     public interface IMaterialControl
     {

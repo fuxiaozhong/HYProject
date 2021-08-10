@@ -30,20 +30,20 @@ namespace HYProject.ToolForm
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_PLC));
-            this.PLC_IP = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.PLC_IP = new ToolKit.MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialLabel1 = new ToolKit.MaterialSkin.Controls.MaterialLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel5 = new ToolKit.MaterialSkin.Controls.MaterialLabel();
             this.button3 = new System.Windows.Forms.Button();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.PLC_Port = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialLabel2 = new ToolKit.MaterialSkin.Controls.MaterialLabel();
+            this.PLC_Port = new ToolKit.MaterialSkin.Controls.MaterialSingleLineTextField();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel3 = new ToolKit.MaterialSkin.Controls.MaterialLabel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.PLC_Value = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.PLC_Address = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.PLC_Value = new ToolKit.MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialLabel4 = new ToolKit.MaterialSkin.Controls.MaterialLabel();
+            this.PLC_Address = new ToolKit.MaterialSkin.Controls.MaterialSingleLineTextField();
             this.button_Close = new System.Windows.Forms.Button();
             this.button_save = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -57,7 +57,7 @@ namespace HYProject.ToolForm
             this.PLC_IP.Location = new System.Drawing.Point(74, 22);
             this.PLC_IP.Margin = new System.Windows.Forms.Padding(4);
             this.PLC_IP.MaxLength = 32767;
-            this.PLC_IP.MouseState = MaterialSkin.MouseState.HOVER;
+            this.PLC_IP.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.PLC_IP.Name = "PLC_IP";
             this.PLC_IP.PasswordChar = '\0';
             this.PLC_IP.SelectedText = "";
@@ -77,7 +77,7 @@ namespace HYProject.ToolForm
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel1.Location = new System.Drawing.Point(8, 23);
             this.materialLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(58, 19);
             this.materialLabel1.TabIndex = 1;
@@ -106,7 +106,7 @@ namespace HYProject.ToolForm
             this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel5.Location = new System.Drawing.Point(12, 54);
-            this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel5.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
             this.materialLabel5.Size = new System.Drawing.Size(355, 34);
             this.materialLabel5.TabIndex = 7;
@@ -132,7 +132,7 @@ namespace HYProject.ToolForm
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel2.Location = new System.Drawing.Point(176, 23);
             this.materialLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(45, 19);
             this.materialLabel2.TabIndex = 3;
@@ -145,7 +145,7 @@ namespace HYProject.ToolForm
             this.PLC_Port.Location = new System.Drawing.Point(229, 22);
             this.PLC_Port.Margin = new System.Windows.Forms.Padding(4);
             this.PLC_Port.MaxLength = 32767;
-            this.PLC_Port.MouseState = MaterialSkin.MouseState.HOVER;
+            this.PLC_Port.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.PLC_Port.Name = "PLC_Port";
             this.PLC_Port.PasswordChar = '\0';
             this.PLC_Port.SelectedText = "";
@@ -181,7 +181,7 @@ namespace HYProject.ToolForm
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel3.Location = new System.Drawing.Point(212, 23);
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(170, 53);
             this.materialLabel3.TabIndex = 5;
@@ -217,7 +217,7 @@ namespace HYProject.ToolForm
             this.PLC_Value.Location = new System.Drawing.Point(74, 53);
             this.PLC_Value.Margin = new System.Windows.Forms.Padding(4);
             this.PLC_Value.MaxLength = 32767;
-            this.PLC_Value.MouseState = MaterialSkin.MouseState.HOVER;
+            this.PLC_Value.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.PLC_Value.Name = "PLC_Value";
             this.PLC_Value.PasswordChar = '\0';
             this.PLC_Value.SelectedText = "";
@@ -237,7 +237,7 @@ namespace HYProject.ToolForm
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel4.Location = new System.Drawing.Point(8, 23);
             this.materialLabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(45, 19);
             this.materialLabel4.TabIndex = 1;
@@ -250,7 +250,7 @@ namespace HYProject.ToolForm
             this.PLC_Address.Location = new System.Drawing.Point(74, 22);
             this.PLC_Address.Margin = new System.Windows.Forms.Padding(4);
             this.PLC_Address.MaxLength = 32767;
-            this.PLC_Address.MouseState = MaterialSkin.MouseState.HOVER;
+            this.PLC_Address.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.PLC_Address.Name = "PLC_Address";
             this.PLC_Address.PasswordChar = '\0';
             this.PLC_Address.SelectedText = "";
@@ -317,20 +317,20 @@ namespace HYProject.ToolForm
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialSingleLineTextField PLC_IP;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private ToolKit.MaterialSkin.Controls.MaterialSingleLineTextField PLC_IP;
+        private ToolKit.MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialSingleLineTextField PLC_Port;
+        private ToolKit.MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private ToolKit.MaterialSkin.Controls.MaterialSingleLineTextField PLC_Port;
         private System.Windows.Forms.GroupBox groupBox2;
-        private MaterialSkin.Controls.MaterialSingleLineTextField PLC_Value;
-        private MaterialSkin.Controls.MaterialLabel materialLabel4;
-        private MaterialSkin.Controls.MaterialSingleLineTextField PLC_Address;
+        private ToolKit.MaterialSkin.Controls.MaterialSingleLineTextField PLC_Value;
+        private ToolKit.MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private ToolKit.MaterialSkin.Controls.MaterialSingleLineTextField PLC_Address;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private ToolKit.MaterialSkin.Controls.MaterialLabel materialLabel3;
         private System.Windows.Forms.Button button3;
-        private MaterialSkin.Controls.MaterialLabel materialLabel5;
+        private ToolKit.MaterialSkin.Controls.MaterialLabel materialLabel5;
         private System.Windows.Forms.Button button_Close;
         private System.Windows.Forms.Button button_save;
     }

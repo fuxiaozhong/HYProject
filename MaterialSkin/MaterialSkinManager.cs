@@ -6,10 +6,10 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-using MaterialSkin.Controls;
-using MaterialSkin.Properties;
+using ToolKit.MaterialSkin.Controls;
+using ToolKit.MaterialSkin.Properties;
 
-namespace MaterialSkin
+namespace ToolKit.MaterialSkin
 {
     public class MaterialSkinManager
     {

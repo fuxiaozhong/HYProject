@@ -30,17 +30,17 @@ namespace HYProject.ToolForm
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Limit));
-            this.check_W_block = new MaterialSkin.Controls.MaterialCheckBox();
-            this.check_M1_block = new MaterialSkin.Controls.MaterialCheckBox();
-            this.check_KJ_block = new MaterialSkin.Controls.MaterialCheckBox();
-            this.check_P_block = new MaterialSkin.Controls.MaterialCheckBox();
-            this.check_PT_block = new MaterialSkin.Controls.MaterialCheckBox();
-            this.check_M2_block = new MaterialSkin.Controls.MaterialCheckBox();
-            this.check_S1_block = new MaterialSkin.Controls.MaterialCheckBox();
-            this.check_S2_block = new MaterialSkin.Controls.MaterialCheckBox();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.check_W_block = new ToolKit.MaterialSkin.Controls.MaterialCheckBox();
+            this.check_M1_block = new ToolKit.MaterialSkin.Controls.MaterialCheckBox();
+            this.check_KJ_block = new ToolKit.MaterialSkin.Controls.MaterialCheckBox();
+            this.check_P_block = new ToolKit.MaterialSkin.Controls.MaterialCheckBox();
+            this.check_PT_block = new ToolKit.MaterialSkin.Controls.MaterialCheckBox();
+            this.check_M2_block = new ToolKit.MaterialSkin.Controls.MaterialCheckBox();
+            this.check_S1_block = new ToolKit.MaterialSkin.Controls.MaterialCheckBox();
+            this.check_S2_block = new ToolKit.MaterialSkin.Controls.MaterialCheckBox();
+            this.materialLabel1 = new ToolKit.MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel2 = new ToolKit.MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel3 = new ToolKit.MaterialSkin.Controls.MaterialLabel();
             this.num_W_LowerLimit = new System.Windows.Forms.NumericUpDown();
             this.num_W_Standard = new System.Windows.Forms.NumericUpDown();
             this.num_W_UpperLimit = new System.Windows.Forms.NumericUpDown();
@@ -76,7 +76,7 @@ namespace HYProject.ToolForm
             this.num_M2_offset = new System.Windows.Forms.NumericUpDown();
             this.num_M1_offset = new System.Windows.Forms.NumericUpDown();
             this.num_W_offset = new System.Windows.Forms.NumericUpDown();
-            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel4 = new ToolKit.MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)(this.num_W_LowerLimit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_W_Standard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_W_UpperLimit)).BeginInit();
@@ -118,7 +118,7 @@ namespace HYProject.ToolForm
             this.check_W_block.Location = new System.Drawing.Point(9, 30);
             this.check_W_block.Margin = new System.Windows.Forms.Padding(0);
             this.check_W_block.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.check_W_block.MouseState = MaterialSkin.MouseState.HOVER;
+            this.check_W_block.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.check_W_block.Name = "check_W_block";
             this.check_W_block.Ripple = true;
             this.check_W_block.Size = new System.Drawing.Size(125, 25);
@@ -133,7 +133,7 @@ namespace HYProject.ToolForm
             this.check_M1_block.Location = new System.Drawing.Point(9, 60);
             this.check_M1_block.Margin = new System.Windows.Forms.Padding(0);
             this.check_M1_block.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.check_M1_block.MouseState = MaterialSkin.MouseState.HOVER;
+            this.check_M1_block.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.check_M1_block.Name = "check_M1_block";
             this.check_M1_block.Ripple = true;
             this.check_M1_block.Size = new System.Drawing.Size(125, 25);
@@ -148,7 +148,7 @@ namespace HYProject.ToolForm
             this.check_KJ_block.Location = new System.Drawing.Point(9, 180);
             this.check_KJ_block.Margin = new System.Windows.Forms.Padding(0);
             this.check_KJ_block.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.check_KJ_block.MouseState = MaterialSkin.MouseState.HOVER;
+            this.check_KJ_block.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.check_KJ_block.Name = "check_KJ_block";
             this.check_KJ_block.Ripple = true;
             this.check_KJ_block.Size = new System.Drawing.Size(125, 25);
@@ -163,7 +163,7 @@ namespace HYProject.ToolForm
             this.check_P_block.Location = new System.Drawing.Point(9, 150);
             this.check_P_block.Margin = new System.Windows.Forms.Padding(0);
             this.check_P_block.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.check_P_block.MouseState = MaterialSkin.MouseState.HOVER;
+            this.check_P_block.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.check_P_block.Name = "check_P_block";
             this.check_P_block.Ripple = true;
             this.check_P_block.Size = new System.Drawing.Size(125, 25);
@@ -178,7 +178,7 @@ namespace HYProject.ToolForm
             this.check_PT_block.Location = new System.Drawing.Point(9, 120);
             this.check_PT_block.Margin = new System.Windows.Forms.Padding(0);
             this.check_PT_block.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.check_PT_block.MouseState = MaterialSkin.MouseState.HOVER;
+            this.check_PT_block.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.check_PT_block.Name = "check_PT_block";
             this.check_PT_block.Ripple = true;
             this.check_PT_block.Size = new System.Drawing.Size(125, 25);
@@ -193,7 +193,7 @@ namespace HYProject.ToolForm
             this.check_M2_block.Location = new System.Drawing.Point(9, 90);
             this.check_M2_block.Margin = new System.Windows.Forms.Padding(0);
             this.check_M2_block.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.check_M2_block.MouseState = MaterialSkin.MouseState.HOVER;
+            this.check_M2_block.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.check_M2_block.Name = "check_M2_block";
             this.check_M2_block.Ripple = true;
             this.check_M2_block.Size = new System.Drawing.Size(125, 25);
@@ -208,7 +208,7 @@ namespace HYProject.ToolForm
             this.check_S1_block.Location = new System.Drawing.Point(9, 210);
             this.check_S1_block.Margin = new System.Windows.Forms.Padding(0);
             this.check_S1_block.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.check_S1_block.MouseState = MaterialSkin.MouseState.HOVER;
+            this.check_S1_block.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.check_S1_block.Name = "check_S1_block";
             this.check_S1_block.Ripple = true;
             this.check_S1_block.Size = new System.Drawing.Size(125, 25);
@@ -223,7 +223,7 @@ namespace HYProject.ToolForm
             this.check_S2_block.Location = new System.Drawing.Point(9, 240);
             this.check_S2_block.Margin = new System.Windows.Forms.Padding(0);
             this.check_S2_block.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.check_S2_block.MouseState = MaterialSkin.MouseState.HOVER;
+            this.check_S2_block.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.check_S2_block.Name = "check_S2_block";
             this.check_S2_block.Ripple = true;
             this.check_S2_block.Size = new System.Drawing.Size(125, 25);
@@ -238,7 +238,7 @@ namespace HYProject.ToolForm
             this.materialLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel1.Location = new System.Drawing.Point(326, 9);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(36, 17);
             this.materialLabel1.TabIndex = 8;
@@ -251,7 +251,7 @@ namespace HYProject.ToolForm
             this.materialLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel2.Location = new System.Drawing.Point(248, 9);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(36, 17);
             this.materialLabel2.TabIndex = 9;
@@ -264,7 +264,7 @@ namespace HYProject.ToolForm
             this.materialLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel3.Location = new System.Drawing.Point(169, 9);
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(36, 17);
             this.materialLabel3.TabIndex = 10;
@@ -964,7 +964,7 @@ namespace HYProject.ToolForm
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel4.Location = new System.Drawing.Point(408, 9);
-            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(41, 19);
             this.materialLabel4.TabIndex = 38;
@@ -1069,17 +1069,17 @@ namespace HYProject.ToolForm
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialCheckBox check_W_block;
-        private MaterialSkin.Controls.MaterialCheckBox check_M1_block;
-        private MaterialSkin.Controls.MaterialCheckBox check_KJ_block;
-        private MaterialSkin.Controls.MaterialCheckBox check_P_block;
-        private MaterialSkin.Controls.MaterialCheckBox check_PT_block;
-        private MaterialSkin.Controls.MaterialCheckBox check_M2_block;
-        private MaterialSkin.Controls.MaterialCheckBox check_S1_block;
-        private MaterialSkin.Controls.MaterialCheckBox check_S2_block;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private ToolKit.MaterialSkin.Controls.MaterialCheckBox check_W_block;
+        private ToolKit.MaterialSkin.Controls.MaterialCheckBox check_M1_block;
+        private ToolKit.MaterialSkin.Controls.MaterialCheckBox check_KJ_block;
+        private ToolKit.MaterialSkin.Controls.MaterialCheckBox check_P_block;
+        private ToolKit.MaterialSkin.Controls.MaterialCheckBox check_PT_block;
+        private ToolKit.MaterialSkin.Controls.MaterialCheckBox check_M2_block;
+        private ToolKit.MaterialSkin.Controls.MaterialCheckBox check_S1_block;
+        private ToolKit.MaterialSkin.Controls.MaterialCheckBox check_S2_block;
+        private ToolKit.MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private ToolKit.MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private ToolKit.MaterialSkin.Controls.MaterialLabel materialLabel3;
         private System.Windows.Forms.NumericUpDown num_W_LowerLimit;
         private System.Windows.Forms.NumericUpDown num_W_Standard;
         private System.Windows.Forms.NumericUpDown num_W_UpperLimit;
@@ -1115,6 +1115,6 @@ namespace HYProject.ToolForm
         private System.Windows.Forms.NumericUpDown num_M2_offset;
         private System.Windows.Forms.NumericUpDown num_M1_offset;
         private System.Windows.Forms.NumericUpDown num_W_offset;
-        private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private ToolKit.MaterialSkin.Controls.MaterialLabel materialLabel4;
     }
 }

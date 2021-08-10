@@ -1,4 +1,6 @@
 ﻿
+using ToolKit.MaterialSkin.Controls;
+
 namespace HYProject
 {
     partial class MainForm
@@ -43,7 +45,7 @@ namespace HYProject
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panel_Log = new System.Windows.Forms.Panel();
             this.panel_Title = new System.Windows.Forms.Panel();
-            this.materialContextMenuStrip1 = new MaterialSkin.Controls.MaterialContextMenuStrip();
+            this.materialContextMenuStrip1 = new ToolKit.MaterialSkin.Controls.MaterialContextMenuStrip();
             this.光源控制ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.参数设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pLC通讯设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -283,7 +285,7 @@ namespace HYProject
             this.参数设置ToolStripMenuItem,
             this.pLC通讯设置ToolStripMenuItem,
             this.参数设置ToolStripMenuItem1});
-            this.materialContextMenuStrip1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialContextMenuStrip1.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.materialContextMenuStrip1.Name = "materialContextMenuStrip1";
             this.materialContextMenuStrip1.Size = new System.Drawing.Size(146, 92);
             // 
@@ -527,7 +529,7 @@ namespace HYProject
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Location = new System.Drawing.Point(1064, -1);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
@@ -537,8 +539,8 @@ namespace HYProject
             // 
             // panel_Main
             // 
-            this.panel_Main.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel_Main.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_Main.Controls.Add(this.userControl11);
             this.panel_Main.Location = new System.Drawing.Point(-2, -2);
@@ -621,7 +623,7 @@ namespace HYProject
         private System.Windows.Forms.ToolStripLabel tsl_nowtime;
         private System.Windows.Forms.ToolStripLabel tsl_nowuser;
         private ToolKit.HalconTool.UserControl1 userControl11;
-        private MaterialSkin.Controls.MaterialContextMenuStrip materialContextMenuStrip1;
+        private MaterialContextMenuStrip materialContextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 光源控制ToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;

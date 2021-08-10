@@ -1,4 +1,6 @@
 ﻿
+using ToolKit.MaterialSkin.Controls;
+
 namespace HYProject.MenuForm
 {
     partial class Form_ProjectLibrary
@@ -38,7 +40,7 @@ namespace HYProject.MenuForm
             this.button4 = new System.Windows.Forms.Button();
             this.button_Refresh = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label_NowProductName = new MaterialSkin.Controls.MaterialLabel();
+            this.label_NowProductName = new ToolKit.MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
             // 
             // label1
@@ -130,8 +132,8 @@ namespace HYProject.MenuForm
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -147,7 +149,7 @@ namespace HYProject.MenuForm
             this.label_NowProductName.Font = new System.Drawing.Font("Roboto", 11F);
             this.label_NowProductName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label_NowProductName.Location = new System.Drawing.Point(100, 8);
-            this.label_NowProductName.MouseState = MaterialSkin.MouseState.HOVER;
+            this.label_NowProductName.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.label_NowProductName.Name = "label_NowProductName";
             this.label_NowProductName.Size = new System.Drawing.Size(0, 19);
             this.label_NowProductName.TabIndex = 8;
@@ -189,7 +191,7 @@ namespace HYProject.MenuForm
         private System.Windows.Forms.Button button_Delete;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button_Refresh;
-        private MaterialSkin.Controls.MaterialLabel label_NowProductName;
+        private MaterialLabel label_NowProductName;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

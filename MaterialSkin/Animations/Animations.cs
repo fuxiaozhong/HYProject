@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MaterialSkin.Animations
+namespace ToolKit.MaterialSkin.Animations
 {
     internal enum AnimationType
     {

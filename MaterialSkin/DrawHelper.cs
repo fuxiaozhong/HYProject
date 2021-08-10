@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Drawing.Drawing2D;
 
-namespace MaterialSkin
+namespace ToolKit.MaterialSkin
 {
     internal static class DrawHelper
     {
