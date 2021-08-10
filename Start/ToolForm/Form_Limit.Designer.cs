@@ -114,14 +114,14 @@ namespace HYProject.ToolForm
             // check_W_block
             // 
             this.check_W_block.Depth = 0;
-            this.check_W_block.Font = new System.Drawing.Font("Roboto", 10F);
+            this.check_W_block.Font = new System.Drawing.Font("新宋体", 11F, System.Drawing.FontStyle.Bold);
             this.check_W_block.Location = new System.Drawing.Point(9, 30);
             this.check_W_block.Margin = new System.Windows.Forms.Padding(0);
             this.check_W_block.MouseLocation = new System.Drawing.Point(-1, -1);
             this.check_W_block.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.check_W_block.Name = "check_W_block";
             this.check_W_block.Ripple = true;
-            this.check_W_block.Size = new System.Drawing.Size(125, 25);
+            this.check_W_block.Size = new System.Drawing.Size(142, 25);
             this.check_W_block.TabIndex = 0;
             this.check_W_block.Text = "W屏蔽检测";
             this.check_W_block.UseVisualStyleBackColor = true;
@@ -129,14 +129,14 @@ namespace HYProject.ToolForm
             // check_M1_block
             // 
             this.check_M1_block.Depth = 0;
-            this.check_M1_block.Font = new System.Drawing.Font("Roboto", 10F);
+            this.check_M1_block.Font = new System.Drawing.Font("新宋体", 11F, System.Drawing.FontStyle.Bold);
             this.check_M1_block.Location = new System.Drawing.Point(9, 60);
             this.check_M1_block.Margin = new System.Windows.Forms.Padding(0);
             this.check_M1_block.MouseLocation = new System.Drawing.Point(-1, -1);
             this.check_M1_block.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.check_M1_block.Name = "check_M1_block";
             this.check_M1_block.Ripple = true;
-            this.check_M1_block.Size = new System.Drawing.Size(125, 25);
+            this.check_M1_block.Size = new System.Drawing.Size(142, 25);
             this.check_M1_block.TabIndex = 1;
             this.check_M1_block.Text = "M1屏蔽检测";
             this.check_M1_block.UseVisualStyleBackColor = true;
@@ -144,14 +144,14 @@ namespace HYProject.ToolForm
             // check_KJ_block
             // 
             this.check_KJ_block.Depth = 0;
-            this.check_KJ_block.Font = new System.Drawing.Font("Roboto", 10F);
+            this.check_KJ_block.Font = new System.Drawing.Font("新宋体", 11F, System.Drawing.FontStyle.Bold);
             this.check_KJ_block.Location = new System.Drawing.Point(9, 180);
             this.check_KJ_block.Margin = new System.Windows.Forms.Padding(0);
             this.check_KJ_block.MouseLocation = new System.Drawing.Point(-1, -1);
             this.check_KJ_block.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.check_KJ_block.Name = "check_KJ_block";
             this.check_KJ_block.Ripple = true;
-            this.check_KJ_block.Size = new System.Drawing.Size(125, 25);
+            this.check_KJ_block.Size = new System.Drawing.Size(142, 25);
             this.check_KJ_block.TabIndex = 2;
             this.check_KJ_block.Text = "孔距屏蔽检测";
             this.check_KJ_block.UseVisualStyleBackColor = true;
@@ -159,14 +159,14 @@ namespace HYProject.ToolForm
             // check_P_block
             // 
             this.check_P_block.Depth = 0;
-            this.check_P_block.Font = new System.Drawing.Font("Roboto", 10F);
+            this.check_P_block.Font = new System.Drawing.Font("新宋体", 11F, System.Drawing.FontStyle.Bold);
             this.check_P_block.Location = new System.Drawing.Point(9, 150);
             this.check_P_block.Margin = new System.Windows.Forms.Padding(0);
             this.check_P_block.MouseLocation = new System.Drawing.Point(-1, -1);
             this.check_P_block.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.check_P_block.Name = "check_P_block";
             this.check_P_block.Ripple = true;
-            this.check_P_block.Size = new System.Drawing.Size(125, 25);
+            this.check_P_block.Size = new System.Drawing.Size(142, 25);
             this.check_P_block.TabIndex = 3;
             this.check_P_block.Text = "P屏蔽检测";
             this.check_P_block.UseVisualStyleBackColor = true;
@@ -174,14 +174,14 @@ namespace HYProject.ToolForm
             // check_PT_block
             // 
             this.check_PT_block.Depth = 0;
-            this.check_PT_block.Font = new System.Drawing.Font("Roboto", 10F);
+            this.check_PT_block.Font = new System.Drawing.Font("新宋体", 11F, System.Drawing.FontStyle.Bold);
             this.check_PT_block.Location = new System.Drawing.Point(9, 120);
             this.check_PT_block.Margin = new System.Windows.Forms.Padding(0);
             this.check_PT_block.MouseLocation = new System.Drawing.Point(-1, -1);
             this.check_PT_block.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.check_PT_block.Name = "check_PT_block";
             this.check_PT_block.Ripple = true;
-            this.check_PT_block.Size = new System.Drawing.Size(125, 25);
+            this.check_PT_block.Size = new System.Drawing.Size(142, 25);
             this.check_PT_block.TabIndex = 4;
             this.check_PT_block.Text = "PT屏蔽检测";
             this.check_PT_block.UseVisualStyleBackColor = true;
@@ -189,14 +189,14 @@ namespace HYProject.ToolForm
             // check_M2_block
             // 
             this.check_M2_block.Depth = 0;
-            this.check_M2_block.Font = new System.Drawing.Font("Roboto", 10F);
+            this.check_M2_block.Font = new System.Drawing.Font("新宋体", 11F, System.Drawing.FontStyle.Bold);
             this.check_M2_block.Location = new System.Drawing.Point(9, 90);
             this.check_M2_block.Margin = new System.Windows.Forms.Padding(0);
             this.check_M2_block.MouseLocation = new System.Drawing.Point(-1, -1);
             this.check_M2_block.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.check_M2_block.Name = "check_M2_block";
             this.check_M2_block.Ripple = true;
-            this.check_M2_block.Size = new System.Drawing.Size(125, 25);
+            this.check_M2_block.Size = new System.Drawing.Size(142, 25);
             this.check_M2_block.TabIndex = 5;
             this.check_M2_block.Text = "M2屏蔽检测";
             this.check_M2_block.UseVisualStyleBackColor = true;
@@ -204,14 +204,14 @@ namespace HYProject.ToolForm
             // check_S1_block
             // 
             this.check_S1_block.Depth = 0;
-            this.check_S1_block.Font = new System.Drawing.Font("Roboto", 10F);
+            this.check_S1_block.Font = new System.Drawing.Font("新宋体", 11F, System.Drawing.FontStyle.Bold);
             this.check_S1_block.Location = new System.Drawing.Point(9, 210);
             this.check_S1_block.Margin = new System.Windows.Forms.Padding(0);
             this.check_S1_block.MouseLocation = new System.Drawing.Point(-1, -1);
             this.check_S1_block.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.check_S1_block.Name = "check_S1_block";
             this.check_S1_block.Ripple = true;
-            this.check_S1_block.Size = new System.Drawing.Size(125, 25);
+            this.check_S1_block.Size = new System.Drawing.Size(142, 25);
             this.check_S1_block.TabIndex = 6;
             this.check_S1_block.Text = "S1屏蔽检测";
             this.check_S1_block.UseVisualStyleBackColor = true;
@@ -219,14 +219,14 @@ namespace HYProject.ToolForm
             // check_S2_block
             // 
             this.check_S2_block.Depth = 0;
-            this.check_S2_block.Font = new System.Drawing.Font("Roboto", 10F);
+            this.check_S2_block.Font = new System.Drawing.Font("新宋体", 11F, System.Drawing.FontStyle.Bold);
             this.check_S2_block.Location = new System.Drawing.Point(9, 240);
             this.check_S2_block.Margin = new System.Windows.Forms.Padding(0);
             this.check_S2_block.MouseLocation = new System.Drawing.Point(-1, -1);
             this.check_S2_block.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.check_S2_block.Name = "check_S2_block";
             this.check_S2_block.Ripple = true;
-            this.check_S2_block.Size = new System.Drawing.Size(125, 25);
+            this.check_S2_block.Size = new System.Drawing.Size(142, 25);
             this.check_S2_block.TabIndex = 7;
             this.check_S2_block.Text = "S2屏蔽检测";
             this.check_S2_block.UseVisualStyleBackColor = true;
@@ -235,12 +235,12 @@ namespace HYProject.ToolForm
             // 
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel1.Location = new System.Drawing.Point(326, 9);
             this.materialLabel1.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(36, 17);
+            this.materialLabel1.Size = new System.Drawing.Size(41, 19);
             this.materialLabel1.TabIndex = 8;
             this.materialLabel1.Text = "上限";
             // 
@@ -248,12 +248,12 @@ namespace HYProject.ToolForm
             // 
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel2.Location = new System.Drawing.Point(248, 9);
             this.materialLabel2.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(36, 17);
+            this.materialLabel2.Size = new System.Drawing.Size(41, 19);
             this.materialLabel2.TabIndex = 9;
             this.materialLabel2.Text = "基准";
             // 
@@ -261,12 +261,12 @@ namespace HYProject.ToolForm
             // 
             this.materialLabel3.AutoSize = true;
             this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel3.Location = new System.Drawing.Point(169, 9);
             this.materialLabel3.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(36, 17);
+            this.materialLabel3.Size = new System.Drawing.Size(41, 19);
             this.materialLabel3.TabIndex = 10;
             this.materialLabel3.Text = "下限";
             // 
