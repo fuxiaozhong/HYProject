@@ -63,7 +63,134 @@ namespace HYProject.Model
 
 
 
+        /// <summary>
+        /// 校验数据
+        /// </summary>
+        /// <param name="step">W/M1/M2/PT/P/KJ/S1/S2</param>
+        /// <param name="value">要校验的值</param>
+        /// <returns></returns>
+        public bool CheckData(string step, decimal value)
+        {
 
+            decimal newValue = 0.0M;
+            switch (step)
+            {
+                case "W":
+                    newValue = value + Offset_W;
+                    if (Check_W)
+                    {
+                        return true;
+                    }
+                    if (newValue >= (Standard_W + LowerLimit_W) && newValue <= (Standard_W + UpperLimit_W))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                case "M1":
+                    newValue = value + Offset_M1;
+                    if (Check_M1)
+                    {
+                        return true;
+                    }
+                    if (newValue >= (Standard_M1 + LowerLimit_M1) && newValue <= (Standard_M1 + UpperLimit_M1))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                case "M2":
+                    newValue = value + Offset_M2;
+                    if (Check_M2)
+                    {
+                        return true;
+                    }
+                    if (newValue >= (Standard_M2 + LowerLimit_M2) && newValue <= (Standard_M2 + UpperLimit_M2))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                case "PT":
+                    newValue = value + Offset_PT;
+                    if (Check_PT)
+                    {
+                        return true;
+                    }
+                    if (newValue >= (Standard_PT + LowerLimit_PT) && newValue <= (Standard_PT + UpperLimit_PT))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                case "P":
+                    newValue = value + Offset_P;
+                    if (Check_P)
+                    {
+                        return true;
+                    }
+                    if (newValue >= (Standard_P + LowerLimit_P) && newValue <= (Standard_P + UpperLimit_P))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                case "KJ":
+                    newValue = value + Offset_KJ;
+                    if (Check_KJ)
+                    {
+                        return true;
+                    }
+                    if (newValue >= (Standard_KJ + LowerLimit_KJ) && newValue <= (Standard_KJ + UpperLimit_KJ))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                case "S1":
+                    newValue = value + Offset_S1;
+                    if (Check_S1)
+                    {
+                        return true;
+                    }
+                    if (newValue >= (Standard_S1 + LowerLimit_S1) && newValue <= (Standard_S1 + UpperLimit_S1))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                case "S2":
+                    newValue = value + Offset_S2;
+                    if (Check_S2)
+                    {
+                        return true;
+                    }
+                    if (newValue >= (Standard_S2 + LowerLimit_S2) && newValue <= (Standard_S2 + UpperLimit_S2))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+            }
+
+            return false;
+        }
 
 
         //程序运行时创建一个静态只读的进程辅助对象
