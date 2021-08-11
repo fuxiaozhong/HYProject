@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Linq;
 using System.Reflection.Emit;
 using System.Threading;
 using System.Windows.Forms;
@@ -11,6 +12,7 @@ using HYProject.MenuForm;
 using HYProject.Model;
 using HYProject.ToolForm;
 
+using ToolKit.CamreaSDK;
 using ToolKit.CommunicAtion;
 using ToolKit.HYControls.HYForm;
 
@@ -70,8 +72,15 @@ namespace HYProject
                 this.WindowState = FormWindowState.Normal;
             //添加主页面显示窗口
             panel_Main.Controls.Add(DisplayForm.Instance);
-            //初始化显示窗口个数
-            DisplayForm.Instance.DisplayWindowCount = Cameras.Instance.GetCameras.Count;
+
+
+            string[] cameraNmaes = new string[Cameras.Instance.GetCameras.Count];
+            for (int i = 0; i < Cameras.Instance.GetCameras.Count; i++)
+            {
+                cameraNmaes[i] = Cameras.Instance.GetCameras.Values.ElementAt(0)._CameraNmae;
+            }
+            DisplayForm.Instance.DisplayWindowNames = cameraNmaes;
+
             //添加日志窗口
             panel_Log.Controls.Add(Form_Log.Instance);
             Form_Log.Instance.Show();
@@ -301,8 +310,13 @@ namespace HYProject
             //DisplayForm.Instance.DisplayWindowCount = 0;
             //重新初始化相机
             Cameras.Instance.ReInitializeCamera();
-            //重新初始化显示窗口个数
-            DisplayForm.Instance.DisplayWindowCount = Cameras.Instance.GetCameras.Count;
+            string[] cameraNmaes = new string[Cameras.Instance.GetCameras.Count];
+            for (int i = 0; i < Cameras.Instance.GetCameras.Count; i++)
+            {
+                cameraNmaes[i] = Cameras.Instance.GetCameras.Values.ElementAt(0)._CameraNmae;
+            }
+            DisplayForm.Instance.DisplayWindowNames = cameraNmaes;
+
         }
 
         private void Button3_Click(object sender, EventArgs e)
@@ -332,6 +346,11 @@ namespace HYProject
         private void 参数设置ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Form_GlobalOptions.Instance.ShowDialog();
+        }
+
+        private void MaterialFlatButton1_Click(object sender, EventArgs e)
+        {
+            Cameras.Instance["Cam1"].Soft_Trigger();
         }
     }
 }

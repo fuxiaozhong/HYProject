@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 
 using HYProject.Model;
+using HYProject.ToolForm;
 
 namespace HYProject.MenuForm
 {
@@ -45,6 +46,11 @@ namespace HYProject.MenuForm
             //显示图像
             //QueueSaveImage.Instance.QueueEnqueue2(ho_image);
             displayWindow1.Disp_Image(ho_image);
+            DisplayForm.Instance["1"].Disp_Image(ho_image);
+            DisplayForm.Instance["2"].Disp_Image(ho_image);
+            DisplayForm.Instance["3"].Disp_Image(ho_image);
+            DisplayForm.Instance["4"].Disp_Image(ho_image);
+            DisplayForm.Instance["5"].Disp_Image(ho_image);
         }
 
         private void ComboBox_CamList_SelectedIndexChanged(object sender, EventArgs e)

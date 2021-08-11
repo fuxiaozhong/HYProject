@@ -1,5 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+
+using HYProject.ToolForm;
 
 using ToolKit.CamreaSDK;
 
@@ -37,11 +40,9 @@ namespace HYProject.Model
 
         public Dictionary<string, ICamera> GetCameras
         {
-            get
-            {
-                return cameras;
-            }
+            get { return this.cameras; }
         }
+
 
         /// <summary>
         /// 相机列表
@@ -132,6 +133,7 @@ namespace HYProject.Model
         {
             InitCamera("Cam1", CameraType.海康威视);
             InitCamera("Cam2", CameraType.大华相机);
+
         }
 
         /// <summary>
@@ -204,7 +206,12 @@ namespace HYProject.Model
         /// <param name="ho_image">图片</param>
         public void Camera_ImageProcessEvent(string cameraName, HalconDotNet.HObject ho_image)
         {
+            Log.RunLog(cameraName + "接收到图像开始处理......");
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
             Work.CameraWork(cameraName, ho_image);
+            stopwatch.Stop();
+            Log.RunLog(cameraName + "图像处理完成,耗时:"+ stopwatch.ElapsedMilliseconds+ "ms");
         }
     }
 

@@ -66,12 +66,13 @@ namespace HYProject
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel_Main = new System.Windows.Forms.Panel();
-            this.userControl11 = new ToolKit.HalconTool.UserControl1();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.processEllipse2 = new ToolKit.HYControls.ProcessEllipse();
             this.processEllipse1 = new ToolKit.HYControls.ProcessEllipse();
             this.dataStatisticsControl1 = new ToolKit.HYControls.DataStatisticsControl();
             this.processEllipse3 = new ToolKit.HYControls.ProcessEllipse();
+            this.userControl11 = new ToolKit.HalconTool.UserControl1();
+            this.materialFlatButton1 = new ToolKit.MaterialSkin.Controls.MaterialFlatButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel_Buttom.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -83,6 +84,7 @@ namespace HYProject
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panel_Main.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -461,6 +463,7 @@ namespace HYProject
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.materialFlatButton1);
             this.panel2.Location = new System.Drawing.Point(1064, -1);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
@@ -478,14 +481,6 @@ namespace HYProject
             this.panel_Main.Name = "panel_Main";
             this.panel_Main.Size = new System.Drawing.Size(1066, 515);
             this.panel_Main.TabIndex = 1;
-            // 
-            // userControl11
-            // 
-            this.userControl11.Location = new System.Drawing.Point(4, 2);
-            this.userControl11.Name = "userControl11";
-            this.userControl11.Size = new System.Drawing.Size(10, 10);
-            this.userControl11.TabIndex = 0;
-            this.userControl11.Visible = false;
             // 
             // processEllipse2
             // 
@@ -559,6 +554,31 @@ namespace HYProject
             this.processEllipse3.ValueType = ToolKit.HYControls.ValueType.Percent;
             this.processEllipse3.ValueWidth = 30;
             // 
+            // userControl11
+            // 
+            this.userControl11.Location = new System.Drawing.Point(4, 2);
+            this.userControl11.Name = "userControl11";
+            this.userControl11.Size = new System.Drawing.Size(10, 10);
+            this.userControl11.TabIndex = 0;
+            this.userControl11.Visible = false;
+            // 
+            // materialFlatButton1
+            // 
+            this.materialFlatButton1.AutoSize = true;
+            this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialFlatButton1.Depth = 0;
+            this.materialFlatButton1.Icon = null;
+            this.materialFlatButton1.Location = new System.Drawing.Point(52, 220);
+            this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialFlatButton1.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
+            this.materialFlatButton1.Name = "materialFlatButton1";
+            this.materialFlatButton1.Primary = false;
+            this.materialFlatButton1.Size = new System.Drawing.Size(181, 36);
+            this.materialFlatButton1.TabIndex = 0;
+            this.materialFlatButton1.Text = "materialFlatButton1";
+            this.materialFlatButton1.UseVisualStyleBackColor = true;
+            this.materialFlatButton1.Click += new System.EventHandler(this.MaterialFlatButton1_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -590,6 +610,8 @@ namespace HYProject
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel_Main.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -636,6 +658,7 @@ namespace HYProject
         private System.Windows.Forms.ToolStripMenuItem 参数设置ToolStripMenuItem1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private MaterialFlatButton materialFlatButton1;
         // private ToolKit.HYControls.CreateModelControl createModelControl1;
     }
 }

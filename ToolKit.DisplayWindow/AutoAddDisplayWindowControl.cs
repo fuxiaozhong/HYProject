@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ToolKit.DisplayWindow
@@ -27,32 +28,41 @@ namespace ToolKit.DisplayWindow
         /// </summary>
         /// <param name="key">下标0开始</param>
         /// <returns></returns>
-        public HalconDisplayWindow this[int key]
+        public HalconDisplayWindow this[string key]
         {
             get
             {
-                bool isExis = false;
-                foreach (var item in HWindows.Keys)
+                foreach (string item in HWindows.Keys)
                 {
                     if (item == key)
                     {
-                        isExis = true;
-                        break;
+                        return HWindows[key];
                     }
-                    isExis = false;
                 }
-                if (isExis)
+                return HWindows.Values.ElementAt(0);
+            }
+        } /// <summary>
+          /// 获取窗口
+          /// </summary>
+          /// <param name="key">下标0开始</param>
+          /// <returns></returns>
+        public HalconDisplayWindow this[int index]
+        {
+            get
+            {
+                if (index < HWindows.Count && index >= 0)
                 {
-                    return HWindows[key];
+                    return HWindows.Values.ElementAt(index);
                 }
+
                 else
                 {
-                    return HWindows[0];
+                    return HWindows.Values.ElementAt(0);
                 }
             }
         }
 
-        private Dictionary<int, HalconDisplayWindow> HWindows = new Dictionary<int, HalconDisplayWindow>();
+        private Dictionary<string, HalconDisplayWindow> HWindows = new Dictionary<string, HalconDisplayWindow>();
         private int count;
 
         /// <summary>
@@ -72,7 +82,66 @@ namespace ToolKit.DisplayWindow
                 else
                     this.count = value;
 
-                lock (HWindows) { Init(); }
+                lock (HWindows)
+                {
+                    Init();
+                    for (int i = 0; i < count; i++)
+                    {
+                        Panel panel = new Panel()
+                        {
+                            Margin = new Padding(0, 0, 0, 0),
+                            Padding = new Padding(1, 1, 1, 1),
+                            Size = new Size((int)(i % 2 == 0 ? Math.Ceiling(this.Width / col) : Math.Floor(this.Width / col)) - 1, (int)(this.Height / row))
+                        };
+                        HalconDisplayWindow hWinControl = new HalconDisplayWindow() { Margin = new Padding(0, 0, 0, 0), Dock = DockStyle.Fill, Name = "1" };
+                        panel.Controls.Add(hWinControl);
+                        flowLayoutPanel1.Controls.Add(panel);
+
+                        HWindows.Add(i.ToString(), hWinControl);
+                    }
+                }
+            }
+        }
+
+
+        public string[] CameraNames
+        {
+            get
+            {
+                string[] camerasName = new string[HWindows.Count];
+
+                for (int i = 0; i < HWindows.Count; i++)
+                {
+                    camerasName[i] = HWindows.ElementAt(i).Key;
+                }
+                return camerasName;
+            }
+
+            set
+            {
+                if (value.Length > 12)
+                    this.count = 12;
+                else
+                    this.count = value.Length;
+
+                lock (HWindows)
+                {
+                    Init();
+                    for (int i = 0; i < value.Length; i++)
+                    {
+                        Panel panel = new Panel()
+                        {
+                            Margin = new Padding(0, 0, 0, 0),
+                            Padding = new Padding(1, 1, 1, 1),
+                            Size = new Size((int)(i % 2 == 0 ? Math.Ceiling(this.Width / col) : Math.Floor(this.Width / col)) - 1, (int)(this.Height / row))
+                        };
+                        HalconDisplayWindow hWinControl = new HalconDisplayWindow() { Margin = new Padding(0, 0, 0, 0), Dock = DockStyle.Fill, Name = "1" };
+                        panel.Controls.Add(hWinControl);
+                        flowLayoutPanel1.Controls.Add(panel);
+
+                        HWindows.Add(value[i], hWinControl);
+                    }
+                }
             }
         }
 
@@ -142,20 +211,7 @@ namespace ToolKit.DisplayWindow
                         count = 12;
                         break;
                 }
-                for (int i = 0; i < count; i++)
-                {
-                    Panel panel = new Panel()
-                    {
-                        Margin = new Padding(0, 0, 0, 0),
-                        Padding = new Padding(1, 1, 1, 1),
-                        Size = new Size((int)(i % 2 == 0 ? Math.Ceiling(this.Width / col) : Math.Floor(this.Width / col)) - 1, (int)(this.Height / row))
-                    };
-                    HalconDisplayWindow hWinControl = new HalconDisplayWindow() { Margin = new Padding(0, 0, 0, 0), Dock = DockStyle.Fill, Name = "1" };
-                    panel.Controls.Add(hWinControl);
-                    flowLayoutPanel1.Controls.Add(panel);
 
-                    HWindows.Add(i, hWinControl);
-                }
             }
         }
 

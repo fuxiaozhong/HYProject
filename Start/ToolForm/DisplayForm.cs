@@ -64,9 +64,20 @@ namespace HYProject.ToolForm
                 autoAddDisplayWindowControl1.Count = value;
             }
         }
+        public string[] DisplayWindowNames
+        {
+            get
+            {
+                return autoAddDisplayWindowControl1.CameraNames;
+            }
+            set
+            {
+                autoAddDisplayWindowControl1.CameraNames = value;
+            }
+        }
 
         /// <summary>
-        /// 获取窗口个数
+        /// 获取窗口
         /// </summary>
         /// <param name="key">窗口下标 0 开始</param>
         /// <returns></returns>
@@ -75,6 +86,17 @@ namespace HYProject.ToolForm
             get
             {
                 return autoAddDisplayWindowControl1[key];
+            }
+        }/// <summary>
+         /// 获取窗口
+         /// </summary>
+         /// <param name="key">窗口名称</param>
+         /// <returns></returns>
+        public HalconDisplayWindow this[string cameraName]
+        {
+            get
+            {
+                return autoAddDisplayWindowControl1[cameraName];
             }
         }
     }
