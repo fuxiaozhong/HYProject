@@ -7,6 +7,7 @@ using System.Windows.Forms;
 
 using HalconDotNet;
 
+using HYProject.Arithmetic;
 using HYProject.Helper;
 using HYProject.MenuForm;
 using HYProject.Model;
@@ -72,7 +73,7 @@ namespace HYProject
                 this.WindowState = FormWindowState.Normal;
             //添加主页面显示窗口
             panel_Main.Controls.Add(DisplayForm.Instance);
-
+            panel2.Controls.Add(Form_DateVsualization.Instance);
 
             string[] cameraNmaes = new string[Cameras.Instance.GetCameras.Count];
             for (int i = 0; i < Cameras.Instance.GetCameras.Count; i++)
@@ -348,9 +349,19 @@ namespace HYProject
             Form_GlobalOptions.Instance.ShowDialog();
         }
 
+        private void 数据表ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_DataSheet.Instance.Show();
+        }
+
         private void MaterialFlatButton1_Click(object sender, EventArgs e)
         {
-            Cameras.Instance["Cam1"].Soft_Trigger();
+
+        }
+
+        private void MaterialFlatButton1_Click_1(object sender, EventArgs e)
+        {
+            Form_DataSheet.Instance.AddData(new MeasureData() { W_Value = 1, PT_Value = 2, M1_Value = 3, M2_Value = 4, P_Value = 5, KJ_Value = 6, S1_Value = 7, S2_Value = 8 });
         }
     }
 }

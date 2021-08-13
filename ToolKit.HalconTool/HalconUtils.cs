@@ -1035,5 +1035,273 @@ namespace ToolKit.HalconTool
                 HOperatorSet.GenEmptyObj(out _OutShapeRegion);
             }
         }
+
+        /// <summary>
+        /// 双向箭头
+        /// </summary>
+        /// <param name="ho_Arrow"></param>
+        /// <param name="hv_StartRow"></param>
+        /// <param name="hv_StartColumn"></param>
+        /// <param name="hv_EndRow"></param>
+        /// <param name="hv_EndColumn"></param>
+        /// <param name="hv_HeadLength"></param>
+        /// <param name="hv_HeadWidth"></param>
+        public static void double_sided_arrow(out HObject ho_Arrow, HTuple hv_StartRow, HTuple hv_StartColumn, HTuple hv_EndRow, HTuple hv_EndColumn, HTuple hv_HeadLength, HTuple hv_HeadWidth)
+        {
+
+
+
+            // Local iconic variables 
+
+            HObject ho_Arrow1, ho_Arrow2, ho_Region1, ho_Region2;
+            // Initialize local and output iconic variables 
+            HOperatorSet.GenEmptyObj(out ho_Arrow);
+            HOperatorSet.GenEmptyObj(out ho_Arrow1);
+            HOperatorSet.GenEmptyObj(out ho_Arrow2);
+            HOperatorSet.GenEmptyObj(out ho_Region1);
+            HOperatorSet.GenEmptyObj(out ho_Region2);
+            try
+            {
+
+                ho_Arrow1.Dispose();
+                Gen_Arrow_Contour_XLD(out ho_Arrow1, hv_StartRow, hv_StartColumn, hv_EndRow,
+                    hv_EndColumn, hv_HeadLength, hv_HeadWidth);
+                ho_Arrow2.Dispose();
+                Gen_Arrow_Contour_XLD(out ho_Arrow2, hv_EndRow, hv_EndColumn, hv_StartRow,
+                    hv_StartColumn, hv_HeadLength, hv_HeadWidth);
+                ho_Region1.Dispose();
+                HOperatorSet.GenRegionContourXld(ho_Arrow1, out ho_Region1, "filled");
+                ho_Region2.Dispose();
+                HOperatorSet.GenRegionContourXld(ho_Arrow2, out ho_Region2, "filled");
+                ho_Arrow.Dispose();
+                HOperatorSet.Union2(ho_Region1, ho_Region2, out ho_Arrow);
+                ho_Arrow1.Dispose();
+                ho_Arrow2.Dispose();
+                ho_Region1.Dispose();
+                ho_Region2.Dispose();
+
+
+                return;
+            }
+            catch (HalconException HDevExpDefaultException)
+            {
+                ho_Arrow1.Dispose();
+                ho_Arrow2.Dispose();
+                ho_Region1.Dispose();
+                ho_Region2.Dispose();
+
+
+                throw HDevExpDefaultException;
+            }
+        }
+
+        /// <summary>
+        /// 计算矩形四个顶点
+        /// </summary>
+        /// <param name="ho_Cross"></param>
+        /// <param name="hv_Row"></param>
+        /// <param name="hv_Column"></param>
+        /// <param name="hv_Phi"></param>
+        /// <param name="hv_Length1"></param>
+        /// <param name="hv_Length2"></param>
+        /// <param name="hv_Rows"></param>
+        /// <param name="hv_Columns"></param>
+        public static void RectangleVertices(out HObject ho_Cross, HTuple hv_Row, HTuple hv_Column, HTuple hv_Phi, HTuple hv_Length1, HTuple hv_Length2, out HTuple hv_Rows, out HTuple hv_Columns)
+        {
+
+
+
+            // Stack for temporary objects 
+            HObject[] OTemp = new HObject[20];
+
+            // Local iconic variables 
+
+            HObject ho_ROI_0, ho_Cross1, ho_Cross2, ho_Cross3;
+            HObject ho_Cross4;
+
+            // Local control variables 
+
+            HTuple hv_Cos = new HTuple(), hv_Sin = new HTuple();
+            HTuple hv_a = new HTuple(), hv_b = new HTuple(), hv_c = new HTuple();
+            HTuple hv_d = new HTuple(), hv_e = new HTuple(), hv_f = new HTuple();
+            HTuple hv_g = new HTuple(), hv_h = new HTuple();
+            // Initialize local and output iconic variables 
+            HOperatorSet.GenEmptyObj(out ho_Cross);
+            HOperatorSet.GenEmptyObj(out ho_ROI_0);
+            HOperatorSet.GenEmptyObj(out ho_Cross1);
+            HOperatorSet.GenEmptyObj(out ho_Cross2);
+            HOperatorSet.GenEmptyObj(out ho_Cross3);
+            HOperatorSet.GenEmptyObj(out ho_Cross4);
+            hv_Rows = new HTuple();
+            hv_Columns = new HTuple();
+            try
+            {
+                hv_Rows.Dispose();
+                hv_Rows = new HTuple();
+                hv_Columns.Dispose();
+                hv_Columns = new HTuple();
+                ho_ROI_0.Dispose();
+                HOperatorSet.GenRectangle2(out ho_ROI_0, hv_Row, hv_Column, hv_Phi, hv_Length1,
+                    hv_Length2);
+                hv_Cos.Dispose();
+                HOperatorSet.TupleCos(hv_Phi, out hv_Cos);
+                hv_Sin.Dispose();
+                HOperatorSet.TupleSin(hv_Phi, out hv_Sin);
+                hv_a.Dispose();
+                using (HDevDisposeHelper dh = new HDevDisposeHelper())
+                {
+                    hv_a = ((-hv_Length1) * hv_Cos) - (hv_Length2 * hv_Sin);
+                }
+                hv_b.Dispose();
+                using (HDevDisposeHelper dh = new HDevDisposeHelper())
+                {
+                    hv_b = ((-hv_Length1) * hv_Sin) + (hv_Length2 * hv_Cos);
+                }
+                using (HDevDisposeHelper dh = new HDevDisposeHelper())
+                {
+                    ho_Cross1.Dispose();
+                    HOperatorSet.GenCrossContourXld(out ho_Cross1, hv_Row - hv_b, hv_Column + hv_a,
+                        60, hv_Phi);
+                }
+                if (hv_Rows == null)
+                    hv_Rows = new HTuple();
+                hv_Rows[new HTuple(hv_Rows.TupleLength())] = hv_Row - hv_b;
+                if (hv_Columns == null)
+                    hv_Columns = new HTuple();
+                hv_Columns[new HTuple(hv_Columns.TupleLength())] = hv_Column + hv_a;
+                hv_c.Dispose();
+                using (HDevDisposeHelper dh = new HDevDisposeHelper())
+                {
+                    hv_c = (hv_Length1 * hv_Cos) - (hv_Length2 * hv_Sin);
+                }
+                hv_d.Dispose();
+                using (HDevDisposeHelper dh = new HDevDisposeHelper())
+                {
+                    hv_d = (hv_Length1 * hv_Sin) + (hv_Length2 * hv_Cos);
+                }
+                using (HDevDisposeHelper dh = new HDevDisposeHelper())
+                {
+                    ho_Cross2.Dispose();
+                    HOperatorSet.GenCrossContourXld(out ho_Cross2, hv_Row - hv_d, hv_Column + hv_c,
+                        60, hv_Phi);
+                }
+                if (hv_Rows == null)
+                    hv_Rows = new HTuple();
+                hv_Rows[new HTuple(hv_Rows.TupleLength())] = hv_Row - hv_d;
+                if (hv_Columns == null)
+                    hv_Columns = new HTuple();
+                hv_Columns[new HTuple(hv_Columns.TupleLength())] = hv_Column + hv_c;
+                hv_e.Dispose();
+                using (HDevDisposeHelper dh = new HDevDisposeHelper())
+                {
+                    hv_e = (hv_Length1 * hv_Cos) + (hv_Length2 * hv_Sin);
+                }
+                hv_f.Dispose();
+                using (HDevDisposeHelper dh = new HDevDisposeHelper())
+                {
+                    hv_f = (hv_Length1 * hv_Sin) - (hv_Length2 * hv_Cos);
+                }
+                using (HDevDisposeHelper dh = new HDevDisposeHelper())
+                {
+                    ho_Cross3.Dispose();
+                    HOperatorSet.GenCrossContourXld(out ho_Cross3, hv_Row - hv_f, hv_Column + hv_e,
+                        60, hv_Phi);
+                }
+                if (hv_Rows == null)
+                    hv_Rows = new HTuple();
+                hv_Rows[new HTuple(hv_Rows.TupleLength())] = hv_Row - hv_f;
+                if (hv_Columns == null)
+                    hv_Columns = new HTuple();
+                hv_Columns[new HTuple(hv_Columns.TupleLength())] = hv_Column + hv_e;
+                hv_g.Dispose();
+                using (HDevDisposeHelper dh = new HDevDisposeHelper())
+                {
+                    hv_g = ((-hv_Length1) * hv_Cos) + (hv_Length2 * hv_Sin);
+                }
+                hv_h.Dispose();
+                using (HDevDisposeHelper dh = new HDevDisposeHelper())
+                {
+                    hv_h = ((-hv_Length1) * hv_Sin) - (hv_Length2 * hv_Cos);
+                }
+                using (HDevDisposeHelper dh = new HDevDisposeHelper())
+                {
+                    ho_Cross4.Dispose();
+                    HOperatorSet.GenCrossContourXld(out ho_Cross4, hv_Row - hv_h, hv_Column + hv_g,
+                        60, hv_Phi);
+                }
+                if (hv_Rows == null)
+                    hv_Rows = new HTuple();
+                hv_Rows[new HTuple(hv_Rows.TupleLength())] = hv_Row - hv_h;
+                if (hv_Columns == null)
+                    hv_Columns = new HTuple();
+                hv_Columns[new HTuple(hv_Columns.TupleLength())] = hv_Column + hv_g;
+                ho_Cross.Dispose();
+                HOperatorSet.GenEmptyObj(out ho_Cross);
+                {
+                    HObject ExpTmpOutVar_0;
+                    HOperatorSet.ConcatObj(ho_Cross, ho_Cross1, out ExpTmpOutVar_0);
+                    ho_Cross.Dispose();
+                    ho_Cross = ExpTmpOutVar_0;
+                }
+                {
+                    HObject ExpTmpOutVar_0;
+                    HOperatorSet.ConcatObj(ho_Cross, ho_Cross2, out ExpTmpOutVar_0);
+                    ho_Cross.Dispose();
+                    ho_Cross = ExpTmpOutVar_0;
+                }
+                {
+                    HObject ExpTmpOutVar_0;
+                    HOperatorSet.ConcatObj(ho_Cross, ho_Cross3, out ExpTmpOutVar_0);
+                    ho_Cross.Dispose();
+                    ho_Cross = ExpTmpOutVar_0;
+                }
+                {
+                    HObject ExpTmpOutVar_0;
+                    HOperatorSet.ConcatObj(ho_Cross, ho_Cross4, out ExpTmpOutVar_0);
+                    ho_Cross.Dispose();
+                    ho_Cross = ExpTmpOutVar_0;
+                }
+
+                ho_ROI_0.Dispose();
+                ho_Cross1.Dispose();
+                ho_Cross2.Dispose();
+                ho_Cross3.Dispose();
+                ho_Cross4.Dispose();
+
+                hv_Cos.Dispose();
+                hv_Sin.Dispose();
+                hv_a.Dispose();
+                hv_b.Dispose();
+                hv_c.Dispose();
+                hv_d.Dispose();
+                hv_e.Dispose();
+                hv_f.Dispose();
+                hv_g.Dispose();
+                hv_h.Dispose();
+
+                return;
+            }
+            catch
+            {
+                ho_ROI_0.Dispose();
+                ho_Cross1.Dispose();
+                ho_Cross2.Dispose();
+                ho_Cross3.Dispose();
+                ho_Cross4.Dispose();
+
+                hv_Cos.Dispose();
+                hv_Sin.Dispose();
+                hv_a.Dispose();
+                hv_b.Dispose();
+                hv_c.Dispose();
+                hv_d.Dispose();
+                hv_e.Dispose();
+                hv_f.Dispose();
+                hv_g.Dispose();
+                hv_h.Dispose();
+
+            }
+        }
+
     }
 }

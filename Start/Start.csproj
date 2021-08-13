@@ -59,6 +59,9 @@
     <ApplicationIcon>logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.6\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="halcondotnet">
       <HintPath>..\DLL\halcondotnet.dll</HintPath>
     </Reference>
@@ -68,8 +71,23 @@
     <Reference Include="HslControls">
       <HintPath>..\DLL\HslControls.dll</HintPath>
     </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.3.1.9, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.1.3.1\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="log4net">
       <HintPath>..\DLL\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.5.4.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.4\lib\net45\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.5.4.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.4\lib\net45\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.5.4.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.4\lib\net45\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.5.4.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.4\lib\net45\NPOI.OpenXmlFormats.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -88,6 +106,7 @@
     <Compile Include="Helper\AutoCheckImage.cs" />
     <Compile Include="Helper\HotKey.cs" />
     <Compile Include="Helper\Log.cs" />
+    <Compile Include="Helper\NPOIExcel.cs" />
     <Compile Include="Helper\PowerBoot.cs" />
     <Compile Include="Helper\QueueSaveImage.cs" />
     <Compile Include="Helper\Serialization.cs" />
@@ -125,11 +144,13 @@
     <Compile Include="Model\AppParam.cs" />
     <Compile Include="Model\Cameras.cs" />
     <Compile Include="Model\DataLimit.cs" />
+    <Compile Include="Model\MeasureData.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\Work.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\RunThread.cs" />
+    <Compile Include="Arithmetic\Slicing.cs" />
     <Compile Include="ToolForm\DisplayForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +162,18 @@
     </Compile>
     <Compile Include="ToolForm\Form_Communication_Test.Designer.cs">
       <DependentUpon>Form_Communication_Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolForm\Form_DataSheet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolForm\Form_DataSheet.Designer.cs">
+      <DependentUpon>Form_DataSheet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolForm\Form_DateVsualization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolForm\Form_DateVsualization.Designer.cs">
+      <DependentUpon>Form_DateVsualization.cs</DependentUpon>
     </Compile>
     <Compile Include="ToolForm\Form_GlobalOptions.cs">
       <SubType>Form</SubType>
@@ -214,6 +247,12 @@
     <EmbeddedResource Include="ToolForm\Form_Communication_Test.resx">
       <DependentUpon>Form_Communication_Test.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ToolForm\Form_DataSheet.resx">
+      <DependentUpon>Form_DataSheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolForm\Form_DateVsualization.resx">
+      <DependentUpon>Form_DateVsualization.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ToolForm\Form_GlobalOptions.resx">
       <DependentUpon>Form_GlobalOptions.cs</DependentUpon>
     </EmbeddedResource>
@@ -238,6 +277,7 @@
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -296,5 +336,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

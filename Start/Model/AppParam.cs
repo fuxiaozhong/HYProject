@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.IO.Ports;
 using System.Runtime.Serialization.Formatters.Binary;
 
 using HslCommunication;
 using HslCommunication.Profinet.Melsec;
+
+using HYProject.Model;
 
 using ToolKit.CommunicAtion;
 
@@ -189,6 +192,17 @@ namespace HYProject
         /// PLC连接 端口
         /// </summary>
         internal int Fx3uPLC_Port = 8080;
+
+
+
+
+
+
+
+
+
+
+
 
 
         /// <summary>
