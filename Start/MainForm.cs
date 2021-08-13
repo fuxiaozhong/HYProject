@@ -354,14 +354,6 @@ namespace HYProject
             Form_DataSheet.Instance.Show();
         }
 
-        private void MaterialFlatButton1_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void MaterialFlatButton1_Click_1(object sender, EventArgs e)
-        {
-            Form_DataSheet.Instance.AddData(new MeasureData() { W_Value = 1, PT_Value = 2, M1_Value = 3, M2_Value = 4, P_Value = 5, KJ_Value = 6, S1_Value = 7, S2_Value = 8 });
-        }
     }
 }
