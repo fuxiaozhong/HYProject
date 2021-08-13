@@ -83,7 +83,7 @@ namespace HYProject.MenuForm
                         MessageBox.Show("产品:" + label_NowProductName.Text + "删除成功", "删除提示");
                         label_NowProductName.Text = "";
                         Button_Refresh_Click(sender, e);
-                        Log.RunLog("产品:" + label_NowProductName.Text + "删除成功");
+                        Log.WriteRunLog("产品:" + label_NowProductName.Text + "删除成功");
                     }
                 }
 

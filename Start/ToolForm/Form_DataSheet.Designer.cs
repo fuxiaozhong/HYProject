@@ -48,8 +48,11 @@ namespace HYProject.ToolForm
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.materialContextMenuStrip1 = new ToolKit.MaterialSkin.Controls.MaterialContextMenuStrip();
             this.导出到ExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.materialContextMenuStrip1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -59,6 +62,9 @@ namespace HYProject.ToolForm
             this.dataGridView1.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -92,8 +98,7 @@ namespace HYProject.ToolForm
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 25);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -111,7 +116,7 @@ namespace HYProject.ToolForm
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1041, 455);
+            this.dataGridView1.Size = new System.Drawing.Size(1041, 430);
             this.dataGridView1.TabIndex = 0;
             // 
             // Column1
@@ -205,11 +210,35 @@ namespace HYProject.ToolForm
             this.导出到ExcelToolStripMenuItem.Text = "导出到Excel";
             this.导出到ExcelToolStripMenuItem.Click += new System.EventHandler(this.导出到ExcelToolStripMenuItem_Click);
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1041, 25);
+            this.toolStrip1.TabIndex = 1;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Margin = new System.Windows.Forms.Padding(0, 1, 30, 2);
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(93, 22);
+            this.toolStripButton1.Text = "导出至Excel";
+            this.toolStripButton1.Click += new System.EventHandler(this.导出到ExcelToolStripMenuItem_Click);
+            // 
             // Form_DataSheet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1041, 455);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_DataSheet";
@@ -217,7 +246,10 @@ namespace HYProject.ToolForm
             this.Text = "测量数据表";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.materialContextMenuStrip1.ResumeLayout(false);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -236,5 +268,7 @@ namespace HYProject.ToolForm
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private ToolKit.MaterialSkin.Controls.MaterialContextMenuStrip materialContextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 导出到ExcelToolStripMenuItem;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

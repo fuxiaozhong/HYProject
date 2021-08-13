@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Reflection;
 
 using ToolKit.HYControls.HYForm;
 
@@ -14,24 +16,12 @@ namespace HYProject
         {
             log4net.Config.XmlConfigurator.Configure(new System.IO.FileInfo(strLog4NetConfigFile));
             m_logFile = strLog4NetConfigFile;
-            m_lstLog["info_logo"] = log4net.LogManager.GetLogger("info_logo");
             m_lstLog["error_logo"] = log4net.LogManager.GetLogger("error_logo");
             m_lstLog["warn_logo"] = log4net.LogManager.GetLogger("warn_logo");
-            m_lstLog["run"] = log4net.LogManager.GetLogger("run");
+            m_lstLog["run_logo"] = log4net.LogManager.GetLogger("run_logo");
         }
 
-        /// <summary>
-        /// 功能描述:写入常规日志
-        /// </summary>
-        /// <param name="strInfoLog">strInfoLog</param>
-        public static void WriteInfoLog(string strInfoLog)
-        {
-            if (m_lstLog["info_logo"].IsInfoEnabled)
-            {
-                m_lstLog["info_logo"].Info(strInfoLog);
-                Form_Log.Instance.OutputMsg(strInfoLog, System.Drawing.Color.Green);
-            }
-        }
+
 
         /// <summary>
         /// 功能描述:写入警告日志
@@ -55,7 +45,11 @@ namespace HYProject
         {
             if (m_lstLog["error_logo"].IsErrorEnabled)
             {
-                m_lstLog["error_logo"].Error(strErrLog, ex);
+                StackTrace stackTrace = new StackTrace();
+                StackFrame stackFrame = stackTrace.GetFrame(1);
+                MethodBase methodBase = stackFrame.GetMethod();
+
+                m_lstLog["error_logo"].Error("<类名:" + methodBase.ReflectedType.Name + ">   <方法名:" + methodBase.Name + ">   <信息:" + strErrLog + ">", ex);
                 Form_Log.Instance.OutputMsg(strErrLog, System.Drawing.Color.Red);
             }
         }
@@ -65,11 +59,11 @@ namespace HYProject
         /// </summary>
         /// <param name="strErrLog">strErrLog</param>
         /// <param name="ex">ex</param>
-        public static void RunLog(string runmessage)
+        public static void WriteRunLog(string runmessage)
         {
-            if (m_lstLog["run"].IsErrorEnabled)
+            if (m_lstLog["run_logo"].IsErrorEnabled)
             {
-                m_lstLog["run"].Fatal(runmessage);
+                m_lstLog["run_logo"].Info(runmessage);
                 Form_Log.Instance.OutputMsg(runmessage, System.Drawing.Color.Green);
             }
         }

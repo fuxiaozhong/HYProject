@@ -36,18 +36,18 @@ namespace HYProject
                     OperateResult<int> AoperateResult = AppParam.Instance.Fx3uPLC.ReadInt32("D10");
                     if (AoperateResult.IsSuccess && AoperateResult.Content == 1)
                     {
-                        Log.RunLog("收到D10拍照信号: " + AoperateResult.Content);
-                        Log.RunLog("执行拍照命令: " + (Cameras.Instance["Cam1"].Soft_Trigger() ? "成功" : "失败"));
-                        Log.RunLog("复位D10拍照信号: " + (AppParam.Instance.Fx3uPLC.Write("D10", 0).IsSuccess ? "成功" : "失败"));
+                        Log.WriteRunLog("收到D10拍照信号: " + AoperateResult.Content);
+                        Log.WriteRunLog("执行拍照命令: " + (Cameras.Instance["Cam1"].Soft_Trigger() ? "成功" : "失败"));
+                        Log.WriteRunLog("复位D10拍照信号: " + (AppParam.Instance.Fx3uPLC.Write("D10", 0).IsSuccess ? "成功" : "失败"));
                     }
 
                     //读取第二个拍照信号
                     OperateResult<int> BoperateResult = AppParam.Instance.Fx3uPLC.ReadInt32("D20");
                     if (BoperateResult.IsSuccess && BoperateResult.Content == 1)
                     {
-                        Log.RunLog("收到D20拍照信号: " + BoperateResult.Content);
-                        Log.RunLog("执行拍照命令: " + (Cameras.Instance["Cam2"].Soft_Trigger() ? "成功" : "失败"));
-                        Log.RunLog("复位D20拍照信号: " + (AppParam.Instance.Fx3uPLC.Write("D20", 0).IsSuccess ? "成功" : "失败"));
+                        Log.WriteRunLog("收到D20拍照信号: " + BoperateResult.Content);
+                        Log.WriteRunLog("执行拍照命令: " + (Cameras.Instance["Cam2"].Soft_Trigger() ? "成功" : "失败"));
+                        Log.WriteRunLog("复位D20拍照信号: " + (AppParam.Instance.Fx3uPLC.Write("D20", 0).IsSuccess ? "成功" : "失败"));
                     }
                 }
                 Thread.Sleep(10);

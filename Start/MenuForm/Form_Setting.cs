@@ -187,7 +187,7 @@ namespace HYProject.MenuForm
                     if (form_User.ShowDialog() == DialogResult.OK)
                     {
                         AppParam.Instance.Power = form_User.Power;
-                        Log.RunLog("切换用户:" + AppParam.Instance.Power);
+                        Log.WriteRunLog("切换用户:" + AppParam.Instance.Power);
                         MainForm.Instance.Text = "视觉软件 -- " + AppParam.Instance.Power;
                     }
                 }

@@ -152,7 +152,7 @@ namespace HYProject.Helper
             ICell cell = null;
             try
             {
-                if (dt != null && dt.Rows.Count > 0)
+                if (dt != null && dt.Rows.Count > 1)
                 {
                     workbook = new HSSFWorkbook();
                     sheet = workbook.CreateSheet("Sheet0");//创建一个名称为Sheet0的表

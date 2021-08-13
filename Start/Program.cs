@@ -43,7 +43,7 @@ namespace HYProject
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             MainForm.Instance.ShowIcon = true;
-            Log.RunLog(DateTime.Now.ToString() + " - 程序启动"); ;
+            Log.WriteRunLog(DateTime.Now.ToString() + " - 程序启动"); ;
             string proc = Process.GetCurrentProcess().ProcessName;
             Process[] processes = Process.GetProcessesByName(proc);
             if (processes.Length <= 1)
@@ -56,7 +56,7 @@ namespace HYProject
                         if (form_User.ShowDialog() == DialogResult.OK)
                         {
                             AppParam.Instance.Power = form_User.Power;
-                            Log.RunLog("用户登录:" + AppParam.Instance.Power);
+                            Log.WriteRunLog("用户登录:" + AppParam.Instance.Power);
                             MainForm.Instance.Text = "视觉软件 -- " + AppParam.Instance.Power;
                             Application.Run(MainForm.Instance);
                         }

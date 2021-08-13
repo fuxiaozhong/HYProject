@@ -56,7 +56,7 @@ namespace HYProject
                     Directory.CreateDirectory(AppParam.Instance.ProductLibrary);
 
 
-                Log.RunLog("开始加载配置文件");
+                Log.WriteRunLog("开始加载配置文件");
                 ///初始化相机
                 Cameras.Instance.InitializeCamera();
                 if (AppParam.Instance.lightSource.OpenLightSource(AppParam.Instance.LightSourcePortName,
@@ -65,7 +65,7 @@ namespace HYProject
                                                              AppParam.Instance.LightSourceDataBits,
                                                              AppParam.Instance.LightSourceStopBits))
                 {
-                    Log.RunLog("光源连接成功");
+                    Log.WriteRunLog("光源连接成功");
                     AppParam.Instance.lightSource.StateCH1 = true;
                     AppParam.Instance.lightSource.StateCH2 = true;
                     AppParam.Instance.lightSource.StateCH3 = true;
@@ -94,7 +94,7 @@ namespace HYProject
                 AppParam.Instance.Fx3uPLCResult = AppParam.Instance.Fx3uPLC.ConnectServer();
                 if (AppParam.Instance.Fx3uPLCResult.IsSuccess)
                 {
-                    Log.RunLog("PLC连接成功");
+                    Log.WriteRunLog("PLC连接成功");
                 }
                 else
                 {
@@ -104,7 +104,7 @@ namespace HYProject
 
                 DataLimit.Instance.Read();
 
-                Log.RunLog("数据配置加载完成");
+                Log.WriteRunLog("数据配置加载完成");
                 //等待进度条加载完成
                 while (flag) { }
                 DialogResult = DialogResult.OK;

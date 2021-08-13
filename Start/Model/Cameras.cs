@@ -119,7 +119,7 @@ namespace HYProject.Model
         {
             foreach (ICamera item in cameras.Values)
             {
-                Log.RunLog("相机:" + item._CameraNmae + "关闭成功");
+                Log.WriteRunLog("相机:" + item._CameraNmae + "关闭成功");
                 item.Close();
             }
 
@@ -158,7 +158,7 @@ namespace HYProject.Model
                     DaHuaCamera dahua = new DaHuaCamera();
                     if (dahua.Open(cameraName))
                     {
-                        Log.RunLog("相机:" + cameraName + "打开成功");
+                        Log.WriteRunLog("相机:" + cameraName + "打开成功");
                         AddCamera(cameraName, dahua);
                         dahua.IsSaveLog2Disk = true;
                         dahua.ImageProcessEvent += Camera_ImageProcessEvent;
@@ -173,7 +173,7 @@ namespace HYProject.Model
                     HikvisionCamera haikang = new HikvisionCamera();
                     if (haikang.Open(cameraName))
                     {
-                        Log.RunLog("相机:" + cameraName + "打开成功");
+                        Log.WriteRunLog("相机:" + cameraName + "打开成功");
                         AddCamera(cameraName, haikang); haikang.IsSaveLog2Disk = true;
                         haikang.ImageProcessEvent += Camera_ImageProcessEvent;
                     }
@@ -187,7 +187,7 @@ namespace HYProject.Model
                     BaslerPylonGigE basler = new BaslerPylonGigE();
                     if (basler.Open(cameraName))
                     {
-                        Log.RunLog("相机:" + cameraName + "打开成功");
+                        Log.WriteRunLog("相机:" + cameraName + "打开成功");
                         AddCamera(cameraName, basler); basler.IsSaveLog2Disk = true;
                         basler.ImageProcessEvent += Camera_ImageProcessEvent;
                     }
@@ -206,12 +206,12 @@ namespace HYProject.Model
         /// <param name="ho_image">图片</param>
         public void Camera_ImageProcessEvent(string cameraName, HalconDotNet.HObject ho_image)
         {
-            Log.RunLog(cameraName + "接收到图像开始处理......");
+            Log.WriteRunLog(cameraName + "接收到图像开始处理......");
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
             Work.CameraWork(cameraName, ho_image);
             stopwatch.Stop();
-            Log.RunLog(cameraName + "图像处理完成,耗时:"+ stopwatch.ElapsedMilliseconds+ "ms");
+            Log.WriteRunLog(cameraName + "图像处理完成,耗时:"+ stopwatch.ElapsedMilliseconds+ "ms");
         }
     }
 

@@ -64,6 +64,11 @@ namespace HYProject.ToolForm
 
         private void 导出到ExcelToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.Rows.Count==0)
+            {
+                MessageBox.Show("无数据导出!");
+                return;
+            }
             DataTable dataTable = NPOIExcel.DataGridViewToTable(dataGridView1);
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.Filter = "Excel文件(*.xls)|*.xls|Csv文件(*.csv)|*.csv|所有文件(*.*)|*.*";

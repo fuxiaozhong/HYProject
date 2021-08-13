@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Linq;
 using System.Reflection.Emit;
+using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -220,11 +221,11 @@ namespace HYProject
             Cameras.Instance.CloseCamera();
             AppParam.Instance.Save_To_File();
             AppParam.Instance.lightSource.CloseLightSource();
-            Log.RunLog("光源关闭...");
+            Log.WriteRunLog("光源关闭...");
             AppParam.Instance.Fx3uPLC.ConnectClose();
-            Log.RunLog("PLC关闭...");
+            Log.WriteRunLog("PLC关闭...");
             DataLimit.Instance.Save();
-            Log.RunLog("退出程序...");
+            Log.WriteRunLog("退出程序...");
             Thread.Sleep(1000);
         }
 
@@ -234,7 +235,7 @@ namespace HYProject
             if (form_User.ShowDialog() == DialogResult.OK)
             {
                 AppParam.Instance.Power = form_User.Power;
-                Log.RunLog("切换用户:" + AppParam.Instance.Power);
+                Log.WriteRunLog("切换用户:" + AppParam.Instance.Power);
                 Text = "视觉软件 -- " + AppParam.Instance.Power;
             }
         }
@@ -252,14 +253,14 @@ namespace HYProject
                 button_Run.ForeColor = Color.Green;
                 AppParam.Instance.Runing = true;
                 button_Run.Text = "停    止";
-                Log.RunLog("开始运行...");
+                Log.WriteRunLog("开始运行...");
             }
             else
             {
                 button_Run.ForeColor = Color.Red;
                 button_Run.Text = "运    行";
                 AppParam.Instance.Runing = false;
-                Log.RunLog("停止运行...");
+                Log.WriteRunLog("停止运行...");
             }
         }
 
@@ -323,30 +324,30 @@ namespace HYProject
         private void Button3_Click(object sender, EventArgs e)
         {
             Form_ProjectLibrary form_ProjectLibrary = new Form_ProjectLibrary();
-            form_ProjectLibrary.ShowDialog();
+            form_ProjectLibrary.Show();
         }
 
         private void 光源控制ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form_LightSource form_LightSource = new Form_LightSource();
-            form_LightSource.ShowDialog();
+            form_LightSource.Show();
         }
 
         private void 参数设置ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form_Limit form_Limit = new Form_Limit();
-            form_Limit.ShowDialog();
+            form_Limit.Show();
         }
 
         private void PLC通讯设置ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form_PLC form_PLC = new Form_PLC();
-            form_PLC.ShowDialog();
+            form_PLC.Show();
         }
 
         private void 参数设置ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Form_GlobalOptions.Instance.ShowDialog();
+            Form_GlobalOptions.Instance.Show();
         }
 
         private void 数据表ToolStripMenuItem_Click(object sender, EventArgs e)
