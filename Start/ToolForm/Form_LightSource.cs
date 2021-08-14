@@ -79,8 +79,8 @@ namespace HYProject.ToolForm
         {
             if (AppParam.Instance.lightSource == null)
                 return;
-
             AppParam.Instance.lightSource.CH1 = (int)numericUpDown2.Value;
+            //Log.WriteRunLog("手动:光源CH1亮度值调节:" + AppParam.Instance.lightSource.CH1);
         }
 
         private void NumericUpDown3_ValueChanged(object sender, EventArgs e)
@@ -88,6 +88,8 @@ namespace HYProject.ToolForm
             if (AppParam.Instance.lightSource == null)
                 return;
             AppParam.Instance.lightSource.CH2 = (int)numericUpDown3.Value;
+            //Log.WriteRunLog("手动:光源CH2亮度值调节:" + AppParam.Instance.lightSource.CH2);
+
         }
 
         private void NumericUpDown4_ValueChanged(object sender, EventArgs e)
@@ -95,6 +97,7 @@ namespace HYProject.ToolForm
             if (AppParam.Instance.lightSource == null)
                 return;
             AppParam.Instance.lightSource.CH3 = (int)numericUpDown4.Value;
+            //Log.WriteRunLog("手动:光源CH3亮度值调节:" + AppParam.Instance.lightSource.CH3);
 
         }
 
@@ -103,6 +106,7 @@ namespace HYProject.ToolForm
             if (AppParam.Instance.lightSource == null)
                 return;
             AppParam.Instance.lightSource.CH4 = (int)numericUpDown5.Value;
+            //Log.WriteRunLog("手动:光源CH4亮度值调节:" + AppParam.Instance.lightSource.CH4);
         }
 
         private void Switch1_Click(object sender, EventArgs e)
@@ -110,6 +114,7 @@ namespace HYProject.ToolForm
             if (AppParam.Instance.lightSource == null)
                 return;
             AppParam.Instance.lightSource.StateCH1 = switch1.Checked;
+            Log.WriteRunLog("手动:光源CH1:" + (AppParam.Instance.lightSource.StateCH1 ? "打开" : "关闭"));
         }
 
         private void Switch2_Click(object sender, EventArgs e)
@@ -117,6 +122,7 @@ namespace HYProject.ToolForm
             if (AppParam.Instance.lightSource == null)
                 return;
             AppParam.Instance.lightSource.StateCH2 = switch2.Checked;
+            Log.WriteRunLog("手动:光源CH2:" + (AppParam.Instance.lightSource.StateCH2 ? "打开" : "关闭"));
         }
 
         private void Switch3_Click(object sender, EventArgs e)
@@ -124,6 +130,7 @@ namespace HYProject.ToolForm
             if (AppParam.Instance.lightSource == null)
                 return;
             AppParam.Instance.lightSource.StateCH3 = switch3.Checked;
+            Log.WriteRunLog("手动:光源CH3:" + (AppParam.Instance.lightSource.StateCH3 ? "打开" : "关闭"));
         }
 
         private void Switch4_Click(object sender, EventArgs e)
@@ -131,6 +138,7 @@ namespace HYProject.ToolForm
             if (AppParam.Instance.lightSource == null)
                 return;
             AppParam.Instance.lightSource.StateCH4 = switch4.Checked;
+            Log.WriteRunLog("手动:光源CH4:" + (AppParam.Instance.lightSource.StateCH4 ? "打开" : "关闭"));
 
         }
 
@@ -140,6 +148,7 @@ namespace HYProject.ToolForm
             AppParam.Instance.lightSource.CloseLightSource();
             button_Port.Enabled = true;
             serialPortConfigurationControl1.Enabled = true;
+            Log.WriteRunLog("手动:已断开光源通讯");
         }
     }
 }

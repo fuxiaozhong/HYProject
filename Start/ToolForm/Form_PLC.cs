@@ -35,6 +35,7 @@ namespace HYProject.ToolForm
             if (AppParam.Instance.Fx3uPLCResult.IsSuccess)
             {
                 materialLabel5.Text = "连接成功";
+                Log.WriteRunLog("连接PLC成功");
                 materialLabel5.ForeColor = Color.Lime;
                 AppParam.Instance.Fx3uPLC_IP = PLC_IP.Text;
                 AppParam.Instance.Fx3uPLC_Port = int.Parse(PLC_Port.Text);
@@ -43,6 +44,7 @@ namespace HYProject.ToolForm
             else
             {
                 materialLabel5.Text = "连接失败";
+                Log.WriteErrorLog("连接PLC失败:" + AppParam.Instance.Fx3uPLCResult.Message);
                 materialLabel5.ForeColor = Color.Red;
                 groupBox2.Enabled = false;
             }
@@ -55,6 +57,7 @@ namespace HYProject.ToolForm
                 int value = AppParam.Instance.Fx3uPLC.ReadInt32(PLC_Address.Text).Content;
                 materialLabel3.Text = value.ToString();
                 materialLabel3.ForeColor = Color.Blue;
+                Log.WriteRunLog("读取地址:" + PLC_Address.Text + "结果为:" + value);
             }
         }
 

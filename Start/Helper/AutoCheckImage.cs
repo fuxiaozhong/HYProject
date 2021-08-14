@@ -35,6 +35,7 @@ namespace HYProject.Helper
                         int day = t.Days;
                         if (day > AppParam.Instance.Save_Image_Days)   //保存的时间 ;  单位：天
                         {
+                            Log.WriteRunLog(fileInfo.Name + "储存到期,已自动删除.");
                             File.Delete(file);  //删除超过时间的文件
                         }
                     }
@@ -49,7 +50,7 @@ namespace HYProject.Helper
                     {
                     }
                 }
-                Thread.Sleep(10000);//10S检查一次
+                Thread.Sleep(1000 * 10);//10S检查一次
             }
         }
     }

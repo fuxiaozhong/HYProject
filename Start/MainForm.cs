@@ -354,7 +354,5 @@ namespace HYProject
         {
             Form_DataSheet.Instance.Show();
         }
-
-
     }
 }

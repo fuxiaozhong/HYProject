@@ -64,7 +64,7 @@ namespace HYProject.ToolForm
 
         private void 导出到ExcelToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.Rows.Count==0)
+            if (dataGridView1.Rows.Count == 0)
             {
                 MessageBox.Show("无数据导出!");
                 return;
@@ -80,10 +80,12 @@ namespace HYProject.ToolForm
                 if (NPOIExcel.DataTableToExcel(dataTable, sfd.FileName))
                 {
                     MessageBox.Show(sfd.FileName + "导出成功");
+                    Log.WriteRunLog("手动导出数据成功,\n" + sfd.FileName);
                 }
                 else
                 {
                     MessageBox.Show(sfd.FileName + "导出失败");
+                    Log.WriteErrorLog("手动导出数据失败,\n" + sfd.FileName);
                 }
             }
         }
