@@ -46,6 +46,7 @@ namespace ToolKit.HYControls.HYForm
         private bool _HideCloseButtom = true;
         private bool _HideHelpButtom = true;
         private bool _HideUserButtom = true;
+        private bool _HideTitle = false;
         private string _userName = "未登录";
 
         private Image _IconImage;
@@ -160,6 +161,29 @@ namespace ToolKit.HYControls.HYForm
                 this._IconImage = value;
                 pictureBox1.Image = value;
                 this.Icon = ConvertToIcon(value);
+            }
+        }
+        [CategoryAttribute("其他"), DescriptionAttribute("隐藏标题栏")]
+        public bool HideTitle
+        {
+            get
+            {
+                return this._HideTitle;
+            }
+
+            set
+            {
+                if (value)
+                {
+                    panel3.Height = 26;
+                    pictureBox1.Size = new Size(27, 27);
+                }
+                else
+                {
+                    pictureBox1.Size = new Size(67, 67);
+                    panel3.Height = 67;
+                }
+                this._HideTitle = value;
             }
         }
 
@@ -335,6 +359,83 @@ namespace ToolKit.HYControls.HYForm
 
             return MessageWindow.ShowWarn(message, title);
         }
+        /// <summary>
+        /// 输入字符串弹窗
+        /// </summary>
+        /// <param name="value">弹窗输入的值</param>
+        /// <param name="checkEmpty">检查是否为空</param>
+        /// <param name="desc">提示</param>
+        /// <param name="topMost">输入框是否置顶</param>
+        /// <returns>输入状态</returns>
+        public bool InputStringDialog(ref string value, bool checkEmpty = true, string desc = "请输入字符串:", bool topMost = false)
+        {
+            return HYInputDialog.InputStringDialog(ref value, checkEmpty, desc, topMost);
+        }
 
+        /// <summary>
+        /// 输入int类型弹窗
+        /// </summary>
+        /// <param name="value">弹窗输入的值</param>
+        /// <param name="checkEmpty">检查是否为空</param>
+        /// <param name="desc">提示</param>
+        /// <param name="topMost">输入框是否置顶</param>
+        /// <returns>输入状态</returns>
+        public bool InputIntegerDialog(ref int value, bool checkEmpty = true, string desc = "请输入数字:", bool topMost = false)
+        {
+            return HYInputDialog.InputIntegerDialog(ref value, checkEmpty, desc, topMost);
+        }
+
+        /// <summary>
+        /// 输入double类型弹窗
+        /// </summary>
+        /// <param name="value">弹窗输入的值</param>
+        /// <param name="checkEmpty">检查是否为空</param>
+        /// <param name="desc">提示</param>
+        /// <param name="topMost">输入框是否置顶</param>
+        /// <returns>输入状态</returns>
+        public bool InputDoubleDialog(ref double value, bool checkEmpty = true, string desc = "请输入数字:", bool topMost = false)
+        {
+            return HYInputDialog.InputDoubleDialog(ref value, checkEmpty, desc, topMost);
+        }
+
+
+
+        /// <summary>
+        /// 弹窗OK提醒消息框
+        /// </summary>
+        /// <param name="text">信息</param>
+        /// <param name="delay">显示时间</param>
+        public void ShowMessageTipOK(string text = null, int delay = -1)
+        {
+            MessageTip.ShowOk(text, delay);
+        }
+        /// <summary>
+        /// 弹窗警告提醒消息框
+        /// </summary>
+        /// <param name="text">信息</param>
+        /// <param name="delay">显示时间</param>
+        public void ShowMessageTipWarning(string text = null, int delay = -1)
+        {
+            MessageTip.ShowWarning(text, delay);
+        }
+        /// <summary>
+        /// 弹窗错误提醒消息框
+        /// </summary>
+        /// <param name="text">信息</param>
+        /// <param name="delay">显示时间</param>
+        public void ShowMessageTipError(string text = null, int delay = -1)
+        {
+            MessageTip.ShowError(text, delay);
+        }
+        /// <summary>
+        /// 弹窗图片提醒消息框
+        /// </summary>
+        /// <param name="icon">图标</param>
+        /// <param name="text">信息</param>
+        /// <param name="delay">显示时间</param>
+        public void ShowMessageTip(Image icon, string text, int delay = -1)
+        {
+            MessageTip.Show(text, icon, delay);
+        }
     }
 }

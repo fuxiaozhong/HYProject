@@ -99,7 +99,7 @@ namespace HYProject
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1334, 733);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1325, 733);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // panel_Buttom
@@ -110,7 +110,7 @@ namespace HYProject
             this.panel_Buttom.Location = new System.Drawing.Point(0, 593);
             this.panel_Buttom.Margin = new System.Windows.Forms.Padding(0);
             this.panel_Buttom.Name = "panel_Buttom";
-            this.panel_Buttom.Size = new System.Drawing.Size(1334, 120);
+            this.panel_Buttom.Size = new System.Drawing.Size(1325, 120);
             this.panel_Buttom.TabIndex = 2;
             // 
             // tableLayoutPanel2
@@ -126,7 +126,7 @@ namespace HYProject
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1334, 120);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1325, 120);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // panel_Data
@@ -134,10 +134,10 @@ namespace HYProject
             this.panel_Data.Controls.Add(this.tableLayoutPanel3);
             this.panel_Data.Controls.Add(this.splitter1);
             this.panel_Data.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_Data.Location = new System.Drawing.Point(667, 0);
+            this.panel_Data.Location = new System.Drawing.Point(662, 0);
             this.panel_Data.Margin = new System.Windows.Forms.Padding(0);
             this.panel_Data.Name = "panel_Data";
-            this.panel_Data.Size = new System.Drawing.Size(667, 120);
+            this.panel_Data.Size = new System.Drawing.Size(663, 120);
             this.panel_Data.TabIndex = 1;
             // 
             // tableLayoutPanel3
@@ -158,7 +158,7 @@ namespace HYProject
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(666, 120);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(662, 120);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // processEllipse2
@@ -224,7 +224,7 @@ namespace HYProject
             this.processEllipse3.MaxValue = 100;
             this.processEllipse3.Name = "processEllipse3";
             this.processEllipse3.ShowType = ToolKit.HYControls.ShowType.Ring;
-            this.processEllipse3.Size = new System.Drawing.Size(96, 100);
+            this.processEllipse3.Size = new System.Drawing.Size(92, 100);
             this.processEllipse3.TabIndex = 2;
             this.toolTip1.SetToolTip(this.processEllipse3, "内存使用率\r\n");
             this.processEllipse3.Value = 50;
@@ -249,7 +249,7 @@ namespace HYProject
             this.panel_Log.Location = new System.Drawing.Point(0, 0);
             this.panel_Log.Margin = new System.Windows.Forms.Padding(0);
             this.panel_Log.Name = "panel_Log";
-            this.panel_Log.Size = new System.Drawing.Size(667, 120);
+            this.panel_Log.Size = new System.Drawing.Size(662, 120);
             this.panel_Log.TabIndex = 0;
             // 
             // panel_Title
@@ -265,7 +265,7 @@ namespace HYProject
             this.panel_Title.Location = new System.Drawing.Point(0, 0);
             this.panel_Title.Margin = new System.Windows.Forms.Padding(0);
             this.panel_Title.Name = "panel_Title";
-            this.panel_Title.Size = new System.Drawing.Size(1334, 75);
+            this.panel_Title.Size = new System.Drawing.Size(1325, 75);
             this.panel_Title.TabIndex = 0;
             // 
             // materialContextMenuStrip1
@@ -329,7 +329,7 @@ namespace HYProject
             this.button_Camera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Camera.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold);
             this.button_Camera.Image = ((System.Drawing.Image)(resources.GetObject("button_Camera.Image")));
-            this.button_Camera.Location = new System.Drawing.Point(607, 6);
+            this.button_Camera.Location = new System.Drawing.Point(598, 6);
             this.button_Camera.Name = "button_Camera";
             this.button_Camera.Size = new System.Drawing.Size(140, 63);
             this.button_Camera.TabIndex = 7;
@@ -359,7 +359,7 @@ namespace HYProject
             this.button_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Exit.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold);
             this.button_Exit.Image = ((System.Drawing.Image)(resources.GetObject("button_Exit.Image")));
-            this.button_Exit.Location = new System.Drawing.Point(1191, 6);
+            this.button_Exit.Location = new System.Drawing.Point(1182, 6);
             this.button_Exit.Name = "button_Exit";
             this.button_Exit.Size = new System.Drawing.Size(140, 63);
             this.button_Exit.TabIndex = 2;
@@ -376,7 +376,7 @@ namespace HYProject
             this.button_Run.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold);
             this.button_Run.ForeColor = System.Drawing.Color.Red;
             this.button_Run.Image = ((System.Drawing.Image)(resources.GetObject("button_Run.Image")));
-            this.button_Run.Location = new System.Drawing.Point(1045, 6);
+            this.button_Run.Location = new System.Drawing.Point(1036, 6);
             this.button_Run.Name = "button_Run";
             this.button_Run.Size = new System.Drawing.Size(140, 63);
             this.button_Run.TabIndex = 3;
@@ -392,7 +392,7 @@ namespace HYProject
             this.button_Setting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Setting.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold);
             this.button_Setting.Image = ((System.Drawing.Image)(resources.GetObject("button_Setting.Image")));
-            this.button_Setting.Location = new System.Drawing.Point(753, 6);
+            this.button_Setting.Location = new System.Drawing.Point(744, 6);
             this.button_Setting.Name = "button_Setting";
             this.button_Setting.Size = new System.Drawing.Size(140, 63);
             this.button_Setting.TabIndex = 5;
@@ -408,7 +408,7 @@ namespace HYProject
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold);
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(899, 6);
+            this.button3.Location = new System.Drawing.Point(890, 6);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(140, 63);
             this.button3.TabIndex = 4;
@@ -430,7 +430,7 @@ namespace HYProject
             this.toolStripLabel2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 713);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1334, 20);
+            this.toolStrip1.Size = new System.Drawing.Size(1325, 20);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -472,17 +472,17 @@ namespace HYProject
             this.panel1.Location = new System.Drawing.Point(0, 75);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1334, 518);
+            this.panel1.Size = new System.Drawing.Size(1325, 518);
             this.panel1.TabIndex = 4;
             // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Location = new System.Drawing.Point(974, -1);
+            this.panel2.Location = new System.Drawing.Point(992, -1);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(359, 518);
+            this.panel2.Size = new System.Drawing.Size(332, 518);
             this.panel2.TabIndex = 2;
             // 
             // panel_Main
@@ -494,7 +494,7 @@ namespace HYProject
             this.panel_Main.Location = new System.Drawing.Point(-2, -2);
             this.panel_Main.Margin = new System.Windows.Forms.Padding(0);
             this.panel_Main.Name = "panel_Main";
-            this.panel_Main.Size = new System.Drawing.Size(976, 519);
+            this.panel_Main.Size = new System.Drawing.Size(994, 519);
             this.panel_Main.TabIndex = 1;
             // 
             // userControl11
@@ -509,7 +509,7 @@ namespace HYProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1334, 800);
+            this.ClientSize = new System.Drawing.Size(1325, 800);
             this.Controls.Add(this.tableLayoutPanel1);
             this.HelpButton = true;
             this.HideHelpButtom = false;

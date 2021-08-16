@@ -133,14 +133,14 @@ namespace ToolKit.HYControls.HYForm
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.label4.Font = new System.Drawing.Font("楷体", 25F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(74, 23);
+            this.label4.Location = new System.Drawing.Point(67, 27);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1391, 44);
+            this.label4.Size = new System.Drawing.Size(1399, 40);
             this.label4.TabIndex = 1;
             this.label4.Text = "视觉检测软件";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -153,7 +153,7 @@ namespace ToolKit.HYControls.HYForm
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(75, 67);
+            this.pictureBox1.Size = new System.Drawing.Size(67, 67);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -164,7 +164,7 @@ namespace ToolKit.HYControls.HYForm
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1465, 23);
+            this.label3.Size = new System.Drawing.Size(1465, 27);
             this.label3.TabIndex = 0;
             this.label3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Label3_MouseDown);
             // 
