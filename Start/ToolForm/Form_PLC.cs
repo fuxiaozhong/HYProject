@@ -10,6 +10,8 @@ using System.Windows.Forms;
 
 using HslCommunication;
 
+using ToolKit.HYControls.HYForm;
+
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace HYProject.ToolForm
@@ -109,7 +111,7 @@ namespace HYProject.ToolForm
             AppParam.Instance.Fx3uPLC_Port = int.Parse(PLC_Port.Text);
 
             AppParam.Instance.Save_To_File();
-            MessageBox.Show("保存成功");
+            MessageWindow.Show("保存成功");
         }
 
         private void Button_Close_Click(object sender, EventArgs e)

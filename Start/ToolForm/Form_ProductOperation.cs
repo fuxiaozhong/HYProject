@@ -12,6 +12,7 @@ using HYProject.Helper;
 using HYProject.Model;
 
 using ToolKit.HYControls;
+using ToolKit.HYControls.HYForm;
 
 namespace HYProject.ToolForm
 {
@@ -53,7 +54,7 @@ namespace HYProject.ToolForm
                 }
                 else
                 {
-                    MessageBox.Show("已取消保存!");
+                    MessageWindow.Show("已取消保存!");
                 }
             }
             else
@@ -70,7 +71,7 @@ namespace HYProject.ToolForm
                 product = new Product();
             }
             Serialization.Save2(product, AppParam.Instance.ProductLibrary + "\\" + ProductName + ".pro");
-            MessageBox.Show("保存成功");
+            MessageWindow.Show("保存成功");
         }
     }
 }

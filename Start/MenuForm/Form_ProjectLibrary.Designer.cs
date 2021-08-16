@@ -46,6 +46,7 @@ namespace HYProject.MenuForm
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(13, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
@@ -63,6 +64,7 @@ namespace HYProject.MenuForm
             // 
             // button_Add
             // 
+            this.button_Add.BackColor = System.Drawing.Color.Transparent;
             this.button_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Add.Font = new System.Drawing.Font("新宋体", 12F);
             this.button_Add.Image = ((System.Drawing.Image)(resources.GetObject("button_Add.Image")));
@@ -72,11 +74,12 @@ namespace HYProject.MenuForm
             this.button_Add.TabIndex = 3;
             this.button_Add.Text = "添加";
             this.button_Add.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button_Add.UseVisualStyleBackColor = true;
+            this.button_Add.UseVisualStyleBackColor = false;
             this.button_Add.Click += new System.EventHandler(this.Button_Add_Click);
             // 
             // button_Modify
             // 
+            this.button_Modify.BackColor = System.Drawing.Color.Transparent;
             this.button_Modify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Modify.Font = new System.Drawing.Font("新宋体", 12F);
             this.button_Modify.Image = ((System.Drawing.Image)(resources.GetObject("button_Modify.Image")));
@@ -86,11 +89,12 @@ namespace HYProject.MenuForm
             this.button_Modify.TabIndex = 4;
             this.button_Modify.Text = "修改";
             this.button_Modify.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button_Modify.UseVisualStyleBackColor = true;
+            this.button_Modify.UseVisualStyleBackColor = false;
             this.button_Modify.Click += new System.EventHandler(this.Button_Modify_Click);
             // 
             // button_Delete
             // 
+            this.button_Delete.BackColor = System.Drawing.Color.Transparent;
             this.button_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Delete.Font = new System.Drawing.Font("新宋体", 12F);
             this.button_Delete.Image = ((System.Drawing.Image)(resources.GetObject("button_Delete.Image")));
@@ -100,11 +104,12 @@ namespace HYProject.MenuForm
             this.button_Delete.TabIndex = 5;
             this.button_Delete.Text = "删除";
             this.button_Delete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button_Delete.UseVisualStyleBackColor = true;
+            this.button_Delete.UseVisualStyleBackColor = false;
             this.button_Delete.Click += new System.EventHandler(this.Button_Delete_Click);
             // 
             // button4
             // 
+            this.button4.BackColor = System.Drawing.Color.Transparent;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("新宋体", 12F);
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
@@ -114,10 +119,12 @@ namespace HYProject.MenuForm
             this.button4.TabIndex = 6;
             this.button4.Text = "切换";
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
             // button_Refresh
             // 
+            this.button_Refresh.BackColor = System.Drawing.Color.Transparent;
             this.button_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Refresh.Font = new System.Drawing.Font("新宋体", 12F);
             this.button_Refresh.Image = ((System.Drawing.Image)(resources.GetObject("button_Refresh.Image")));
@@ -127,19 +134,20 @@ namespace HYProject.MenuForm
             this.button_Refresh.TabIndex = 7;
             this.button_Refresh.Text = "刷新";
             this.button_Refresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button_Refresh.UseVisualStyleBackColor = true;
+            this.button_Refresh.UseVisualStyleBackColor = false;
             this.button_Refresh.Click += new System.EventHandler(this.Button_Refresh_Click);
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 43);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1120, 504);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1136, 504);
             this.flowLayoutPanel1.TabIndex = 9;
             // 
             // label_NowProductName
@@ -158,7 +166,7 @@ namespace HYProject.MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1144, 559);
+            this.ClientSize = new System.Drawing.Size(1160, 559);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.label_NowProductName);
             this.Controls.Add(this.button_Refresh);
@@ -172,7 +180,6 @@ namespace HYProject.MenuForm
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1160, 598);
             this.MinimumSize = new System.Drawing.Size(1160, 598);
             this.Name = "Form_ProjectLibrary";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

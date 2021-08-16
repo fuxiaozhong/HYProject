@@ -145,7 +145,15 @@ namespace ToolKit.MaterialSkin.Controls
             MinDown,
             None
         }
-
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000; // 用双缓冲绘制窗口的所有子控件
+                return cp;
+            }
+        }
         private readonly Cursor[] _resizeCursors = { Cursors.SizeNESW, Cursors.SizeWE, Cursors.SizeNWSE, Cursors.SizeWE, Cursors.SizeNS };
 
         private Rectangle _minButtonBounds;
@@ -253,17 +261,7 @@ namespace ToolKit.MaterialSkin.Controls
             }
         }
 
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                var par = base.CreateParams;
-                // WS_SYSMENU: Trigger the creation of the system menu
-                // WS_MINIMIZEBOX: Allow minimizing from taskbar
-                par.Style = par.Style | WS_MINIMIZEBOX | WS_SYSMENU; // Turn on the WS_MINIMIZEBOX style flag
-                return par;
-            }
-        }
+
 
         protected override void OnMouseDown(MouseEventArgs e)
         {
@@ -340,7 +338,7 @@ namespace ToolKit.MaterialSkin.Controls
             // Convert to client position and pass to Form.MouseMove
             var clientCursorPos = PointToClient(e.Location);
             var newE = new MouseEventArgs(MouseButtons.None, 0, clientCursorPos.X, clientCursorPos.Y, 0);
-            OnMouseMove(newE);
+            //OnMouseMove(newE);
         }
 
         private void UpdateButtons(MouseEventArgs e, bool up = false)
@@ -433,6 +431,7 @@ namespace ToolKit.MaterialSkin.Controls
 
         private void ResizeForm(ResizeDirection direction)
         {
+
             if (DesignMode) return;
             var dir = -1;
             switch (direction)
@@ -458,7 +457,7 @@ namespace ToolKit.MaterialSkin.Controls
                     break;
             }
 
-            ReleaseCapture();
+            // ReleaseCapture();
             if (dir != -1)
             {
                 SendMessage(Handle, WM_NCLBUTTONDOWN, dir, 0);
@@ -569,6 +568,18 @@ namespace ToolKit.MaterialSkin.Controls
 
             //Form title
             g.DrawString(Text, SkinManager.ROBOTO_MEDIUM_12, SkinManager.ColorScheme.TextBrush, new Rectangle(SkinManager.FORM_PADDING, STATUS_BAR_HEIGHT, Width, ACTION_BAR_HEIGHT), new StringFormat { LineAlignment = StringAlignment.Center });
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // MaterialForm
+            // 
+            this.ClientSize = new System.Drawing.Size(772, 363);
+            this.Name = "MaterialForm";
+            this.ResumeLayout(false);
+
         }
     }
 

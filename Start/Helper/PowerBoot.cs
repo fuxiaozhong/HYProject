@@ -12,7 +12,7 @@ namespace HYProject.Helper
         /// <summary>
         /// 快捷方式名称-任意自定义
         /// </summary>
-        public static string QuickName = MainForm.Instance.label1.Text;
+        public static string QuickName = MainForm.Instance.Text;
 
         /// <summary>
         /// 自动获取系统自动启动目录

@@ -6,6 +6,7 @@ using HYProject.Helper;
 using HYProject.ToolForm;
 
 using ToolKit.HYControls;
+using ToolKit.MaterialSkin.Controls;
 
 namespace HYProject.MenuForm
 {
@@ -103,22 +104,6 @@ namespace HYProject.MenuForm
             thread.Start();
         }
 
-        public static long GetHardDiskFreeSpace(string str_HardDiskName) //磁盘号
-        {
-            long freeSpace = new long();
-            str_HardDiskName = str_HardDiskName + ":\\";
-            System.IO.DriveInfo[] drives = System.IO.DriveInfo.GetDrives();
-            foreach (System.IO.DriveInfo drive in drives)
-            {
-                if (drive.Name == str_HardDiskName)
-                {
-                    freeSpace = drive.TotalFreeSpace;//剩余容量
-                    freeSpace = drive.TotalSize; //总容量
-                }
-            }
-            return freeSpace;
-        }
-
         /// <summary>
         /// 图像、数据保存磁盘检测
         /// </summary>
@@ -166,67 +151,11 @@ namespace HYProject.MenuForm
             }
         }
 
-        /// <summary>
-        /// 操作全局变量
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Button5_Click(object sender, EventArgs e)
-        {
-            if (AppParam.Instance.Power == "管理员")
-            {
-                Form_GlobalOptions.Instance.globalVariable.Read();
-                Form_GlobalOptions.Instance.ShowDialog();
-            }
-            else
-            {
-                DialogResult dialogResult = MessageBox.Show("当前用户: " + AppParam.Instance.Power + ",无权限操作,请登录管理员账户,在进行操作", "权限提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                if (dialogResult == DialogResult.OK)
-                {
-                    Form_User form_User = new Form_User();
-                    if (form_User.ShowDialog() == DialogResult.OK)
-                    {
-                        AppParam.Instance.Power = form_User.Power;
-                        Log.WriteRunLog("切换用户:" + AppParam.Instance.Power);
-                        MainForm.Instance.Text = "视觉软件 -- " + AppParam.Instance.Power;
-                    }
-                }
-            }
-        }
 
         private void CheckBox5_CheckedChanged(object sender, EventArgs e)
         {
             groupBox1.Visible = checkBox5.Checked;
         }
 
-        private void Button6_Click(object sender, EventArgs e)
-        {
-            Form_Communication_Test form_Communication_Test = new Form_Communication_Test();
-            form_Communication_Test.ShowDialog();
-        }
-
-        private void Button7_Click(object sender, EventArgs e)
-        {
-            Form_Measure measure = new Form_Measure();
-            measure.ShowDialog();
-        }
-
-        private void Button8_Click(object sender, EventArgs e)
-        {
-            Form_LightSource form_LightSource = new Form_LightSource();
-            form_LightSource.ShowDialog();
-        }
-
-        private void Button9_Click(object sender, EventArgs e)
-        {
-            Form_Limit form_Limit = new Form_Limit();
-            form_Limit.ShowDialog();
-        }
-
-        private void Button10_Click(object sender, EventArgs e)
-        {
-            Form_PLC form_PLC = new Form_PLC();
-            form_PLC.ShowDialog();
-        }
     }
 }

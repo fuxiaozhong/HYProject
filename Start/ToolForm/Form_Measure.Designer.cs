@@ -29,6 +29,7 @@ namespace HYProject.ToolForm
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Measure));
             this.halconDisplayWindow1 = new ToolKit.DisplayWindow.HalconDisplayWindow();
             this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
             this.button1 = new System.Windows.Forms.Button();
@@ -65,7 +66,7 @@ namespace HYProject.ToolForm
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(721, 48);
+            this.button2.Location = new System.Drawing.Point(721, 58);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(80, 20);
             this.button2.TabIndex = 3;
@@ -78,11 +79,11 @@ namespace HYProject.ToolForm
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "圆",
-            "长方形",
-            "椭圆",
-            "直线"});
-            this.comboBox1.Location = new System.Drawing.Point(594, 48);
+            "circle",
+            "rectangle2",
+            "ellipse",
+            "line"});
+            this.comboBox1.Location = new System.Drawing.Point(594, 58);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 20);
             this.comboBox1.TabIndex = 4;
@@ -90,7 +91,7 @@ namespace HYProject.ToolForm
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(529, 51);
+            this.label1.Location = new System.Drawing.Point(529, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 12);
             this.label1.TabIndex = 5;
@@ -118,8 +119,10 @@ namespace HYProject.ToolForm
             this.Controls.Add(this.button1);
             this.Controls.Add(this.propertyGrid1);
             this.Controls.Add(this.halconDisplayWindow1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Measure";
-            this.Text = "Form_Measure";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "卡尺找边";
             this.Load += new System.EventHandler(this.Form_Measure_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

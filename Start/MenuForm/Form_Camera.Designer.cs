@@ -62,7 +62,8 @@ namespace HYProject.MenuForm
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(753, 11);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(759, 20);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 16);
@@ -74,7 +75,7 @@ namespace HYProject.MenuForm
             this.comboBox_CamList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox_CamList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_CamList.FormattingEnabled = true;
-            this.comboBox_CamList.Location = new System.Drawing.Point(840, 6);
+            this.comboBox_CamList.Location = new System.Drawing.Point(846, 15);
             this.comboBox_CamList.Name = "comboBox_CamList";
             this.comboBox_CamList.Size = new System.Drawing.Size(141, 24);
             this.comboBox_CamList.TabIndex = 2;
@@ -84,7 +85,8 @@ namespace HYProject.MenuForm
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(753, 235);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(762, 251);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 16);
@@ -94,7 +96,7 @@ namespace HYProject.MenuForm
             // num_exposuretime
             // 
             this.num_exposuretime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.num_exposuretime.Location = new System.Drawing.Point(840, 227);
+            this.num_exposuretime.Location = new System.Drawing.Point(849, 243);
             this.num_exposuretime.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -107,7 +109,7 @@ namespace HYProject.MenuForm
             // num_gain
             // 
             this.num_gain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.num_gain.Location = new System.Drawing.Point(840, 259);
+            this.num_gain.Location = new System.Drawing.Point(849, 275);
             this.num_gain.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -121,7 +123,8 @@ namespace HYProject.MenuForm
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(753, 267);
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Location = new System.Drawing.Point(762, 283);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 16);
@@ -132,7 +135,8 @@ namespace HYProject.MenuForm
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(753, 299);
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Location = new System.Drawing.Point(762, 315);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(80, 16);
@@ -147,7 +151,7 @@ namespace HYProject.MenuForm
             this.comboBox_TriggerMode.Items.AddRange(new object[] {
             "On",
             "Off"});
-            this.comboBox_TriggerMode.Location = new System.Drawing.Point(840, 291);
+            this.comboBox_TriggerMode.Location = new System.Drawing.Point(849, 307);
             this.comboBox_TriggerMode.Name = "comboBox_TriggerMode";
             this.comboBox_TriggerMode.Size = new System.Drawing.Size(141, 24);
             this.comboBox_TriggerMode.TabIndex = 8;
@@ -166,7 +170,7 @@ namespace HYProject.MenuForm
             "Line5",
             "Line6",
             "Line7"});
-            this.comboBox_TriggerSource.Location = new System.Drawing.Point(840, 321);
+            this.comboBox_TriggerSource.Location = new System.Drawing.Point(849, 337);
             this.comboBox_TriggerSource.Name = "comboBox_TriggerSource";
             this.comboBox_TriggerSource.Size = new System.Drawing.Size(141, 24);
             this.comboBox_TriggerSource.TabIndex = 10;
@@ -175,7 +179,8 @@ namespace HYProject.MenuForm
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(753, 329);
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Location = new System.Drawing.Point(762, 345);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 16);
@@ -185,6 +190,7 @@ namespace HYProject.MenuForm
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.label_TriggerSource);
             this.groupBox1.Controls.Add(this.label_TriggerMode);
             this.groupBox1.Controls.Add(this.label_Gain);
@@ -193,7 +199,7 @@ namespace HYProject.MenuForm
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Location = new System.Drawing.Point(743, 36);
+            this.groupBox1.Location = new System.Drawing.Point(752, 52);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(249, 173);
             this.groupBox1.TabIndex = 11;
@@ -292,7 +298,7 @@ namespace HYProject.MenuForm
             // 
             this.button_Save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Save.Location = new System.Drawing.Point(795, 370);
+            this.button_Save.Location = new System.Drawing.Point(804, 386);
             this.button_Save.Name = "button_Save";
             this.button_Save.Size = new System.Drawing.Size(159, 32);
             this.button_Save.TabIndex = 12;
@@ -304,7 +310,7 @@ namespace HYProject.MenuForm
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(795, 423);
+            this.button2.Location = new System.Drawing.Point(804, 439);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(159, 32);
             this.button2.TabIndex = 13;
@@ -316,7 +322,7 @@ namespace HYProject.MenuForm
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(795, 475);
+            this.button3.Location = new System.Drawing.Point(804, 491);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(159, 32);
             this.button3.TabIndex = 14;
@@ -330,17 +336,17 @@ namespace HYProject.MenuForm
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.displayWindow1.BackColor = System.Drawing.Color.Transparent;
-            this.displayWindow1.Location = new System.Drawing.Point(3, 3);
+            this.displayWindow1.Location = new System.Drawing.Point(9, 9);
             this.displayWindow1.Margin = new System.Windows.Forms.Padding(0);
             this.displayWindow1.Name = "displayWindow1";
-            this.displayWindow1.Size = new System.Drawing.Size(735, 608);
+            this.displayWindow1.Size = new System.Drawing.Size(735, 517);
             this.displayWindow1.TabIndex = 0;
             // 
             // Form_Camera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1004, 614);
+            this.ClientSize = new System.Drawing.Size(1004, 535);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button_Save);

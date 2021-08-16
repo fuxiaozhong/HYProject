@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using HYProject.Helper;
 using HYProject.Model;
 
+using ToolKit.HYControls.HYForm;
+
 namespace HYProject.ToolForm
 {
     public partial class Form_Limit : Form
@@ -137,7 +139,7 @@ namespace HYProject.ToolForm
 
 
             DataLimit.Instance.Save();
-            MessageBox.Show("保存成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.None);
+            MessageWindow.Show("保存成功", "提示");
 
         }
 

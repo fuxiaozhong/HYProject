@@ -22,6 +22,7 @@ namespace HYProject.ToolForm
                         if (instance == null)
                         {
                             instance = new Form_GlobalOptions();
+
                         }
                     }
                 }
@@ -46,6 +47,7 @@ namespace HYProject.ToolForm
         private Form_GlobalOptions()
         {
             InitializeComponent();
+            globalVariable.Read();
         }
 
         private void Form_GlobalOptions_FormClosing(object sender, FormClosingEventArgs e)

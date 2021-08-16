@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using HYProject.Helper;
 using HYProject.Model;
 
+using ToolKit.HYControls.HYForm;
 using ToolKit.MaterialSkin.Controls;
 
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
@@ -35,7 +36,7 @@ namespace HYProject
                 {
                     if (stopwatch.ElapsedMilliseconds >= 10 * 1000)
                     {
-                        MessageBox.Show("程序初始化超时:10S");
+                        MessageWindow.ShowError("程序初始化超时:10S");
                         DialogResult = DialogResult.OK;
                         break;
                     }
@@ -43,7 +44,7 @@ namespace HYProject
             });
 
 
-           
+
             Task.Factory.StartNew(() =>
             {
                 if (!Directory.Exists(AppParam.Instance.Save_Data_Path))

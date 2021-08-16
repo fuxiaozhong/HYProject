@@ -35,6 +35,7 @@ namespace HYProject.ToolForm
             // autoAddDisplayWindowControl1
             // 
             this.autoAddDisplayWindowControl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.autoAddDisplayWindowControl1.CameraNames = new string[0];
             this.autoAddDisplayWindowControl1.Count = 0;
             this.autoAddDisplayWindowControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.autoAddDisplayWindowControl1.Location = new System.Drawing.Point(0, 0);
@@ -49,7 +50,6 @@ namespace HYProject.ToolForm
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.autoAddDisplayWindowControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DisplayForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DisplayForm";

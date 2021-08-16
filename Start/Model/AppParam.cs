@@ -10,6 +10,7 @@ using HslCommunication.Profinet.Melsec;
 using HYProject.Model;
 
 using ToolKit.CommunicAtion;
+using ToolKit.HalconTool.Model;
 
 namespace HYProject
 {
@@ -194,8 +195,15 @@ namespace HYProject
         internal int Fx3uPLC_Port = 8080;
 
 
+        /// <summary>
+        /// 卡尺对象
+        /// </summary>
+        internal MeasureParam Measure;
 
-
+        /// <summary>
+        /// 卡尺对象
+        /// </summary>
+        internal string NowProduct;
 
 
 

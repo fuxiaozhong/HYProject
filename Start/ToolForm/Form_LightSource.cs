@@ -9,6 +9,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using ToolKit.HYControls.HYForm;
+
 namespace HYProject.ToolForm
 {
     public partial class Form_LightSource : Form
@@ -66,11 +68,11 @@ namespace HYProject.ToolForm
                                                             AppParam.Instance.LightSourceDataBits,
                                                             AppParam.Instance.LightSourceStopBits))
             {
-                MessageBox.Show("连接成功");
+                MessageWindow.ShowNormal("连接成功");
             }
             else
             {
-                MessageBox.Show("连接失败");
+                MessageWindow.ShowError("连接失败");
             }
 
         }

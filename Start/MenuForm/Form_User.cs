@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 
 using ToolKit.HYControls;
+using ToolKit.MaterialSkin.Controls;
 
 namespace HYProject.MenuForm
 {

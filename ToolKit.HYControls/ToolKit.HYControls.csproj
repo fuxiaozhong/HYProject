@@ -72,6 +72,12 @@
     <Compile Include="GlobalVariableUpdate.Designer.cs">
       <DependentUpon>GlobalVariableUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="HYForm\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HYForm\BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="HYForm\Form_Edit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,12 @@
     </Compile>
     <Compile Include="HYForm\Form_Waiting.Designer.cs">
       <DependentUpon>Form_Waiting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HYForm\MessageWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HYForm\MessageWindow.Designer.cs">
+      <DependentUpon>MessageWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="HYForm\ModelParameter.cs" />
     <Compile Include="HYInputDialog.cs" />
@@ -156,6 +168,9 @@
     <EmbeddedResource Include="GlobalVariableUpdate.resx">
       <DependentUpon>GlobalVariableUpdate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HYForm\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HYForm\Form_Edit.resx">
       <DependentUpon>Form_Edit.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HYForm\Form_Waiting.resx">
       <DependentUpon>Form_Waiting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HYForm\MessageWindow.resx">
+      <DependentUpon>MessageWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProcessEllipse.resx">
       <DependentUpon>ProcessEllipse.cs</DependentUpon>

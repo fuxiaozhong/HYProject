@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Management.Instrumentation;
+using System.Windows.Forms;
 
 using ToolKit.DisplayWindow;
 
@@ -24,6 +25,7 @@ namespace HYProject.ToolForm
                         if (instance == null)
                         {
                             instance = new DisplayForm();
+                            instance.FormBorderStyle = FormBorderStyle.None;
                             instance.TopLevel = false;
                             instance.Dock = DockStyle.Fill;
                             instance.Show();

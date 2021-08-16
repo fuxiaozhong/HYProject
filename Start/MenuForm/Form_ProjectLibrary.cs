@@ -8,6 +8,8 @@ using HYProject.Model;
 using HYProject.ToolForm;
 
 using ToolKit.HYControls;
+using ToolKit.MaterialSkin.Controls;
+using ToolKit.HYControls.HYForm;
 
 namespace HYProject.MenuForm
 {
@@ -75,12 +77,12 @@ namespace HYProject.MenuForm
         {
             if (label_NowProductName.Text != "")
             {
-                if (MessageBox.Show("确认删除此产品?", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                if (MessageWindow.Show("确认删除此产品?", "提示") == DialogResult.OK)
                 {
                     if (File.Exists(AppParam.Instance.ProductLibrary + "\\" + label_NowProductName.Text + ".pro"))
                     {
                         File.Delete(AppParam.Instance.ProductLibrary + "\\" + label_NowProductName.Text + ".pro");
-                        MessageBox.Show("产品:" + label_NowProductName.Text + "删除成功", "删除提示");
+                        MessageWindow.Show("产品:" + label_NowProductName.Text + "删除成功", "删除提示");
                         label_NowProductName.Text = "";
                         Button_Refresh_Click(sender, e);
                         Log.WriteRunLog("产品:" + label_NowProductName.Text + "删除成功");
@@ -103,8 +105,13 @@ namespace HYProject.MenuForm
             }
             else
             {
-                MessageBox.Show("请先选择产品.");
+                MessageWindow.Show("请先选择产品.");
             }
+
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
 
         }
     }

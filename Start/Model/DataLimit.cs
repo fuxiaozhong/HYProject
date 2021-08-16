@@ -283,11 +283,11 @@ namespace HYProject.Model
 
         public void Save()
         {
-            Serialization.Save(DataLimit.Instance, "DataLimit");
+            Serialization.Save(DataLimit.Instance,AppParam.Instance.NowProduct +"_DataLimit");
         }
         public void Read()
         {
-            instance = (DataLimit)Serialization.Read("DataLimit");
+            instance = (DataLimit)Serialization.Read( AppParam.Instance.NowProduct + "_DataLimit");
             if (instance == null)
             {
                 instance = new DataLimit();

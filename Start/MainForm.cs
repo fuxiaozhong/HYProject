@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Reflection.Emit;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
@@ -17,13 +20,17 @@ using HYProject.ToolForm;
 using ToolKit.CamreaSDK;
 using ToolKit.CommunicAtion;
 using ToolKit.HYControls.HYForm;
+using ToolKit.MaterialSkin;
+using ToolKit.MaterialSkin.Controls;
 
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static ToolKit.MaterialSkin.Controls.MaterialForm;
 
 namespace HYProject
 {
-    public partial class MainForm : Form
+    public partial class MainForm : BaseForm
     {
+
         private static MainForm instance;
 
         //程序运行时创建一个静态只读的进程辅助对象
@@ -49,21 +56,23 @@ namespace HYProject
             }
         }
 
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams cp = base.CreateParams;
-                cp.ExStyle |= 0x02000000; // 用双缓冲绘制窗口的所有子控件
-                return cp;
-            }
-        }
+
+
+
+
+
+
 
         private MainForm()
         {
             InitializeComponent();
             HOperatorSet.SetSystem("clip_region", "false");
             CheckForIllegalCrossThreadCalls = false;
+            //var materialSkinManager = MaterialSkinManager.Instance;
+            //materialSkinManager.AddFormToManage(this);
+            //materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            //materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+            //materialSkinManager.ColorScheme = new ColorScheme(Primary.Green800, Primary.Green900, Primary.Green600, Accent.Green200, TextShade.BLACK);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -113,8 +122,9 @@ namespace HYProject
             {
                 try
                 {
+                    //label1.Text = Form_GlobalOptions.Instance["标题栏名称"].ToString();
                     tsl_nowtime.Text = DateTime.Now.ToString("yyyy-MM-dd  HH:mm:ss");
-                    tsl_nowuser.Text = "当前用户: " + AppParam.Instance.Power;
+                    //label2.Text = AppParam.Instance.Power;
                     SystemInfo systemInfo = new SystemInfo();
                     processEllipse3.Value = (int)Math.Ceiling(((double)((systemInfo.PhysicalMemory - systemInfo.MemoryAvailable)) / (double)(systemInfo.PhysicalMemory) * 100));
                     toolStripLabel1.Text = AppParam.Instance.lightSource.IsOpen ? "光源:已连接" : "光源:未连接";
@@ -197,7 +207,7 @@ namespace HYProject
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("确认退出系统?", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+            if (ShowMessage("确认退出系统?", "提示") == DialogResult.OK)
             {
                 Form_Waiting form_Waiting = new Form_Waiting(CloseEvent, "正在保存相关数据,请稍等!");
                 if (form_Waiting.ShowDialog(this) == DialogResult.OK)
@@ -229,16 +239,7 @@ namespace HYProject
             Thread.Sleep(1000);
         }
 
-        private void Button_UserLogin_Click(object sender, EventArgs e)
-        {
-            Form_User form_User = new Form_User();
-            if (form_User.ShowDialog() == DialogResult.OK)
-            {
-                AppParam.Instance.Power = form_User.Power;
-                Log.WriteRunLog("切换用户:" + AppParam.Instance.Power);
-                Text = "视觉软件 -- " + AppParam.Instance.Power;
-            }
-        }
+
 
         private void Button_Setting_Click(object sender, EventArgs e)
         {
@@ -254,6 +255,7 @@ namespace HYProject
                 AppParam.Instance.Runing = true;
                 button_Run.Text = "停    止";
                 Log.WriteRunLog("开始运行...");
+
             }
             else
             {
@@ -268,7 +270,7 @@ namespace HYProject
         {
             if (Cameras.Instance.GetCameras.Count == 0)
             {
-                if (MessageBox.Show("无相机连接!点击确认重新初始化相机.", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Error) == DialogResult.OK)
+                if (ShowMessage("无相机连接!点击确认重新初始化相机.", "提示") == DialogResult.OK)
                 {
                     Cameras.Instance.ReInitializeCamera();
                 }
@@ -303,7 +305,14 @@ namespace HYProject
             //Ctrl + Enter 登陆
             else if (ModifierKeys == Keys.Control && e.KeyCode == Keys.Enter)
             {
-                Button_UserLogin_Click(sender, e);
+                Form_User form_User = new Form_User();
+                if (form_User.ShowDialog() == DialogResult.OK)
+                {
+                    AppParam.Instance.Power = form_User.Power;
+                    Log.WriteRunLog("切换用户:" + AppParam.Instance.Power);
+                    Text = "视觉软件 -- " + AppParam.Instance.Power;
+                    this.UserName = AppParam.Instance.Power;
+                }
             }
         }
 
@@ -347,12 +356,52 @@ namespace HYProject
 
         private void 参数设置ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Form_GlobalOptions.Instance.Show();
+            if (AppParam.Instance.Power == "管理员")
+            {
+                Form_GlobalOptions.Instance.globalVariable.Read();
+                Form_GlobalOptions.Instance.ShowDialog();
+            }
+            else
+            {
+                DialogResult dialogResult = ShowMessage("当前用户: " + AppParam.Instance.Power + ",无权限操作,请登录管理员账户,在进行操作", "权限提示");
+                if (dialogResult == DialogResult.OK)
+                {
+                    Form_User form_User = new Form_User();
+                    if (form_User.ShowDialog() == DialogResult.OK)
+                    {
+                        AppParam.Instance.Power = form_User.Power;
+                        Log.WriteRunLog("切换用户:" + AppParam.Instance.Power);
+                        MainForm.Instance.Text = "视觉软件 -- " + AppParam.Instance.Power;
+                    }
+                }
+            }
         }
 
         private void 数据表ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form_DataSheet.Instance.Show();
+        }
+
+
+
+        private void MainForm_UserClick(object sender, EventArgs e)
+        {
+            Form_User form_User = new Form_User();
+            if (form_User.ShowDialog() == DialogResult.OK)
+            {
+                AppParam.Instance.Power = form_User.Power;
+                Log.WriteRunLog("切换用户:" + AppParam.Instance.Power);
+                Text = "视觉软件 -- " + AppParam.Instance.Power;
+                (sender as System.Windows.Forms.Label).Text = AppParam.Instance.Power;
+            }
+        }
+
+        private void MaterialFlatButton1_Click(object sender, EventArgs e)
+        {
+            ShowMessage("123123123123123");
+            ShowError("123123123123123");
+            ShowNormal("123123123123123");
+            ShowWarn("123123123123123");
         }
     }
 }
