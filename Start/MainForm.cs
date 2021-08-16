@@ -395,13 +395,5 @@ namespace HYProject
                 (sender as System.Windows.Forms.Label).Text = AppParam.Instance.Power;
             }
         }
-
-        private void MaterialFlatButton1_Click(object sender, EventArgs e)
-        {
-            ShowMessage("123123123123123");
-            ShowError("123123123123123");
-            ShowNormal("123123123123123");
-            ShowWarn("123123123123123");
-        }
     }
 }
