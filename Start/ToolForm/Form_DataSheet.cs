@@ -17,7 +17,7 @@ using ToolKit.HYControls.HYForm;
 
 namespace HYProject.ToolForm
 {
-    public partial class Form_DataSheet : Form
+    public partial class Form_DataSheet : BaseForm
     {
 
         private static Form_DataSheet instance;

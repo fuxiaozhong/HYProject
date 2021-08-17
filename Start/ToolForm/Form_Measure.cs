@@ -6,10 +6,12 @@ using HalconDotNet;
 using ToolKit.DisplayWindow;
 using ToolKit.HalconTool;
 using ToolKit.HalconTool.Model;
+using ToolKit.HYControls.HYForm;
 
 namespace HYProject.ToolForm
 {
-    public partial class Form_Measure : Form
+    public partial class Form_Measure : BaseForm
+
     {
 
 

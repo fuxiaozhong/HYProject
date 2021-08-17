@@ -56,23 +56,11 @@ namespace HYProject
             }
         }
 
-
-
-
-
-
-
-
         private MainForm()
         {
             InitializeComponent();
             HOperatorSet.SetSystem("clip_region", "false");
             CheckForIllegalCrossThreadCalls = false;
-            //var materialSkinManager = MaterialSkinManager.Instance;
-            //materialSkinManager.AddFormToManage(this);
-            //materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            //materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
-            //materialSkinManager.ColorScheme = new ColorScheme(Primary.Green800, Primary.Green900, Primary.Green600, Accent.Green200, TextShade.BLACK);
         }
 
         private void MainForm_Load(object sender, EventArgs e)

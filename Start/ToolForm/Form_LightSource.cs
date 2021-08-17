@@ -13,7 +13,7 @@ using ToolKit.HYControls.HYForm;
 
 namespace HYProject.ToolForm
 {
-    public partial class Form_LightSource : Form
+    public partial class Form_LightSource : BaseForm
     {
         public Form_LightSource()
         {

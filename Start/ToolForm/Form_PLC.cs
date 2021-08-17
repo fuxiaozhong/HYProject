@@ -16,7 +16,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace HYProject.ToolForm
 {
-    public partial class Form_PLC : Form
+    public partial class Form_PLC : BaseForm
     {
         public Form_PLC()
         {

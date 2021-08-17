@@ -182,11 +182,13 @@ namespace ToolKit.HYControls.HYForm
                 {
                     panel3.Height = 26;
                     pictureBox1.Size = new Size(27, 27);
+                    label3.Text = label_Title.Text;
                 }
                 else
                 {
                     pictureBox1.Size = new Size(67, 67);
                     panel3.Height = 67;
+                    label3.Text = "";
                 }
                 this._HideTitle = value;
             }
@@ -268,9 +270,6 @@ namespace ToolKit.HYControls.HYForm
         public event EventHandler HelpClick;
 
 
-
-
-
         public BaseForm()
         {
             InitializeComponent();
@@ -278,7 +277,19 @@ namespace ToolKit.HYControls.HYForm
 
         private void Label4_TextChanged(object sender, EventArgs e)
         {
-            label4.Text = Text;
+            label_Title.Text = Text;
+            if (_HideTitle)
+            {
+                panel3.Height = 26;
+                pictureBox1.Size = new Size(27, 27);
+                label3.Text = label_Title.Text;
+            }
+            else
+            {
+                pictureBox1.Size = new Size(67, 67);
+                panel3.Height = 67;
+                label3.Text = "";
+            }
         }
 
 
@@ -311,8 +322,6 @@ namespace ToolKit.HYControls.HYForm
             }
         }
 
-
-
         private void Label_User_Click(object sender, EventArgs e)
         {
             UserClick?.Invoke(label_User, e);
@@ -333,6 +342,10 @@ namespace ToolKit.HYControls.HYForm
             }
             else if (e.Clicks == 2)
             {
+                if (!_HideMaxButtom)
+                {
+                    return;
+                }
                 if (this.WindowState == FormWindowState.Maximized)
                 {
                     //还原窗体

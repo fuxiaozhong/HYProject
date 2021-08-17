@@ -42,21 +42,21 @@ namespace HYProject.ToolForm
             // halconDisplayWindow1
             // 
             this.halconDisplayWindow1.BackColor = System.Drawing.Color.Transparent;
-            this.halconDisplayWindow1.Location = new System.Drawing.Point(12, 12);
+            this.halconDisplayWindow1.Location = new System.Drawing.Point(3, 31);
             this.halconDisplayWindow1.Name = "halconDisplayWindow1";
             this.halconDisplayWindow1.Size = new System.Drawing.Size(511, 496);
             this.halconDisplayWindow1.TabIndex = 0;
             // 
             // propertyGrid1
             // 
-            this.propertyGrid1.Location = new System.Drawing.Point(529, 95);
+            this.propertyGrid1.Location = new System.Drawing.Point(520, 114);
             this.propertyGrid1.Name = "propertyGrid1";
             this.propertyGrid1.Size = new System.Drawing.Size(355, 413);
             this.propertyGrid1.TabIndex = 1;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(529, 12);
+            this.button1.Location = new System.Drawing.Point(520, 31);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(111, 30);
             this.button1.TabIndex = 2;
@@ -66,7 +66,7 @@ namespace HYProject.ToolForm
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(721, 58);
+            this.button2.Location = new System.Drawing.Point(712, 77);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(80, 20);
             this.button2.TabIndex = 3;
@@ -83,7 +83,7 @@ namespace HYProject.ToolForm
             "rectangle2",
             "ellipse",
             "line"});
-            this.comboBox1.Location = new System.Drawing.Point(594, 58);
+            this.comboBox1.Location = new System.Drawing.Point(585, 77);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 20);
             this.comboBox1.TabIndex = 4;
@@ -91,7 +91,7 @@ namespace HYProject.ToolForm
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(529, 61);
+            this.label1.Location = new System.Drawing.Point(520, 80);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 12);
             this.label1.TabIndex = 5;
@@ -99,7 +99,7 @@ namespace HYProject.ToolForm
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(739, 12);
+            this.button3.Location = new System.Drawing.Point(730, 31);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(111, 30);
             this.button3.TabIndex = 6;
@@ -111,7 +111,7 @@ namespace HYProject.ToolForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(896, 520);
+            this.ClientSize = new System.Drawing.Size(881, 532);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
@@ -119,11 +119,24 @@ namespace HYProject.ToolForm
             this.Controls.Add(this.button1);
             this.Controls.Add(this.propertyGrid1);
             this.Controls.Add(this.halconDisplayWindow1);
+            this.HideDropButtom = false;
+            this.HideHelpButtom = false;
+            this.HideMaxButtom = false;
+            this.HideMinButtom = false;
+            this.HideOrClose = false;
+            this.HideTitle = true;
+            this.HideUserButtom = false;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Measure";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "卡尺找边";
             this.Load += new System.EventHandler(this.Form_Measure_Load);
+            this.Controls.SetChildIndex(this.halconDisplayWindow1, 0);
+            this.Controls.SetChildIndex(this.propertyGrid1, 0);
+            this.Controls.SetChildIndex(this.button1, 0);
+            this.Controls.SetChildIndex(this.button2, 0);
+            this.Controls.SetChildIndex(this.comboBox1, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.button3, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 

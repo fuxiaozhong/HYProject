@@ -114,8 +114,8 @@ namespace HYProject.ToolForm
             // check_W_block
             // 
             this.check_W_block.Depth = 0;
-            this.check_W_block.Font = new System.Drawing.Font("新宋体", 11F, System.Drawing.FontStyle.Bold);
-            this.check_W_block.Location = new System.Drawing.Point(9, 30);
+            this.check_W_block.Font = new System.Drawing.Font("Roboto", 10F);
+            this.check_W_block.Location = new System.Drawing.Point(9, 54);
             this.check_W_block.Margin = new System.Windows.Forms.Padding(0);
             this.check_W_block.MouseLocation = new System.Drawing.Point(-1, -1);
             this.check_W_block.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
@@ -129,8 +129,8 @@ namespace HYProject.ToolForm
             // check_M1_block
             // 
             this.check_M1_block.Depth = 0;
-            this.check_M1_block.Font = new System.Drawing.Font("新宋体", 11F, System.Drawing.FontStyle.Bold);
-            this.check_M1_block.Location = new System.Drawing.Point(9, 60);
+            this.check_M1_block.Font = new System.Drawing.Font("Roboto", 10F);
+            this.check_M1_block.Location = new System.Drawing.Point(9, 84);
             this.check_M1_block.Margin = new System.Windows.Forms.Padding(0);
             this.check_M1_block.MouseLocation = new System.Drawing.Point(-1, -1);
             this.check_M1_block.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
@@ -144,8 +144,8 @@ namespace HYProject.ToolForm
             // check_KJ_block
             // 
             this.check_KJ_block.Depth = 0;
-            this.check_KJ_block.Font = new System.Drawing.Font("新宋体", 11F, System.Drawing.FontStyle.Bold);
-            this.check_KJ_block.Location = new System.Drawing.Point(9, 180);
+            this.check_KJ_block.Font = new System.Drawing.Font("Roboto", 10F);
+            this.check_KJ_block.Location = new System.Drawing.Point(9, 204);
             this.check_KJ_block.Margin = new System.Windows.Forms.Padding(0);
             this.check_KJ_block.MouseLocation = new System.Drawing.Point(-1, -1);
             this.check_KJ_block.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
@@ -159,8 +159,8 @@ namespace HYProject.ToolForm
             // check_P_block
             // 
             this.check_P_block.Depth = 0;
-            this.check_P_block.Font = new System.Drawing.Font("新宋体", 11F, System.Drawing.FontStyle.Bold);
-            this.check_P_block.Location = new System.Drawing.Point(9, 150);
+            this.check_P_block.Font = new System.Drawing.Font("Roboto", 10F);
+            this.check_P_block.Location = new System.Drawing.Point(9, 174);
             this.check_P_block.Margin = new System.Windows.Forms.Padding(0);
             this.check_P_block.MouseLocation = new System.Drawing.Point(-1, -1);
             this.check_P_block.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
@@ -174,8 +174,8 @@ namespace HYProject.ToolForm
             // check_PT_block
             // 
             this.check_PT_block.Depth = 0;
-            this.check_PT_block.Font = new System.Drawing.Font("新宋体", 11F, System.Drawing.FontStyle.Bold);
-            this.check_PT_block.Location = new System.Drawing.Point(9, 120);
+            this.check_PT_block.Font = new System.Drawing.Font("Roboto", 10F);
+            this.check_PT_block.Location = new System.Drawing.Point(9, 144);
             this.check_PT_block.Margin = new System.Windows.Forms.Padding(0);
             this.check_PT_block.MouseLocation = new System.Drawing.Point(-1, -1);
             this.check_PT_block.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
@@ -189,8 +189,8 @@ namespace HYProject.ToolForm
             // check_M2_block
             // 
             this.check_M2_block.Depth = 0;
-            this.check_M2_block.Font = new System.Drawing.Font("新宋体", 11F, System.Drawing.FontStyle.Bold);
-            this.check_M2_block.Location = new System.Drawing.Point(9, 90);
+            this.check_M2_block.Font = new System.Drawing.Font("Roboto", 10F);
+            this.check_M2_block.Location = new System.Drawing.Point(9, 114);
             this.check_M2_block.Margin = new System.Windows.Forms.Padding(0);
             this.check_M2_block.MouseLocation = new System.Drawing.Point(-1, -1);
             this.check_M2_block.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
@@ -204,8 +204,8 @@ namespace HYProject.ToolForm
             // check_S1_block
             // 
             this.check_S1_block.Depth = 0;
-            this.check_S1_block.Font = new System.Drawing.Font("新宋体", 11F, System.Drawing.FontStyle.Bold);
-            this.check_S1_block.Location = new System.Drawing.Point(9, 210);
+            this.check_S1_block.Font = new System.Drawing.Font("Roboto", 10F);
+            this.check_S1_block.Location = new System.Drawing.Point(9, 234);
             this.check_S1_block.Margin = new System.Windows.Forms.Padding(0);
             this.check_S1_block.MouseLocation = new System.Drawing.Point(-1, -1);
             this.check_S1_block.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
@@ -219,8 +219,8 @@ namespace HYProject.ToolForm
             // check_S2_block
             // 
             this.check_S2_block.Depth = 0;
-            this.check_S2_block.Font = new System.Drawing.Font("新宋体", 11F, System.Drawing.FontStyle.Bold);
-            this.check_S2_block.Location = new System.Drawing.Point(9, 240);
+            this.check_S2_block.Font = new System.Drawing.Font("Roboto", 10F);
+            this.check_S2_block.Location = new System.Drawing.Point(9, 264);
             this.check_S2_block.Margin = new System.Windows.Forms.Padding(0);
             this.check_S2_block.MouseLocation = new System.Drawing.Point(-1, -1);
             this.check_S2_block.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
@@ -237,7 +237,7 @@ namespace HYProject.ToolForm
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(326, 9);
+            this.materialLabel1.Location = new System.Drawing.Point(326, 33);
             this.materialLabel1.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(41, 19);
@@ -250,7 +250,7 @@ namespace HYProject.ToolForm
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(248, 9);
+            this.materialLabel2.Location = new System.Drawing.Point(248, 33);
             this.materialLabel2.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(41, 19);
@@ -263,7 +263,7 @@ namespace HYProject.ToolForm
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(169, 9);
+            this.materialLabel3.Location = new System.Drawing.Point(169, 33);
             this.materialLabel3.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(41, 19);
@@ -279,7 +279,7 @@ namespace HYProject.ToolForm
             0,
             0,
             65536});
-            this.num_W_LowerLimit.Location = new System.Drawing.Point(154, 32);
+            this.num_W_LowerLimit.Location = new System.Drawing.Point(154, 56);
             this.num_W_LowerLimit.Maximum = new decimal(new int[] {
             0,
             0,
@@ -298,7 +298,7 @@ namespace HYProject.ToolForm
             // 
             this.num_W_Standard.DecimalPlaces = 3;
             this.num_W_Standard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.num_W_Standard.Location = new System.Drawing.Point(233, 32);
+            this.num_W_Standard.Location = new System.Drawing.Point(233, 56);
             this.num_W_Standard.Maximum = new decimal(new int[] {
             9999,
             0,
@@ -317,7 +317,7 @@ namespace HYProject.ToolForm
             0,
             0,
             65536});
-            this.num_W_UpperLimit.Location = new System.Drawing.Point(312, 32);
+            this.num_W_UpperLimit.Location = new System.Drawing.Point(312, 56);
             this.num_W_UpperLimit.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -336,7 +336,7 @@ namespace HYProject.ToolForm
             0,
             0,
             65536});
-            this.num_M1_UpperLimit.Location = new System.Drawing.Point(312, 62);
+            this.num_M1_UpperLimit.Location = new System.Drawing.Point(312, 86);
             this.num_M1_UpperLimit.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -350,7 +350,7 @@ namespace HYProject.ToolForm
             // 
             this.num_M1_Standard.DecimalPlaces = 3;
             this.num_M1_Standard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.num_M1_Standard.Location = new System.Drawing.Point(233, 62);
+            this.num_M1_Standard.Location = new System.Drawing.Point(233, 86);
             this.num_M1_Standard.Maximum = new decimal(new int[] {
             9999,
             0,
@@ -369,7 +369,7 @@ namespace HYProject.ToolForm
             0,
             0,
             65536});
-            this.num_M1_LowerLimit.Location = new System.Drawing.Point(154, 62);
+            this.num_M1_LowerLimit.Location = new System.Drawing.Point(154, 86);
             this.num_M1_LowerLimit.Maximum = new decimal(new int[] {
             0,
             0,
@@ -393,7 +393,7 @@ namespace HYProject.ToolForm
             0,
             0,
             65536});
-            this.num_M2_UpperLimit.Location = new System.Drawing.Point(312, 92);
+            this.num_M2_UpperLimit.Location = new System.Drawing.Point(312, 116);
             this.num_M2_UpperLimit.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -407,7 +407,7 @@ namespace HYProject.ToolForm
             // 
             this.num_M2_Standard.DecimalPlaces = 3;
             this.num_M2_Standard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.num_M2_Standard.Location = new System.Drawing.Point(233, 92);
+            this.num_M2_Standard.Location = new System.Drawing.Point(233, 116);
             this.num_M2_Standard.Maximum = new decimal(new int[] {
             9999,
             0,
@@ -426,7 +426,7 @@ namespace HYProject.ToolForm
             0,
             0,
             65536});
-            this.num_M2_LowerLimit.Location = new System.Drawing.Point(154, 92);
+            this.num_M2_LowerLimit.Location = new System.Drawing.Point(154, 116);
             this.num_M2_LowerLimit.Maximum = new decimal(new int[] {
             0,
             0,
@@ -450,7 +450,7 @@ namespace HYProject.ToolForm
             0,
             0,
             65536});
-            this.num_PT_UpperLimit.Location = new System.Drawing.Point(312, 122);
+            this.num_PT_UpperLimit.Location = new System.Drawing.Point(312, 146);
             this.num_PT_UpperLimit.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -464,7 +464,7 @@ namespace HYProject.ToolForm
             // 
             this.num_PT_Standard.DecimalPlaces = 3;
             this.num_PT_Standard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.num_PT_Standard.Location = new System.Drawing.Point(233, 122);
+            this.num_PT_Standard.Location = new System.Drawing.Point(233, 146);
             this.num_PT_Standard.Maximum = new decimal(new int[] {
             9999,
             0,
@@ -483,7 +483,7 @@ namespace HYProject.ToolForm
             0,
             0,
             65536});
-            this.num_PT_LowerLimit.Location = new System.Drawing.Point(154, 122);
+            this.num_PT_LowerLimit.Location = new System.Drawing.Point(154, 146);
             this.num_PT_LowerLimit.Maximum = new decimal(new int[] {
             0,
             0,
@@ -507,7 +507,7 @@ namespace HYProject.ToolForm
             0,
             0,
             65536});
-            this.num_P_UpperLimit.Location = new System.Drawing.Point(312, 152);
+            this.num_P_UpperLimit.Location = new System.Drawing.Point(312, 176);
             this.num_P_UpperLimit.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -521,7 +521,7 @@ namespace HYProject.ToolForm
             // 
             this.num_P_Standard.DecimalPlaces = 3;
             this.num_P_Standard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.num_P_Standard.Location = new System.Drawing.Point(233, 152);
+            this.num_P_Standard.Location = new System.Drawing.Point(233, 176);
             this.num_P_Standard.Maximum = new decimal(new int[] {
             9999,
             0,
@@ -540,7 +540,7 @@ namespace HYProject.ToolForm
             0,
             0,
             65536});
-            this.num_P_LowerLimit.Location = new System.Drawing.Point(154, 152);
+            this.num_P_LowerLimit.Location = new System.Drawing.Point(154, 176);
             this.num_P_LowerLimit.Maximum = new decimal(new int[] {
             0,
             0,
@@ -564,7 +564,7 @@ namespace HYProject.ToolForm
             0,
             0,
             65536});
-            this.num_KJ_UpperLimit.Location = new System.Drawing.Point(312, 182);
+            this.num_KJ_UpperLimit.Location = new System.Drawing.Point(312, 206);
             this.num_KJ_UpperLimit.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -578,7 +578,7 @@ namespace HYProject.ToolForm
             // 
             this.num_KJ_Standard.DecimalPlaces = 3;
             this.num_KJ_Standard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.num_KJ_Standard.Location = new System.Drawing.Point(233, 182);
+            this.num_KJ_Standard.Location = new System.Drawing.Point(233, 206);
             this.num_KJ_Standard.Maximum = new decimal(new int[] {
             9999,
             0,
@@ -597,7 +597,7 @@ namespace HYProject.ToolForm
             0,
             0,
             65536});
-            this.num_KJ_LowerLimit.Location = new System.Drawing.Point(154, 182);
+            this.num_KJ_LowerLimit.Location = new System.Drawing.Point(154, 206);
             this.num_KJ_LowerLimit.Maximum = new decimal(new int[] {
             0,
             0,
@@ -621,7 +621,7 @@ namespace HYProject.ToolForm
             0,
             0,
             65536});
-            this.num_S1_UpperLimit.Location = new System.Drawing.Point(312, 212);
+            this.num_S1_UpperLimit.Location = new System.Drawing.Point(312, 236);
             this.num_S1_UpperLimit.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -635,7 +635,7 @@ namespace HYProject.ToolForm
             // 
             this.num_S1_Standard.DecimalPlaces = 3;
             this.num_S1_Standard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.num_S1_Standard.Location = new System.Drawing.Point(233, 212);
+            this.num_S1_Standard.Location = new System.Drawing.Point(233, 236);
             this.num_S1_Standard.Maximum = new decimal(new int[] {
             9999,
             0,
@@ -654,7 +654,7 @@ namespace HYProject.ToolForm
             0,
             0,
             65536});
-            this.num_S1_LowerLimit.Location = new System.Drawing.Point(154, 212);
+            this.num_S1_LowerLimit.Location = new System.Drawing.Point(154, 236);
             this.num_S1_LowerLimit.Maximum = new decimal(new int[] {
             0,
             0,
@@ -678,7 +678,7 @@ namespace HYProject.ToolForm
             0,
             0,
             65536});
-            this.num_S2_UpperLimit.Location = new System.Drawing.Point(312, 242);
+            this.num_S2_UpperLimit.Location = new System.Drawing.Point(312, 266);
             this.num_S2_UpperLimit.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -692,7 +692,7 @@ namespace HYProject.ToolForm
             // 
             this.num_S2_Standard.DecimalPlaces = 3;
             this.num_S2_Standard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.num_S2_Standard.Location = new System.Drawing.Point(233, 242);
+            this.num_S2_Standard.Location = new System.Drawing.Point(233, 266);
             this.num_S2_Standard.Maximum = new decimal(new int[] {
             9999,
             0,
@@ -711,7 +711,7 @@ namespace HYProject.ToolForm
             0,
             0,
             65536});
-            this.num_S2_LowerLimit.Location = new System.Drawing.Point(154, 242);
+            this.num_S2_LowerLimit.Location = new System.Drawing.Point(154, 266);
             this.num_S2_LowerLimit.Maximum = new decimal(new int[] {
             0,
             0,
@@ -731,7 +731,7 @@ namespace HYProject.ToolForm
             this.button_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_save.Font = new System.Drawing.Font("宋体", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button_save.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.button_save.Location = new System.Drawing.Point(7, 274);
+            this.button_save.Location = new System.Drawing.Point(7, 298);
             this.button_save.Name = "button_save";
             this.button_save.Size = new System.Drawing.Size(150, 35);
             this.button_save.TabIndex = 35;
@@ -744,7 +744,7 @@ namespace HYProject.ToolForm
             this.button_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_cancel.Font = new System.Drawing.Font("宋体", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button_cancel.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.button_cancel.Location = new System.Drawing.Point(163, 274);
+            this.button_cancel.Location = new System.Drawing.Point(163, 298);
             this.button_cancel.Name = "button_cancel";
             this.button_cancel.Size = new System.Drawing.Size(150, 35);
             this.button_cancel.TabIndex = 36;
@@ -757,7 +757,7 @@ namespace HYProject.ToolForm
             this.button_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Close.Font = new System.Drawing.Font("宋体", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button_Close.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.button_Close.Location = new System.Drawing.Point(320, 274);
+            this.button_Close.Location = new System.Drawing.Point(320, 298);
             this.button_Close.Name = "button_Close";
             this.button_Close.Size = new System.Drawing.Size(150, 35);
             this.button_Close.TabIndex = 37;
@@ -774,7 +774,7 @@ namespace HYProject.ToolForm
             0,
             0,
             65536});
-            this.num_S2_offset.Location = new System.Drawing.Point(394, 242);
+            this.num_S2_offset.Location = new System.Drawing.Point(394, 266);
             this.num_S2_offset.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -798,7 +798,7 @@ namespace HYProject.ToolForm
             0,
             0,
             65536});
-            this.num_S1_offset.Location = new System.Drawing.Point(394, 212);
+            this.num_S1_offset.Location = new System.Drawing.Point(394, 236);
             this.num_S1_offset.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -822,7 +822,7 @@ namespace HYProject.ToolForm
             0,
             0,
             65536});
-            this.num_KJ_offset.Location = new System.Drawing.Point(394, 182);
+            this.num_KJ_offset.Location = new System.Drawing.Point(394, 206);
             this.num_KJ_offset.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -846,7 +846,7 @@ namespace HYProject.ToolForm
             0,
             0,
             65536});
-            this.num_P_offset.Location = new System.Drawing.Point(394, 152);
+            this.num_P_offset.Location = new System.Drawing.Point(394, 176);
             this.num_P_offset.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -870,7 +870,7 @@ namespace HYProject.ToolForm
             0,
             0,
             65536});
-            this.num_PT_offset.Location = new System.Drawing.Point(394, 122);
+            this.num_PT_offset.Location = new System.Drawing.Point(394, 146);
             this.num_PT_offset.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -894,7 +894,7 @@ namespace HYProject.ToolForm
             0,
             0,
             65536});
-            this.num_M2_offset.Location = new System.Drawing.Point(394, 92);
+            this.num_M2_offset.Location = new System.Drawing.Point(394, 116);
             this.num_M2_offset.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -918,7 +918,7 @@ namespace HYProject.ToolForm
             0,
             0,
             65536});
-            this.num_M1_offset.Location = new System.Drawing.Point(394, 62);
+            this.num_M1_offset.Location = new System.Drawing.Point(394, 86);
             this.num_M1_offset.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -942,7 +942,7 @@ namespace HYProject.ToolForm
             0,
             0,
             65536});
-            this.num_W_offset.Location = new System.Drawing.Point(394, 32);
+            this.num_W_offset.Location = new System.Drawing.Point(394, 56);
             this.num_W_offset.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -963,7 +963,7 @@ namespace HYProject.ToolForm
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(408, 9);
+            this.materialLabel4.Location = new System.Drawing.Point(408, 33);
             this.materialLabel4.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(41, 19);
@@ -974,7 +974,7 @@ namespace HYProject.ToolForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(477, 316);
+            this.ClientSize = new System.Drawing.Size(477, 342);
             this.Controls.Add(this.num_S2_offset);
             this.Controls.Add(this.num_S1_offset);
             this.Controls.Add(this.num_KJ_offset);
@@ -1022,14 +1022,66 @@ namespace HYProject.ToolForm
             this.Controls.Add(this.check_KJ_block);
             this.Controls.Add(this.check_M1_block);
             this.Controls.Add(this.check_W_block);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.HideDropButtom = false;
+            this.HideHelpButtom = false;
+            this.HideMaxButtom = false;
+            this.HideMinButtom = false;
+            this.HideOrClose = false;
+            this.HideTitle = true;
+            this.HideUserButtom = false;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form_Limit";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "限制";
             this.Load += new System.EventHandler(this.Form_Limit_Load);
+            this.Controls.SetChildIndex(this.check_W_block, 0);
+            this.Controls.SetChildIndex(this.check_M1_block, 0);
+            this.Controls.SetChildIndex(this.check_KJ_block, 0);
+            this.Controls.SetChildIndex(this.check_P_block, 0);
+            this.Controls.SetChildIndex(this.check_PT_block, 0);
+            this.Controls.SetChildIndex(this.check_M2_block, 0);
+            this.Controls.SetChildIndex(this.check_S1_block, 0);
+            this.Controls.SetChildIndex(this.check_S2_block, 0);
+            this.Controls.SetChildIndex(this.materialLabel1, 0);
+            this.Controls.SetChildIndex(this.materialLabel2, 0);
+            this.Controls.SetChildIndex(this.materialLabel3, 0);
+            this.Controls.SetChildIndex(this.num_W_LowerLimit, 0);
+            this.Controls.SetChildIndex(this.num_W_Standard, 0);
+            this.Controls.SetChildIndex(this.num_W_UpperLimit, 0);
+            this.Controls.SetChildIndex(this.num_M1_LowerLimit, 0);
+            this.Controls.SetChildIndex(this.num_M1_Standard, 0);
+            this.Controls.SetChildIndex(this.num_M1_UpperLimit, 0);
+            this.Controls.SetChildIndex(this.num_M2_LowerLimit, 0);
+            this.Controls.SetChildIndex(this.num_M2_Standard, 0);
+            this.Controls.SetChildIndex(this.num_M2_UpperLimit, 0);
+            this.Controls.SetChildIndex(this.num_PT_LowerLimit, 0);
+            this.Controls.SetChildIndex(this.num_PT_Standard, 0);
+            this.Controls.SetChildIndex(this.num_PT_UpperLimit, 0);
+            this.Controls.SetChildIndex(this.num_P_LowerLimit, 0);
+            this.Controls.SetChildIndex(this.num_P_Standard, 0);
+            this.Controls.SetChildIndex(this.num_P_UpperLimit, 0);
+            this.Controls.SetChildIndex(this.num_KJ_LowerLimit, 0);
+            this.Controls.SetChildIndex(this.num_KJ_Standard, 0);
+            this.Controls.SetChildIndex(this.num_KJ_UpperLimit, 0);
+            this.Controls.SetChildIndex(this.num_S1_LowerLimit, 0);
+            this.Controls.SetChildIndex(this.num_S1_Standard, 0);
+            this.Controls.SetChildIndex(this.num_S1_UpperLimit, 0);
+            this.Controls.SetChildIndex(this.num_S2_LowerLimit, 0);
+            this.Controls.SetChildIndex(this.num_S2_Standard, 0);
+            this.Controls.SetChildIndex(this.num_S2_UpperLimit, 0);
+            this.Controls.SetChildIndex(this.button_save, 0);
+            this.Controls.SetChildIndex(this.button_cancel, 0);
+            this.Controls.SetChildIndex(this.button_Close, 0);
+            this.Controls.SetChildIndex(this.materialLabel4, 0);
+            this.Controls.SetChildIndex(this.num_W_offset, 0);
+            this.Controls.SetChildIndex(this.num_M1_offset, 0);
+            this.Controls.SetChildIndex(this.num_M2_offset, 0);
+            this.Controls.SetChildIndex(this.num_PT_offset, 0);
+            this.Controls.SetChildIndex(this.num_P_offset, 0);
+            this.Controls.SetChildIndex(this.num_KJ_offset, 0);
+            this.Controls.SetChildIndex(this.num_S1_offset, 0);
+            this.Controls.SetChildIndex(this.num_S2_offset, 0);
             ((System.ComponentModel.ISupportInitialize)(this.num_W_LowerLimit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_W_Standard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_W_UpperLimit)).EndInit();

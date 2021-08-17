@@ -1,8 +1,10 @@
 ﻿using System.Windows.Forms;
 
+using ToolKit.HYControls.HYForm;
+
 namespace HYProject.ToolForm
 {
-    public partial class Form_GlobalOptions : Form
+    public partial class Form_GlobalOptions : BaseForm
     {
         private static Form_GlobalOptions instance;
 

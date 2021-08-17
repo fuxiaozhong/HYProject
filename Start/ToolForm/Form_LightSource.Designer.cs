@@ -53,7 +53,7 @@ namespace HYProject.ToolForm
             // 
             // numericUpDown5
             // 
-            this.numericUpDown5.Location = new System.Drawing.Point(218, 103);
+            this.numericUpDown5.Location = new System.Drawing.Point(218, 118);
             this.numericUpDown5.Maximum = new decimal(new int[] {
             999,
             0,
@@ -66,7 +66,7 @@ namespace HYProject.ToolForm
             // 
             // numericUpDown4
             // 
-            this.numericUpDown4.Location = new System.Drawing.Point(218, 72);
+            this.numericUpDown4.Location = new System.Drawing.Point(218, 87);
             this.numericUpDown4.Maximum = new decimal(new int[] {
             999,
             0,
@@ -79,7 +79,7 @@ namespace HYProject.ToolForm
             // 
             // numericUpDown3
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(217, 42);
+            this.numericUpDown3.Location = new System.Drawing.Point(217, 57);
             this.numericUpDown3.Maximum = new decimal(new int[] {
             999,
             0,
@@ -92,7 +92,7 @@ namespace HYProject.ToolForm
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(218, 12);
+            this.numericUpDown2.Location = new System.Drawing.Point(218, 27);
             this.numericUpDown2.Maximum = new decimal(new int[] {
             999,
             0,
@@ -106,7 +106,7 @@ namespace HYProject.ToolForm
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(180, 47);
+            this.label10.Location = new System.Drawing.Point(180, 62);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(29, 12);
@@ -118,7 +118,7 @@ namespace HYProject.ToolForm
             this.switch4.BackColor = System.Drawing.Color.Transparent;
             this.switch4.Checked = false;
             this.switch4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.switch4.Location = new System.Drawing.Point(304, 104);
+            this.switch4.Location = new System.Drawing.Point(304, 119);
             this.switch4.Margin = new System.Windows.Forms.Padding(5);
             this.switch4.Name = "switch4";
             this.switch4.Size = new System.Drawing.Size(51, 20);
@@ -130,7 +130,7 @@ namespace HYProject.ToolForm
             this.switch3.BackColor = System.Drawing.Color.Transparent;
             this.switch3.Checked = false;
             this.switch3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.switch3.Location = new System.Drawing.Point(304, 74);
+            this.switch3.Location = new System.Drawing.Point(304, 89);
             this.switch3.Margin = new System.Windows.Forms.Padding(5);
             this.switch3.Name = "switch3";
             this.switch3.Size = new System.Drawing.Size(51, 20);
@@ -142,7 +142,7 @@ namespace HYProject.ToolForm
             this.switch2.BackColor = System.Drawing.Color.Transparent;
             this.switch2.Checked = false;
             this.switch2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.switch2.Location = new System.Drawing.Point(304, 42);
+            this.switch2.Location = new System.Drawing.Point(304, 57);
             this.switch2.Margin = new System.Windows.Forms.Padding(5);
             this.switch2.Name = "switch2";
             this.switch2.Size = new System.Drawing.Size(51, 20);
@@ -152,7 +152,7 @@ namespace HYProject.ToolForm
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(181, 77);
+            this.label11.Location = new System.Drawing.Point(181, 92);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(29, 12);
@@ -162,7 +162,7 @@ namespace HYProject.ToolForm
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(181, 109);
+            this.label12.Location = new System.Drawing.Point(181, 124);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(29, 12);
@@ -174,7 +174,7 @@ namespace HYProject.ToolForm
             this.switch1.BackColor = System.Drawing.Color.Transparent;
             this.switch1.Checked = false;
             this.switch1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.switch1.Location = new System.Drawing.Point(304, 14);
+            this.switch1.Location = new System.Drawing.Point(304, 29);
             this.switch1.Margin = new System.Windows.Forms.Padding(4);
             this.switch1.Name = "switch1";
             this.switch1.Size = new System.Drawing.Size(51, 20);
@@ -184,7 +184,7 @@ namespace HYProject.ToolForm
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(180, 18);
+            this.label9.Location = new System.Drawing.Point(180, 33);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(29, 12);
@@ -194,7 +194,7 @@ namespace HYProject.ToolForm
             // button_Port
             // 
             this.button_Port.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Port.Location = new System.Drawing.Point(13, 143);
+            this.button_Port.Location = new System.Drawing.Point(13, 158);
             this.button_Port.Name = "button_Port";
             this.button_Port.Size = new System.Drawing.Size(95, 27);
             this.button_Port.TabIndex = 28;
@@ -207,7 +207,7 @@ namespace HYProject.ToolForm
             this.serialPortConfigurationControl1.BaudRate = 19200;
             this.serialPortConfigurationControl1.DataBits = 8;
             this.serialPortConfigurationControl1.Font = new System.Drawing.Font("宋体", 9F);
-            this.serialPortConfigurationControl1.Location = new System.Drawing.Point(13, 13);
+            this.serialPortConfigurationControl1.Location = new System.Drawing.Point(13, 28);
             this.serialPortConfigurationControl1.Margin = new System.Windows.Forms.Padding(4);
             this.serialPortConfigurationControl1.Name = "serialPortConfigurationControl1";
             this.serialPortConfigurationControl1.Parity = System.IO.Ports.Parity.None;
@@ -219,7 +219,7 @@ namespace HYProject.ToolForm
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(115, 143);
+            this.button1.Location = new System.Drawing.Point(115, 158);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 27);
             this.button1.TabIndex = 41;
@@ -231,7 +231,7 @@ namespace HYProject.ToolForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(378, 176);
+            this.ClientSize = new System.Drawing.Size(372, 190);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.numericUpDown5);
             this.Controls.Add(this.numericUpDown4);
@@ -247,14 +247,34 @@ namespace HYProject.ToolForm
             this.Controls.Add(this.switch3);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.switch2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.HideDropButtom = false;
+            this.HideHelpButtom = false;
+            this.HideMaxButtom = false;
+            this.HideMinButtom = false;
+            this.HideOrClose = false;
+            this.HideTitle = true;
+            this.HideUserButtom = false;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form_LightSource";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "光源控制";
             this.Load += new System.EventHandler(this.Form_LightSource_Load);
+            this.Controls.SetChildIndex(this.switch2, 0);
+            this.Controls.SetChildIndex(this.label11, 0);
+            this.Controls.SetChildIndex(this.switch3, 0);
+            this.Controls.SetChildIndex(this.label12, 0);
+            this.Controls.SetChildIndex(this.switch4, 0);
+            this.Controls.SetChildIndex(this.switch1, 0);
+            this.Controls.SetChildIndex(this.label10, 0);
+            this.Controls.SetChildIndex(this.label9, 0);
+            this.Controls.SetChildIndex(this.numericUpDown2, 0);
+            this.Controls.SetChildIndex(this.button_Port, 0);
+            this.Controls.SetChildIndex(this.numericUpDown3, 0);
+            this.Controls.SetChildIndex(this.serialPortConfigurationControl1, 0);
+            this.Controls.SetChildIndex(this.numericUpDown4, 0);
+            this.Controls.SetChildIndex(this.numericUpDown5, 0);
+            this.Controls.SetChildIndex(this.button1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();

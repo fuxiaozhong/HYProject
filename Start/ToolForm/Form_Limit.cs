@@ -15,7 +15,7 @@ using ToolKit.HYControls.HYForm;
 
 namespace HYProject.ToolForm
 {
-    public partial class Form_Limit : Form
+    public partial class Form_Limit : BaseForm
     {
         public Form_Limit()
         {

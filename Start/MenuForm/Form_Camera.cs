@@ -4,11 +4,12 @@ using System.Windows.Forms;
 using HYProject.Model;
 using HYProject.ToolForm;
 
+using ToolKit.HYControls.HYForm;
 using ToolKit.MaterialSkin.Controls;
 
 namespace HYProject.MenuForm
 {
-    public partial class Form_Camera : Form
+    public partial class Form_Camera : BaseForm
     {
         public Form_Camera()
         {

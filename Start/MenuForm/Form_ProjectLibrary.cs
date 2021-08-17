@@ -13,7 +13,7 @@ using ToolKit.HYControls.HYForm;
 
 namespace HYProject.MenuForm
 {
-    public partial class Form_ProjectLibrary : Form
+    public partial class Form_ProjectLibrary : BaseForm
     {
         public Form_ProjectLibrary()
         {

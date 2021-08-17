@@ -98,7 +98,7 @@ namespace HYProject.ToolForm
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 25);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 56);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -116,7 +116,7 @@ namespace HYProject.ToolForm
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1041, 430);
+            this.dataGridView1.Size = new System.Drawing.Size(1041, 399);
             this.dataGridView1.TabIndex = 0;
             // 
             // Column1
@@ -212,10 +212,14 @@ namespace HYProject.ToolForm
             // 
             // toolStrip1
             // 
+            this.toolStrip1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.toolStrip1.AutoSize = false;
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Location = new System.Drawing.Point(1, 28);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1041, 25);
             this.toolStrip1.TabIndex = 1;
@@ -240,16 +244,23 @@ namespace HYProject.ToolForm
             this.ClientSize = new System.Drawing.Size(1041, 455);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dataGridView1);
+            this.HideDropButtom = false;
+            this.HideHelpButtom = false;
+            this.HideMaxButtom = false;
+            this.HideMinButtom = false;
+            this.HideOrClose = false;
+            this.HideTitle = true;
+            this.HideUserButtom = false;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_DataSheet";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "测量数据表";
+            this.Controls.SetChildIndex(this.dataGridView1, 0);
+            this.Controls.SetChildIndex(this.toolStrip1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.materialContextMenuStrip1.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

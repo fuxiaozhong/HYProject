@@ -16,7 +16,7 @@ using ToolKit.HYControls.HYForm;
 
 namespace HYProject.ToolForm
 {
-    public partial class Form_ProductOperation : Form
+    public partial class Form_ProductOperation : BaseForm
     {
         private bool isNew = true;
 
