@@ -37,7 +37,7 @@ namespace ToolKit.HYControls.HYForm
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(28, 44);
+            this.textBox1.Location = new System.Drawing.Point(39, 71);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(201, 21);
             this.textBox1.TabIndex = 0;
@@ -45,7 +45,7 @@ namespace ToolKit.HYControls.HYForm
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 19);
+            this.label1.Location = new System.Drawing.Point(36, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 12);
             this.label1.TabIndex = 1;
@@ -53,7 +53,7 @@ namespace ToolKit.HYControls.HYForm
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(80, 74);
+            this.button1.Location = new System.Drawing.Point(91, 101);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -63,7 +63,7 @@ namespace ToolKit.HYControls.HYForm
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(171, 74);
+            this.button2.Location = new System.Drawing.Point(182, 101);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 3;
@@ -75,17 +75,25 @@ namespace ToolKit.HYControls.HYForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(263, 109);
+            this.ClientSize = new System.Drawing.Size(289, 135);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.HideDropButtom = false;
+            this.HideHelpButtom = false;
+            this.HideMaxButtom = false;
+            this.HideMinButtom = false;
+            this.HideTitle = true;
+            this.HideUserButtom = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form_Edit";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "输入框";
+            this.Controls.SetChildIndex(this.textBox1, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.button1, 0);
+            this.Controls.SetChildIndex(this.button2, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 

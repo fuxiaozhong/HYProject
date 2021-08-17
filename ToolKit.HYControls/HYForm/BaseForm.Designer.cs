@@ -31,6 +31,7 @@ namespace ToolKit.HYControls.HYForm
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaseForm));
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.label_help = new System.Windows.Forms.Label();
             this.label_min = new System.Windows.Forms.Label();
             this.label_max = new System.Windows.Forms.Label();
@@ -46,6 +47,7 @@ namespace ToolKit.HYControls.HYForm
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.label_help);
             this.panel3.Controls.Add(this.label_min);
             this.panel3.Controls.Add(this.label_max);
@@ -58,8 +60,23 @@ namespace ToolKit.HYControls.HYForm
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1467, 67);
+            this.panel3.Size = new System.Drawing.Size(626, 67);
             this.panel3.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
+            this.label1.Font = new System.Drawing.Font("宋体", 9F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(512, 0);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.label1.Size = new System.Drawing.Size(23, 23);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "∨";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // label_help
             // 
@@ -67,7 +84,7 @@ namespace ToolKit.HYControls.HYForm
             this.label_help.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
             this.label_help.Font = new System.Drawing.Font("宋体", 15F);
             this.label_help.ForeColor = System.Drawing.Color.White;
-            this.label_help.Location = new System.Drawing.Point(1353, 0);
+            this.label_help.Location = new System.Drawing.Point(483, 0);
             this.label_help.Name = "label_help";
             this.label_help.Size = new System.Drawing.Size(23, 23);
             this.label_help.TabIndex = 6;
@@ -81,12 +98,12 @@ namespace ToolKit.HYControls.HYForm
             this.label_min.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
             this.label_min.Font = new System.Drawing.Font("宋体", 15F);
             this.label_min.ForeColor = System.Drawing.Color.White;
-            this.label_min.Location = new System.Drawing.Point(1382, 0);
+            this.label_min.Location = new System.Drawing.Point(541, 0);
             this.label_min.Name = "label_min";
             this.label_min.Size = new System.Drawing.Size(23, 23);
             this.label_min.TabIndex = 5;
             this.label_min.Text = "-";
-            this.label_min.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_min.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.label_min.Click += new System.EventHandler(this.Label_min_Click);
             // 
             // label_max
@@ -95,12 +112,12 @@ namespace ToolKit.HYControls.HYForm
             this.label_max.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
             this.label_max.Font = new System.Drawing.Font("宋体", 15F);
             this.label_max.ForeColor = System.Drawing.Color.White;
-            this.label_max.Location = new System.Drawing.Point(1411, 0);
+            this.label_max.Location = new System.Drawing.Point(570, 0);
             this.label_max.Name = "label_max";
             this.label_max.Size = new System.Drawing.Size(23, 23);
             this.label_max.TabIndex = 4;
             this.label_max.Text = "□";
-            this.label_max.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_max.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.label_max.Click += new System.EventHandler(this.Label_max_Click);
             // 
             // label_close
@@ -109,12 +126,12 @@ namespace ToolKit.HYControls.HYForm
             this.label_close.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
             this.label_close.Font = new System.Drawing.Font("宋体", 15F);
             this.label_close.ForeColor = System.Drawing.Color.White;
-            this.label_close.Location = new System.Drawing.Point(1440, 0);
+            this.label_close.Location = new System.Drawing.Point(599, 0);
             this.label_close.Name = "label_close";
             this.label_close.Size = new System.Drawing.Size(23, 23);
             this.label_close.TabIndex = 3;
             this.label_close.Text = "×";
-            this.label_close.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_close.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.label_close.Click += new System.EventHandler(this.Label_close_Click);
             // 
             // label_User
@@ -123,7 +140,7 @@ namespace ToolKit.HYControls.HYForm
             this.label_User.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
             this.label_User.Font = new System.Drawing.Font("仿宋", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
             this.label_User.ForeColor = System.Drawing.Color.White;
-            this.label_User.Location = new System.Drawing.Point(1255, 0);
+            this.label_User.Location = new System.Drawing.Point(385, 1);
             this.label_User.Name = "label_User";
             this.label_User.Size = new System.Drawing.Size(92, 23);
             this.label_User.TabIndex = 2;
@@ -133,14 +150,14 @@ namespace ToolKit.HYControls.HYForm
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.label4.Font = new System.Drawing.Font("楷体", 25F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(67, 27);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1399, 40);
+            this.label4.Size = new System.Drawing.Size(558, 40);
             this.label4.TabIndex = 1;
             this.label4.Text = "视觉检测软件";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -164,7 +181,7 @@ namespace ToolKit.HYControls.HYForm
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1465, 27);
+            this.label3.Size = new System.Drawing.Size(624, 27);
             this.label3.TabIndex = 0;
             this.label3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Label3_MouseDown);
             // 
@@ -173,12 +190,11 @@ namespace ToolKit.HYControls.HYForm
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1467, 798);
+            this.ClientSize = new System.Drawing.Size(626, 428);
             this.ControlBox = false;
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(668, 401);
             this.Name = "BaseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -200,5 +216,6 @@ namespace ToolKit.HYControls.HYForm
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
     }
 }

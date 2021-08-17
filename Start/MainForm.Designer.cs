@@ -477,7 +477,7 @@ namespace HYProject
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Location = new System.Drawing.Point(992, -1);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
@@ -487,8 +487,8 @@ namespace HYProject
             // 
             // panel_Main
             // 
-            this.panel_Main.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel_Main.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_Main.Controls.Add(this.userControl11);
             this.panel_Main.Location = new System.Drawing.Point(-2, -2);
@@ -512,6 +512,7 @@ namespace HYProject
             this.ClientSize = new System.Drawing.Size(1325, 800);
             this.Controls.Add(this.tableLayoutPanel1);
             this.HelpButton = true;
+            this.HideDropButtom = false;
             this.HideHelpButtom = false;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IconImage = ((System.Drawing.Image)(resources.GetObject("$this.IconImage")));

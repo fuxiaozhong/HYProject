@@ -46,8 +46,13 @@ namespace ToolKit.HYControls.HYForm
         private bool _HideCloseButtom = true;
         private bool _HideHelpButtom = true;
         private bool _HideUserButtom = true;
+        private bool _HideDropButtom = true;
         private bool _HideTitle = false;
         private string _userName = "未登录";
+        private ContextMenuStrip _DropContextMenuStrip;
+
+
+
 
         private Image _IconImage;
 
@@ -184,6 +189,34 @@ namespace ToolKit.HYControls.HYForm
                     panel3.Height = 67;
                 }
                 this._HideTitle = value;
+            }
+        }
+        [CategoryAttribute("其他"), DescriptionAttribute("按钮菜单")]
+        public ContextMenuStrip DropContextMenuStrip
+        {
+            get
+            {
+                return this._DropContextMenuStrip;
+            }
+
+            set
+            {
+                label1.ContextMenuStrip = value;
+                this._DropContextMenuStrip = value;
+            }
+        }
+        [CategoryAttribute("其他"), DescriptionAttribute("隐藏或者显示菜单按钮")]
+        public bool HideDropButtom
+        {
+            get
+            {
+                return this._HideDropButtom;
+            }
+
+            set
+            {
+                label1.Visible = value;
+                this._HideDropButtom = value;
             }
         }
 
@@ -436,6 +469,11 @@ namespace ToolKit.HYControls.HYForm
         public void ShowMessageTip(Image icon, string text, int delay = -1)
         {
             MessageTip.Show(text, icon, delay);
+        }
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+            _DropContextMenuStrip.Show(Cursor.Position);
         }
     }
 }

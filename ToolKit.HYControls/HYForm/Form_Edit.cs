@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace ToolKit.HYControls.HYForm
 {
-    public partial class Form_Edit : Form
+    public partial class Form_Edit : BaseForm
     {
         public Form_Edit(string text, bool checkEmpty = true, string type = "string")
         {
