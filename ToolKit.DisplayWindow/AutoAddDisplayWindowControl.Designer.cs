@@ -40,19 +40,18 @@ namespace ToolKit.DisplayWindow
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(800, 400);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(802, 402);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // AutoAddDisplayWindowControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.flowLayoutPanel1);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "AutoAddDisplayWindowControl";
-            this.Size = new System.Drawing.Size(800, 400);
+            this.Size = new System.Drawing.Size(802, 402);
             this.SizeChanged += new System.EventHandler(this.AutoAddDisplayWindowControl_Resize);
             this.ResumeLayout(false);
             this.PerformLayout();

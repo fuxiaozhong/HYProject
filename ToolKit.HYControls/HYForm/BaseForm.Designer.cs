@@ -197,8 +197,10 @@ namespace ToolKit.HYControls.HYForm
             this.ClientSize = new System.Drawing.Size(1350, 735);
             this.ControlBox = false;
             this.Controls.Add(this.panel3);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "BaseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.TextChanged += new System.EventHandler(this.Label4_TextChanged);

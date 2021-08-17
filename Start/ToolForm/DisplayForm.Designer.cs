@@ -34,7 +34,6 @@ namespace HYProject.ToolForm
             // 
             // autoAddDisplayWindowControl1
             // 
-            this.autoAddDisplayWindowControl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.autoAddDisplayWindowControl1.CameraNames = new string[0];
             this.autoAddDisplayWindowControl1.Count = 0;
             this.autoAddDisplayWindowControl1.Dock = System.Windows.Forms.DockStyle.Fill;

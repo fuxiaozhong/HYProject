@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Reflection.Emit;
+using System.Resources;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
@@ -15,6 +16,7 @@ using HYProject.Arithmetic;
 using HYProject.Helper;
 using HYProject.MenuForm;
 using HYProject.Model;
+using HYProject.Properties;
 using HYProject.ToolForm;
 
 using ToolKit.CamreaSDK;
@@ -70,8 +72,8 @@ namespace HYProject
             else
                 this.WindowState = FormWindowState.Normal;
             //添加主页面显示窗口
-            panel_Main.Controls.Add(DisplayForm.Instance);
-            panel2.Controls.Add(Form_DateVsualization.Instance);
+            split_Main.Panel1.Controls.Add(DisplayForm.Instance);
+            split_Main.Panel2.Controls.Add(Form_DateVsualization.Instance);
 
             string[] cameraNmaes = new string[Cameras.Instance.GetCameras.Count];
             for (int i = 0; i < Cameras.Instance.GetCameras.Count; i++)
@@ -237,18 +239,20 @@ namespace HYProject
 
         private void Button_Run_Click(object sender, EventArgs e)
         {
-            if (button_Run.ForeColor == Color.Red)
+            if (运行ToolStripMenuItem.ForeColor == Color.Red)
             {
-                button_Run.ForeColor = Color.Green;
+                this.运行ToolStripMenuItem.Image = ((System.Drawing.Image)(new System.ComponentModel.ComponentResourceManager(typeof(MainForm)).GetObject("toolStripMenuItem1.Image")));
+                运行ToolStripMenuItem.ForeColor = Color.Green;
                 AppParam.Instance.Runing = true;
-                button_Run.Text = "停    止";
+                运行ToolStripMenuItem.Text = "停    止";
                 Log.WriteRunLog("开始运行...");
 
             }
             else
             {
-                button_Run.ForeColor = Color.Red;
-                button_Run.Text = "运    行";
+                运行ToolStripMenuItem.ForeColor = Color.Red;
+                运行ToolStripMenuItem.Text = "运    行";
+                this.运行ToolStripMenuItem.Image = ((System.Drawing.Image)(new System.ComponentModel.ComponentResourceManager(typeof(MainForm)).GetObject("运行ToolStripMenuItem.Image")));
                 AppParam.Instance.Runing = false;
                 Log.WriteRunLog("停止运行...");
             }
@@ -273,17 +277,17 @@ namespace HYProject
             //F5运行
             if (e.KeyCode == Keys.F5)
             {
-                Button_Run_Click(button_Run, e);
+                Button_Run_Click(运行ToolStripMenuItem, e);
             }
             //Alt + C 打开相机操作窗口
             else if (ModifierKeys == Keys.Alt && e.KeyCode == Keys.C)
             {
-                Button_Camera_Click(button_Camera, e);
+                Button_Camera_Click(相机ToolStripMenuItem, e);
             }
             //Alt + S 打开设置窗口
             else if (ModifierKeys == Keys.Alt && e.KeyCode == Keys.S)
             {
-                Button_Setting_Click(button_Setting, e);
+                Button_Setting_Click(设置ToolStripMenuItem, e);
             }
             //Ctrl + E 退出
             else if (ModifierKeys == Keys.Control && e.KeyCode == Keys.E)
@@ -320,8 +324,7 @@ namespace HYProject
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            Form_ProjectLibrary form_ProjectLibrary = new Form_ProjectLibrary();
-            form_ProjectLibrary.Show();
+            Form_ProjectLibrary.Instance.Show();
         }
 
         private void 光源控制ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -382,6 +385,11 @@ namespace HYProject
                 Text = "视觉软件 -- " + AppParam.Instance.Power;
                 (sender as System.Windows.Forms.Label).Text = AppParam.Instance.Power;
             }
+        }
+
+        private void 插件ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            materialContextMenuStrip1.Show(Cursor.Position);
         }
     }
 }
