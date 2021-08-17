@@ -6,11 +6,12 @@ using HYProject.Helper;
 using HYProject.ToolForm;
 
 using ToolKit.HYControls;
+using ToolKit.HYControls.HYForm;
 using ToolKit.MaterialSkin.Controls;
 
 namespace HYProject.MenuForm
 {
-    public partial class Form_Setting : Form
+    public partial class Form_Setting : BaseForm
     {
         public Form_Setting()
         {

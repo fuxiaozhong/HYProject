@@ -33,8 +33,14 @@ namespace ToolKit.HYControls.HYForm
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            processEllipse1.Value++;
+            if (processEllipse1.Value >= 100)
+            {
+                processEllipse1.Value = 5;
+            }
             if (asyncResult.IsCompleted)
             {
+                timer1.Enabled = false;
                 DialogResult = DialogResult.OK;
                 this.Close();
             }

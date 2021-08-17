@@ -94,7 +94,7 @@ namespace ToolKit.HYControls
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.96552F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 49F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 91F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 93F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 94F));
             this.tableLayoutPanel2.Controls.Add(this.textBox_severport, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.label7, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.label8, 0, 0);
@@ -123,7 +123,7 @@ namespace ToolKit.HYControls
             // textBox_severport
             // 
             this.textBox_severport.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox_severport.Location = new System.Drawing.Point(221, 3);
+            this.textBox_severport.Location = new System.Drawing.Point(220, 3);
             this.textBox_severport.Name = "textBox_severport";
             this.textBox_severport.Size = new System.Drawing.Size(85, 21);
             this.textBox_severport.TabIndex = 3;
@@ -133,7 +133,7 @@ namespace ToolKit.HYControls
             // 
             this.label7.AutoSize = true;
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Location = new System.Drawing.Point(172, 0);
+            this.label7.Location = new System.Drawing.Point(171, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(43, 25);
             this.label7.TabIndex = 2;
@@ -156,17 +156,17 @@ namespace ToolKit.HYControls
             this.textBox_severIP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox_severIP.Location = new System.Drawing.Point(55, 3);
             this.textBox_severIP.Name = "textBox_severIP";
-            this.textBox_severIP.Size = new System.Drawing.Size(111, 21);
+            this.textBox_severIP.Size = new System.Drawing.Size(110, 21);
             this.textBox_severIP.TabIndex = 1;
             this.textBox_severIP.Text = "127.0.0.1";
             // 
             // button4
             // 
             this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button4.Location = new System.Drawing.Point(309, 0);
+            this.button4.Location = new System.Drawing.Point(308, 0);
             this.button4.Margin = new System.Windows.Forms.Padding(0);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(94, 25);
+            this.button4.Size = new System.Drawing.Size(95, 25);
             this.button4.TabIndex = 4;
             this.button4.Text = "打开";
             this.button4.UseVisualStyleBackColor = true;
@@ -176,10 +176,10 @@ namespace ToolKit.HYControls
             // 
             this.button6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button6.Enabled = false;
-            this.button6.Location = new System.Drawing.Point(309, 149);
+            this.button6.Location = new System.Drawing.Point(308, 149);
             this.button6.Margin = new System.Windows.Forms.Padding(0);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(94, 25);
+            this.button6.Size = new System.Drawing.Size(95, 25);
             this.button6.TabIndex = 10;
             this.button6.Text = "关闭";
             this.button6.UseVisualStyleBackColor = true;
@@ -193,7 +193,7 @@ namespace ToolKit.HYControls
             this.richTextBox_severjs.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.richTextBox_severjs.Name = "richTextBox_severjs";
             this.tableLayoutPanel2.SetRowSpan(this.richTextBox_severjs, 2);
-            this.richTextBox_severjs.Size = new System.Drawing.Size(257, 62);
+            this.richTextBox_severjs.Size = new System.Drawing.Size(256, 62);
             this.richTextBox_severjs.TabIndex = 9;
             this.richTextBox_severjs.Text = "";
             // 
@@ -204,14 +204,14 @@ namespace ToolKit.HYControls
             this.richTextBox_severSend.Location = new System.Drawing.Point(52, 52);
             this.richTextBox_severSend.Margin = new System.Windows.Forms.Padding(0);
             this.richTextBox_severSend.Name = "richTextBox_severSend";
-            this.richTextBox_severSend.Size = new System.Drawing.Size(257, 55);
+            this.richTextBox_severSend.Size = new System.Drawing.Size(256, 55);
             this.richTextBox_severSend.TabIndex = 6;
             this.richTextBox_severSend.Text = "";
             // 
             // button5
             // 
             this.button5.Enabled = false;
-            this.button5.Location = new System.Drawing.Point(309, 52);
+            this.button5.Location = new System.Drawing.Point(308, 52);
             this.button5.Margin = new System.Windows.Forms.Padding(0);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(89, 26);
@@ -262,7 +262,7 @@ namespace ToolKit.HYControls
             this.cmb_clientList.Location = new System.Drawing.Point(52, 25);
             this.cmb_clientList.Margin = new System.Windows.Forms.Padding(0);
             this.cmb_clientList.Name = "cmb_clientList";
-            this.cmb_clientList.Size = new System.Drawing.Size(257, 20);
+            this.cmb_clientList.Size = new System.Drawing.Size(256, 20);
             this.cmb_clientList.TabIndex = 12;
             // 
             // tabPage2
@@ -283,7 +283,7 @@ namespace ToolKit.HYControls
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.54023F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 49F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 91F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 93F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 94F));
             this.tableLayoutPanel1.Controls.Add(this.richTextBox2, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 1);
@@ -315,7 +315,7 @@ namespace ToolKit.HYControls
             this.richTextBox2.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.richTextBox2.Name = "richTextBox2";
             this.tableLayoutPanel1.SetRowSpan(this.richTextBox2, 3);
-            this.richTextBox2.Size = new System.Drawing.Size(258, 91);
+            this.richTextBox2.Size = new System.Drawing.Size(257, 91);
             this.richTextBox2.TabIndex = 9;
             this.richTextBox2.Text = "";
             // 
@@ -346,7 +346,7 @@ namespace ToolKit.HYControls
             // textBox2
             // 
             this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox2.Location = new System.Drawing.Point(221, 3);
+            this.textBox2.Location = new System.Drawing.Point(220, 3);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(85, 21);
             this.textBox2.TabIndex = 3;
@@ -356,7 +356,7 @@ namespace ToolKit.HYControls
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(172, 0);
+            this.label2.Location = new System.Drawing.Point(171, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 25);
             this.label2.TabIndex = 2;
@@ -379,17 +379,17 @@ namespace ToolKit.HYControls
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox1.Location = new System.Drawing.Point(54, 3);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(112, 21);
+            this.textBox1.Size = new System.Drawing.Size(111, 21);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "127.0.0.1";
             // 
             // button1
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Location = new System.Drawing.Point(309, 0);
+            this.button1.Location = new System.Drawing.Point(308, 0);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 25);
+            this.button1.Size = new System.Drawing.Size(95, 25);
             this.button1.TabIndex = 4;
             this.button1.Text = "连接";
             this.button1.UseVisualStyleBackColor = true;
@@ -402,7 +402,7 @@ namespace ToolKit.HYControls
             this.richTextBox1.Location = new System.Drawing.Point(51, 25);
             this.richTextBox1.Margin = new System.Windows.Forms.Padding(0);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(258, 53);
+            this.richTextBox1.Size = new System.Drawing.Size(257, 53);
             this.richTextBox1.TabIndex = 6;
             this.richTextBox1.Text = "";
             // 
@@ -410,10 +410,10 @@ namespace ToolKit.HYControls
             // 
             this.button2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(309, 52);
+            this.button2.Location = new System.Drawing.Point(308, 52);
             this.button2.Margin = new System.Windows.Forms.Padding(0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 26);
+            this.button2.Size = new System.Drawing.Size(95, 26);
             this.button2.TabIndex = 7;
             this.button2.Text = "发送";
             this.button2.UseVisualStyleBackColor = true;
@@ -423,10 +423,10 @@ namespace ToolKit.HYControls
             // 
             this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button3.Enabled = false;
-            this.button3.Location = new System.Drawing.Point(309, 153);
+            this.button3.Location = new System.Drawing.Point(308, 153);
             this.button3.Margin = new System.Windows.Forms.Padding(0);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(94, 21);
+            this.button3.Size = new System.Drawing.Size(95, 21);
             this.button3.TabIndex = 10;
             this.button3.Text = "关闭";
             this.button3.UseVisualStyleBackColor = true;
