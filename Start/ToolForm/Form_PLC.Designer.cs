@@ -292,12 +292,13 @@ namespace HYProject.ToolForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(414, 273);
+            this.ClientSize = new System.Drawing.Size(420, 276);
             this.Controls.Add(this.button_Close);
             this.Controls.Add(this.button_save);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("宋体", 12F);
+            this.HideBorderColor = true;
             this.HideDropButtom = false;
             this.HideHelpButtom = false;
             this.HideMaxButtom = false;

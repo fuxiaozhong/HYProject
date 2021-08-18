@@ -265,6 +265,12 @@ namespace HYProject
                 if (ShowMessage("无相机连接!点击确认重新初始化相机.", "提示") == DialogResult.OK)
                 {
                     Cameras.Instance.ReInitializeCamera();
+                    string[] cameraNmaes = new string[Cameras.Instance.GetCameras.Count];
+                    for (int i = 0; i < Cameras.Instance.GetCameras.Count; i++)
+                    {
+                        cameraNmaes[i] = Cameras.Instance.GetCameras.Values.ElementAt(0)._CameraNmae;
+                    }
+                    DisplayForm.Instance.DisplayWindowNames = cameraNmaes;
                 }
                 return;
             }
@@ -308,19 +314,6 @@ namespace HYProject
             }
         }
 
-        private void 重新加载相机ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //DisplayForm.Instance.DisplayWindowCount = 0;
-            //重新初始化相机
-            Cameras.Instance.ReInitializeCamera();
-            string[] cameraNmaes = new string[Cameras.Instance.GetCameras.Count];
-            for (int i = 0; i < Cameras.Instance.GetCameras.Count; i++)
-            {
-                cameraNmaes[i] = Cameras.Instance.GetCameras.Values.ElementAt(0)._CameraNmae;
-            }
-            DisplayForm.Instance.DisplayWindowNames = cameraNmaes;
-
-        }
 
         private void Button3_Click(object sender, EventArgs e)
         {
@@ -391,5 +384,6 @@ namespace HYProject
         {
             materialContextMenuStrip1.Show(Cursor.Position);
         }
+
     }
 }

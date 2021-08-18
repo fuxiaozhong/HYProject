@@ -147,6 +147,12 @@
     <Compile Include="SwitchControl.Designer.cs">
       <DependentUpon>SwitchControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="TabControlEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TabControlEx.Designer.cs">
+      <DependentUpon>TabControlEx.cs</DependentUpon>
+    </Compile>
     <Compile Include="TCPSocketControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -201,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SwitchControl.resx">
       <DependentUpon>SwitchControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabControlEx.resx">
+      <DependentUpon>TabControlEx.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TCPSocketControl.resx">
       <DependentUpon>TCPSocketControl.cs</DependentUpon>

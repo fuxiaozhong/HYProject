@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
@@ -50,7 +51,8 @@ namespace ToolKit.HYControls.HYForm
         private bool _HideTitle = false;
         private string _userName = "未登录";
         private ContextMenuStrip _DropContextMenuStrip;
-
+        private Color _BorderColor = Color.Gray;
+        private bool _HideBorderColor = false;
 
 
 
@@ -222,6 +224,37 @@ namespace ToolKit.HYControls.HYForm
             }
         }
 
+        [CategoryAttribute("其他"), DescriptionAttribute("边框颜色")]
+        public Color BorderColor
+        {
+            get
+            {
+                return this._BorderColor;
+            }
+
+            set
+            {
+                this._BorderColor = value;
+                this.Refresh();
+            }
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+            if (!_HideBorderColor)
+            {
+                //边框工作区
+                Rectangle rect = this.ClientRectangle;
+                GraphicsPath Rect = new GraphicsPath();
+                Rect.AddRectangle(new RectangleF(rect.X, rect.Y, rect.Width - 1, rect.Height - 1));
+                e.Graphics.DrawPath(new Pen(_BorderColor), Rect);
+            }
+
+        }
+
+
+
         /// <summary>
         /// 转换Image为Icon
         /// </summary>
@@ -369,6 +402,22 @@ namespace ToolKit.HYControls.HYForm
                 return cp;
             }
         }
+        [CategoryAttribute("其他"), DescriptionAttribute("隐藏或者显示边框")]
+        public bool HideBorderColor
+        {
+            get
+            {
+                return this._HideBorderColor;
+            }
+
+            set
+            {
+                this._HideBorderColor = value;
+                this.Refresh();
+            }
+        }
+
+
 
         /// <summary>
         /// 弹窗提示消息框

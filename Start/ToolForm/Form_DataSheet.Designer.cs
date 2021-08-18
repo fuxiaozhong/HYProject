@@ -98,7 +98,7 @@ namespace HYProject.ToolForm
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 56);
+            this.dataGridView1.Location = new System.Drawing.Point(1, 57);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -116,7 +116,7 @@ namespace HYProject.ToolForm
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1041, 399);
+            this.dataGridView1.Size = new System.Drawing.Size(1037, 395);
             this.dataGridView1.TabIndex = 0;
             // 
             // Column1
@@ -220,8 +220,9 @@ namespace HYProject.ToolForm
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(1, 28);
+            this.toolStrip1.Margin = new System.Windows.Forms.Padding(1);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1041, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1037, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
