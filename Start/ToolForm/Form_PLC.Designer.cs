@@ -298,7 +298,7 @@ namespace HYProject.ToolForm
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("宋体", 12F);
-            this.HideBorderColor = true;
+
             this.HideDropButtom = false;
             this.HideHelpButtom = false;
             this.HideMaxButtom = false;

@@ -385,5 +385,9 @@ namespace HYProject
             materialContextMenuStrip1.Show(Cursor.Position);
         }
 
+        private void MaterialFlatButton1_Click(object sender, EventArgs e)
+        {
+            ShowErrorTip("123123123123123");
+        }
     }
 }

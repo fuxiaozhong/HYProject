@@ -96,6 +96,12 @@
     <Compile Include="HYForm\Form_Waiting.Designer.cs">
       <DependentUpon>Form_Waiting.cs</DependentUpon>
     </Compile>
+    <Compile Include="HYForm\MessageTipWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HYForm\MessageTipWindow.Designer.cs">
+      <DependentUpon>MessageTipWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="HYForm\MessageWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HYForm\Form_Waiting.resx">
       <DependentUpon>Form_Waiting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HYForm\MessageTipWindow.resx">
+      <DependentUpon>MessageTipWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HYForm\MessageWindow.resx">
       <DependentUpon>MessageWindow.cs</DependentUpon>

@@ -52,7 +52,7 @@ namespace HYProject.MenuForm
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(216, 127);
+            this.label2.Location = new System.Drawing.Point(222, 127);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 22);
             this.label2.TabIndex = 1;
@@ -64,7 +64,7 @@ namespace HYProject.MenuForm
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("宋体", 12F);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(150, 268);
+            this.button1.Location = new System.Drawing.Point(156, 268);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(142, 35);
             this.button1.TabIndex = 5;
@@ -78,7 +78,7 @@ namespace HYProject.MenuForm
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("宋体", 12F);
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(332, 268);
+            this.button2.Location = new System.Drawing.Point(338, 268);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(142, 35);
             this.button2.TabIndex = 6;
@@ -102,7 +102,7 @@ namespace HYProject.MenuForm
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("微软雅黑", 20F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(148, 52);
+            this.label4.Location = new System.Drawing.Point(154, 52);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(326, 36);
             this.label4.TabIndex = 9;
@@ -111,7 +111,7 @@ namespace HYProject.MenuForm
             // label5
             // 
             this.label5.BackColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(220, 180);
+            this.label5.Location = new System.Drawing.Point(226, 180);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(200, 2);
             this.label5.TabIndex = 11;
@@ -121,7 +121,7 @@ namespace HYProject.MenuForm
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(216, 196);
+            this.label6.Location = new System.Drawing.Point(222, 196);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(89, 22);
             this.label6.TabIndex = 13;
@@ -130,7 +130,7 @@ namespace HYProject.MenuForm
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.Gray;
-            this.label7.Location = new System.Drawing.Point(220, 249);
+            this.label7.Location = new System.Drawing.Point(226, 249);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(200, 2);
             this.label7.TabIndex = 15;
@@ -139,7 +139,7 @@ namespace HYProject.MenuForm
             // 
             this.textBox_Password.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_Password.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold);
-            this.textBox_Password.Location = new System.Drawing.Point(220, 221);
+            this.textBox_Password.Location = new System.Drawing.Point(226, 221);
             this.textBox_Password.Multiline = true;
             this.textBox_Password.Name = "textBox_Password";
             this.textBox_Password.PasswordChar = '*';
@@ -150,7 +150,7 @@ namespace HYProject.MenuForm
             // 
             this.textBox_username.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_username.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold);
-            this.textBox_username.Location = new System.Drawing.Point(220, 152);
+            this.textBox_username.Location = new System.Drawing.Point(226, 152);
             this.textBox_username.Multiline = true;
             this.textBox_username.Name = "textBox_username";
             this.textBox_username.Size = new System.Drawing.Size(200, 25);

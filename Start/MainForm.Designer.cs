@@ -69,6 +69,7 @@ namespace HYProject
             this.数据表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.userControl11 = new ToolKit.HalconTool.UserControl1();
+            this.materialFlatButton1 = new ToolKit.MaterialSkin.Controls.MaterialFlatButton();
             this.tableLayout.SuspendLayout();
             this.panel_Buttom.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -79,6 +80,7 @@ namespace HYProject
             this.toolStrip1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.split_Main)).BeginInit();
+            this.split_Main.Panel1.SuspendLayout();
             this.split_Main.SuspendLayout();
             this.materialContextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -428,6 +430,7 @@ namespace HYProject
             // split_Main.Panel1
             // 
             this.split_Main.Panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.split_Main.Panel1.Controls.Add(this.materialFlatButton1);
             this.split_Main.Size = new System.Drawing.Size(1446, 578);
             this.split_Main.SplitterDistance = 1080;
             this.split_Main.SplitterWidth = 1;
@@ -505,6 +508,23 @@ namespace HYProject
             this.userControl11.TabIndex = 0;
             this.userControl11.Visible = false;
             // 
+            // materialFlatButton1
+            // 
+            this.materialFlatButton1.AutoSize = true;
+            this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialFlatButton1.Depth = 0;
+            this.materialFlatButton1.Icon = null;
+            this.materialFlatButton1.Location = new System.Drawing.Point(327, 161);
+            this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialFlatButton1.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
+            this.materialFlatButton1.Name = "materialFlatButton1";
+            this.materialFlatButton1.Primary = false;
+            this.materialFlatButton1.Size = new System.Drawing.Size(181, 36);
+            this.materialFlatButton1.TabIndex = 0;
+            this.materialFlatButton1.Text = "materialFlatButton1";
+            this.materialFlatButton1.UseVisualStyleBackColor = true;
+            this.materialFlatButton1.Click += new System.EventHandler(this.MaterialFlatButton1_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -537,6 +557,8 @@ namespace HYProject
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel4.ResumeLayout(false);
+            this.split_Main.Panel1.ResumeLayout(false);
+            this.split_Main.Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.split_Main)).EndInit();
             this.split_Main.ResumeLayout(false);
             this.materialContextMenuStrip1.ResumeLayout(false);
@@ -582,6 +604,7 @@ namespace HYProject
         private System.Windows.Forms.ToolStripMenuItem 主页面ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem 插件ToolStripMenuItem;
+        private MaterialFlatButton materialFlatButton1;
         // private ToolKit.HYControls.CreateModelControl createModelControl1;
     }
 }

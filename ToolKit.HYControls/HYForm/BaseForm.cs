@@ -52,7 +52,7 @@ namespace ToolKit.HYControls.HYForm
         private string _userName = "未登录";
         private ContextMenuStrip _DropContextMenuStrip;
         private Color _BorderColor = Color.Gray;
-        private bool _HideBorderColor = false;
+        private bool _HideBorder = false;
 
 
 
@@ -242,7 +242,7 @@ namespace ToolKit.HYControls.HYForm
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-            if (!_HideBorderColor)
+            if (!_HideBorder)
             {
                 //边框工作区
                 Rectangle rect = this.ClientRectangle;
@@ -403,16 +403,16 @@ namespace ToolKit.HYControls.HYForm
             }
         }
         [CategoryAttribute("其他"), DescriptionAttribute("隐藏或者显示边框")]
-        public bool HideBorderColor
+        public bool HideBorder
         {
             get
             {
-                return this._HideBorderColor;
+                return this._HideBorder;
             }
 
             set
             {
-                this._HideBorderColor = value;
+                this._HideBorder = value;
                 this.Refresh();
             }
         }
@@ -540,6 +540,35 @@ namespace ToolKit.HYControls.HYForm
         {
             MessageTip.Show(text, icon, delay);
         }
+
+        /// <summary>
+        /// 左下角消息提示框(OK)
+        /// </summary>
+        /// <param name="message">消息</param>
+        /// <param name="title">标题</param>
+        public static void ShowOKTip(string message, string title = "提示 - 正常")
+        {
+            MessageTipWindow.ShowOKTip(message, title);
+        }
+        /// <summary>
+        /// 左下角消息提示框(error)
+        /// </summary>
+        /// <param name="message">消息</param>
+        /// <param name="title">标题</param>
+        public static void ShowErrorTip(string message, string title = "提示 - 错误")
+        {
+            MessageTipWindow.ShowErrorTip(message, title);
+        }
+        /// <summary>
+        /// 左下角消息提示框(警告)
+        /// </summary>
+        /// <param name="message">消息</param>
+        /// <param name="title">标题</param>
+        public static void ShowWarnTip(string message, string title = "提示 - 警告")
+        {
+            MessageTipWindow.ShowWarnTip(message, title);
+        }
+
 
         private void Label1_Click(object sender, EventArgs e)
         {
