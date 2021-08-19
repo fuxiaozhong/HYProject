@@ -1,5 +1,4 @@
-﻿using System.Management.Instrumentation;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 using ToolKit.DisplayWindow;
 
@@ -66,6 +65,7 @@ namespace HYProject.ToolForm
                 autoAddDisplayWindowControl1.Count = value;
             }
         }
+
         public string[] DisplayWindowNames
         {
             get
@@ -90,6 +90,7 @@ namespace HYProject.ToolForm
                 return autoAddDisplayWindowControl1[key];
             }
         }/// <summary>
+
          /// 获取窗口
          /// </summary>
          /// <param name="key">窗口名称</param>

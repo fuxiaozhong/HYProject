@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
-using ToolKit.HYControls.Properties;
 
 namespace ToolKit.HYControls.HYForm
 {
@@ -20,8 +13,10 @@ namespace ToolKit.HYControls.HYForm
     {
         [DllImport("user32.dll")]//命名空间System.Runtime.InteropServices;
         public static extern bool ReleaseCapture();
+
         [DllImport("user32.dll")]
         public static extern bool SendMessage(IntPtr hwnd, int wMsg, int wParam, int lParam);
+
         public const int WM_SYSCOMMAND = 0x0112;
         public const int SC_MOVE = 0xF010;
         public const int HTCAPTION = 0x0002;
@@ -29,8 +24,10 @@ namespace ToolKit.HYControls.HYForm
         public const int SC_MAXIMIZE = 0xF030;
         public const int SC_RESTORE = 0xF120;
         public const int SC_SIZE = 0xF000;
+
         //改变窗体大小，SC_SIZE+下面的值
         public const int LEFT = 0x0001;//光标在窗体左边缘
+
         public const int RIGHT = 0x0002;//右边缘
         public const int UP = 0x0003;//上边缘
         public const int LEFTUP = 0x0004;//左上角
@@ -38,8 +35,6 @@ namespace ToolKit.HYControls.HYForm
         public const int BOTTOM = 0x0006;//下边缘
         public const int LEFTBOTTOM = 0x0007;//左下角
         public const int RIGHTBOTTOM = 0x0008;//右下角
-
-
 
         private bool _HideOrClose = true;
         private bool _HideMinButtom = true;
@@ -54,10 +49,7 @@ namespace ToolKit.HYControls.HYForm
         private Color _BorderColor = Color.Gray;
         private bool _HideBorder = false;
 
-
-
         private Image _IconImage;
-
 
         [CategoryAttribute("其他"), DescriptionAttribute("关闭按钮是隐藏窗口  还是关闭窗口  true关闭  false隐藏")]
         public bool HideOrClose
@@ -72,6 +64,7 @@ namespace ToolKit.HYControls.HYForm
                 this._HideOrClose = value;
             }
         }
+
         [CategoryAttribute("其他"), DescriptionAttribute("隐藏或者显示最小化按钮")]
         public bool HideMinButtom
         {
@@ -86,6 +79,7 @@ namespace ToolKit.HYControls.HYForm
                 this._HideMinButtom = value;
             }
         }
+
         [CategoryAttribute("其他"), DescriptionAttribute("隐藏或者显示最大化按钮")]
         public bool HideMaxButtom
         {
@@ -100,6 +94,7 @@ namespace ToolKit.HYControls.HYForm
                 this._HideMaxButtom = value;
             }
         }
+
         [CategoryAttribute("其他"), DescriptionAttribute("隐藏或者显示关闭按钮")]
         public bool HideCloseButtom
         {
@@ -114,6 +109,7 @@ namespace ToolKit.HYControls.HYForm
                 this._HideCloseButtom = value;
             }
         }
+
         [CategoryAttribute("其他"), DescriptionAttribute("隐藏或者显示帮助按钮")]
         public bool HideHelpButtom
         {
@@ -128,6 +124,7 @@ namespace ToolKit.HYControls.HYForm
                 this._HideHelpButtom = value;
             }
         }
+
         [CategoryAttribute("其他"), DescriptionAttribute("隐藏或者显示用户按钮")]
         public bool HideUserButtom
         {
@@ -142,6 +139,7 @@ namespace ToolKit.HYControls.HYForm
                 this._HideUserButtom = value;
             }
         }
+
         [CategoryAttribute("其他"), DescriptionAttribute("用户名")]
         public string UserName
         {
@@ -155,6 +153,7 @@ namespace ToolKit.HYControls.HYForm
                 this._userName = value;
             }
         }
+
         [CategoryAttribute("其他"), DescriptionAttribute("图标")]
         public Image IconImage
         {
@@ -170,6 +169,7 @@ namespace ToolKit.HYControls.HYForm
                 this.Icon = ConvertToIcon(value);
             }
         }
+
         [CategoryAttribute("其他"), DescriptionAttribute("隐藏标题栏")]
         public bool HideTitle
         {
@@ -195,6 +195,7 @@ namespace ToolKit.HYControls.HYForm
                 this._HideTitle = value;
             }
         }
+
         [CategoryAttribute("其他"), DescriptionAttribute("按钮菜单")]
         public ContextMenuStrip DropContextMenuStrip
         {
@@ -209,6 +210,7 @@ namespace ToolKit.HYControls.HYForm
                 this._DropContextMenuStrip = value;
             }
         }
+
         [CategoryAttribute("其他"), DescriptionAttribute("隐藏或者显示菜单按钮")]
         public bool HideDropButtom
         {
@@ -250,10 +252,7 @@ namespace ToolKit.HYControls.HYForm
                 Rect.AddRectangle(new RectangleF(rect.X, rect.Y, rect.Width - 1, rect.Height - 1));
                 e.Graphics.DrawPath(new Pen(_BorderColor), Rect);
             }
-
         }
-
-
 
         /// <summary>
         /// 转换Image为Icon
@@ -300,8 +299,8 @@ namespace ToolKit.HYControls.HYForm
         }
 
         public event EventHandler UserClick;
-        public event EventHandler HelpClick;
 
+        public event EventHandler HelpClick;
 
         public BaseForm()
         {
@@ -324,7 +323,6 @@ namespace ToolKit.HYControls.HYForm
                 label3.Text = "";
             }
         }
-
 
         private void Label_min_Click(object sender, EventArgs e)
         {
@@ -393,6 +391,7 @@ namespace ToolKit.HYControls.HYForm
                 }
             }
         }
+
         protected override CreateParams CreateParams
         {
             get
@@ -402,6 +401,7 @@ namespace ToolKit.HYControls.HYForm
                 return cp;
             }
         }
+
         [CategoryAttribute("其他"), DescriptionAttribute("隐藏或者显示边框")]
         public bool HideBorder
         {
@@ -417,8 +417,6 @@ namespace ToolKit.HYControls.HYForm
             }
         }
 
-
-
         /// <summary>
         /// 弹窗提示消息框
         /// </summary>
@@ -429,6 +427,7 @@ namespace ToolKit.HYControls.HYForm
         {
             return MessageWindow.Show(message, title);
         }
+
         /// <summary>
         /// 弹窗正常(绿色)消息框
         /// </summary>
@@ -437,9 +436,9 @@ namespace ToolKit.HYControls.HYForm
         /// <returns></returns>
         public DialogResult ShowNormal(string message, string title = "提示")
         {
-
             return MessageWindow.ShowNormal(message, title);
         }
+
         /// <summary>
         /// 弹窗错误(红色)消息框
         /// </summary>
@@ -448,9 +447,9 @@ namespace ToolKit.HYControls.HYForm
         /// <returns></returns>
         public DialogResult ShowError(string message, string title = "提示")
         {
-
             return MessageWindow.ShowError(message, title);
         }
+
         /// <summary>
         /// 弹窗警告(黄色)消息框
         /// </summary>
@@ -459,9 +458,9 @@ namespace ToolKit.HYControls.HYForm
         /// <returns></returns>
         public DialogResult ShowWarn(string message, string title = "提示")
         {
-
             return MessageWindow.ShowWarn(message, title);
         }
+
         /// <summary>
         /// 输入字符串弹窗
         /// </summary>
@@ -501,8 +500,6 @@ namespace ToolKit.HYControls.HYForm
             return HYInputDialog.InputDoubleDialog(ref value, checkEmpty, desc, topMost);
         }
 
-
-
         /// <summary>
         /// 弹窗OK提醒消息框
         /// </summary>
@@ -512,6 +509,7 @@ namespace ToolKit.HYControls.HYForm
         {
             MessageTip.ShowOk(text, delay);
         }
+
         /// <summary>
         /// 弹窗警告提醒消息框
         /// </summary>
@@ -521,6 +519,7 @@ namespace ToolKit.HYControls.HYForm
         {
             MessageTip.ShowWarning(text, delay);
         }
+
         /// <summary>
         /// 弹窗错误提醒消息框
         /// </summary>
@@ -530,6 +529,7 @@ namespace ToolKit.HYControls.HYForm
         {
             MessageTip.ShowError(text, delay);
         }
+
         /// <summary>
         /// 弹窗图片提醒消息框
         /// </summary>
@@ -550,6 +550,7 @@ namespace ToolKit.HYControls.HYForm
         {
             MessageTipWindow.ShowOKTip(message, title);
         }
+
         /// <summary>
         /// 左下角消息提示框(error)
         /// </summary>
@@ -559,6 +560,7 @@ namespace ToolKit.HYControls.HYForm
         {
             MessageTipWindow.ShowErrorTip(message, title);
         }
+
         /// <summary>
         /// 左下角消息提示框(警告)
         /// </summary>
@@ -568,7 +570,6 @@ namespace ToolKit.HYControls.HYForm
         {
             MessageTipWindow.ShowWarnTip(message, title);
         }
-
 
         private void Label1_Click(object sender, EventArgs e)
         {

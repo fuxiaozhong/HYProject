@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Management.Instrumentation;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using HYProject.Helper;
@@ -19,8 +11,8 @@ namespace HYProject.ToolForm
 {
     public partial class Form_DataSheet : BaseForm
     {
-
         private static Form_DataSheet instance;
+
         //程序运行时创建一个静态只读的进程辅助对象
         private static readonly object syncRoot = new object();
 

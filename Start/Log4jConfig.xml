@@ -1,8 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <log4net>
 
-
-
 	<appender name="WarnAppender" type="log4net.Appender.RollingFileAppender">
 		<!--保存路径：下面路径项目启动的时候自动在C盘中创建log、logError文件-->
 		<file value="Logs\\Warn\\" />

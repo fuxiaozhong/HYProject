@@ -4,7 +4,6 @@ using System.Text;
 
 namespace ToolKit.CommunicAtion
 {
-
     [Serializable]
     public class COMSerailPortDevice
     {

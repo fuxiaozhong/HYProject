@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Threading;
 
 using HslCommunication;
 
@@ -13,7 +8,7 @@ namespace HYProject
 {
     public class RunThread
     {
-        static Thread MonitoringCameraSignal;
+        private static Thread MonitoringCameraSignal;
 
         public static void Start()
         {
@@ -22,7 +17,6 @@ namespace HYProject
                 MonitoringCameraSignal = new Thread(CameraSignal);
             }
             MonitoringCameraSignal.Start();
-
         }
 
         private static void CameraSignal()

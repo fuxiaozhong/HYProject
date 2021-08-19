@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using HYProject.Helper;
 using HYProject.Model;
 
 using ToolKit.HYControls.HYForm;
@@ -21,6 +13,7 @@ namespace HYProject.ToolForm
         {
             InitializeComponent();
         }
+
         protected override CreateParams CreateParams
         {
             get
@@ -82,7 +75,6 @@ namespace HYProject.ToolForm
             num_KJ_offset.Value = DataLimit.Instance.Offset_KJ;
             num_S1_offset.Value = DataLimit.Instance.Offset_S1;
             num_S2_offset.Value = DataLimit.Instance.Offset_S2;
-
         }
 
         private void Button_save_Click(object sender, EventArgs e)
@@ -137,10 +129,8 @@ namespace HYProject.ToolForm
             DataLimit.Instance.Offset_S1 = num_S1_offset.Value;
             DataLimit.Instance.Offset_S2 = num_S2_offset.Value;
 
-
             DataLimit.Instance.Save();
             MessageWindow.Show("保存成功", "提示");
-
         }
 
         private void Button_cancel_Click(object sender, EventArgs e)

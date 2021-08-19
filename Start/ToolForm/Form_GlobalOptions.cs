@@ -24,7 +24,6 @@ namespace HYProject.ToolForm
                         if (instance == null)
                         {
                             instance = new Form_GlobalOptions();
-
                         }
                     }
                 }

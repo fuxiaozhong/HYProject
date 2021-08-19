@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.IO.Ports;
 using System.Runtime.Serialization.Formatters.Binary;
 
 using HslCommunication;
 using HslCommunication.Profinet.Melsec;
-
-using HYProject.Model;
 
 using ToolKit.CommunicAtion;
 using ToolKit.HalconTool.Model;
@@ -67,6 +64,7 @@ namespace HYProject
         /// 图像保存路径
         /// </summary>
         internal string Save_Image_Path = System.Windows.Forms.Application.StartupPath + "\\Images";
+
         /// <summary>
         /// 产品库
         /// </summary>
@@ -138,8 +136,6 @@ namespace HYProject
         /// </summary>
         internal bool IsSaveImage_DumpImage;
 
-
-
         /// <summary>
         /// 光源串口名称
         /// </summary>
@@ -150,12 +146,10 @@ namespace HYProject
         /// </summary>
         internal int LightSourceBaudRate = 19200;
 
-
         /// <summary>
         /// 光源串口奇偶校验
         /// </summary>
         internal Parity LightSourceParity = Parity.None;
-
 
         /// <summary>
         /// 光源串口数据位
@@ -166,7 +160,6 @@ namespace HYProject
         /// 光源串口停止位
         /// </summary>
         internal StopBits LightSourceStopBits = StopBits.One;
-
 
         /// <summary>
         /// 光源
@@ -184,6 +177,7 @@ namespace HYProject
         /// </summary>
         [NonSerialized]
         internal OperateResult Fx3uPLCResult;
+
         /// <summary>
         /// PLC连接 ip
         /// </summary>
@@ -194,7 +188,6 @@ namespace HYProject
         /// </summary>
         internal int Fx3uPLC_Port = 8080;
 
-
         /// <summary>
         /// 卡尺对象
         /// </summary>
@@ -204,14 +197,6 @@ namespace HYProject
         /// 卡尺对象
         /// </summary>
         internal string NowProduct;
-
-
-
-
-
-
-
-
 
         /// <summary>
         /// 保存对象到文件

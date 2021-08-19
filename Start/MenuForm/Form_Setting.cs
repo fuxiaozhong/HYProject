@@ -3,11 +3,8 @@ using System.Threading;
 using System.Windows.Forms;
 
 using HYProject.Helper;
-using HYProject.ToolForm;
 
-using ToolKit.HYControls;
 using ToolKit.HYControls.HYForm;
-using ToolKit.MaterialSkin.Controls;
 
 namespace HYProject.MenuForm
 {
@@ -69,8 +66,6 @@ namespace HYProject.MenuForm
             AppParam.Instance.IsSaveImage_BmpImage = checkBox8.Checked;
             AppParam.Instance.IsSaveImage_DumpImage = checkBox9.Checked;
 
-
-
             PowerBoot.SetMeAutoStart(AppParam.Instance.PowerBoot);
             PowerBoot.CreateDesktopShortcut(AppParam.Instance.DesktopShortcut);
             AppParam.Instance.Save_To_File();
@@ -95,8 +90,6 @@ namespace HYProject.MenuForm
             checkBox7.Checked = AppParam.Instance.IsSaveImage_NG;
             checkBox8.Checked = AppParam.Instance.IsSaveImage_BmpImage;
             checkBox9.Checked = AppParam.Instance.IsSaveImage_DumpImage;
-
-
 
             Thread thread = new Thread(DiskRefresh)
             {
@@ -146,17 +139,13 @@ namespace HYProject.MenuForm
                 {
                 }
 
-
-
                 Thread.Sleep(100);
             }
         }
-
 
         private void CheckBox5_CheckedChanged(object sender, EventArgs e)
         {
             groupBox1.Visible = checkBox5.Checked;
         }
-
     }
 }

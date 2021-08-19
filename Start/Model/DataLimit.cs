@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using HYProject.Helper;
 using HYProject.ToolForm;
@@ -15,8 +10,10 @@ namespace HYProject.Model
     public class DataLimit
     {
         private static DataLimit instance;
+
         //屏蔽
         internal bool Check_W;
+
         internal bool Check_M1;
         internal bool Check_M2;
         internal bool Check_PT;
@@ -24,8 +21,10 @@ namespace HYProject.Model
         internal bool Check_KJ;
         internal bool Check_S1;
         internal bool Check_S2;
+
         //下限
         internal decimal LowerLimit_W;
+
         internal decimal LowerLimit_M1;
         internal decimal LowerLimit_M2;
         internal decimal LowerLimit_PT;
@@ -33,8 +32,10 @@ namespace HYProject.Model
         internal decimal LowerLimit_KJ;
         internal decimal LowerLimit_S1;
         internal decimal LowerLimit_S2;
+
         //基准
         internal decimal Standard_W;
+
         internal decimal Standard_M1;
         internal decimal Standard_M2;
         internal decimal Standard_PT;
@@ -42,8 +43,10 @@ namespace HYProject.Model
         internal decimal Standard_KJ;
         internal decimal Standard_S1;
         internal decimal Standard_S2;
+
         //上限
         internal decimal UpperLimit_W;
+
         internal decimal UpperLimit_M1;
         internal decimal UpperLimit_M2;
         internal decimal UpperLimit_PT;
@@ -51,8 +54,10 @@ namespace HYProject.Model
         internal decimal UpperLimit_KJ;
         internal decimal UpperLimit_S1;
         internal decimal UpperLimit_S2;
+
         //补偿
         internal decimal Offset_W;
+
         internal decimal Offset_M1;
         internal decimal Offset_M2;
         internal decimal Offset_PT;
@@ -60,10 +65,6 @@ namespace HYProject.Model
         internal decimal Offset_KJ;
         internal decimal Offset_S1;
         internal decimal Offset_S2;
-
-
-
-
 
         /// <summary>
         /// 校验数据
@@ -250,7 +251,6 @@ namespace HYProject.Model
             return false;
         }
 
-
         //程序运行时创建一个静态只读的进程辅助对象
         private static readonly object syncRoot = new object();
 
@@ -283,18 +283,16 @@ namespace HYProject.Model
 
         public void Save()
         {
-            Serialization.Save(DataLimit.Instance,AppParam.Instance.NowProduct +"_DataLimit");
+            Serialization.Save(DataLimit.Instance, AppParam.Instance.NowProduct + "_DataLimit");
         }
+
         public void Read()
         {
-            instance = (DataLimit)Serialization.Read( AppParam.Instance.NowProduct + "_DataLimit");
+            instance = (DataLimit)Serialization.Read(AppParam.Instance.NowProduct + "_DataLimit");
             if (instance == null)
             {
                 instance = new DataLimit();
             }
         }
-
-
-
     }
 }

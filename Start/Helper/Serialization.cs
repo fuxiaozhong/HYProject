@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
 namespace HYProject.Helper
@@ -21,6 +20,7 @@ namespace HYProject.Helper
             bFormat.Serialize(stream, obj);
             stream.Close();
         }
+
         /// <summary>
         /// 序列化保存对象
         /// </summary>
@@ -51,6 +51,7 @@ namespace HYProject.Helper
             }
             return null;
         }
+
         /// <summary>
         /// 读取序列化保存的对象
         /// </summary>

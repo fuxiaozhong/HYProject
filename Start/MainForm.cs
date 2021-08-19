@@ -32,7 +32,6 @@ namespace HYProject
 {
     public partial class MainForm : BaseForm
     {
-
         private static MainForm instance;
 
         //程序运行时创建一个静态只读的进程辅助对象
@@ -63,6 +62,7 @@ namespace HYProject
             InitializeComponent();
             HOperatorSet.SetSystem("clip_region", "false");
             CheckForIllegalCrossThreadCalls = false;
+            IsMdiContainer = true;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -72,8 +72,9 @@ namespace HYProject
             else
                 this.WindowState = FormWindowState.Normal;
             //添加主页面显示窗口
-            split_Main.Panel1.Controls.Add(DisplayForm.Instance);
-            split_Main.Panel2.Controls.Add(Form_DateVsualization.Instance);
+            //
+            //split_Main.Panel1.Controls.Add(DisplayForm.Instance);
+            //split_Main.Panel2.Controls.Add(Form_DateVsualization.Instance);
 
             string[] cameraNmaes = new string[Cameras.Instance.GetCameras.Count];
             for (int i = 0; i < Cameras.Instance.GetCameras.Count; i++)
@@ -102,7 +103,6 @@ namespace HYProject
             disk.Start();
             //开启拍照信号检测线程
             RunThread.Start();
-
         }
 
         //刷新界面
@@ -133,7 +133,6 @@ namespace HYProject
                         toolStripLabel2.ForeColor = Color.Red;
                         toolStripLabel2.Text = "PLC:未连接";
                     }
-
                 }
                 catch { }
                 Thread.Sleep(50);
@@ -229,8 +228,6 @@ namespace HYProject
             Thread.Sleep(1000);
         }
 
-
-
         private void Button_Setting_Click(object sender, EventArgs e)
         {
             Form_Setting form_Setting = new Form_Setting();
@@ -246,7 +243,6 @@ namespace HYProject
                 AppParam.Instance.Runing = true;
                 运行ToolStripMenuItem.Text = "停    止";
                 Log.WriteRunLog("开始运行...");
-
             }
             else
             {
@@ -314,7 +310,6 @@ namespace HYProject
             }
         }
 
-
         private void Button3_Click(object sender, EventArgs e)
         {
             Form_ProjectLibrary.Instance.Show();
@@ -366,8 +361,6 @@ namespace HYProject
             Form_DataSheet.Instance.Show();
         }
 
-
-
         private void MainForm_UserClick(object sender, EventArgs e)
         {
             Form_User form_User = new Form_User();
@@ -383,11 +376,6 @@ namespace HYProject
         private void 插件ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             materialContextMenuStrip1.Show(Cursor.Position);
-        }
-
-        private void MaterialFlatButton1_Click(object sender, EventArgs e)
-        {
-            ShowErrorTip("123123123123123");
         }
     }
 }

@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.IO;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Runtime.Remoting;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ToolKit.HYControls
@@ -38,12 +31,9 @@ namespace ToolKit.HYControls
             Padding = new System.Drawing.Point(CLOSE_SIZE, 5);
             // DrawItem += new DrawItemEventHandler(this.MainTabControl_DrawItem);
             MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainTabControl_MouseDown);
-
         }
 
-        const int CLOSE_SIZE = 15;
-
-
+        private const int CLOSE_SIZE = 15;
 
         //关闭按钮功能
         private void MainTabControl_MouseDown(object sender, MouseEventArgs e)
@@ -54,7 +44,7 @@ namespace ToolKit.HYControls
                 {
                     int x = e.X, y = e.Y;
 
-                    //计算关闭区域     
+                    //计算关闭区域
                     Rectangle myTabRect = this.GetTabRect(this.SelectedIndex); ;
 
                     //myTabRect.Offset(myTabRect.Width - (CLOSE_SIZE + 3), 2);
@@ -62,7 +52,7 @@ namespace ToolKit.HYControls
                     myTabRect.Width = CLOSE_SIZE;
                     myTabRect.Height = CLOSE_SIZE;
 
-                    //如果鼠标在区域内就关闭选项卡     
+                    //如果鼠标在区域内就关闭选项卡
                     bool isClose = x > myTabRect.X && x < myTabRect.Right && y > myTabRect.Y && y < myTabRect.Bottom;
                     if (isClose == true)
                     {
@@ -74,6 +64,7 @@ namespace ToolKit.HYControls
         }
 
         private Color _backColor = System.Drawing.SystemColors.Control;
+
         [Browsable(true)]
         [EditorBrowsable(EditorBrowsableState.Always)]
         [DefaultValue(typeof(Color), "Control")]
@@ -88,6 +79,7 @@ namespace ToolKit.HYControls
         }
 
         private Color _borderColor = Color.FromArgb(232, 232, 232);
+
         [DefaultValue(typeof(Color), "232, 232, 232")]
         [Description("TabContorl边框色")]
         public Color BorderColor
@@ -99,7 +91,9 @@ namespace ToolKit.HYControls
                 base.Invalidate(true);
             }
         }
+
         private bool _ShowClose = true;
+
         [DefaultValue(typeof(bool), "true")]
         [Description("是否显示关闭按钮")]
         public bool ShowClose
@@ -111,7 +105,9 @@ namespace ToolKit.HYControls
                 base.Invalidate(true);
             }
         }
+
         private bool _ShowIndex = true;
+
         [DefaultValue(typeof(bool), "true")]
         [Description("是否显示序号")]
         public bool ShowIndex
@@ -125,6 +121,7 @@ namespace ToolKit.HYControls
         }
 
         private Color _headSelectedBackColor = Color.FromArgb(255, 85, 51);
+
         [DefaultValue(typeof(Color), "255, 85, 51")]
         [Description("TabPage头部选中后的背景颜色")]
         public Color HeadSelectedBackColor
@@ -134,6 +131,7 @@ namespace ToolKit.HYControls
         }
 
         private Color _headSelectedBorderColor = Color.FromArgb(232, 232, 232);
+
         [DefaultValue(typeof(Color), "232, 232, 232")]
         [Description("TabPage头部选中后的边框颜色")]
         public Color HeadSelectedBorderColor
@@ -143,6 +141,7 @@ namespace ToolKit.HYControls
         }
 
         private Color _headerBackColor = Color.FromArgb(55, 71, 79);
+
         [DefaultValue(typeof(Color), "55, 71, 79")]
         [Description("TabPage头部默认背景颜色")]
         public Color HeaderBackColor
@@ -218,7 +217,6 @@ namespace ToolKit.HYControls
             this.PaintTheSelectedTab(e);
         }
 
-
         private void PaintAllTheTabs(System.Windows.Forms.PaintEventArgs e)
         {
             if (this.TabCount > 0)
@@ -243,10 +241,8 @@ namespace ToolKit.HYControls
                             Point p3 = new Point(this.GetTabRect(index).X + this.GetTabRect(index).Width - 5, this.GetTabRect(index).Y + 10);
                             Point p4 = new Point(this.GetTabRect(index).X + this.GetTabRect(index).Width - 15, this.GetTabRect(index).Y + this.GetTabRect(index).Height - 10);
                             e.Graphics.DrawLine(objpen, p3, p4);
-
                         }
                     }
-
                 }
             }
         }
@@ -277,8 +273,6 @@ namespace ToolKit.HYControls
                 graph.DrawLine(new Pen(_headerBackColor), rect.Right + 2, rect.Bottom, rect.Left + 1, rect.Bottom);
             }
 
-
-
             buttonBrush.Dispose();
         }
 
@@ -297,7 +291,6 @@ namespace ToolKit.HYControls
                 //graph.Dispose();
 
                 graph.DrawPath(borderPen, path);
-
             }
             else
             {
@@ -360,6 +353,7 @@ namespace ToolKit.HYControls
 
             graph.DrawString(tabtext, tabFont, forebrush, rect2, format);
         }
+
         public static int GetStringWidth(
            string strSource,
            System.Drawing.Graphics g,
@@ -376,6 +370,7 @@ namespace ToolKit.HYControls
 
             return (int)fltWidth;
         }
+
         /// <summary>
         /// 设置 TabPage 内容页边框色
         /// </summary>
@@ -388,7 +383,6 @@ namespace ToolKit.HYControls
                 //borderRect.Inflate(1, 1);
                 Rectangle rect = new Rectangle(borderRect.X - 2, borderRect.Y - 1, borderRect.Width + 5, borderRect.Height + 2);
                 ControlPaint.DrawBorder(e.Graphics, rect, this.BorderColor, ButtonBorderStyle.Solid);
-
             }
         }
 
@@ -405,7 +399,6 @@ namespace ToolKit.HYControls
             selrect = this.GetTabRect(this.SelectedIndex);
             selrectRight = selrect.Right;
             e.Graphics.DrawLine(new Pen(_headSelectedBackColor), selrect.Left, selrect.Bottom + 1, selrectRight, selrect.Bottom + 1);
-
         }
 
         private GraphicsPath GetTabPath(int index)
@@ -420,12 +413,15 @@ namespace ToolKit.HYControls
                 case TabAlignment.Top:
 
                     break;
+
                 case TabAlignment.Bottom:
 
                     break;
+
                 case TabAlignment.Left:
 
                     break;
+
                 case TabAlignment.Right:
 
                     break;
@@ -459,8 +455,5 @@ namespace ToolKit.HYControls
             SendMessage(this.Handle, WM_FONTCHANGE, IntPtr.Zero, IntPtr.Zero);
             this.UpdateStyles();
         }
-
-
-
     }
 }

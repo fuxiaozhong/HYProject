@@ -2,8 +2,6 @@
 using System.Diagnostics;
 using System.Linq;
 
-using HYProject.ToolForm;
-
 using ToolKit.CamreaSDK;
 
 namespace HYProject.Model
@@ -42,7 +40,6 @@ namespace HYProject.Model
         {
             get { return this.cameras; }
         }
-
 
         /// <summary>
         /// 相机列表
@@ -133,7 +130,6 @@ namespace HYProject.Model
         {
             InitCamera("Cam1", CameraType.海康威视);
             InitCamera("Cam2", CameraType.大华相机);
-
         }
 
         /// <summary>
@@ -211,7 +207,7 @@ namespace HYProject.Model
             stopwatch.Start();
             Work.CameraWork(cameraName, ho_image);
             stopwatch.Stop();
-            Log.WriteRunLog(cameraName + "图像处理完成,耗时:"+ stopwatch.ElapsedMilliseconds+ "ms");
+            Log.WriteRunLog(cameraName + "图像处理完成,耗时:" + stopwatch.ElapsedMilliseconds + "ms");
         }
     }
 

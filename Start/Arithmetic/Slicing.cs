@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using HalconDotNet;
+﻿using HalconDotNet;
 
 using ToolKit.DisplayWindow;
 using ToolKit.HalconTool;
@@ -13,13 +7,9 @@ namespace HYProject.Arithmetic
 {
     public class Slicing
     {
-
         public static void Test(HObject iamge, HalconDisplayWindow displayWindow)
         {
-
-
-            // Local iconic variables 
-
+            // Local iconic variables
 
             HObject ho_ImageScaled, ho_Region, ho_ConnectedRegions;
             HObject ho_SelectedRegions, ho_SortedRegions, ho_RegionUnion;
@@ -27,7 +17,7 @@ namespace HYProject.Arithmetic
             HObject ho_RegionFillUp, ho_Cross, ho_Cross1, ho_Arrow1;
             HObject ho_FirstObj, ho_LastObj, ho_SecondObj;
 
-            // Local control variables 
+            // Local control variables
 
             HTuple hv_UsedThreshold = new HTuple();
             HTuple hv_Count = new HTuple(), hv_Row2 = new HTuple();
@@ -108,7 +98,6 @@ namespace HYProject.Arithmetic
                 HalconUtils.RectangleVertices(out ho_Cross1, hv_Row2, hv_Column2, hv_Phi2, hv_Length12,
                     hv_Length22, out hv_Rows1, out hv_Columns1);
 
-
                 //*********************************  W  ***************************************************
                 using (HDevDisposeHelper dh = new HDevDisposeHelper())
                 {
@@ -136,8 +125,6 @@ namespace HYProject.Arithmetic
                 }
                 //*****************************************************************************************
 
-
-
                 //*********************************  M1  ***************************************************
                 //第一个
                 ho_FirstObj.Dispose();
@@ -159,8 +146,6 @@ namespace HYProject.Arithmetic
                 }
                 //*****************************************************************************************
 
-
-
                 //*********************************  M2  ***************************************************
                 //第一个
                 ho_LastObj.Dispose();
@@ -181,7 +166,6 @@ namespace HYProject.Arithmetic
                 }
 
                 //*****************************************************************************************
-
 
                 //*********************************  孔距  ***************************************************
                 //第一个
@@ -211,8 +195,6 @@ namespace HYProject.Arithmetic
                     displayWindow.Disp_Message("孔距: " + hv_Pitch_Distance.D.ToString("0.000"), 16, 300, 10, "green");
                 }
                 //*****************************************************************************************
-
-
 
                 //*********************************  PT  ***************************************************
                 //第一个
@@ -246,7 +228,6 @@ namespace HYProject.Arithmetic
 
                 //*****************************************************************************************
 
-
                 //*********************************  P  ***************************************************
                 //第一个
                 ho_FirstObj.Dispose();
@@ -271,10 +252,6 @@ namespace HYProject.Arithmetic
                     displayWindow.Disp_Message("P: " + hv_P_Distance.D.ToString("0.000"), 16, 500, 10, "green");
                 }
                 //*****************************************************************************************
-
-
-
-
             }
             catch (HalconException HDevExpDefaultException)
             {
@@ -332,8 +309,6 @@ namespace HYProject.Arithmetic
                 hv_SecondObj_Row.Dispose();
                 hv_SecondObj_Column.Dispose();
                 hv_P_Distance.Dispose();
-
-
             }
             ho_ImageScaled.Dispose();
             ho_Region.Dispose();
@@ -388,8 +363,6 @@ namespace HYProject.Arithmetic
             hv_SecondObj_Row.Dispose();
             hv_SecondObj_Column.Dispose();
             hv_P_Distance.Dispose();
-
         }
-
     }
 }

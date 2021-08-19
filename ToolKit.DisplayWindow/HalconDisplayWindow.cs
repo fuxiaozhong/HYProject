@@ -579,7 +579,6 @@ namespace ToolKit.DisplayWindow
                 {
                     //不处理
                 }
-
             }
             catch (Exception)
             {
@@ -1042,17 +1041,13 @@ namespace ToolKit.DisplayWindow
             }
         }
 
-
-
         private void HWindowControl1_MouseLeave(object sender, EventArgs e)
         {
             label1.Text = "";
         }
 
-
         private void 缩放ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
         }
 
         private void DisplayWindow_Resize(object sender, EventArgs e)

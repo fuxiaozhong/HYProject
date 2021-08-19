@@ -21,8 +21,6 @@ namespace HYProject
             m_lstLog["run_logo"] = log4net.LogManager.GetLogger("run_logo");
         }
 
-
-
         /// <summary>
         /// 功能描述:写入警告日志
         /// </summary>

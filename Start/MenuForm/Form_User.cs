@@ -1,22 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 using ToolKit.HYControls;
 using ToolKit.HYControls.HYForm;
-using ToolKit.MaterialSkin.Controls;
 
 namespace HYProject.MenuForm
 {
     public partial class Form_User : BaseForm
     {
-
-
-
         public Form_User()
         {
             InitializeComponent();
-
         }
 
         public string Power;

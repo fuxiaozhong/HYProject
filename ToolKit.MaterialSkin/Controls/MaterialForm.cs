@@ -145,6 +145,7 @@ namespace ToolKit.MaterialSkin.Controls
             MinDown,
             None
         }
+
         protected override CreateParams CreateParams
         {
             get
@@ -154,6 +155,7 @@ namespace ToolKit.MaterialSkin.Controls
                 return cp;
             }
         }
+
         private readonly Cursor[] _resizeCursors = { Cursors.SizeNESW, Cursors.SizeWE, Cursors.SizeNWSE, Cursors.SizeWE, Cursors.SizeNS };
 
         private Rectangle _minButtonBounds;
@@ -260,8 +262,6 @@ namespace ToolKit.MaterialSkin.Controls
                 _headerMouseDown = false;
             }
         }
-
-
 
         protected override void OnMouseDown(MouseEventArgs e)
         {
@@ -431,7 +431,6 @@ namespace ToolKit.MaterialSkin.Controls
 
         private void ResizeForm(ResizeDirection direction)
         {
-
             if (DesignMode) return;
             var dir = -1;
             switch (direction)
@@ -573,13 +572,12 @@ namespace ToolKit.MaterialSkin.Controls
         private void InitializeComponent()
         {
             this.SuspendLayout();
-            // 
+            //
             // MaterialForm
-            // 
+            //
             this.ClientSize = new System.Drawing.Size(772, 363);
             this.Name = "MaterialForm";
             this.ResumeLayout(false);
-
         }
     }
 

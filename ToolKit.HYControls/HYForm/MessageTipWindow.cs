@@ -1,16 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
-using static System.Windows.Forms.AxHost;
 
 namespace ToolKit.HYControls.HYForm
 {
@@ -21,14 +13,18 @@ namespace ToolKit.HYControls.HYForm
 
         //下面是可用的常量,按照不合的动画结果声明本身须要的
         private const int AW_VER_NEGATIVE = 0x0008;//自下向上显示窗口,该标记可以在迁移转变动画和滑动动画中应用。应用AW_CENTER标记时忽视该标记该标记
+
         private const int AW_HIDE = 0x10000;//隐蔽窗口
         private const int AW_ACTIVE = 0x20000;//激活窗口,在应用了AW_HIDE标记后不要应用这个标记
         private const int AW_SLIDE = 0x40000;//应用滑动类型动画结果,默认为迁移转变动画类型,当应用AW_CENTER标记时,这个标记就被忽视
         private const int AW_BLEND = 0x80000;//应用淡入淡出结果
+
         [DllImport("user32.dll")]//命名空间System.Runtime.InteropServices;
         public static extern bool ReleaseCapture();
+
         [DllImport("user32.dll")]
         public static extern bool SendMessage(IntPtr hwnd, int wMsg, int wParam, int lParam);
+
         public const int WM_SYSCOMMAND = 0x0112;
         public const int SC_MOVE = 0xF010;
         public const int HTCAPTION = 0x0002;
@@ -36,8 +32,10 @@ namespace ToolKit.HYControls.HYForm
         public const int SC_MAXIMIZE = 0xF030;
         public const int SC_RESTORE = 0xF120;
         public const int SC_SIZE = 0xF000;
+
         //改变窗体大小，SC_SIZE+下面的值
         public const int LEFT = 0x0001;//光标在窗体左边缘
+
         public const int RIGHT = 0x0002;//右边缘
         public const int UP = 0x0003;//上边缘
         public const int LEFTUP = 0x0004;//左上角
@@ -45,7 +43,6 @@ namespace ToolKit.HYControls.HYForm
         public const int BOTTOM = 0x0006;//下边缘
         public const int LEFTBOTTOM = 0x0007;//左下角
         public const int RIGHTBOTTOM = 0x0008;//右下角
-
 
         public MessageTipWindow(string message, string title = "正常 - 提示")
         {
@@ -64,10 +61,10 @@ namespace ToolKit.HYControls.HYForm
             Thread thread = new Thread(Test);
             thread.IsBackground = true;
             thread.Start();
-
-
         }
+
         private bool state = true;
+
         private void Test()
         {
             Thread.Sleep(5000);
@@ -109,6 +106,7 @@ namespace ToolKit.HYControls.HYForm
             ReleaseCapture();//释放label1对鼠标的捕捉
             SendMessage(this.Handle, WM_SYSCOMMAND, SC_MOVE + HTCAPTION, 0);
         }
+
         public void style(string value)
         {
             if (value == "OK")
@@ -143,12 +141,14 @@ namespace ToolKit.HYControls.HYForm
             messageTipWindow.style("OK");
             messageTipWindow.Show();
         }
+
         public static void ShowErrorTip(string message, string title = "提示 - 错误")
         {
             MessageTipWindow messageTipWindow = new MessageTipWindow(message, title);
             messageTipWindow.style("Error");
             messageTipWindow.Show();
         }
+
         public static void ShowWarnTip(string message, string title = "提示 - 警告")
         {
             MessageTipWindow messageTipWindow = new MessageTipWindow(message, title);

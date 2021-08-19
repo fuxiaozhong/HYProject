@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms.VisualStyles;
 using System.Windows.Forms;
-using NPOI.SS.UserModel;
+
 using NPOI.HSSF.UserModel;
+using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
 
 namespace HYProject.Helper
@@ -235,4 +231,3 @@ namespace HYProject.Helper
         }
     }
 }
-

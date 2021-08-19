@@ -42,6 +42,7 @@ namespace ToolKit.DisplayWindow
                 return HWindows.Values.ElementAt(0);
             }
         } /// <summary>
+
           /// 获取窗口
           /// </summary>
           /// <param name="key">下标0开始</param>
@@ -54,7 +55,6 @@ namespace ToolKit.DisplayWindow
                 {
                     return HWindows.Values.ElementAt(index);
                 }
-
                 else
                 {
                     return HWindows.Values.ElementAt(0);
@@ -102,7 +102,6 @@ namespace ToolKit.DisplayWindow
                 }
             }
         }
-
 
         public string[] CameraNames
         {
@@ -211,7 +210,6 @@ namespace ToolKit.DisplayWindow
                         count = 12;
                         break;
                 }
-
             }
         }
 

@@ -21,6 +21,7 @@ namespace ToolKit.CommunicAtion
         private bool _StateCH2 = true;
         private bool _StateCH3 = true;
         private bool _StateCH4 = true;
+
         //厂商
         private LightSourceCompany lightSourceCompany = LightSourceCompany.盟拓;
 
@@ -113,6 +114,7 @@ namespace ToolKit.CommunicAtion
                 SetCH1State();
             }
         }
+
         /// <summary>
         /// 2通道状态 true打开 false关闭
         /// </summary>
@@ -175,7 +177,6 @@ namespace ToolKit.CommunicAtion
         {
             get
             {
-
                 if (COMSerailPortDevice == null)
                 {
                     return false;
@@ -184,6 +185,7 @@ namespace ToolKit.CommunicAtion
                 return COMSerailPortDevice.IsOpen;
             }
         }
+
         [CategoryAttribute("光源控制器厂商"), DescriptionAttribute("光源控制器厂商")]
         public LightSourceCompany LightSourceCompany
         {
@@ -200,7 +202,6 @@ namespace ToolKit.CommunicAtion
 
         [NonSerialized]
         private COMSerailPortDevice COMSerailPortDevice;
-
 
         /// <summary>
         /// 打开光源通讯
@@ -293,7 +294,6 @@ namespace ToolKit.CommunicAtion
 
             order += "C#";
             SendOrder(order);
-
         }
 
         private void SendOrder(string order)
@@ -341,39 +341,38 @@ namespace ToolKit.CommunicAtion
             StateCH4 = true;
         }
 
-
         private void SetCH1Value()
         {
             if (lightSourceCompany == LightSourceCompany.盟拓)
                 SendOrder("AC" + _CH1.ToString("D3") + "OK");
             else
                 Send();
-
         }
+
         private void SetCH2Value()
         {
             if (lightSourceCompany == LightSourceCompany.盟拓)
                 SendOrder("bC" + _CH2.ToString("D3") + "OK");
             else
                 Send();
-
         }
+
         private void SetCH3Value()
         {
             if (lightSourceCompany == LightSourceCompany.盟拓)
                 SendOrder("CC" + _CH3.ToString("D3") + "OK");
             else
                 Send();
-
         }
+
         private void SetCH4Value()
         {
             if (lightSourceCompany == LightSourceCompany.盟拓)
                 SendOrder("DC" + _CH4.ToString("D3") + "OK");
             else
                 Send();
-
         }
+
         private void SetCH1State()
         {
             if (lightSourceCompany == LightSourceCompany.盟拓)
@@ -381,30 +380,29 @@ namespace ToolKit.CommunicAtion
             else
                 Send();
         }
+
         private void SetCH2State()
         {
             if (lightSourceCompany == LightSourceCompany.盟拓)
                 SendOrder("A" + (_StateCH2 ? "ON" : "OF") + "OK");
             else
                 Send();
-
         }
+
         private void SetCH3State()
         {
             if (lightSourceCompany == LightSourceCompany.盟拓)
                 SendOrder("A" + (_StateCH3 ? "ON" : "OF") + "OK");
             else
                 Send();
-
         }
+
         private void SetCH4State()
         {
             if (lightSourceCompany == LightSourceCompany.盟拓)
                 SendOrder("A" + (_StateCH4 ? "ON" : "OF") + "OK");
             else
                 Send();
-
         }
-
     }
 }

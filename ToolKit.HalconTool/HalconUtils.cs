@@ -1048,13 +1048,10 @@ namespace ToolKit.HalconTool
         /// <param name="hv_HeadWidth"></param>
         public static void double_sided_arrow(out HObject ho_Arrow, HTuple hv_StartRow, HTuple hv_StartColumn, HTuple hv_EndRow, HTuple hv_EndColumn, HTuple hv_HeadLength, HTuple hv_HeadWidth)
         {
-
-
-
-            // Local iconic variables 
+            // Local iconic variables
 
             HObject ho_Arrow1, ho_Arrow2, ho_Region1, ho_Region2;
-            // Initialize local and output iconic variables 
+            // Initialize local and output iconic variables
             HOperatorSet.GenEmptyObj(out ho_Arrow);
             HOperatorSet.GenEmptyObj(out ho_Arrow1);
             HOperatorSet.GenEmptyObj(out ho_Arrow2);
@@ -1062,7 +1059,6 @@ namespace ToolKit.HalconTool
             HOperatorSet.GenEmptyObj(out ho_Region2);
             try
             {
-
                 ho_Arrow1.Dispose();
                 Gen_Arrow_Contour_XLD(out ho_Arrow1, hv_StartRow, hv_StartColumn, hv_EndRow,
                     hv_EndColumn, hv_HeadLength, hv_HeadWidth);
@@ -1080,7 +1076,6 @@ namespace ToolKit.HalconTool
                 ho_Region1.Dispose();
                 ho_Region2.Dispose();
 
-
                 return;
             }
             catch (HalconException HDevExpDefaultException)
@@ -1089,7 +1084,6 @@ namespace ToolKit.HalconTool
                 ho_Arrow2.Dispose();
                 ho_Region1.Dispose();
                 ho_Region2.Dispose();
-
 
                 throw HDevExpDefaultException;
             }
@@ -1108,24 +1102,21 @@ namespace ToolKit.HalconTool
         /// <param name="hv_Columns"></param>
         public static void RectangleVertices(out HObject ho_Cross, HTuple hv_Row, HTuple hv_Column, HTuple hv_Phi, HTuple hv_Length1, HTuple hv_Length2, out HTuple hv_Rows, out HTuple hv_Columns)
         {
-
-
-
-            // Stack for temporary objects 
+            // Stack for temporary objects
             HObject[] OTemp = new HObject[20];
 
-            // Local iconic variables 
+            // Local iconic variables
 
             HObject ho_ROI_0, ho_Cross1, ho_Cross2, ho_Cross3;
             HObject ho_Cross4;
 
-            // Local control variables 
+            // Local control variables
 
             HTuple hv_Cos = new HTuple(), hv_Sin = new HTuple();
             HTuple hv_a = new HTuple(), hv_b = new HTuple(), hv_c = new HTuple();
             HTuple hv_d = new HTuple(), hv_e = new HTuple(), hv_f = new HTuple();
             HTuple hv_g = new HTuple(), hv_h = new HTuple();
-            // Initialize local and output iconic variables 
+            // Initialize local and output iconic variables
             HOperatorSet.GenEmptyObj(out ho_Cross);
             HOperatorSet.GenEmptyObj(out ho_ROI_0);
             HOperatorSet.GenEmptyObj(out ho_Cross1);
@@ -1299,9 +1290,7 @@ namespace ToolKit.HalconTool
                 hv_f.Dispose();
                 hv_g.Dispose();
                 hv_h.Dispose();
-
             }
         }
-
     }
 }

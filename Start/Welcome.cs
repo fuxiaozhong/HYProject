@@ -1,18 +1,13 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using HYProject.Helper;
 using HYProject.Model;
 
 using ToolKit.HYControls.HYForm;
-using ToolKit.MaterialSkin.Controls;
-
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace HYProject
 {
@@ -26,7 +21,6 @@ namespace HYProject
 
         private void Welcome_Load(object sender, EventArgs e)
         {
-
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
             bool flag = true;
@@ -43,8 +37,6 @@ namespace HYProject
                 }
             });
 
-
-
             Task.Factory.StartNew(() =>
             {
                 if (!Directory.Exists(AppParam.Instance.Save_Data_Path))
@@ -55,7 +47,6 @@ namespace HYProject
 
                 if (!Directory.Exists(AppParam.Instance.ProductLibrary))
                     Directory.CreateDirectory(AppParam.Instance.ProductLibrary);
-
 
                 Log.WriteRunLog("开始加载配置文件");
                 ///初始化相机
@@ -80,7 +71,6 @@ namespace HYProject
                 else
                 {
                     Log.WriteErrorLog("光源连接失败");
-
                 }
 
                 ///参数PLC
@@ -101,7 +91,6 @@ namespace HYProject
                 {
                     Log.WriteErrorLog("PLC连接失败");
                 }
-
 
                 DataLimit.Instance.Read();
 

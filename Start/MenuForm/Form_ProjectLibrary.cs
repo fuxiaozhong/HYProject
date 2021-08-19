@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
@@ -8,7 +7,6 @@ using HYProject.Model;
 using HYProject.ToolForm;
 
 using ToolKit.HYControls;
-using ToolKit.MaterialSkin.Controls;
 using ToolKit.HYControls.HYForm;
 
 namespace HYProject.MenuForm
@@ -40,12 +38,12 @@ namespace HYProject.MenuForm
             }
         }
 
-
         private Form_ProjectLibrary()
         {
             InitializeComponent();
             Button_Refresh_Click(null, null);
         }
+
         private void Button_Refresh_Click(object sender, System.EventArgs e)
         {
             DirectoryInfo TheFolder = new DirectoryInfo(AppParam.Instance.ProductLibrary);
@@ -68,7 +66,6 @@ namespace HYProject.MenuForm
                 {
                     // File.Delete(NextFile.FullName);
                 }
-
             }
         }
 
@@ -80,7 +77,6 @@ namespace HYProject.MenuForm
                     item.ShowBorder = true;
                 else
                     item.ShowBorder = false;
-
             }
         }
 
@@ -114,7 +110,6 @@ namespace HYProject.MenuForm
                         Log.WriteRunLog("产品:" + label_NowProductName.Text + "删除成功");
                     }
                 }
-
             }
         }
 
@@ -133,12 +128,10 @@ namespace HYProject.MenuForm
             {
                 MessageWindow.Show("请先选择产品.");
             }
-
         }
 
         private void Button4_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

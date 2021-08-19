@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ToolKit.HYControls
@@ -17,7 +11,6 @@ namespace ToolKit.HYControls
 
     public partial class SwitchControl : UserControl
     {
-
         public SwitchControl()
         {
             InitializeComponent();
@@ -32,7 +25,7 @@ namespace ToolKit.HYControls
             this.Size = new Size(87, 27);
         }
 
-        bool isCheck = false;
+        private bool isCheck = false;
 
         /// <summary>
         /// 是否选中
@@ -40,22 +33,19 @@ namespace ToolKit.HYControls
         public bool Checked
 
         {
-
             set { isCheck = value; this.Invalidate(); }
 
             get { return isCheck; }
-
         }
-        CheckStyle checkStyle;
+
+        private CheckStyle checkStyle;
+
         protected override void OnPaint(PaintEventArgs e)
 
         {
-
             Bitmap bitMapOn = null;
 
             Bitmap bitMapOff = null;
-
-
 
             if (checkStyle == CheckStyle.style1)
             {
@@ -88,30 +78,20 @@ namespace ToolKit.HYControls
                 bitMapOff = global::ToolKit.HYControls.Properties.Resources.Open;
             }
 
-
-
             Graphics g = e.Graphics;
 
             Rectangle rec = new Rectangle(0, 0, this.Size.Width, this.Size.Height);
 
-
-
             if (!isCheck)
 
             {
-
                 g.DrawImage(bitMapOn, rec);
-
             }
-
             else
 
             {
-
                 g.DrawImage(bitMapOff, rec);
-
             }
-
         }
 
         private void Switch_Click(object sender, EventArgs e)

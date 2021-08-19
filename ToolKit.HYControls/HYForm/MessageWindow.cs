@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ToolKit.HYControls.HYForm
@@ -15,8 +9,10 @@ namespace ToolKit.HYControls.HYForm
     {
         [DllImport("user32.dll")]//命名空间System.Runtime.InteropServices;
         public static extern bool ReleaseCapture();
+
         [DllImport("user32.dll")]
         public static extern bool SendMessage(IntPtr hwnd, int wMsg, int wParam, int lParam);
+
         public const int WM_SYSCOMMAND = 0x0112;
         public const int SC_MOVE = 0xF010;
         public const int HTCAPTION = 0x0002;
@@ -24,8 +20,10 @@ namespace ToolKit.HYControls.HYForm
         public const int SC_MAXIMIZE = 0xF030;
         public const int SC_RESTORE = 0xF120;
         public const int SC_SIZE = 0xF000;
+
         //改变窗体大小，SC_SIZE+下面的值
         public const int LEFT = 0x0001;//光标在窗体左边缘
+
         public const int RIGHT = 0x0002;//右边缘
         public const int UP = 0x0003;//上边缘
         public const int LEFTUP = 0x0004;//左上角
@@ -112,6 +110,7 @@ namespace ToolKit.HYControls.HYForm
             messageWindow.style("Normal");
             return messageWindow.ShowDialog();
         }
+
         public static DialogResult ShowError(string message, string title = "提示")
         {
             MessageWindow messageWindow = new MessageWindow();
@@ -120,6 +119,7 @@ namespace ToolKit.HYControls.HYForm
             messageWindow.style("Error");
             return messageWindow.ShowDialog();
         }
+
         public static DialogResult ShowWarn(string message, string title = "提示")
         {
             MessageWindow messageWindow = new MessageWindow();
@@ -175,9 +175,6 @@ namespace ToolKit.HYControls.HYForm
                 label_OK.ForeColor = Color.White;
                 label_title.ForeColor = Color.White;
             }
-
-
-
         }
     }
 }

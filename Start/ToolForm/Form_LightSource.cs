@@ -1,13 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 using ToolKit.HYControls.HYForm;
 
@@ -47,7 +38,6 @@ namespace HYProject.ToolForm
                 serialPortConfigurationControl1.Enabled = true;
                 button_Port.Enabled = true;
             }
-
         }
 
         private void Button_Port_Click(object sender, EventArgs e)
@@ -74,7 +64,6 @@ namespace HYProject.ToolForm
             {
                 MessageWindow.ShowError("连接失败");
             }
-
         }
 
         private void NumericUpDown2_ValueChanged(object sender, EventArgs e)
@@ -91,7 +80,6 @@ namespace HYProject.ToolForm
                 return;
             AppParam.Instance.lightSource.CH2 = (int)numericUpDown3.Value;
             //Log.WriteRunLog("手动:光源CH2亮度值调节:" + AppParam.Instance.lightSource.CH2);
-
         }
 
         private void NumericUpDown4_ValueChanged(object sender, EventArgs e)
@@ -100,7 +88,6 @@ namespace HYProject.ToolForm
                 return;
             AppParam.Instance.lightSource.CH3 = (int)numericUpDown4.Value;
             //Log.WriteRunLog("手动:光源CH3亮度值调节:" + AppParam.Instance.lightSource.CH3);
-
         }
 
         private void NumericUpDown5_ValueChanged(object sender, EventArgs e)
@@ -141,7 +128,6 @@ namespace HYProject.ToolForm
                 return;
             AppParam.Instance.lightSource.StateCH4 = switch4.Checked;
             Log.WriteRunLog("手动:光源CH4:" + (AppParam.Instance.lightSource.StateCH4 ? "打开" : "关闭"));
-
         }
 
         private void Button1_Click(object sender, EventArgs e)

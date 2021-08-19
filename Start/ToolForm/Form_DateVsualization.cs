@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 using HYProject.Model;
 
@@ -41,6 +33,7 @@ namespace HYProject.ToolForm
                 return instance;
             }
         }
+
         public void RefreshData()
         {
             label_L_W.Text = DataLimit.Instance.LowerLimit_W.ToString();
@@ -69,7 +62,6 @@ namespace HYProject.ToolForm
             label_U_KJ.Text = DataLimit.Instance.UpperLimit_KJ.ToString();
             label_U_S1.Text = DataLimit.Instance.UpperLimit_S1.ToString();
             label_U_S2.Text = DataLimit.Instance.UpperLimit_S2.ToString();
-
         }
 
         protected override CreateParams CreateParams
@@ -81,6 +73,7 @@ namespace HYProject.ToolForm
                 return cp;
             }
         }
+
         private Form_DateVsualization()
         {
             InitializeComponent();

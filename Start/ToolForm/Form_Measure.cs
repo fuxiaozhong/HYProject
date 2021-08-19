@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Windows.Forms;
 
 using HalconDotNet;
 
@@ -13,8 +12,6 @@ namespace HYProject.ToolForm
     public partial class Form_Measure : BaseForm
 
     {
-
-
         public Form_Measure()
         {
             InitializeComponent();

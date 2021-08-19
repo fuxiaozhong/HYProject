@@ -1,18 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 using HslCommunication;
 
 using ToolKit.HYControls.HYForm;
-
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace HYProject.ToolForm
 {
@@ -50,8 +41,8 @@ namespace HYProject.ToolForm
                 materialLabel5.ForeColor = Color.Red;
                 groupBox2.Enabled = false;
             }
-
         }
+
         private void Button1_Click(object sender, EventArgs e)
         {
             if (AppParam.Instance.Fx3uPLCResult != null && AppParam.Instance.Fx3uPLCResult.IsSuccess)
@@ -65,7 +56,6 @@ namespace HYProject.ToolForm
 
         private void Form_PLC_Load(object sender, EventArgs e)
         {
-
             PLC_IP.Text = AppParam.Instance.Fx3uPLC_IP;
             PLC_Port.Text = AppParam.Instance.Fx3uPLC_Port.ToString();
 
@@ -74,14 +64,12 @@ namespace HYProject.ToolForm
                 materialLabel5.Text = "连接成功";
                 materialLabel5.ForeColor = Color.Lime;
                 groupBox2.Enabled = true;
-
             }
             else
             {
                 materialLabel5.Text = "连接失败";
                 materialLabel5.ForeColor = Color.Red;
                 groupBox2.Enabled = false;
-
             }
         }
 
@@ -94,7 +82,6 @@ namespace HYProject.ToolForm
                 {
                     materialLabel3.Text = "写入成功";
                     materialLabel3.ForeColor = Color.Lime;
-
                 }
                 else
                 {
@@ -102,7 +89,6 @@ namespace HYProject.ToolForm
                     materialLabel3.ForeColor = Color.Red;
                 }
             }
-
         }
 
         private void Button_save_Click(object sender, EventArgs e)

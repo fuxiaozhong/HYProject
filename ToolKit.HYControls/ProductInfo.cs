@@ -1,22 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
-using ToolKit.HYControls.Properties;
 
 namespace ToolKit.HYControls
 {
     [DefaultEvent("Click")]
     public partial class ProductInfo : UserControl
     {
-
-
         public ProductInfo()
         {
             InitializeComponent();
@@ -29,7 +20,6 @@ namespace ToolKit.HYControls
         private Image _ProductImage;
         private string _ProductName = "";
         private DateTime _CreateTime;
-
 
         /// <summary>
         /// 显示边框
@@ -55,7 +45,6 @@ namespace ToolKit.HYControls
                 if (this._ShowBorder)
                 {
                     this.BackColor = System.Drawing.Color.DodgerBlue;
-
                 }
                 else
                 {
@@ -116,6 +105,7 @@ namespace ToolKit.HYControls
         }
 
         public event EventHandler<EventArgs> Click;
+
         public event EventHandler<EventArgs> DblClick;
 
         private void Panel1_Click(object sender, EventArgs e)
