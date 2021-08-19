@@ -176,5 +176,17 @@ namespace ToolKit.HYControls.HYForm
                 label_title.ForeColor = Color.White;
             }
         }
+
+        private void MessageWindow_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Space)
+            {
+                DialogResult = DialogResult.OK;
+            }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                DialogResult = DialogResult.Cancel;
+            }
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace ToolKit.HYControls
 {
@@ -8,6 +9,8 @@ namespace ToolKit.HYControls
         {
             this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint, true);
             this.SetStyle(ControlStyles.EnableNotifyMessage, true);
+            this.SetStyle(System.Windows.Forms.ControlStyles.SupportsTransparentBackColor, true);
+            this.BackColor = Color.Transparent;
         }
 
         protected override void OnNotifyMessage(Message m)
@@ -18,5 +21,7 @@ namespace ToolKit.HYControls
                 base.OnNotifyMessage(m);
             }
         }
+
+
     }
 }

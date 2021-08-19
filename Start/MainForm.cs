@@ -73,15 +73,9 @@ namespace HYProject
                 this.WindowState = FormWindowState.Normal;
             //添加主页面显示窗口
             //
-            //split_Main.Panel1.Controls.Add(DisplayForm.Instance);
+            splitContainer_Main.Panel1.Controls.Add(DisplayForm.Instance);
             //split_Main.Panel2.Controls.Add(Form_DateVsualization.Instance);
-
-            string[] cameraNmaes = new string[Cameras.Instance.GetCameras.Count];
-            for (int i = 0; i < Cameras.Instance.GetCameras.Count; i++)
-            {
-                cameraNmaes[i] = Cameras.Instance.GetCameras.Values.ElementAt(0)._CameraNmae;
-            }
-            DisplayForm.Instance.DisplayWindowNames = cameraNmaes;
+            DisplayForm.Instance.DisplayWindowCount = 8;
 
             //添加日志窗口
             panel_Log.Controls.Add(Form_Log.Instance);
@@ -116,7 +110,7 @@ namespace HYProject
                     tsl_nowtime.Text = DateTime.Now.ToString("yyyy-MM-dd  HH:mm:ss");
                     //label2.Text = AppParam.Instance.Power;
                     SystemInfo systemInfo = new SystemInfo();
-                    processEllipse3.Value = (int)Math.Ceiling(((double)((systemInfo.PhysicalMemory - systemInfo.MemoryAvailable)) / (double)(systemInfo.PhysicalMemory) * 100));
+                    pro_memory.Value = (int)Math.Ceiling(((double)((systemInfo.PhysicalMemory - systemInfo.MemoryAvailable)) / (double)(systemInfo.PhysicalMemory) * 100));
                     toolStripLabel1.Text = AppParam.Instance.lightSource.IsOpen ? "光源:已连接" : "光源:未连接";
 
                     if (AppParam.Instance.lightSource.IsOpen)
@@ -261,12 +255,6 @@ namespace HYProject
                 if (ShowMessage("无相机连接!点击确认重新初始化相机.", "提示") == DialogResult.OK)
                 {
                     Cameras.Instance.ReInitializeCamera();
-                    string[] cameraNmaes = new string[Cameras.Instance.GetCameras.Count];
-                    for (int i = 0; i < Cameras.Instance.GetCameras.Count; i++)
-                    {
-                        cameraNmaes[i] = Cameras.Instance.GetCameras.Values.ElementAt(0)._CameraNmae;
-                    }
-                    DisplayForm.Instance.DisplayWindowNames = cameraNmaes;
                 }
                 return;
             }
@@ -375,7 +363,8 @@ namespace HYProject
 
         private void 插件ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            materialContextMenuStrip1.Show(Cursor.Position);
+            //materialContextMenuStrip1.Show(Cursor.Position);
+            Form_Plugin.Instance.Show();
         }
     }
 }

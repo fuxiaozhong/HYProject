@@ -30,7 +30,7 @@ namespace ToolKit.HYControls.HYForm
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Log));
-            this.listView1 = new ListViewEx();
+            this.listView1 = new ToolKit.HYControls.ListViewEx();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -44,8 +44,8 @@ namespace ToolKit.HYControls.HYForm
             // 
             // listView1
             // 
-            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listView1.BackColor = System.Drawing.SystemColors.Control;
             this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -79,11 +79,11 @@ namespace ToolKit.HYControls.HYForm
             // columnHeader2
             // 
             this.columnHeader2.Text = "信息";
-            this.columnHeader2.Width = 400;
+            this.columnHeader2.Width = 350;
             // 
             // toolStrip2
             // 
-            this.toolStrip2.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStrip2.BackColor = System.Drawing.Color.Transparent;
             this.toolStrip2.GripMargin = new System.Windows.Forms.Padding(0);
             this.toolStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -102,6 +102,7 @@ namespace ToolKit.HYControls.HYForm
             // tsb_tip
             // 
             this.tsb_tip.CheckOnClick = true;
+            this.tsb_tip.ForeColor = System.Drawing.Color.Black;
             this.tsb_tip.Image = ((System.Drawing.Image)(resources.GetObject("tsb_tip.Image")));
             this.tsb_tip.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsb_tip.Name = "tsb_tip";
@@ -112,6 +113,7 @@ namespace ToolKit.HYControls.HYForm
             // tsb_warn
             // 
             this.tsb_warn.CheckOnClick = true;
+            this.tsb_warn.ForeColor = System.Drawing.Color.Black;
             this.tsb_warn.Image = ((System.Drawing.Image)(resources.GetObject("tsb_warn.Image")));
             this.tsb_warn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsb_warn.Name = "tsb_warn";
@@ -123,6 +125,7 @@ namespace ToolKit.HYControls.HYForm
             // 
             this.tsb_clear.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.tsb_clear.CheckOnClick = true;
+            this.tsb_clear.ForeColor = System.Drawing.Color.Black;
             this.tsb_clear.Image = ((System.Drawing.Image)(resources.GetObject("tsb_clear.Image")));
             this.tsb_clear.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsb_clear.Name = "tsb_clear";
@@ -133,6 +136,7 @@ namespace ToolKit.HYControls.HYForm
             // tsb_error
             // 
             this.tsb_error.CheckOnClick = true;
+            this.tsb_error.ForeColor = System.Drawing.Color.Black;
             this.tsb_error.Image = ((System.Drawing.Image)(resources.GetObject("tsb_error.Image")));
             this.tsb_error.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsb_error.Name = "tsb_error";
@@ -147,9 +151,19 @@ namespace ToolKit.HYControls.HYForm
             this.ClientSize = new System.Drawing.Size(648, 247);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.toolStrip2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.HideBorder = true;
+            this.HideCloseButtom = false;
+            this.HideDropButtom = false;
+            this.HideHelpButtom = false;
+            this.HideMaxButtom = false;
+            this.HideMinButtom = false;
+            this.HideOrClose = false;
+            this.HideTitle = true;
+            this.HideUserButtom = false;
             this.Name = "Form_Log";
             this.Text = "Form_Log";
+            this.Controls.SetChildIndex(this.toolStrip2, 0);
+            this.Controls.SetChildIndex(this.listView1, 0);
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             this.ResumeLayout(false);

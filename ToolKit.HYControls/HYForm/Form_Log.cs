@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace ToolKit.HYControls.HYForm
 {
-    public partial class Form_Log : Form
+    public partial class Form_Log : BaseForm
     {
         private static Form_Log _Form_Logs = null;
         private static object _Lock = new object();
@@ -261,8 +261,22 @@ namespace ToolKit.HYControls.HYForm
         {
             if (listView1.SelectedItems.Count > 0)
             {
-                MessageBox.Show("时间：" + listView1.SelectedItems[0].SubItems[1].Text + "\n" +
-                                          "详情：" + listView1.SelectedItems[0].SubItems[2].Text, "日志详情");
+
+                if (listView1.SelectedItems[0].ForeColor== Color.Orange)
+                {
+                    ShowWarn("时间：" + listView1.SelectedItems[0].SubItems[1].Text + "\n" +
+                                          "详情：" + listView1.SelectedItems[0].SubItems[2].Text, "日志详情 - 警告");
+                }
+                else if (listView1.SelectedItems[0].ForeColor == Color.Green)
+                {
+                    ShowNormal("时间：" + listView1.SelectedItems[0].SubItems[1].Text + "\n" +
+                                         "详情：" + listView1.SelectedItems[0].SubItems[2].Text, "日志详情 - 正常");
+                }
+                else if (listView1.SelectedItems[0].ForeColor == Color.Red)
+                {
+                    ShowError("时间：" + listView1.SelectedItems[0].SubItems[1].Text + "\n" +
+                                         "详情：" + listView1.SelectedItems[0].SubItems[2].Text, "日志详情 - 错误");
+                }
             }
         }
 

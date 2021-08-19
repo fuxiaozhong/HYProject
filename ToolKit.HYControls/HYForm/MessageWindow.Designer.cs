@@ -112,10 +112,12 @@ namespace ToolKit.HYControls.HYForm
             this.Controls.Add(this.label_title);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "MessageWindow";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MessageWindow";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MessageWindow_KeyDown);
             this.ResumeLayout(false);
 
         }

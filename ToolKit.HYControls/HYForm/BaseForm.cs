@@ -44,6 +44,7 @@ namespace ToolKit.HYControls.HYForm
         private bool _HideUserButtom = true;
         private bool _HideDropButtom = true;
         private bool _HideTitle = false;
+        private bool _HideAll = false;
         private string _userName = "未登录";
         private ContextMenuStrip _DropContextMenuStrip;
         private Color _BorderColor = Color.Gray;
@@ -414,6 +415,21 @@ namespace ToolKit.HYControls.HYForm
             {
                 this._HideBorder = value;
                 this.Refresh();
+            }
+        }
+        [CategoryAttribute("其他"), DescriptionAttribute("隐藏所有")]
+        public bool HideAll
+        {
+            get
+            {
+                return this._HideAll;
+            }
+
+            set
+            {
+                this._HideAll = value;
+                panel3.Visible = value;
+
             }
         }
 

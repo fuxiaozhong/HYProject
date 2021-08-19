@@ -123,6 +123,12 @@
     <Compile Include="MenuForm\Form_Camera.Designer.cs">
       <DependentUpon>Form_Camera.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuForm\Form_Plugin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForm\Form_Plugin.Designer.cs">
+      <DependentUpon>Form_Plugin.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuForm\Form_ProjectLibrary.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,12 +211,6 @@
     <Compile Include="ToolForm\Form_ProductOperation.Designer.cs">
       <DependentUpon>Form_ProductOperation.cs</DependentUpon>
     </Compile>
-    <Compile Include="ToolForm\Form_Tool.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ToolForm\Form_Tool.Designer.cs">
-      <DependentUpon>Form_Tool.cs</DependentUpon>
-    </Compile>
     <Compile Include="Welcome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuForm\Form_Camera.resx">
       <DependentUpon>Form_Camera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForm\Form_Plugin.resx">
+      <DependentUpon>Form_Plugin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuForm\Form_ProjectLibrary.resx">
       <DependentUpon>Form_ProjectLibrary.cs</DependentUpon>
@@ -267,9 +270,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ToolForm\Form_ProductOperation.resx">
       <DependentUpon>Form_ProductOperation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ToolForm\Form_Tool.resx">
-      <DependentUpon>Form_Tool.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Welcome.resx">
       <DependentUpon>Welcome.cs</DependentUpon>

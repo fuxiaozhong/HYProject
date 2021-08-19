@@ -54,9 +54,9 @@ namespace HYProject.MenuForm
             this.label2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(222, 127);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 22);
+            this.label2.Size = new System.Drawing.Size(94, 22);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Account";
+            this.label2.Text = "UserName";
             // 
             // button1
             // 
