@@ -44,8 +44,8 @@ namespace ToolKit.HYControls.HYForm
             // 
             // listView1
             // 
-            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listView1.BackColor = System.Drawing.SystemColors.Control;
             this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -151,19 +151,9 @@ namespace ToolKit.HYControls.HYForm
             this.ClientSize = new System.Drawing.Size(648, 247);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.toolStrip2);
-            this.HideBorder = true;
-            this.HideCloseButtom = false;
-            this.HideDropButtom = false;
-            this.HideHelpButtom = false;
-            this.HideMaxButtom = false;
-            this.HideMinButtom = false;
-            this.HideOrClose = false;
-            this.HideTitle = true;
-            this.HideUserButtom = false;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_Log";
             this.Text = "Form_Log";
-            this.Controls.SetChildIndex(this.toolStrip2, 0);
-            this.Controls.SetChildIndex(this.listView1, 0);
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             this.ResumeLayout(false);

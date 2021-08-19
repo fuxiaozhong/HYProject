@@ -193,6 +193,12 @@
     <Compile Include="ToolForm\Form_Limit.Designer.cs">
       <DependentUpon>Form_Limit.cs</DependentUpon>
     </Compile>
+    <Compile Include="ToolForm\Form_Lock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolForm\Form_Lock.Designer.cs">
+      <DependentUpon>Form_Lock.cs</DependentUpon>
+    </Compile>
     <Compile Include="ToolForm\Form_Measure.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ToolForm\Form_Limit.resx">
       <DependentUpon>Form_Limit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolForm\Form_Lock.resx">
+      <DependentUpon>Form_Lock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ToolForm\Form_Measure.resx">
       <DependentUpon>Form_Measure.cs</DependentUpon>
@@ -336,6 +345,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Plugin\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -29,44 +29,25 @@ namespace HYProject.MenuForm
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("节点4");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("节点5");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("节点6");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("节点7");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("系统设置", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3,
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("系统设置");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("光源设置");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("相机设置");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("图像保存");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("图像设置", new System.Windows.Forms.TreeNode[] {
             treeNode4});
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("节点8");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("节点9");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("节点10");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("节点11");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("节点12");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("光源设置", new System.Windows.Forms.TreeNode[] {
-            treeNode6,
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("PLC设置");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("添加用户");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("修改用户");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("删除用户");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("用户设置", new System.Windows.Forms.TreeNode[] {
             treeNode7,
             treeNode8,
-            treeNode9,
-            treeNode10});
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("节点13");
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("节点14");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("节点15");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("节点16");
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("相机设置", new System.Windows.Forms.TreeNode[] {
-            treeNode12,
-            treeNode13,
-            treeNode14,
-            treeNode15});
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("节点17");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("节点18");
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("节点19");
-            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("节点20");
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("图像设置", new System.Windows.Forms.TreeNode[] {
-            treeNode17,
-            treeNode18,
-            treeNode19,
-            treeNode20});
+            treeNode9});
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("TCP通讯");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("COM通讯");
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("通讯设置", new System.Windows.Forms.TreeNode[] {
+            treeNode11,
+            treeNode12});
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.tabControlEx1 = new ToolKit.HYControls.TabControlEx();
@@ -106,53 +87,40 @@ namespace HYProject.MenuForm
             this.treeView1.ItemHeight = 30;
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "节点4";
-            treeNode1.Text = "节点4";
-            treeNode2.Name = "节点5";
-            treeNode2.Text = "节点5";
-            treeNode3.Name = "节点6";
-            treeNode3.Text = "节点6";
-            treeNode4.Name = "节点7";
-            treeNode4.Text = "节点7";
-            treeNode5.Name = "节点0";
-            treeNode5.Text = "系统设置";
-            treeNode6.Name = "节点8";
-            treeNode6.Text = "节点8";
-            treeNode7.Name = "节点9";
-            treeNode7.Text = "节点9";
-            treeNode8.Name = "节点10";
-            treeNode8.Text = "节点10";
-            treeNode9.Name = "节点11";
-            treeNode9.Text = "节点11";
-            treeNode10.Name = "节点12";
-            treeNode10.Text = "节点12";
-            treeNode11.Name = "节点1";
-            treeNode11.Text = "光源设置";
-            treeNode12.Name = "节点13";
-            treeNode12.Text = "节点13";
-            treeNode13.Name = "节点14";
-            treeNode13.Text = "节点14";
-            treeNode14.Name = "节点15";
-            treeNode14.Text = "节点15";
-            treeNode15.Name = "节点16";
-            treeNode15.Text = "节点16";
-            treeNode16.Name = "节点2";
-            treeNode16.Text = "相机设置";
-            treeNode17.Name = "节点17";
-            treeNode17.Text = "节点17";
-            treeNode18.Name = "节点18";
-            treeNode18.Text = "节点18";
-            treeNode19.Name = "节点19";
-            treeNode19.Text = "节点19";
-            treeNode20.Name = "节点20";
-            treeNode20.Text = "节点20";
-            treeNode21.Name = "节点3";
-            treeNode21.Text = "图像设置";
+            treeNode1.Name = "节点0";
+            treeNode1.Text = "系统设置";
+            treeNode2.Name = "节点1";
+            treeNode2.Text = "光源设置";
+            treeNode3.Name = "节点2";
+            treeNode3.Text = "相机设置";
+            treeNode4.Name = "节点11";
+            treeNode4.Text = "图像保存";
+            treeNode5.Name = "节点3";
+            treeNode5.Text = "图像设置";
+            treeNode6.Name = "节点0";
+            treeNode6.Text = "PLC设置";
+            treeNode7.Name = "节点7";
+            treeNode7.Text = "添加用户";
+            treeNode8.Name = "节点8";
+            treeNode8.Text = "修改用户";
+            treeNode9.Name = "节点9";
+            treeNode9.Text = "删除用户";
+            treeNode10.Name = "节点1";
+            treeNode10.Text = "用户设置";
+            treeNode11.Name = "节点13";
+            treeNode11.Text = "TCP通讯";
+            treeNode12.Name = "节点15";
+            treeNode12.Text = "COM通讯";
+            treeNode13.Name = "节点12";
+            treeNode13.Text = "通讯设置";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2,
+            treeNode3,
             treeNode5,
-            treeNode11,
-            treeNode16,
-            treeNode21});
+            treeNode6,
+            treeNode10,
+            treeNode13});
             this.treeView1.Size = new System.Drawing.Size(182, 418);
             this.treeView1.TabIndex = 0;
             this.treeView1.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.TreeView1_NodeMouseDoubleClick);

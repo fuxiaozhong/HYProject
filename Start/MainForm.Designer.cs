@@ -64,6 +64,7 @@ namespace HYProject
             this.数据表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.userControl11 = new ToolKit.HalconTool.UserControl1();
+            this.锁定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayout.SuspendLayout();
             this.panel_Buttom.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -202,7 +203,8 @@ namespace HYProject
             this.退出系统ToolStripMenuItem,
             this.运行ToolStripMenuItem,
             this.toolStripMenuItem1,
-            this.插件ToolStripMenuItem});
+            this.插件ToolStripMenuItem,
+            this.锁定ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(10, 2, 0, 2);
@@ -428,6 +430,15 @@ namespace HYProject
             this.userControl11.TabIndex = 0;
             this.userControl11.Visible = false;
             // 
+            // 锁定ToolStripMenuItem
+            // 
+            this.锁定ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("锁定ToolStripMenuItem.Image")));
+            this.锁定ToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.锁定ToolStripMenuItem.Name = "锁定ToolStripMenuItem";
+            this.锁定ToolStripMenuItem.Size = new System.Drawing.Size(96, 44);
+            this.锁定ToolStripMenuItem.Text = "锁定";
+            this.锁定ToolStripMenuItem.Click += new System.EventHandler(this.锁定ToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -499,6 +510,7 @@ namespace HYProject
         private System.Windows.Forms.ToolStripMenuItem 插件ToolStripMenuItem;
         private System.Windows.Forms.Panel panel_Log;
         private System.Windows.Forms.SplitContainer splitContainer_Main;
+        private System.Windows.Forms.ToolStripMenuItem 锁定ToolStripMenuItem;
         // private ToolKit.HYControls.CreateModelControl createModelControl1;
     }
 }

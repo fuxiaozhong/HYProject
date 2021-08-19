@@ -182,7 +182,7 @@ namespace HYProject.Helper
                 }
                 return result;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 if (fs != null)
                 {

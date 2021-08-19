@@ -363,8 +363,14 @@ namespace HYProject
 
         private void 插件ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //materialContextMenuStrip1.Show(Cursor.Position);
-            Form_Plugin.Instance.Show();
+            materialContextMenuStrip1.Show(Cursor.Position);
+            //Form_Plugin.Instance.Show();
+        }
+
+        private void 锁定ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_Lock form_Lock = new Form_Lock();
+            form_Lock.ShowDialog();
         }
     }
 }
