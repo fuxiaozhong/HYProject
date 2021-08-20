@@ -4,14 +4,14 @@ using ToolKit.HYControls.HYForm;
 
 namespace HYProject.ToolForm
 {
-    public partial class Form_GlobalOptions : HYBaseForm
+    public partial class Form_Global_User : HYBaseForm
     {
-        private static Form_GlobalOptions instance;
+        private static Form_Global_User instance;
 
         //程序运行时创建一个静态只读的进程辅助对象
         private static readonly object syncRoot = new object();
 
-        public static Form_GlobalOptions Instance
+        public static Form_Global_User Instance
         {
             get
             {
@@ -23,7 +23,7 @@ namespace HYProject.ToolForm
                     {
                         if (instance == null)
                         {
-                            instance = new Form_GlobalOptions();
+                            instance = new Form_Global_User();
                         }
                     }
                 }
@@ -45,7 +45,7 @@ namespace HYProject.ToolForm
             }
         }
 
-        private Form_GlobalOptions()
+        private Form_Global_User()
         {
             InitializeComponent();
             globalVariable.Read();

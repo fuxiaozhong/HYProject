@@ -310,8 +310,8 @@ namespace HYProject
         {
             if (AppParam.Instance.Power == "管理员")
             {
-                Form_GlobalOptions.Instance.globalVariable.Read();
-                Form_GlobalOptions.Instance.ShowDialog();
+                Form_Global_User.Instance.globalVariable.Read();
+                Form_Global_User.Instance.ShowDialog();
             }
             else
             {
@@ -368,8 +368,8 @@ namespace HYProject
         {
             if (AppParam.Instance.Power == "管理员")
             {
-                Form_GlobalOptions.Instance.globalVariable.Read();
-                Form_GlobalOptions.Instance.ShowDialog();
+                Form_Global_User.Instance.globalVariable.Read();
+                Form_Global_User.Instance.ShowDialog();
             }
             else
             {

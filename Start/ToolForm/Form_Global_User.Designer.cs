@@ -1,7 +1,7 @@
 ﻿
 namespace HYProject.ToolForm
 {
-    partial class Form_GlobalOptions
+    partial class Form_Global_User
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace HYProject.ToolForm
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_GlobalOptions));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Global_User));
             this.globalVariable = new ToolKit.HYControls.HYGlobalVariable();
             this.SuspendLayout();
             // 
