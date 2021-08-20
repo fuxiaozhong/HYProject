@@ -110,12 +110,27 @@ namespace ToolKit.HYControls
 
         private void Btn_add_Click(object sender, EventArgs e)
         {
-            nud_value.Value = nud_value.Value += _incremeent;
+            try
+            {
+                nud_value.Value = nud_value.Value += _incremeent;
+            }
+            catch
+            {
+                nud_value.Value = nud_value.Maximum;
+            }
+
         }
 
         private void Btn_sub_Click(object sender, EventArgs e)
         {
-            nud_value.Value = nud_value.Value -= _incremeent;
+            try
+            {
+                nud_value.Value = nud_value.Value -= _incremeent;
+            }
+            catch 
+            {
+                nud_value.Value = nud_value.Minimum;
+            }
         }
     }
 }
