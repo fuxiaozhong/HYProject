@@ -152,6 +152,7 @@ namespace ToolKit.HYControls.HYForm
             set
             {
                 this._userName = value;
+                label_User.Text = value;
             }
         }
 
@@ -306,6 +307,7 @@ namespace ToolKit.HYControls.HYForm
         public BaseForm()
         {
             InitializeComponent();
+            CheckForIllegalCrossThreadCalls = false;
         }
 
         private void Label4_TextChanged(object sender, EventArgs e)

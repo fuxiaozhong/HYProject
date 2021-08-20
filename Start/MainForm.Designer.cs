@@ -49,6 +49,10 @@ namespace HYProject
             this.运行ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.插件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.相机配置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.光源配置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.全局变量ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.锁定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsl_nowtime = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
@@ -64,7 +68,6 @@ namespace HYProject
             this.数据表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.userControl11 = new ToolKit.HalconTool.UserControl1();
-            this.锁定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayout.SuspendLayout();
             this.panel_Buttom.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -280,12 +283,50 @@ namespace HYProject
             // 
             // 插件ToolStripMenuItem
             // 
+            this.插件ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.相机配置ToolStripMenuItem,
+            this.光源配置ToolStripMenuItem,
+            this.全局变量ToolStripMenuItem});
+            this.插件ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F);
             this.插件ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("插件ToolStripMenuItem.Image")));
             this.插件ToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.插件ToolStripMenuItem.Name = "插件ToolStripMenuItem";
             this.插件ToolStripMenuItem.Size = new System.Drawing.Size(96, 44);
             this.插件ToolStripMenuItem.Text = "插件";
             this.插件ToolStripMenuItem.Click += new System.EventHandler(this.插件ToolStripMenuItem_Click);
+            // 
+            // 相机配置ToolStripMenuItem
+            // 
+            this.相机配置ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.相机配置ToolStripMenuItem.Name = "相机配置ToolStripMenuItem";
+            this.相机配置ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.相机配置ToolStripMenuItem.Text = "相机配置";
+            this.相机配置ToolStripMenuItem.Click += new System.EventHandler(this.相机配置ToolStripMenuItem_Click);
+            // 
+            // 光源配置ToolStripMenuItem
+            // 
+            this.光源配置ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.光源配置ToolStripMenuItem.Name = "光源配置ToolStripMenuItem";
+            this.光源配置ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.光源配置ToolStripMenuItem.Text = "光源配置";
+            this.光源配置ToolStripMenuItem.Click += new System.EventHandler(this.光源配置ToolStripMenuItem_Click);
+            // 
+            // 全局变量ToolStripMenuItem
+            // 
+            this.全局变量ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.全局变量ToolStripMenuItem.Name = "全局变量ToolStripMenuItem";
+            this.全局变量ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.全局变量ToolStripMenuItem.Text = "全局变量";
+            this.全局变量ToolStripMenuItem.Click += new System.EventHandler(this.全局变量ToolStripMenuItem_Click);
+            // 
+            // 锁定ToolStripMenuItem
+            // 
+            this.锁定ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("锁定ToolStripMenuItem.Image")));
+            this.锁定ToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.锁定ToolStripMenuItem.Name = "锁定ToolStripMenuItem";
+            this.锁定ToolStripMenuItem.Size = new System.Drawing.Size(96, 44);
+            this.锁定ToolStripMenuItem.Text = "锁定";
+            this.锁定ToolStripMenuItem.Click += new System.EventHandler(this.锁定ToolStripMenuItem_Click);
             // 
             // toolStrip1
             // 
@@ -430,15 +471,6 @@ namespace HYProject
             this.userControl11.TabIndex = 0;
             this.userControl11.Visible = false;
             // 
-            // 锁定ToolStripMenuItem
-            // 
-            this.锁定ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("锁定ToolStripMenuItem.Image")));
-            this.锁定ToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.锁定ToolStripMenuItem.Name = "锁定ToolStripMenuItem";
-            this.锁定ToolStripMenuItem.Size = new System.Drawing.Size(96, 44);
-            this.锁定ToolStripMenuItem.Text = "锁定";
-            this.锁定ToolStripMenuItem.Click += new System.EventHandler(this.锁定ToolStripMenuItem_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -511,6 +543,9 @@ namespace HYProject
         private System.Windows.Forms.Panel panel_Log;
         private System.Windows.Forms.SplitContainer splitContainer_Main;
         private System.Windows.Forms.ToolStripMenuItem 锁定ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 相机配置ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 光源配置ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 全局变量ToolStripMenuItem;
         // private ToolKit.HYControls.CreateModelControl createModelControl1;
     }
 }

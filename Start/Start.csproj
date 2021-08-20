@@ -123,12 +123,6 @@
     <Compile Include="MenuForm\Form_Camera.Designer.cs">
       <DependentUpon>Form_Camera.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuForm\Form_Plugin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MenuForm\Form_Plugin.Designer.cs">
-      <DependentUpon>Form_Plugin.cs</DependentUpon>
-    </Compile>
     <Compile Include="MenuForm\Form_ProjectLibrary.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +147,12 @@
     <Compile Include="Model\MeasureData.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\Work.cs" />
+    <Compile Include="Plugin\Form_CameraInit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plugin\Form_CameraInit.Designer.cs">
+      <DependentUpon>Form_CameraInit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\RunThread.cs" />
@@ -229,9 +229,6 @@
     <EmbeddedResource Include="MenuForm\Form_Camera.resx">
       <DependentUpon>Form_Camera.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuForm\Form_Plugin.resx">
-      <DependentUpon>Form_Plugin.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MenuForm\Form_ProjectLibrary.resx">
       <DependentUpon>Form_ProjectLibrary.cs</DependentUpon>
     </EmbeddedResource>
@@ -240,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuForm\Form_User.resx">
       <DependentUpon>Form_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Plugin\Form_CameraInit.resx">
+      <DependentUpon>Form_CameraInit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -346,7 +346,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Plugin\" />
+    <Folder Include="Camera\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,8 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Windows.Forms;
 
 using ToolKit.CamreaSDK;
+
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace HYProject.Model
 {
@@ -128,10 +132,14 @@ namespace HYProject.Model
         /// </summary>
         public void InitializeCamera()
         {
-            InitCamera("Cam1", CameraType.海康威视);
-            InitCamera("Cam2", CameraType.大华相机);
+            if (AppParam.Instance.CameraInitStr != null && AppParam.Instance.CameraInitStr.Count > 0)
+            {
+                foreach (CameraInfo item in AppParam.Instance.CameraInitStr)
+                {
+                    InitCamera(item.CameraName, item.CameraType);
+                }
+            }
         }
-
         /// <summary>
         /// 重新初始化相机
         /// </summary>

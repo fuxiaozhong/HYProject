@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.IO.Ports;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -6,11 +7,22 @@ using System.Runtime.Serialization.Formatters.Binary;
 using HslCommunication;
 using HslCommunication.Profinet.Melsec;
 
+using HYProject.Model;
+
 using ToolKit.CommunicAtion;
 using ToolKit.HalconTool.Model;
 
 namespace HYProject
 {
+    [Serializable]
+    public struct CameraInfo
+    {
+        public CameraType CameraType;
+        public string CameraName;
+        public string Mark;
+    }
+
+
     [Serializable]
     public class AppParam
     {
@@ -53,6 +65,8 @@ namespace HYProject
         private AppParam()
         {
         }
+
+        internal List<CameraInfo> CameraInitStr;
 
         /// <summary>
         /// 当前登陆用户/不序列化保存

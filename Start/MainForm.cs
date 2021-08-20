@@ -16,6 +16,7 @@ using HYProject.Arithmetic;
 using HYProject.Helper;
 using HYProject.MenuForm;
 using HYProject.Model;
+using HYProject.Plugin;
 using HYProject.Properties;
 using HYProject.ToolForm;
 
@@ -108,7 +109,7 @@ namespace HYProject
                 {
                     //label1.Text = Form_GlobalOptions.Instance["标题栏名称"].ToString();
                     tsl_nowtime.Text = DateTime.Now.ToString("yyyy-MM-dd  HH:mm:ss");
-                    //label2.Text = AppParam.Instance.Power;
+                    this.UserName = AppParam.Instance.Power;
                     SystemInfo systemInfo = new SystemInfo();
                     pro_memory.Value = (int)Math.Ceiling(((double)((systemInfo.PhysicalMemory - systemInfo.MemoryAvailable)) / (double)(systemInfo.PhysicalMemory) * 100));
                     toolStripLabel1.Text = AppParam.Instance.lightSource.IsOpen ? "光源:已连接" : "光源:未连接";
@@ -363,14 +364,54 @@ namespace HYProject
 
         private void 插件ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            materialContextMenuStrip1.Show(Cursor.Position);
-            //Form_Plugin.Instance.Show();
+            // materialContextMenuStrip1.Show(Cursor.Position);
+
         }
 
         private void 锁定ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form_Lock form_Lock = new Form_Lock();
             form_Lock.ShowDialog();
+        }
+
+        private void MaterialFlatButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 相机配置ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_CameraInit form_CameraInit = new Form_CameraInit();
+            form_CameraInit.ShowDialog();
+        }
+
+        private void 光源配置ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_LightSource form_LightSource = new Form_LightSource();
+            form_LightSource.Show();
+        }
+
+        private void 全局变量ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (AppParam.Instance.Power == "管理员")
+            {
+                Form_GlobalOptions.Instance.globalVariable.Read();
+                Form_GlobalOptions.Instance.ShowDialog();
+            }
+            else
+            {
+                DialogResult dialogResult = ShowMessage("当前用户: " + AppParam.Instance.Power + ",无权限操作,请登录管理员账户,在进行操作", "权限提示");
+                if (dialogResult == DialogResult.OK)
+                {
+                    Form_User form_User = new Form_User();
+                    if (form_User.ShowDialog() == DialogResult.OK)
+                    {
+                        AppParam.Instance.Power = form_User.Power;
+                        Log.WriteRunLog("切换用户:" + AppParam.Instance.Power);
+                        MainForm.Instance.Text = "视觉软件 -- " + AppParam.Instance.Power;
+                    }
+                }
+            }
         }
     }
 }
