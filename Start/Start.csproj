@@ -175,6 +175,12 @@
     <Compile Include="ToolForm\Form_DateVsualization.Designer.cs">
       <DependentUpon>Form_DateVsualization.cs</DependentUpon>
     </Compile>
+    <Compile Include="ToolForm\Form_Global_System.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolForm\Form_Global_System.Designer.cs">
+      <DependentUpon>Form_Global_System.cs</DependentUpon>
+    </Compile>
     <Compile Include="ToolForm\Form_Global_User.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,6 +264,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ToolForm\Form_DateVsualization.resx">
       <DependentUpon>Form_DateVsualization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolForm\Form_Global_System.resx">
+      <DependentUpon>Form_Global_System.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ToolForm\Form_Global_User.resx">
       <DependentUpon>Form_Global_User.cs</DependentUpon>

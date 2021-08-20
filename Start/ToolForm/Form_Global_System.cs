@@ -1,17 +1,25 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 using ToolKit.HYControls.HYForm;
 
 namespace HYProject.ToolForm
 {
-    public partial class Form_Global_User : HYBaseForm
+    public partial class Form_Global_System : HYBaseForm
     {
-        private static Form_Global_User instance;
+        private static Form_Global_System instance;
 
         //程序运行时创建一个静态只读的进程辅助对象
         private static readonly object syncRoot = new object();
 
-        public static Form_Global_User Instance
+        public static Form_Global_System Instance
         {
             get
             {
@@ -23,7 +31,7 @@ namespace HYProject.ToolForm
                     {
                         if (instance == null)
                         {
-                            instance = new Form_Global_User();
+                            instance = new Form_Global_System();
                         }
                     }
                 }
@@ -31,14 +39,19 @@ namespace HYProject.ToolForm
                 return instance;
             }
         }
-        public void Read()
+        private Form_Global_System()
         {
-            if (Global_Parameter_User.GetData().Count == 0)
-            {
-                Global_Parameter_User.Read();
-            }
+            InitializeComponent();
+
         }
 
+        public void Read()
+        {
+            if (Global_Parameter_System.GetData().Count == 0)
+            {
+                Global_Parameter_System.Read();
+            }
+        }
 
         /// <summary>
         /// 获取全局变量
@@ -49,19 +62,13 @@ namespace HYProject.ToolForm
         {
             get
             {
-                return Global_Parameter_User.GetValue(key);
+                return Global_Parameter_System.GetValue(key);
             }
         }
 
-        private Form_Global_User()
+        private void Form_Global_System_FormClosing(object sender, FormClosingEventArgs e)
         {
-            InitializeComponent();
-
-        }
-
-        private void Form_GlobalOptions_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Global_Parameter_User.Save();
+            Global_Parameter_System.Save();
         }
     }
 }

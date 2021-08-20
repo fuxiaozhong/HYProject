@@ -310,7 +310,7 @@ namespace HYProject
         {
             if (AppParam.Instance.Power == "管理员")
             {
-                Form_Global_User.Instance.globalVariable.Read();
+                Form_Global_User.Instance.Global_Parameter_User.Read();
                 Form_Global_User.Instance.ShowDialog();
             }
             else
@@ -366,14 +366,23 @@ namespace HYProject
 
         private void 全局变量ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (AppParam.Instance.Power == "管理员")
+
+        }
+
+        private void 屏幕键盘ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(@"C:\WINDOWS\system32\osk.exe");
+        }
+
+        private void 用户变量ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (AppParam.Instance.Power == "管理员" || AppParam.Instance.Power == "开发人员")
             {
-                Form_Global_User.Instance.globalVariable.Read();
                 Form_Global_User.Instance.ShowDialog();
             }
             else
             {
-                DialogResult dialogResult = ShowMessage("当前用户: " + AppParam.Instance.Power + ",无权限操作,请登录管理员账户,在进行操作", "权限提示");
+                DialogResult dialogResult = ShowMessage("当前用户: " + AppParam.Instance.Power + ",无权限操作,请登录 管理员/开发人员 账户,在进行操作", "权限提示");
                 if (dialogResult == DialogResult.OK)
                 {
                     Form_User form_User = new Form_User();
@@ -387,11 +396,26 @@ namespace HYProject
             }
         }
 
-        private void 屏幕键盘ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 系统变量ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(@"C:\WINDOWS\system32\osk.exe");
+            if (AppParam.Instance.Power == "开发人员")
+            {
+                Form_Global_System.Instance.ShowDialog();
+            }
+            else
+            {
+                DialogResult dialogResult = ShowMessage("当前用户: " + AppParam.Instance.Power + ",无权限操作,请登录 开发人员 账户,在进行操作", "权限提示");
+                if (dialogResult == DialogResult.OK)
+                {
+                    Form_User form_User = new Form_User();
+                    if (form_User.ShowDialog() == DialogResult.OK)
+                    {
+                        AppParam.Instance.Power = form_User.Power;
+                        Log.WriteRunLog("切换用户:" + AppParam.Instance.Power);
+                        MainForm.Instance.Text = "视觉软件 -- " + AppParam.Instance.Power;
+                    }
+                }
+            }
         }
-
-      
     }
 }

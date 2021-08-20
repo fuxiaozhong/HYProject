@@ -38,10 +38,23 @@ namespace HYProject.MenuForm
             }
             else if (textBox_username.Text == "管理员")
             {
-                if (textBox_Password.Text == "admin")
+                if (textBox_Password.Text.ToLower() == "admin")
                 {
                     HYMessageTip.ShowOk("管理员,登陆成功");
                     Power = "管理员";
+                    DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    HYMessageTip.ShowError("密码错误");
+                }
+            }
+            else if (textBox_username.Text == "开发人员")
+            {
+                if (textBox_Password.Text.ToLower() == "develop")
+                {
+                    HYMessageTip.ShowOk("开发人员,登陆成功");
+                    Power = "开发人员";
                     DialogResult = DialogResult.OK;
                 }
                 else

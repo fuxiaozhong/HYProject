@@ -68,6 +68,8 @@ namespace HYProject
             this.panel1 = new System.Windows.Forms.Panel();
             this.userControl11 = new ToolKit.HalconTool.UserControl1();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.用户变量ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.系统变量ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayout.SuspendLayout();
             this.panel_Buttom.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -301,7 +303,7 @@ namespace HYProject
             // 
             this.相机配置ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.相机配置ToolStripMenuItem.Name = "相机配置ToolStripMenuItem";
-            this.相机配置ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.相机配置ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.相机配置ToolStripMenuItem.Text = "相机配置";
             this.相机配置ToolStripMenuItem.Click += new System.EventHandler(this.相机配置ToolStripMenuItem_Click);
             // 
@@ -309,15 +311,18 @@ namespace HYProject
             // 
             this.光源配置ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.光源配置ToolStripMenuItem.Name = "光源配置ToolStripMenuItem";
-            this.光源配置ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.光源配置ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.光源配置ToolStripMenuItem.Text = "光源配置";
             this.光源配置ToolStripMenuItem.Click += new System.EventHandler(this.光源配置ToolStripMenuItem_Click);
             // 
             // 全局变量ToolStripMenuItem
             // 
+            this.全局变量ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.用户变量ToolStripMenuItem,
+            this.系统变量ToolStripMenuItem});
             this.全局变量ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.全局变量ToolStripMenuItem.Name = "全局变量ToolStripMenuItem";
-            this.全局变量ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.全局变量ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.全局变量ToolStripMenuItem.Text = "全局变量";
             this.全局变量ToolStripMenuItem.Click += new System.EventHandler(this.全局变量ToolStripMenuItem_Click);
             // 
@@ -325,7 +330,7 @@ namespace HYProject
             // 
             this.屏幕键盘ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.屏幕键盘ToolStripMenuItem.Name = "屏幕键盘ToolStripMenuItem";
-            this.屏幕键盘ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.屏幕键盘ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.屏幕键盘ToolStripMenuItem.Text = "屏幕键盘";
             this.屏幕键盘ToolStripMenuItem.Click += new System.EventHandler(this.屏幕键盘ToolStripMenuItem_Click);
             // 
@@ -456,6 +461,20 @@ namespace HYProject
             this.userControl11.TabIndex = 0;
             this.userControl11.Visible = false;
             // 
+            // 用户变量ToolStripMenuItem
+            // 
+            this.用户变量ToolStripMenuItem.Name = "用户变量ToolStripMenuItem";
+            this.用户变量ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.用户变量ToolStripMenuItem.Text = "用户变量";
+            this.用户变量ToolStripMenuItem.Click += new System.EventHandler(this.用户变量ToolStripMenuItem_Click);
+            // 
+            // 系统变量ToolStripMenuItem
+            // 
+            this.系统变量ToolStripMenuItem.Name = "系统变量ToolStripMenuItem";
+            this.系统变量ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.系统变量ToolStripMenuItem.Text = "系统变量";
+            this.系统变量ToolStripMenuItem.Click += new System.EventHandler(this.系统变量ToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -530,6 +549,8 @@ namespace HYProject
         private System.Windows.Forms.ToolStripMenuItem 全局变量ToolStripMenuItem;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ToolStripMenuItem 屏幕键盘ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 用户变量ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 系统变量ToolStripMenuItem;
         // private ToolKit.HYControls.CreateModelControl createModelControl1;
     }
 }

@@ -42,8 +42,9 @@ namespace HYProject.MenuForm
             this.textBox_Password = new System.Windows.Forms.TextBox();
             this.textBox_username = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.操作员ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.开发人员ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -164,28 +165,37 @@ namespace HYProject.MenuForm
             this.contextMenuStrip1.AutoSize = false;
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.操作员ToolStripMenuItem,
-            this.adminToolStripMenuItem});
+            this.adminToolStripMenuItem,
+            this.开发人员ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(200, 90);
-            // 
-            // adminToolStripMenuItem
-            // 
-            this.adminToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.adminToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold);
-            this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(140, 32);
-            this.adminToolStripMenuItem.Text = "管理员";
-            this.adminToolStripMenuItem.Click += new System.EventHandler(this.ContextMenuStrip1_Click);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(200, 130);
             // 
             // 操作员ToolStripMenuItem
             // 
             this.操作员ToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.操作员ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold);
             this.操作员ToolStripMenuItem.Name = "操作员ToolStripMenuItem";
-            this.操作员ToolStripMenuItem.Size = new System.Drawing.Size(140, 32);
+            this.操作员ToolStripMenuItem.Size = new System.Drawing.Size(180, 32);
             this.操作员ToolStripMenuItem.Text = "操作员";
             this.操作员ToolStripMenuItem.Click += new System.EventHandler(this.ContextMenuStrip1_Click);
+            // 
+            // adminToolStripMenuItem
+            // 
+            this.adminToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.adminToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold);
+            this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(180, 32);
+            this.adminToolStripMenuItem.Text = "管理员";
+            this.adminToolStripMenuItem.Click += new System.EventHandler(this.ContextMenuStrip1_Click);
+            // 
+            // 开发人员ToolStripMenuItem
+            // 
+            this.开发人员ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold);
+            this.开发人员ToolStripMenuItem.Name = "开发人员ToolStripMenuItem";
+            this.开发人员ToolStripMenuItem.Size = new System.Drawing.Size(180, 32);
+            this.开发人员ToolStripMenuItem.Text = "开发人员";
+            this.开发人员ToolStripMenuItem.Click += new System.EventHandler(this.ContextMenuStrip1_Click);
             // 
             // Form_User
             // 
@@ -248,5 +258,6 @@ namespace HYProject.MenuForm
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 操作员ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 开发人员ToolStripMenuItem;
     }
 }
