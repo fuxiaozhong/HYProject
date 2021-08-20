@@ -9,7 +9,7 @@ using ToolKit.HYControls.HYForm;
 
 namespace HYProject.ToolForm
 {
-    public partial class Form_ProductOperation : BaseForm
+    public partial class Form_ProductOperation : HYBaseForm
     {
         private bool isNew = true;
 
@@ -49,7 +49,7 @@ namespace HYProject.ToolForm
                 }
                 else
                 {
-                    MessageWindow.Show("已取消保存!");
+                    HYMessageBox.Show("已取消保存!");
                 }
             }
             else
@@ -65,7 +65,7 @@ namespace HYProject.ToolForm
                 product = new Product();
             }
             Serialization.Save2(product, AppParam.Instance.ProductLibrary + "\\" + ProductName + ".pro");
-            MessageWindow.Show("保存成功");
+            HYMessageBox.Show("保存成功");
         }
     }
 }

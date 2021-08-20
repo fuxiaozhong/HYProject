@@ -140,11 +140,12 @@ namespace HYProject.MenuForm
             this.textBox_Password.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_Password.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold);
             this.textBox_Password.Location = new System.Drawing.Point(226, 221);
-            this.textBox_Password.Multiline = true;
             this.textBox_Password.Name = "textBox_Password";
             this.textBox_Password.PasswordChar = '*';
-            this.textBox_Password.Size = new System.Drawing.Size(200, 25);
+            this.textBox_Password.Size = new System.Drawing.Size(200, 27);
             this.textBox_Password.TabIndex = 14;
+            this.textBox_Password.UseSystemPasswordChar = true;
+            this.textBox_Password.WordWrap = false;
             // 
             // textBox_username
             // 
@@ -162,8 +163,8 @@ namespace HYProject.MenuForm
             // 
             this.contextMenuStrip1.AutoSize = false;
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.adminToolStripMenuItem,
-            this.操作员ToolStripMenuItem});
+            this.操作员ToolStripMenuItem,
+            this.adminToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.contextMenuStrip1.Size = new System.Drawing.Size(200, 90);

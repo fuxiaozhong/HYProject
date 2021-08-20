@@ -16,7 +16,7 @@ using ToolKit.HYControls.HYForm;
 
 namespace HYProject.Plugin
 {
-    public partial class Form_CameraInit : BaseForm
+    public partial class Form_CameraInit : HYBaseForm
     {
         public Form_CameraInit()
         {

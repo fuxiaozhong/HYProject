@@ -30,7 +30,7 @@ namespace HYProject
             if (m_lstLog["warn_logo"].IsWarnEnabled)
             {
                 m_lstLog["warn_logo"].Warn(strWarnLog);
-                Form_Log.Instance.OutputMsg(strWarnLog, System.Drawing.Color.Orange);
+                HYForm_Log.Instance.OutputMsg(strWarnLog, System.Drawing.Color.Orange);
             }
         }
 
@@ -48,7 +48,7 @@ namespace HYProject
                 MethodBase methodBase = stackFrame.GetMethod();
 
                 m_lstLog["error_logo"].Error("<类名:" + methodBase.ReflectedType.Name + ">   <方法名:" + methodBase.Name + ">   <信息:" + strErrLog + ">", ex);
-                Form_Log.Instance.OutputMsg(strErrLog, System.Drawing.Color.Red);
+                HYForm_Log.Instance.OutputMsg(strErrLog, System.Drawing.Color.Red);
             }
         }
 
@@ -62,7 +62,7 @@ namespace HYProject
             if (m_lstLog["run_logo"].IsErrorEnabled)
             {
                 m_lstLog["run_logo"].Info(runmessage);
-                Form_Log.Instance.OutputMsg(runmessage, System.Drawing.Color.Green);
+                HYForm_Log.Instance.OutputMsg(runmessage, System.Drawing.Color.Green);
             }
         }
     }

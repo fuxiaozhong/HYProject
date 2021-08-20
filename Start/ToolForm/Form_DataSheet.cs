@@ -9,7 +9,7 @@ using ToolKit.HYControls.HYForm;
 
 namespace HYProject.ToolForm
 {
-    public partial class Form_DataSheet : BaseForm
+    public partial class Form_DataSheet : HYBaseForm
     {
         private static Form_DataSheet instance;
 
@@ -60,7 +60,7 @@ namespace HYProject.ToolForm
         {
             if (dataGridView1.Rows.Count == 0)
             {
-                MessageWindow.Show("无数据导出!");
+                HYMessageBox.Show("无数据导出!");
                 return;
             }
             DataTable dataTable = NPOIExcel.DataGridViewToTable(dataGridView1);
@@ -73,12 +73,12 @@ namespace HYProject.ToolForm
             {
                 if (NPOIExcel.DataTableToExcel(dataTable, sfd.FileName))
                 {
-                    MessageWindow.Show(sfd.FileName + "导出成功");
+                    HYMessageBox.Show(sfd.FileName + "导出成功");
                     Log.WriteRunLog("手动导出数据成功,\n" + sfd.FileName);
                 }
                 else
                 {
-                    MessageWindow.ShowError(sfd.FileName + "导出失败");
+                    HYMessageBox.ShowError(sfd.FileName + "导出失败");
                     Log.WriteErrorLog("手动导出数据失败,\n" + sfd.FileName);
                 }
             }

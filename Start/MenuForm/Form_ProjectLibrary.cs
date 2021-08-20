@@ -11,7 +11,7 @@ using ToolKit.HYControls.HYForm;
 
 namespace HYProject.MenuForm
 {
-    public partial class Form_ProjectLibrary : BaseForm
+    public partial class Form_ProjectLibrary : HYBaseForm
     {
         private static Form_ProjectLibrary instance;
 
@@ -54,7 +54,7 @@ namespace HYProject.MenuForm
                 try
                 {
                     Product product = (Product)Serialization.Read2(NextFile.FullName);
-                    ProductInfo productInfo = new ProductInfo();
+                    HYProductInfo productInfo = new HYProductInfo();
                     productInfo.CreateTime = product.CreateTime;
                     productInfo.ProductName = product.ProductName;
                     productInfo.ProductImage = product.ProductImage;
@@ -71,9 +71,9 @@ namespace HYProject.MenuForm
 
         private void ProductInfo_Click(object sender, EventArgs e)
         {
-            foreach (ProductInfo item in flowLayoutPanel1.Controls)
+            foreach (HYProductInfo item in flowLayoutPanel1.Controls)
             {
-                if (item == (sender as ProductInfo))
+                if (item == (sender as HYProductInfo))
                     item.ShowBorder = true;
                 else
                     item.ShowBorder = false;
@@ -82,7 +82,7 @@ namespace HYProject.MenuForm
 
         private void ProductInfo_DblClick(object sender, EventArgs e)
         {
-            label_NowProductName.Text = (sender as ProductInfo).ProductName;
+            label_NowProductName.Text = (sender as HYProductInfo).ProductName;
         }
 
         private void Button_Add_Click(object sender, System.EventArgs e)
@@ -99,15 +99,15 @@ namespace HYProject.MenuForm
         {
             if (label_NowProductName.Text != "")
             {
-                if (MessageWindow.Show("确认删除此产品?", "提示") == DialogResult.OK)
+                if (HYMessageBox.Show("确认删除此产品?", "提示") == DialogResult.OK)
                 {
                     if (File.Exists(AppParam.Instance.ProductLibrary + "\\" + label_NowProductName.Text + ".pro"))
                     {
                         File.Delete(AppParam.Instance.ProductLibrary + "\\" + label_NowProductName.Text + ".pro");
-                        MessageWindow.Show("产品:" + label_NowProductName.Text + "删除成功", "删除提示");
+                        HYMessageBox.Show("产品:" + label_NowProductName.Text + "删除成功", "删除提示");
+                        Log.WriteRunLog("产品:" + label_NowProductName.Text + "删除成功");
                         label_NowProductName.Text = "";
                         Button_Refresh_Click(sender, e);
-                        Log.WriteRunLog("产品:" + label_NowProductName.Text + "删除成功");
                     }
                 }
             }
@@ -126,7 +126,7 @@ namespace HYProject.MenuForm
             }
             else
             {
-                MessageWindow.Show("请先选择产品.");
+                HYMessageBox.Show("请先选择产品.");
             }
         }
 

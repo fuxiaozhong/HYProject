@@ -30,7 +30,7 @@ namespace HYProject
                 {
                     if (stopwatch.ElapsedMilliseconds >= 10 * 1000)
                     {
-                        MessageWindow.ShowError("程序初始化超时:10S");
+                        HYMessageBox.ShowError("程序初始化超时:10S");
                         DialogResult = DialogResult.OK;
                         break;
                     }

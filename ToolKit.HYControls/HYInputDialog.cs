@@ -14,7 +14,7 @@ namespace ToolKit.HYControls
         /// <returns>输入状态</returns>
         public static bool InputStringDialog(ref string value, bool checkEmpty = true, string desc = "请输入字符串:", bool topMost = false)
         {
-            Form_Edit form_Edit = new Form_Edit(desc, checkEmpty, "string");
+            HYForm_Edit form_Edit = new HYForm_Edit(desc, checkEmpty, "string");
             form_Edit.TopMost = topMost;
             form_Edit.Value = value;
             if (form_Edit.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -38,7 +38,7 @@ namespace ToolKit.HYControls
         /// <returns>输入状态</returns>
         public static bool InputIntegerDialog(ref int value, bool checkEmpty = true, string desc = "请输入数字:", bool topMost = false)
         {
-            Form_Edit form_Edit = new Form_Edit(desc, checkEmpty, "int");
+            HYForm_Edit form_Edit = new HYForm_Edit(desc, checkEmpty, "int");
             form_Edit.TopMost = topMost;
             form_Edit.Value = value.ToString();
             if (form_Edit.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -62,7 +62,7 @@ namespace ToolKit.HYControls
         /// <returns>输入状态</returns>
         public static bool InputDoubleDialog(ref double value, bool checkEmpty = true, string desc = "请输入数字:", bool topMost = false)
         {
-            Form_Edit form_Edit = new Form_Edit(desc, checkEmpty, "double");
+            HYForm_Edit form_Edit = new HYForm_Edit(desc, checkEmpty, "double");
             form_Edit.TopMost = topMost;
             form_Edit.Value = value.ToString();
             if (form_Edit.ShowDialog() == System.Windows.Forms.DialogResult.OK)

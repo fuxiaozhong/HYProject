@@ -35,15 +35,15 @@ namespace HYProject.ToolForm
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
-            this.switch4 = new ToolKit.HYControls.SwitchControl();
-            this.switch3 = new ToolKit.HYControls.SwitchControl();
-            this.switch2 = new ToolKit.HYControls.SwitchControl();
+            this.switch4 = new ToolKit.HYControls.HYSwitch();
+            this.switch3 = new ToolKit.HYControls.HYSwitch();
+            this.switch2 = new ToolKit.HYControls.HYSwitch();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.switch1 = new ToolKit.HYControls.SwitchControl();
+            this.switch1 = new ToolKit.HYControls.HYSwitch();
             this.label9 = new System.Windows.Forms.Label();
             this.button_Port = new System.Windows.Forms.Button();
-            this.serialPortConfigurationControl1 = new ToolKit.HYControls.SerialPortConfigurationControl();
+            this.serialPortConfigurationControl1 = new ToolKit.HYControls.HYSerialPort();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
@@ -290,15 +290,15 @@ namespace HYProject.ToolForm
         private System.Windows.Forms.NumericUpDown numericUpDown3;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.Label label10;
-        private ToolKit.HYControls.SwitchControl switch4;
-        private ToolKit.HYControls.SwitchControl switch3;
-        private ToolKit.HYControls.SwitchControl switch2;
+        private ToolKit.HYControls.HYSwitch switch4;
+        private ToolKit.HYControls.HYSwitch switch3;
+        private ToolKit.HYControls.HYSwitch switch2;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private ToolKit.HYControls.SwitchControl switch1;
+        private ToolKit.HYControls.HYSwitch switch1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button_Port;
-        private ToolKit.HYControls.SerialPortConfigurationControl serialPortConfigurationControl1;
+        private ToolKit.HYControls.HYSerialPort serialPortConfigurationControl1;
         private System.Windows.Forms.Button button1;
     }
 }

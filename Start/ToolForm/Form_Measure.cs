@@ -9,7 +9,7 @@ using ToolKit.HYControls.HYForm;
 
 namespace HYProject.ToolForm
 {
-    public partial class Form_Measure : BaseForm
+    public partial class Form_Measure : HYBaseForm
 
     {
         public Form_Measure()

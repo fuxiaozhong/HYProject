@@ -8,7 +8,7 @@ using ToolKit.HYControls.HYForm;
 
 namespace HYProject.MenuForm
 {
-    public partial class Form_Setting : BaseForm
+    public partial class Form_Setting : HYBaseForm
     {
         public Form_Setting()
         {

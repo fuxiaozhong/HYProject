@@ -7,7 +7,7 @@ using ToolKit.HYControls.HYForm;
 
 namespace HYProject.ToolForm
 {
-    public partial class Form_PLC : BaseForm
+    public partial class Form_PLC : HYBaseForm
     {
         public Form_PLC()
         {
@@ -97,7 +97,7 @@ namespace HYProject.ToolForm
             AppParam.Instance.Fx3uPLC_Port = int.Parse(PLC_Port.Text);
 
             AppParam.Instance.Save_To_File();
-            MessageWindow.Show("保存成功");
+            HYMessageBox.Show("保存成功");
         }
 
         private void Button_Close_Click(object sender, EventArgs e)

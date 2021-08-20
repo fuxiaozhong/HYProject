@@ -31,12 +31,13 @@ namespace HYProject
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tableLayout = new System.Windows.Forms.TableLayoutPanel();
             this.panel_Buttom = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel_Data = new System.Windows.Forms.Panel();
-            this.pro_memory = new ToolKit.HYControls.ProcessEllipse();
+            this.pro_memory = new ToolKit.HYControls.HYProcessEllipse();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panel_Log = new System.Windows.Forms.Panel();
             this.panel_Title = new System.Windows.Forms.Panel();
@@ -52,12 +53,10 @@ namespace HYProject
             this.相机配置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.光源配置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.全局变量ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.屏幕键盘ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.锁定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsl_nowtime = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.splitContainer_Main = new System.Windows.Forms.SplitContainer();
             this.materialContextMenuStrip1 = new ToolKit.MaterialSkin.Controls.MaterialContextMenuStrip();
@@ -68,6 +67,7 @@ namespace HYProject
             this.数据表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.userControl11 = new ToolKit.HalconTool.UserControl1();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayout.SuspendLayout();
             this.panel_Buttom.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -155,6 +155,7 @@ namespace HYProject
             this.pro_memory.ShowType = ToolKit.HYControls.ShowType.Ring;
             this.pro_memory.Size = new System.Drawing.Size(100, 100);
             this.pro_memory.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.pro_memory, "内存使用率");
             this.pro_memory.Value = 15;
             this.pro_memory.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             this.pro_memory.ValueMargin = 5;
@@ -179,6 +180,7 @@ namespace HYProject
             this.panel_Log.Name = "panel_Log";
             this.panel_Log.Size = new System.Drawing.Size(618, 109);
             this.panel_Log.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.panel_Log, "日志");
             // 
             // panel_Title
             // 
@@ -286,14 +288,14 @@ namespace HYProject
             this.插件ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.相机配置ToolStripMenuItem,
             this.光源配置ToolStripMenuItem,
-            this.全局变量ToolStripMenuItem});
+            this.全局变量ToolStripMenuItem,
+            this.屏幕键盘ToolStripMenuItem});
             this.插件ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F);
             this.插件ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("插件ToolStripMenuItem.Image")));
             this.插件ToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.插件ToolStripMenuItem.Name = "插件ToolStripMenuItem";
             this.插件ToolStripMenuItem.Size = new System.Drawing.Size(96, 44);
             this.插件ToolStripMenuItem.Text = "插件";
-            this.插件ToolStripMenuItem.Click += new System.EventHandler(this.插件ToolStripMenuItem_Click);
             // 
             // 相机配置ToolStripMenuItem
             // 
@@ -319,6 +321,14 @@ namespace HYProject
             this.全局变量ToolStripMenuItem.Text = "全局变量";
             this.全局变量ToolStripMenuItem.Click += new System.EventHandler(this.全局变量ToolStripMenuItem_Click);
             // 
+            // 屏幕键盘ToolStripMenuItem
+            // 
+            this.屏幕键盘ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.屏幕键盘ToolStripMenuItem.Name = "屏幕键盘ToolStripMenuItem";
+            this.屏幕键盘ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.屏幕键盘ToolStripMenuItem.Text = "屏幕键盘";
+            this.屏幕键盘ToolStripMenuItem.Click += new System.EventHandler(this.屏幕键盘ToolStripMenuItem_Click);
+            // 
             // 锁定ToolStripMenuItem
             // 
             this.锁定ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("锁定ToolStripMenuItem.Image")));
@@ -335,10 +345,7 @@ namespace HYProject
             this.toolStrip1.GripMargin = new System.Windows.Forms.Padding(0);
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsl_nowtime,
-            this.toolStripLabel1,
-            this.toolStripSeparator3,
-            this.toolStripLabel2});
+            this.tsl_nowtime});
             this.toolStrip1.Location = new System.Drawing.Point(1, 646);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1237, 20);
@@ -350,28 +357,6 @@ namespace HYProject
             this.tsl_nowtime.Name = "tsl_nowtime";
             this.tsl_nowtime.Size = new System.Drawing.Size(130, 17);
             this.tsl_nowtime.Text = "2021-07-28  08:50:00";
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripLabel1.ForeColor = System.Drawing.Color.Red;
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(71, 17);
-            this.toolStripLabel1.Text = "光源:未连接";
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 20);
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripLabel2.ForeColor = System.Drawing.Color.Red;
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(68, 17);
-            this.toolStripLabel2.Text = "PLC:未连接";
             // 
             // panel4
             // 
@@ -516,17 +501,14 @@ namespace HYProject
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel panel_Data;
         private System.Windows.Forms.Splitter splitter1;
-        private ToolKit.HYControls.ProcessEllipse pro_memory;
+        private ToolKit.HYControls.HYProcessEllipse pro_memory;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel tsl_nowtime;
         private ToolKit.HalconTool.UserControl1 userControl11;
         private MaterialContextMenuStrip materialContextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 光源控制ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripMenuItem 参数设置ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pLC通讯设置ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripMenuItem 参数设置ToolStripMenuItem1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem 数据表ToolStripMenuItem;
@@ -546,6 +528,8 @@ namespace HYProject
         private System.Windows.Forms.ToolStripMenuItem 相机配置ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 光源配置ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 全局变量ToolStripMenuItem;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolStripMenuItem 屏幕键盘ToolStripMenuItem;
         // private ToolKit.HYControls.CreateModelControl createModelControl1;
     }
 }

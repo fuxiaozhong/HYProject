@@ -31,7 +31,7 @@ using static ToolKit.MaterialSkin.Controls.MaterialForm;
 
 namespace HYProject
 {
-    public partial class MainForm : BaseForm
+    public partial class MainForm : HYBaseForm
     {
         private static MainForm instance;
 
@@ -63,7 +63,6 @@ namespace HYProject
             InitializeComponent();
             HOperatorSet.SetSystem("clip_region", "false");
             CheckForIllegalCrossThreadCalls = false;
-            IsMdiContainer = true;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -79,8 +78,8 @@ namespace HYProject
             DisplayForm.Instance.DisplayWindowCount = AppParam.Instance.CameraInitStr.Count;
 
             //添加日志窗口
-            panel_Log.Controls.Add(Form_Log.Instance);
-            Form_Log.Instance.Show();
+            panel_Log.Controls.Add(HYForm_Log.Instance);
+            HYForm_Log.Instance.Show();
             //开启图像储存到期检测
             Thread AutoDeleteImage = new Thread(AutoCheckImage.DeleteFile);
             AutoDeleteImage.IsBackground = true;
@@ -112,25 +111,10 @@ namespace HYProject
                     this.UserName = AppParam.Instance.Power;
                     SystemInfo systemInfo = new SystemInfo();
                     pro_memory.Value = (int)Math.Ceiling(((double)((systemInfo.PhysicalMemory - systemInfo.MemoryAvailable)) / (double)(systemInfo.PhysicalMemory) * 100));
-                    toolStripLabel1.Text = AppParam.Instance.lightSource.IsOpen ? "光源:已连接" : "光源:未连接";
-
-                    if (AppParam.Instance.lightSource.IsOpen)
-                        toolStripLabel1.ForeColor = Color.Green;
-                    else
-                        toolStripLabel1.ForeColor = Color.Red;
-                    if (AppParam.Instance.Fx3uPLCResult != null && AppParam.Instance.Fx3uPLCResult.IsSuccess)
-                    {
-                        toolStripLabel2.Text = "PLC:已连接";
-                        toolStripLabel2.ForeColor = Color.Green;
-                    }
-                    else
-                    {
-                        toolStripLabel2.ForeColor = Color.Red;
-                        toolStripLabel2.Text = "PLC:未连接";
-                    }
                 }
                 catch { }
                 Thread.Sleep(50);
+                Application.DoEvents();
             }
         }
 
@@ -193,7 +177,7 @@ namespace HYProject
         {
             if (ShowMessage("确认退出系统?", "提示") == DialogResult.OK)
             {
-                Form_Waiting form_Waiting = new Form_Waiting(CloseEvent, "正在保存相关数据,请稍等!");
+                HYForm_Waiting form_Waiting = new HYForm_Waiting(CloseEvent, "正在保存相关数据,请稍等!");
                 if (form_Waiting.ShowDialog(this) == DialogResult.OK)
                 {
                     System.Diagnostics.Process.GetCurrentProcess().Kill();
@@ -362,21 +346,10 @@ namespace HYProject
             }
         }
 
-        private void 插件ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // materialContextMenuStrip1.Show(Cursor.Position);
-
-        }
-
         private void 锁定ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form_Lock form_Lock = new Form_Lock();
             form_Lock.ShowDialog();
-        }
-
-        private void MaterialFlatButton1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void 相机配置ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -413,5 +386,12 @@ namespace HYProject
                 }
             }
         }
+
+        private void 屏幕键盘ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(@"C:\WINDOWS\system32\osk.exe");
+        }
+
+      
     }
 }

@@ -6,7 +6,7 @@ using ToolKit.HYControls.HYForm;
 
 namespace HYProject.MenuForm
 {
-    public partial class Form_User : BaseForm
+    public partial class Form_User : HYBaseForm
     {
         public Form_User()
         {
@@ -17,7 +17,7 @@ namespace HYProject.MenuForm
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            MessageTip.ShowWarning("取消登陆");
+            HYMessageTip.ShowWarning("取消登陆");
             DialogResult = DialogResult.Cancel;
         }
 
@@ -27,26 +27,26 @@ namespace HYProject.MenuForm
             {
                 if (textBox_Password.Text == "123456")
                 {
-                    MessageTip.ShowOk("操作员,登陆成功");
+                    HYMessageTip.ShowOk("操作员,登陆成功");
                     Power = "操作员";
                     DialogResult = DialogResult.OK;
                 }
                 else
                 {
-                    MessageTip.ShowError("密码错误");
+                    HYMessageTip.ShowError("密码错误");
                 }
             }
             else if (textBox_username.Text == "管理员")
             {
                 if (textBox_Password.Text == "admin")
                 {
-                    MessageTip.ShowOk("管理员,登陆成功");
+                    HYMessageTip.ShowOk("管理员,登陆成功");
                     Power = "管理员";
                     DialogResult = DialogResult.OK;
                 }
                 else
                 {
-                    MessageTip.ShowError("密码错误");
+                    HYMessageTip.ShowError("密码错误");
                 }
             }
         }

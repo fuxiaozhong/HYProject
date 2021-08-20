@@ -7,7 +7,7 @@ using ToolKit.HYControls.HYForm;
 
 namespace HYProject.ToolForm
 {
-    public partial class Form_Limit : BaseForm
+    public partial class Form_Limit : HYBaseForm
     {
         public Form_Limit()
         {
@@ -130,7 +130,7 @@ namespace HYProject.ToolForm
             DataLimit.Instance.Offset_S2 = num_S2_offset.Value;
 
             DataLimit.Instance.Save();
-            MessageWindow.Show("保存成功", "提示");
+            HYMessageBox.Show("保存成功", "提示");
         }
 
         private void Button_cancel_Click(object sender, EventArgs e)

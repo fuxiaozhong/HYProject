@@ -8,7 +8,7 @@ using ToolKit.HYControls.HYForm;
 
 namespace HYProject.MenuForm
 {
-    public partial class Form_Camera : BaseForm
+    public partial class Form_Camera : HYBaseForm
     {
         public Form_Camera()
         {

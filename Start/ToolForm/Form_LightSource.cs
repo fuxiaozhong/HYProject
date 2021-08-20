@@ -4,7 +4,7 @@ using ToolKit.HYControls.HYForm;
 
 namespace HYProject.ToolForm
 {
-    public partial class Form_LightSource : BaseForm
+    public partial class Form_LightSource : HYBaseForm
     {
         public Form_LightSource()
         {
@@ -58,11 +58,11 @@ namespace HYProject.ToolForm
                                                             AppParam.Instance.LightSourceDataBits,
                                                             AppParam.Instance.LightSourceStopBits))
             {
-                MessageWindow.ShowNormal("连接成功");
+                HYMessageBox.ShowNormal("连接成功");
             }
             else
             {
-                MessageWindow.ShowError("连接失败");
+                HYMessageBox.ShowError("连接失败");
             }
         }
 

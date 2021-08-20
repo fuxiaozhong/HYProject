@@ -30,7 +30,7 @@ namespace HYProject.ToolForm
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_GlobalOptions));
-            this.globalVariable = new ToolKit.HYControls.GlobalVariable();
+            this.globalVariable = new ToolKit.HYControls.HYGlobalVariable();
             this.SuspendLayout();
             // 
             // globalVariable
@@ -67,6 +67,6 @@ namespace HYProject.ToolForm
 
         #endregion
 
-        public ToolKit.HYControls.GlobalVariable globalVariable;
+        public ToolKit.HYControls.HYGlobalVariable globalVariable;
     }
 }

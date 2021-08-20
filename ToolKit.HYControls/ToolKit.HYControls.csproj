@@ -48,23 +48,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataStatisticsControl.cs">
+    <Compile Include="HYDataStatistics.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="DataStatisticsControl.Designer.cs">
-      <DependentUpon>DataStatisticsControl.cs</DependentUpon>
+    <Compile Include="HYDataStatistics.Designer.cs">
+      <DependentUpon>HYDataStatistics.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreateModelControl.cs">
+    <Compile Include="HYCreateModel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CreateModelControl.Designer.cs">
-      <DependentUpon>CreateModelControl.cs</DependentUpon>
+    <Compile Include="HYCreateModel.Designer.cs">
+      <DependentUpon>HYCreateModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="GlobalVariable.cs">
+    <Compile Include="HYGlobalVariable.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GlobalVariable.Designer.cs">
-      <DependentUpon>GlobalVariable.cs</DependentUpon>
+    <Compile Include="HYGlobalVariable.Designer.cs">
+      <DependentUpon>HYGlobalVariable.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalVariableUpdate.cs">
       <SubType>Form</SubType>
@@ -72,62 +72,68 @@
     <Compile Include="GlobalVariableUpdate.Designer.cs">
       <DependentUpon>GlobalVariableUpdate.cs</DependentUpon>
     </Compile>
-    <Compile Include="HYForm\BaseForm.cs">
+    <Compile Include="HYForm\HYBaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HYForm\BaseForm.Designer.cs">
-      <DependentUpon>BaseForm.cs</DependentUpon>
+    <Compile Include="HYForm\HYBaseForm.Designer.cs">
+      <DependentUpon>HYBaseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="HYForm\Form_Edit.cs">
+    <Compile Include="HYForm\HYForm_Edit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HYForm\Form_Edit.Designer.cs">
-      <DependentUpon>Form_Edit.cs</DependentUpon>
+    <Compile Include="HYForm\HYForm_Edit.Designer.cs">
+      <DependentUpon>HYForm_Edit.cs</DependentUpon>
     </Compile>
-    <Compile Include="HYForm\Form_Log.cs">
+    <Compile Include="HYForm\HYForm_Log.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HYForm\Form_Log.Designer.cs">
-      <DependentUpon>Form_Log.cs</DependentUpon>
+    <Compile Include="HYForm\HYForm_Log.Designer.cs">
+      <DependentUpon>HYForm_Log.cs</DependentUpon>
     </Compile>
-    <Compile Include="HYForm\Form_Waiting.cs">
+    <Compile Include="HYForm\HYForm_Waiting.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HYForm\Form_Waiting.Designer.cs">
-      <DependentUpon>Form_Waiting.cs</DependentUpon>
+    <Compile Include="HYForm\HYForm_Waiting.Designer.cs">
+      <DependentUpon>HYForm_Waiting.cs</DependentUpon>
     </Compile>
-    <Compile Include="HYForm\MessageTipWindow.cs">
+    <Compile Include="HYForm\HYTipWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HYForm\MessageTipWindow.Designer.cs">
-      <DependentUpon>MessageTipWindow.cs</DependentUpon>
+    <Compile Include="HYForm\HYTipWindow.Designer.cs">
+      <DependentUpon>HYTipWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="HYForm\MessageWindow.cs">
+    <Compile Include="HYForm\HYMessageBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HYForm\MessageWindow.Designer.cs">
-      <DependentUpon>MessageWindow.cs</DependentUpon>
+    <Compile Include="HYForm\HYMessageBox.Designer.cs">
+      <DependentUpon>HYMessageBox.cs</DependentUpon>
     </Compile>
     <Compile Include="HYForm\ModelParameter.cs" />
     <Compile Include="HYInputDialog.cs" />
-    <Compile Include="ListViewEx.cs">
+    <Compile Include="HYListView.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ListViewEx.Designer.cs">
-      <DependentUpon>ListViewEx.cs</DependentUpon>
+    <Compile Include="HYListView.Designer.cs">
+      <DependentUpon>HYListView.cs</DependentUpon>
     </Compile>
-    <Compile Include="MessageTip.cs" />
-    <Compile Include="ProcessEllipse.cs">
+    <Compile Include="HYMessageTip.cs" />
+    <Compile Include="HYNumericUpDown.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ProcessEllipse.Designer.cs">
-      <DependentUpon>ProcessEllipse.cs</DependentUpon>
+    <Compile Include="HYNumericUpDown.Designer.cs">
+      <DependentUpon>HYNumericUpDown.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductInfo.cs">
+    <Compile Include="HYProcessEllipse.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ProductInfo.Designer.cs">
-      <DependentUpon>ProductInfo.cs</DependentUpon>
+    <Compile Include="HYProcessEllipse.Designer.cs">
+      <DependentUpon>HYProcessEllipse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HYProductInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HYProductInfo.Designer.cs">
+      <DependentUpon>HYProductInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -135,93 +141,96 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="SerialPortConfigurationControl.cs">
+    <Compile Include="HYSerialPort.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SerialPortConfigurationControl.Designer.cs">
-      <DependentUpon>SerialPortConfigurationControl.cs</DependentUpon>
+    <Compile Include="HYSerialPort.Designer.cs">
+      <DependentUpon>HYSerialPort.cs</DependentUpon>
     </Compile>
-    <Compile Include="SerialPortControl.cs">
+    <Compile Include="HYSerialPortControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SerialPortControl.Designer.cs">
-      <DependentUpon>SerialPortControl.cs</DependentUpon>
+    <Compile Include="HYSerialPortControl.Designer.cs">
+      <DependentUpon>HYSerialPortControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="SwitchControl.cs">
+    <Compile Include="HYSwitch.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SwitchControl.Designer.cs">
-      <DependentUpon>SwitchControl.cs</DependentUpon>
+    <Compile Include="HYSwitch.Designer.cs">
+      <DependentUpon>HYSwitch.cs</DependentUpon>
     </Compile>
-    <Compile Include="TabControlEx.cs">
+    <Compile Include="HYTabControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="TabControlEx.Designer.cs">
-      <DependentUpon>TabControlEx.cs</DependentUpon>
+    <Compile Include="HYTabControl.Designer.cs">
+      <DependentUpon>HYTabControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="TCPSocketControl.cs">
+    <Compile Include="HYTCPSocket.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TCPSocketControl.Designer.cs">
-      <DependentUpon>TCPSocketControl.cs</DependentUpon>
+    <Compile Include="HYTCPSocket.Designer.cs">
+      <DependentUpon>HYTCPSocket.cs</DependentUpon>
     </Compile>
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="DataStatisticsControl.resx">
-      <DependentUpon>DataStatisticsControl.cs</DependentUpon>
+    <EmbeddedResource Include="HYDataStatistics.resx">
+      <DependentUpon>HYDataStatistics.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateModelControl.resx">
-      <DependentUpon>CreateModelControl.cs</DependentUpon>
+    <EmbeddedResource Include="HYCreateModel.resx">
+      <DependentUpon>HYCreateModel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GlobalVariable.resx">
-      <DependentUpon>GlobalVariable.cs</DependentUpon>
+    <EmbeddedResource Include="HYGlobalVariable.resx">
+      <DependentUpon>HYGlobalVariable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GlobalVariableUpdate.resx">
       <DependentUpon>GlobalVariableUpdate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HYForm\BaseForm.resx">
-      <DependentUpon>BaseForm.cs</DependentUpon>
+    <EmbeddedResource Include="HYForm\HYBaseForm.resx">
+      <DependentUpon>HYBaseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HYForm\Form_Edit.resx">
-      <DependentUpon>Form_Edit.cs</DependentUpon>
+    <EmbeddedResource Include="HYForm\HYForm_Edit.resx">
+      <DependentUpon>HYForm_Edit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HYForm\Form_Log.resx">
-      <DependentUpon>Form_Log.cs</DependentUpon>
+    <EmbeddedResource Include="HYForm\HYForm_Log.resx">
+      <DependentUpon>HYForm_Log.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HYForm\Form_Waiting.resx">
-      <DependentUpon>Form_Waiting.cs</DependentUpon>
+    <EmbeddedResource Include="HYForm\HYForm_Waiting.resx">
+      <DependentUpon>HYForm_Waiting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HYForm\MessageTipWindow.resx">
-      <DependentUpon>MessageTipWindow.cs</DependentUpon>
+    <EmbeddedResource Include="HYForm\HYTipWindow.resx">
+      <DependentUpon>HYTipWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HYForm\MessageWindow.resx">
-      <DependentUpon>MessageWindow.cs</DependentUpon>
+    <EmbeddedResource Include="HYForm\HYMessageBox.resx">
+      <DependentUpon>HYMessageBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProcessEllipse.resx">
-      <DependentUpon>ProcessEllipse.cs</DependentUpon>
+    <EmbeddedResource Include="HYNumericUpDown.resx">
+      <DependentUpon>HYNumericUpDown.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductInfo.resx">
-      <DependentUpon>ProductInfo.cs</DependentUpon>
+    <EmbeddedResource Include="HYProcessEllipse.resx">
+      <DependentUpon>HYProcessEllipse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HYProductInfo.resx">
+      <DependentUpon>HYProductInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="SerialPortConfigurationControl.resx">
-      <DependentUpon>SerialPortConfigurationControl.cs</DependentUpon>
+    <EmbeddedResource Include="HYSerialPort.resx">
+      <DependentUpon>HYSerialPort.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SerialPortControl.resx">
-      <DependentUpon>SerialPortControl.cs</DependentUpon>
+    <EmbeddedResource Include="HYSerialPortControl.resx">
+      <DependentUpon>HYSerialPortControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SwitchControl.resx">
-      <DependentUpon>SwitchControl.cs</DependentUpon>
+    <EmbeddedResource Include="HYSwitch.resx">
+      <DependentUpon>HYSwitch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TabControlEx.resx">
-      <DependentUpon>TabControlEx.cs</DependentUpon>
+    <EmbeddedResource Include="HYTabControl.resx">
+      <DependentUpon>HYTabControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TCPSocketControl.resx">
-      <DependentUpon>TCPSocketControl.cs</DependentUpon>
+    <EmbeddedResource Include="HYTCPSocket.resx">
+      <DependentUpon>HYTCPSocket.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

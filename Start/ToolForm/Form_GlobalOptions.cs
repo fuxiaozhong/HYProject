@@ -4,7 +4,7 @@ using ToolKit.HYControls.HYForm;
 
 namespace HYProject.ToolForm
 {
-    public partial class Form_GlobalOptions : BaseForm
+    public partial class Form_GlobalOptions : HYBaseForm
     {
         private static Form_GlobalOptions instance;
 
