@@ -111,6 +111,7 @@
     <Compile Include="Helper\QueueSaveImage.cs" />
     <Compile Include="Helper\Serialization.cs" />
     <Compile Include="Helper\SystemInfo.cs" />
+    <Compile Include="Helper\SystemThread.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

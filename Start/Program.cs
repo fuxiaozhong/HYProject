@@ -57,7 +57,6 @@ namespace HYProject
                         {
                             AppParam.Instance.Power = form_User.Power;
                             Log.WriteRunLog("用户登录:" + AppParam.Instance.Power);
-                            MainForm.Instance.Text = "视觉软件 -- " + AppParam.Instance.Power;
                             Application.Run(MainForm.Instance);
                         }
                     }

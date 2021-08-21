@@ -38,6 +38,10 @@ namespace HYProject.ToolForm
                 Global_Parameter_User.Read();
             }
         }
+        public void Save()
+        {
+            Global_Parameter_User.Save();
+        }
 
 
         /// <summary>

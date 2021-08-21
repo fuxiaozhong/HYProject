@@ -97,6 +97,8 @@ namespace HYProject
             disk.Start();
             //开启拍照信号检测线程
             RunThread.Start();
+            //系统线程
+            SystemThread.Start();
         }
 
         //刷新界面
@@ -107,7 +109,7 @@ namespace HYProject
                 try
                 {
                     //label1.Text = Form_GlobalOptions.Instance["标题栏名称"].ToString();
-                    tsl_nowtime.Text = DateTime.Now.ToString("yyyy-MM-dd  HH:mm:ss");
+                    tsl_nowtime.Text = DateTime.Now.ToString(Form_Global_System.Instance["时间格式"].ToString());
                     this.UserName = AppParam.Instance.Power;
                     SystemInfo systemInfo = new SystemInfo();
                     pro_memory.Value = (int)Math.Ceiling(((double)((systemInfo.PhysicalMemory - systemInfo.MemoryAvailable)) / (double)(systemInfo.PhysicalMemory) * 100));
@@ -118,9 +120,6 @@ namespace HYProject
             }
         }
 
-        /// <summary>
-        /// 实时刷新磁盘剩余量报警检测
-        /// </summary>
         private void DiskRefresh()
         {
             while (true)
@@ -195,6 +194,8 @@ namespace HYProject
 
         private void CloseEvent(object sender, EventArgs e)
         {
+            Form_Global_System.Instance.Save();
+            Form_Global_User.Instance.Save();
             AppParam.Instance.Runing = false;
             Cameras.Instance.CloseCamera();
             AppParam.Instance.Save_To_File();
@@ -288,52 +289,6 @@ namespace HYProject
             Form_ProjectLibrary.Instance.Show();
         }
 
-        private void 光源控制ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form_LightSource form_LightSource = new Form_LightSource();
-            form_LightSource.Show();
-        }
-
-        private void 参数设置ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form_Limit form_Limit = new Form_Limit();
-            form_Limit.Show();
-        }
-
-        private void PLC通讯设置ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form_PLC form_PLC = new Form_PLC();
-            form_PLC.Show();
-        }
-
-        private void 参数设置ToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            if (AppParam.Instance.Power == "管理员")
-            {
-                Form_Global_User.Instance.Global_Parameter_User.Read();
-                Form_Global_User.Instance.ShowDialog();
-            }
-            else
-            {
-                DialogResult dialogResult = ShowMessage("当前用户: " + AppParam.Instance.Power + ",无权限操作,请登录管理员账户,在进行操作", "权限提示");
-                if (dialogResult == DialogResult.OK)
-                {
-                    Form_User form_User = new Form_User();
-                    if (form_User.ShowDialog() == DialogResult.OK)
-                    {
-                        AppParam.Instance.Power = form_User.Power;
-                        Log.WriteRunLog("切换用户:" + AppParam.Instance.Power);
-                        MainForm.Instance.Text = "视觉软件 -- " + AppParam.Instance.Power;
-                    }
-                }
-            }
-        }
-
-        private void 数据表ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form_DataSheet.Instance.Show();
-        }
-
         private void MainForm_UserClick(object sender, EventArgs e)
         {
             Form_User form_User = new Form_User();
@@ -390,7 +345,6 @@ namespace HYProject
                     {
                         AppParam.Instance.Power = form_User.Power;
                         Log.WriteRunLog("切换用户:" + AppParam.Instance.Power);
-                        MainForm.Instance.Text = "视觉软件 -- " + AppParam.Instance.Power;
                     }
                 }
             }
@@ -412,10 +366,15 @@ namespace HYProject
                     {
                         AppParam.Instance.Power = form_User.Power;
                         Log.WriteRunLog("切换用户:" + AppParam.Instance.Power);
-                        MainForm.Instance.Text = "视觉软件 -- " + AppParam.Instance.Power;
                     }
                 }
             }
+        }
+
+        private void PLC配置ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_PLC form_PLC = new Form_PLC();
+            form_PLC.Show();
         }
     }
 }

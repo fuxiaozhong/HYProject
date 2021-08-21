@@ -52,6 +52,10 @@ namespace HYProject.ToolForm
                 Global_Parameter_System.Read();
             }
         }
+        public void Save()
+        {
+            Global_Parameter_System.Save();
+        }
 
         /// <summary>
         /// 获取全局变量
