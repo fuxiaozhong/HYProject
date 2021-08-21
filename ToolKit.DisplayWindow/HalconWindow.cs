@@ -25,7 +25,7 @@ namespace ToolKit.DisplayWindow
         private double x, y;
         private HTuple row1, column1, row2, column2;
 
-        public HWindow HalconWindow
+        public HWindow HalconWindowHandle
         {
             get { return hWindowControl1.HalconWindow; }
         }
@@ -73,9 +73,9 @@ namespace ToolKit.DisplayWindow
                     row2 = ImageHeight;
                     column2 = column1 + hWindowControl1.Width * ratioHeight;
                 }
-                HOperatorSet.SetDraw(HalconWindow, "margin");
-                HOperatorSet.ClearWindow(HalconWindow);
-                HOperatorSet.SetPart(hWindowControl1.HalconWindow, row1, column1, row2, column2);//顯示整個圖像
+                HOperatorSet.SetDraw(HalconWindowHandle, "margin");
+                HOperatorSet.ClearWindow(HalconWindowHandle);
+                HOperatorSet.SetPart(HalconWindowHandle, row1, column1, row2, column2);//顯示整個圖像
                 Disp();
             }
             catch (Exception)
@@ -166,7 +166,7 @@ namespace ToolKit.DisplayWindow
             HObject dumpImage = new HObject();
             HOperatorSet.GenEmptyObj(out dumpImage);
             dumpImage.Dispose();
-            HOperatorSet.DumpWindowImage(out dumpImage, HalconWindow);
+            HOperatorSet.DumpWindowImage(out dumpImage, HalconWindowHandle);
             HOperatorSet.WriteImage(dumpImage, format.ToString(), 0, path);
             dumpImage.Dispose();
         }
@@ -212,7 +212,7 @@ namespace ToolKit.DisplayWindow
 
                     if (ImageWidth.D == _ImageWidth.D || ImageHeight.D == _ImageHeight.D)
                     {
-                        HOperatorSet.ClearWindow(HalconWindow);
+                        HOperatorSet.ClearWindow(HalconWindowHandle);
                         HOperatorSet.DispObj(ho_image, hWindowControl1.HalconWindow);
                         return;
                     }
@@ -234,8 +234,8 @@ namespace ToolKit.DisplayWindow
                         row2 = _ImageHeight;
                         column2 = column1 + hWindowControl1.Width * ratioHeight;
                     }
-                    HOperatorSet.SetDraw(HalconWindow, "margin");
-                    HOperatorSet.ClearWindow(HalconWindow);
+                    HOperatorSet.SetDraw(HalconWindowHandle, "margin");
+                    HOperatorSet.ClearWindow(HalconWindowHandle);
                     HOperatorSet.SetPart(hWindowControl1.HalconWindow, row1, column1, row2, column2);//顯示整個圖像
                     HOperatorSet.DispObj(ho_image, hWindowControl1.HalconWindow);
                 }
@@ -256,39 +256,39 @@ namespace ToolKit.DisplayWindow
                 {
                     try
                     {
-                        HOperatorSet.DispObj(ho_image, HalconWindow);
-                        HOperatorSet.SetDraw(HalconWindow, "margin");
+                        HOperatorSet.DispObj(ho_image, HalconWindowHandle);
+                        HOperatorSet.SetDraw(HalconWindowHandle, "margin");
                         foreach (RegionP item in Regions)
                         {
-                            HOperatorSet.SetDraw(HalconWindow, item.Draw);
+                            HOperatorSet.SetDraw(HalconWindowHandle, item.Draw);
 
                             if (Regex.IsMatch(item.ColorName, @"^[0-9]+$"))
                             {
-                                HOperatorSet.SetColored(HalconWindow, int.Parse(item.ColorName));
+                                HOperatorSet.SetColored(HalconWindowHandle, int.Parse(item.ColorName));
                             }
                             else
                             {
-                                HOperatorSet.SetColor(HalconWindow, new HTuple(item.ColorName));
+                                HOperatorSet.SetColor(HalconWindowHandle, new HTuple(item.ColorName));
                             }
-                            HOperatorSet.DispObj(item.Region, HalconWindow);
+                            HOperatorSet.DispObj(item.Region, HalconWindowHandle);
                         }
                         foreach (CrossPoint item in Cross)
                         {
                             if (Regex.IsMatch(item.ColorName, @"^[0-9]+$"))
                             {
-                                HOperatorSet.SetColored(HalconWindow, int.Parse(item.ColorName));
+                                HOperatorSet.SetColored(HalconWindowHandle, int.Parse(item.ColorName));
                             }
                             else
                             {
-                                HOperatorSet.SetColor(HalconWindow, new HTuple(item.ColorName));
+                                HOperatorSet.SetColor(HalconWindowHandle, new HTuple(item.ColorName));
                             }
-                            HOperatorSet.DispCross(HalconWindow, item.row, item.column, item.size, 0);
+                            HOperatorSet.DispCross(HalconWindowHandle, item.row, item.column, item.size, 0);
                         }
                         if (!拖动缩放屏蔽文字ToolStripMenuItem.Checked)
                         {
                             foreach (MessageP item in Message)
                             {
-                                Disp_message(HalconWindow, item.message, "image", new HTuple(item.row), new HTuple(item.column), new HTuple(item.colorName), "false", new HTuple(item.fontSize));
+                                Disp_message(HalconWindowHandle, item.message, "image", new HTuple(item.row), new HTuple(item.column), new HTuple(item.colorName), "false", new HTuple(item.fontSize));
                             }
                         }
                     }
@@ -368,7 +368,7 @@ namespace ToolKit.DisplayWindow
                 if (item.Text == toolStripItem.Text)
                 {
                     item.Checked = true;
-                    HOperatorSet.SetLineWidth(HalconWindow, int.Parse(item.Text));
+                    HOperatorSet.SetLineWidth(HalconWindowHandle, int.Parse(item.Text));
                     Disp();
                 }
                 else
@@ -401,15 +401,15 @@ namespace ToolKit.DisplayWindow
             });
             if (Regex.IsMatch(colorName, @"^[0-9]+$"))
             {
-                HOperatorSet.SetColored(HalconWindow, int.Parse(colorName));
+                HOperatorSet.SetColored(HalconWindowHandle, int.Parse(colorName));
             }
             else
             {
-                HOperatorSet.SetColor(HalconWindow, new HTuple(colorName));
+                HOperatorSet.SetColor(HalconWindowHandle, new HTuple(colorName));
             }
-            HOperatorSet.SetDraw(HalconWindow, new HTuple(draw));
+            HOperatorSet.SetDraw(HalconWindowHandle, new HTuple(draw));
 
-            HOperatorSet.DispObj(region, HalconWindow);
+            HOperatorSet.DispObj(region, HalconWindowHandle);
         }
 
         /// <summary>
@@ -431,13 +431,13 @@ namespace ToolKit.DisplayWindow
             });
             if (Regex.IsMatch(colorName, @"^[0-9]+$"))
             {
-                HOperatorSet.SetColored(HalconWindow, int.Parse(colorName));
+                HOperatorSet.SetColored(HalconWindowHandle, int.Parse(colorName));
             }
             else
             {
-                HOperatorSet.SetColor(HalconWindow, new HTuple(colorName));
+                HOperatorSet.SetColor(HalconWindowHandle, new HTuple(colorName));
             }
-            HOperatorSet.DispCross(HalconWindow, row, column, size, 0);
+            HOperatorSet.DispCross(HalconWindowHandle, row, column, size, 0);
         }
 
         /// <summary>
@@ -458,7 +458,7 @@ namespace ToolKit.DisplayWindow
                 colorName = colorName,
                 column = column
             });
-            Disp_message(HalconWindow, message, "image", new HTuple(row), new HTuple(column), new HTuple(colorName), "false", new HTuple(fontSize));
+            Disp_message(HalconWindowHandle, message, "image", new HTuple(row), new HTuple(column), new HTuple(colorName), "false", new HTuple(fontSize));
         }
 
         private void HWindowControl1_HMouseWheel(object sender, HMouseEventArgs e)
@@ -531,7 +531,7 @@ namespace ToolKit.DisplayWindow
 
                     HOperatorSet.CountChannels(ho_image, out channel_count);
                     //form_ImageZoom.label_Channel.Text = channel_count.ToString() + " 通道";
-                    HalconWindow.GetMpositionSubPix(out positionY, out positionX, out button_state);
+                    HalconWindowHandle.GetMpositionSubPix(out positionY, out positionX, out button_state);
                     str_position = String.Format("\nRow: {0:0000}\nColumn: {1:0000}", positionY, positionX);
                     value += str_position;
                     //form_ImageZoom.label_Row.Text = positionY.ToString("0");
@@ -592,8 +592,8 @@ namespace ToolKit.DisplayWindow
         /// <param name="hv_Width"></param>
         private void CenterCross(HTuple hv_Height, HTuple hv_Width)
         {
-            HOperatorSet.SetDraw(HalconWindow, "margin");
-            HOperatorSet.SetColor(HalconWindow, "blue");
+            HOperatorSet.SetDraw(HalconWindowHandle, "margin");
+            HOperatorSet.SetColor(HalconWindowHandle, "blue");
 
             HObject ho_Cross, ho_Rectangle, ho_RegionLines1;
             HObject ho_RegionLines2, ho_RegionLines3, ho_RegionLines4;
@@ -639,7 +639,7 @@ namespace ToolKit.DisplayWindow
             HOperatorSet.GenCrossContourXld(out ho_Cross, hv_CenterRow, hv_CenterColumn, lenght, 0);
             ho_Rectangle.Dispose();
             HOperatorSet.GenRectangle2(out ho_Rectangle, hv_CenterRow, hv_CenterColumn, 0, lenght / 1.8, lenght / 1.8);
-            HOperatorSet.DispObj(ho_Rectangle, HalconWindow);
+            HOperatorSet.DispObj(ho_Rectangle, HalconWindowHandle);
             using (HDevDisposeHelper dh = new HDevDisposeHelper())
             {
                 ho_RegionLines1.Dispose();
@@ -670,9 +670,9 @@ namespace ToolKit.DisplayWindow
             ho_RegionUnion3.Dispose();
             HOperatorSet.Union2(ho_RegionUnion2, ho_Rectangle, out ho_RegionUnion3);
 
-            HOperatorSet.DispObj(ho_RegionUnion3, HalconWindow);
+            HOperatorSet.DispObj(ho_RegionUnion3, HalconWindowHandle);
 
-            HOperatorSet.DispObj(ho_Cross, HalconWindow);
+            HOperatorSet.DispObj(ho_Cross, HalconWindowHandle);
 
             ho_Cross.Dispose();
             ho_Rectangle.Dispose();
@@ -898,7 +898,7 @@ namespace ToolKit.DisplayWindow
             HObject saveimage;
             HOperatorSet.GenEmptyObj(out saveimage);
             saveimage.Dispose();
-            HOperatorSet.DumpWindowImage(out saveimage, HalconWindow);
+            HOperatorSet.DumpWindowImage(out saveimage, HalconWindowHandle);
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "*.jpg|*.jpg|*.bmp|*.bmp|*.png|*.png";
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
@@ -1289,10 +1289,10 @@ namespace ToolKit.DisplayWindow
         /// <returns></returns>
         public Rectangle1 Draw_Rectangle1(string colorName)
         {
-            HOperatorSet.SetLineStyle(HalconWindow, 4);
+            HOperatorSet.SetLineStyle(HalconWindowHandle, 4);
             hWindowControl1.ContextMenuStrip = null;
             MessageBox.Show("请在图像窗口开始画平行矩形\n按住鼠标左键开始框选,鼠标右键结束", "提示-平行矩形");
-            HOperatorSet.SetColor(HalconWindow, colorName);
+            HOperatorSet.SetColor(HalconWindowHandle, colorName);
 
             HObject Rectangle1;
             HOperatorSet.GenEmptyObj(out Rectangle1);
@@ -1302,8 +1302,8 @@ namespace ToolKit.DisplayWindow
 
             HTuple column1 = new HTuple(0);
             HTuple column2 = new HTuple(0);
-            HOperatorSet.SetLineStyle(HalconWindow, 4);
-            HOperatorSet.DrawRectangle1(HalconWindow, out row1, out column1, out row2, out column2);
+            HOperatorSet.SetLineStyle(HalconWindowHandle, 4);
+            HOperatorSet.DrawRectangle1(HalconWindowHandle, out row1, out column1, out row2, out column2);
             HOperatorSet.GenRectangle1(out Rectangle1, row1, column1, row2, column2);
             Rectangle1 rectangle = new Rectangle1()
             {
@@ -1315,7 +1315,7 @@ namespace ToolKit.DisplayWindow
 
                 rectangle1 = Rectangle1
             }; hWindowControl1.ContextMenuStrip = contextMenu_Hal;
-            HOperatorSet.SetLineStyle(HalconWindow, new HTuple());
+            HOperatorSet.SetLineStyle(HalconWindowHandle, new HTuple());
             return rectangle;
         }
 
@@ -1326,10 +1326,10 @@ namespace ToolKit.DisplayWindow
         /// <returns></returns>
         public Rectangle2 Draw_Rectangle2(string colorName)
         {
-            HOperatorSet.SetLineStyle(HalconWindow, 4);
+            HOperatorSet.SetLineStyle(HalconWindowHandle, 4);
             hWindowControl1.ContextMenuStrip = null;
             MessageBox.Show("请在图像窗口开始画旋转矩形\n按住鼠标左键开始框选,鼠标右键结束", "提示-旋转矩形");
-            HOperatorSet.SetColor(HalconWindow, colorName);
+            HOperatorSet.SetColor(HalconWindowHandle, colorName);
             HObject Rectangle2;
             HOperatorSet.GenEmptyObj(out Rectangle2);
             Rectangle2.Dispose();
@@ -1339,8 +1339,8 @@ namespace ToolKit.DisplayWindow
             HTuple phi = new HTuple(0);
             HTuple lenght1 = new HTuple(0);
             HTuple lenght2 = new HTuple(0);
-            HOperatorSet.SetLineStyle(HalconWindow, 4);
-            HOperatorSet.DrawRectangle2(HalconWindow, out row, out column, out phi, out lenght1, out lenght2);
+            HOperatorSet.SetLineStyle(HalconWindowHandle, 4);
+            HOperatorSet.DrawRectangle2(HalconWindowHandle, out row, out column, out phi, out lenght1, out lenght2);
             HOperatorSet.GenRectangle2(out Rectangle2, row, column, phi, lenght1, lenght2);
             Rectangle2 rectangle2 = new Rectangle2()
             {
@@ -1351,7 +1351,7 @@ namespace ToolKit.DisplayWindow
                 lenght2 = lenght2,
                 rectangle2 = Rectangle2
             }; hWindowControl1.ContextMenuStrip = contextMenu_Hal;
-            HOperatorSet.SetLineStyle(HalconWindow, new HTuple());
+            HOperatorSet.SetLineStyle(HalconWindowHandle, new HTuple());
             return rectangle2;
         }
 
@@ -1362,18 +1362,18 @@ namespace ToolKit.DisplayWindow
         /// <returns></returns>
         public Line Draw_Line(string colorName)
         {
-            HOperatorSet.SetLineStyle(HalconWindow, 4);
+            HOperatorSet.SetLineStyle(HalconWindowHandle, 4);
             hWindowControl1.ContextMenuStrip = null;
             MessageBox.Show("请在图像窗口开始画直线\n按住鼠标左键开始框选,鼠标右键结束", "提示-直线");
-            HOperatorSet.SetColor(HalconWindow, colorName);
+            HOperatorSet.SetColor(HalconWindowHandle, colorName);
             HObject line;
             HOperatorSet.GenEmptyObj(out line);
             line.Dispose();
             HTuple start_row = new HTuple(0);
             HTuple start_column = new HTuple(0);
             HTuple end_row = new HTuple(0);
-            HTuple end_column = new HTuple(0); HOperatorSet.SetLineStyle(HalconWindow, 4);
-            HOperatorSet.DrawLine(HalconWindow, out start_row, out start_column, out end_row, out end_column);
+            HTuple end_column = new HTuple(0); HOperatorSet.SetLineStyle(HalconWindowHandle, 4);
+            HOperatorSet.DrawLine(HalconWindowHandle, out start_row, out start_column, out end_row, out end_column);
             HOperatorSet.GenRegionLine(out line, start_row, start_column, end_row, end_column);
             Line line1 = new Line()
             {
@@ -1383,7 +1383,7 @@ namespace ToolKit.DisplayWindow
                 end_column = end_column,
                 line = line
             }; hWindowControl1.ContextMenuStrip = contextMenu_Hal;
-            HOperatorSet.SetLineStyle(HalconWindow, new HTuple());
+            HOperatorSet.SetLineStyle(HalconWindowHandle, new HTuple());
             return line1;
         }
 
@@ -1394,18 +1394,18 @@ namespace ToolKit.DisplayWindow
         /// <returns></returns>
         public Circle Draw_Circle(string colorName)
         {
-            HOperatorSet.SetLineStyle(HalconWindow, 4);
+            HOperatorSet.SetLineStyle(HalconWindowHandle, 4);
             hWindowControl1.ContextMenuStrip = null;
 
             MessageBox.Show("请在图像窗口开始画圆\n按住鼠标左键开始框选,鼠标右键结束", "提示-圆");
-            HOperatorSet.SetColor(HalconWindow, colorName);
+            HOperatorSet.SetColor(HalconWindowHandle, colorName);
             HObject cir;
             HOperatorSet.GenEmptyObj(out cir);
             cir.Dispose();
             HTuple row = new HTuple(0);
             HTuple column = new HTuple(0);
-            HTuple radius = new HTuple(0); HOperatorSet.SetLineStyle(HalconWindow, 4);
-            HOperatorSet.DrawCircle(HalconWindow, out row, out column, out radius);
+            HTuple radius = new HTuple(0); HOperatorSet.SetLineStyle(HalconWindowHandle, 4);
+            HOperatorSet.DrawCircle(HalconWindowHandle, out row, out column, out radius);
             HOperatorSet.GenCircle(out cir, row, column, radius);
             Circle circle = new Circle()
             {
@@ -1415,7 +1415,7 @@ namespace ToolKit.DisplayWindow
                 circle = cir
             };
             hWindowControl1.ContextMenuStrip = contextMenu_Hal;
-            HOperatorSet.SetLineStyle(HalconWindow, new HTuple());
+            HOperatorSet.SetLineStyle(HalconWindowHandle, new HTuple());
             return circle;
         }
 
@@ -1429,7 +1429,7 @@ namespace ToolKit.DisplayWindow
             hWindowControl1.ContextMenuStrip = null;
 
             MessageBox.Show("请在图像窗口开始画椭圆\n按住鼠标左键开始框选,鼠标右键结束", "提示-椭圆");
-            HOperatorSet.SetColor(HalconWindow, colorName);
+            HOperatorSet.SetColor(HalconWindowHandle, colorName);
             HObject ell;
             HOperatorSet.GenEmptyObj(out ell);
             ell.Dispose();
@@ -1437,8 +1437,8 @@ namespace ToolKit.DisplayWindow
             HTuple column = new HTuple(0);
             HTuple phi = new HTuple(0);
             HTuple radius1 = new HTuple(0);
-            HTuple radius2 = new HTuple(0); HOperatorSet.SetLineStyle(HalconWindow, 4);
-            HOperatorSet.DrawEllipse(HalconWindow, out row, out column, out phi, out radius1, out radius2);
+            HTuple radius2 = new HTuple(0); HOperatorSet.SetLineStyle(HalconWindowHandle, 4);
+            HOperatorSet.DrawEllipse(HalconWindowHandle, out row, out column, out phi, out radius1, out radius2);
             HOperatorSet.GenEllipse(out ell, row, column, phi, radius1, radius2);
             Ellipse circle = new Ellipse()
             {
@@ -1450,7 +1450,7 @@ namespace ToolKit.DisplayWindow
                 ellipse = ell
             };
             hWindowControl1.ContextMenuStrip = contextMenu_Hal;
-            HOperatorSet.SetLineStyle(HalconWindow, new HTuple());
+            HOperatorSet.SetLineStyle(HalconWindowHandle, new HTuple());
             return circle;
         }
     }
