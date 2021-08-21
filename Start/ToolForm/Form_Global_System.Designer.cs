@@ -53,6 +53,7 @@ namespace HYProject.ToolForm
             this.Name = "Form_Global_System";
             this.Text = "全局参数 - 系统变量";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Global_System_FormClosing);
+            this.Load += new System.EventHandler(this.Form_Global_System_Load);
             this.Controls.SetChildIndex(this.Global_Parameter_System, 0);
             this.ResumeLayout(false);
 

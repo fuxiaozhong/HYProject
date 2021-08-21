@@ -74,5 +74,10 @@ namespace HYProject.ToolForm
         {
             Global_Parameter_System.Save();
         }
+
+        private void Form_Global_System_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

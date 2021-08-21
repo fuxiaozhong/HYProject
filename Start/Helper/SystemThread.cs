@@ -26,8 +26,8 @@ namespace HYProject.Helper
             {
                 try
                 {
-                    MainForm.Instance.Text = Form_Global_System.Instance["标题栏"].ToString();
-                    MainForm.Instance.toolStrip_Version.Text = "版本号:" + Form_Global_System.Instance["版本号"].ToString();
+                    MainForm.Instance.Text = (Form_Global_System.Instance["标题栏"] == null ? "视觉软件" : Form_Global_System.Instance["标题栏"].ToString());
+                    MainForm.Instance.toolStrip_Version.Text = "版本号:" + (Form_Global_System.Instance["版本号"] == null ? "v1.0.0" : Form_Global_System.Instance["版本号"].ToString());
                 }
                 catch (Exception)
                 {

@@ -109,7 +109,7 @@ namespace HYProject
                 try
                 {
                     //label1.Text = Form_GlobalOptions.Instance["标题栏名称"].ToString();
-                    tsl_nowtime.Text = DateTime.Now.ToString(Form_Global_System.Instance["时间格式"].ToString());
+                    tsl_nowtime.Text = DateTime.Now.ToString(Form_Global_System.Instance["日期格式"] == null ? "yyyy-MM-dd HH:mm:ss" : Form_Global_System.Instance["日期格式"].ToString());
                     this.UserName = AppParam.Instance.Power;
                     SystemInfo systemInfo = new SystemInfo();
                     pro_memory.Value = (int)Math.Ceiling(((double)((systemInfo.PhysicalMemory - systemInfo.MemoryAvailable)) / (double)(systemInfo.PhysicalMemory) * 100));

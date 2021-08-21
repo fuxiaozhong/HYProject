@@ -388,6 +388,7 @@ namespace HYProject
             this.tsl_nowtime.Name = "tsl_nowtime";
             this.tsl_nowtime.Size = new System.Drawing.Size(130, 17);
             this.tsl_nowtime.Text = "2021-07-28  08:50:00";
+            this.tsl_nowtime.ToolTipText = "日期格式";
             // 
             // toolStrip_Version
             // 
@@ -395,6 +396,7 @@ namespace HYProject
             this.toolStrip_Version.Name = "toolStrip_Version";
             this.toolStrip_Version.Size = new System.Drawing.Size(82, 17);
             this.toolStrip_Version.Text = "版本号:V1.0.0";
+            this.toolStrip_Version.ToolTipText = "版本号";
             // 
             // panel4
             // 

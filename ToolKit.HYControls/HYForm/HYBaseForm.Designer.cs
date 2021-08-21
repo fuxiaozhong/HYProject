@@ -29,6 +29,7 @@ namespace ToolKit.HYControls.HYForm
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HYBaseForm));
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,6 +41,7 @@ namespace ToolKit.HYControls.HYForm
             this.label_Title = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -162,6 +164,7 @@ namespace ToolKit.HYControls.HYForm
             this.label_Title.TabIndex = 1;
             this.label_Title.Text = "视觉检测软件";
             this.label_Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.label_Title, "标题栏");
             this.label_Title.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Label3_MouseDown);
             // 
             // pictureBox1
@@ -175,6 +178,7 @@ namespace ToolKit.HYControls.HYForm
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox1, "深圳市恒越自动化科技有限公司");
             // 
             // label3
             // 
@@ -190,18 +194,18 @@ namespace ToolKit.HYControls.HYForm
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Label3_MouseDown);
             // 
-            // BaseForm
+            // HYBaseForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(885, 412);
+            this.ClientSize = new System.Drawing.Size(885, 548);
             this.ControlBox = false;
             this.Controls.Add(this.panel3);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
-            this.Name = "BaseForm";
+            this.Name = "HYBaseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.TextChanged += new System.EventHandler(this.Label4_TextChanged);
             this.panel3.ResumeLayout(false);
@@ -221,5 +225,6 @@ namespace ToolKit.HYControls.HYForm
         private System.Windows.Forms.Label label_Title;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
