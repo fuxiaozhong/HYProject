@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace ToolKit.DisplayWindow
 {
-    public partial class AutoAddDisplayWindowControl : UserControl
+    public partial class AutoHalconWindow : UserControl
     {
         protected override CreateParams CreateParams
         {
@@ -18,7 +18,7 @@ namespace ToolKit.DisplayWindow
             }
         }
 
-        public AutoAddDisplayWindowControl()
+        public AutoHalconWindow()
         {
             InitializeComponent();
         }
@@ -28,7 +28,7 @@ namespace ToolKit.DisplayWindow
         /// </summary>
         /// <param name="key">下标0开始</param>
         /// <returns></returns>
-        public HalconDisplayWindow this[string key]
+        public HalconWindow this[string key]
         {
             get
             {
@@ -47,7 +47,7 @@ namespace ToolKit.DisplayWindow
           /// </summary>
           /// <param name="key">下标0开始</param>
           /// <returns></returns>
-        public HalconDisplayWindow this[int index]
+        public HalconWindow this[int index]
         {
             get
             {
@@ -62,7 +62,7 @@ namespace ToolKit.DisplayWindow
             }
         }
 
-        private Dictionary<string, HalconDisplayWindow> HWindows = new Dictionary<string, HalconDisplayWindow>();
+        private Dictionary<string, HalconWindow> HWindows = new Dictionary<string, HalconWindow>();
         private int count;
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace ToolKit.DisplayWindow
                             Padding = new Padding(1, 1, 1, 1),
                             Size = new Size((int)(i % 2 == 0 ? Math.Ceiling(this.Width / col) : Math.Floor(this.Width / col)) - 1, (int)(this.Height / row))
                         };
-                        HalconDisplayWindow hWinControl = new HalconDisplayWindow() { Margin = new Padding(0, 0, 0, 0), Dock = DockStyle.Fill, Name = "1" };
+                        HalconWindow hWinControl = new HalconWindow() { Margin = new Padding(0, 0, 0, 0), Dock = DockStyle.Fill, Name = "1" };
                         panel.Controls.Add(hWinControl);
                         flowLayoutPanel1.Controls.Add(panel);
 
@@ -134,7 +134,7 @@ namespace ToolKit.DisplayWindow
                             Padding = new Padding(1, 1, 1, 1),
                             Size = new Size((int)(i % 2 == 0 ? Math.Ceiling(this.Width / col) : Math.Floor(this.Width / col)) - 1, (int)(this.Height / row))
                         };
-                        HalconDisplayWindow hWinControl = new HalconDisplayWindow() { Margin = new Padding(0, 0, 0, 0), Dock = DockStyle.Fill, Name = "1" };
+                        HalconWindow hWinControl = new HalconWindow() { Margin = new Padding(0, 0, 0, 0), Dock = DockStyle.Fill, Name = "1" };
                         panel.Controls.Add(hWinControl);
                         flowLayoutPanel1.Controls.Add(panel);
 
@@ -148,7 +148,7 @@ namespace ToolKit.DisplayWindow
         {
             lock (HWindows)
             {
-                foreach (HalconDisplayWindow item in HWindows.Values)
+                foreach (HalconWindow item in HWindows.Values)
                 {
                     item.HalconWindow.Dispose();
                     item.Dispose();

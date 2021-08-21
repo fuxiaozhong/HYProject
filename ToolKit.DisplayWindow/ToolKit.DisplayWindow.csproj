@@ -65,27 +65,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutoAddDisplayWindowControl.cs">
+    <Compile Include="AutoHalconWindow.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AutoAddDisplayWindowControl.Designer.cs">
-      <DependentUpon>AutoAddDisplayWindowControl.cs</DependentUpon>
+    <Compile Include="AutoHalconWindow.Designer.cs">
+      <DependentUpon>AutoHalconWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="HalconDisplayWindow.cs">
+    <Compile Include="HalconWindow.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="HalconDisplayWindow.Designer.cs">
-      <DependentUpon>HalconDisplayWindow.cs</DependentUpon>
+    <Compile Include="HalconWindow.Designer.cs">
+      <DependentUpon>HalconWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AutoAddDisplayWindowControl.resx">
-      <DependentUpon>AutoAddDisplayWindowControl.cs</DependentUpon>
+    <EmbeddedResource Include="AutoHalconWindow.resx">
+      <DependentUpon>AutoHalconWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HalconDisplayWindow.resx">
-      <DependentUpon>HalconDisplayWindow.cs</DependentUpon>
+    <EmbeddedResource Include="HalconWindow.resx">
+      <DependentUpon>HalconWindow.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

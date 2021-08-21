@@ -63,7 +63,7 @@ namespace ToolKit.HYControls
             this.测试查找ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.displayWindow2 = new ToolKit.DisplayWindow.HalconDisplayWindow();
+            this.displayWindow2 = new ToolKit.DisplayWindow.HalconWindow();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -79,7 +79,7 @@ namespace ToolKit.HYControls
             this.model_Shple = new System.Windows.Forms.RadioButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button7 = new System.Windows.Forms.Button();
-            this.displayWindow1 = new ToolKit.DisplayWindow.HalconDisplayWindow();
+            this.displayWindow1 = new ToolKit.DisplayWindow.HalconWindow();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.model_contrast)).BeginInit();
@@ -751,7 +751,7 @@ namespace ToolKit.HYControls
 
         #endregion
 
-        private DisplayWindow.HalconDisplayWindow displayWindow1;
+        private DisplayWindow.HalconWindow displayWindow1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.NumericUpDown model_minScore;
         private System.Windows.Forms.Label label2;
@@ -798,7 +798,7 @@ namespace ToolKit.HYControls
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton model_Shple;
-        private DisplayWindow.HalconDisplayWindow displayWindow2;
+        private DisplayWindow.HalconWindow displayWindow2;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Label label12;

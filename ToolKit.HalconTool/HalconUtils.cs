@@ -80,7 +80,7 @@ namespace ToolKit.HalconTool
         /// <param name="resultColumn">返回column</param>
         /// <param name="resultAngle">返回angle</param>
         /// <param name="resultScores">返回分数</param>
-        public static void FindModel(HalconDisplayWindow winControl, HObject image, ModelParameter modelPar, out HTuple resultRow, out HTuple resultColumn, out HTuple resultAngle, out HTuple resultScores)
+        public static void FindModel(HalconWindow winControl, HObject image, ModelParameter modelPar, out HTuple resultRow, out HTuple resultColumn, out HTuple resultAngle, out HTuple resultScores)
         {
             if (image == null)
             {
@@ -268,7 +268,7 @@ namespace ToolKit.HalconTool
         /// <param name="hv_ScaleR"></param>
         /// <param name="hv_ScaleC"></param>
         /// <param name="hv_Model"></param>
-        public static void dev_display_shape_matching_results(HalconDisplayWindow winControl, HTuple hv_ModelID, HTuple hv_Color, HTuple hv_Row, HTuple hv_Column, HTuple hv_Angle, HTuple hv_ScaleR, HTuple hv_ScaleC, HTuple hv_Model)
+        public static void dev_display_shape_matching_results(HalconWindow winControl, HTuple hv_ModelID, HTuple hv_Color, HTuple hv_Row, HTuple hv_Column, HTuple hv_Angle, HTuple hv_ScaleR, HTuple hv_ScaleC, HTuple hv_Model)
         {
             // Local iconic variables
 
@@ -507,7 +507,7 @@ namespace ToolKit.HalconTool
         /// <param name="hv_Column"></param>
         /// <param name="hv_Angle"></param>
         /// <param name="hv_Model"></param>
-        public static void dev_display_ncc_matching_results(HalconDisplayWindow winControl, HTuple hv_ModelID, HTuple hv_Color, HTuple hv_Row, HTuple hv_Column, HTuple hv_Angle, HTuple hv_Model)
+        public static void dev_display_ncc_matching_results(HalconWindow winControl, HTuple hv_ModelID, HTuple hv_Color, HTuple hv_Row, HTuple hv_Column, HTuple hv_Angle, HTuple hv_Model)
         {
             // Local iconic variables
 
@@ -803,7 +803,7 @@ namespace ToolKit.HalconTool
         /// <param name="image">输入图像</param>
         /// <param name="_OutShapeRegion">返回的找到的边</param>
         /// <param name="_OutShapeParam">返回的找到的边的参数</param>
-        public static void CaliperMeasure(HalconDisplayWindow winControl, MeasureParam measure, HObject image, out HObject _OutShapeRegion, out HTuple _OutShapeParam)
+        public static void CaliperMeasure(HalconWindow winControl, MeasureParam measure, HObject image, out HObject _OutShapeRegion, out HTuple _OutShapeParam)
         {
             try
             {

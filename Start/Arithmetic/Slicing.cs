@@ -7,7 +7,7 @@ namespace HYProject.Arithmetic
 {
     public class Slicing
     {
-        public static void Test(HObject iamge, HalconDisplayWindow displayWindow)
+        public static void Test(HObject iamge, HalconWindow displayWindow)
         {
             // Local iconic variables
 

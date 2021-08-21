@@ -30,7 +30,7 @@ namespace HYProject.ToolForm
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Measure));
-            this.halconDisplayWindow1 = new ToolKit.DisplayWindow.HalconDisplayWindow();
+            this.halconDisplayWindow1 = new ToolKit.DisplayWindow.HalconWindow();
             this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -144,7 +144,7 @@ namespace HYProject.ToolForm
 
         #endregion
 
-        private ToolKit.DisplayWindow.HalconDisplayWindow halconDisplayWindow1;
+        private ToolKit.DisplayWindow.HalconWindow halconDisplayWindow1;
         private System.Windows.Forms.PropertyGrid propertyGrid1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;

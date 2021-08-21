@@ -29,7 +29,7 @@ namespace HYProject.ToolForm
         /// </summary>
         private void InitializeComponent()
         {
-            this.autoAddDisplayWindowControl1 = new ToolKit.DisplayWindow.AutoAddDisplayWindowControl();
+            this.autoAddDisplayWindowControl1 = new ToolKit.DisplayWindow.AutoHalconWindow();
             this.SuspendLayout();
             // 
             // autoAddDisplayWindowControl1
@@ -58,6 +58,6 @@ namespace HYProject.ToolForm
 
         #endregion
 
-        private ToolKit.DisplayWindow.AutoAddDisplayWindowControl autoAddDisplayWindowControl1;
+        private ToolKit.DisplayWindow.AutoHalconWindow autoAddDisplayWindowControl1;
     }
 }

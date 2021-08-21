@@ -1,7 +1,7 @@
 ﻿
 namespace ToolKit.DisplayWindow
 {
-    partial class AutoAddDisplayWindowControl
+    partial class AutoHalconWindow
     {
         /// <summary> 
         /// 必需的设计器变量。

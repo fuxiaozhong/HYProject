@@ -9,9 +9,9 @@ using HalconDotNet;
 
 namespace ToolKit.DisplayWindow
 {
-    public partial class HalconDisplayWindow : UserControl
+    public partial class HalconWindow : UserControl
     {
-        public HalconDisplayWindow()
+        public HalconWindow()
         {
             InitializeComponent();
         }

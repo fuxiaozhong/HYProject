@@ -1,7 +1,7 @@
 ﻿
 namespace ToolKit.DisplayWindow
 {
-    partial class HalconDisplayWindow
+    partial class HalconWindow
     {
         /// <summary> 
         /// 必需的设计器变量。

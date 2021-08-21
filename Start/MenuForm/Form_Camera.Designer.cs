@@ -52,7 +52,7 @@ namespace HYProject.MenuForm
             this.button_Save = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.displayWindow1 = new ToolKit.DisplayWindow.HalconDisplayWindow();
+            this.displayWindow1 = new ToolKit.DisplayWindow.HalconWindow();
             ((System.ComponentModel.ISupportInitialize)(this.num_exposuretime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_gain)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -403,7 +403,7 @@ namespace HYProject.MenuForm
 
         #endregion
 
-        private ToolKit.DisplayWindow.HalconDisplayWindow displayWindow1;
+        private ToolKit.DisplayWindow.HalconWindow displayWindow1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox_CamList;
         private System.Windows.Forms.Label label2;

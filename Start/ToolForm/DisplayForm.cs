@@ -83,7 +83,7 @@ namespace HYProject.ToolForm
         /// </summary>
         /// <param name="key">窗口下标 0 开始</param>
         /// <returns></returns>
-        public HalconDisplayWindow this[int key]
+        public HalconWindow this[int key]
         {
             get
             {
@@ -95,7 +95,7 @@ namespace HYProject.ToolForm
          /// </summary>
          /// <param name="key">窗口名称</param>
          /// <returns></returns>
-        public HalconDisplayWindow this[string cameraName]
+        public HalconWindow this[string cameraName]
         {
             get
             {
