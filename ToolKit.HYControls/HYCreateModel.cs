@@ -151,7 +151,7 @@ namespace ToolKit.HYControls
             }
             else
             {
-                displayWindow1.HalconWindow.ClearWindow();
+                displayWindow1.HalconWindowHandle.ClearWindow();
             }
 
             displayWindow1.Disp_Image(model.baseImage);

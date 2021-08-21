@@ -150,7 +150,7 @@ namespace ToolKit.DisplayWindow
             {
                 foreach (HalconWindow item in HWindows.Values)
                 {
-                    item.HalconWindow.Dispose();
+                    item.HalconWindowHandle.Dispose();
                     item.Dispose();
                 }
                 HWindows.Clear();

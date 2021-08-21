@@ -385,7 +385,7 @@ namespace ToolKit.HalconTool
                     }
                     //Redirect all display calls to a buffer window and update the
                     //graphics window only at the end, to speed up the visualization.
-                    HOperatorSet.SetWindowParam(winControl.HalconWindow, "flush", "false");
+                    HOperatorSet.SetWindowParam(winControl.HalconWindowHandle, "flush", "false");
                     for (hv_Index = 0; (int)hv_Index <= (int)((new HTuple(hv_ModelID.TupleLength()
                         )) - 1); hv_Index = (int)hv_Index + 1)
                     {
@@ -445,8 +445,8 @@ namespace ToolKit.HalconTool
                         }
                     }
                     //Copy the content of the buffer window to the graphics window.
-                    HOperatorSet.SetWindowParam(winControl.HalconWindow, "flush", "true");
-                    HOperatorSet.FlushBuffer(winControl.HalconWindow);
+                    HOperatorSet.SetWindowParam(winControl.HalconWindowHandle, "flush", "true");
+                    HOperatorSet.FlushBuffer(winControl.HalconWindowHandle);
                 }
                 ho_ClutterRegion.Dispose();
                 ho_ModelContours.Dispose();
