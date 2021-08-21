@@ -75,7 +75,7 @@ namespace HYProject
             //
             splitContainer_Main.Panel1.Controls.Add(DisplayForm.Instance);
             //split_Main.Panel2.Controls.Add(Form_DateVsualization.Instance);
-            DisplayForm.Instance.DisplayWindowCount = AppParam.Instance.CameraInitStr.Count;
+            DisplayForm.Instance.DisplayWindowCount = AppParam.Instance.CameraInitStr.Count == 0 ? 1 : AppParam.Instance.CameraInitStr.Count;
 
             //添加日志窗口
             panel_Log.Controls.Add(HYForm_Log.Instance);
