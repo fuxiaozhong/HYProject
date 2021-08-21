@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="COMSerailPortDevice.cs" />
+    <Compile Include="IniConfig.cs" />
     <Compile Include="LightSource.cs" />
     <Compile Include="Memory_Shared.cs" />
     <Compile Include="TCPSocketClient.cs" />

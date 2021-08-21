@@ -1292,5 +1292,6 @@ namespace ToolKit.HalconTool
                 hv_h.Dispose();
             }
         }
+
     }
 }
