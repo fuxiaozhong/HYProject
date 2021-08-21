@@ -66,7 +66,7 @@ namespace HYProject
         {
         }
 
-        internal List<CameraInfo> CameraInitStr;
+        internal List<CameraInfo> CameraInitStr = new List<CameraInfo>();
 
         /// <summary>
         /// 当前登陆用户/不序列化保存
