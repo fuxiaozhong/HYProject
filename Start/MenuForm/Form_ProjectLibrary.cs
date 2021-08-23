@@ -101,9 +101,9 @@ namespace HYProject.MenuForm
             {
                 if (HYMessageBox.Show("确认删除此产品?", "提示") == DialogResult.OK)
                 {
-                    if (File.Exists(AppParam.Instance.ProductLibrary + "\\" + label_NowProductName.Text + ".pro"))
+                    if (File.Exists(AppParam.Instance.ProductLibrary + "\\" + label_NowProductName.Text + ".HYProduct"))
                     {
-                        File.Delete(AppParam.Instance.ProductLibrary + "\\" + label_NowProductName.Text + ".pro");
+                        File.Delete(AppParam.Instance.ProductLibrary + "\\" + label_NowProductName.Text + ".HYProduct");
                         HYMessageBox.Show("产品:" + label_NowProductName.Text + "删除成功", "删除提示");
                         Log.WriteRunLog("产品:" + label_NowProductName.Text + "删除成功");
                         label_NowProductName.Text = "";

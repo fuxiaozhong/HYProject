@@ -13,17 +13,17 @@ namespace HYProject.ToolForm
     {
         private bool isNew = true;
 
-        public Form_ProductOperation(string pro = "")
+        public Form_ProductOperation(string HYProduct = "")
         {
             InitializeComponent();
-            if (pro == "")
+            if (HYProduct == "")
             {
                 Text = "产品_添加";
                 isNew = true;
             }
             else
             {
-                product = (Product)Serialization.Read2(AppParam.Instance.ProductLibrary + "\\" + pro + ".pro");
+                product = (Product)Serialization.Read2(AppParam.Instance.ProductLibrary + "\\" + HYProduct + ".HYProduct");
                 ProductName = product.ProductName;
                 Text = "产品_修改" + ("-" + ProductName);
                 isNew = false;
@@ -64,7 +64,7 @@ namespace HYProject.ToolForm
             {
                 product = new Product();
             }
-            Serialization.Save2(product, AppParam.Instance.ProductLibrary + "\\" + ProductName + ".pro");
+            Serialization.Save2(product, AppParam.Instance.ProductLibrary + "\\" + ProductName + ".HYProduct");
             HYMessageBox.Show("保存成功");
         }
     }

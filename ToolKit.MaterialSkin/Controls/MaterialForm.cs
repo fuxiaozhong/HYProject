@@ -89,8 +89,6 @@ namespace ToolKit.MaterialSkin.Controls
         private const uint TPM_RETURNCMD = 0x0100;
 
         private const int WM_SYSCOMMAND = 0x0112;
-        private const int WS_MINIMIZEBOX = 0x20000;
-        private const int WS_SYSMENU = 0x00080000;
 
         private const int MONITOR_DEFAULTTONEAREST = 2;
 
@@ -567,17 +565,6 @@ namespace ToolKit.MaterialSkin.Controls
 
             //Form title
             g.DrawString(Text, SkinManager.ROBOTO_MEDIUM_12, SkinManager.ColorScheme.TextBrush, new Rectangle(SkinManager.FORM_PADDING, STATUS_BAR_HEIGHT, Width, ACTION_BAR_HEIGHT), new StringFormat { LineAlignment = StringAlignment.Center });
-        }
-
-        private void InitializeComponent()
-        {
-            this.SuspendLayout();
-            //
-            // MaterialForm
-            //
-            this.ClientSize = new System.Drawing.Size(772, 363);
-            this.Name = "MaterialForm";
-            this.ResumeLayout(false);
         }
     }
 
