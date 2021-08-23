@@ -14,15 +14,6 @@ namespace HYProject.ToolForm
             InitializeComponent();
         }
 
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams cp = base.CreateParams;
-                cp.ExStyle |= 0x02000000; // 用双缓冲绘制窗口的所有子控件
-                return cp;
-            }
-        }
 
         private void Form_Limit_Load(object sender, EventArgs e)
         {

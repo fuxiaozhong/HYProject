@@ -64,15 +64,6 @@ namespace HYProject.ToolForm
             label_U_S2.Text = DataLimit.Instance.UpperLimit_S2.ToString();
         }
 
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams cp = base.CreateParams;
-                cp.ExStyle |= 0x02000000; // 用双缓冲绘制窗口的所有子控件
-                return cp;
-            }
-        }
 
         private Form_DateVsualization()
         {

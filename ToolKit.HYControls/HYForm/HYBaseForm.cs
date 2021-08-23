@@ -399,10 +399,17 @@ namespace ToolKit.HYControls.HYForm
         {
             get
             {
+                const int CS_NOCLOSE = 0x200;
                 CreateParams cp = base.CreateParams;
-                cp.ExStyle |= 0x02000000; // 用双缓冲绘制窗口的所有子控件
+                cp.ClassStyle = cp.ClassStyle | CS_NOCLOSE;
+                if (!DesignMode)
+                {
+                    cp.ExStyle |= 0x02000000;
+                    return cp;
+                }
                 return cp;
             }
+
         }
 
         [CategoryAttribute("其他"), DescriptionAttribute("隐藏或者显示边框")]

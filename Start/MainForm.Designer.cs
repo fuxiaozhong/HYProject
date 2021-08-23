@@ -219,7 +219,8 @@ namespace HYProject
             this.主页面ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("主页面ToolStripMenuItem.Image")));
             this.主页面ToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.主页面ToolStripMenuItem.Name = "主页面ToolStripMenuItem";
-            this.主页面ToolStripMenuItem.Size = new System.Drawing.Size(116, 44);
+            this.主页面ToolStripMenuItem.Padding = new System.Windows.Forms.Padding(20, 0, 4, 0);
+            this.主页面ToolStripMenuItem.Size = new System.Drawing.Size(132, 44);
             this.主页面ToolStripMenuItem.Text = "主页面";
             // 
             // 相机ToolStripMenuItem
@@ -255,7 +256,8 @@ namespace HYProject
             this.退出系统ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("退出系统ToolStripMenuItem.Image")));
             this.退出系统ToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.退出系统ToolStripMenuItem.Name = "退出系统ToolStripMenuItem";
-            this.退出系统ToolStripMenuItem.Size = new System.Drawing.Size(136, 44);
+            this.退出系统ToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 0, 20, 0);
+            this.退出系统ToolStripMenuItem.Size = new System.Drawing.Size(152, 44);
             this.退出系统ToolStripMenuItem.Text = "退出系统";
             this.退出系统ToolStripMenuItem.Click += new System.EventHandler(this.Button_Exit_Click);
             // 
