@@ -132,6 +132,10 @@ namespace HYProject.MenuForm
 
         private void Button4_Click(object sender, EventArgs e)
         {
+            Product product = (Product)Serialization.Read2(AppParam.Instance.ProductLibrary + "\\" + label_NowProductName.Text + ".HYProduct");
+
+
+
         }
     }
 }

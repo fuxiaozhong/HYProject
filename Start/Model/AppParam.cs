@@ -208,7 +208,7 @@ namespace HYProject
         internal MeasureParam Measure;
 
         /// <summary>
-        /// 卡尺对象
+        /// 当前产品
         /// </summary>
         internal string NowProduct;
 
