@@ -63,7 +63,6 @@ namespace HYProject
             this.toolStrip_Version = new System.Windows.Forms.ToolStripLabel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.splitContainer_Main = new System.Windows.Forms.SplitContainer();
-            this.materialFlatButton1 = new ToolKit.MaterialSkin.Controls.MaterialFlatButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label_NowProduct = new ToolKit.MaterialSkin.Controls.MaterialLabel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -433,29 +432,11 @@ namespace HYProject
             // 
             // splitContainer_Main.Panel2
             // 
-            this.splitContainer_Main.Panel2.Controls.Add(this.materialFlatButton1);
             this.splitContainer_Main.Panel2.Controls.Add(this.groupBox1);
             this.splitContainer_Main.Size = new System.Drawing.Size(1237, 485);
             this.splitContainer_Main.SplitterDistance = 936;
             this.splitContainer_Main.SplitterWidth = 1;
             this.splitContainer_Main.TabIndex = 0;
-            // 
-            // materialFlatButton1
-            // 
-            this.materialFlatButton1.AutoSize = true;
-            this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton1.Depth = 0;
-            this.materialFlatButton1.Icon = null;
-            this.materialFlatButton1.Location = new System.Drawing.Point(13, 152);
-            this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton1.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton1.Name = "materialFlatButton1";
-            this.materialFlatButton1.Primary = false;
-            this.materialFlatButton1.Size = new System.Drawing.Size(181, 36);
-            this.materialFlatButton1.TabIndex = 1;
-            this.materialFlatButton1.Text = "materialFlatButton1";
-            this.materialFlatButton1.UseVisualStyleBackColor = true;
-            this.materialFlatButton1.Click += new System.EventHandler(this.MaterialFlatButton1_Click);
             // 
             // groupBox1
             // 
@@ -559,7 +540,6 @@ namespace HYProject
             this.toolStrip1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.splitContainer_Main.Panel2.ResumeLayout(false);
-            this.splitContainer_Main.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer_Main)).EndInit();
             this.splitContainer_Main.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -604,7 +584,6 @@ namespace HYProject
         public System.Windows.Forms.ToolStripLabel tsl_nowtime;
         private System.Windows.Forms.GroupBox groupBox1;
         private MaterialLabel label_NowProduct;
-        private MaterialFlatButton materialFlatButton1;
         private System.Windows.Forms.ToolStripMenuItem 系统操作ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 备份ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 重启ToolStripMenuItem;
