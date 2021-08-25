@@ -108,6 +108,7 @@ namespace HYProject
             {
                 try
                 {
+                    label_NowProduct.Text = (AppParam.Instance.NowProduct == ""||AppParam.Instance.NowProduct == null) ? "###" : AppParam.Instance.NowProduct;
                     //label1.Text = Form_GlobalOptions.Instance["标题栏名称"].ToString();
                     tsl_nowtime.Text = DateTime.Now.ToString(Form_Global_System.Instance["日期格式"] == null ? "yyyy-MM-dd HH:mm:ss" : Form_Global_System.Instance["日期格式"].ToString());
                     this.UserName = AppParam.Instance.Power;

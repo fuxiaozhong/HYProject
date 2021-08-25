@@ -275,6 +275,8 @@ namespace ToolKit.HYControls.HYForm
         {
             ClearLog();
         }
+
+
     }
 
     public struct OutputItem

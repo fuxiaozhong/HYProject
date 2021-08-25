@@ -211,6 +211,10 @@ namespace HYProject
         /// 当前产品
         /// </summary>
         internal string NowProduct;
+        /// <summary>
+        /// 日志储存天数
+        /// </summary>
+        internal int Log_Save_Days = 7;
 
         /// <summary>
         /// 保存对象到文件

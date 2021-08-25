@@ -6,6 +6,8 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Threading;
+using System.Windows.Documents;
+using System.Windows.Forms;
 
 using HalconDotNet;
 
@@ -29,7 +31,47 @@ namespace HYProject
             m_lstLog["error_logo"] = log4net.LogManager.GetLogger("error_logo");
             m_lstLog["warn_logo"] = log4net.LogManager.GetLogger("warn_logo");
             m_lstLog["run_logo"] = log4net.LogManager.GetLogger("run_logo");
+            _DeleteLogFile = new Thread(DeleteLogFile);
+            _DeleteLogFile.IsBackground = true;
+            _DeleteLogFile.Name = "删除日志文件";
+            _DeleteLogFile.Start();
         }
+
+        private static void DeleteLogFile()
+        {
+            while (true)
+            {
+                try
+                {
+                    string LogPath = System.Windows.Forms.Application.StartupPath + "\\Logs";
+                    DirectoryInfo theFolder = new DirectoryInfo(LogPath);
+                    DirectoryInfo[] dirInfo = theFolder.GetDirectories();
+                    foreach (DirectoryInfo NextFolder in dirInfo)
+                    {
+                        FileInfo[] fileInfo = NextFolder.GetFiles("*.*", SearchOption.AllDirectories);
+                        foreach (FileInfo NextFile in fileInfo)
+                        {
+                            TimeSpan t = DateTime.Now - NextFile.CreationTime;  //当前时间  减去 文件创建时间
+                            int day = t.Days;
+                            if (day > AppParam.Instance.Log_Save_Days)   //保存的时间 ;  单位：天
+                            {
+                                File.Delete(NextFile.FullName);  //删除超过时间的文件
+                            }
+
+                        }
+                    }
+                    Thread.Sleep(1000);
+                    Application.DoEvents();
+                }
+                catch (Exception ex)
+                {
+                    WriteErrorLog("删除日志文件出错", ex);
+                }
+
+            }
+        }
+
+        static Thread _DeleteLogFile;
 
         /// <summary>
         /// 功能描述:写入警告日志

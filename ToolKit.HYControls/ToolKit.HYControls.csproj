@@ -171,6 +171,12 @@
     <Compile Include="HYTCPSocket.Designer.cs">
       <DependentUpon>HYTCPSocket.cs</DependentUpon>
     </Compile>
+    <Compile Include="HYRoundButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HYRoundButton.Designer.cs">
+      <DependentUpon>HYRoundButton.cs</DependentUpon>
+    </Compile>
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>

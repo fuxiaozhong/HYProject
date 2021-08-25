@@ -53,12 +53,13 @@ namespace ToolKit.HYControls
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(105, -2);
+            this.label1.Location = new System.Drawing.Point(105, -1);
             this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(0, 2, 0, 0);
             this.label1.Size = new System.Drawing.Size(21, 26);
             this.label1.TabIndex = 1;
             this.label1.Text = "+";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label1.Click += new System.EventHandler(this.Btn_add_Click);
             // 
             // label2
@@ -68,20 +69,21 @@ namespace ToolKit.HYControls
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
+            this.label2.Padding = new System.Windows.Forms.Padding(0, 2, 0, 0);
             this.label2.Size = new System.Drawing.Size(21, 24);
             this.label2.TabIndex = 2;
             this.label2.Text = "-";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label2.Click += new System.EventHandler(this.Btn_sub_Click);
             // 
-            // Numeric
+            // HYNumericUpDown
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.nud_value);
-            this.Name = "Numeric";
+            this.Name = "HYNumericUpDown";
             this.Size = new System.Drawing.Size(126, 22);
             this.SizeChanged += new System.EventHandler(this.Numeric_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.nud_value)).EndInit();

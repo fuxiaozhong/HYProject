@@ -66,6 +66,8 @@ namespace HYProject
             this.panel1 = new System.Windows.Forms.Panel();
             this.userControl11 = new ToolKit.HalconTool.UserControl1();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label_NowProduct = new ToolKit.MaterialSkin.Controls.MaterialLabel();
             this.tableLayout.SuspendLayout();
             this.panel_Buttom.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -75,7 +77,9 @@ namespace HYProject
             this.toolStrip1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer_Main)).BeginInit();
+            this.splitContainer_Main.Panel2.SuspendLayout();
             this.splitContainer_Main.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayout
@@ -421,6 +425,10 @@ namespace HYProject
             // splitContainer_Main.Panel1
             // 
             this.splitContainer_Main.Panel1.BackColor = System.Drawing.SystemColors.Control;
+            // 
+            // splitContainer_Main.Panel2
+            // 
+            this.splitContainer_Main.Panel2.Controls.Add(this.groupBox1);
             this.splitContainer_Main.Size = new System.Drawing.Size(1237, 485);
             this.splitContainer_Main.SplitterDistance = 936;
             this.splitContainer_Main.SplitterWidth = 1;
@@ -443,6 +451,31 @@ namespace HYProject
             this.userControl11.Size = new System.Drawing.Size(10, 10);
             this.userControl11.TabIndex = 0;
             this.userControl11.Visible = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.label_NowProduct);
+            this.groupBox1.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(294, 69);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "当前产品";
+            // 
+            // label_NowProduct
+            // 
+            this.label_NowProduct.Depth = 0;
+            this.label_NowProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label_NowProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label_NowProduct.Location = new System.Drawing.Point(6, 25);
+            this.label_NowProduct.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
+            this.label_NowProduct.Name = "label_NowProduct";
+            this.label_NowProduct.Size = new System.Drawing.Size(285, 41);
+            this.label_NowProduct.TabIndex = 0;
+            this.label_NowProduct.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
@@ -474,8 +507,10 @@ namespace HYProject
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel4.ResumeLayout(false);
+            this.splitContainer_Main.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer_Main)).EndInit();
             this.splitContainer_Main.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -515,6 +550,8 @@ namespace HYProject
         public System.Windows.Forms.ToolStripLabel toolStrip_Version;
         private System.Windows.Forms.ToolStripMenuItem pLC配置ToolStripMenuItem;
         public System.Windows.Forms.ToolStripLabel tsl_nowtime;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private MaterialLabel label_NowProduct;
         // private ToolKit.HYControls.CreateModelControl createModelControl1;
     }
 }

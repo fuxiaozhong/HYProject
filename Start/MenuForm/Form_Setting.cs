@@ -56,6 +56,7 @@ namespace HYProject.MenuForm
             AppParam.Instance.Save_Image_Path = textBox1.Text;
             AppParam.Instance.Save_Data_Path = textBox2.Text;
             AppParam.Instance.Save_Image_Days = (int)numericUpDown1.Value;
+            AppParam.Instance.Log_Save_Days = (int)hyNumericUpDown1.Value;
             AppParam.Instance.DesktopShortcut = checkBox1.Checked;
             AppParam.Instance.PowerBoot = checkBox2.Checked;
             AppParam.Instance.RunStateMax = checkBox3.Checked;
@@ -81,6 +82,7 @@ namespace HYProject.MenuForm
             textBox1.Text = AppParam.Instance.Save_Image_Path;
             textBox2.Text = AppParam.Instance.Save_Data_Path;
             numericUpDown1.Value = AppParam.Instance.Save_Image_Days;
+            hyNumericUpDown1.Value = AppParam.Instance.Log_Save_Days;
             checkBox1.Checked = AppParam.Instance.DesktopShortcut;
             checkBox2.Checked = AppParam.Instance.PowerBoot;
             checkBox3.Checked = AppParam.Instance.RunStateMax;

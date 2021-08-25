@@ -308,6 +308,9 @@ namespace ToolKit.HYControls.HYForm
         {
             InitializeComponent();
             CheckForIllegalCrossThreadCalls = false;
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true); //  禁止擦除背景.
+            SetStyle(ControlStyles.DoubleBuffer, true); //  双缓冲
         }
 
         private void Label4_TextChanged(object sender, EventArgs e)

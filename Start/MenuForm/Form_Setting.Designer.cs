@@ -39,7 +39,6 @@ namespace HYProject.MenuForm
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -57,7 +56,10 @@ namespace HYProject.MenuForm
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.label9 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new ToolKit.HYControls.HYNumericUpDown();
+            this.hyNumericUpDown1 = new ToolKit.HYControls.HYNumericUpDown();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,7 +89,7 @@ namespace HYProject.MenuForm
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(24, 105);
+            this.label3.Location = new System.Drawing.Point(24, 101);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(112, 16);
@@ -98,7 +100,7 @@ namespace HYProject.MenuForm
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox1.Location = new System.Drawing.Point(27, 160);
+            this.checkBox1.Location = new System.Drawing.Point(27, 231);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(123, 20);
             this.checkBox1.TabIndex = 3;
@@ -109,7 +111,7 @@ namespace HYProject.MenuForm
             // 
             this.checkBox2.AutoSize = true;
             this.checkBox2.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox2.Location = new System.Drawing.Point(27, 186);
+            this.checkBox2.Location = new System.Drawing.Point(27, 257);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(91, 20);
             this.checkBox2.TabIndex = 4;
@@ -120,7 +122,7 @@ namespace HYProject.MenuForm
             // 
             this.checkBox3.AutoSize = true;
             this.checkBox3.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox3.Location = new System.Drawing.Point(27, 212);
+            this.checkBox3.Location = new System.Drawing.Point(27, 283);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(139, 20);
             this.checkBox3.TabIndex = 5;
@@ -131,7 +133,7 @@ namespace HYProject.MenuForm
             // 
             this.checkBox4.AutoSize = true;
             this.checkBox4.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox4.Location = new System.Drawing.Point(27, 186);
+            this.checkBox4.Location = new System.Drawing.Point(27, 257);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(107, 20);
             this.checkBox4.TabIndex = 6;
@@ -154,23 +156,11 @@ namespace HYProject.MenuForm
             this.textBox2.Size = new System.Drawing.Size(627, 26);
             this.textBox2.TabIndex = 8;
             // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(143, 99);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 26);
-            this.numericUpDown1.TabIndex = 9;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            30,
-            0,
-            0,
-            0});
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(269, 107);
+            this.label4.Location = new System.Drawing.Point(269, 104);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(24, 16);
             this.label4.TabIndex = 10;
@@ -228,7 +218,7 @@ namespace HYProject.MenuForm
             // 
             this.checkBox5.AutoSize = true;
             this.checkBox5.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox5.Location = new System.Drawing.Point(27, 134);
+            this.checkBox5.Location = new System.Drawing.Point(27, 205);
             this.checkBox5.Name = "checkBox5";
             this.checkBox5.Size = new System.Drawing.Size(91, 20);
             this.checkBox5.TabIndex = 16;
@@ -349,11 +339,94 @@ namespace HYProject.MenuForm
             this.label8.Size = new System.Drawing.Size(0, 16);
             this.label8.TabIndex = 23;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Location = new System.Drawing.Point(24, 131);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(112, 16);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "日志保存时间:";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.DecimalPlaces = 0;
+            this.numericUpDown1.Incremeent = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Location = new System.Drawing.Point(143, 99);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDown1.MaxValue = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.numericUpDown1.MinValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(117, 22);
+            this.numericUpDown1.TabIndex = 26;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            // 
+            // hyNumericUpDown1
+            // 
+            this.hyNumericUpDown1.DecimalPlaces = 0;
+            this.hyNumericUpDown1.Incremeent = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.hyNumericUpDown1.Location = new System.Drawing.Point(143, 131);
+            this.hyNumericUpDown1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.hyNumericUpDown1.MaxValue = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.hyNumericUpDown1.MinValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.hyNumericUpDown1.Name = "hyNumericUpDown1";
+            this.hyNumericUpDown1.Size = new System.Drawing.Size(117, 22);
+            this.hyNumericUpDown1.TabIndex = 27;
+            this.hyNumericUpDown1.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Location = new System.Drawing.Point(269, 133);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(24, 16);
+            this.label10.TabIndex = 28;
+            this.label10.Text = "天";
+            // 
             // Form_Setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(896, 427);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.hyNumericUpDown1);
+            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.progressBar2);
@@ -367,7 +440,6 @@ namespace HYProject.MenuForm
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.checkBox4);
@@ -401,7 +473,6 @@ namespace HYProject.MenuForm
             this.Controls.SetChildIndex(this.checkBox4, 0);
             this.Controls.SetChildIndex(this.textBox1, 0);
             this.Controls.SetChildIndex(this.textBox2, 0);
-            this.Controls.SetChildIndex(this.numericUpDown1, 0);
             this.Controls.SetChildIndex(this.label4, 0);
             this.Controls.SetChildIndex(this.button1, 0);
             this.Controls.SetChildIndex(this.button2, 0);
@@ -415,7 +486,10 @@ namespace HYProject.MenuForm
             this.Controls.SetChildIndex(this.progressBar2, 0);
             this.Controls.SetChildIndex(this.label7, 0);
             this.Controls.SetChildIndex(this.label8, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.Controls.SetChildIndex(this.label9, 0);
+            this.Controls.SetChildIndex(this.numericUpDown1, 0);
+            this.Controls.SetChildIndex(this.hyNumericUpDown1, 0);
+            this.Controls.SetChildIndex(this.label10, 0);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -434,7 +508,6 @@ namespace HYProject.MenuForm
         private System.Windows.Forms.CheckBox checkBox4;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
@@ -452,5 +525,9 @@ namespace HYProject.MenuForm
         private System.Windows.Forms.ProgressBar progressBar2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private ToolKit.HYControls.HYNumericUpDown numericUpDown1;
+        private ToolKit.HYControls.HYNumericUpDown hyNumericUpDown1;
+        private System.Windows.Forms.Label label10;
     }
 }
