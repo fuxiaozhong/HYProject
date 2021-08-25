@@ -75,7 +75,15 @@ namespace HYProject
             //
             splitContainer_Main.Panel1.Controls.Add(DisplayForm.Instance);
             //split_Main.Panel2.Controls.Add(Form_DateVsualization.Instance);
-            DisplayForm.Instance.DisplayWindowCount = AppParam.Instance.CameraInitStr.Count == 0 ? 1 : AppParam.Instance.CameraInitStr.Count;
+
+
+            ///通过数量生产 窗口数
+            //DisplayForm.Instance.DisplayWindowCount = AppParam.Instance.CameraInitStr.Count == 0 ? 1 : AppParam.Instance.CameraInitStr.Count;
+            //通过相机名称生产窗口
+            DisplayForm.Instance.DisplayWindowNames = Cameras.Instance.GetCameras.Keys.ToArray<string>();
+
+
+
 
             //添加日志窗口
             panel_Log.Controls.Add(HYForm_Log.Instance);
@@ -108,7 +116,7 @@ namespace HYProject
             {
                 try
                 {
-                    label_NowProduct.Text = (AppParam.Instance.NowProduct == ""||AppParam.Instance.NowProduct == null) ? "###" : AppParam.Instance.NowProduct;
+                    label_NowProduct.Text = (AppParam.Instance.NowProduct == "" || AppParam.Instance.NowProduct == null) ? "###" : AppParam.Instance.NowProduct;
                     //label1.Text = Form_GlobalOptions.Instance["标题栏名称"].ToString();
                     tsl_nowtime.Text = DateTime.Now.ToString(Form_Global_System.Instance["日期格式"] == null ? "yyyy-MM-dd HH:mm:ss" : Form_Global_System.Instance["日期格式"].ToString());
                     this.UserName = AppParam.Instance.Power;

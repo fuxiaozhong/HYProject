@@ -32,3 +32,6 @@ dotnet_diagnostic.CS0109.severity = none
 
 # CS0649: Field 'SwitchControl.checkStyle' is never assigned to, and will always have its default value
 dotnet_diagnostic.CS0649.severity = none
+
+# CS1591: 缺少对公共可见类型或成员的 XML 注释
+dotnet_diagnostic.CS1591.severity = none
