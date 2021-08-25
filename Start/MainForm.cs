@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
+using System.Windows.Shapes;
 
 using HalconDotNet;
 
@@ -11,6 +14,9 @@ using HYProject.MenuForm;
 using HYProject.Model;
 using HYProject.Plugin;
 using HYProject.ToolForm;
+
+using ICSharpCode.SharpZipLib.Checksum;
+using ICSharpCode.SharpZipLib.Zip;
 
 using ToolKit.HYControls.HYForm;
 
@@ -366,6 +372,48 @@ namespace HYProject
         {
             Form_PLC form_PLC = new Form_PLC();
             form_PLC.Show();
+        }
+
+        private void MaterialFlatButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 系统操作ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 备份ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HYForm_Waiting form_Waiting = new HYForm_Waiting(BackUp, "正在备份,请稍等!");
+            if (form_Waiting.ShowDialog(this) == DialogResult.OK)
+            {
+
+            }
+
+        }
+        private void BackUp(object sender, EventArgs e)
+        {
+
+            Directory.SetCurrentDirectory(Directory.GetParent(System.Windows.Forms.Application.StartupPath).FullName);
+            string parentPath = Directory.GetCurrentDirectory();
+            if (!Directory.Exists(parentPath + "\\BackUp"))
+            {
+                Directory.CreateDirectory(parentPath + "\\BackUp");
+            }
+            ZipClass zipClass = new ZipClass();
+            zipClass.ZipFileFromDirectory(System.Windows.Forms.Application.StartupPath, parentPath + "\\BackUp\\" + DateTime.Now.ToString("yyyy-MM-dd") + "备份.zip", 9);
+            ShowNormal("备份成功," + parentPath + "\\BackUp\\" + DateTime.Now.ToString("yyyy-MM-dd") + "备份.zip");
+        }
+
+
+        private void 重启ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CloseEvent(null, null); Thread.Sleep(500);
+            System.Diagnostics.Process.Start(Application.ExecutablePath);
+            //关闭当前实例
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
         }
     }
 }

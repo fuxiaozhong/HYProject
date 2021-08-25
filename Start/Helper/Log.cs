@@ -148,19 +148,19 @@ namespace HYProject
                         }
                         try
                         {
-                            if (!System.IO.Directory.Exists(@"Logs\\ALL\\"))
+                            if (!System.IO.Directory.Exists(System.AppDomain.CurrentDomain.BaseDirectory + @"\\Logs\\ALL\\"))
                             {
-                                System.IO.Directory.CreateDirectory(@"Logs\\ALL\\");//不存在就创建目录
+                                System.IO.Directory.CreateDirectory(System.AppDomain.CurrentDomain.BaseDirectory + @"\\Logs\\ALL\\");//不存在就创建目录
                             }
-                            if (File.Exists(@"Logs\\ALL\\" + DateTime.Now.ToString("yyyy-MM-dd") + ".csv"))
+                            if (File.Exists(System.AppDomain.CurrentDomain.BaseDirectory + @"\\Logs\\ALL\\" + DateTime.Now.ToString("yyyy-MM-dd") + ".csv"))
                             {
                                 //存在
-                                File.AppendAllText(@"Logs\\ALL\\" + DateTime.Now.ToString("yyyy-MM-dd") + ".csv", info.datetime.ToString("yyyy-MM-dd HH:mm:ss:ffff") + "," + info.type + "," + info.message + "\n", Encoding.Default);
+                                File.AppendAllText(System.AppDomain.CurrentDomain.BaseDirectory + @"\\Logs\\ALL\\" + DateTime.Now.ToString("yyyy-MM-dd") + ".csv", info.datetime.ToString("yyyy-MM-dd HH:mm:ss:ffff") + "," + info.type + "," + info.message + "\n", Encoding.Default);
                             }
                             else
                             {
-                                File.AppendAllText(@"Logs\\ALL\\" + DateTime.Now.ToString("yyyy-MM-dd") + ".csv", "时间,类型,信息\n", Encoding.Default);
-                                File.AppendAllText(@"Logs\\ALL\\" + DateTime.Now.ToString("yyyy-MM-dd") + ".csv", info.datetime.ToString("yyyy-MM-dd HH:mm:ss:ffff") + "," + info.type + "," + info.message + "\n", Encoding.Default);
+                                File.AppendAllText(System.AppDomain.CurrentDomain.BaseDirectory + @"\\Logs\\ALL\\" + DateTime.Now.ToString("yyyy-MM-dd") + ".csv", "时间,类型,信息\n", Encoding.Default);
+                                File.AppendAllText(System.AppDomain.CurrentDomain.BaseDirectory + @"\\Logs\\ALL\\" + DateTime.Now.ToString("yyyy-MM-dd") + ".csv", info.datetime.ToString("yyyy-MM-dd HH:mm:ss:ffff") + "," + info.type + "," + info.message + "\n", Encoding.Default);
                             }
                         }
                         catch

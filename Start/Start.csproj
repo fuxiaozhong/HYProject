@@ -139,6 +139,7 @@
     <Compile Include="Helper\Serialization.cs" />
     <Compile Include="Helper\SystemInfo.cs" />
     <Compile Include="Helper\SystemThread.cs" />
+    <Compile Include="Helper\ZipClass.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

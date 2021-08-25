@@ -119,10 +119,6 @@ namespace HYProject
         [NonSerialized]
         internal bool Runing = false;
 
-        /// <summary>
-        /// 保存的文件名
-        /// </summary>
-        private string SerializePath = "AppParam.bin";
 
         /// <summary>
         /// 是否保存图像
@@ -221,7 +217,7 @@ namespace HYProject
         /// </summary>
         public void Save_To_File()
         {
-            Serialize_To_File(SerializePath, AppParam.Instance);
+            Serialize_To_File(System.AppDomain.CurrentDomain.BaseDirectory + "\\AppParam.bin", AppParam.Instance);
         }
 
         /// <summary>
@@ -229,7 +225,7 @@ namespace HYProject
         /// </summary>
         public void Read_From_File()
         {
-            instance = (AppParam)Deserialize_From_File(SerializePath);
+            instance = (AppParam)Deserialize_From_File(System.AppDomain.CurrentDomain.BaseDirectory + "\\AppParam.bin");
             if (instance == null)
             {
                 AppParam.instance = AppParam.Instance;

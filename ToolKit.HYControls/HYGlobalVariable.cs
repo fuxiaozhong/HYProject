@@ -174,7 +174,7 @@ namespace ToolKit.HYControls
         /// </summary>
         public void Save()
         {
-            FileStream stream = new FileStream(this.Name + ".bin", FileMode.Create);
+            FileStream stream = new FileStream(System.AppDomain.CurrentDomain.BaseDirectory + "\\" + this.Name + ".bin", FileMode.Create);
             BinaryFormatter bFormat = new BinaryFormatter();
             bFormat.Serialize(stream, GetData());
             stream.Close();
