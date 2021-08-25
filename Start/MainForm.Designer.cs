@@ -303,7 +303,7 @@ namespace HYProject
             this.插件ToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.插件ToolStripMenuItem.Name = "插件ToolStripMenuItem";
             this.插件ToolStripMenuItem.Size = new System.Drawing.Size(96, 44);
-            this.插件ToolStripMenuItem.Text = "插件";
+            this.插件ToolStripMenuItem.Text = "工具";
             // 
             // 相机配置ToolStripMenuItem
             // 
