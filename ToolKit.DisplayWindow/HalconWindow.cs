@@ -84,10 +84,10 @@ namespace ToolKit.DisplayWindow
         }
 
         /// <summary>
-        /// 保存团团
+        /// 保存图片
         /// </summary>
-        /// <param name="path"></param>
-        /// <param name="format"></param>
+        /// <param name="path">路径</param>
+        /// <param name="format">格式</param>
         public void SaveImage(string path, HSaveImageFormat format)
         {
             if (ho_image == null)

@@ -31,7 +31,6 @@ namespace ToolKit.HYControls.HYForm
             }
         }
 
-
         private HYForm_Log()
         {
             InitializeComponent();
@@ -252,7 +251,6 @@ namespace ToolKit.HYControls.HYForm
         {
             if (listView1.SelectedItems.Count > 0)
             {
-
                 if (listView1.SelectedItems[0].ForeColor == Color.Orange)
                 {
                     HYMessageBox.ShowWarn("时间：" + listView1.SelectedItems[0].SubItems[1].Text + "\n" +
@@ -275,8 +273,6 @@ namespace ToolKit.HYControls.HYForm
         {
             ClearLog();
         }
-
-
     }
 
     public struct OutputItem

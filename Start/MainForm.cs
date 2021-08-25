@@ -1,33 +1,18 @@
 ﻿using System;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Linq;
-using System.Reflection.Emit;
-using System.Resources;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
 using HalconDotNet;
 
-using HYProject.Arithmetic;
 using HYProject.Helper;
 using HYProject.MenuForm;
 using HYProject.Model;
 using HYProject.Plugin;
-using HYProject.Properties;
 using HYProject.ToolForm;
 
-using ToolKit.CamreaSDK;
-using ToolKit.CommunicAtion;
 using ToolKit.HYControls.HYForm;
-using ToolKit.MaterialSkin;
-using ToolKit.MaterialSkin.Controls;
-
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using static ToolKit.MaterialSkin.Controls.MaterialForm;
 
 namespace HYProject
 {
@@ -76,14 +61,10 @@ namespace HYProject
             splitContainer_Main.Panel1.Controls.Add(DisplayForm.Instance);
             //split_Main.Panel2.Controls.Add(Form_DateVsualization.Instance);
 
-
             ///通过数量生产 窗口数
             //DisplayForm.Instance.DisplayWindowCount = AppParam.Instance.CameraInitStr.Count == 0 ? 1 : AppParam.Instance.CameraInitStr.Count;
             //通过相机名称生产窗口
             DisplayForm.Instance.DisplayWindowNames = Cameras.Instance.GetCameras.Keys.ToArray<string>();
-
-
-
 
             //添加日志窗口
             panel_Log.Controls.Add(HYForm_Log.Instance);
@@ -97,10 +78,12 @@ namespace HYProject
             Thread _Refresh_Work = new Thread(Refresh_Work);
             _Refresh_Work.IsBackground = true;
             _Refresh_Work.Name = "Refresh_Work";
+            _Refresh_Work.Priority = ThreadPriority.Highest;
             _Refresh_Work.Start();
             //数据/图像磁盘检测
             Thread disk = new Thread(DiskRefresh);
             disk.IsBackground = true;
+            _Refresh_Work.Priority = ThreadPriority.Lowest;
             disk.Name = "disk";
             disk.Start();
             //开启拍照信号检测线程
@@ -330,7 +313,6 @@ namespace HYProject
 
         private void 全局变量ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
         }
 
         private void 屏幕键盘ToolStripMenuItem_Click(object sender, EventArgs e)

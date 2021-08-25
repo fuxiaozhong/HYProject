@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using HYProject.ToolForm;
@@ -12,12 +8,12 @@ namespace HYProject.Helper
 {
     public class SystemThread
     {
-        static Thread Global_System;
+        private static Thread Global_System;
+
         public static void Start()
         {
             Global_System = new Thread(Global_SystemWork);
             Global_System.Start();
-
         }
 
         private static void Global_SystemWork()

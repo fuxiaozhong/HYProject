@@ -412,7 +412,6 @@ namespace ToolKit.HYControls.HYForm
                 }
                 return cp;
             }
-
         }
 
         [CategoryAttribute("其他"), DescriptionAttribute("隐藏或者显示边框")]
@@ -429,6 +428,7 @@ namespace ToolKit.HYControls.HYForm
                 this.Refresh();
             }
         }
+
         [CategoryAttribute("其他"), DescriptionAttribute("隐藏所有")]
         public bool HideAll
         {
@@ -441,7 +441,6 @@ namespace ToolKit.HYControls.HYForm
             {
                 this._HideAll = value;
                 panel3.Visible = value;
-
             }
         }
 
@@ -602,6 +601,10 @@ namespace ToolKit.HYControls.HYForm
         private void Label1_Click(object sender, EventArgs e)
         {
             _DropContextMenuStrip.Show(Cursor.Position);
+        }
+
+        private void HYBaseForm_Load(object sender, EventArgs e)
+        {
         }
     }
 }

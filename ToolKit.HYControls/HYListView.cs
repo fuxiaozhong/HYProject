@@ -21,7 +21,5 @@ namespace ToolKit.HYControls
                 base.OnNotifyMessage(m);
             }
         }
-
-
     }
 }

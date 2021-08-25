@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ToolKit.HYControls
@@ -17,14 +11,17 @@ namespace ToolKit.HYControls
         {
             InitializeComponent();
         }
+
         /// <summary>
         /// 值改变事件
         /// </summary>
         public event EventHandler ValueChanged;
+
         /// <summary>
         /// 点击一下值的变化量
         /// </summary>
         private decimal _incremeent = 1;
+
         [Description("点击一下值的变化量")]
         public decimal Incremeent
         {
@@ -35,8 +32,9 @@ namespace ToolKit.HYControls
         /// <summary>
         /// 小数位数
         /// </summary>
-        /// 
+        ///
         private int _decimalPlaces = 0;
+
         [Description("小数位数")]
         public int DecimalPlaces
         {
@@ -52,6 +50,7 @@ namespace ToolKit.HYControls
         /// 最小值
         /// </summary>
         private decimal _minValue = 0;
+
         [Description("最小值")]
         public decimal MinValue
         {
@@ -67,6 +66,7 @@ namespace ToolKit.HYControls
         /// 最大值
         /// </summary>
         private decimal _maxValue = 100;
+
         [Description("最大值")]
         public decimal MaxValue
         {
@@ -82,6 +82,7 @@ namespace ToolKit.HYControls
         /// 值
         /// </summary>
         private decimal _value = 0;
+
         [Description("值")]
         public decimal Value
         {
@@ -95,6 +96,7 @@ namespace ToolKit.HYControls
                 nud_value.Value = value;
             }
         }
+
         private void Numeric_SizeChanged(object sender, EventArgs e)
         {
             if (Height != 22)
@@ -118,7 +120,6 @@ namespace ToolKit.HYControls
             {
                 nud_value.Value = nud_value.Maximum;
             }
-
         }
 
         private void Btn_sub_Click(object sender, EventArgs e)
@@ -127,7 +128,7 @@ namespace ToolKit.HYControls
             {
                 nud_value.Value = nud_value.Value -= _incremeent;
             }
-            catch 
+            catch
             {
                 nud_value.Value = nud_value.Minimum;
             }

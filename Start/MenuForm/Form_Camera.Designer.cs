@@ -53,6 +53,7 @@ namespace HYProject.MenuForm
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.displayWindow1 = new ToolKit.DisplayWindow.HalconWindow();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.num_exposuretime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_gain)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -302,7 +303,7 @@ namespace HYProject.MenuForm
             this.button_Save.Name = "button_Save";
             this.button_Save.Size = new System.Drawing.Size(159, 32);
             this.button_Save.TabIndex = 12;
-            this.button_Save.Text = "保    存";
+            this.button_Save.Text = "保存参数";
             this.button_Save.UseVisualStyleBackColor = true;
             this.button_Save.Click += new System.EventHandler(this.Button_Save_Click);
             // 
@@ -339,14 +340,27 @@ namespace HYProject.MenuForm
             this.displayWindow1.Location = new System.Drawing.Point(4, 28);
             this.displayWindow1.Margin = new System.Windows.Forms.Padding(0);
             this.displayWindow1.Name = "displayWindow1";
-            this.displayWindow1.Size = new System.Drawing.Size(735, 515);
+            this.displayWindow1.Size = new System.Drawing.Size(735, 588);
             this.displayWindow1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(799, 563);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(159, 32);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "保存图片";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // Form_Camera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1004, 552);
+            this.ClientSize = new System.Drawing.Size(1004, 620);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button_Save);
@@ -392,6 +406,7 @@ namespace HYProject.MenuForm
             this.Controls.SetChildIndex(this.button_Save, 0);
             this.Controls.SetChildIndex(this.button2, 0);
             this.Controls.SetChildIndex(this.button3, 0);
+            this.Controls.SetChildIndex(this.button1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.num_exposuretime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_gain)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -426,5 +441,6 @@ namespace HYProject.MenuForm
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button1;
     }
 }

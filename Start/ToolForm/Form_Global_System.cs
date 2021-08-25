@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using ToolKit.HYControls.HYForm;
@@ -39,10 +32,10 @@ namespace HYProject.ToolForm
                 return instance;
             }
         }
+
         private Form_Global_System()
         {
             InitializeComponent();
-
         }
 
         public void Read()
@@ -52,6 +45,7 @@ namespace HYProject.ToolForm
                 Global_Parameter_System.Read();
             }
         }
+
         public void Save()
         {
             Global_Parameter_System.Save();
@@ -77,7 +71,6 @@ namespace HYProject.ToolForm
 
         private void Form_Global_System_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

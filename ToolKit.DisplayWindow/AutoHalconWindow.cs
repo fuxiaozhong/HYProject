@@ -8,8 +8,6 @@ namespace ToolKit.DisplayWindow
 {
     public partial class AutoHalconWindow : UserControl
     {
-
-
         public AutoHalconWindow()
         {
             InitializeComponent();

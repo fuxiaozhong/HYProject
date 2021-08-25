@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
-using HYProject.Properties;
-
-using IWshRuntimeLibrary;
 
 namespace HYProject.ToolForm
 {
@@ -39,7 +28,6 @@ namespace HYProject.ToolForm
             }
             catch (Exception)
             {
-
             }
         }
 
@@ -49,9 +37,11 @@ namespace HYProject.ToolForm
         }
 
         #region 窗体拖动
+
         private static bool IsDrag = false;
         private int enterX;
         private int enterY;
+
         private void setForm_MouseDown(object sender, MouseEventArgs e)
         {
             try
@@ -62,9 +52,9 @@ namespace HYProject.ToolForm
             }
             catch (Exception)
             {
-
             }
         }
+
         private void setForm_MouseUp(object sender, MouseEventArgs e)
         {
             try
@@ -75,9 +65,9 @@ namespace HYProject.ToolForm
             }
             catch (Exception)
             {
-
             }
         }
+
         private void setForm_MouseMove(object sender, MouseEventArgs e)
         {
             try
@@ -92,28 +82,34 @@ namespace HYProject.ToolForm
             {
             }
         }
-        #endregion
+
+        #endregion 窗体拖动
 
         /// <summary>
         /// X向自动增加
         /// </summary>
         private bool Xadd = true;
+
         /// <summary>
         /// Y向自动增加
         /// </summary>
         private bool Yadd = true;
+
         /// <summary>
         /// 窗体是否移动
         /// </summary>
         private bool isMove = true;
+
         /// <summary>
         /// 一段时间不操作则自动恢复飘动
         /// </summary>
         private int waitTime = 0;
+
         /// <summary>
         /// 是否停止刷新
         /// </summary>
         private bool stopUpdata = false;
+
         private void UpdataStatu(object o)
         {
             try
@@ -157,7 +153,6 @@ namespace HYProject.ToolForm
             }
             catch (Exception)
             {
-
             }
         }
 
@@ -180,7 +175,6 @@ namespace HYProject.ToolForm
         private void Tbx_password_Click(object sender, EventArgs e)
         {
             tbx_password.PasswordChar = '*';
-
         }
 
         private void Form_Lock_KeyDown(object sender, KeyEventArgs e)

@@ -46,13 +46,7 @@ namespace HYProject.MenuForm
         private void Form_Camera_ImageProcessEvent(string cameraName, HalconDotNet.HObject ho_image)
         {
             //显示图像
-            //QueueSaveImage.Instance.QueueEnqueue2(ho_image);
             displayWindow1.Disp_Image(ho_image);
-            DisplayForm.Instance["1"].Disp_Image(ho_image);
-            DisplayForm.Instance["2"].Disp_Image(ho_image);
-            DisplayForm.Instance["3"].Disp_Image(ho_image);
-            DisplayForm.Instance["4"].Disp_Image(ho_image);
-            DisplayForm.Instance["5"].Disp_Image(ho_image);
         }
 
         private void ComboBox_CamList_SelectedIndexChanged(object sender, EventArgs e)
@@ -67,10 +61,10 @@ namespace HYProject.MenuForm
             }
             //刷新数据
             Refresh();
-            num_exposuretime.Value = (decimal)Cameras.Instance[this.comboBox_CamList.Text].Get_Exposure_Time();
-            num_gain.Value = (decimal)Cameras.Instance[this.comboBox_CamList.Text].Get_Gain();
-            comboBox_TriggerMode.Text = Cameras.Instance[this.comboBox_CamList.Text].Get_TriggerMode();
-            comboBox_TriggerSource.Text = Cameras.Instance[this.comboBox_CamList.Text].Get_TriggerSource();
+            //num_exposuretime.Value = (decimal)Cameras.Instance[this.comboBox_CamList.Text].Get_Exposure_Time();
+            //num_gain.Value = (decimal)Cameras.Instance[this.comboBox_CamList.Text].Get_Gain();
+            //comboBox_TriggerMode.Text = Cameras.Instance[this.comboBox_CamList.Text].Get_TriggerMode();
+            //comboBox_TriggerSource.Text = Cameras.Instance[this.comboBox_CamList.Text].Get_TriggerSource();
         }
 
         private void Refresh()
@@ -79,6 +73,10 @@ namespace HYProject.MenuForm
             label_Gain.Text = Cameras.Instance[comboBox_CamList.Text].Get_Gain().ToString("0");
             label_TriggerMode.Text = Cameras.Instance[comboBox_CamList.Text].Get_TriggerMode().ToString();
             label_TriggerSource.Text = Cameras.Instance[comboBox_CamList.Text].Get_TriggerSource().ToString();
+            num_exposuretime.Value = (decimal)Cameras.Instance[this.comboBox_CamList.Text].Get_Exposure_Time();
+            num_gain.Value = (decimal)Cameras.Instance[this.comboBox_CamList.Text].Get_Gain();
+            comboBox_TriggerMode.Text = Cameras.Instance[this.comboBox_CamList.Text].Get_TriggerMode();
+            comboBox_TriggerSource.Text = Cameras.Instance[this.comboBox_CamList.Text].Get_TriggerSource();
         }
 
         private void Button_Save_Click(object sender, EventArgs e)
@@ -132,6 +130,11 @@ namespace HYProject.MenuForm
                 //重新绑定运行事件
                 Cameras.Instance[item].ImageProcessEvent += Cameras.Instance.Camera_ImageProcessEvent;
             }
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            displayWindow1.Save_Image(displayWindow1.GetImage);
         }
     }
 }

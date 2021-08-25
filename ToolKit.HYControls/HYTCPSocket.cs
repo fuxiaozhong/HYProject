@@ -10,8 +10,6 @@ namespace ToolKit.HYControls
 {
     public partial class HYTCPSocket : UserControl
     {
-
-
         private TCPSocketServer socketServer;
         private TCPSocketClient socketClient;
 

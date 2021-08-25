@@ -207,6 +207,7 @@ namespace ToolKit.HYControls.HYForm
             this.KeyPreview = true;
             this.Name = "HYBaseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.HYBaseForm_Load);
             this.TextChanged += new System.EventHandler(this.Label4_TextChanged);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

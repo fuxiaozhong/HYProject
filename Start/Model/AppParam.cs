@@ -22,7 +22,6 @@ namespace HYProject
         public string Mark;
     }
 
-
     [Serializable]
     public class AppParam
     {
@@ -211,6 +210,7 @@ namespace HYProject
         /// 当前产品
         /// </summary>
         internal string NowProduct;
+
         /// <summary>
         /// 日志储存天数
         /// </summary>

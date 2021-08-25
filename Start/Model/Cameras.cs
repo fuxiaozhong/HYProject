@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Windows.Forms;
 
 using ToolKit.CamreaSDK;
-
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace HYProject.Model
 {
@@ -140,6 +136,7 @@ namespace HYProject.Model
                 }
             }
         }
+
         /// <summary>
         /// 重新初始化相机
         /// </summary>

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ToolKit.CommunicAtion
 {
@@ -33,7 +29,6 @@ namespace ToolKit.CommunicAtion
         /// <returns>非零表示成功，零表示失败</returns>
         [DllImport("kernel32")]
         private static extern int WritePrivateProfileString(string lpApplicationName, string lpKeyName, string lpString, string lpFileName);
-
 
         /// <summary>
         /// 读取INI文件值
@@ -68,13 +63,11 @@ namespace ToolKit.CommunicAtion
             {
                 return 0;
             }
-
         }
 
         private static bool CheckPath(string filePath)
         {
             return File.Exists(filePath);
-
         }
 
         /// <summary>
@@ -99,7 +92,5 @@ namespace ToolKit.CommunicAtion
         {
             return Write(section, key, null, filePath);
         }
-
-
     }
 }

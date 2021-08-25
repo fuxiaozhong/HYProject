@@ -32,7 +32,9 @@ namespace ToolKit.HYControls
             // DrawItem += new DrawItemEventHandler(this.MainTabControl_DrawItem);
             MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainTabControl_MouseDown);
         }
+
         public event EventHandler PageCloseBefore;
+
         private const int CLOSE_SIZE = 15;
 
         //关闭按钮功能
@@ -56,7 +58,7 @@ namespace ToolKit.HYControls
                     bool isClose = x > myTabRect.X && x < myTabRect.Right && y > myTabRect.Y && y < myTabRect.Bottom;
                     if (isClose == true)
                     {
-                        PageCloseBefore?.Invoke(this.SelectedTab,e);
+                        PageCloseBefore?.Invoke(this.SelectedTab, e);
                         this.TabPages.Remove(this.SelectedTab);
                         //this.SelectedIndex = (this.SelectedIndex - 1 == 0 ? 0 : this.SelectedIndex - 1);
                     }

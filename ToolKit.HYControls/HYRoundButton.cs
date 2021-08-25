@@ -1,25 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ToolKit.HYControls
 {
     public enum ControlState { Hover, Normal, Pressed }
+
     public partial class HYRoundButton : Button
     {
-
-        private int radius;//半径 
+        private int radius;//半径
         private Color _baseColor = Color.FromArgb(51, 161, 224);//基颜色
         private Color _hoverColor = Color.FromArgb(51, 0, 224);//基颜色
         private Color _normalColor = Color.FromArgb(0, 161, 224);//基颜色
         private Color _pressedColor = Color.FromArgb(51, 161, 0);//基颜色
+
         //圆形按钮的半径属性
         [CategoryAttribute("布局"), BrowsableAttribute(true), ReadOnlyAttribute(false)]
         public int Radius
@@ -34,6 +30,7 @@ namespace ToolKit.HYControls
                 return radius;
             }
         }
+
         [DefaultValue(typeof(Color), "51, 161, 224")]
         public Color NormalColor
         {
@@ -47,6 +44,7 @@ namespace ToolKit.HYControls
                 this.Invalidate();
             }
         }
+
         //  [DefaultValue(typeof(Color), "220, 80, 80")]
         public Color HoverColor
         {
@@ -74,17 +72,21 @@ namespace ToolKit.HYControls
                 this.Invalidate();
             }
         }
+
         public ControlState ControlState { get; set; }
+
         protected override void OnMouseEnter(EventArgs e)//鼠标进入时
         {
             base.OnMouseEnter(e);
             ControlState = ControlState.Hover;//正常
         }
+
         protected override void OnMouseLeave(EventArgs e)//鼠标离开
         {
             base.OnMouseLeave(e);
             ControlState = ControlState.Normal;//正常
         }
+
         protected override void OnMouseDown(MouseEventArgs e)//鼠标按下
         {
             base.OnMouseDown(e);
@@ -93,6 +95,7 @@ namespace ToolKit.HYControls
                 ControlState = ControlState.Pressed;//按下的状态
             }
         }
+
         protected override void OnMouseUp(MouseEventArgs e)//鼠标弹起
         {
             base.OnMouseUp(e);
@@ -108,6 +111,7 @@ namespace ToolKit.HYControls
                 }
             }
         }
+
         public HYRoundButton()
         {
             Radius = 15;
@@ -118,10 +122,9 @@ namespace ToolKit.HYControls
              ControlStyles.UserPaint |  //控件自行绘制，而不使用操作系统的绘制
              ControlStyles.AllPaintingInWmPaint | //忽略擦出的消息，减少闪烁。
              ControlStyles.OptimizedDoubleBuffer |//在缓冲区上绘制，不直接绘制到屏幕上，减少闪烁。
-             ControlStyles.ResizeRedraw | //控件大小发生变化时，重绘。                  
+             ControlStyles.ResizeRedraw | //控件大小发生变化时，重绘。
              ControlStyles.SupportsTransparentBackColor, true);//支持透明背景颜色
         }
-
 
         //重写OnPaint
         protected override void OnPaint(System.Windows.Forms.PaintEventArgs e)
@@ -147,12 +150,15 @@ namespace ToolKit.HYControls
                 case ControlState.Hover:
                     baseColor = this.HoverColor;
                     break;
+
                 case ControlState.Pressed:
                     baseColor = this.PressedColor;
                     break;
+
                 case ControlState.Normal:
                     baseColor = this.NormalColor;
                     break;
+
                 default:
                     baseColor = this.NormalColor;
                     break;
@@ -170,6 +176,7 @@ namespace ToolKit.HYControls
                 //  e.Graphics.DrawPath(p, path);
             }
         }
+
         private GraphicsPath GetRoundedRectPath(Rectangle rect, int radius)
         {
             int diameter = radius;
@@ -190,8 +197,5 @@ namespace ToolKit.HYControls
         {
             base.OnSizeChanged(e);
         }
-
-
-
     }
 }

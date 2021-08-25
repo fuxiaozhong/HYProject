@@ -1,16 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 using HYProject.Model;
-
-using NPOI.SS.Formula.Functions;
 
 using ToolKit.HYControls.HYForm;
 
@@ -40,7 +31,6 @@ namespace HYProject.Plugin
                     dataGridView1.Rows[index].Cells[1].Value = item.CameraType;
                     dataGridView1.Rows[index].Cells[2].Value = item.CameraName;
                     dataGridView1.Rows[index].Cells[3].Value = item.Mark;
-
                 }
             }
         }
@@ -49,14 +39,12 @@ namespace HYProject.Plugin
         {
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
-
                 if (dataGridView1.Rows[i].Cells[1].Value.ToString() == comboBox1.Text && dataGridView1.Rows[i].Cells[2].Value.ToString() == textBox1.Text.Trim())
                 {
                     ShowWarn("已存在,请勿重复添加.");
                     return;
                 }
             }
-
 
             int index = dataGridView1.Rows.Add();
             dataGridView1.Rows[index].Cells[0].Value = dataGridView1.Rows.Count;
@@ -80,7 +68,6 @@ namespace HYProject.Plugin
                     CameraType = (CameraType)Enum.Parse(typeof(CameraType), dataGridView1.Rows[i].Cells[1].Value.ToString()),
                     CameraName = dataGridView1.Rows[i].Cells[2].Value.ToString(),
                     Mark = dataGridView1.Rows[i].Cells[3].Value.ToString()
-
                 };
                 AppParam.Instance.CameraInitStr.Add(cameraInfo);
             }

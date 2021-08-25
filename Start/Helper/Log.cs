@@ -6,14 +6,7 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Threading;
-using System.Windows.Documents;
 using System.Windows.Forms;
-
-using HalconDotNet;
-
-using HYProject.Helper;
-
-using NPOI.SS.Formula.Functions;
 
 using ToolKit.HYControls.HYForm;
 
@@ -57,7 +50,6 @@ namespace HYProject
                             {
                                 File.Delete(NextFile.FullName);  //删除超过时间的文件
                             }
-
                         }
                     }
                     Thread.Sleep(1000);
@@ -67,11 +59,10 @@ namespace HYProject
                 {
                     WriteErrorLog("删除日志文件出错", ex);
                 }
-
             }
         }
 
-        static Thread _DeleteLogFile;
+        private static Thread _DeleteLogFile;
 
         /// <summary>
         /// 功能描述:写入警告日志
@@ -84,7 +75,6 @@ namespace HYProject
                 m_lstLog["warn_logo"].Warn(strWarnLog);
                 HYForm_Log.Instance.OutputMsg(strWarnLog, System.Drawing.Color.Orange);
                 WriteLogCSV(strWarnLog, "警告");
-
             }
         }
 
@@ -126,7 +116,8 @@ namespace HYProject
         /// 队列
         /// </summary>
         private static ConcurrentQueue<LogInfo> queues = new ConcurrentQueue<LogInfo>();
-        static Thread SaveSCV;
+
+        private static Thread SaveSCV;
 
         private static void WriteLogCSV(string MESSAGE, string TYPE)
         {
@@ -137,6 +128,7 @@ namespace HYProject
                 SaveSCV.Start();
             }
         }
+
         private static object obj = new object();
 
         private static void AutoSaveCSV()
@@ -158,7 +150,7 @@ namespace HYProject
                         {
                             if (!System.IO.Directory.Exists(@"Logs\\ALL\\"))
                             {
-                                System.IO.Directory.CreateDirectory(@"Logs\\ALL\\");//不存在就创建目录 
+                                System.IO.Directory.CreateDirectory(@"Logs\\ALL\\");//不存在就创建目录
                             }
                             if (File.Exists(@"Logs\\ALL\\" + DateTime.Now.ToString("yyyy-MM-dd") + ".csv"))
                             {
@@ -179,18 +171,14 @@ namespace HYProject
                 catch
                 {
                 }
-
             }
         }
     }
 
-
-    class LogInfo
+    internal class LogInfo
     {
         public string type;
         public DateTime datetime;
         public string message;
-
-
     }
 }

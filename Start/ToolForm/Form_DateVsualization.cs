@@ -64,7 +64,6 @@ namespace HYProject.ToolForm
             label_U_S2.Text = DataLimit.Instance.UpperLimit_S2.ToString();
         }
 
-
         private Form_DateVsualization()
         {
             InitializeComponent();

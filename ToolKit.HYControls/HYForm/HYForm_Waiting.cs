@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace ToolKit.HYControls.HYForm
 {
     public partial class HYForm_Waiting : Form
     {
-
-
         /// <summary>
         /// 等待窗体
         /// </summary>

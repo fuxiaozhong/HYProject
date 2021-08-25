@@ -31,6 +31,7 @@ namespace HYProject.ToolForm
                 return instance;
             }
         }
+
         public void Read()
         {
             if (Global_Parameter_User.GetData().Count == 0)
@@ -38,11 +39,11 @@ namespace HYProject.ToolForm
                 Global_Parameter_User.Read();
             }
         }
+
         public void Save()
         {
             Global_Parameter_User.Save();
         }
-
 
         /// <summary>
         /// 获取全局变量
@@ -60,7 +61,6 @@ namespace HYProject.ToolForm
         private Form_Global_User()
         {
             InitializeComponent();
-
         }
 
         private void Form_GlobalOptions_FormClosing(object sender, FormClosingEventArgs e)

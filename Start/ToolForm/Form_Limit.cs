@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Windows.Forms;
 
 using HYProject.Model;
 
@@ -13,7 +12,6 @@ namespace HYProject.ToolForm
         {
             InitializeComponent();
         }
-
 
         private void Form_Limit_Load(object sender, EventArgs e)
         {

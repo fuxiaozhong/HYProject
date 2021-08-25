@@ -8,8 +8,6 @@ namespace ToolKit.HYControls
 {
     public partial class HYSerialPortControl : UserControl
     {
-
-
         private COMSerailPortDevice serailPortDevice;
 
         public HYSerialPortControl()
