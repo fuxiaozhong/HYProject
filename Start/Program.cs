@@ -67,7 +67,7 @@ namespace HYProject
                 }
                 else
                 {
-                    Application.Exit();
+                    System.Diagnostics.Process.GetCurrentProcess().Kill();
                 }
             }
             else
