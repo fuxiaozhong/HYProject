@@ -211,6 +211,7 @@ namespace HYProject
         /// 日志储存天数
         /// </summary>
         internal int Log_Save_Days = 7;
+        internal bool StartAutoRun;
 
         /// <summary>
         /// 保存对象到文件

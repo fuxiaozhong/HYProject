@@ -96,6 +96,11 @@ namespace HYProject
             RunThread.Start();
             //系统线程
             SystemThread.Start();
+
+            if (AppParam.Instance.StartAutoRun)
+            {
+                Button_Run_Click(运行ToolStripMenuItem, e);
+            }
         }
 
         //刷新界面

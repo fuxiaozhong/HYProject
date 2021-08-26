@@ -117,12 +117,6 @@
       <DependentUpon>HYListView.cs</DependentUpon>
     </Compile>
     <Compile Include="HYMessageTip.cs" />
-    <Compile Include="HYNumericUpDown.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="HYNumericUpDown.Designer.cs">
-      <DependentUpon>HYNumericUpDown.cs</DependentUpon>
-    </Compile>
     <Compile Include="HYProcessEllipse.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -209,9 +203,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HYForm\HYMessageBox.resx">
       <DependentUpon>HYMessageBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HYNumericUpDown.resx">
-      <DependentUpon>HYNumericUpDown.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HYProcessEllipse.resx">
       <DependentUpon>HYProcessEllipse.cs</DependentUpon>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Management.Instrumentation;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -66,6 +67,7 @@ namespace HYProject.MenuForm
             AppParam.Instance.IsSaveImage_NG = checkBox7.Checked;
             AppParam.Instance.IsSaveImage_BmpImage = checkBox8.Checked;
             AppParam.Instance.IsSaveImage_DumpImage = checkBox9.Checked;
+            AppParam.Instance.StartAutoRun = check_startAutoRun.Checked;
 
             PowerBoot.SetMeAutoStart(AppParam.Instance.PowerBoot);
             PowerBoot.CreateDesktopShortcut(AppParam.Instance.DesktopShortcut);
@@ -92,7 +94,7 @@ namespace HYProject.MenuForm
             checkBox7.Checked = AppParam.Instance.IsSaveImage_NG;
             checkBox8.Checked = AppParam.Instance.IsSaveImage_BmpImage;
             checkBox9.Checked = AppParam.Instance.IsSaveImage_DumpImage;
-
+            check_startAutoRun.Checked = AppParam.Instance.StartAutoRun;
             Thread thread = new Thread(DiskRefresh)
             {
                 IsBackground = true
@@ -119,7 +121,7 @@ namespace HYProject.MenuForm
                         {
                             TotalFreeSpace = drive.TotalFreeSpace / 1024 / 1024 / 1024;//剩余容量
                             TotalSize = drive.TotalSize / 1024 / 1024 / 1024; //总容量
-                            label7.Text = "剩余：" + TotalFreeSpace + "/总：" + TotalSize;
+                            label7.Text = "剩余：" + TotalFreeSpace + "GB/总：" + TotalSize + "GB";
                             progressBar1.Value = 100 - (int)((double)TotalFreeSpace / (double)TotalSize * 100);
                             break;
                         }
@@ -131,7 +133,7 @@ namespace HYProject.MenuForm
                         {
                             TotalFreeSpace = drive.TotalFreeSpace / 1024 / 1024 / 1024;//剩余容量
                             TotalSize = drive.TotalSize / 1024 / 1024 / 1024; //总容量
-                            label8.Text = "剩余：" + TotalFreeSpace + "/总：" + TotalSize;
+                            label8.Text = "剩余：" + TotalFreeSpace + "GB/总：" + TotalSize + "GB";
                             progressBar2.Value = 100 - (int)((double)TotalFreeSpace / (double)TotalSize * 100);
                             break;
                         }
