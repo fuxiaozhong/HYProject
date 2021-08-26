@@ -37,6 +37,12 @@ namespace HYProject.Plugin
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text == "" || textBox1.Text == null)
+            {
+                ShowWarn("请输入相机名!!!");
+                return;
+            }
+
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 if (dataGridView1.Rows[i].Cells[1].Value.ToString() == comboBox1.Text && dataGridView1.Rows[i].Cells[2].Value.ToString() == textBox1.Text.Trim())
@@ -71,6 +77,7 @@ namespace HYProject.Plugin
                 };
                 AppParam.Instance.CameraInitStr.Add(cameraInfo);
             }
+            ShowNormal("保存成功。");
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -79,6 +86,16 @@ namespace HYProject.Plugin
             {
                 dataGridView1.Rows.Remove(dataGridView1.SelectedRows[0]);
             }
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
