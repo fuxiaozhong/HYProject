@@ -1467,7 +1467,7 @@ namespace ToolKit.DisplayWindow
         /// <param name="bmp"></param>
         /// <param name="image"></param>
 
-        public static void Bitmap2HObjectBpp24(Bitmap bmp, out HObject image)  //90ms
+        public void Bitmap2HObjectBpp24(Bitmap bmp, out HObject image)  //90ms
         {
             try
             {
@@ -1489,7 +1489,7 @@ namespace ToolKit.DisplayWindow
         /// </summary>
         /// <param name="bmp"></param>
         /// <param name="image"></param>
-        public static void Bitmap2HImageBpp24(Bitmap bmp, out HObject image) //转换500ms
+        public void Bitmap2HImageBpp24(Bitmap bmp, out HObject image) //转换500ms
         {
             try
             {
@@ -1563,7 +1563,7 @@ namespace ToolKit.DisplayWindow
         /// </summary>
         /// <param name="image"></param>
         /// <param name="res"></param>
-        private static void HObject2Bpp8(HObject image, out Bitmap res)
+        private void HObject2Bpp8(HObject image, out Bitmap res)
         {
             try
             {
@@ -1609,7 +1609,7 @@ namespace ToolKit.DisplayWindow
         /// </summary>
         /// <param name="image"></param>
         /// <param name="res"></param>
-        private static void HObject2Bpp24(HObject image, out Bitmap res)
+        private void HObject2Bpp24(HObject image, out Bitmap res)
         {
             try
             {
