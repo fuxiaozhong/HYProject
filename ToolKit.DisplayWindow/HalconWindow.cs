@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -917,7 +920,6 @@ namespace ToolKit.DisplayWindow
         private Point OldLocation;
         private Size OldSize;
         private AnchorStyles anchor;
-
         private DockStyle thisStyle;
 
         private void 全屏显示ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1453,6 +1455,198 @@ namespace ToolKit.DisplayWindow
             HOperatorSet.SetLineStyle(HalconWindowHandle, new HTuple());
             return circle;
         }
+
+
+
+
+
+
+        /// <summary>
+        /// Bitmap转PP24格式HObject
+        /// </summary>
+        /// <param name="bmp"></param>
+        /// <param name="image"></param>
+
+        public static void Bitmap2HObjectBpp24(Bitmap bmp, out HObject image)  //90ms
+        {
+            try
+            {
+                Rectangle rect = new Rectangle(0, 0, bmp.Width, bmp.Height);
+
+                BitmapData srcBmpData = bmp.LockBits(rect, ImageLockMode.ReadOnly, PixelFormat.Format24bppRgb);
+                HOperatorSet.GenImageInterleaved(out image, srcBmpData.Scan0, "bgr", bmp.Width, bmp.Height, 0, "byte", 0, 0, 0, 0, -1, 0);
+                bmp.UnlockBits(srcBmpData);
+
+            }
+            catch
+            {
+                image = null;
+            }
+        }
+
+        /// <summary>
+        /// Bitmap转PP24格式HObject
+        /// </summary>
+        /// <param name="bmp"></param>
+        /// <param name="image"></param>
+        public static void Bitmap2HImageBpp24(Bitmap bmp, out HObject image) //转换500ms
+        {
+            try
+            {
+                Rectangle rect = new Rectangle(0, 0, bmp.Width, bmp.Height);
+
+                BitmapData bmp_data = bmp.LockBits(rect, ImageLockMode.ReadOnly, PixelFormat.Format24bppRgb);
+                byte[] arrayR = new byte[bmp_data.Width * bmp_data.Height];//红色数组 
+                byte[] arrayG = new byte[bmp_data.Width * bmp_data.Height];//绿色数组 
+                byte[] arrayB = new byte[bmp_data.Width * bmp_data.Height];//蓝色数组 
+                unsafe
+                {
+                    byte* pBmp = (byte*)bmp_data.Scan0;//BitMap的头指针 
+                                                       //下面的循环分别提取出红绿蓝三色放入三个数组 
+                    for (int R = 0; R < bmp_data.Height; R++)
+                    {
+                        for (int C = 0; C < bmp_data.Width; C++)
+                        {
+                            //因为内存BitMap的储存方式，行宽用Stride算，C*3是因为这是三通道，另外BitMap是按BGR储存的 
+                            byte* pBase = pBmp + bmp_data.Stride * R + C * 3;
+                            arrayR[R * bmp_data.Width + C] = *(pBase + 2);
+                            arrayG[R * bmp_data.Width + C] = *(pBase + 1);
+                            arrayB[R * bmp_data.Width + C] = *(pBase);
+                        }
+                    }
+                    fixed (byte* pR = arrayR, pG = arrayG, pB = arrayB)
+                    {
+                        HOperatorSet.GenImage3(out image, "byte", bmp_data.Width, bmp_data.Height,
+                                                                   new IntPtr(pR), new IntPtr(pG), new IntPtr(pB));
+                        //如果这里报错，仔细看看前面有没有写错 
+                    }
+                }
+
+
+            }
+            catch
+            {
+                image = null;
+            }
+        }
+
+
+        /// <summary>
+        /// Bitmap转PP24格式HObject
+        /// </summary>
+        /// <param name="bmp"></param>
+        /// <param name="image"></param>
+        public void Bitmap2HObjectBpp8(Bitmap bmp, out HObject image)
+        {
+            try
+            {
+                Rectangle rect = new Rectangle(0, 0, bmp.Width, bmp.Height);
+
+                BitmapData srcBmpData = bmp.LockBits(rect, ImageLockMode.ReadOnly, PixelFormat.Format8bppIndexed);
+
+                HOperatorSet.GenImage1(out image, "byte", bmp.Width, bmp.Height, srcBmpData.Scan0);
+                bmp.UnlockBits(srcBmpData);
+            }
+            catch
+            {
+                image = null;
+            }
+        }
+
+        //其中CopyMemory的API引用 需要引入命名空间 using System.Runtime.InteropServices; 和如下代码
+
+        [DllImport("kernel32.dll")]
+        public static extern void CopyMemory(int Destination, int add, int Length);
+
+        /// <summary>
+        /// HObject转8位Bitmap(单通道)
+        /// </summary>
+        /// <param name="image"></param>
+        /// <param name="res"></param>
+        private static void HObject2Bpp8(HObject image, out Bitmap res)
+        {
+            try
+            {
+                HTuple hpoint, type, width, height;
+
+                const int Alpha = 255;
+                int[] ptr = new int[2];
+                HOperatorSet.GetImagePointer1(image, out hpoint, out type, out width, out height);
+
+                res = new Bitmap(width, height, PixelFormat.Format8bppIndexed);
+                ColorPalette pal = res.Palette;
+                for (int i = 0; i <= 255; i++)
+                {
+                    pal.Entries[i] = Color.FromArgb(Alpha, i, i, i);
+                }
+                res.Palette = pal;
+                Rectangle rect = new Rectangle(0, 0, width, height);
+                BitmapData bitmapData = res.LockBits(rect, ImageLockMode.WriteOnly, PixelFormat.Format8bppIndexed);
+                int PixelSize = Bitmap.GetPixelFormatSize(bitmapData.PixelFormat) / 8;
+                ptr[0] = bitmapData.Scan0.ToInt32();
+                ptr[1] = hpoint.I;
+                if (width % 4 == 0)
+                    CopyMemory(ptr[0], ptr[1], width * height * PixelSize);
+                else
+                {
+                    for (int i = 0; i < height - 1; i++)
+                    {
+                        ptr[1] += width;
+                        CopyMemory(ptr[0], ptr[1], width * PixelSize);
+                        ptr[0] += bitmapData.Stride;
+                    }
+                }
+                res.UnlockBits(bitmapData);
+            }
+            catch (Exception ex)
+            {
+                res = null;
+                throw ex;
+            }
+        }
+        /// <summary>
+        /// HObject转24位Bitmap
+        /// </summary>
+        /// <param name="image"></param>
+        /// <param name="res"></param>
+        private static void HObject2Bpp24(HObject image, out Bitmap res)
+        {
+            try
+            {
+                HTuple hred, hgreen, hblue, type, width, height;
+
+                HOperatorSet.GetImagePointer3(image, out hred, out hgreen, out hblue, out type, out width, out height);
+
+                res = new Bitmap(width, height, System.Drawing.Imaging.PixelFormat.Format32bppRgb);
+
+                Rectangle rect = new Rectangle(0, 0, width, height);
+                BitmapData bitmapData = res.LockBits(rect, ImageLockMode.ReadWrite, PixelFormat.Format32bppRgb);
+                int imglength = width * height;
+                unsafe
+                {
+                    byte* bptr = (byte*)bitmapData.Scan0;
+                    byte* r = ((byte*)hred.I);
+                    byte* g = ((byte*)hgreen.I);
+                    byte* b = ((byte*)hblue.I);
+                    for (int i = 0; i < imglength; i++)
+                    {
+                        bptr[i * 4] = (b)[i];
+                        bptr[i * 4 + 1] = (g)[i];
+                        bptr[i * 4 + 2] = (r)[i];
+                        bptr[i * 4 + 3] = 255;
+                    }
+                }
+
+                res.UnlockBits(bitmapData);
+            }
+            catch (Exception ex)
+            {
+                res = null;
+                throw ex;
+            }
+        }
+
+
     }
 
     public struct Ellipse

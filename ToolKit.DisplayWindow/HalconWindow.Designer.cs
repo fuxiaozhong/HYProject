@@ -270,14 +270,14 @@ namespace ToolKit.DisplayWindow
             this.label1.Size = new System.Drawing.Size(0, 11);
             this.label1.TabIndex = 1;
             // 
-            // HalconDisplayWindow
+            // HalconWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.hWindowControl1);
-            this.Name = "HalconDisplayWindow";
+            this.Name = "HalconWindow";
             this.Size = new System.Drawing.Size(280, 260);
             this.Resize += new System.EventHandler(this.DisplayWindow_Resize);
             this.contextMenu_Hal.ResumeLayout(false);
