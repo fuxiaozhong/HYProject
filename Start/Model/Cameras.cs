@@ -175,7 +175,8 @@ namespace HYProject.Model
                     if (haikang.Open(cameraName))
                     {
                         Log.WriteRunLog("相机:" + cameraName + "打开成功");
-                        AddCamera(cameraName, haikang); haikang.IsSaveLog2Disk = true;
+                        AddCamera(cameraName, haikang); 
+                        haikang.IsSaveLog2Disk = true;
                         haikang.ImageProcessEvent += Camera_ImageProcessEvent;
                     }
                     else
@@ -189,8 +190,23 @@ namespace HYProject.Model
                     if (basler.Open(cameraName))
                     {
                         Log.WriteRunLog("相机:" + cameraName + "打开成功");
-                        AddCamera(cameraName, basler); basler.IsSaveLog2Disk = true;
+                        AddCamera(cameraName, basler); 
+                        basler.IsSaveLog2Disk = true;
                         basler.ImageProcessEvent += Camera_ImageProcessEvent;
+                    }
+                    else
+                    {
+                        Log.WriteErrorLog("相机:" + cameraName + "打开失败");
+                    }
+                    break;
+                case CameraType.Halcon:
+                    HalconCamera halconCamera = new HalconCamera();
+                    if (halconCamera.Open(cameraName))
+                    {
+                        Log.WriteRunLog("相机:" + cameraName + "打开成功");
+                        AddCamera(cameraName, halconCamera); 
+                        halconCamera.IsSaveLog2Disk = true;
+                        halconCamera.ImageProcessEvent += Camera_ImageProcessEvent;
                     }
                     else
                     {
@@ -221,6 +237,6 @@ namespace HYProject.Model
     /// </summary>
     public enum CameraType
     {
-        大华相机, 海康威视, 巴斯勒
+        大华相机, 海康威视, 巴斯勒, Halcon
     }
 }

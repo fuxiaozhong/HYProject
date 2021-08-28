@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaslerPylonGigE.cs" />
+    <Compile Include="HalconCamera.cs" />
     <Compile Include="DaHuaCamera.cs" />
     <Compile Include="HikvisionCamera.cs" />
     <Compile Include="ICamera.cs" />
