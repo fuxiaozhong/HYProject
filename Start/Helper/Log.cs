@@ -3,10 +3,18 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Messaging;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+
+using HalconDotNet;
+
+using HYProject.Helper;
+
+using NPOI.SS.Formula.Functions;
 
 using ToolKit.HYControls.HYForm;
 
@@ -16,6 +24,9 @@ namespace HYProject
     {
         private static string m_logFile;
         private static Dictionary<string, log4net.ILog> m_lstLog = new Dictionary<string, log4net.ILog>();
+        private static ConcurrentQueue<LogInfo> Dispqueues = new ConcurrentQueue<LogInfo>();
+        private static Thread DispLog;
+        private static Thread _DeleteLogFile;
 
         public static void InitLog4Net(string strLog4NetConfigFile)
         {
@@ -28,6 +39,52 @@ namespace HYProject
             _DeleteLogFile.IsBackground = true;
             _DeleteLogFile.Name = "删除日志文件";
             _DeleteLogFile.Start();
+            DispLog = new Thread(DispLogWork);
+            DispLog.IsBackground = true;
+            DispLog.Name = "显示日志文件";
+            DispLog.Start();
+        }
+        private static void DispMessage(string message, string type)
+        {
+            Dispqueues.Enqueue(new LogInfo() { datetime = DateTime.Now, type = type, message = message });
+        }
+
+        private static void DispLogWork()
+        {
+            while (true)
+            {
+                lock (obj)
+                {
+
+                    LogInfo logMessage = null;
+                    var isExit = Dispqueues.TryDequeue(out logMessage);
+                    if (!isExit)
+                    {
+                        Thread.Sleep(500);
+                        continue;
+                    }
+                    try
+                    {
+                        switch (logMessage.type)
+                        {
+                            case "警告":
+                                HYForm_Log.Instance.OutputMsg(logMessage.message, System.Drawing.Color.Orange);
+                                break;
+                            case "异常":
+                                HYForm_Log.Instance.OutputMsg(logMessage.message, System.Drawing.Color.Red);
+                                break;
+                            case "正常":
+                                HYForm_Log.Instance.OutputMsg(logMessage.message, System.Drawing.Color.Green);
+                                break;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+
+
+                    }
+                }
+            }
         }
 
         private static void DeleteLogFile()
@@ -62,7 +119,7 @@ namespace HYProject
             }
         }
 
-        private static Thread _DeleteLogFile;
+
 
         /// <summary>
         /// 功能描述:写入警告日志
@@ -73,7 +130,7 @@ namespace HYProject
             if (m_lstLog["warn_logo"].IsWarnEnabled)
             {
                 m_lstLog["warn_logo"].Warn(strWarnLog);
-                HYForm_Log.Instance.OutputMsg(strWarnLog, System.Drawing.Color.Orange);
+                DispMessage(strWarnLog, "警告");
                 WriteLogCSV(strWarnLog, "警告");
             }
         }
@@ -92,7 +149,7 @@ namespace HYProject
                 MethodBase methodBase = stackFrame.GetMethod();
 
                 m_lstLog["error_logo"].Error("<类名:" + methodBase.ReflectedType.Name + ">   <方法名:" + methodBase.Name + ">   <信息:" + strErrLog + ">", ex);
-                HYForm_Log.Instance.OutputMsg(strErrLog, System.Drawing.Color.Red);
+                DispMessage(strErrLog, "异常");
                 WriteLogCSV(strErrLog, "异常");
             }
         }
@@ -100,14 +157,13 @@ namespace HYProject
         /// <summary>
         /// 功能描述:写入运行日志
         /// </summary>
-        /// <param name="strErrLog">strErrLog</param>
-        /// <param name="ex">ex</param>
+        /// <param name="runmessage">strErrLog</param>
         public static void WriteRunLog(string runmessage)
         {
             if (m_lstLog["run_logo"].IsErrorEnabled)
             {
                 m_lstLog["run_logo"].Info(runmessage);
-                HYForm_Log.Instance.OutputMsg(runmessage, System.Drawing.Color.Green);
+                DispMessage(runmessage, "正常");
                 WriteLogCSV(runmessage, "正常");
             }
         }
