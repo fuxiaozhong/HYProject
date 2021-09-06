@@ -47,7 +47,7 @@ namespace ToolKit.HYControls.HYForm
         private bool _HideAll = false;
         private string _userName = "未登录";
         private ContextMenuStrip _DropContextMenuStrip;
-        private Color _BorderColor = Color.Gray;
+        private Color _BorderColor = Color.Teal;
         private bool _HideBorder = false;
 
         private Image _IconImage;
@@ -63,8 +63,12 @@ namespace ToolKit.HYControls.HYForm
             set
             {
                 this._HideOrClose = value;
+
             }
         }
+
+
+
 
         [CategoryAttribute("其他"), DescriptionAttribute("隐藏或者显示最小化按钮")]
         public bool HideMinButtom
@@ -76,7 +80,7 @@ namespace ToolKit.HYControls.HYForm
 
             set
             {
-                label_min.Visible = value;
+                label_Min_1.Visible = value;
                 this._HideMinButtom = value;
             }
         }
@@ -91,7 +95,7 @@ namespace ToolKit.HYControls.HYForm
 
             set
             {
-                label_max.Visible = value;
+                label_Max_1.Visible = value;
                 this._HideMaxButtom = value;
             }
         }
@@ -106,7 +110,7 @@ namespace ToolKit.HYControls.HYForm
 
             set
             {
-                label_close.Visible = value;
+                label_Close_1.Visible = value;
                 this._HideCloseButtom = value;
             }
         }
@@ -121,7 +125,7 @@ namespace ToolKit.HYControls.HYForm
 
             set
             {
-                label_help.Visible = value;
+                label_Help_1.Visible = value;
                 this._HideHelpButtom = value;
             }
         }
@@ -136,7 +140,7 @@ namespace ToolKit.HYControls.HYForm
 
             set
             {
-                label_User.Visible = value;
+                label_User_1.Visible = value;
                 this._HideUserButtom = value;
             }
         }
@@ -152,7 +156,7 @@ namespace ToolKit.HYControls.HYForm
             set
             {
                 this._userName = value;
-                label_User.Text = value;
+                label_Help_1.Text = value;
             }
         }
 
@@ -186,13 +190,13 @@ namespace ToolKit.HYControls.HYForm
                 {
                     panel3.Height = 26;
                     pictureBox1.Size = new Size(27, 27);
-                    label3.Text = label_Title.Text;
+                    label_minTitle.Text = label_Title.Text;
                 }
                 else
                 {
                     pictureBox1.Size = new Size(67, 67);
                     panel3.Height = 67;
-                    label3.Text = "";
+                    label_minTitle.Text = "";
                 }
                 this._HideTitle = value;
             }
@@ -208,7 +212,7 @@ namespace ToolKit.HYControls.HYForm
 
             set
             {
-                label1.ContextMenuStrip = value;
+                label_Menu_1.ContextMenuStrip = value;
                 this._DropContextMenuStrip = value;
             }
         }
@@ -223,7 +227,7 @@ namespace ToolKit.HYControls.HYForm
 
             set
             {
-                label1.Visible = value;
+                label_Menu_1.Visible = value;
                 this._HideDropButtom = value;
             }
         }
@@ -320,13 +324,13 @@ namespace ToolKit.HYControls.HYForm
             {
                 panel3.Height = 26;
                 pictureBox1.Size = new Size(27, 27);
-                label3.Text = label_Title.Text;
+                label_minTitle.Text = label_Title.Text;
             }
             else
             {
                 pictureBox1.Size = new Size(67, 67);
                 panel3.Height = 67;
-                label3.Text = "";
+                label_minTitle.Text = "";
             }
         }
 
@@ -361,12 +365,12 @@ namespace ToolKit.HYControls.HYForm
 
         private void Label_User_Click(object sender, EventArgs e)
         {
-            UserClick?.Invoke(label_User, e);
+            UserClick?.Invoke(sender, e);
         }
 
         private void Label_help_Click(object sender, EventArgs e)
         {
-            HelpClick?.Invoke(this, e);
+            HelpClick?.Invoke(sender, e);
         }
 
         private void Label3_MouseDown(object sender, MouseEventArgs e)
@@ -440,7 +444,7 @@ namespace ToolKit.HYControls.HYForm
             set
             {
                 this._HideAll = value;
-                panel3.Visible = value;
+                panel3.Visible = this._HideAll;
             }
         }
 

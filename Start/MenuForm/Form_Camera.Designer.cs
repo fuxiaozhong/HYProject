@@ -337,10 +337,10 @@ namespace HYProject.MenuForm
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.displayWindow1.BackColor = System.Drawing.Color.Transparent;
-            this.displayWindow1.Location = new System.Drawing.Point(4, 28);
+            this.displayWindow1.Location = new System.Drawing.Point(2, 26);
             this.displayWindow1.Margin = new System.Windows.Forms.Padding(0);
             this.displayWindow1.Name = "displayWindow1";
-            this.displayWindow1.Size = new System.Drawing.Size(735, 588);
+            this.displayWindow1.Size = new System.Drawing.Size(743, 592);
             this.displayWindow1.TabIndex = 0;
             // 
             // button1

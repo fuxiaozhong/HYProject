@@ -92,12 +92,12 @@ namespace HYProject.MenuForm
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label1.Font = new System.Drawing.Font("楷体", 15F);
-            this.label1.Location = new System.Drawing.Point(0, 324);
+            this.label1.Location = new System.Drawing.Point(0, 322);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(633, 24);
+            this.label1.Size = new System.Drawing.Size(633, 26);
             this.label1.TabIndex = 8;
             this.label1.Text = "深圳市恒越自动化科技有限公司";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label4
             // 
@@ -176,7 +176,7 @@ namespace HYProject.MenuForm
             this.操作员ToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.操作员ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold);
             this.操作员ToolStripMenuItem.Name = "操作员ToolStripMenuItem";
-            this.操作员ToolStripMenuItem.Size = new System.Drawing.Size(180, 32);
+            this.操作员ToolStripMenuItem.Size = new System.Drawing.Size(160, 32);
             this.操作员ToolStripMenuItem.Text = "操作员";
             this.操作员ToolStripMenuItem.Click += new System.EventHandler(this.ContextMenuStrip1_Click);
             // 
@@ -185,7 +185,7 @@ namespace HYProject.MenuForm
             this.adminToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.adminToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold);
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(180, 32);
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(160, 32);
             this.adminToolStripMenuItem.Text = "管理员";
             this.adminToolStripMenuItem.Click += new System.EventHandler(this.ContextMenuStrip1_Click);
             // 
@@ -193,7 +193,7 @@ namespace HYProject.MenuForm
             // 
             this.开发人员ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold);
             this.开发人员ToolStripMenuItem.Name = "开发人员ToolStripMenuItem";
-            this.开发人员ToolStripMenuItem.Size = new System.Drawing.Size(180, 32);
+            this.开发人员ToolStripMenuItem.Size = new System.Drawing.Size(160, 32);
             this.开发人员ToolStripMenuItem.Text = "开发人员";
             this.开发人员ToolStripMenuItem.Click += new System.EventHandler(this.ContextMenuStrip1_Click);
             // 

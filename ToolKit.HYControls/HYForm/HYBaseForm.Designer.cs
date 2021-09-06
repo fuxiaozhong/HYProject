@@ -32,15 +32,15 @@ namespace ToolKit.HYControls.HYForm
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HYBaseForm));
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label_User = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label_help = new System.Windows.Forms.Label();
-            this.label_min = new System.Windows.Forms.Label();
-            this.label_max = new System.Windows.Forms.Label();
-            this.label_close = new System.Windows.Forms.Label();
+            this.label_User_1 = new System.Windows.Forms.Label();
+            this.label_Min_1 = new System.Windows.Forms.Label();
+            this.label_Close_1 = new System.Windows.Forms.Label();
+            this.label_Menu_1 = new System.Windows.Forms.Label();
+            this.label_Max_1 = new System.Windows.Forms.Label();
+            this.label_Help_1 = new System.Windows.Forms.Label();
             this.label_Title = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label_minTitle = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -48,17 +48,17 @@ namespace ToolKit.HYControls.HYForm
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.panel3.BackColor = System.Drawing.Color.Teal;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.label_close);
-            this.panel3.Controls.Add(this.label_max);
-            this.panel3.Controls.Add(this.label_min);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.label_help);
-            this.panel3.Controls.Add(this.label_User);
-            this.panel3.Controls.Add(this.label_Title);
+            this.panel3.Controls.Add(this.label_User_1);
+            this.panel3.Controls.Add(this.label_minTitle);
             this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.label_Help_1);
+            this.panel3.Controls.Add(this.label_Title);
+            this.panel3.Controls.Add(this.label_Menu_1);
+            this.panel3.Controls.Add(this.label_Min_1);
+            this.panel3.Controls.Add(this.label_Close_1);
+            this.panel3.Controls.Add(this.label_Max_1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
@@ -66,106 +66,106 @@ namespace ToolKit.HYControls.HYForm
             this.panel3.Size = new System.Drawing.Size(1032, 67);
             this.panel3.TabIndex = 4;
             // 
-            // label_User
+            // label_User_1
             // 
-            this.label_User.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_User.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
-            this.label_User.Font = new System.Drawing.Font("仿宋", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
-            this.label_User.ForeColor = System.Drawing.Color.White;
-            this.label_User.Location = new System.Drawing.Point(731, -1);
-            this.label_User.Margin = new System.Windows.Forms.Padding(0);
-            this.label_User.Name = "label_User";
-            this.label_User.Size = new System.Drawing.Size(132, 27);
-            this.label_User.TabIndex = 2;
-            this.label_User.Text = "未登录";
-            this.label_User.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_User.Click += new System.EventHandler(this.Label_User_Click);
+            this.label_User_1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_User_1.BackColor = System.Drawing.Color.Teal;
+            this.label_User_1.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Underline);
+            this.label_User_1.ForeColor = System.Drawing.Color.White;
+            this.label_User_1.Location = new System.Drawing.Point(765, -1);
+            this.label_User_1.Margin = new System.Windows.Forms.Padding(0);
+            this.label_User_1.Name = "label_User_1";
+            this.label_User_1.Size = new System.Drawing.Size(130, 27);
+            this.label_User_1.TabIndex = 3;
+            this.label_User_1.Text = "未登录";
+            this.label_User_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_User_1.Click += new System.EventHandler(this.Label_User_Click);
             // 
-            // label1
+            // label_Min_1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
-            this.label1.Font = new System.Drawing.Font("宋体", 9F);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(896, -1);
-            this.label1.Margin = new System.Windows.Forms.Padding(0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 27);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "∨";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.Label1_Click);
+            this.label_Min_1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_Min_1.BackColor = System.Drawing.Color.Teal;
+            this.label_Min_1.Font = new System.Drawing.Font("宋体", 15F);
+            this.label_Min_1.ForeColor = System.Drawing.Color.White;
+            this.label_Min_1.Location = new System.Drawing.Point(949, 0);
+            this.label_Min_1.Margin = new System.Windows.Forms.Padding(0);
+            this.label_Min_1.Name = "label_Min_1";
+            this.label_Min_1.Size = new System.Drawing.Size(27, 27);
+            this.label_Min_1.TabIndex = 4;
+            this.label_Min_1.Text = "-";
+            this.label_Min_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_Min_1.Click += new System.EventHandler(this.Label_min_Click);
             // 
-            // label_help
+            // label_Close_1
             // 
-            this.label_help.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_help.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
-            this.label_help.Font = new System.Drawing.Font("宋体", 15F);
-            this.label_help.ForeColor = System.Drawing.Color.White;
-            this.label_help.Location = new System.Drawing.Point(863, -1);
-            this.label_help.Margin = new System.Windows.Forms.Padding(0);
-            this.label_help.Name = "label_help";
-            this.label_help.Size = new System.Drawing.Size(33, 27);
-            this.label_help.TabIndex = 6;
-            this.label_help.Text = "?";
-            this.label_help.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_help.Click += new System.EventHandler(this.Label_help_Click);
+            this.label_Close_1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_Close_1.BackColor = System.Drawing.Color.Teal;
+            this.label_Close_1.Font = new System.Drawing.Font("宋体", 15F);
+            this.label_Close_1.ForeColor = System.Drawing.Color.White;
+            this.label_Close_1.Location = new System.Drawing.Point(1003, 0);
+            this.label_Close_1.Margin = new System.Windows.Forms.Padding(0);
+            this.label_Close_1.Name = "label_Close_1";
+            this.label_Close_1.Size = new System.Drawing.Size(27, 27);
+            this.label_Close_1.TabIndex = 5;
+            this.label_Close_1.Text = "×";
+            this.label_Close_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_Close_1.Click += new System.EventHandler(this.Label_close_Click);
             // 
-            // label_min
+            // label_Menu_1
             // 
-            this.label_min.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_min.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
-            this.label_min.Font = new System.Drawing.Font("宋体", 15F);
-            this.label_min.ForeColor = System.Drawing.Color.White;
-            this.label_min.Location = new System.Drawing.Point(929, -1);
-            this.label_min.Margin = new System.Windows.Forms.Padding(0);
-            this.label_min.Name = "label_min";
-            this.label_min.Size = new System.Drawing.Size(33, 27);
-            this.label_min.TabIndex = 5;
-            this.label_min.Text = "-";
-            this.label_min.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_min.Click += new System.EventHandler(this.Label_min_Click);
+            this.label_Menu_1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_Menu_1.BackColor = System.Drawing.Color.Teal;
+            this.label_Menu_1.Font = new System.Drawing.Font("宋体", 9F);
+            this.label_Menu_1.ForeColor = System.Drawing.Color.White;
+            this.label_Menu_1.Location = new System.Drawing.Point(922, -1);
+            this.label_Menu_1.Margin = new System.Windows.Forms.Padding(0);
+            this.label_Menu_1.Name = "label_Menu_1";
+            this.label_Menu_1.Size = new System.Drawing.Size(27, 27);
+            this.label_Menu_1.TabIndex = 7;
+            this.label_Menu_1.Text = "∨";
+            this.label_Menu_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_Menu_1.Click += new System.EventHandler(this.Label1_Click);
             // 
-            // label_max
+            // label_Max_1
             // 
-            this.label_max.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_max.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
-            this.label_max.Font = new System.Drawing.Font("宋体", 15F);
-            this.label_max.ForeColor = System.Drawing.Color.White;
-            this.label_max.Location = new System.Drawing.Point(962, -1);
-            this.label_max.Margin = new System.Windows.Forms.Padding(0);
-            this.label_max.Name = "label_max";
-            this.label_max.Size = new System.Drawing.Size(33, 27);
-            this.label_max.TabIndex = 4;
-            this.label_max.Text = "□";
-            this.label_max.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_max.Click += new System.EventHandler(this.Label_max_Click);
+            this.label_Max_1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_Max_1.BackColor = System.Drawing.Color.Teal;
+            this.label_Max_1.Font = new System.Drawing.Font("宋体", 15F);
+            this.label_Max_1.ForeColor = System.Drawing.Color.White;
+            this.label_Max_1.Location = new System.Drawing.Point(976, 0);
+            this.label_Max_1.Margin = new System.Windows.Forms.Padding(0);
+            this.label_Max_1.Name = "label_Max_1";
+            this.label_Max_1.Size = new System.Drawing.Size(27, 27);
+            this.label_Max_1.TabIndex = 6;
+            this.label_Max_1.Text = "□";
+            this.label_Max_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_Max_1.Click += new System.EventHandler(this.Label_max_Click);
             // 
-            // label_close
+            // label_Help_1
             // 
-            this.label_close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_close.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
-            this.label_close.Font = new System.Drawing.Font("宋体", 15F);
-            this.label_close.ForeColor = System.Drawing.Color.White;
-            this.label_close.Location = new System.Drawing.Point(995, -1);
-            this.label_close.Margin = new System.Windows.Forms.Padding(0);
-            this.label_close.Name = "label_close";
-            this.label_close.Size = new System.Drawing.Size(36, 27);
-            this.label_close.TabIndex = 3;
-            this.label_close.Text = "×";
-            this.label_close.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_close.Click += new System.EventHandler(this.Label_close_Click);
+            this.label_Help_1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_Help_1.BackColor = System.Drawing.Color.Teal;
+            this.label_Help_1.Font = new System.Drawing.Font("仿宋", 12F, System.Drawing.FontStyle.Bold);
+            this.label_Help_1.ForeColor = System.Drawing.Color.White;
+            this.label_Help_1.Location = new System.Drawing.Point(895, 0);
+            this.label_Help_1.Margin = new System.Windows.Forms.Padding(0);
+            this.label_Help_1.Name = "label_Help_1";
+            this.label_Help_1.Size = new System.Drawing.Size(27, 27);
+            this.label_Help_1.TabIndex = 2;
+            this.label_Help_1.Text = "?";
+            this.label_Help_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_Help_1.Click += new System.EventHandler(this.Label_help_Click);
             // 
             // label_Title
             // 
             this.label_Title.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_Title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.label_Title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.label_Title.Font = new System.Drawing.Font("楷体", 25F, System.Drawing.FontStyle.Bold);
             this.label_Title.ForeColor = System.Drawing.Color.White;
-            this.label_Title.Location = new System.Drawing.Point(65, 27);
+            this.label_Title.Location = new System.Drawing.Point(66, 27);
             this.label_Title.Name = "label_Title";
-            this.label_Title.Size = new System.Drawing.Size(964, 38);
+            this.label_Title.Size = new System.Drawing.Size(966, 38);
             this.label_Title.TabIndex = 1;
             this.label_Title.Text = "视觉检测软件";
             this.label_Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -174,9 +174,9 @@ namespace ToolKit.HYControls.HYForm
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
+            this.pictureBox1.BackColor = System.Drawing.Color.Teal;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(-1, -1);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(67, 67);
@@ -185,20 +185,20 @@ namespace ToolKit.HYControls.HYForm
             this.pictureBox1.TabStop = false;
             this.toolTip1.SetToolTip(this.pictureBox1, "深圳市恒越自动化科技有限公司");
             // 
-            // label3
+            // label_minTitle
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.label_minTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
-            this.label3.Font = new System.Drawing.Font("楷体", 15F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(-1, -1);
-            this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.label3.Size = new System.Drawing.Size(1032, 27);
-            this.label3.TabIndex = 0;
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Label3_MouseDown);
+            this.label_minTitle.BackColor = System.Drawing.Color.Teal;
+            this.label_minTitle.Font = new System.Drawing.Font("楷体", 15F, System.Drawing.FontStyle.Bold);
+            this.label_minTitle.ForeColor = System.Drawing.Color.White;
+            this.label_minTitle.Location = new System.Drawing.Point(68, -1);
+            this.label_minTitle.Name = "label_minTitle";
+            this.label_minTitle.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.label_minTitle.Size = new System.Drawing.Size(694, 27);
+            this.label_minTitle.TabIndex = 0;
+            this.label_minTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label_minTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Label3_MouseDown);
             // 
             // HYBaseForm
             // 
@@ -222,15 +222,15 @@ namespace ToolKit.HYControls.HYForm
         }
 
         #endregion
-        private System.Windows.Forms.Label label_help;
-        private System.Windows.Forms.Label label_min;
-        private System.Windows.Forms.Label label_max;
-        private System.Windows.Forms.Label label_close;
-        private System.Windows.Forms.Label label_User;
+        private System.Windows.Forms.Label label_Max_1;
+        private System.Windows.Forms.Label label_Close_1;
+        private System.Windows.Forms.Label label_Min_1;
+        private System.Windows.Forms.Label label_User_1;
+        private System.Windows.Forms.Label label_Help_1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_Menu_1;
         private System.Windows.Forms.Label label_Title;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label_minTitle;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ToolTip toolTip1;
     }

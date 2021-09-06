@@ -66,9 +66,6 @@ namespace HYProject
             this.toolStrip_Version = new System.Windows.Forms.ToolStripLabel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.splitContainer_Main = new System.Windows.Forms.SplitContainer();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label_NowProduct = new ToolKit.MaterialSkin.Controls.MaterialLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayout.SuspendLayout();
@@ -80,9 +77,7 @@ namespace HYProject
             this.toolStrip1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer_Main)).BeginInit();
-            this.splitContainer_Main.Panel2.SuspendLayout();
             this.splitContainer_Main.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayout
@@ -147,7 +142,7 @@ namespace HYProject
             // 
             // pro_memory
             // 
-            this.pro_memory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.pro_memory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pro_memory.BackEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
             this.pro_memory.CoreEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
@@ -379,7 +374,6 @@ namespace HYProject
             this.系统操作ToolStripMenuItem.Name = "系统操作ToolStripMenuItem";
             this.系统操作ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.系统操作ToolStripMenuItem.Text = "系统操作";
-            this.系统操作ToolStripMenuItem.Click += new System.EventHandler(this.系统操作ToolStripMenuItem_Click);
             // 
             // 备份ToolStripMenuItem
             // 
@@ -458,53 +452,10 @@ namespace HYProject
             // splitContainer_Main.Panel1
             // 
             this.splitContainer_Main.Panel1.BackColor = System.Drawing.SystemColors.Control;
-            // 
-            // splitContainer_Main.Panel2
-            // 
-            this.splitContainer_Main.Panel2.Controls.Add(this.panel2);
-            this.splitContainer_Main.Panel2.Controls.Add(this.groupBox1);
             this.splitContainer_Main.Size = new System.Drawing.Size(1237, 485);
             this.splitContainer_Main.SplitterDistance = 936;
             this.splitContainer_Main.SplitterWidth = 1;
             this.splitContainer_Main.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Location = new System.Drawing.Point(2, 78);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(303, 404);
-            this.panel2.TabIndex = 1;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.label_NowProduct);
-            this.groupBox1.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(294, 69);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "当前产品";
-            // 
-            // label_NowProduct
-            // 
-            this.label_NowProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_NowProduct.Depth = 0;
-            this.label_NowProduct.Font = new System.Drawing.Font("Roboto", 11F);
-            this.label_NowProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label_NowProduct.Location = new System.Drawing.Point(5, 25);
-            this.label_NowProduct.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
-            this.label_NowProduct.Name = "label_NowProduct";
-            this.label_NowProduct.Size = new System.Drawing.Size(283, 41);
-            this.label_NowProduct.TabIndex = 0;
-            this.label_NowProduct.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
@@ -523,6 +474,7 @@ namespace HYProject
             this.ClientSize = new System.Drawing.Size(1239, 734);
             this.Controls.Add(this.tableLayout);
             this.HelpButton = true;
+            this.HideAll = true;
             this.HideDropButtom = false;
             this.HideHelpButtom = false;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -546,10 +498,8 @@ namespace HYProject
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel4.ResumeLayout(false);
-            this.splitContainer_Main.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer_Main)).EndInit();
             this.splitContainer_Main.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -588,12 +538,9 @@ namespace HYProject
         public System.Windows.Forms.ToolStripLabel toolStrip_Version;
         private System.Windows.Forms.ToolStripMenuItem pLC配置ToolStripMenuItem;
         public System.Windows.Forms.ToolStripLabel tsl_nowtime;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private MaterialLabel label_NowProduct;
         private System.Windows.Forms.ToolStripMenuItem 系统操作ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 备份ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 重启ToolStripMenuItem;
-        private System.Windows.Forms.Panel panel2;
         // private ToolKit.HYControls.CreateModelControl createModelControl1;
     }
 }

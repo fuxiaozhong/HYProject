@@ -115,7 +115,7 @@ namespace HYProject
             {
                 try
                 {
-                    label_NowProduct.Text = (AppParam.Instance.NowProduct == "" || AppParam.Instance.NowProduct == null) ? "###" : AppParam.Instance.NowProduct;
+                    //label_NowProduct.Text = (AppParam.Instance.NowProduct == "" || AppParam.Instance.NowProduct == null) ? "###" : AppParam.Instance.NowProduct;
                     //label1.Text = Form_GlobalOptions.Instance["标题栏名称"].ToString();
                     tsl_nowtime.Text = DateTime.Now.ToString(Form_Global_System.Instance["日期格式"] == null ? "yyyy-MM-dd HH:mm:ss" : Form_Global_System.Instance["日期格式"].ToString());
                     this.UserName = AppParam.Instance.Power;
@@ -384,15 +384,6 @@ namespace HYProject
             form_PLC.Show();
         }
 
-        private void MaterialFlatButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void 系统操作ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void 备份ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -413,8 +404,8 @@ namespace HYProject
                 Directory.CreateDirectory(parentPath + "\\BackUp");
             }
             ZipClass zipClass = new ZipClass();
-            zipClass.ZipFileFromDirectory(System.Windows.Forms.Application.StartupPath, parentPath + "\\BackUp\\" + DateTime.Now.ToString("yyyy-MM-dd") + "备份.zip", 9);
-            ShowNormal("备份成功," + parentPath + "\\BackUp\\" + DateTime.Now.ToString("yyyy-MM-dd") + "备份.zip");
+            zipClass.ZipFileFromDirectory(System.Windows.Forms.Application.StartupPath, parentPath + "\\BackUp\\视觉软件" + DateTime.Now.ToString("yyyy-MM-dd") + "备份.zip", 9);
+            ShowNormal("备份成功," + parentPath + "\\BackUp\\视觉软件" + DateTime.Now.ToString("yyyy-MM-dd") + "备份.zip");
         }
 
 
