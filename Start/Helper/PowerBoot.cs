@@ -174,6 +174,7 @@ namespace HYProject.Helper
         /// 在桌面上创建快捷方式-如果需要可以调用
         /// </summary>
         /// <param name="desktopPath">桌面地址</param>
+        /// <param name="quickName"></param>
         /// <param name="appPath">应用路径</param>
         public static void CreateDesktopQuick(string desktopPath = "", string quickName = "", string appPath = "")
         {

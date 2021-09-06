@@ -89,12 +89,12 @@ namespace HYProject.ToolForm
             {
                 return autoAddDisplayWindowControl1[key];
             }
-        }/// <summary>
-
-         /// 获取窗口
-         /// </summary>
-         /// <param name="key">窗口名称</param>
-         /// <returns></returns>
+        }
+        /// <summary>
+        /// 获取窗口
+        /// </summary>
+        /// <param name="cameraName">窗口名称</param>
+        /// <returns></returns>
         public HalconWindow this[string cameraName]
         {
             get

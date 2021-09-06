@@ -49,7 +49,7 @@ namespace HYProject
                     Directory.CreateDirectory(AppParam.Instance.ProductLibrary);
 
                 Log.WriteRunLog("开始加载配置文件");
-                ///初始化相机
+                //初始化相机
                 Cameras.Instance.InitializeCamera();
                 if (AppParam.Instance.lightSource.OpenLightSource(AppParam.Instance.LightSourcePortName,
                                                              AppParam.Instance.LightSourceBaudRate,
@@ -73,7 +73,7 @@ namespace HYProject
                     Log.WriteErrorLog("光源连接失败");
                 }
 
-                ///参数PLC
+                //参数PLC
                 if (AppParam.Instance.Fx3uPLC == null)
                 {
                     AppParam.Instance.Fx3uPLC = new HslCommunication.Profinet.Melsec.MelsecA1ENet();
@@ -99,7 +99,7 @@ namespace HYProject
                 while (flag) { }
                 DialogResult = DialogResult.OK;
             });
-            ///进度条
+            //进度条
             Task.Factory.StartNew(() =>
             {
                 while (label3.Width <= this.Width)

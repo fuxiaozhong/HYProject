@@ -136,6 +136,7 @@ namespace HYProject.Helper
         /// 将DataTable导出到Execl文档
         /// </summary>
         /// <param name="dt">传入一个DataTable数据集</param>
+        /// <param name="Outpath"></param>
         /// <returns>返回一个Bool类型的值，表示是否导出成功</returns>
         /// True表示导出成功，Flase表示导出失败
         public static bool DataTableToExcel(DataTable dt, string Outpath = "Default.xls")

@@ -17,7 +17,7 @@ namespace HYProject.MenuForm
 
         private void Form_Camera_Load(object sender, EventArgs e)
         {
-            ///初始化相机  列举相机列表
+            //初始化相机  列举相机列表
             comboBox_CamList.Items.Clear();
             foreach (var item in Cameras.Instance.GetCameras.Keys)
             {
