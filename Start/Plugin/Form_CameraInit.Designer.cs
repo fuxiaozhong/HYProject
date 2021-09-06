@@ -103,7 +103,6 @@ namespace HYProject.Plugin
             this.label5.Size = new System.Drawing.Size(35, 12);
             this.label5.TabIndex = 5;
             this.label5.Text = "备注:";
-            this.label5.Click += new System.EventHandler(this.Label5_Click);
             // 
             // button1
             // 

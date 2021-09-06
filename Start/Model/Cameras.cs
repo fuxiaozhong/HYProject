@@ -175,7 +175,7 @@ namespace HYProject.Model
                     if (haikang.Open(cameraName))
                     {
                         Log.WriteRunLog("相机:" + cameraName + "打开成功");
-                        AddCamera(cameraName, haikang); 
+                        AddCamera(cameraName, haikang);
                         haikang.IsSaveLog2Disk = true;
                         haikang.ImageProcessEvent += Camera_ImageProcessEvent;
                     }
@@ -190,7 +190,7 @@ namespace HYProject.Model
                     if (basler.Open(cameraName))
                     {
                         Log.WriteRunLog("相机:" + cameraName + "打开成功");
-                        AddCamera(cameraName, basler); 
+                        AddCamera(cameraName, basler);
                         basler.IsSaveLog2Disk = true;
                         basler.ImageProcessEvent += Camera_ImageProcessEvent;
                     }
@@ -204,7 +204,7 @@ namespace HYProject.Model
                     if (halconCamera.Open(cameraName))
                     {
                         Log.WriteRunLog("相机:" + cameraName + "打开成功");
-                        AddCamera(cameraName, halconCamera); 
+                        AddCamera(cameraName, halconCamera);
                         halconCamera.IsSaveLog2Disk = true;
                         halconCamera.ImageProcessEvent += Camera_ImageProcessEvent;
                     }

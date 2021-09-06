@@ -49,12 +49,6 @@
     <Compile Include="HalconUtils.cs" />
     <Compile Include="Model\MeasureParam.cs" />
     <Compile Include="Model\ModelParameter.cs" />
-    <Compile Include="UserControl1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>

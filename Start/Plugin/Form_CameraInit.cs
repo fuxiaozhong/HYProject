@@ -45,9 +45,9 @@ namespace HYProject.Plugin
 
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
-                if (dataGridView1.Rows[i].Cells[1].Value.ToString() == comboBox1.Text && dataGridView1.Rows[i].Cells[2].Value.ToString() == textBox1.Text.Trim())
+                if (dataGridView1.Rows[i].Cells[2].Value.ToString() == textBox1.Text.Trim())
                 {
-                    ShowWarn("已存在,请勿重复添加.");
+                    ShowWarn("相机名已存在,请勿重复添加.");
                     return;
                 }
             }
@@ -57,7 +57,7 @@ namespace HYProject.Plugin
             dataGridView1.Rows[index].Cells[1].Value = Enum.Parse(typeof(CameraType), comboBox1.Text);
             dataGridView1.Rows[index].Cells[2].Value = textBox1.Text;
             dataGridView1.Rows[index].Cells[3].Value = textBox2.Text;
-            ShowNormal("添加成功");
+            ShowMessageTipOK("添加成功");
         }
 
         private void Button3_Click(object sender, EventArgs e)
@@ -77,7 +77,7 @@ namespace HYProject.Plugin
                 };
                 AppParam.Instance.CameraInitStr.Add(cameraInfo);
             }
-            ShowNormal("保存成功。");
+            ShowMessageTipOK("保存成功。");
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -93,9 +93,5 @@ namespace HYProject.Plugin
             this.Close();
         }
 
-        private void Label5_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

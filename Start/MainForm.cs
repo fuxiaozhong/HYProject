@@ -71,6 +71,7 @@ namespace HYProject
             //DisplayForm.Instance.DisplayWindowCount = AppParam.Instance.CameraInitStr.Count == 0 ? 1 : AppParam.Instance.CameraInitStr.Count;
             //通过相机名称生产窗口
             DisplayForm.Instance.DisplayWindowNames = Cameras.Instance.GetCameras.Keys.ToArray<string>();
+            //如果没有相机名称  默认一个相机窗口
             if (Cameras.Instance.GetCameras.Keys.ToArray<string>().Length == 0)
             {
                 DisplayForm.Instance.DisplayWindowCount = 1;
