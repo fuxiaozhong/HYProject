@@ -15,7 +15,7 @@ namespace HYProject.ToolForm
         {
             try
             {
-                if ((AppParam.Instance.Power == "管理员" && tbx_password.Text == "Admin") || (AppParam.Instance.Power == "操作员" && tbx_password.Text == "123456") || (AppParam.Instance.Power == "未登录" && tbx_password.Text == "123456"))
+                if ((AppParam.Instance.Power == "开发人员" && tbx_password.Text == "develop") || (AppParam.Instance.Power == "管理员" && tbx_password.Text == "Admin") || (AppParam.Instance.Power == "操作员" && tbx_password.Text == "123456") || (AppParam.Instance.Power == "未登录" && tbx_password.Text == "123456"))
                 {
                     this.Close();
                 }
