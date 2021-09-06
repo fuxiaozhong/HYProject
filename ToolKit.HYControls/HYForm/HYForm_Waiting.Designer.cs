@@ -56,7 +56,7 @@ namespace ToolKit.HYControls.HYForm
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.Font = new System.Drawing.Font("宋体", 13F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(108, 45);
+            this.label2.Location = new System.Drawing.Point(108, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(241, 51);
             this.label2.TabIndex = 2;
@@ -90,7 +90,7 @@ namespace ToolKit.HYControls.HYForm
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // Form_Waiting
+            // HYForm_Waiting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -100,7 +100,7 @@ namespace ToolKit.HYControls.HYForm
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form_Waiting";
+            this.Name = "HYForm_Waiting";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_Waiting";

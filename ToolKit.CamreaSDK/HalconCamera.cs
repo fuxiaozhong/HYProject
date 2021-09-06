@@ -24,12 +24,16 @@ namespace ToolKit.CamreaSDK
         {
             HOperatorSet.CloseFramegrabber(CameraHandle);
             CameraHandle.Dispose();
+            thread.Abort();
+            thread = null;
+            CameraLogs?.Invoke(_CameraNmae, "相机关闭成功");
             return true;
         }
 
         public override bool End_Real_Mode()
         {
             tm.Stop();
+            CameraLogs?.Invoke(_CameraNmae, "相机关闭实时模式");
             return true;
         }
 
@@ -37,6 +41,7 @@ namespace ToolKit.CamreaSDK
         {
             HTuple Exposure_Time;
             HOperatorSet.GetFramegrabberParam(CameraHandle, "ExposureTime", out Exposure_Time);
+            CameraLogs?.Invoke(_CameraNmae, "获取曝光时间:" + Exposure_Time.D);
             return Exposure_Time.D;
         }
 
@@ -44,6 +49,7 @@ namespace ToolKit.CamreaSDK
         {
             HTuple Gain;
             HOperatorSet.GetFramegrabberParam(CameraHandle, "GainRaw", out Gain);
+            CameraLogs?.Invoke(_CameraNmae, "获取增益值:" + Gain.D);
             return Gain.D;
         }
 
@@ -51,6 +57,7 @@ namespace ToolKit.CamreaSDK
         {
             HTuple mode;
             HOperatorSet.GetFramegrabberParam(CameraHandle, "TriggerMode", out mode);
+            CameraLogs?.Invoke(_CameraNmae, "获取触发模式:" + mode.S.ToString());
             return mode.S.ToString();
 
         }
@@ -59,6 +66,7 @@ namespace ToolKit.CamreaSDK
         {
             HTuple Source;
             HOperatorSet.GetFramegrabberParam(CameraHandle, "TriggerSource", out Source);
+            CameraLogs?.Invoke(_CameraNmae, "获取触发源:" + Source.S.ToString());
             return Source.S.ToString();
         }
 
@@ -68,7 +76,7 @@ namespace ToolKit.CamreaSDK
             {
                 _CameraNmae = cameraName;
                 HOperatorSet.OpenFramegrabber("GigEVision2", 0, 0, 0, 0, 0, 0, "progressive", -1, "default", -1, "false", "default", _CameraNmae, 0, -1, out CameraHandle);
-                HOperatorSet.SetFramegrabberParam(CameraHandle, "grab_timeout", -1);
+                //HOperatorSet.SetFramegrabberParam(CameraHandle, "grab_timeout", -1);
                 HOperatorSet.GrabImageStart(CameraHandle, -1);
                 HOperatorSet.SetFramegrabberParam(CameraHandle, "grab_timeout", -1);
                 HTuple Exposure_Time, Gain;
@@ -103,9 +111,13 @@ namespace ToolKit.CamreaSDK
             while (true)
             {
                 autoEvent.WaitOne();  //阻塞当前线程，等待通知以继续执行  
+                HOperatorSet.GenEmptyObj(out ho_Image);
+                ho_Image.Dispose();
                 //异步图像抓取（out 图像，句柄，默认值-1）
                 HOperatorSet.GrabImageAsync(out ho_Image, CameraHandle, -1);
-                ImageProcessEvent?.Invoke(_CameraNmae, ho_Image);
+                ImageProcessEvent?.Invoke(_CameraNmae, ho_Image.Clone());
+                ho_Image.Dispose();
+                ho_Image = null;
             }
         }
 

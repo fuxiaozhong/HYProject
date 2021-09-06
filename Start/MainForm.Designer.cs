@@ -66,12 +66,12 @@ namespace HYProject
             this.toolStrip_Version = new System.Windows.Forms.ToolStripLabel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.splitContainer_Main = new System.Windows.Forms.SplitContainer();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label_NowProduct = new ToolKit.MaterialSkin.Controls.MaterialLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.userControl11 = new ToolKit.HalconTool.UserControl1();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayout.SuspendLayout();
             this.panel_Buttom.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -468,6 +468,16 @@ namespace HYProject
             this.splitContainer_Main.SplitterWidth = 1;
             this.splitContainer_Main.TabIndex = 0;
             // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Location = new System.Drawing.Point(2, 78);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(300, 404);
+            this.panel2.TabIndex = 1;
+            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -476,7 +486,7 @@ namespace HYProject
             this.groupBox1.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(309, 69);
+            this.groupBox1.Size = new System.Drawing.Size(312, 69);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "当前产品";
@@ -492,7 +502,7 @@ namespace HYProject
             this.label_NowProduct.Location = new System.Drawing.Point(5, 25);
             this.label_NowProduct.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.label_NowProduct.Name = "label_NowProduct";
-            this.label_NowProduct.Size = new System.Drawing.Size(291, 41);
+            this.label_NowProduct.Size = new System.Drawing.Size(294, 41);
             this.label_NowProduct.TabIndex = 0;
             this.label_NowProduct.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -513,16 +523,6 @@ namespace HYProject
             this.userControl11.Size = new System.Drawing.Size(10, 10);
             this.userControl11.TabIndex = 0;
             this.userControl11.Visible = false;
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Location = new System.Drawing.Point(2, 78);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(298, 404);
-            this.panel2.TabIndex = 1;
             // 
             // MainForm
             // 
