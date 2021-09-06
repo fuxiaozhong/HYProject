@@ -20,35 +20,85 @@ using ToolKit.HYControls.HYForm;
 
 namespace HYProject
 {
+    /// <summary>
+    /// 日志类
+    /// </summary>
     public class Log
     {
+        /// <summary>
+        /// 锁
+        /// </summary>
+        private static object obj = new object();
+        /// <summary>
+        /// 配置文件
+        /// </summary>
         private static string m_logFile;
+        /// <summary>
+        /// 日志类型对象
+        /// </summary>
         private static Dictionary<string, log4net.ILog> m_lstLog = new Dictionary<string, log4net.ILog>();
+        /// <summary>
+        /// 显示队列
+        /// </summary>
         private static ConcurrentQueue<LogInfo> Dispqueues = new ConcurrentQueue<LogInfo>();
+        /// <summary>
+        /// 显示线程
+        /// </summary>
         private static Thread DispLog;
+        /// <summary>
+        /// 删除文件线程
+        /// </summary>
         private static Thread _DeleteLogFile;
+        /// <summary>
+        /// 保存CSV队列
+        /// </summary>
+        private static ConcurrentQueue<LogInfo> SaveCSVQueues = new ConcurrentQueue<LogInfo>();
+        /// <summary>
+        /// 保存CSV线程
+        /// </summary>
+        private static Thread SaveSCV;
 
+
+        /// <summary>
+        /// 初始化
+        /// </summary>
+        /// <param name="strLog4NetConfigFile">配置文件</param>
         public static void InitLog4Net(string strLog4NetConfigFile)
         {
-            log4net.Config.XmlConfigurator.Configure(new System.IO.FileInfo(strLog4NetConfigFile));
             m_logFile = strLog4NetConfigFile;
+            log4net.Config.XmlConfigurator.Configure(new System.IO.FileInfo(strLog4NetConfigFile));
             m_lstLog["error_logo"] = log4net.LogManager.GetLogger("error_logo");
             m_lstLog["warn_logo"] = log4net.LogManager.GetLogger("warn_logo");
             m_lstLog["run_logo"] = log4net.LogManager.GetLogger("run_logo");
+
             _DeleteLogFile = new Thread(DeleteLogFile);
             _DeleteLogFile.IsBackground = true;
             _DeleteLogFile.Name = "删除日志文件";
             _DeleteLogFile.Start();
+
             DispLog = new Thread(DispLogWork);
             DispLog.IsBackground = true;
             DispLog.Name = "显示日志文件";
             DispLog.Start();
+
+            SaveSCV = new Thread(AutoSaveCSV);
+            SaveSCV.IsBackground = true;
+            SaveSCV.Name = "保存日志文件到CSV";
+            SaveSCV.Start();
         }
+        /// <summary>
+        /// 添加队列
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="type"></param>
         private static void DispMessage(string message, string type)
         {
             Dispqueues.Enqueue(new LogInfo() { datetime = DateTime.Now, type = type, message = message });
+            SaveCSVQueues.Enqueue(new LogInfo() { datetime = DateTime.Now, type = type, message = message });
         }
-
+        /// <summary>
+        /// 异步显示日志到窗口
+        /// </summary>
         private static void DispLogWork()
         {
             while (true)
@@ -80,13 +130,14 @@ namespace HYProject
                     }
                     catch (Exception ex)
                     {
-
-
+                        WriteErrorLog(ex.Message, ex);
                     }
                 }
             }
         }
-
+        /// <summary>
+        /// 到期自动删除日志文件
+        /// </summary>
         private static void DeleteLogFile()
         {
             while (true)
@@ -124,14 +175,14 @@ namespace HYProject
         /// <summary>
         /// 功能描述:写入警告日志
         /// </summary>
-        /// <param name="strInfoLog">strInfoLog</param>
+        /// <param name="strWarnLog">strWarnLog</param>
         public static void WriteWarnLog(string strWarnLog)
         {
             if (m_lstLog["warn_logo"].IsWarnEnabled)
             {
                 m_lstLog["warn_logo"].Warn(strWarnLog);
                 DispMessage(strWarnLog, "警告");
-                WriteLogCSV(strWarnLog, "警告");
+
             }
         }
 
@@ -150,7 +201,7 @@ namespace HYProject
 
                 m_lstLog["error_logo"].Error("<类名:" + methodBase.ReflectedType.Name + ">   <方法名:" + methodBase.Name + ">   <信息:" + strErrLog + ">", ex);
                 DispMessage(strErrLog, "异常");
-                WriteLogCSV(strErrLog, "异常");
+
             }
         }
 
@@ -164,29 +215,14 @@ namespace HYProject
             {
                 m_lstLog["run_logo"].Info(runmessage);
                 DispMessage(runmessage, "正常");
-                WriteLogCSV(runmessage, "正常");
+
             }
         }
+
 
         /// <summary>
-        /// 队列
+        /// 保存日志到csv
         /// </summary>
-        private static ConcurrentQueue<LogInfo> queues = new ConcurrentQueue<LogInfo>();
-
-        private static Thread SaveSCV;
-
-        private static void WriteLogCSV(string MESSAGE, string TYPE)
-        {
-            queues.Enqueue(new LogInfo() { datetime = DateTime.Now, type = TYPE, message = MESSAGE });
-            if (SaveSCV == null)
-            {
-                SaveSCV = new Thread(AutoSaveCSV);
-                SaveSCV.Start();
-            }
-        }
-
-        private static object obj = new object();
-
         private static void AutoSaveCSV()
         {
             while (true)
@@ -196,7 +232,7 @@ namespace HYProject
                     lock (obj)
                     {
                         LogInfo info = null;
-                        var isExit = queues.TryDequeue(out info);
+                        var isExit = SaveCSVQueues.TryDequeue(out info);
                         if (!isExit)
                         {
                             Thread.Sleep(500);
