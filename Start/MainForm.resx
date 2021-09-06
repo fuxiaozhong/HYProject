@@ -117,8 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>247, 17</value>
+  </metadata>
+  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>127, 17</value>
   </metadata>
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>127, 17</value>
@@ -219,6 +225,20 @@
         gg==
 </value>
   </data>
+  <data name="插件ToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAfFJREFUWEft
+        V91NwzAQ7ghpugAjsAGM0A1gA7IBbFBekjzSDcoGsEH7hhRXKhskG8Bd+tm5JHbrGFe89JM+KTqfz3f2
+        /bSzK3yRlOp+XqhNWqifI6tDWu7fktUhgcrlsMirx+7gEetFsV9CNT6SvLoVhzUU+TrN1Qt974S8Tsqv
+        G2yJi0WhPnHIbnjdcAROVGuI44EP1Ae4Imxv5KhTQxQPnHhsnG8BohHkLUAUD+L9txCNIBxoIAoHrnxF
+        5fahCeMnnsAkYw39VVBp4vAaxmzcjpKwe/8h68lOUFN5tRjqkxoP1M/1BmYGVT/ocpvn6p2Tz8kzkfH+
+        1gHKDYj8YOp96sYBTFL+uwOUMyKZN2lePUHFDvMEg+znb+r1D1A7C+GAjVsubaj2YdnI5dX1e5GApzCw
+        0yCwbyGzVwjKMGMDsuZltvM3xE4YB9iOOKhXZbQGsR/0Zo4GIidIL3ONZ9E3nJ3VCnmtEAWByzjIjqnt
+        SztAC1laquekUHf8fm1eUPLpTX99Ah2I1U4vSRyclIQciExC8YxWO3rRTb9fPPIgop6QYsg57EgF3ZSY
+        /O0TucbAAcmG16A2hlE8peSBzgEOZL9k532GWHwHptqhTW275MHRVkEgxRyZ9nugu7oobIL+J8AJOThC
+        uHNOvCtGmM1+AeoOEtX8yTq5AAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="相机配置ToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAlpJREFUWEft
@@ -262,6 +282,13 @@
         O0CsPqMV9j/DUKRzwgJ8aDtU6+8B6gEUaCKA7i+Z+k9pV5eujPkDGdU+JDAxEqMAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="全局变量ToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAFZJREFUOE9j
+        AAGh6bfrhabd/k8SBuoBawYBsMCM21pQLkEAUgvSA+VCDADTyKYSANQ3gCIvCE+/vR9sCAkYpAeqnQou
+        gHFGA3FkByLIZrAhpGCwaxkYAI8I5fPcx7PIAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="用户变量ToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAUxJREFUWEft
@@ -285,11 +312,20 @@
         ulAXgjQxegMQHtwFDt8ERdEnnEuKB9QCiRkAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="全局变量ToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="系统操作ToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAFZJREFUOE9j
-        AAGh6bfrhabd/k8SBuoBawYBsMCM21pQLkEAUgvSA+VCDADTyKYSANQ3gCIvCE+/vR9sCAkYpAeqnQou
-        gHFGA3FkByLIZrAhpGCwaxkYAI8I5fPcx7PIAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAACQAAAAgCAYAAAB6kdqOAAAABGdBTUEAALGPC/xhBQAAAlpJREFUWEft
+        ls9Kw0AQxnMXNH8ET4LgQfAkiGe9CoK+gb6Bgg+gV/GgVLPxpk+g4gvoAwitIIjdaAri2foEdb5xtsQa
+        Y7MJtgc/GLoz2ez+Op2dreMe6SVP6Wtf6c4gDQxgcYYBxhix3DrGAd0gzXB8AXIGpEqB3IPE9SO9A3PD
+        5pyEC6lSID/Uu/R+gy2KDyVcSKWAkAUqvgs3epiCDwg3ojqgTAVK3/Aczlp8GoTNDfi/yRoIMDT3DRD0
+        2SKrk7W7cBxrJgCjzzPyO/1AWQMFKl6juQ2MOSMZmyFmaskL9SV+Un6QI2sgiLPTs8m4ep6BicsCPIDE
+        zVU5IPwUAjRW09M0fjFroLF5Kl7GM2SKYnWMf5MVEECkq7e6NRM2z7m7inD0ydcT+3cj7FN94R2y7iHI
+        UmEgLMaTe0Sx9/RGZl4QPi1IiMXr00kU95uKA+EY0xyqi3VX6UUJ4916urC7C4fxJPtU3MGxXuX1qwSC
+        +IR9NsEWxohxh1ZxYjo1HfcrGJ6ZbOEdzMeXQjxLVkBG2CB9eihDe1zYMIKSMNbdQt2Jm6tyQNSH8tJv
+        JBlq5GXGyBqI5uFbJ9wU0Wfo9KBG5PFnJ6crg07fJnxujH1kyRpIipsuUrkepKZMxmjcBoBYAt907TxZ
+        A0ECtSUu1xRfrjhRcrlCXMh9wEClgHolHZnXAJyEC6lSIAhZSzfIoqocqKyGGwiXo3GGwO6l/Wc+/HtL
+        dXpO2yBNMP5VjcZVPJ+V5qJm/kmWkn+iZzML0MbCx21Z1l5+TY/if3HmBsXs1YueVmTZH+Q4H5biuPm0
+        OVt2AAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="备份ToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -331,36 +367,6 @@
         jMsMS7COv/+okgNYkn24S2xOZWkZvgUzRBYQkchfnT4y7WsSU4QAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="系统操作ToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACQAAAAgCAYAAAB6kdqOAAAABGdBTUEAALGPC/xhBQAAAlpJREFUWEft
-        ls9Kw0AQxnMXNH8ET4LgQfAkiGe9CoK+gb6Bgg+gV/GgVLPxpk+g4gvoAwitIIjdaAri2foEdb5xtsQa
-        Y7MJtgc/GLoz2ez+Op2dreMe6SVP6Wtf6c4gDQxgcYYBxhix3DrGAd0gzXB8AXIGpEqB3IPE9SO9A3PD
-        5pyEC6lSID/Uu/R+gy2KDyVcSKWAkAUqvgs3epiCDwg3ojqgTAVK3/Aczlp8GoTNDfi/yRoIMDT3DRD0
-        2SKrk7W7cBxrJgCjzzPyO/1AWQMFKl6juQ2MOSMZmyFmaskL9SV+Un6QI2sgiLPTs8m4ep6BicsCPIDE
-        zVU5IPwUAjRW09M0fjFroLF5Kl7GM2SKYnWMf5MVEECkq7e6NRM2z7m7inD0ydcT+3cj7FN94R2y7iHI
-        UmEgLMaTe0Sx9/RGZl4QPi1IiMXr00kU95uKA+EY0xyqi3VX6UUJ4916urC7C4fxJPtU3MGxXuX1qwSC
-        +IR9NsEWxohxh1ZxYjo1HfcrGJ6ZbOEdzMeXQjxLVkBG2CB9eihDe1zYMIKSMNbdQt2Jm6tyQNSH8tJv
-        JBlq5GXGyBqI5uFbJ9wU0Wfo9KBG5PFnJ6crg07fJnxujH1kyRpIipsuUrkepKZMxmjcBoBYAt907TxZ
-        A0ECtSUu1xRfrjhRcrlCXMh9wEClgHolHZnXAJyEC6lSIAhZSzfIoqocqKyGGwiXo3GGwO6l/Wc+/HtL
-        dXpO2yBNMP5VjcZVPJ+V5qJm/kmWkn+iZzML0MbCx21Z1l5+TY/if3HmBsXs1YueVmTZH+Q4H5biuPm0
-        OVt2AAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="插件ToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAfFJREFUWEft
-        V91NwzAQ7ghpugAjsAGM0A1gA7IBbFBekjzSDcoGsEH7hhRXKhskG8Bd+tm5JHbrGFe89JM+KTqfz3f2
-        /bSzK3yRlOp+XqhNWqifI6tDWu7fktUhgcrlsMirx+7gEetFsV9CNT6SvLoVhzUU+TrN1Qt974S8Tsqv
-        G2yJi0WhPnHIbnjdcAROVGuI44EP1Ae4Imxv5KhTQxQPnHhsnG8BohHkLUAUD+L9txCNIBxoIAoHrnxF
-        5fahCeMnnsAkYw39VVBp4vAaxmzcjpKwe/8h68lOUFN5tRjqkxoP1M/1BmYGVT/ocpvn6p2Tz8kzkfH+
-        1gHKDYj8YOp96sYBTFL+uwOUMyKZN2lePUHFDvMEg+znb+r1D1A7C+GAjVsubaj2YdnI5dX1e5GApzCw
-        0yCwbyGzVwjKMGMDsuZltvM3xE4YB9iOOKhXZbQGsR/0Zo4GIidIL3ONZ9E3nJ3VCnmtEAWByzjIjqnt
-        SztAC1laquekUHf8fm1eUPLpTX99Ah2I1U4vSRyclIQciExC8YxWO3rRTb9fPPIgop6QYsg57EgF3ZSY
-        /O0TucbAAcmG16A2hlE8peSBzgEOZL9k532GWHwHptqhTW275MHRVkEgxRyZ9nugu7oobIL+J8AJOThC
-        uHNOvCtGmM1+AeoOEtX8yTq5AAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="锁定ToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAf1JREFUWEft
@@ -377,6 +383,9 @@
   </data>
   <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
+  </metadata>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>247, 17</value>
   </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
