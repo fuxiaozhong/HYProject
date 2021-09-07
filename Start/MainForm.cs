@@ -1,8 +1,11 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
 using System.Windows.Shapes;
@@ -18,7 +21,10 @@ using HYProject.ToolForm;
 using ICSharpCode.SharpZipLib.Checksum;
 using ICSharpCode.SharpZipLib.Zip;
 
+using ToolKit.CamreaSDK;
 using ToolKit.HYControls.HYForm;
+
+using static ToolKit.CamreaSDK.ICamera;
 
 namespace HYProject
 {
@@ -106,8 +112,22 @@ namespace HYProject
             {
                 Button_Run_Click(运行ToolStripMenuItem, e);
             }
-        }
 
+
+        }
+        private void HasBindingPropertiesListChangedEvent()
+        {
+            try
+            {
+                FieldInfo f1 = Cameras.Instance["Cam2"].GetType().GetField("ImageProcessEvent", BindingFlags.Instance | BindingFlags.NonPublic);
+
+
+
+            }
+            catch
+            {
+            }
+        }
         //刷新界面
         private void Refresh_Work()
         {
@@ -115,6 +135,7 @@ namespace HYProject
             {
                 try
                 {
+                    HasBindingPropertiesListChangedEvent();
                     //label_NowProduct.Text = (AppParam.Instance.NowProduct == "" || AppParam.Instance.NowProduct == null) ? "###" : AppParam.Instance.NowProduct;
                     //label1.Text = Form_GlobalOptions.Instance["标题栏名称"].ToString();
                     tsl_nowtime.Text = DateTime.Now.ToString(Form_Global_System.Instance["日期格式"] == null ? "yyyy-MM-dd HH:mm:ss" : Form_Global_System.Instance["日期格式"].ToString());
@@ -415,6 +436,12 @@ namespace HYProject
             System.Diagnostics.Process.Start(Application.ExecutablePath);
             //关闭当前实例
             System.Diagnostics.Process.GetCurrentProcess().Kill();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            Form_Measure form_Measure = new Form_Measure();
+            form_Measure.ShowDialog();
         }
     }
 }

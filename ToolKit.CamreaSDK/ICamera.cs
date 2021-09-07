@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 
@@ -189,6 +191,7 @@ namespace ToolKit.CamreaSDK
             }
         }
 
+
         /// <summary>
         /// 清除事件绑定的函数
         /// </summary>
@@ -198,6 +201,9 @@ namespace ToolKit.CamreaSDK
         {
             try
             {
+
+
+
                 EventInfo[] events = this.GetType().GetEvents(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
                 if (events == null || events.Length < 1)
                 {
@@ -212,6 +218,7 @@ namespace ToolKit.CamreaSDK
                         if (fi != null)
                         {
                             fi.SetValue(this, null);
+
                         }
                         break;
                     }

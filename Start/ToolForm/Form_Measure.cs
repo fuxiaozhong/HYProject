@@ -42,25 +42,25 @@ namespace HYProject.ToolForm
         {
             switch (comboBox1.Text)
             {
-                case "圆":
+                case "circle":
                     Circle circle = halconDisplayWindow1.Draw_Circle("blue");
                     AppParam.Instance.Measure.Shape = MeasureShapes.circle;
                     AppParam.Instance.Measure.InputShapeParam = new HTuple(circle.row, circle.column, circle.radius);
                     break;
 
-                case "长方形":
+                case "rectangle2":
                     Rectangle2 rectangle = halconDisplayWindow1.Draw_Rectangle2("blue");
                     AppParam.Instance.Measure.Shape = MeasureShapes.rectangle2;
                     AppParam.Instance.Measure.InputShapeParam = new HTuple(rectangle.row, rectangle.column, rectangle.phi, rectangle.lenght1, rectangle.lenght2);
                     break;
 
-                case "椭圆":
+                case "ellipse":
                     Ellipse ellipse = halconDisplayWindow1.Draw_Ellipse("blue");
                     AppParam.Instance.Measure.Shape = MeasureShapes.ellipse;
                     AppParam.Instance.Measure.InputShapeParam = new HTuple(ellipse.row, ellipse.column, ellipse.phi, ellipse.radius1, ellipse.radius2);
                     break;
 
-                case "直线":
+                case "line":
                     Line line = halconDisplayWindow1.Draw_Line("blue");
                     AppParam.Instance.Measure.Shape = MeasureShapes.line;
                     AppParam.Instance.Measure.InputShapeParam = new HTuple(line.start_row, line.start_column, line.end_row, line.end_column);
