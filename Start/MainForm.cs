@@ -216,9 +216,9 @@ namespace HYProject
             AppParam.Instance.Runing = false;
             Cameras.Instance.CloseCamera();
             AppParam.Instance.Save_To_File();
-            AppParam.Instance.lightSource.CloseLightSource();
+            AppParam.Instance.lightSource?.CloseLightSource();
             Log.WriteRunLog("光源关闭...");
-            AppParam.Instance.Fx3uPLC.ConnectClose();
+            AppParam.Instance.Fx3uPLC?.ConnectClose();
             Log.WriteRunLog("PLC关闭...");
             DataLimit.Instance.Save();
             Log.WriteRunLog("退出程序...");

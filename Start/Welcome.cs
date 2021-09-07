@@ -51,48 +51,48 @@ namespace HYProject
                 Log.WriteRunLog("开始加载配置文件");
                 //初始化相机
                 Cameras.Instance.InitializeCamera();
-                if (AppParam.Instance.lightSource.OpenLightSource(AppParam.Instance.LightSourcePortName,
-                                                             AppParam.Instance.LightSourceBaudRate,
-                                                             AppParam.Instance.LightSourceParity,
-                                                             AppParam.Instance.LightSourceDataBits,
-                                                             AppParam.Instance.LightSourceStopBits))
-                {
-                    Log.WriteRunLog("光源连接成功");
-                    AppParam.Instance.lightSource.StateCH1 = true;
-                    AppParam.Instance.lightSource.StateCH2 = true;
-                    AppParam.Instance.lightSource.StateCH3 = true;
-                    AppParam.Instance.lightSource.StateCH4 = true;
-                    Thread.Sleep(100);
-                    AppParam.Instance.lightSource.StateCH1 = false;
-                    AppParam.Instance.lightSource.StateCH2 = false;
-                    AppParam.Instance.lightSource.StateCH3 = false;
-                    AppParam.Instance.lightSource.StateCH4 = false;
-                }
-                else
-                {
-                    Log.WriteErrorLog("光源连接失败");
-                }
+                //if (AppParam.Instance.lightSource.OpenLightSource(AppParam.Instance.LightSourcePortName,
+                //                                             AppParam.Instance.LightSourceBaudRate,
+                //                                             AppParam.Instance.LightSourceParity,
+                //                                             AppParam.Instance.LightSourceDataBits,
+                //                                             AppParam.Instance.LightSourceStopBits))
+                //{
+                //    Log.WriteRunLog("光源连接成功");
+                //    AppParam.Instance.lightSource.StateCH1 = true;
+                //    AppParam.Instance.lightSource.StateCH2 = true;
+                //    AppParam.Instance.lightSource.StateCH3 = true;
+                //    AppParam.Instance.lightSource.StateCH4 = true;
+                //    Thread.Sleep(100);
+                //    AppParam.Instance.lightSource.StateCH1 = false;
+                //    AppParam.Instance.lightSource.StateCH2 = false;
+                //    AppParam.Instance.lightSource.StateCH3 = false;
+                //    AppParam.Instance.lightSource.StateCH4 = false;
+                //}
+                //else
+                //{
+                //    Log.WriteErrorLog("光源连接失败");
+                //}
 
                 //参数PLC
-                if (AppParam.Instance.Fx3uPLC == null)
-                {
-                    AppParam.Instance.Fx3uPLC = new HslCommunication.Profinet.Melsec.MelsecA1ENet();
-                }
+                //if (AppParam.Instance.Fx3uPLC == null)
+                //{
+                //    AppParam.Instance.Fx3uPLC = new HslCommunication.Profinet.Melsec.MelsecA1ENet();
+                //}
 
-                AppParam.Instance.Fx3uPLC.IpAddress = AppParam.Instance.Fx3uPLC_IP;
-                AppParam.Instance.Fx3uPLC.Port = AppParam.Instance.Fx3uPLC_Port;
-                AppParam.Instance.Fx3uPLC.ConnectTimeOut = 1000;
-                AppParam.Instance.Fx3uPLCResult = AppParam.Instance.Fx3uPLC.ConnectServer();
-                if (AppParam.Instance.Fx3uPLCResult.IsSuccess)
-                {
-                    Log.WriteRunLog("PLC连接成功");
-                }
-                else
-                {
-                    Log.WriteErrorLog("PLC连接失败");
-                }
+                //AppParam.Instance.Fx3uPLC.IpAddress = AppParam.Instance.Fx3uPLC_IP;
+                //AppParam.Instance.Fx3uPLC.Port = AppParam.Instance.Fx3uPLC_Port;
+                //AppParam.Instance.Fx3uPLC.ConnectTimeOut = 1000;
+                //AppParam.Instance.Fx3uPLCResult = AppParam.Instance.Fx3uPLC.ConnectServer();
+                //if (AppParam.Instance.Fx3uPLCResult.IsSuccess)
+                //{
+                //    Log.WriteRunLog("PLC连接成功");
+                //}
+                //else
+                //{
+                //    Log.WriteErrorLog("PLC连接失败");
+                //}
 
-                DataLimit.Instance.Read();
+                //DataLimit.Instance.Read();
 
                 Log.WriteRunLog("数据配置加载完成");
                 //等待进度条加载完成
