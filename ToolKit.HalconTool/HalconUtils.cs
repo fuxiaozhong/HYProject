@@ -23,40 +23,40 @@ namespace ToolKit.HalconTool
             HOperatorSet.GenEmptyObj(out template);
             try
             {
-                if (modelPar.matchMode == MatchMode.BasedShape)
+                if (modelPar.ModelType == MatchMode.BasedShape)
                 {
-                    modelPar.modelID = null;
+                    modelPar.ModelID = null;
 
-                    HOperatorSet.ReduceDomain(modelPar.baseImage, modelPar.modelRegion, out template);
+                    HOperatorSet.ReduceDomain(modelPar.ModelBaseImage, modelPar.ModelRegion, out template);
 
                     HOperatorSet.CreateScaledShapeModel(template,
                                                         (HTuple)"auto",
-                                                        ((HTuple)modelPar.startAngle).TupleRad(),
-                                                        ((HTuple)modelPar.angleRange).TupleRad(),
+                                                        ((HTuple)modelPar.AngleStart).TupleRad(),
+                                                        ((HTuple)modelPar.AngleExtent).TupleRad(),
                                                         (HTuple)("auto"),
-                                                        (HTuple)modelPar.minScale,
-                                                        (HTuple)modelPar.maxScale,
+                                                        (HTuple)modelPar.ScaleMin,
+                                                        (HTuple)modelPar.ScaleMax,
                                                         (HTuple)"auto",
                                                         (HTuple)"auto",
                                                         (HTuple)modelPar.polarity,
-                                                        modelPar.contrast == -1 ? (HTuple)"auto" : (HTuple)modelPar.contrast,
+                                                        modelPar.Contrast == -1 ? (HTuple)"auto" : (HTuple)modelPar.Contrast,
                                                         (HTuple)"auto",
-                                                        out modelPar.modelID);
+                                                        out modelPar.ModelID);
                 }
                 else
                 {
-                    modelPar.modelID = null;
+                    modelPar.ModelID = null;
 
                     grayImage.Dispose();
-                    HOperatorSet.Rgb1ToGray(modelPar.baseImage, out grayImage);
-                    HOperatorSet.ReduceDomain(grayImage, modelPar.modelRegion, out template);
+                    HOperatorSet.Rgb1ToGray(modelPar.ModelBaseImage, out grayImage);
+                    HOperatorSet.ReduceDomain(grayImage, modelPar.ModelRegion, out template);
                     HOperatorSet.CreateNccModel(template,
                                                 (HTuple)"auto",
-                                                ((HTuple)modelPar.startAngle).TupleRad(),
-                                                ((HTuple)modelPar.angleRange).TupleRad(),
+                                                ((HTuple)modelPar.AngleStart).TupleRad(),
+                                                ((HTuple)modelPar.AngleExtent).TupleRad(),
                                                 (HTuple)("auto"),
                                                 (HTuple)modelPar.polarity,
-                                                out modelPar.modelID);
+                                                out modelPar.ModelID);
                 }
             }
             catch
@@ -92,12 +92,12 @@ namespace ToolKit.HalconTool
             HObject findImage;
             HOperatorSet.GenEmptyObj(out findImage);
             findImage.Dispose();
-            if (modelPar.findRegionEnable && modelPar.findModelRegion != null)
+            if (modelPar.findRegionEnable && modelPar.FindModelRegion != null)
             {//有搜索范围
-                HOperatorSet.ReduceDomain(image, modelPar.findModelRegion, out findImage);
+                HOperatorSet.ReduceDomain(image, modelPar.FindModelRegion, out findImage);
                 if (modelPar.dispFindRegion)
                 {
-                    winControl.Disp_Region(modelPar.findModelRegion, "blue", "margin");
+                    winControl.Disp_Region(modelPar.FindModelRegion, "blue", "margin");
                 }
             }
             else
@@ -111,16 +111,16 @@ namespace ToolKit.HalconTool
             modelRegion.Dispose();
             try
             {
-                if (modelPar.matchMode == MatchMode.BasedShape)
+                if (modelPar.ModelType == MatchMode.BasedShape)
                 {
                     HTuple temp;
 
                     HOperatorSet.FindScaledShapeModel(findImage,
-                                                      modelPar.modelID,
-                                                      ((HTuple)modelPar.startAngle).TupleRad(),
-                                                      ((HTuple)modelPar.angleRange - modelPar.startAngle).TupleRad(),
-                                                      (HTuple)modelPar.minScale,
-                                                      (HTuple)modelPar.maxScale,
+                                                      modelPar.ModelID,
+                                                      ((HTuple)modelPar.AngleStart).TupleRad(),
+                                                      ((HTuple)modelPar.AngleExtent - modelPar.AngleStart).TupleRad(),
+                                                      (HTuple)modelPar.ScaleMin,
+                                                      (HTuple)modelPar.ScaleMax,
                                                       (HTuple)modelPar.minScore,
                                                       (HTuple)modelPar.matchNum,
                                                       (HTuple)0.5,
@@ -135,7 +135,7 @@ namespace ToolKit.HalconTool
 
                     if (modelPar.dispModel)
                     {
-                        dev_display_shape_matching_results(winControl, modelPar.modelID, "red", resultRow, resultColumn, resultAngle, 1, 1, 0);
+                        dev_display_shape_matching_results(winControl, modelPar.ModelID, "red", resultRow, resultColumn, resultAngle, 1, 1, 0);
                     }
                 }
                 else
@@ -145,9 +145,9 @@ namespace ToolKit.HalconTool
                         HOperatorSet.Rgb1ToGray(findImage, out findImage);
                     }
                     HOperatorSet.FindNccModel(findImage,
-                                              (HTuple)modelPar.modelID,
-                                              ((HTuple)modelPar.startAngle).TupleRad(),
-                                              ((HTuple)modelPar.angleRange - modelPar.startAngle).TupleRad(),
+                                              (HTuple)modelPar.ModelID,
+                                              ((HTuple)modelPar.AngleStart).TupleRad(),
+                                              ((HTuple)modelPar.AngleExtent - modelPar.AngleStart).TupleRad(),
                                               (HTuple)modelPar.minScore,
                                               (HTuple)modelPar.matchNum,
                                               (HTuple)0.5,
@@ -159,23 +159,23 @@ namespace ToolKit.HalconTool
                                               out resultScores);
                     if (modelPar.dispModel)
                     {
-                        dev_display_ncc_matching_results(winControl, modelPar.modelID, "red", resultRow, resultColumn, resultAngle, 0);
+                        dev_display_ncc_matching_results(winControl, modelPar.ModelID, "red", resultRow, resultColumn, resultAngle, 0);
                     }
                 }
             }
             catch (Exception)
             {
                 CreateModel(ref modelPar);
-                if (modelPar.matchMode == MatchMode.BasedShape)
+                if (modelPar.ModelType == MatchMode.BasedShape)
                 {
                     HTuple temp;
 
                     HOperatorSet.FindScaledShapeModel(findImage,
-                                                      modelPar.modelID,
-                                                      ((HTuple)modelPar.startAngle).TupleRad(),
-                                                      ((HTuple)modelPar.angleRange - modelPar.startAngle).TupleRad(),
-                                                      (HTuple)modelPar.minScale,
-                                                      (HTuple)modelPar.maxScale,
+                                                      modelPar.ModelID,
+                                                      ((HTuple)modelPar.AngleStart).TupleRad(),
+                                                      ((HTuple)modelPar.AngleExtent - modelPar.AngleStart).TupleRad(),
+                                                      (HTuple)modelPar.ScaleMin,
+                                                      (HTuple)modelPar.ScaleMax,
                                                       (HTuple)modelPar.minScore,
                                                       (HTuple)modelPar.matchNum,
                                                       (HTuple)0.5,
@@ -189,7 +189,7 @@ namespace ToolKit.HalconTool
                                                       out resultScores);
                     if (modelPar.dispModel)
                     {
-                        dev_display_shape_matching_results(winControl, modelPar.modelID, "red", resultRow, resultColumn, resultAngle, 1, 1, 0);
+                        dev_display_shape_matching_results(winControl, modelPar.ModelID, "red", resultRow, resultColumn, resultAngle, 1, 1, 0);
                     }
                 }
                 else
@@ -199,9 +199,9 @@ namespace ToolKit.HalconTool
                         HOperatorSet.Rgb1ToGray(findImage, out findImage);
                     }
                     HOperatorSet.FindNccModel(findImage,
-                                              (HTuple)modelPar.modelID,
-                                              ((HTuple)modelPar.startAngle).TupleRad(),
-                                              ((HTuple)modelPar.angleRange - modelPar.startAngle).TupleRad(),
+                                              (HTuple)modelPar.ModelID,
+                                              ((HTuple)modelPar.AngleStart).TupleRad(),
+                                              ((HTuple)modelPar.AngleExtent - modelPar.AngleStart).TupleRad(),
                                               (HTuple)modelPar.minScore,
                                               (HTuple)modelPar.matchNum,
                                               (HTuple)0.5,
@@ -213,7 +213,7 @@ namespace ToolKit.HalconTool
                                               out resultScores);
                     if (modelPar.dispModel)
                     {
-                        dev_display_ncc_matching_results(winControl, modelPar.modelID, "red", resultRow, resultColumn, resultAngle, 0);
+                        dev_display_ncc_matching_results(winControl, modelPar.ModelID, "red", resultRow, resultColumn, resultAngle, 0);
                     }
                 }
             }

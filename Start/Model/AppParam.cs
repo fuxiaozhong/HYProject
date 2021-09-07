@@ -218,16 +218,22 @@ namespace HYProject
         /// <summary>
         /// 操作员密码
         /// </summary>
-        internal string 操作员密码 = "123456";
-        internal string 管理员密码 = "admin";
-        internal string 开发人员密码 = "develop";
+        internal string OperatorPassword = "123456";
+        /// <summary>
+        /// 管理员密码
+        /// </summary>
+        internal string AdminPassword = "admin";
+        /// <summary>
+        /// 开发人员密码
+        /// </summary>
+        internal string DeveloperPassword = "develop";
 
         /// <summary>
         /// 保存对象到文件
         /// </summary>
         public void Save_To_File()
         {
-            Serialize_To_File(System.AppDomain.CurrentDomain.BaseDirectory + "\\AppParam.bin", AppParam.Instance);
+            Serialize_To_File(System.AppDomain.CurrentDomain.BaseDirectory + "\\AppConfig.bin", AppParam.Instance);
         }
 
         /// <summary>
@@ -235,7 +241,7 @@ namespace HYProject
         /// </summary>
         public void Read_From_File()
         {
-            instance = (AppParam)Deserialize_From_File(System.AppDomain.CurrentDomain.BaseDirectory + "\\AppParam.bin");
+            instance = (AppParam)Deserialize_From_File(System.AppDomain.CurrentDomain.BaseDirectory + "\\AppConfig.bin");
             if (instance == null)
             {
                 AppParam.instance = AppParam.Instance;

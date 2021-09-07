@@ -108,7 +108,6 @@
     <Compile Include="HYForm\HYMessageBox.Designer.cs">
       <DependentUpon>HYMessageBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="HYForm\ModelParameter.cs" />
     <Compile Include="HYInputDialog.cs" />
     <Compile Include="HYListView.cs">
       <SubType>Component</SubType>

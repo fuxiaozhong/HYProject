@@ -29,7 +29,7 @@ namespace ToolKit.HalconTool.Model
         /// <summary>
         /// 模板类型
         /// </summary>
-        public MatchMode matchMode;
+        public MatchMode ModelType;
 
         /// <summary>
         /// 是否显示匹配到的模板
@@ -47,29 +47,29 @@ namespace ToolKit.HalconTool.Model
         public bool findRegionEnable = false;
 
         /// <summary>
-        ///模板图像
+        ///模板图像(框选的模板图像)
         /// </summary>
-        public HObject baseImage;
+        public HObject ModelBaseImage;
 
         /// <summary>
         /// 模板句柄
         /// </summary>
-        public HTuple modelID = -1;
+        public HTuple ModelID = -1;
 
         /// <summary>
         /// 模板区域
         /// </summary>
-        public HObject modelRegion;
+        public HObject ModelRegion;
 
         /// <summary>
-        /// 模板图片
+        /// 模板图片(创建模板的图像)
         /// </summary>
-        public HObject modelImage;
+        public HObject ModelImage;
 
         /// <summary>
         /// 模板查找区域
         /// </summary>
-        public HObject findModelRegion;
+        public HObject FindModelRegion;
 
         /// <summary>
         /// 最小匹配分数
@@ -84,22 +84,22 @@ namespace ToolKit.HalconTool.Model
         /// <summary>
         /// 起始角度
         /// </summary>
-        public int startAngle = -30;
+        public int AngleStart = -30;
 
         /// <summary>
         /// 角度范围
         /// </summary>
-        public int angleRange = 30;
+        public int AngleExtent = 30;
 
         /// <summary>
         /// 角度步长
         /// </summary>
-        public int angleStep = 1;
+        public int AngleStep = 1;
 
         /// <summary>
         /// 对比度
         /// </summary>
-        public int contrast = 30;
+        public int Contrast = 30;
 
         /// <summary>
         /// 极性
@@ -109,12 +109,12 @@ namespace ToolKit.HalconTool.Model
         /// <summary>
         /// 最小缩放
         /// </summary>
-        public double minScale;
+        public double ScaleMin;
 
         /// <summary>
         /// 最大缩放
         /// </summary>
-        public double maxScale;
+        public double ScaleMax;
 
         /// <summary>
         /// 模板中心点Row

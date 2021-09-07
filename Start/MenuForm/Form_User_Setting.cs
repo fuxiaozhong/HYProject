@@ -30,11 +30,11 @@ namespace HYProject.MenuForm
         {
             if (comboBox_user.Text == "操作员")
             {
-                if (text_Old_Password.Text == AppParam.Instance.操作员密码)
+                if (text_Old_Password.Text == AppParam.Instance.OperatorPassword)
                 {
                     if (text_new_Password1.Text != "" && text_new_Password1.Text != null && text_new_Password1.Text == text_new_Password2.Text)
                     {
-                        AppParam.Instance.操作员密码 = text_new_Password2.Text;
+                        AppParam.Instance.OperatorPassword = text_new_Password2.Text;
                         text_new_Password1.Text = "";
                         text_new_Password2.Text = "";
                         text_Old_Password.Text = "";
@@ -55,11 +55,11 @@ namespace HYProject.MenuForm
             }
             else if (comboBox_user.Text == "管理员")
             {
-                if (text_Old_Password.Text == AppParam.Instance.管理员密码)
+                if (text_Old_Password.Text == AppParam.Instance.AdminPassword)
                 {
                     if (text_new_Password1.Text != "" && text_new_Password1.Text != null && text_new_Password1.Text == text_new_Password2.Text)
                     {
-                        AppParam.Instance.管理员密码 = text_new_Password2.Text;
+                        AppParam.Instance.AdminPassword = text_new_Password2.Text;
                         text_new_Password1.Text = "";
                         text_new_Password2.Text = "";
                         text_Old_Password.Text = "";
@@ -80,11 +80,11 @@ namespace HYProject.MenuForm
             }
             else if (comboBox_user.Text == "开发人员")
             {
-                if (text_Old_Password.Text == AppParam.Instance.开发人员密码)
+                if (text_Old_Password.Text == AppParam.Instance.DeveloperPassword)
                 {
                     if (text_new_Password1.Text != "" && text_new_Password1.Text != null && text_new_Password1.Text == text_new_Password2.Text)
                     {
-                        AppParam.Instance.开发人员密码 = text_new_Password2.Text;
+                        AppParam.Instance.DeveloperPassword = text_new_Password2.Text;
                         text_new_Password1.Text = "";
                         text_new_Password2.Text = "";
                         text_Old_Password.Text = "";
