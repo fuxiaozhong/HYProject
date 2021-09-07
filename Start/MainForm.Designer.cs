@@ -73,7 +73,6 @@ namespace HYProject
             this.splitContainer_Main = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.hytcpSocketServer1 = new ToolKit.HYControls.HYTCPSocketServer();
             this.tableLayout.SuspendLayout();
             this.panel_Buttom.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -83,7 +82,6 @@ namespace HYProject
             this.toolStrip1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer_Main)).BeginInit();
-            this.splitContainer_Main.Panel1.SuspendLayout();
             this.splitContainer_Main.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -267,7 +265,7 @@ namespace HYProject
             this.系统设置ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.系统设置ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("系统设置ToolStripMenuItem.Image")));
             this.系统设置ToolStripMenuItem.Name = "系统设置ToolStripMenuItem";
-            this.系统设置ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.系统设置ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.系统设置ToolStripMenuItem.Text = "系统设置";
             this.系统设置ToolStripMenuItem.Click += new System.EventHandler(this.系统设置ToolStripMenuItem_Click);
             // 
@@ -276,7 +274,7 @@ namespace HYProject
             this.用户设置ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.用户设置ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("用户设置ToolStripMenuItem.Image")));
             this.用户设置ToolStripMenuItem.Name = "用户设置ToolStripMenuItem";
-            this.用户设置ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.用户设置ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.用户设置ToolStripMenuItem.Text = "用户设置";
             this.用户设置ToolStripMenuItem.Click += new System.EventHandler(this.用户设置ToolStripMenuItem_Click);
             // 
@@ -288,15 +286,14 @@ namespace HYProject
             this.通讯设置ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.通讯设置ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("通讯设置ToolStripMenuItem.Image")));
             this.通讯设置ToolStripMenuItem.Name = "通讯设置ToolStripMenuItem";
-            this.通讯设置ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.通讯设置ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.通讯设置ToolStripMenuItem.Text = "通讯设置";
-            this.通讯设置ToolStripMenuItem.Click += new System.EventHandler(this.通讯设置ToolStripMenuItem_Click);
             // 
             // tCP客户端ToolStripMenuItem
             // 
             this.tCP客户端ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("tCP客户端ToolStripMenuItem.Image")));
             this.tCP客户端ToolStripMenuItem.Name = "tCP客户端ToolStripMenuItem";
-            this.tCP客户端ToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
+            this.tCP客户端ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.tCP客户端ToolStripMenuItem.Text = "TCP客户端";
             this.tCP客户端ToolStripMenuItem.Click += new System.EventHandler(this.TCP客户端ToolStripMenuItem_Click);
             // 
@@ -304,7 +301,7 @@ namespace HYProject
             // 
             this.tCP服务端ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("tCP服务端ToolStripMenuItem.Image")));
             this.tCP服务端ToolStripMenuItem.Name = "tCP服务端ToolStripMenuItem";
-            this.tCP服务端ToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
+            this.tCP服务端ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.tCP服务端ToolStripMenuItem.Text = "TCP服务端";
             this.tCP服务端ToolStripMenuItem.Click += new System.EventHandler(this.TCP服务端ToolStripMenuItem_Click);
             // 
@@ -507,7 +504,10 @@ namespace HYProject
             // splitContainer_Main.Panel1
             // 
             this.splitContainer_Main.Panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.splitContainer_Main.Panel1.Controls.Add(this.hytcpSocketServer1);
+            // 
+            // splitContainer_Main.Panel2
+            // 
+            this.toolTip1.SetToolTip(this.splitContainer_Main.Panel2, "数据面板");
             this.splitContainer_Main.Size = new System.Drawing.Size(1237, 485);
             this.splitContainer_Main.SplitterDistance = 936;
             this.splitContainer_Main.SplitterWidth = 1;
@@ -522,13 +522,6 @@ namespace HYProject
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1325, 518);
             this.panel1.TabIndex = 4;
-            // 
-            // hytcpSocketServer1
-            // 
-            this.hytcpSocketServer1.Location = new System.Drawing.Point(72, 109);
-            this.hytcpSocketServer1.Name = "hytcpSocketServer1";
-            this.hytcpSocketServer1.Size = new System.Drawing.Size(387, 178);
-            this.hytcpSocketServer1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -561,7 +554,6 @@ namespace HYProject
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel4.ResumeLayout(false);
-            this.splitContainer_Main.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer_Main)).EndInit();
             this.splitContainer_Main.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -580,37 +572,36 @@ namespace HYProject
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem 相机ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 设置ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 产品库ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 运行ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 退出系统ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 主页面ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem 插件ToolStripMenuItem;
         private System.Windows.Forms.Panel panel_Log;
-        private System.Windows.Forms.SplitContainer splitContainer_Main;
-        private System.Windows.Forms.ToolStripMenuItem 锁定ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 相机配置ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 光源配置ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 全局变量ToolStripMenuItem;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.ToolStripMenuItem 屏幕键盘ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 用户变量ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 系统变量ToolStripMenuItem;
         public System.Windows.Forms.ToolStripLabel toolStrip_Version;
-        private System.Windows.Forms.ToolStripMenuItem pLC配置ToolStripMenuItem;
         public System.Windows.Forms.ToolStripLabel tsl_nowtime;
-        private System.Windows.Forms.ToolStripMenuItem 系统操作ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 备份ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 重启ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 系统设置ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 用户设置ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 通讯设置ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tCP服务端ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tCP客户端ToolStripMenuItem;
-        private ToolKit.HYControls.HYTCPSocketServer hytcpSocketServer1;
+        public System.Windows.Forms.MenuStrip menuStrip1;
+        public System.Windows.Forms.ToolStripMenuItem 相机ToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem 设置ToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem 产品库ToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem 插件ToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem 锁定ToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem 相机配置ToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem 光源配置ToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem 全局变量ToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem 屏幕键盘ToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem pLC配置ToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem 系统操作ToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem 用户变量ToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem 系统变量ToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem 备份ToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem 重启ToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem tCP服务端ToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem tCP客户端ToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem 系统设置ToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem 用户设置ToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem 通讯设置ToolStripMenuItem;
+        public System.Windows.Forms.SplitContainer splitContainer_Main;
         // private ToolKit.HYControls.CreateModelControl createModelControl1;
     }
 }
