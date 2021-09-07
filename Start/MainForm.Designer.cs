@@ -513,6 +513,7 @@ namespace HYProject
             this.通讯设置ToolStripMenuItem.Name = "通讯设置ToolStripMenuItem";
             this.通讯设置ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.通讯设置ToolStripMenuItem.Text = "通讯设置";
+            this.通讯设置ToolStripMenuItem.Click += new System.EventHandler(this.通讯设置ToolStripMenuItem_Click);
             // 
             // MainForm
             // 

@@ -439,5 +439,10 @@ namespace HYProject
             Form_User_Setting form_User_Setting = new Form_User_Setting();
             form_User_Setting.ShowDialog();
         }
+
+        private void 通讯设置ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowNormal("暂未开发");
+        }
     }
 }
