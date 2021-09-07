@@ -115,19 +115,7 @@ namespace HYProject
 
 
         }
-        private void HasBindingPropertiesListChangedEvent()
-        {
-            try
-            {
-                FieldInfo f1 = Cameras.Instance["Cam2"].GetType().GetField("ImageProcessEvent", BindingFlags.Instance | BindingFlags.NonPublic);
 
-
-
-            }
-            catch
-            {
-            }
-        }
         //刷新界面
         private void Refresh_Work()
         {
@@ -135,7 +123,7 @@ namespace HYProject
             {
                 try
                 {
-                    HasBindingPropertiesListChangedEvent();
+
                     //label_NowProduct.Text = (AppParam.Instance.NowProduct == "" || AppParam.Instance.NowProduct == null) ? "###" : AppParam.Instance.NowProduct;
                     //label1.Text = Form_GlobalOptions.Instance["标题栏名称"].ToString();
                     tsl_nowtime.Text = DateTime.Now.ToString(Form_Global_System.Instance["日期格式"] == null ? "yyyy-MM-dd HH:mm:ss" : Form_Global_System.Instance["日期格式"].ToString());
@@ -237,11 +225,7 @@ namespace HYProject
             Thread.Sleep(1000);
         }
 
-        private void Button_Setting_Click(object sender, EventArgs e)
-        {
-            Form_Setting form_Setting = new Form_Setting();
-            form_Setting.ShowDialog();
-        }
+
 
         private void Button_Run_Click(object sender, EventArgs e)
         {
@@ -292,7 +276,7 @@ namespace HYProject
             //Alt + S 打开设置窗口
             else if (ModifierKeys == Keys.Alt && e.KeyCode == Keys.S)
             {
-                Button_Setting_Click(设置ToolStripMenuItem, e);
+                系统设置ToolStripMenuItem_Click(设置ToolStripMenuItem, e);
             }
             //Ctrl + E 退出
             else if (ModifierKeys == Keys.Control && e.KeyCode == Keys.E)
@@ -302,7 +286,7 @@ namespace HYProject
             //Ctrl + Enter 登陆
             else if (ModifierKeys == Keys.Control && e.KeyCode == Keys.Enter)
             {
-                Form_User form_User = new Form_User();
+                Form_User_Login form_User = new Form_User_Login();
                 if (form_User.ShowDialog() == DialogResult.OK)
                 {
                     AppParam.Instance.Power = form_User.Power;
@@ -320,7 +304,7 @@ namespace HYProject
 
         private void MainForm_UserClick(object sender, EventArgs e)
         {
-            Form_User form_User = new Form_User();
+            Form_User_Login form_User = new Form_User_Login();
             if (form_User.ShowDialog() == DialogResult.OK)
             {
                 AppParam.Instance.Power = form_User.Power;
@@ -368,7 +352,7 @@ namespace HYProject
                 DialogResult dialogResult = ShowMessage("当前用户: " + AppParam.Instance.Power + ",无权限操作,请登录 管理员/开发人员 账户,在进行操作", "权限提示");
                 if (dialogResult == DialogResult.OK)
                 {
-                    Form_User form_User = new Form_User();
+                    Form_User_Login form_User = new Form_User_Login();
                     if (form_User.ShowDialog() == DialogResult.OK)
                     {
                         AppParam.Instance.Power = form_User.Power;
@@ -389,7 +373,7 @@ namespace HYProject
                 DialogResult dialogResult = ShowMessage("当前用户: " + AppParam.Instance.Power + ",无权限操作,请登录 开发人员 账户,在进行操作", "权限提示");
                 if (dialogResult == DialogResult.OK)
                 {
-                    Form_User form_User = new Form_User();
+                    Form_User_Login form_User = new Form_User_Login();
                     if (form_User.ShowDialog() == DialogResult.OK)
                     {
                         AppParam.Instance.Power = form_User.Power;
@@ -442,6 +426,18 @@ namespace HYProject
         {
             Form_Measure form_Measure = new Form_Measure();
             form_Measure.ShowDialog();
+        }
+
+        private void 系统设置ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_System_Setting form_Setting = new Form_System_Setting();
+            form_Setting.ShowDialog();
+        }
+
+        private void 用户设置ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_User_Setting form_User_Setting = new Form_User_Setting();
+            form_User_Setting.ShowDialog();
         }
     }
 }

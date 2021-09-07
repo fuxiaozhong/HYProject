@@ -1,7 +1,7 @@
 ﻿
 namespace HYProject.MenuForm
 {
-    partial class Form_User
+    partial class Form_User_Login
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace HYProject.MenuForm
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_User));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_User_Login));
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();

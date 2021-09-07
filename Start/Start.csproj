@@ -158,17 +158,23 @@
     <Compile Include="MenuForm\Form_ProjectLibrary.Designer.cs">
       <DependentUpon>Form_ProjectLibrary.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuForm\Form_Setting.cs">
+    <Compile Include="MenuForm\Form_System_Setting.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuForm\Form_Setting.Designer.cs">
-      <DependentUpon>Form_Setting.cs</DependentUpon>
+    <Compile Include="MenuForm\Form_System_Setting.Designer.cs">
+      <DependentUpon>Form_System_Setting.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuForm\Form_User.cs">
+    <Compile Include="MenuForm\Form_User_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuForm\Form_User.Designer.cs">
-      <DependentUpon>Form_User.cs</DependentUpon>
+    <Compile Include="MenuForm\Form_User_Login.Designer.cs">
+      <DependentUpon>Form_User_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuForm\Form_User_Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForm\Form_User_Setting.Designer.cs">
+      <DependentUpon>Form_User_Setting.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\AppParam.cs" />
     <Compile Include="Model\Cameras.cs" />
@@ -267,11 +273,14 @@
     <EmbeddedResource Include="MenuForm\Form_ProjectLibrary.resx">
       <DependentUpon>Form_ProjectLibrary.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuForm\Form_Setting.resx">
-      <DependentUpon>Form_Setting.cs</DependentUpon>
+    <EmbeddedResource Include="MenuForm\Form_System_Setting.resx">
+      <DependentUpon>Form_System_Setting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuForm\Form_User.resx">
-      <DependentUpon>Form_User.cs</DependentUpon>
+    <EmbeddedResource Include="MenuForm\Form_User_Login.resx">
+      <DependentUpon>Form_User_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForm\Form_User_Setting.resx">
+      <DependentUpon>Form_User_Setting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Plugin\Form_CameraInit.resx">
       <DependentUpon>Form_CameraInit.cs</DependentUpon>

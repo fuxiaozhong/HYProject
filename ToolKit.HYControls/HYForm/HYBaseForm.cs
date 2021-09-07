@@ -156,7 +156,7 @@ namespace ToolKit.HYControls.HYForm
             set
             {
                 this._userName = value;
-                label_Help_1.Text = value;
+                label_User_1.Text = value;
             }
         }
 

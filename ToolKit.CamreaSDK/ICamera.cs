@@ -218,7 +218,6 @@ namespace ToolKit.CamreaSDK
                         if (fi != null)
                         {
                             fi.SetValue(this, null);
-
                         }
                         break;
                     }

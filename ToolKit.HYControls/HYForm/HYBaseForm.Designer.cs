@@ -29,6 +29,7 @@ namespace ToolKit.HYControls.HYForm
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HYBaseForm));
             this.panel3 = new System.Windows.Forms.Panel();
             this.label_User_1 = new System.Windows.Forms.Label();
@@ -40,7 +41,7 @@ namespace ToolKit.HYControls.HYForm
             this.label_Close_1 = new System.Windows.Forms.Label();
             this.label_Max_1 = new System.Windows.Forms.Label();
             this.label_minTitle = new System.Windows.Forms.Label();
-            this.toolTip1 = new System.Windows.Forms.ToolTip();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -186,14 +187,13 @@ namespace ToolKit.HYControls.HYForm
             // 
             // label_minTitle
             // 
-            this.label_minTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label_minTitle.BackColor = System.Drawing.Color.Teal;
+            this.label_minTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.label_minTitle.Font = new System.Drawing.Font("楷体", 15F, System.Drawing.FontStyle.Bold);
             this.label_minTitle.ForeColor = System.Drawing.Color.White;
-            this.label_minTitle.Location = new System.Drawing.Point(-1, -1);
+            this.label_minTitle.Location = new System.Drawing.Point(0, 0);
             this.label_minTitle.Name = "label_minTitle";
-            this.label_minTitle.Size = new System.Drawing.Size(1033, 27);
+            this.label_minTitle.Size = new System.Drawing.Size(1030, 27);
             this.label_minTitle.TabIndex = 0;
             this.label_minTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label_minTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Label3_MouseDown);

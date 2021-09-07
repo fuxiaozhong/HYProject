@@ -6,9 +6,9 @@ using ToolKit.HYControls.HYForm;
 
 namespace HYProject.MenuForm
 {
-    public partial class Form_User : HYBaseForm
+    public partial class Form_User_Login : HYBaseForm
     {
-        public Form_User()
+        public Form_User_Login()
         {
             InitializeComponent();
         }
@@ -25,7 +25,7 @@ namespace HYProject.MenuForm
         {
             if (textBox_username.Text == "操作员")
             {
-                if (textBox_Password.Text == "123456")
+                if (textBox_Password.Text == AppParam.Instance.操作员密码)
                 {
                     HYMessageTip.ShowOk("操作员,登陆成功");
                     Power = "操作员";
@@ -38,7 +38,7 @@ namespace HYProject.MenuForm
             }
             else if (textBox_username.Text == "管理员")
             {
-                if (textBox_Password.Text.ToLower() == "admin")
+                if (textBox_Password.Text.ToLower() == AppParam.Instance.管理员密码)
                 {
                     HYMessageTip.ShowOk("管理员,登陆成功");
                     Power = "管理员";
@@ -51,7 +51,7 @@ namespace HYProject.MenuForm
             }
             else if (textBox_username.Text == "开发人员")
             {
-                if (textBox_Password.Text.ToLower() == "develop")
+                if (textBox_Password.Text.ToLower() == AppParam.Instance.开发人员密码)
                 {
                     HYMessageTip.ShowOk("开发人员,登陆成功");
                     Power = "开发人员";

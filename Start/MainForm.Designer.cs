@@ -46,6 +46,8 @@ namespace HYProject
             this.相机ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.产品库ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.系统设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.用户设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出系统ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.运行ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,6 +71,7 @@ namespace HYProject
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.通讯设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayout.SuspendLayout();
             this.panel_Buttom.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -247,12 +250,33 @@ namespace HYProject
             // 
             // 设置ToolStripMenuItem
             // 
+            this.设置ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.系统设置ToolStripMenuItem,
+            this.用户设置ToolStripMenuItem,
+            this.通讯设置ToolStripMenuItem});
             this.设置ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("设置ToolStripMenuItem.Image")));
             this.设置ToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.设置ToolStripMenuItem.Name = "设置ToolStripMenuItem";
             this.设置ToolStripMenuItem.Size = new System.Drawing.Size(96, 44);
             this.设置ToolStripMenuItem.Text = "设置";
-            this.设置ToolStripMenuItem.Click += new System.EventHandler(this.Button_Setting_Click);
+            // 
+            // 系统设置ToolStripMenuItem
+            // 
+            this.系统设置ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.系统设置ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("系统设置ToolStripMenuItem.Image")));
+            this.系统设置ToolStripMenuItem.Name = "系统设置ToolStripMenuItem";
+            this.系统设置ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.系统设置ToolStripMenuItem.Text = "系统设置";
+            this.系统设置ToolStripMenuItem.Click += new System.EventHandler(this.系统设置ToolStripMenuItem_Click);
+            // 
+            // 用户设置ToolStripMenuItem
+            // 
+            this.用户设置ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.用户设置ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("用户设置ToolStripMenuItem.Image")));
+            this.用户设置ToolStripMenuItem.Name = "用户设置ToolStripMenuItem";
+            this.用户设置ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.用户设置ToolStripMenuItem.Text = "用户设置";
+            this.用户设置ToolStripMenuItem.Click += new System.EventHandler(this.用户设置ToolStripMenuItem_Click);
             // 
             // 退出系统ToolStripMenuItem
             // 
@@ -381,7 +405,7 @@ namespace HYProject
             // 
             this.备份ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("备份ToolStripMenuItem.Image")));
             this.备份ToolStripMenuItem.Name = "备份ToolStripMenuItem";
-            this.备份ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.备份ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
             this.备份ToolStripMenuItem.Text = "备份系统";
             this.备份ToolStripMenuItem.Click += new System.EventHandler(this.备份ToolStripMenuItem_Click);
             // 
@@ -389,7 +413,7 @@ namespace HYProject
             // 
             this.重启ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("重启ToolStripMenuItem.Image")));
             this.重启ToolStripMenuItem.Name = "重启ToolStripMenuItem";
-            this.重启ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.重启ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
             this.重启ToolStripMenuItem.Text = "重启系统";
             this.重启ToolStripMenuItem.Click += new System.EventHandler(this.重启ToolStripMenuItem_Click);
             // 
@@ -446,7 +470,6 @@ namespace HYProject
             // splitContainer_Main
             // 
             this.splitContainer_Main.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer_Main.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer_Main.Location = new System.Drawing.Point(0, 0);
             this.splitContainer_Main.Margin = new System.Windows.Forms.Padding(0);
             this.splitContainer_Main.Name = "splitContainer_Main";
@@ -482,6 +505,14 @@ namespace HYProject
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1325, 518);
             this.panel1.TabIndex = 4;
+            // 
+            // 通讯设置ToolStripMenuItem
+            // 
+            this.通讯设置ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.通讯设置ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("通讯设置ToolStripMenuItem.Image")));
+            this.通讯设置ToolStripMenuItem.Name = "通讯设置ToolStripMenuItem";
+            this.通讯设置ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.通讯设置ToolStripMenuItem.Text = "通讯设置";
             // 
             // MainForm
             // 
@@ -559,6 +590,9 @@ namespace HYProject
         private System.Windows.Forms.ToolStripMenuItem 备份ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 重启ToolStripMenuItem;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem 系统设置ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 用户设置ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 通讯设置ToolStripMenuItem;
         // private ToolKit.HYControls.CreateModelControl createModelControl1;
     }
 }

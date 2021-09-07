@@ -52,7 +52,7 @@ namespace HYProject
                 {
                     if (AppParam.Instance.StartBeforeLogin)
                     {
-                        Form_User form_User = new Form_User();
+                        Form_User_Login form_User = new Form_User_Login();
                         if (form_User.ShowDialog() == DialogResult.OK)
                         {
                             AppParam.Instance.Power = form_User.Power;

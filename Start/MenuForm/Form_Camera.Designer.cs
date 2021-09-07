@@ -379,9 +379,6 @@ namespace HYProject.MenuForm
             this.Font = new System.Drawing.Font("宋体", 12F);
             this.HideDropButtom = false;
             this.HideHelpButtom = false;
-            this.HideMaxButtom = false;
-            this.HideMinButtom = false;
-            this.HideOrClose = false;
             this.HideTitle = true;
             this.HideUserButtom = false;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

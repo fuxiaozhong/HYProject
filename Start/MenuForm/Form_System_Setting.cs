@@ -9,9 +9,9 @@ using ToolKit.HYControls.HYForm;
 
 namespace HYProject.MenuForm
 {
-    public partial class Form_Setting : HYBaseForm
+    public partial class Form_System_Setting : HYBaseForm
     {
-        public Form_Setting()
+        public Form_System_Setting()
         {
             InitializeComponent();
             CheckForIllegalCrossThreadCalls = false;

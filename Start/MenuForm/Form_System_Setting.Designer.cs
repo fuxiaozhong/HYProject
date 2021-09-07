@@ -1,7 +1,7 @@
 ﻿
 namespace HYProject.MenuForm
 {
-    partial class Form_Setting
+    partial class Form_System_Setting
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace HYProject.MenuForm
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Setting));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_System_Setting));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();

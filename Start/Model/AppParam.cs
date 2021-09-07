@@ -211,7 +211,16 @@ namespace HYProject
         /// 日志储存天数
         /// </summary>
         internal int Log_Save_Days = 7;
+        /// <summary>
+        /// 启动自动运行
+        /// </summary>
         internal bool StartAutoRun;
+        /// <summary>
+        /// 操作员密码
+        /// </summary>
+        internal string 操作员密码 = "123456";
+        internal string 管理员密码 = "admin";
+        internal string 开发人员密码 = "develop";
 
         /// <summary>
         /// 保存对象到文件
