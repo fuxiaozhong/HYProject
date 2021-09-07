@@ -76,12 +76,12 @@ namespace HYProject
             //通过数量生产 窗口数
             //DisplayForm.Instance.DisplayWindowCount = AppParam.Instance.CameraInitStr.Count == 0 ? 1 : AppParam.Instance.CameraInitStr.Count;
             //通过相机名称生产窗口
-            DisplayForm.Instance.DisplayWindowNames = Cameras.Instance.GetCameras.Keys.ToArray<string>();
-            //如果没有相机名称  默认一个相机窗口
-            if (Cameras.Instance.GetCameras.Keys.ToArray<string>().Length == 0)
-            {
-                DisplayForm.Instance.DisplayWindowCount = 1;
-            }
+            //DisplayForm.Instance.DisplayWindowNames = Cameras.Instance.GetCameras.Keys.ToArray<string>();
+            ////如果没有相机名称  默认一个相机窗口
+            //if (Cameras.Instance.GetCameras.Keys.ToArray<string>().Length == 0)
+            //{
+            //    DisplayForm.Instance.DisplayWindowCount = 1;
+            //}
 
             //添加日志窗口
             panel_Log.Controls.Add(HYForm_Log.Instance);
