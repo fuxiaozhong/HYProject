@@ -12,12 +12,12 @@ namespace ToolKit.HalconTool.Model
         /// <summary>
         /// 形状模板
         /// </summary>
-        BasedShape,
+        ShapeModel,
 
         /// <summary>
         /// 灰度模板
         /// </summary>
-        BasedGray,
+        GrayModel,
     }
 
     /// <summary>

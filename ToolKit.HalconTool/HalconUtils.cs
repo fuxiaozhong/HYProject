@@ -23,7 +23,7 @@ namespace ToolKit.HalconTool
             HOperatorSet.GenEmptyObj(out template);
             try
             {
-                if (modelPar.ModelType == MatchMode.BasedShape)
+                if (modelPar.ModelType == MatchMode.ShapeModel)
                 {
                     modelPar.ModelID = null;
 
@@ -111,7 +111,7 @@ namespace ToolKit.HalconTool
             modelRegion.Dispose();
             try
             {
-                if (modelPar.ModelType == MatchMode.BasedShape)
+                if (modelPar.ModelType == MatchMode.ShapeModel)
                 {
                     HTuple temp;
 
@@ -166,7 +166,7 @@ namespace ToolKit.HalconTool
             catch (Exception)
             {
                 CreateModel(ref modelPar);
-                if (modelPar.ModelType == MatchMode.BasedShape)
+                if (modelPar.ModelType == MatchMode.ShapeModel)
                 {
                     HTuple temp;
 

@@ -20,9 +20,9 @@ namespace ToolKit.HYControls
         private void GetConfig()
         {
             if (model_Shple.Checked)
-                model.ModelType = MatchMode.BasedShape;
+                model.ModelType = MatchMode.ShapeModel;
             else
-                model.ModelType = MatchMode.BasedGray;
+                model.ModelType = MatchMode.GrayModel;
 
             model.minScore = (double)model_minScore.Value;
             model.matchNum = (int)model_matchNum.Value;
@@ -56,7 +56,7 @@ namespace ToolKit.HYControls
             {
                 MessageBox.Show("模板学习成功", "Tips");
                 label12.Text = "模板学习成功";
-                if (model.ModelType == MatchMode.BasedGray)
+                if (model.ModelType == MatchMode.GrayModel)
                 {
                     HObject modelregion;
                     HOperatorSet.GetNccModelRegion(out modelregion, model.ModelID);
