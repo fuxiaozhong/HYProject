@@ -29,11 +29,9 @@ namespace ToolKit.HYControls.HYForm
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HYBaseForm));
             this.panel3 = new System.Windows.Forms.Panel();
             this.label_User_1 = new System.Windows.Forms.Label();
-            this.label_minTitle = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label_Help_1 = new System.Windows.Forms.Label();
             this.label_Title = new System.Windows.Forms.Label();
@@ -41,7 +39,8 @@ namespace ToolKit.HYControls.HYForm
             this.label_Min_1 = new System.Windows.Forms.Label();
             this.label_Close_1 = new System.Windows.Forms.Label();
             this.label_Max_1 = new System.Windows.Forms.Label();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.label_minTitle = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -80,20 +79,6 @@ namespace ToolKit.HYControls.HYForm
             this.label_User_1.Text = "未登录";
             this.label_User_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label_User_1.Click += new System.EventHandler(this.Label_User_Click);
-            // 
-            // label_minTitle
-            // 
-            this.label_minTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_minTitle.BackColor = System.Drawing.Color.Teal;
-            this.label_minTitle.Font = new System.Drawing.Font("楷体", 15F, System.Drawing.FontStyle.Bold);
-            this.label_minTitle.ForeColor = System.Drawing.Color.White;
-            this.label_minTitle.Location = new System.Drawing.Point(59, -1);
-            this.label_minTitle.Name = "label_minTitle";
-            this.label_minTitle.Size = new System.Drawing.Size(973, 27);
-            this.label_minTitle.TabIndex = 0;
-            this.label_minTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_minTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Label3_MouseDown);
             // 
             // pictureBox1
             // 
@@ -198,6 +183,20 @@ namespace ToolKit.HYControls.HYForm
             this.label_Max_1.Text = "□";
             this.label_Max_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label_Max_1.Click += new System.EventHandler(this.Label_max_Click);
+            // 
+            // label_minTitle
+            // 
+            this.label_minTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_minTitle.BackColor = System.Drawing.Color.Teal;
+            this.label_minTitle.Font = new System.Drawing.Font("楷体", 15F, System.Drawing.FontStyle.Bold);
+            this.label_minTitle.ForeColor = System.Drawing.Color.White;
+            this.label_minTitle.Location = new System.Drawing.Point(-1, -1);
+            this.label_minTitle.Name = "label_minTitle";
+            this.label_minTitle.Size = new System.Drawing.Size(1033, 27);
+            this.label_minTitle.TabIndex = 0;
+            this.label_minTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label_minTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Label3_MouseDown);
             // 
             // HYBaseForm
             // 

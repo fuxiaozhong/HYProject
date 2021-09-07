@@ -190,6 +190,7 @@ namespace ToolKit.HYControls.HYForm
                 {
                     panel3.Height = 26;
                     pictureBox1.Size = new Size(27, 27);
+                    label_minTitle.Padding = new Padding(27, 0, 0, 0);
                     label_minTitle.Text = label_Title.Text;
                 }
                 else
@@ -197,6 +198,7 @@ namespace ToolKit.HYControls.HYForm
                     pictureBox1.Size = new Size(67, 67);
                     panel3.Height = 67;
                     label_minTitle.Text = "";
+                    label_minTitle.Padding = new Padding(67, 0, 0, 0);
                 }
                 this._HideTitle = value;
             }

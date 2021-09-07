@@ -388,7 +388,7 @@ namespace HYProject.MenuForm
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Form_Camera";
-            this.Text = "相机";
+            this.Text = "相机设置";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Camera_FormClosing);
             this.Load += new System.EventHandler(this.Form_Camera_Load);
             this.Controls.SetChildIndex(this.displayWindow1, 0);

@@ -44,7 +44,7 @@ namespace HYProject.MenuForm
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.checkBox_save_Image = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.checkBox9 = new System.Windows.Forms.CheckBox();
             this.checkBox8 = new System.Windows.Forms.CheckBox();
@@ -217,17 +217,17 @@ namespace HYProject.MenuForm
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
-            // checkBox5
+            // checkBox_save_Image
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox5.Location = new System.Drawing.Point(27, 160);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(91, 20);
-            this.checkBox5.TabIndex = 16;
-            this.checkBox5.Text = "图像保存";
-            this.checkBox5.UseVisualStyleBackColor = false;
-            this.checkBox5.CheckedChanged += new System.EventHandler(this.CheckBox5_CheckedChanged);
+            this.checkBox_save_Image.AutoSize = true;
+            this.checkBox_save_Image.BackColor = System.Drawing.Color.Transparent;
+            this.checkBox_save_Image.Location = new System.Drawing.Point(27, 160);
+            this.checkBox_save_Image.Name = "checkBox_save_Image";
+            this.checkBox_save_Image.Size = new System.Drawing.Size(91, 20);
+            this.checkBox_save_Image.TabIndex = 16;
+            this.checkBox_save_Image.Text = "图像保存";
+            this.checkBox_save_Image.UseVisualStyleBackColor = false;
+            this.checkBox_save_Image.CheckedChanged += new System.EventHandler(this.CheckBox5_CheckedChanged);
             // 
             // groupBox1
             // 
@@ -405,7 +405,7 @@ namespace HYProject.MenuForm
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.checkBox5);
+            this.Controls.Add(this.checkBox_save_Image);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -449,7 +449,7 @@ namespace HYProject.MenuForm
             this.Controls.SetChildIndex(this.button2, 0);
             this.Controls.SetChildIndex(this.button3, 0);
             this.Controls.SetChildIndex(this.button4, 0);
-            this.Controls.SetChildIndex(this.checkBox5, 0);
+            this.Controls.SetChildIndex(this.checkBox_save_Image, 0);
             this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.label5, 0);
             this.Controls.SetChildIndex(this.label6, 0);
@@ -487,7 +487,7 @@ namespace HYProject.MenuForm
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.CheckBox checkBox_save_Image;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox checkBox9;
         private System.Windows.Forms.CheckBox checkBox8;

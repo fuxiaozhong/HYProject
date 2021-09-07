@@ -66,9 +66,9 @@ namespace HYProject
             this.toolStrip_Version = new System.Windows.Forms.ToolStripLabel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.splitContainer_Main = new System.Windows.Forms.SplitContainer();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.tableLayout.SuspendLayout();
             this.panel_Buttom.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -307,7 +307,7 @@ namespace HYProject
             this.相机配置ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.相机配置ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("相机配置ToolStripMenuItem.Image")));
             this.相机配置ToolStripMenuItem.Name = "相机配置ToolStripMenuItem";
-            this.相机配置ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.相机配置ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.相机配置ToolStripMenuItem.Text = "相机配置";
             this.相机配置ToolStripMenuItem.Click += new System.EventHandler(this.相机配置ToolStripMenuItem_Click);
             // 
@@ -316,7 +316,7 @@ namespace HYProject
             this.光源配置ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.光源配置ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("光源配置ToolStripMenuItem.Image")));
             this.光源配置ToolStripMenuItem.Name = "光源配置ToolStripMenuItem";
-            this.光源配置ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.光源配置ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.光源配置ToolStripMenuItem.Text = "光源配置";
             this.光源配置ToolStripMenuItem.Click += new System.EventHandler(this.光源配置ToolStripMenuItem_Click);
             // 
@@ -325,7 +325,7 @@ namespace HYProject
             this.pLC配置ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.pLC配置ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pLC配置ToolStripMenuItem.Image")));
             this.pLC配置ToolStripMenuItem.Name = "pLC配置ToolStripMenuItem";
-            this.pLC配置ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.pLC配置ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.pLC配置ToolStripMenuItem.Text = "PLC配置";
             this.pLC配置ToolStripMenuItem.Click += new System.EventHandler(this.PLC配置ToolStripMenuItem_Click);
             // 
@@ -334,7 +334,7 @@ namespace HYProject
             this.屏幕键盘ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.屏幕键盘ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("屏幕键盘ToolStripMenuItem.Image")));
             this.屏幕键盘ToolStripMenuItem.Name = "屏幕键盘ToolStripMenuItem";
-            this.屏幕键盘ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.屏幕键盘ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.屏幕键盘ToolStripMenuItem.Text = "屏幕键盘";
             this.屏幕键盘ToolStripMenuItem.Click += new System.EventHandler(this.屏幕键盘ToolStripMenuItem_Click);
             // 
@@ -346,7 +346,7 @@ namespace HYProject
             this.全局变量ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.全局变量ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("全局变量ToolStripMenuItem.Image")));
             this.全局变量ToolStripMenuItem.Name = "全局变量ToolStripMenuItem";
-            this.全局变量ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.全局变量ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.全局变量ToolStripMenuItem.Text = "全局变量";
             this.全局变量ToolStripMenuItem.Click += new System.EventHandler(this.全局变量ToolStripMenuItem_Click);
             // 
@@ -374,14 +374,14 @@ namespace HYProject
             this.系统操作ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.系统操作ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("系统操作ToolStripMenuItem.Image")));
             this.系统操作ToolStripMenuItem.Name = "系统操作ToolStripMenuItem";
-            this.系统操作ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.系统操作ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.系统操作ToolStripMenuItem.Text = "系统操作";
             // 
             // 备份ToolStripMenuItem
             // 
             this.备份ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("备份ToolStripMenuItem.Image")));
             this.备份ToolStripMenuItem.Name = "备份ToolStripMenuItem";
-            this.备份ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.备份ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.备份ToolStripMenuItem.Text = "备份系统";
             this.备份ToolStripMenuItem.Click += new System.EventHandler(this.备份ToolStripMenuItem_Click);
             // 
@@ -389,7 +389,7 @@ namespace HYProject
             // 
             this.重启ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("重启ToolStripMenuItem.Image")));
             this.重启ToolStripMenuItem.Name = "重启ToolStripMenuItem";
-            this.重启ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.重启ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.重启ToolStripMenuItem.Text = "重启系统";
             this.重启ToolStripMenuItem.Click += new System.EventHandler(this.重启ToolStripMenuItem_Click);
             // 
@@ -463,6 +463,16 @@ namespace HYProject
             this.splitContainer_Main.SplitterWidth = 1;
             this.splitContainer_Main.TabIndex = 0;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(3, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -472,16 +482,6 @@ namespace HYProject
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1325, 518);
             this.panel1.TabIndex = 4;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(109, 48);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // MainForm
             // 

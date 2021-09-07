@@ -62,7 +62,7 @@ namespace HYProject.MenuForm
             AppParam.Instance.PowerBoot = checkBox2.Checked;
             AppParam.Instance.RunStateMax = checkBox3.Checked;
             AppParam.Instance.StartBeforeLogin = checkBox4.Checked;
-            AppParam.Instance.IsSaveImage = checkBox5.Checked;
+            AppParam.Instance.IsSaveImage = checkBox_save_Image.Checked;
             AppParam.Instance.IsSaveImage_OK = checkBox6.Checked;
             AppParam.Instance.IsSaveImage_NG = checkBox7.Checked;
             AppParam.Instance.IsSaveImage_BmpImage = checkBox8.Checked;
@@ -89,7 +89,7 @@ namespace HYProject.MenuForm
             checkBox2.Checked = AppParam.Instance.PowerBoot;
             checkBox3.Checked = AppParam.Instance.RunStateMax;
             checkBox4.Checked = AppParam.Instance.StartBeforeLogin;
-            checkBox5.Checked = AppParam.Instance.IsSaveImage;
+            checkBox_save_Image.Checked = AppParam.Instance.IsSaveImage;
             checkBox6.Checked = AppParam.Instance.IsSaveImage_OK;
             checkBox7.Checked = AppParam.Instance.IsSaveImage_NG;
             checkBox8.Checked = AppParam.Instance.IsSaveImage_BmpImage;
@@ -149,7 +149,7 @@ namespace HYProject.MenuForm
 
         private void CheckBox5_CheckedChanged(object sender, EventArgs e)
         {
-            groupBox1.Visible = checkBox5.Checked;
+            groupBox1.Visible = checkBox_save_Image.Checked;
         }
     }
 }
