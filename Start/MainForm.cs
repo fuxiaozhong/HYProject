@@ -75,7 +75,7 @@ namespace HYProject
 
             //通过数量生产 窗口数
             //DisplayForm.Instance.DisplayWindowCount = AppParam.Instance.CameraInitStr.Count == 0 ? 1 : AppParam.Instance.CameraInitStr.Count;
-            //通过相机名称生产窗口
+            ////通过相机名称生产窗口
             //DisplayForm.Instance.DisplayWindowNames = Cameras.Instance.GetCameras.Keys.ToArray<string>();
             ////如果没有相机名称  默认一个相机窗口
             //if (Cameras.Instance.GetCameras.Keys.ToArray<string>().Length == 0)
@@ -422,11 +422,7 @@ namespace HYProject
             System.Diagnostics.Process.GetCurrentProcess().Kill();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            Form_Measure form_Measure = new Form_Measure();
-            form_Measure.ShowDialog();
-        }
+
 
         private void 系统设置ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -443,6 +439,16 @@ namespace HYProject
         private void 通讯设置ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowNormal("暂未开发");
+        }
+
+        private void TCP客户端ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TCP服务端ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

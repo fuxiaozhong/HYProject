@@ -22,6 +22,7 @@ namespace ToolKit.HYControls
 
         private TCPSocketServer socketServer;
 
+
         private void Button4_Click_1(object sender, EventArgs e)
         {
             socketServer = new TCPSocketServer(textBox_severIP.Text, int.Parse(textBox_severport.Text));

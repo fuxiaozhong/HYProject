@@ -8,6 +8,7 @@ using System.Threading;
 
 namespace ToolKit.CommunicAtion
 {
+    [Serializable]
     public class TCPSocketServer
     {
         public delegate void _SocketReceiveMessage(Socket client, string clientSocketIp, string message);
@@ -28,8 +29,49 @@ namespace ToolKit.CommunicAtion
         private int _port = 0;
         private Socket _socket = null;
         private byte[] buffer = new byte[1024 * 1024 * 2];
+        [NonSerialized]
         public Dictionary<string, Socket> clients = new Dictionary<string, Socket>();
+        [NonSerialized]
         private bool isOpen;
+
+        public string Ip
+        {
+            get
+            {
+                return this._ip;
+            }
+
+            set
+            {
+                this._ip = value;
+            }
+        }
+
+        public int Port
+        {
+            get
+            {
+                return this._port;
+            }
+
+            set
+            {
+                this._port = value;
+            }
+        }
+
+        public bool IsOpen
+        {
+            get
+            {
+                return this.isOpen;
+            }
+
+            set
+            {
+                this.isOpen = value;
+            }
+        }
 
         /// <summary>
         /// 构造函数

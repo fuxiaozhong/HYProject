@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace ToolKit.CommunicAtion
 {
+    [Serializable]
     public class TCPSocketClient
     {
         public delegate void _SocketReceiveMessage(string serverSocketIp, string message);
