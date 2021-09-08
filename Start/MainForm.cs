@@ -104,7 +104,7 @@ namespace HYProject
             disk.Name = "disk";
             disk.Start();
             //开启拍照信号检测线程
-            RunThread.Start();
+            //RunThread.Start();
             //系统线程
             SystemThread.Start();
 
@@ -357,6 +357,7 @@ namespace HYProject
                     {
                         AppParam.Instance.Power = form_User.Power;
                         Log.WriteRunLog("切换用户:" + AppParam.Instance.Power);
+                        Form_Global_User.Instance.ShowDialog();
                     }
                 }
             }
@@ -378,6 +379,7 @@ namespace HYProject
                     {
                         AppParam.Instance.Power = form_User.Power;
                         Log.WriteRunLog("切换用户:" + AppParam.Instance.Power);
+                        Form_Global_System.Instance.ShowDialog();
                     }
                 }
             }
