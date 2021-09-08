@@ -22,6 +22,10 @@ namespace HYProject.Helper
             {
                 try
                 {
+                    MainForm.Instance.UserName = AppParam.Instance.Power;
+                    SystemInfo systemInfo = new SystemInfo();
+                    MainForm.Instance.pro_memory.Value = (int)Math.Ceiling(((double)((systemInfo.PhysicalMemory - systemInfo.MemoryAvailable)) / (double)(systemInfo.PhysicalMemory) * 100));
+                    MainForm.Instance.tsl_nowtime.Text = DateTime.Now.ToString(Form_Global_System.Instance["日期格式"] == null ? "yyyy-MM-dd HH:mm:ss" : Form_Global_System.Instance["日期格式"].ToString());
                     MainForm.Instance.Text = (Form_Global_System.Instance["标题栏"] == null ? "视觉软件" : Form_Global_System.Instance["标题栏"].ToString());
                     MainForm.Instance.toolStrip_Version.Text = "版本号:" + (Form_Global_System.Instance["版本号"] == null ? "v1.0.0" : Form_Global_System.Instance["版本号"].ToString());
                     MainForm.Instance.系统设置ToolStripMenuItem.Visible = ((bool)(Form_Global_System.Instance["系统设置"] == null ? true : Form_Global_System.Instance["系统设置"]));
@@ -30,7 +34,7 @@ namespace HYProject.Helper
                     MainForm.Instance.相机ToolStripMenuItem.Visible = ((bool)(Form_Global_System.Instance["相机"] == null ? true : Form_Global_System.Instance["相机"]));
                     MainForm.Instance.设置ToolStripMenuItem.Visible = ((bool)(Form_Global_System.Instance["设置"] == null ? true : Form_Global_System.Instance["设置"]));
                     MainForm.Instance.产品库ToolStripMenuItem.Visible = ((bool)(Form_Global_System.Instance["产品库"] == null ? true : Form_Global_System.Instance["产品库"]));
-                    MainForm.Instance.插件ToolStripMenuItem.Visible = ((bool)(Form_Global_System.Instance["插件"] == null ? true : Form_Global_System.Instance["插件"]));
+                    MainForm.Instance.工具ToolStripMenuItem.Visible = ((bool)(Form_Global_System.Instance["工具"] == null ? true : Form_Global_System.Instance["工具"]));
                     MainForm.Instance.锁定ToolStripMenuItem.Visible = ((bool)(Form_Global_System.Instance["锁定"] == null ? true : Form_Global_System.Instance["锁定"]));
                     MainForm.Instance.相机配置ToolStripMenuItem.Visible = ((bool)(Form_Global_System.Instance["相机配置"] == null ? true : Form_Global_System.Instance["相机配置"]));
                     MainForm.Instance.光源配置ToolStripMenuItem.Visible = ((bool)(Form_Global_System.Instance["光源配置"] == null ? true : Form_Global_System.Instance["光源配置"]));

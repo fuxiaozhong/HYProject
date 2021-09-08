@@ -37,14 +37,14 @@ namespace HYProject.ToolForm
             this.Global_Parameter_System.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Global_Parameter_System.Location = new System.Drawing.Point(0, 26);
             this.Global_Parameter_System.Name = "Global_Parameter_System";
-            this.Global_Parameter_System.Size = new System.Drawing.Size(700, 374);
+            this.Global_Parameter_System.Size = new System.Drawing.Size(772, 327);
             this.Global_Parameter_System.TabIndex = 5;
             // 
             // Form_Global_System
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 400);
+            this.ClientSize = new System.Drawing.Size(772, 353);
             this.Controls.Add(this.Global_Parameter_System);
             this.HideDropButtom = false;
             this.HideHelpButtom = false;

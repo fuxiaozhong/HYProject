@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 
+using Org.BouncyCastle.Asn1.X509;
+
 using ToolKit.HYControls.HYForm;
 
 namespace HYProject.ToolForm
@@ -71,6 +73,34 @@ namespace HYProject.ToolForm
 
         private void Form_Global_System_Load(object sender, EventArgs e)
         {
+            if (Global_Parameter_System.GetData().Count == 0)
+            {
+
+                Global_Parameter_System.Add("String", "日期格式", "yyyy-MM-dd HH:mm:ss", "时间格式");
+                Global_Parameter_System.Add("String", "标题栏", "视觉软件", "软件标题");
+                Global_Parameter_System.Add("String", "版本号", "v1.0.0", "软件版本号");
+                Global_Parameter_System.Add("Bool", "系统设置", "true", "菜单按钮显示状态");
+                Global_Parameter_System.Add("Bool", "用户设置", "true", "菜单按钮显示状态");
+                Global_Parameter_System.Add("Bool", "通讯设置", "true", "菜单按钮显示状态");
+                Global_Parameter_System.Add("Bool", "相机", "true", "菜单按钮显示状态");
+                Global_Parameter_System.Add("Bool", "设置", "true", "菜单按钮显示状态");
+                Global_Parameter_System.Add("Bool", "产品库", "true", "菜单按钮显示状态");
+                Global_Parameter_System.Add("Bool", "工具", "true", "菜单按钮显示状态");
+                Global_Parameter_System.Add("Bool", "锁定", "true", "菜单按钮显示状态");
+                Global_Parameter_System.Add("Bool", "相机配置", "true", "菜单按钮显示状态");
+                Global_Parameter_System.Add("Bool", "光源配置", "true", "菜单按钮显示状态");
+                Global_Parameter_System.Add("Bool", "屏幕键盘", "true", "菜单按钮显示状态");
+                Global_Parameter_System.Add("Bool", "PLC配置", "true", "菜单按钮显示状态");
+                Global_Parameter_System.Add("Bool", "系统操作", "true", "菜单按钮显示状态");
+                Global_Parameter_System.Add("Bool", "用户变量", "true", "菜单按钮显示状态");
+                Global_Parameter_System.Add("Bool", "系统变量", "true", "菜单按钮显示状态");
+                Global_Parameter_System.Add("Bool", "备份", "true", "菜单按钮显示状态");
+                Global_Parameter_System.Add("Bool", "重启", "true", "菜单按钮显示状态");
+                Global_Parameter_System.Add("Bool", "TCP服务端", "true", "菜单按钮显示状态");
+                Global_Parameter_System.Add("Bool", "TCP客户端", "true", "菜单按钮显示状态");
+                Global_Parameter_System.Add("Bool", "数据面板", "true", "右侧面板显示状态");
+
+            }
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace ToolKit.HYControls
 {
@@ -38,6 +39,16 @@ namespace ToolKit.HYControls
             }
             //设置DataGridView文本居中
             dataGridView1.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
+
+        public void Add(string type = "Int", string name = "", string value = "", string mark = "")
+        {
+            int index = dataGridView1.Rows.Add();
+            dataGridView1.Rows[index].Cells[0].Value = index + 1;
+            dataGridView1.Rows[index].Cells[1].Value = type;
+            dataGridView1.Rows[index].Cells[2].Value = name;
+            dataGridView1.Rows[index].Cells[3].Value = value;
+            dataGridView1.Rows[index].Cells[4].Value = mark;
         }
 
         private void 修改ToolStripMenuItem_Click(object sender, EventArgs e)

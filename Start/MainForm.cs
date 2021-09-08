@@ -91,16 +91,9 @@ namespace HYProject
             AutoDeleteImage.IsBackground = true;
             AutoDeleteImage.Name = "DeleteFile";
             AutoDeleteImage.Start();
-            //开启系统信息刷新
-            Thread _Refresh_Work = new Thread(Refresh_Work);
-            _Refresh_Work.IsBackground = true;
-            _Refresh_Work.Name = "Refresh_Work";
-            _Refresh_Work.Priority = ThreadPriority.Highest;
-            _Refresh_Work.Start();
             //数据/图像磁盘检测
             Thread disk = new Thread(DiskRefresh);
             disk.IsBackground = true;
-            _Refresh_Work.Priority = ThreadPriority.Lowest;
             disk.Name = "disk";
             disk.Start();
             //开启拍照信号检测线程
@@ -116,26 +109,7 @@ namespace HYProject
 
         }
 
-        //刷新界面
-        private void Refresh_Work()
-        {
-            while (true)
-            {
-                try
-                {
 
-                    //label_NowProduct.Text = (AppParam.Instance.NowProduct == "" || AppParam.Instance.NowProduct == null) ? "###" : AppParam.Instance.NowProduct;
-                    //label1.Text = Form_GlobalOptions.Instance["标题栏名称"].ToString();
-                    tsl_nowtime.Text = DateTime.Now.ToString(Form_Global_System.Instance["日期格式"] == null ? "yyyy-MM-dd HH:mm:ss" : Form_Global_System.Instance["日期格式"].ToString());
-                    this.UserName = AppParam.Instance.Power;
-                    SystemInfo systemInfo = new SystemInfo();
-                    pro_memory.Value = (int)Math.Ceiling(((double)((systemInfo.PhysicalMemory - systemInfo.MemoryAvailable)) / (double)(systemInfo.PhysicalMemory) * 100));
-                }
-                catch { }
-                Thread.Sleep(50);
-                Application.DoEvents();
-            }
-        }
 
         private void DiskRefresh()
         {
@@ -446,8 +420,9 @@ namespace HYProject
 
         private void TCP服务端ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form_TCPSocketServer form_TCPSocketServer = new Form_TCPSocketServer();
-            form_TCPSocketServer.ShowDialog();
+            ShowNormal("暂未开发");
+            //Form_TCPSocketServer form_TCPSocketServer = new Form_TCPSocketServer();
+            //form_TCPSocketServer.ShowDialog();
         }
 
         private void Button1_Click(object sender, EventArgs e)
