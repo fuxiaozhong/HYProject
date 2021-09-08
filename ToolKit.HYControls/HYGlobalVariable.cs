@@ -203,6 +203,23 @@ namespace ToolKit.HYControls
         {
             Read();
         }
+
+        private void DataGridView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                string type = dataGridView1.SelectedRows[0].Cells[1].Value.ToString(),
+                    name = dataGridView1.SelectedRows[0].Cells[2].Value.ToString(),
+                    value = dataGridView1.SelectedRows[0].Cells[3].Value.ToString(),
+                    mark = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
+                GlobalVariableUpdate global = new GlobalVariableUpdate(ref type, ref name, ref value, ref mark);
+                if (global.ShowDialog() == DialogResult.OK)
+                {
+                    dataGridView1.SelectedRows[0].Cells[3].Value = global.value;
+                    dataGridView1.SelectedRows[0].Cells[4].Value = global.mark;
+                }
+            }
+        }
     }
 
     [Serializable]

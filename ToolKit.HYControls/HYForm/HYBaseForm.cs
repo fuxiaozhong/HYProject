@@ -404,21 +404,21 @@ namespace ToolKit.HYControls.HYForm
             }
         }
 
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                const int CS_NOCLOSE = 0x200;
-                CreateParams cp = base.CreateParams;
-                cp.ClassStyle = cp.ClassStyle | CS_NOCLOSE;
-                if (!DesignMode)
-                {
-                    cp.ExStyle |= 0x02000000;
-                    return cp;
-                }
-                return cp;
-            }
-        }
+        //protected override CreateParams CreateParams
+        //{
+        //    get
+        //    {
+        //        const int CS_NOCLOSE = 0x200;
+        //        CreateParams cp = base.CreateParams;
+        //        cp.ClassStyle = cp.ClassStyle | CS_NOCLOSE;
+        //        if (!DesignMode)
+        //        {
+        //            cp.ExStyle |= 0x02000000;
+        //            return cp;
+        //        }
+        //        return cp;
+        //    }
+        //}
 
         [CategoryAttribute("其他"), DescriptionAttribute("隐藏或者显示边框")]
         public bool HideBorder

@@ -198,6 +198,12 @@
     <Compile Include="ToolForm\DisplayForm.Designer.cs">
       <DependentUpon>DisplayForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ToolForm\Form_TCPSocketServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolForm\Form_TCPSocketServer.Designer.cs">
+      <DependentUpon>Form_TCPSocketServer.cs</DependentUpon>
+    </Compile>
     <Compile Include="ToolForm\Form_DataSheet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -326,6 +332,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ToolForm\Form_ProductOperation.resx">
       <DependentUpon>Form_ProductOperation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolForm\Form_TCPSocketServer.resx">
+      <DependentUpon>Form_TCPSocketServer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Welcome.resx">
       <DependentUpon>Welcome.cs</DependentUpon>

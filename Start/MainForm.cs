@@ -444,7 +444,13 @@ namespace HYProject
 
         private void TCP服务端ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ShowNormal("暂未开发");
+            Form_TCPSocketServer form_TCPSocketServer = new Form_TCPSocketServer();
+            form_TCPSocketServer.ShowDialog();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            new Form_Measure().ShowDialog();
         }
     }
 }
