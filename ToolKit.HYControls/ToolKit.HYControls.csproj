@@ -84,11 +84,11 @@
     <Compile Include="HYForm\HYForm_Edit.Designer.cs">
       <DependentUpon>HYForm_Edit.cs</DependentUpon>
     </Compile>
-    <Compile Include="HYForm\HYForm_Log.cs">
-      <SubType>Form</SubType>
+    <Compile Include="HYLogs.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="HYForm\HYForm_Log.Designer.cs">
-      <DependentUpon>HYForm_Log.cs</DependentUpon>
+    <Compile Include="HYLogs.Designer.cs">
+      <DependentUpon>HYLogs.cs</DependentUpon>
     </Compile>
     <Compile Include="HYForm\HYForm_Waiting.cs">
       <SubType>Form</SubType>
@@ -203,8 +203,8 @@
     <EmbeddedResource Include="HYForm\HYForm_Edit.resx">
       <DependentUpon>HYForm_Edit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HYForm\HYForm_Log.resx">
-      <DependentUpon>HYForm_Log.cs</DependentUpon>
+    <EmbeddedResource Include="HYLogs.resx">
+      <DependentUpon>HYLogs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HYForm\HYForm_Waiting.resx">
       <DependentUpon>HYForm_Waiting.cs</DependentUpon>

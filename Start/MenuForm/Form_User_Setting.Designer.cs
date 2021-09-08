@@ -60,7 +60,7 @@ namespace HYProject.MenuForm
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(94, 38);
+            this.materialLabel1.Location = new System.Drawing.Point(132, 47);
             this.materialLabel1.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(45, 19);
@@ -73,7 +73,7 @@ namespace HYProject.MenuForm
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(78, 73);
+            this.materialLabel2.Location = new System.Drawing.Point(116, 82);
             this.materialLabel2.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(61, 19);
@@ -86,7 +86,7 @@ namespace HYProject.MenuForm
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(78, 109);
+            this.materialLabel3.Location = new System.Drawing.Point(116, 118);
             this.materialLabel3.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(61, 19);
@@ -99,7 +99,7 @@ namespace HYProject.MenuForm
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(62, 145);
+            this.materialLabel4.Location = new System.Drawing.Point(100, 154);
             this.materialLabel4.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(77, 19);
@@ -115,7 +115,7 @@ namespace HYProject.MenuForm
             "操作员",
             "管理员",
             "开发人员"});
-            this.comboBox_user.Location = new System.Drawing.Point(145, 33);
+            this.comboBox_user.Location = new System.Drawing.Point(183, 42);
             this.comboBox_user.Name = "comboBox_user";
             this.comboBox_user.Size = new System.Drawing.Size(170, 24);
             this.comboBox_user.TabIndex = 9;
@@ -124,7 +124,7 @@ namespace HYProject.MenuForm
             // 
             this.text_Old_Password.Depth = 0;
             this.text_Old_Password.Hint = "";
-            this.text_Old_Password.Location = new System.Drawing.Point(145, 69);
+            this.text_Old_Password.Location = new System.Drawing.Point(183, 78);
             this.text_Old_Password.MaxLength = 32767;
             this.text_Old_Password.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.text_Old_Password.Name = "text_Old_Password";
@@ -141,7 +141,7 @@ namespace HYProject.MenuForm
             // 
             this.text_new_Password1.Depth = 0;
             this.text_new_Password1.Hint = "";
-            this.text_new_Password1.Location = new System.Drawing.Point(145, 105);
+            this.text_new_Password1.Location = new System.Drawing.Point(183, 114);
             this.text_new_Password1.MaxLength = 32767;
             this.text_new_Password1.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.text_new_Password1.Name = "text_new_Password1";
@@ -158,7 +158,7 @@ namespace HYProject.MenuForm
             // 
             this.text_new_Password2.Depth = 0;
             this.text_new_Password2.Hint = "";
-            this.text_new_Password2.Location = new System.Drawing.Point(145, 141);
+            this.text_new_Password2.Location = new System.Drawing.Point(183, 150);
             this.text_new_Password2.MaxLength = 32767;
             this.text_new_Password2.MouseState = ToolKit.MaterialSkin.MouseState.HOVER;
             this.text_new_Password2.Name = "text_new_Password2";
@@ -174,7 +174,7 @@ namespace HYProject.MenuForm
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(321, 65);
+            this.pictureBox2.Location = new System.Drawing.Point(359, 74);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(27, 27);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -186,7 +186,7 @@ namespace HYProject.MenuForm
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(321, 101);
+            this.pictureBox3.Location = new System.Drawing.Point(359, 110);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(27, 27);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -198,7 +198,7 @@ namespace HYProject.MenuForm
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(321, 137);
+            this.pictureBox4.Location = new System.Drawing.Point(359, 146);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(27, 27);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -214,7 +214,7 @@ namespace HYProject.MenuForm
             this.hyRoundButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.hyRoundButton1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold);
             this.hyRoundButton1.HoverColor = System.Drawing.Color.Teal;
-            this.hyRoundButton1.Location = new System.Drawing.Point(49, 195);
+            this.hyRoundButton1.Location = new System.Drawing.Point(76, 206);
             this.hyRoundButton1.Name = "hyRoundButton1";
             this.hyRoundButton1.NormalColor = System.Drawing.Color.Teal;
             this.hyRoundButton1.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(161)))), ((int)(((byte)(0)))));
@@ -232,7 +232,7 @@ namespace HYProject.MenuForm
             this.hyRoundButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.hyRoundButton2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold);
             this.hyRoundButton2.HoverColor = System.Drawing.Color.Teal;
-            this.hyRoundButton2.Location = new System.Drawing.Point(240, 195);
+            this.hyRoundButton2.Location = new System.Drawing.Point(267, 206);
             this.hyRoundButton2.Name = "hyRoundButton2";
             this.hyRoundButton2.NormalColor = System.Drawing.Color.Teal;
             this.hyRoundButton2.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(161)))), ((int)(((byte)(0)))));
@@ -246,7 +246,7 @@ namespace HYProject.MenuForm
             // pictureBox7
             // 
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(321, 65);
+            this.pictureBox7.Location = new System.Drawing.Point(359, 74);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(27, 27);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -257,7 +257,7 @@ namespace HYProject.MenuForm
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(321, 101);
+            this.pictureBox5.Location = new System.Drawing.Point(359, 110);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(27, 27);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -268,7 +268,7 @@ namespace HYProject.MenuForm
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(321, 137);
+            this.pictureBox6.Location = new System.Drawing.Point(359, 146);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(27, 27);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -280,7 +280,7 @@ namespace HYProject.MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(439, 241);
+            this.ClientSize = new System.Drawing.Size(495, 259);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox7);

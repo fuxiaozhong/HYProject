@@ -198,11 +198,11 @@
     <Compile Include="ToolForm\DisplayForm.Designer.cs">
       <DependentUpon>DisplayForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ToolForm\Form_TCPSocketServer.cs">
+    <Compile Include="ToolForm\Form_Logs.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ToolForm\Form_TCPSocketServer.Designer.cs">
-      <DependentUpon>Form_TCPSocketServer.cs</DependentUpon>
+    <Compile Include="ToolForm\Form_Logs.Designer.cs">
+      <DependentUpon>Form_Logs.cs</DependentUpon>
     </Compile>
     <Compile Include="ToolForm\Form_DataSheet.cs">
       <SubType>Form</SubType>
@@ -303,6 +303,9 @@
     <EmbeddedResource Include="ToolForm\DisplayForm.resx">
       <DependentUpon>DisplayForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ToolForm\Form_Logs.resx">
+      <DependentUpon>Form_Logs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ToolForm\Form_DataSheet.resx">
       <DependentUpon>Form_DataSheet.cs</DependentUpon>
     </EmbeddedResource>
@@ -332,9 +335,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ToolForm\Form_ProductOperation.resx">
       <DependentUpon>Form_ProductOperation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ToolForm\Form_TCPSocketServer.resx">
-      <DependentUpon>Form_TCPSocketServer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Welcome.resx">
       <DependentUpon>Welcome.cs</DependentUpon>

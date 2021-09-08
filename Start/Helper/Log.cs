@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using HalconDotNet;
 
 using HYProject.Helper;
+using HYProject.ToolForm;
 
 using NPOI.SS.Formula.Functions;
 
@@ -118,13 +119,13 @@ namespace HYProject
                         switch (logMessage.type)
                         {
                             case "警告":
-                                HYForm_Log.Instance.OutputMsg(logMessage.message, System.Drawing.Color.Orange);
+                                Form_Logs.Instance.OutputMsg(logMessage.message, System.Drawing.Color.Orange);
                                 break;
                             case "异常":
-                                HYForm_Log.Instance.OutputMsg(logMessage.message, System.Drawing.Color.Red);
+                                Form_Logs.Instance.OutputMsg(logMessage.message, System.Drawing.Color.Red);
                                 break;
                             case "正常":
-                                HYForm_Log.Instance.OutputMsg(logMessage.message, System.Drawing.Color.Green);
+                                Form_Logs.Instance.OutputMsg(logMessage.message, System.Drawing.Color.Green);
                                 break;
                         }
                     }

@@ -3,35 +3,37 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ToolKit.HYControls.HYForm
+using ToolKit.HYControls.HYForm;
+
+namespace ToolKit.HYControls
 {
-    public partial class HYForm_Log : Form
+    public partial class HYLogs : UserControl
     {
-        private static HYForm_Log _Form_Logs = null;
-        private static object _Lock = new object();
+        //private static HYForm_Log _Form_Logs = null;
+        //private static object _Lock = new object();
 
-        public static HYForm_Log Instance
-        {
-            get
-            {
-                if (_Form_Logs == null) //双if +lock
-                {
-                    lock (_Lock)
-                    {
-                        if (_Form_Logs == null)
-                        {
-                            _Form_Logs = new HYForm_Log();
-                            _Form_Logs.TopLevel = false;
-                            _Form_Logs.TopMost = false;
-                            _Form_Logs.Dock = DockStyle.Fill;
-                        }
-                    }
-                }
-                return _Form_Logs;
-            }
-        }
+        //public static HYForm_Log Instance
+        //{
+        //    get
+        //    {
+        //        if (_Form_Logs == null) //双if +lock
+        //        {
+        //            lock (_Lock)
+        //            {
+        //                if (_Form_Logs == null)
+        //                {
+        //                    _Form_Logs = new HYForm_Log();
+        //                    _Form_Logs.TopLevel = false;
+        //                    _Form_Logs.TopMost = false;
+        //                    _Form_Logs.Dock = DockStyle.Fill;
+        //                }
+        //            }
+        //        }
+        //        return _Form_Logs;
+        //    }
+        //}
 
-        private HYForm_Log()
+        public HYLogs()
         {
             InitializeComponent();
         }

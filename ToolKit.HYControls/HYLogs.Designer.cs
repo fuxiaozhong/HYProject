@@ -1,7 +1,7 @@
 ﻿
-namespace ToolKit.HYControls.HYForm
+namespace ToolKit.HYControls
 {
-    partial class HYForm_Log
+    partial class HYLogs
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace ToolKit.HYControls.HYForm
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HYForm_Log));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HYLogs));
             this.listView1 = new ToolKit.HYControls.HYListView();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -44,8 +44,8 @@ namespace ToolKit.HYControls.HYForm
             // 
             // listView1
             // 
-            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listView1.BackColor = System.Drawing.SystemColors.Control;
             this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -151,7 +151,7 @@ namespace ToolKit.HYControls.HYForm
             this.ClientSize = new System.Drawing.Size(648, 247);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.toolStrip2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            //this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "HYForm_Log";
             this.Text = "Form_Log";
             this.toolStrip2.ResumeLayout(false);

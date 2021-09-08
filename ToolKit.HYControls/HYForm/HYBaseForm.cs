@@ -446,7 +446,7 @@ namespace ToolKit.HYControls.HYForm
             set
             {
                 this._HideAll = value;
-                panel3.Visible = this._HideAll;
+                panel3.Visible = !this._HideAll;
             }
         }
 

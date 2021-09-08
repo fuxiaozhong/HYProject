@@ -84,8 +84,8 @@ namespace HYProject
             }
 
             //添加日志窗口
-            panel_Log.Controls.Add(HYForm_Log.Instance);
-            HYForm_Log.Instance.Show();
+            panel_Log.Controls.Add(Form_Logs.Instance);
+            Form_Logs.Instance.Show();
             //开启图像储存到期检测
             Thread AutoDeleteImage = new Thread(AutoCheckImage.DeleteFile);
             AutoDeleteImage.IsBackground = true;

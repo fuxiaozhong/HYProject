@@ -119,12 +119,12 @@ namespace HYProject.MenuForm
         /// <param name="e"></param>
         private void Form_Camera_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Hide();
+
             foreach (var item in Cameras.Instance.GetCameras.Keys)
             {
                 //关闭实时
                 Cameras.Instance[item].End_Real_Mode();
-                System.Threading.Thread.Sleep(300);
+                System.Threading.Thread.Sleep(100);
                 //清空事件
                 Cameras.Instance[item].ClearImageProcessEvents();
                 //重新绑定运行事件

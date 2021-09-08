@@ -41,6 +41,7 @@ namespace HYProject
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panel_Log = new System.Windows.Forms.Panel();
             this.panel_Title = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.主页面ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.相机ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,7 +72,6 @@ namespace HYProject
             this.toolStrip_Version = new System.Windows.Forms.ToolStripLabel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.splitContainer_Main = new System.Windows.Forms.SplitContainer();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayout.SuspendLayout();
@@ -83,7 +83,6 @@ namespace HYProject
             this.toolStrip1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer_Main)).BeginInit();
-            this.splitContainer_Main.Panel2.SuspendLayout();
             this.splitContainer_Main.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,7 +97,7 @@ namespace HYProject
             this.tableLayout.Controls.Add(this.toolStrip1, 0, 3);
             this.tableLayout.Controls.Add(this.panel4, 0, 1);
             this.tableLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayout.Location = new System.Drawing.Point(0, 67);
+            this.tableLayout.Location = new System.Drawing.Point(0, 0);
             this.tableLayout.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayout.Name = "tableLayout";
             this.tableLayout.RowCount = 4;
@@ -106,7 +105,7 @@ namespace HYProject
             this.tableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 109F));
             this.tableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayout.Size = new System.Drawing.Size(1239, 667);
+            this.tableLayout.Size = new System.Drawing.Size(1239, 734);
             this.tableLayout.TabIndex = 1;
             // 
             // panel_Buttom
@@ -114,7 +113,7 @@ namespace HYProject
             this.tableLayout.SetColumnSpan(this.panel_Buttom, 2);
             this.panel_Buttom.Controls.Add(this.tableLayoutPanel2);
             this.panel_Buttom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_Buttom.Location = new System.Drawing.Point(1, 536);
+            this.panel_Buttom.Location = new System.Drawing.Point(1, 603);
             this.panel_Buttom.Margin = new System.Windows.Forms.Padding(0);
             this.panel_Buttom.Name = "panel_Buttom";
             this.panel_Buttom.Size = new System.Drawing.Size(1237, 109);
@@ -192,6 +191,7 @@ namespace HYProject
             // 
             this.panel_Title.BackColor = System.Drawing.SystemColors.Control;
             this.tableLayout.SetColumnSpan(this.panel_Title, 2);
+            this.panel_Title.Controls.Add(this.button1);
             this.panel_Title.Controls.Add(this.menuStrip1);
             this.panel_Title.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Title.Location = new System.Drawing.Point(1, 1);
@@ -199,6 +199,16 @@ namespace HYProject
             this.panel_Title.Name = "panel_Title";
             this.panel_Title.Size = new System.Drawing.Size(1237, 48);
             this.panel_Title.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(811, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // menuStrip1
             // 
@@ -378,7 +388,7 @@ namespace HYProject
             this.相机配置ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.相机配置ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("相机配置ToolStripMenuItem.Image")));
             this.相机配置ToolStripMenuItem.Name = "相机配置ToolStripMenuItem";
-            this.相机配置ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.相机配置ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.相机配置ToolStripMenuItem.Text = "相机配置";
             this.相机配置ToolStripMenuItem.Click += new System.EventHandler(this.相机配置ToolStripMenuItem_Click);
             // 
@@ -387,7 +397,7 @@ namespace HYProject
             this.屏幕键盘ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.屏幕键盘ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("屏幕键盘ToolStripMenuItem.Image")));
             this.屏幕键盘ToolStripMenuItem.Name = "屏幕键盘ToolStripMenuItem";
-            this.屏幕键盘ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.屏幕键盘ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.屏幕键盘ToolStripMenuItem.Text = "屏幕键盘";
             this.屏幕键盘ToolStripMenuItem.Click += new System.EventHandler(this.屏幕键盘ToolStripMenuItem_Click);
             // 
@@ -399,7 +409,7 @@ namespace HYProject
             this.全局变量ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.全局变量ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("全局变量ToolStripMenuItem.Image")));
             this.全局变量ToolStripMenuItem.Name = "全局变量ToolStripMenuItem";
-            this.全局变量ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.全局变量ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.全局变量ToolStripMenuItem.Text = "全局变量";
             this.全局变量ToolStripMenuItem.Click += new System.EventHandler(this.全局变量ToolStripMenuItem_Click);
             // 
@@ -427,7 +437,7 @@ namespace HYProject
             this.系统操作ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.系统操作ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("系统操作ToolStripMenuItem.Image")));
             this.系统操作ToolStripMenuItem.Name = "系统操作ToolStripMenuItem";
-            this.系统操作ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.系统操作ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.系统操作ToolStripMenuItem.Text = "系统操作";
             // 
             // 备份ToolStripMenuItem
@@ -464,7 +474,7 @@ namespace HYProject
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsl_nowtime,
             this.toolStrip_Version});
-            this.toolStrip1.Location = new System.Drawing.Point(1, 646);
+            this.toolStrip1.Location = new System.Drawing.Point(1, 713);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1237, 20);
             this.toolStrip1.TabIndex = 3;
@@ -493,7 +503,7 @@ namespace HYProject
             this.panel4.Location = new System.Drawing.Point(1, 50);
             this.panel4.Margin = new System.Windows.Forms.Padding(0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1237, 485);
+            this.panel4.Size = new System.Drawing.Size(1237, 552);
             this.panel4.TabIndex = 4;
             // 
             // splitContainer_Main
@@ -509,22 +519,11 @@ namespace HYProject
             // 
             // splitContainer_Main.Panel2
             // 
-            this.splitContainer_Main.Panel2.Controls.Add(this.button1);
             this.toolTip1.SetToolTip(this.splitContainer_Main.Panel2, "数据面板");
-            this.splitContainer_Main.Size = new System.Drawing.Size(1237, 485);
+            this.splitContainer_Main.Size = new System.Drawing.Size(1237, 552);
             this.splitContainer_Main.SplitterDistance = 936;
             this.splitContainer_Main.SplitterWidth = 1;
             this.splitContainer_Main.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(68, 73);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // panel1
             // 
@@ -543,7 +542,6 @@ namespace HYProject
             this.ClientSize = new System.Drawing.Size(1239, 734);
             this.Controls.Add(this.tableLayout);
             this.HelpButton = true;
-            this.HideAll = true;
             this.HideDropButtom = false;
             this.HideHelpButtom = false;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -567,7 +565,6 @@ namespace HYProject
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel4.ResumeLayout(false);
-            this.splitContainer_Main.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer_Main)).EndInit();
             this.splitContainer_Main.ResumeLayout(false);
             this.ResumeLayout(false);

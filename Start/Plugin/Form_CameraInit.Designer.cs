@@ -194,7 +194,6 @@ namespace HYProject.Plugin
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.comboBox1);
-            this.HideAll = true;
             this.HideDropButtom = false;
             this.HideHelpButtom = false;
             this.HideMaxButtom = false;
