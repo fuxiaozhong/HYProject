@@ -7,6 +7,7 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Shapes;
 
@@ -427,7 +428,25 @@ namespace HYProject
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            new Form_Measure().ShowDialog();
+            //Task.Factory.StartNew(() =>
+            //{
+            //    for (int i = 0; i < 1000; i++)
+            //    {
+            //        Log.WriteRunLog(i + "");
+            //    }
+
+            //});
+        }
+
+        private void 系统操作ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 日志ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Plugin.Form_OldLog form = new Plugin.Form_OldLog();
+            form.ShowDialog();
         }
     }
 }

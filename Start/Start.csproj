@@ -182,6 +182,12 @@
     <Compile Include="Model\MeasureData.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\Work.cs" />
+    <Compile Include="Plugin\Form_OldLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plugin\Form_OldLog.Designer.cs">
+      <DependentUpon>Form_OldLog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Plugin\Form_CameraInit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -287,6 +293,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuForm\Form_User_Setting.resx">
       <DependentUpon>Form_User_Setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Plugin\Form_OldLog.resx">
+      <DependentUpon>Form_OldLog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Plugin\Form_CameraInit.resx">
       <DependentUpon>Form_CameraInit.cs</DependentUpon>

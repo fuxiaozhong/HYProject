@@ -104,20 +104,23 @@ namespace ToolKit.HYControls
 
                         L_outputItem.Add(outputItem);
 
-                        if (L_outputItem.Count > 1000)
+                        if (L_outputItem.Count > 5000)
                         {
-                            if (L_outputItem[0].color == Color.Orange)
-                                numOrange--;
-                            else if (L_outputItem[0].color == Color.Red)
-                                numRed--;
-                            else
-                                numGreen--;
+                            L_outputItem.Clear();
+                            listView1.Items.Clear();
+                            //if (L_outputItem[0].color == Color.Orange)
+                            //    numOrange--;
+                            //else if (L_outputItem[0].color == Color.Red)
+                            //    numRed--;
+                            //else
+                            //    numGreen--;
 
-                            L_outputItem.RemoveAt(0);
+                            //L_outputItem.RemoveAt(0);
+                            //listView1.Items.RemoveAt(0);
                         }
 
                         UpdateCount();
-                        this.listView1.Items[this.listView1.Items.Count - 1].EnsureVisible();
+                        this.listView1.Items[this.listView1.Items.Count - 1]?.EnsureVisible();
                     }
                     Application.DoEvents();
                 }

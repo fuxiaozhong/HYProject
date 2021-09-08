@@ -19,6 +19,8 @@ using NPOI.SS.Formula.Functions;
 
 using ToolKit.HYControls.HYForm;
 
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
+
 namespace HYProject
 {
     /// <summary>
@@ -78,6 +80,7 @@ namespace HYProject
             _DeleteLogFile.Start();
 
             DispLog = new Thread(DispLogWork);
+            DispLog.Priority = ThreadPriority.Highest;
             DispLog.IsBackground = true;
             DispLog.Name = "显示日志文件";
             DispLog.Start();
@@ -104,35 +107,31 @@ namespace HYProject
         {
             while (true)
             {
-                lock (obj)
+                LogInfo logMessage = null;
+                var isExit = Dispqueues.TryDequeue(out logMessage);
+                if (!isExit)
                 {
-
-                    LogInfo logMessage = null;
-                    var isExit = Dispqueues.TryDequeue(out logMessage);
-                    if (!isExit)
+                    Thread.Sleep(10);
+                    continue;
+                }
+                try
+                {
+                    switch (logMessage.type)
                     {
-                        Thread.Sleep(500);
-                        continue;
+                        case "警告":
+                            Form_Logs.Instance.OutputMsg(logMessage.message, System.Drawing.Color.Orange);
+                            break;
+                        case "异常":
+                            Form_Logs.Instance.OutputMsg(logMessage.message, System.Drawing.Color.Red);
+                            break;
+                        case "正常":
+                            Form_Logs.Instance.OutputMsg(logMessage.message, System.Drawing.Color.Green);
+                            break;
                     }
-                    try
-                    {
-                        switch (logMessage.type)
-                        {
-                            case "警告":
-                                Form_Logs.Instance.OutputMsg(logMessage.message, System.Drawing.Color.Orange);
-                                break;
-                            case "异常":
-                                Form_Logs.Instance.OutputMsg(logMessage.message, System.Drawing.Color.Red);
-                                break;
-                            case "正常":
-                                Form_Logs.Instance.OutputMsg(logMessage.message, System.Drawing.Color.Green);
-                                break;
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        WriteErrorLog(ex.Message, ex);
-                    }
+                }
+                catch (Exception ex)
+                {
+                    WriteErrorLog(ex.Message, ex);
                 }
             }
         }
