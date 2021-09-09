@@ -9,6 +9,8 @@ using HslCommunication.Profinet.Melsec;
 
 using HYProject.Model;
 
+using NPOI.SS.Formula.Functions;
+
 using ToolKit.CommunicAtion;
 using ToolKit.HalconTool.Model;
 
@@ -227,7 +229,34 @@ namespace HYProject
         /// 开发人员密码
         /// </summary>
         internal string DeveloperPassword = "develop";
+        /// <summary>
+        /// TCPSocketServer IP地址
+        /// </summary>
+        internal string TCPServerIPAddress = "127.0.0.1";
+        /// <summary>
+        /// TCPSocketServer 端口
+        /// </summary>
+        internal int TCPServerPort = 8080;
+        /// <summary>
+        /// TCPSocketClient IP地址
+        /// </summary>
+        internal string TCPClientIPAddress = "127.0.0.1";
+        /// <summary>
+        /// TCPSocketClient 端口
+        /// </summary>
+        internal int TCPClientPort = 8080;
 
+        /// <summary>
+        /// TCPSocketServer 服务器对象
+        /// </summary>
+        [NonSerialized]
+        internal TCPSocketServer TCPSocketServer;
+
+        /// <summary>
+        /// TCPSocketClient  客户端对象
+        /// </summary>
+        [NonSerialized]
+        internal TCPSocketClient TCPSocketClient;
 
         /// <summary>
         /// 保存对象到文件

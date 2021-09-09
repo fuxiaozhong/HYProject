@@ -61,10 +61,13 @@ namespace HYProject
             InitializeComponent();
             HOperatorSet.SetSystem("clip_region", "false");
             CheckForIllegalCrossThreadCalls = false;
+            //系统线程
+            SystemThread.Start();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+
             if (AppParam.Instance.RunStateMax)
                 this.WindowState = FormWindowState.Maximized;
             else
@@ -99,18 +102,12 @@ namespace HYProject
             disk.Start();
             //开启拍照信号检测线程
             //RunThread.Start();
-            //系统线程
-            SystemThread.Start();
 
             if (AppParam.Instance.StartAutoRun)
             {
                 Button_Run_Click(运行ToolStripMenuItem, e);
             }
-
-
         }
-
-
 
         private void DiskRefresh()
         {
@@ -186,17 +183,26 @@ namespace HYProject
 
         private void CloseEvent(object sender, EventArgs e)
         {
+            //全局系统变量保存
             Form_Global_System.Instance.Save();
+            //全局用户变量保存
             Form_Global_User.Instance.Save();
+            //运行标志 关闭
             AppParam.Instance.Runing = false;
+            //关闭相机
             Cameras.Instance.CloseCamera();
+            //保存配置文件
             AppParam.Instance.Save_To_File();
+            //TCP服务器关闭
+            AppParam.Instance.TCPSocketServer?.Close();
+            //TCP客户端关闭
+            AppParam.Instance.TCPSocketClient?.Close();
+            //光源关闭
             AppParam.Instance.lightSource?.CloseLightSource();
-            Log.WriteRunLog("光源关闭...");
+            //PLC关闭
             AppParam.Instance.Fx3uPLC?.ConnectClose();
-            Log.WriteRunLog("PLC关闭...");
+            //数据保存
             DataLimit.Instance.Save();
-            Log.WriteRunLog("退出程序...");
             Thread.Sleep(1000);
         }
 

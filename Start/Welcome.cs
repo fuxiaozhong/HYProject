@@ -51,6 +51,18 @@ namespace HYProject
                 Log.WriteRunLog("开始加载配置文件");
                 //初始化相机
                 Cameras.Instance.InitializeCamera();
+
+                AppParam.Instance.TCPSocketServer = new ToolKit.CommunicAtion.TCPSocketServer(AppParam.Instance.TCPServerIPAddress, AppParam.Instance.TCPServerPort);
+                AppParam.Instance.TCPSocketServer.SocketReceiveMessage += Work.TCPSocketServer_SocketReceiveMessage;
+                AppParam.Instance.TCPSocketServer.ClientsConnect += Work.TCPSocketServer_ClientsConnect;
+                Log.WriteRunLog(AppParam.Instance.TCPSocketServer.StartListen() ? "TCP服务器打开成功" : "TCP服务器打开失败");
+
+                AppParam.Instance.TCPSocketClient = new ToolKit.CommunicAtion.TCPSocketClient(AppParam.Instance.TCPClientIPAddress, AppParam.Instance.TCPClientPort);
+                AppParam.Instance.TCPSocketClient.SocketReceiveMessage += Work.TCPSocketClient_SocketReceiveMessage;
+                Log.WriteRunLog(AppParam.Instance.TCPSocketClient.Connect_server() ? "TCP客户端连接成功" : "TCP客户端连接失败");
+
+
+
                 //if (AppParam.Instance.lightSource.OpenLightSource(AppParam.Instance.LightSourcePortName,
                 //                                             AppParam.Instance.LightSourceBaudRate,
                 //                                             AppParam.Instance.LightSourceParity,
@@ -116,6 +128,8 @@ namespace HYProject
                 }
             });
         }
+
+
 
         private void Label4_Click(object sender, EventArgs e)
         {
