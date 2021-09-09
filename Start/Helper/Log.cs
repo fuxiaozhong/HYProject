@@ -178,6 +178,11 @@ namespace HYProject
         /// <param name="strWarnLog">strWarnLog</param>
         public static void WriteWarnLog(string strWarnLog)
         {
+            if (strWarnLog.Contains(","))
+            {
+                strWarnLog = strWarnLog.Replace(',', '，');
+
+            }
             if (m_lstLog["warn_logo"].IsWarnEnabled)
             {
                 m_lstLog["warn_logo"].Warn(strWarnLog);
@@ -193,6 +198,11 @@ namespace HYProject
         /// <param name="ex">ex</param>
         public static void WriteErrorLog(string strErrLog, Exception ex = null)
         {
+            if (strErrLog.Contains(","))
+            {
+                strErrLog = strErrLog.Replace(',', '，');
+
+            }
             if (m_lstLog["error_logo"].IsErrorEnabled)
             {
                 StackTrace stackTrace = new StackTrace();
@@ -211,6 +221,11 @@ namespace HYProject
         /// <param name="runmessage">strErrLog</param>
         public static void WriteRunLog(string runmessage)
         {
+            if (runmessage.Contains(","))
+            {
+                runmessage = runmessage.Replace(',', '，');
+
+            }
             if (m_lstLog["run_logo"].IsErrorEnabled)
             {
                 m_lstLog["run_logo"].Info(runmessage);

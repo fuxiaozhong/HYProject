@@ -1,4 +1,5 @@
-﻿using HYProject.ToolForm;
+﻿using HYProject.Helper;
+using HYProject.ToolForm;
 
 namespace HYProject.Model
 {
@@ -11,7 +12,13 @@ namespace HYProject.Model
         /// <param name="ho_image">图像</param>
         public static void CameraWork(string cameraName, HalconDotNet.HObject ho_image)
         {
-            DisplayForm.Instance[cameraName].Disp_Image(ho_image);
+            DisplayForm.Instance[0].Disp_Image(ho_image);
+            DisplayForm.Instance[1].Disp_Image(ho_image);
+            DisplayForm.Instance[2].Disp_Image(ho_image);
+            DisplayForm.Instance[3].Disp_Image(ho_image);
+            DisplayForm.Instance[4].Disp_Image(ho_image);
+            DisplayForm.Instance[5].Disp_Image(ho_image);
+            QueueSaveImage.Instance.QueueEnqueue2(ho_image);
             //DisplayForm.Instance[1].Disp_Image(ho_image);
         }
     }

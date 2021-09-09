@@ -41,7 +41,6 @@ namespace HYProject
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panel_Log = new System.Windows.Forms.Panel();
             this.panel_Title = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.主页面ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.相机ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,6 +65,7 @@ namespace HYProject
             this.系统操作ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.备份ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.重启ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.日志ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.锁定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsl_nowtime = new System.Windows.Forms.ToolStripLabel();
@@ -74,7 +74,10 @@ namespace HYProject
             this.splitContainer_Main = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.日志ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.tableLayout.SuspendLayout();
             this.panel_Buttom.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -85,6 +88,8 @@ namespace HYProject
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer_Main)).BeginInit();
             this.splitContainer_Main.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayout
@@ -138,6 +143,10 @@ namespace HYProject
             // 
             // panel_Data
             // 
+            this.panel_Data.Controls.Add(this.label2);
+            this.panel_Data.Controls.Add(this.label1);
+            this.panel_Data.Controls.Add(this.numericUpDown2);
+            this.panel_Data.Controls.Add(this.numericUpDown1);
             this.panel_Data.Controls.Add(this.pro_memory);
             this.panel_Data.Controls.Add(this.splitter1);
             this.panel_Data.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -192,7 +201,6 @@ namespace HYProject
             // 
             this.panel_Title.BackColor = System.Drawing.SystemColors.Control;
             this.tableLayout.SetColumnSpan(this.panel_Title, 2);
-            this.panel_Title.Controls.Add(this.button1);
             this.panel_Title.Controls.Add(this.menuStrip1);
             this.panel_Title.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Title.Location = new System.Drawing.Point(1, 1);
@@ -200,16 +208,6 @@ namespace HYProject
             this.panel_Title.Name = "panel_Title";
             this.panel_Title.Size = new System.Drawing.Size(1237, 48);
             this.panel_Title.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(811, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // menuStrip1
             // 
@@ -390,7 +388,7 @@ namespace HYProject
             this.相机配置ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.相机配置ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("相机配置ToolStripMenuItem.Image")));
             this.相机配置ToolStripMenuItem.Name = "相机配置ToolStripMenuItem";
-            this.相机配置ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.相机配置ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.相机配置ToolStripMenuItem.Text = "相机配置";
             this.相机配置ToolStripMenuItem.Click += new System.EventHandler(this.相机配置ToolStripMenuItem_Click);
             // 
@@ -399,7 +397,7 @@ namespace HYProject
             this.屏幕键盘ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.屏幕键盘ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("屏幕键盘ToolStripMenuItem.Image")));
             this.屏幕键盘ToolStripMenuItem.Name = "屏幕键盘ToolStripMenuItem";
-            this.屏幕键盘ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.屏幕键盘ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.屏幕键盘ToolStripMenuItem.Text = "屏幕键盘";
             this.屏幕键盘ToolStripMenuItem.Click += new System.EventHandler(this.屏幕键盘ToolStripMenuItem_Click);
             // 
@@ -411,7 +409,7 @@ namespace HYProject
             this.全局变量ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.全局变量ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("全局变量ToolStripMenuItem.Image")));
             this.全局变量ToolStripMenuItem.Name = "全局变量ToolStripMenuItem";
-            this.全局变量ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.全局变量ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.全局变量ToolStripMenuItem.Text = "全局变量";
             this.全局变量ToolStripMenuItem.Click += new System.EventHandler(this.全局变量ToolStripMenuItem_Click);
             // 
@@ -439,7 +437,7 @@ namespace HYProject
             this.系统操作ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.系统操作ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("系统操作ToolStripMenuItem.Image")));
             this.系统操作ToolStripMenuItem.Name = "系统操作ToolStripMenuItem";
-            this.系统操作ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.系统操作ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.系统操作ToolStripMenuItem.Text = "系统操作";
             this.系统操作ToolStripMenuItem.Click += new System.EventHandler(this.系统操作ToolStripMenuItem_Click);
             // 
@@ -447,7 +445,7 @@ namespace HYProject
             // 
             this.备份ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("备份ToolStripMenuItem.Image")));
             this.备份ToolStripMenuItem.Name = "备份ToolStripMenuItem";
-            this.备份ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.备份ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
             this.备份ToolStripMenuItem.Text = "备份系统";
             this.备份ToolStripMenuItem.Click += new System.EventHandler(this.备份ToolStripMenuItem_Click);
             // 
@@ -455,9 +453,18 @@ namespace HYProject
             // 
             this.重启ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("重启ToolStripMenuItem.Image")));
             this.重启ToolStripMenuItem.Name = "重启ToolStripMenuItem";
-            this.重启ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.重启ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
             this.重启ToolStripMenuItem.Text = "重启系统";
             this.重启ToolStripMenuItem.Click += new System.EventHandler(this.重启ToolStripMenuItem_Click);
+            // 
+            // 日志ToolStripMenuItem
+            // 
+            this.日志ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.日志ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("日志ToolStripMenuItem.Image")));
+            this.日志ToolStripMenuItem.Name = "日志ToolStripMenuItem";
+            this.日志ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.日志ToolStripMenuItem.Text = "日志";
+            this.日志ToolStripMenuItem.Click += new System.EventHandler(this.日志ToolStripMenuItem_Click);
             // 
             // 锁定ToolStripMenuItem
             // 
@@ -538,14 +545,47 @@ namespace HYProject
             this.panel1.Size = new System.Drawing.Size(1325, 518);
             this.panel1.TabIndex = 4;
             // 
-            // 日志ToolStripMenuItem
+            // numericUpDown1
             // 
-            this.日志ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.日志ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("日志ToolStripMenuItem.Image")));
-            this.日志ToolStripMenuItem.Name = "日志ToolStripMenuItem";
-            this.日志ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
-            this.日志ToolStripMenuItem.Text = "日志";
-            this.日志ToolStripMenuItem.Click += new System.EventHandler(this.日志ToolStripMenuItem_Click);
+            this.numericUpDown1.Location = new System.Drawing.Point(107, 18);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 21);
+            this.numericUpDown1.TabIndex = 3;
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(107, 60);
+            this.numericUpDown2.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(120, 21);
+            this.numericUpDown2.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(42, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 12);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "触发次数:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(54, 69);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 12);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "图片数:";
             // 
             // MainForm
             // 
@@ -571,6 +611,7 @@ namespace HYProject
             this.panel_Buttom.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel_Data.ResumeLayout(false);
+            this.panel_Data.PerformLayout();
             this.panel_Title.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -579,6 +620,8 @@ namespace HYProject
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer_Main)).EndInit();
             this.splitContainer_Main.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -622,11 +665,14 @@ namespace HYProject
         public System.Windows.Forms.ToolStripMenuItem 用户设置ToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem 通讯设置ToolStripMenuItem;
         public System.Windows.Forms.SplitContainer splitContainer_Main;
-        private System.Windows.Forms.Button button1;
         public System.Windows.Forms.ToolStripMenuItem pLC配置ToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem 光源配置ToolStripMenuItem;
         public ToolKit.HYControls.HYProcessEllipse pro_memory;
         private System.Windows.Forms.ToolStripMenuItem 日志ToolStripMenuItem;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.NumericUpDown numericUpDown1;
+        public System.Windows.Forms.NumericUpDown numericUpDown2;
         // private ToolKit.HYControls.CreateModelControl createModelControl1;
     }
 }

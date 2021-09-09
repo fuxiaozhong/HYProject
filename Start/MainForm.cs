@@ -83,7 +83,7 @@ namespace HYProject
             //{
             //    DisplayForm.Instance.DisplayWindowCount = 1;
             //}
-            DisplayForm.Instance.DisplayWindowCount = 8;
+            DisplayForm.Instance.DisplayWindowCount = 6;
             //添加日志窗口
             panel_Log.Controls.Add(Form_Logs.Instance);
             Form_Logs.Instance.Show();
@@ -98,7 +98,7 @@ namespace HYProject
             disk.Name = "disk";
             disk.Start();
             //开启拍照信号检测线程
-            //RunThread.Start();
+            RunThread.Start();
             //系统线程
             SystemThread.Start();
 
@@ -200,7 +200,7 @@ namespace HYProject
             Thread.Sleep(1000);
         }
 
-
+        public bool tackTest = false;
 
         private void Button_Run_Click(object sender, EventArgs e)
         {
@@ -211,6 +211,23 @@ namespace HYProject
                 AppParam.Instance.Runing = true;
                 运行ToolStripMenuItem.Text = "停    止";
                 Log.WriteRunLog("开始运行...");
+
+                Task.Factory.StartNew(() =>
+                {
+                    while (true)
+                    {
+                        if (AppParam.Instance.Runing == false)
+                        {
+                            break;
+                        }
+                        if (!tackTest)
+                        {
+                            tackTest = true;
+                        }
+                        Thread.Sleep(50);
+                    }
+
+                });
             }
             else
             {
@@ -224,6 +241,12 @@ namespace HYProject
 
         private void Button_Camera_Click(object sender, EventArgs e)
         {
+            if (AppParam.Instance.Runing)
+            {
+                ShowMessage("当前正在运行中,请先停止运行。", "提示");
+                return;
+            }
+
             if (Cameras.Instance.GetCameras.Count == 0)
             {
                 if (ShowMessage("无相机连接!点击确认重新初始化相机.", "提示") == DialogResult.OK)

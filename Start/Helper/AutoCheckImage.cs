@@ -16,42 +16,37 @@ namespace HYProject.Helper
             {
                 if (Directory.Exists(AppParam.Instance.Save_Image_Path))
                 {
-                    string[] fileNameX = Directory.GetFiles(AppParam.Instance.Save_Image_Path, "*.*");
-                    List<string> lists = new List<string>();
-                    for (int i = 0; i < fileNameX.Length; i++)
-                    {
-                        string fileNamei = fileNameX[i].ToLower();
-                        if (fileNamei.EndsWith(".png") || fileNamei.EndsWith(".jpg") || fileNamei.EndsWith(".bmp"))
-                        {
-                            lists.Add(fileNamei);
-                        }
-                    }
-                    Array array = Array.CreateInstance(typeof(string), lists.Count);
-                    lists.CopyTo((string[])array, 0);
-                    foreach (string file in lists)
-                    {
-                        FileInfo fileInfo = new FileInfo(file);
-                        TimeSpan t = DateTime.Now - fileInfo.CreationTime;  //当前时间  减去 文件创建时间
-                        int day = t.Days;
-                        if (day > AppParam.Instance.Save_Image_Days)   //保存的时间 ;  单位：天
-                        {
-                            Log.WriteRunLog(fileInfo.Name + "储存到期,已自动删除.");
-                            File.Delete(file);  //删除超过时间的文件
-                        }
-                    }
-                }
-                else
-                {
-                    try
-                    {
-                        Directory.CreateDirectory(AppParam.Instance.Save_Image_Path);
-                    }
-                    catch (Exception)
-                    {
-                    }
+                    Director(AppParam.Instance.Save_Image_Path);
                 }
                 Thread.Sleep(1000 * 10);//10S检查一次
             }
         }
+        private static void Director(string dir)
+        {
+            DirectoryInfo d = new DirectoryInfo(dir);
+            FileSystemInfo[] fsinfos = d.GetFileSystemInfos();
+            foreach (FileSystemInfo fsinfo in fsinfos)
+            {
+                if (fsinfo is DirectoryInfo)     //判断是否为文件夹
+                {
+                    Director(fsinfo.FullName);//递归调用
+                }
+                else
+                {
+                    Console.WriteLine(fsinfo.FullName);//输出文件的全部路径
+                                                       //FileInfo fileInfo = new FileInfo(file);
+                    TimeSpan t = DateTime.Now - fsinfo.CreationTime;  //当前时间  减去 文件创建时间
+                    int day = t.Days;
+                    if (day > AppParam.Instance.Save_Image_Days)   //保存的时间 ;  单位：天
+                    {
+                        Log.WriteRunLog(fsinfo.Name + "储存到期,已自动删除.");
+                        File.Delete(fsinfo.FullName);  //删除超过时间的文件
+                    }
+                }
+            }
+
+
+        }
+
     }
 }

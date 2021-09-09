@@ -223,6 +223,7 @@ namespace HYProject.Model
         /// <param name="ho_image">图片</param>
         public void Camera_ImageProcessEvent(string cameraName, HalconDotNet.HObject ho_image)
         {
+            MainForm.Instance.numericUpDown2.Value++;
             Log.WriteRunLog(cameraName + "接收到图像开始处理......");
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();

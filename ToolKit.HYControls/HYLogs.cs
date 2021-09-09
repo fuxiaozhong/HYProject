@@ -108,6 +108,9 @@ namespace ToolKit.HYControls
                         {
                             L_outputItem.Clear();
                             listView1.Items.Clear();
+                            numOrange = 0;
+                            numRed = 0;
+                            numGreen = 0;
                             //if (L_outputItem[0].color == Color.Orange)
                             //    numOrange--;
                             //else if (L_outputItem[0].color == Color.Red)
