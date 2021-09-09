@@ -74,10 +74,6 @@ namespace HYProject
             this.splitContainer_Main = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.tableLayout.SuspendLayout();
             this.panel_Buttom.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -88,8 +84,6 @@ namespace HYProject
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer_Main)).BeginInit();
             this.splitContainer_Main.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayout
@@ -143,10 +137,6 @@ namespace HYProject
             // 
             // panel_Data
             // 
-            this.panel_Data.Controls.Add(this.label2);
-            this.panel_Data.Controls.Add(this.label1);
-            this.panel_Data.Controls.Add(this.numericUpDown2);
-            this.panel_Data.Controls.Add(this.numericUpDown1);
             this.panel_Data.Controls.Add(this.pro_memory);
             this.panel_Data.Controls.Add(this.splitter1);
             this.panel_Data.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -545,48 +535,6 @@ namespace HYProject
             this.panel1.Size = new System.Drawing.Size(1325, 518);
             this.panel1.TabIndex = 4;
             // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(107, 18);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            1000000000,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 21);
-            this.numericUpDown1.TabIndex = 3;
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Location = new System.Drawing.Point(107, 60);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
-            1000000000,
-            0,
-            0,
-            0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(120, 21);
-            this.numericUpDown2.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 12);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "触发次数:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(54, 69);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 12);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "图片数:";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -611,7 +559,6 @@ namespace HYProject
             this.panel_Buttom.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel_Data.ResumeLayout(false);
-            this.panel_Data.PerformLayout();
             this.panel_Title.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -620,8 +567,6 @@ namespace HYProject
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer_Main)).EndInit();
             this.splitContainer_Main.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -669,10 +614,6 @@ namespace HYProject
         public System.Windows.Forms.ToolStripMenuItem 光源配置ToolStripMenuItem;
         public ToolKit.HYControls.HYProcessEllipse pro_memory;
         private System.Windows.Forms.ToolStripMenuItem 日志ToolStripMenuItem;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.NumericUpDown numericUpDown1;
-        public System.Windows.Forms.NumericUpDown numericUpDown2;
         // private ToolKit.HYControls.CreateModelControl createModelControl1;
     }
 }

@@ -98,7 +98,7 @@ namespace HYProject
             disk.Name = "disk";
             disk.Start();
             //开启拍照信号检测线程
-            RunThread.Start();
+            //RunThread.Start();
             //系统线程
             SystemThread.Start();
 
@@ -212,22 +212,22 @@ namespace HYProject
                 运行ToolStripMenuItem.Text = "停    止";
                 Log.WriteRunLog("开始运行...");
 
-                Task.Factory.StartNew(() =>
-                {
-                    while (true)
-                    {
-                        if (AppParam.Instance.Runing == false)
-                        {
-                            break;
-                        }
-                        if (!tackTest)
-                        {
-                            tackTest = true;
-                        }
-                        Thread.Sleep(50);
-                    }
+                //Task.Factory.StartNew(() =>
+                //{
+                //    while (true)
+                //    {
+                //        if (AppParam.Instance.Runing == false)
+                //        {
+                //            break;
+                //        }
+                //        if (!tackTest)
+                //        {
+                //            tackTest = true;
+                //        }
+                //        Thread.Sleep(50);
+                //    }
 
-                });
+                //});
             }
             else
             {

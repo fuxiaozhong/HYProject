@@ -166,7 +166,7 @@ namespace ToolKit.CamreaSDK
                 ImageProcessEvent?.Invoke(_CameraNmae, ho_image.Clone());
                 System.Runtime.InteropServices.Marshal.FreeHGlobal(pData);
                 ho_image.Dispose();
-                GC.Collect();
+                //GC.Collect();
             }
             else
             {
@@ -179,7 +179,7 @@ namespace ToolKit.CamreaSDK
                 ImageProcessEvent?.Invoke(_CameraNmae, ho_image.Clone());
                 System.Runtime.InteropServices.Marshal.FreeHGlobal(pData);
                 ho_image.Dispose();
-                GC.Collect();
+                //GC.Collect();
             }
         }
 
