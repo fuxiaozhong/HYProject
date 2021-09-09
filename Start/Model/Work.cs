@@ -18,7 +18,7 @@ namespace HYProject.Model
             DisplayForm.Instance[3].Disp_Image(ho_image);
             DisplayForm.Instance[4].Disp_Image(ho_image);
             DisplayForm.Instance[5].Disp_Image(ho_image);
-            QueueSaveImage.Instance.QueueEnqueue2(ho_image);
+            //QueueSaveImage.Instance.QueueEnqueue2(ho_image);
             //DisplayForm.Instance[1].Disp_Image(ho_image);
         }
     }
