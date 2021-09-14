@@ -33,9 +33,6 @@ namespace HYProject
     {
         private static MainForm instance;
 
-        //程序运行时创建一个静态只读的进程辅助对象
-        private static readonly object syncRoot = new object();
-
         public static MainForm Instance
         {
             get
@@ -44,12 +41,9 @@ namespace HYProject
                 if (instance == null)
                 {
                     //在同一个时刻加了锁的那部分程序只有一个线程可以进入
-                    lock (syncRoot)
+                    if (instance == null)
                     {
-                        if (instance == null)
-                        {
-                            instance = new MainForm();
-                        }
+                        instance = new MainForm();
                     }
                 }
                 return instance;
@@ -86,7 +80,7 @@ namespace HYProject
             //{
             //    DisplayForm.Instance.DisplayWindowCount = 1;
             //}
-            DisplayForm.Instance.DisplayWindowCount = 6;
+            DisplayForm.Instance.DisplayWindowCount = (int)Form_Global_System.Instance["显示数量"];
             //添加日志窗口
             panel_Log.Controls.Add(Form_Logs.Instance);
             Form_Logs.Instance.Show();
@@ -194,7 +188,9 @@ namespace HYProject
             //保存配置文件
             AppParam.Instance.Save_To_File();
             //TCP服务器关闭
-            AppParam.Instance.TCPSocketServer?.Close();
+            AppParam.Instance.TCPSocketServer_Cam1?.Close();
+            AppParam.Instance.TCPSocketServer_Cam2?.Close();
+            AppParam.Instance.TCPSocketServer_Cam3?.Close();
             //TCP客户端关闭
             AppParam.Instance.TCPSocketClient?.Close();
             //光源关闭
@@ -369,6 +365,8 @@ namespace HYProject
 
         private void 系统变量ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+        Login:
             if (AppParam.Instance.Power == "开发人员")
             {
                 Form_Global_System.Instance.ShowDialog();
@@ -383,6 +381,10 @@ namespace HYProject
                     {
                         AppParam.Instance.Power = form_User.Power;
                         Log.WriteRunLog("切换用户:" + AppParam.Instance.Power);
+                        if (AppParam.Instance.Power != "开发人员")
+                        {
+                            goto Login;
+                        }
                         Form_Global_System.Instance.ShowDialog();
                     }
                 }
@@ -450,22 +452,10 @@ namespace HYProject
 
         private void TCP服务端ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ShowNormal("暂未开发");
-            //Form_TCPSocketServer form_TCPSocketServer = new Form_TCPSocketServer();
-            //form_TCPSocketServer.ShowDialog();
+            Form_TCPSocketSetting form_TCPSocketSetting = new Form_TCPSocketSetting();
+            form_TCPSocketSetting.ShowDialog();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            //Task.Factory.StartNew(() =>
-            //{
-            //    for (int i = 0; i < 1000; i++)
-            //    {
-            //        Log.WriteRunLog(i + "");
-            //    }
-
-            //});
-        }
 
         private void 系统操作ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -476,6 +466,21 @@ namespace HYProject
         {
             Plugin.Form_OldLog form = new Plugin.Form_OldLog();
             form.ShowDialog();
+        }
+
+        private void 通讯设置ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 相机标定ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_Robot_Calibration.Instance.ShowDialog();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            Cameras.Instance[""].Soft_Trigger();
         }
     }
 }

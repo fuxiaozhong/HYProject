@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalibrationStep.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CalibrationStep.Designer.cs">
+      <DependentUpon>CalibrationStep.cs</DependentUpon>
+    </Compile>
     <Compile Include="HYDataStatistics.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -185,6 +191,9 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CalibrationStep.resx">
+      <DependentUpon>CalibrationStep.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HYDataStatistics.resx">
       <DependentUpon>HYDataStatistics.cs</DependentUpon>
     </EmbeddedResource>

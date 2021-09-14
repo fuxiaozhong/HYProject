@@ -33,13 +33,13 @@ namespace ToolKit.DisplayWindow
             get { return hWindowControl1.HalconWindow; }
         }
 
-        public HObject GetImage
+        public HObject Image
         {
             get
             {
                 if (ho_image == null)
                     return null;
-                return ho_image;
+                return ho_image.Clone();
             }
         }
 
@@ -180,72 +180,73 @@ namespace ToolKit.DisplayWindow
         /// <param name="image"></param>
         public void Disp_Image(HObject image)
         {
-            lock (this)
+
+            try
             {
-                try
+                if (image == null)
+                    return;
+                //清空十字架
+                Cross.Clear();
+                //清空区域
+                foreach (RegionP item in Regions)
                 {
-                    if (image == null)
-                        return;
-                    //清空十字架
-                    Cross.Clear();
-                    //清空区域
-                    foreach (RegionP item in Regions)
-                    {
-                        item.Region.Dispose();
-                    }
-                    Regions.Clear();
-                    Message.Clear();
+                    item.Region.Dispose();
+                }
+                Regions.Clear();
+                Message.Clear();
 
-                    if (ho_image == null)
-                    {
-                        HOperatorSet.GenEmptyObj(out ho_image);
-                        ho_image.Dispose();
-                        HOperatorSet.CopyImage(image, out ho_image);
-                    }
-                    else
-                    {
-                        ho_image.Dispose();
-                        HOperatorSet.CopyImage(image, out ho_image);
-                    }
-                    HTuple _ImageWidth, _ImageHeight;
+                if (ho_image == null)
+                {
+                    HOperatorSet.GenEmptyObj(out ho_image);
+                    ho_image.Dispose();
+                    HOperatorSet.CopyImage(image, out ho_image);
+                }
+                else
+                {
+                    ho_image.Dispose();
+                    HOperatorSet.CopyImage(image, out ho_image);
+                }
 
-                    HOperatorSet.GetImageSize(ho_image, out _ImageWidth, out _ImageHeight);
 
-                    //uiLabel1.Text = "Size:" + _ImageWidth.D + "*" + _ImageHeight.D;
+                HTuple _ImageWidth, _ImageHeight;
 
-                    if (ImageWidth.D == _ImageWidth.D || ImageHeight.D == _ImageHeight.D)
-                    {
-                        HOperatorSet.ClearWindow(HalconWindowHandle);
-                        HOperatorSet.DispObj(ho_image, hWindowControl1.HalconWindow);
-                        return;
-                    }
-                    ImageWidth = _ImageWidth;
-                    ImageHeight = _ImageHeight;
-                    ratioWidth = (1.0) * _ImageWidth / hWindowControl1.Width;
-                    ratioHeight = (1.0) * _ImageHeight / hWindowControl1.Height;
-                    if (ratioWidth >= ratioHeight)
-                    {
-                        row1 = -(1.0) * ((hWindowControl1.Height * ratioWidth) - _ImageHeight) / 2;
-                        column1 = 0;
-                        row2 = ((hWindowControl1.Height * ratioWidth) - _ImageHeight) / 2 + _ImageHeight;
-                        column2 = _ImageWidth;
-                    }
-                    else
-                    {
-                        row1 = 0;
-                        column1 = -(1.0) * ((hWindowControl1.Width * ratioHeight) - _ImageWidth) / 2;
-                        row2 = _ImageHeight;
-                        column2 = column1 + hWindowControl1.Width * ratioHeight;
-                    }
-                    HOperatorSet.SetDraw(HalconWindowHandle, "margin");
+                HOperatorSet.GetImageSize(ho_image, out _ImageWidth, out _ImageHeight);
+
+                //uiLabel1.Text = "Size:" + _ImageWidth.D + "*" + _ImageHeight.D;
+
+                if (ImageWidth.D == _ImageWidth.D || ImageHeight.D == _ImageHeight.D)
+                {
                     HOperatorSet.ClearWindow(HalconWindowHandle);
-                    HOperatorSet.SetPart(hWindowControl1.HalconWindow, row1, column1, row2, column2);//顯示整個圖像
                     HOperatorSet.DispObj(ho_image, hWindowControl1.HalconWindow);
+                    return;
                 }
-                catch (Exception)
+                ImageWidth = _ImageWidth;
+                ImageHeight = _ImageHeight;
+                ratioWidth = (1.0) * _ImageWidth / hWindowControl1.Width;
+                ratioHeight = (1.0) * _ImageHeight / hWindowControl1.Height;
+                if (ratioWidth >= ratioHeight)
                 {
+                    row1 = -(1.0) * ((hWindowControl1.Height * ratioWidth) - _ImageHeight) / 2;
+                    column1 = 0;
+                    row2 = ((hWindowControl1.Height * ratioWidth) - _ImageHeight) / 2 + _ImageHeight;
+                    column2 = _ImageWidth;
                 }
+                else
+                {
+                    row1 = 0;
+                    column1 = -(1.0) * ((hWindowControl1.Width * ratioHeight) - _ImageWidth) / 2;
+                    row2 = _ImageHeight;
+                    column2 = column1 + hWindowControl1.Width * ratioHeight;
+                }
+                HOperatorSet.SetDraw(HalconWindowHandle, "margin");
+                HOperatorSet.ClearWindow(HalconWindowHandle);
+                HOperatorSet.SetPart(hWindowControl1.HalconWindow, row1, column1, row2, column2);//顯示整個圖像
+                HOperatorSet.DispObj(ho_image, hWindowControl1.HalconWindow);
             }
+            catch (Exception)
+            {
+            }
+
         }
 
         /// <summary>

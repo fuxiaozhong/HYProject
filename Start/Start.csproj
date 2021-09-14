@@ -177,11 +177,28 @@
       <DependentUpon>Form_User_Setting.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\AppParam.cs" />
+    <Compile Include="Model\CalibrationData.cs" />
+    <Compile Include="Model\Cam1_Work.cs" />
+    <Compile Include="Model\Cam2_Work.cs" />
+    <Compile Include="Model\Cam3_Work.cs" />
     <Compile Include="Model\Cameras.cs" />
     <Compile Include="Model\DataLimit.cs" />
     <Compile Include="Model\MeasureData.cs" />
     <Compile Include="Model\Product.cs" />
+    <Compile Include="Model\Robot_Point.cs" />
     <Compile Include="Model\Work.cs" />
+    <Compile Include="Plugin\Form_TCPSocketSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plugin\Form_TCPSocketSetting.Designer.cs">
+      <DependentUpon>Form_TCPSocketSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Plugin\Form_Robot_Calibration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plugin\Form_Robot_Calibration.Designer.cs">
+      <DependentUpon>Form_Robot_Calibration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Plugin\Form_OldLog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -293,11 +310,17 @@
     <EmbeddedResource Include="MenuForm\Form_User_Setting.resx">
       <DependentUpon>Form_User_Setting.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Plugin\Form_TCPSocketSetting.resx">
+      <DependentUpon>Form_TCPSocketSetting.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Plugin\Form_OldLog.resx">
       <DependentUpon>Form_OldLog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Plugin\Form_CameraInit.resx">
       <DependentUpon>Form_CameraInit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Plugin\Form_Robot_Calibration.resx">
+      <DependentUpon>Form_Robot_Calibration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

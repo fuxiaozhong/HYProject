@@ -5,6 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using HYProject.Helper;
 using HYProject.Model;
 
 using ToolKit.HYControls.HYForm;
@@ -21,6 +22,7 @@ namespace HYProject
 
         private void Welcome_Load(object sender, EventArgs e)
         {
+
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
             bool flag = true;
@@ -52,14 +54,24 @@ namespace HYProject
                 //初始化相机
                 Cameras.Instance.InitializeCamera();
 
-                AppParam.Instance.TCPSocketServer = new ToolKit.CommunicAtion.TCPSocketServer(AppParam.Instance.TCPServerIPAddress, AppParam.Instance.TCPServerPort);
-                AppParam.Instance.TCPSocketServer.SocketReceiveMessage += Work.TCPSocketServer_SocketReceiveMessage;
-                AppParam.Instance.TCPSocketServer.ClientsConnect += Work.TCPSocketServer_ClientsConnect;
-                Log.WriteRunLog(AppParam.Instance.TCPSocketServer.StartListen() ? "TCP服务器打开成功" : "TCP服务器打开失败");
+                AppParam.Instance.TCPSocketServer_Cam1 = new ToolKit.CommunicAtion.TCPSocketServer(AppParam.Instance.TCPServerIPAddress_Cam1, AppParam.Instance.TCPServerPort_Cam1);
+                AppParam.Instance.TCPSocketServer_Cam1.SocketReceiveMessage += Work.TCPSocketServer_SocketReceiveMessage1;
+                AppParam.Instance.TCPSocketServer_Cam1.ClientsConnect += Work.TCPSocketServer_ClientsConnect1;
+                Log.WriteRunLog(AppParam.Instance.TCPSocketServer_Cam1.StartListen() ? "Cam1_TCP服务器打开成功" : "Cam1_TCP服务器打开失败");
 
-                AppParam.Instance.TCPSocketClient = new ToolKit.CommunicAtion.TCPSocketClient(AppParam.Instance.TCPClientIPAddress, AppParam.Instance.TCPClientPort);
-                AppParam.Instance.TCPSocketClient.SocketReceiveMessage += Work.TCPSocketClient_SocketReceiveMessage;
-                Log.WriteRunLog(AppParam.Instance.TCPSocketClient.Connect_server() ? "TCP客户端连接成功" : "TCP客户端连接失败");
+                AppParam.Instance.TCPSocketServer_Cam2 = new ToolKit.CommunicAtion.TCPSocketServer(AppParam.Instance.TCPServerIPAddress_Cam2, AppParam.Instance.TCPServerPort_Cam2);
+                AppParam.Instance.TCPSocketServer_Cam2.SocketReceiveMessage += Work.TCPSocketServer_SocketReceiveMessage2;
+                AppParam.Instance.TCPSocketServer_Cam2.ClientsConnect += Work.TCPSocketServer_ClientsConnect2;
+                Log.WriteRunLog(AppParam.Instance.TCPSocketServer_Cam2.StartListen() ? "Cam2_TCP服务器打开成功" : "Cam2_TCP服务器打开失败");
+
+                AppParam.Instance.TCPSocketServer_Cam3 = new ToolKit.CommunicAtion.TCPSocketServer(AppParam.Instance.TCPServerIPAddress_Cam3, AppParam.Instance.TCPServerPort_Cam3);
+                AppParam.Instance.TCPSocketServer_Cam3.SocketReceiveMessage += Work.TCPSocketServer_SocketReceiveMessage3;
+                AppParam.Instance.TCPSocketServer_Cam3.ClientsConnect += Work.TCPSocketServer_ClientsConnect3;
+                Log.WriteRunLog(AppParam.Instance.TCPSocketServer_Cam3.StartListen() ? "Cam3_TCP服务器打开成功" : "Cam3_TCP服务器打开失败");
+
+                //AppParam.Instance.TCPSocketClient = new ToolKit.CommunicAtion.TCPSocketClient(AppParam.Instance.TCPClientIPAddress, AppParam.Instance.TCPClientPort);
+                //AppParam.Instance.TCPSocketClient.SocketReceiveMessage += Work.TCPSocketClient_SocketReceiveMessage;
+                //Log.WriteRunLog(AppParam.Instance.TCPSocketClient.Connect_server() ? "TCP客户端连接成功" : "TCP客户端连接失败");
 
 
 

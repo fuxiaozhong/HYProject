@@ -4,6 +4,8 @@ using System.IO;
 using System.IO.Ports;
 using System.Runtime.Serialization.Formatters.Binary;
 
+using HalconDotNet;
+
 using HslCommunication;
 using HslCommunication.Profinet.Melsec;
 
@@ -29,9 +31,6 @@ namespace HYProject
     {
         private static AppParam instance;
 
-        //程序运行时创建一个静态只读的进程辅助对象
-        private static readonly object syncRoot = new object();
-
         /// <summary>
         /// 初始化当前类(单例模式)
         /// </summary>
@@ -43,21 +42,20 @@ namespace HYProject
                 if (instance == null)
                 {
                     //在同一个时刻加了锁的那部分程序只有一个线程可以进入
-                    lock (syncRoot)
+
+                    if (instance == null)
                     {
-                        if (instance == null)
+                        instance = new AppParam();
+                        if (!Directory.Exists(instance.Save_Image_Path))
                         {
-                            instance = new AppParam();
-                            if (!Directory.Exists(instance.Save_Image_Path))
-                            {
-                                Directory.CreateDirectory(instance.Save_Image_Path);
-                            }
-                            if (!Directory.Exists(instance.Save_Data_Path))
-                            {
-                                Directory.CreateDirectory(instance.Save_Data_Path);
-                            }
+                            Directory.CreateDirectory(instance.Save_Image_Path);
+                        }
+                        if (!Directory.Exists(instance.Save_Data_Path))
+                        {
+                            Directory.CreateDirectory(instance.Save_Data_Path);
                         }
                     }
+
                 }
                 return instance;
             }
@@ -229,14 +227,41 @@ namespace HYProject
         /// 开发人员密码
         /// </summary>
         internal string DeveloperPassword = "develop";
+
+
+
+
         /// <summary>
-        /// TCPSocketServer IP地址
+        /// TCPSocketServer IP地址  相机1
         /// </summary>
-        internal string TCPServerIPAddress = "127.0.0.1";
+        internal string TCPServerIPAddress_Cam1 = "127.0.0.1";
         /// <summary>
-        /// TCPSocketServer 端口
+        /// TCPSocketServer 端口   相机1
         /// </summary>
-        internal int TCPServerPort = 8080;
+        internal int TCPServerPort_Cam1 = 8500;
+
+        /// <summary>
+        /// TCPSocketServer IP地址   相机2
+        /// </summary>
+        internal string TCPServerIPAddress_Cam2 = "127.0.0.1";
+        /// <summary>
+        /// TCPSocketServer 端口    相机2
+        /// </summary>
+        internal int TCPServerPort_Cam2 = 8501;
+
+        /// <summary>
+        /// TCPSocketServer IP地址    相机3
+        /// </summary>
+        internal string TCPServerIPAddress_Cam3 = "127.0.0.1";
+        /// <summary>
+        /// TCPSocketServer 端口   相机3
+        /// </summary>
+        internal int TCPServerPort_Cam3 = 8502;
+
+
+
+
+
         /// <summary>
         /// TCPSocketClient IP地址
         /// </summary>
@@ -247,16 +272,35 @@ namespace HYProject
         internal int TCPClientPort = 8080;
 
         /// <summary>
-        /// TCPSocketServer 服务器对象
+        /// TCPSocketServer 服务器对象  Cam1
         /// </summary>
         [NonSerialized]
-        internal TCPSocketServer TCPSocketServer;
+        internal TCPSocketServer TCPSocketServer_Cam1;
+
+
+        /// <summary>
+        /// TCPSocketServer 服务器对象  Cam2
+        /// </summary>
+        [NonSerialized]
+        internal TCPSocketServer TCPSocketServer_Cam2;
+
+
+        /// <summary>
+        /// TCPSocketServer 服务器对象  Cam3
+        /// </summary>
+        [NonSerialized]
+        internal TCPSocketServer TCPSocketServer_Cam3;
 
         /// <summary>
         /// TCPSocketClient  客户端对象
         /// </summary>
         [NonSerialized]
         internal TCPSocketClient TCPSocketClient;
+
+        /// <summary>
+        /// 标定数据
+        /// </summary>
+        internal CalibrationData CalibrationData = new CalibrationData();
 
         /// <summary>
         /// 保存对象到文件

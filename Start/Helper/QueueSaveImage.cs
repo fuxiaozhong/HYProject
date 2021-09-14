@@ -33,13 +33,10 @@ namespace HYProject.Helper
                 if (instance == null)
                 {
                     //在同一个时刻加了锁的那部分程序只有一个线程可以进入
-                    lock (syncRoot)
-                    {
                         if (instance == null)
                         {
                             instance = new QueueSaveImage();
                         }
-                    }
                 }
                 return instance;
             }

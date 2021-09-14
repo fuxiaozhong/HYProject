@@ -124,7 +124,7 @@ namespace HYProject.MenuForm
             {
                 //关闭实时
                 Cameras.Instance[item].End_Real_Mode();
-                System.Threading.Thread.Sleep(100);
+                System.Threading.Thread.Sleep(300);
                 //清空事件
                 Cameras.Instance[item].ClearImageProcessEvents();
                 //重新绑定运行事件
@@ -134,7 +134,7 @@ namespace HYProject.MenuForm
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            displayWindow1.Save_Image(displayWindow1.GetImage);
+            displayWindow1.Save_Image(displayWindow1.Image);
         }
     }
 }

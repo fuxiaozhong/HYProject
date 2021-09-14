@@ -44,8 +44,8 @@ namespace ToolKit.HYControls
             // 
             // listView1
             // 
-            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listView1.BackColor = System.Drawing.SystemColors.Control;
             this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -74,12 +74,12 @@ namespace ToolKit.HYControls
             // columnHeader1
             // 
             this.columnHeader1.Text = "时间";
-            this.columnHeader1.Width = 150;
+            this.columnHeader1.Width = 140;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "信息";
-            this.columnHeader2.Width = 350;
+            this.columnHeader2.Width = 200;
             // 
             // toolStrip2
             // 
@@ -144,16 +144,14 @@ namespace ToolKit.HYControls
             this.tsb_error.Text = "错误(0)";
             this.tsb_error.Click += new System.EventHandler(this.Tsb_error_Click);
             // 
-            // HYForm_Log
+            // HYLogs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(648, 247);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.toolStrip2);
-            //this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "HYForm_Log";
-            this.Text = "Form_Log";
+            this.Name = "HYLogs";
+            this.Size = new System.Drawing.Size(648, 247);
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             this.ResumeLayout(false);

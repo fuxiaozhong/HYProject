@@ -18,6 +18,10 @@ namespace HYProject.Helper
                 {
                     Director(AppParam.Instance.Save_Image_Path);
                 }
+                else
+                {
+                    Directory.CreateDirectory(AppParam.Instance.Save_Image_Path);
+                }
                 Thread.Sleep(1000 * 10);//10S检查一次
             }
         }

@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
+using HYProject.Helper;
 using HYProject.MenuForm;
 
 using Application = System.Windows.Forms.Application;
@@ -44,6 +45,7 @@ namespace HYProject
             Application.SetCompatibleTextRenderingDefault(false);
             MainForm.Instance.ShowIcon = true;
             Log.WriteRunLog(DateTime.Now.ToString() + " - 程序启动"); ;
+
             string proc = Process.GetCurrentProcess().ProcessName;
             Process[] processes = Process.GetProcessesByName(proc);
             if (processes.Length <= 1)
