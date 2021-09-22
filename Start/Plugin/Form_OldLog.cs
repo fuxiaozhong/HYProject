@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HYProject.Plugin
@@ -39,12 +40,12 @@ namespace HYProject.Plugin
 
         private void ListBox1_DoubleClick(object sender, EventArgs e)
         {
-            if (listBox1.SelectedItems.Count > 0)
-            {
-                string name = (string)listBox1.SelectedItems[0];
-                string LogPath = System.Windows.Forms.Application.StartupPath + "\\Logs\\All\\" + name;
-                dataGridView1.DataSource = OpenCSV(LogPath);
-            }
+                if (listBox1.SelectedItems.Count > 0)
+                {
+                    string name = (string)listBox1.SelectedItems[0];
+                    string LogPath = System.Windows.Forms.Application.StartupPath + "\\Logs\\All\\" + name;
+                    dataGridView1.DataSource = OpenCSV(LogPath);
+                }
         }
         public static DataTable OpenCSV(string filePath)//从csv读取数据返回table
         {
@@ -91,10 +92,10 @@ namespace HYProject.Plugin
                         }
                         dt.Rows.Add(dr);
                     }
-                    catch 
+                    catch
                     {
                     }
-                    
+
                 }
             }
             if (aryLine != null && aryLine.Length > 0)

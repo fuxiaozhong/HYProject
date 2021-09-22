@@ -29,12 +29,11 @@ namespace HYProject.Plugin
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_TCPSocketSetting));
             this.label1 = new System.Windows.Forms.Label();
             this.text_Cam1_TCPIP = new ToolKit.MaterialSkin.Controls.MaterialSingleLineTextField();
             this.text_Cam1_TCPport = new ToolKit.MaterialSkin.Controls.MaterialSingleLineTextField();
             this.label2 = new System.Windows.Forms.Label();
-            this.hslButton1 = new HslControls.HslButton();
-            this.hslButton2 = new HslControls.HslButton();
             this.text_Cam2_TCPport = new ToolKit.MaterialSkin.Controls.MaterialSingleLineTextField();
             this.label3 = new System.Windows.Forms.Label();
             this.text_Cam2_TCPIP = new ToolKit.MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -43,6 +42,8 @@ namespace HYProject.Plugin
             this.label5 = new System.Windows.Forms.Label();
             this.text_Cam3_TCPIP = new ToolKit.MaterialSkin.Controls.MaterialSingleLineTextField();
             this.label6 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -98,30 +99,6 @@ namespace HYProject.Plugin
             this.label2.Size = new System.Drawing.Size(120, 16);
             this.label2.TabIndex = 7;
             this.label2.Text = "Cam1 TCP Port:";
-            // 
-            // hslButton1
-            // 
-            this.hslButton1.CustomerInformation = null;
-            this.hslButton1.ForeColor = System.Drawing.Color.Black;
-            this.hslButton1.Location = new System.Drawing.Point(31, 237);
-            this.hslButton1.Name = "hslButton1";
-            this.hslButton1.OriginalColor = System.Drawing.Color.Teal;
-            this.hslButton1.Size = new System.Drawing.Size(160, 40);
-            this.hslButton1.TabIndex = 10;
-            this.hslButton1.Text = "保存";
-            this.hslButton1.Click += new System.EventHandler(this.HslButton1_Click);
-            // 
-            // hslButton2
-            // 
-            this.hslButton2.CustomerInformation = null;
-            this.hslButton2.ForeColor = System.Drawing.Color.Black;
-            this.hslButton2.Location = new System.Drawing.Point(214, 237);
-            this.hslButton2.Name = "hslButton2";
-            this.hslButton2.OriginalColor = System.Drawing.Color.Teal;
-            this.hslButton2.Size = new System.Drawing.Size(160, 40);
-            this.hslButton2.TabIndex = 11;
-            this.hslButton2.Text = "关闭";
-            this.hslButton2.Click += new System.EventHandler(this.HslButton2_Click);
             // 
             // text_Cam2_TCPport
             // 
@@ -231,9 +208,41 @@ namespace HYProject.Plugin
             this.label6.TabIndex = 16;
             this.label6.Text = "Cam3 TCP IP:";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Teal;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(216, 237);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(160, 40);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "取    消";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.HslButton2_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Teal;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(31, 237);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(160, 40);
+            this.button2.TabIndex = 21;
+            this.button2.Text = "保    存";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.HslButton1_Click);
+            // 
             // Form_TCPSocketSetting
             // 
             this.ClientSize = new System.Drawing.Size(402, 294);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.text_Cam3_TCPport);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.text_Cam3_TCPIP);
@@ -242,8 +251,6 @@ namespace HYProject.Plugin
             this.Controls.Add(this.label3);
             this.Controls.Add(this.text_Cam2_TCPIP);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.hslButton2);
-            this.Controls.Add(this.hslButton1);
             this.Controls.Add(this.text_Cam1_TCPport);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.text_Cam1_TCPIP);
@@ -255,14 +262,14 @@ namespace HYProject.Plugin
             this.HideMinButtom = false;
             this.HideTitle = true;
             this.HideUserButtom = false;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconImage = ((System.Drawing.Image)(resources.GetObject("$this.IconImage")));
             this.Name = "Form_TCPSocketSetting";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.text_Cam1_TCPIP, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.text_Cam1_TCPport, 0);
-            this.Controls.SetChildIndex(this.hslButton1, 0);
-            this.Controls.SetChildIndex(this.hslButton2, 0);
             this.Controls.SetChildIndex(this.label4, 0);
             this.Controls.SetChildIndex(this.text_Cam2_TCPIP, 0);
             this.Controls.SetChildIndex(this.label3, 0);
@@ -271,6 +278,8 @@ namespace HYProject.Plugin
             this.Controls.SetChildIndex(this.text_Cam3_TCPIP, 0);
             this.Controls.SetChildIndex(this.label5, 0);
             this.Controls.SetChildIndex(this.text_Cam3_TCPport, 0);
+            this.Controls.SetChildIndex(this.button1, 0);
+            this.Controls.SetChildIndex(this.button2, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -282,8 +291,6 @@ namespace HYProject.Plugin
         private ToolKit.MaterialSkin.Controls.MaterialSingleLineTextField text_Cam1_TCPIP;
         private ToolKit.MaterialSkin.Controls.MaterialSingleLineTextField text_Cam1_TCPport;
         private System.Windows.Forms.Label label2;
-        private HslControls.HslButton hslButton1;
-        private HslControls.HslButton hslButton2;
         private ToolKit.MaterialSkin.Controls.MaterialSingleLineTextField text_Cam2_TCPport;
         private System.Windows.Forms.Label label3;
         private ToolKit.MaterialSkin.Controls.MaterialSingleLineTextField text_Cam2_TCPIP;
@@ -292,5 +299,7 @@ namespace HYProject.Plugin
         private System.Windows.Forms.Label label5;
         private ToolKit.MaterialSkin.Controls.MaterialSingleLineTextField text_Cam3_TCPIP;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

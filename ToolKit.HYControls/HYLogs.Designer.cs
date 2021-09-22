@@ -30,56 +30,17 @@ namespace ToolKit.HYControls
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HYLogs));
-            this.listView1 = new ToolKit.HYControls.HYListView();
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.tsb_tip = new System.Windows.Forms.ToolStripButton();
             this.tsb_warn = new System.Windows.Forms.ToolStripButton();
             this.tsb_clear = new System.Windows.Forms.ToolStripButton();
             this.tsb_error = new System.Windows.Forms.ToolStripButton();
+            this.listView1 = new ToolKit.HYControls.HYListView();
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // listView1
-            // 
-            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listView1.BackColor = System.Drawing.SystemColors.Control;
-            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader3,
-            this.columnHeader1,
-            this.columnHeader2});
-            this.listView1.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.listView1.FullRowSelect = true;
-            this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.listView1.HideSelection = false;
-            this.listView1.LabelWrap = false;
-            this.listView1.Location = new System.Drawing.Point(0, 22);
-            this.listView1.Margin = new System.Windows.Forms.Padding(0);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(648, 226);
-            this.listView1.TabIndex = 6;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.DoubleClick += new System.EventHandler(this.ListView1_DoubleClick);
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "序号";
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "时间";
-            this.columnHeader1.Width = 140;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "信息";
-            this.columnHeader2.Width = 200;
             // 
             // toolStrip2
             // 
@@ -143,6 +104,46 @@ namespace ToolKit.HYControls
             this.tsb_error.Size = new System.Drawing.Size(67, 22);
             this.tsb_error.Text = "错误(0)";
             this.tsb_error.Click += new System.EventHandler(this.Tsb_error_Click);
+            // 
+            // listView1
+            // 
+            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listView1.BackColor = System.Drawing.SystemColors.Control;
+            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader3,
+            this.columnHeader1,
+            this.columnHeader2});
+            this.listView1.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.listView1.FullRowSelect = true;
+            this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.listView1.HideSelection = false;
+            this.listView1.LabelWrap = false;
+            this.listView1.Location = new System.Drawing.Point(0, 22);
+            this.listView1.Margin = new System.Windows.Forms.Padding(0);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(648, 226);
+            this.listView1.TabIndex = 6;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.DoubleClick += new System.EventHandler(this.ListView1_DoubleClick);
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "序号";
+            this.columnHeader3.Width = 30;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "时间";
+            this.columnHeader1.Width = 100;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "信息";
+            this.columnHeader2.Width = 350;
             // 
             // HYLogs
             // 

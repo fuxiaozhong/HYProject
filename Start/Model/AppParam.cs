@@ -76,12 +76,12 @@ namespace HYProject
         /// <summary>
         /// 图像保存路径
         /// </summary>
-        internal string Save_Image_Path = System.Windows.Forms.Application.StartupPath + "\\Images";
+        internal string Save_Image_Path = "Images";
 
         /// <summary>
         /// 产品库
         /// </summary>
-        internal string ProductLibrary = System.Windows.Forms.Application.StartupPath + "\\ProductLibrary";
+        internal string ProductLibrary = "ProductLibrary";
 
         /// <summary>
         /// 图像保存天数
@@ -91,7 +91,7 @@ namespace HYProject
         /// <summary>
         /// 数据保存路径
         /// </summary>
-        internal string Save_Data_Path = System.Windows.Forms.Application.StartupPath + "\\Data";
+        internal string Save_Data_Path = "Data";
 
         /// <summary>
         /// 桌面快捷方式
@@ -297,10 +297,14 @@ namespace HYProject
         [NonSerialized]
         internal TCPSocketClient TCPSocketClient;
 
+
         /// <summary>
-        /// 标定数据
+        /// 产品数据
         /// </summary>
-        internal CalibrationData CalibrationData = new CalibrationData();
+        internal Product product = new Product();
+        internal bool Robot_Calibration_State;
+
+
 
         /// <summary>
         /// 保存对象到文件

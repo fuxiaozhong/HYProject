@@ -43,18 +43,18 @@ namespace HYProject
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("华文新魏", 35F);
-            this.label1.Location = new System.Drawing.Point(94, 94);
+            this.label1.Location = new System.Drawing.Point(117, 102);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(396, 96);
+            this.label1.Size = new System.Drawing.Size(390, 96);
             this.label1.TabIndex = 0;
-            this.label1.Text = "深圳市恒越自动化\r\n科技有限公司";
+            this.label1.Text = "深圳市图欣智能\r\n        科技有限公司";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("华文新魏", 30F);
-            this.label2.Location = new System.Drawing.Point(399, 211);
+            this.label2.Location = new System.Drawing.Point(411, 240);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(177, 40);
             this.label2.TabIndex = 1;
@@ -99,7 +99,7 @@ namespace HYProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(600, 300);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
@@ -112,7 +112,6 @@ namespace HYProject
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Welcome";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.Welcome_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

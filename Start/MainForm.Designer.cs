@@ -177,8 +177,8 @@ namespace HYProject
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.panel_Data, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.panel_Log, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -195,10 +195,10 @@ namespace HYProject
             this.panel_Data.Controls.Add(this.tableLayoutPanel1);
             this.panel_Data.Controls.Add(this.splitter1);
             this.panel_Data.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_Data.Location = new System.Drawing.Point(459, 0);
+            this.panel_Data.Location = new System.Drawing.Point(574, 0);
             this.panel_Data.Margin = new System.Windows.Forms.Padding(0);
             this.panel_Data.Name = "panel_Data";
-            this.panel_Data.Size = new System.Drawing.Size(689, 109);
+            this.panel_Data.Size = new System.Drawing.Size(574, 109);
             this.panel_Data.TabIndex = 1;
             // 
             // tableLayoutPanel1
@@ -215,7 +215,7 @@ namespace HYProject
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(688, 109);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(573, 109);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // groupBox3
@@ -223,11 +223,11 @@ namespace HYProject
             this.groupBox3.Controls.Add(this.tableLayoutPanel5);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.ForeColor = System.Drawing.Color.Teal;
-            this.groupBox3.Location = new System.Drawing.Point(458, 0);
+            this.groupBox3.Location = new System.Drawing.Point(382, 0);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(0);
-            this.groupBox3.Size = new System.Drawing.Size(230, 109);
+            this.groupBox3.Size = new System.Drawing.Size(191, 109);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "相机3";
@@ -260,17 +260,17 @@ namespace HYProject
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(230, 95);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(191, 95);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // label_Cam3_TOTAL1
             // 
             this.label_Cam3_TOTAL1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Cam3_TOTAL1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_Cam3_TOTAL1.ForeColor = System.Drawing.Color.Orange;
-            this.label_Cam3_TOTAL1.Location = new System.Drawing.Point(61, 63);
+            this.label_Cam3_TOTAL1.ForeColor = System.Drawing.Color.Blue;
+            this.label_Cam3_TOTAL1.Location = new System.Drawing.Point(51, 63);
             this.label_Cam3_TOTAL1.Name = "label_Cam3_TOTAL1";
-            this.label_Cam3_TOTAL1.Size = new System.Drawing.Size(50, 31);
+            this.label_Cam3_TOTAL1.Size = new System.Drawing.Size(40, 31);
             this.label_Cam3_TOTAL1.TabIndex = 11;
             this.label_Cam3_TOTAL1.Text = "0";
             this.label_Cam3_TOTAL1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -279,10 +279,10 @@ namespace HYProject
             // 
             this.label_Cam3_TOTAL2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Cam3_TOTAL2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_Cam3_TOTAL2.ForeColor = System.Drawing.Color.Orange;
-            this.label_Cam3_TOTAL2.Location = new System.Drawing.Point(175, 63);
+            this.label_Cam3_TOTAL2.ForeColor = System.Drawing.Color.Blue;
+            this.label_Cam3_TOTAL2.Location = new System.Drawing.Point(145, 63);
             this.label_Cam3_TOTAL2.Name = "label_Cam3_TOTAL2";
-            this.label_Cam3_TOTAL2.Size = new System.Drawing.Size(51, 31);
+            this.label_Cam3_TOTAL2.Size = new System.Drawing.Size(42, 31);
             this.label_Cam3_TOTAL2.TabIndex = 8;
             this.label_Cam3_TOTAL2.Text = "0";
             this.label_Cam3_TOTAL2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -290,25 +290,27 @@ namespace HYProject
             // label27
             // 
             this.label27.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label27.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label27.ForeColor = System.Drawing.Color.Orange;
-            this.label27.Location = new System.Drawing.Point(4, 63);
+            this.label27.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
+            this.label27.ForeColor = System.Drawing.Color.Blue;
+            this.label27.Location = new System.Drawing.Point(1, 63);
+            this.label27.Margin = new System.Windows.Forms.Padding(0);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(50, 31);
+            this.label27.Size = new System.Drawing.Size(46, 31);
             this.label27.TabIndex = 5;
-            this.label27.Text = "TOTAL:";
+            this.label27.Text = "TOTAL";
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label28
             // 
             this.label28.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label28.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label28.ForeColor = System.Drawing.Color.Orange;
-            this.label28.Location = new System.Drawing.Point(118, 63);
+            this.label28.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
+            this.label28.ForeColor = System.Drawing.Color.Blue;
+            this.label28.Location = new System.Drawing.Point(95, 63);
+            this.label28.Margin = new System.Windows.Forms.Padding(0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(50, 31);
+            this.label28.Size = new System.Drawing.Size(46, 31);
             this.label28.TabIndex = 2;
-            this.label28.Text = "TOTAL:";
+            this.label28.Text = "TOTAL";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label_Cam3_NG1
@@ -316,9 +318,9 @@ namespace HYProject
             this.label_Cam3_NG1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Cam3_NG1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label_Cam3_NG1.ForeColor = System.Drawing.Color.Red;
-            this.label_Cam3_NG1.Location = new System.Drawing.Point(61, 32);
+            this.label_Cam3_NG1.Location = new System.Drawing.Point(51, 32);
             this.label_Cam3_NG1.Name = "label_Cam3_NG1";
-            this.label_Cam3_NG1.Size = new System.Drawing.Size(50, 30);
+            this.label_Cam3_NG1.Size = new System.Drawing.Size(40, 30);
             this.label_Cam3_NG1.TabIndex = 10;
             this.label_Cam3_NG1.Text = "0";
             this.label_Cam3_NG1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -328,9 +330,9 @@ namespace HYProject
             this.label_Cam3_NG2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Cam3_NG2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label_Cam3_NG2.ForeColor = System.Drawing.Color.Red;
-            this.label_Cam3_NG2.Location = new System.Drawing.Point(175, 32);
+            this.label_Cam3_NG2.Location = new System.Drawing.Point(145, 32);
             this.label_Cam3_NG2.Name = "label_Cam3_NG2";
-            this.label_Cam3_NG2.Size = new System.Drawing.Size(51, 30);
+            this.label_Cam3_NG2.Size = new System.Drawing.Size(42, 30);
             this.label_Cam3_NG2.TabIndex = 7;
             this.label_Cam3_NG2.Text = "0";
             this.label_Cam3_NG2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -342,9 +344,9 @@ namespace HYProject
             this.label31.ForeColor = System.Drawing.Color.Green;
             this.label31.Location = new System.Drawing.Point(4, 1);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(50, 30);
+            this.label31.Size = new System.Drawing.Size(40, 30);
             this.label31.TabIndex = 0;
-            this.label31.Text = "OK:";
+            this.label31.Text = "OK";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label32
@@ -352,11 +354,11 @@ namespace HYProject
             this.label32.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label32.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label32.ForeColor = System.Drawing.Color.Red;
-            this.label32.Location = new System.Drawing.Point(118, 32);
+            this.label32.Location = new System.Drawing.Point(98, 32);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(50, 30);
+            this.label32.Size = new System.Drawing.Size(40, 30);
             this.label32.TabIndex = 1;
-            this.label32.Text = "NG:";
+            this.label32.Text = "NG";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label33
@@ -366,9 +368,9 @@ namespace HYProject
             this.label33.ForeColor = System.Drawing.Color.Red;
             this.label33.Location = new System.Drawing.Point(4, 32);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(50, 30);
+            this.label33.Size = new System.Drawing.Size(40, 30);
             this.label33.TabIndex = 4;
-            this.label33.Text = "NG:";
+            this.label33.Text = "NG";
             this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label_Cam3_OK2
@@ -376,9 +378,9 @@ namespace HYProject
             this.label_Cam3_OK2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Cam3_OK2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label_Cam3_OK2.ForeColor = System.Drawing.Color.Green;
-            this.label_Cam3_OK2.Location = new System.Drawing.Point(175, 1);
+            this.label_Cam3_OK2.Location = new System.Drawing.Point(145, 1);
             this.label_Cam3_OK2.Name = "label_Cam3_OK2";
-            this.label_Cam3_OK2.Size = new System.Drawing.Size(51, 30);
+            this.label_Cam3_OK2.Size = new System.Drawing.Size(42, 30);
             this.label_Cam3_OK2.TabIndex = 9;
             this.label_Cam3_OK2.Text = "0";
             this.label_Cam3_OK2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -388,9 +390,9 @@ namespace HYProject
             this.label_Cam3_OK1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Cam3_OK1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label_Cam3_OK1.ForeColor = System.Drawing.Color.Green;
-            this.label_Cam3_OK1.Location = new System.Drawing.Point(61, 1);
+            this.label_Cam3_OK1.Location = new System.Drawing.Point(51, 1);
             this.label_Cam3_OK1.Name = "label_Cam3_OK1";
-            this.label_Cam3_OK1.Size = new System.Drawing.Size(50, 30);
+            this.label_Cam3_OK1.Size = new System.Drawing.Size(40, 30);
             this.label_Cam3_OK1.TabIndex = 6;
             this.label_Cam3_OK1.Text = "0";
             this.label_Cam3_OK1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -400,11 +402,11 @@ namespace HYProject
             this.label36.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label36.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label36.ForeColor = System.Drawing.Color.Green;
-            this.label36.Location = new System.Drawing.Point(118, 1);
+            this.label36.Location = new System.Drawing.Point(98, 1);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(50, 30);
+            this.label36.Size = new System.Drawing.Size(40, 30);
             this.label36.TabIndex = 3;
-            this.label36.Text = "OK:";
+            this.label36.Text = "OK";
             this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // groupBox2
@@ -412,11 +414,11 @@ namespace HYProject
             this.groupBox2.Controls.Add(this.tableLayoutPanel4);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.ForeColor = System.Drawing.Color.Teal;
-            this.groupBox2.Location = new System.Drawing.Point(229, 0);
+            this.groupBox2.Location = new System.Drawing.Point(191, 0);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(0);
-            this.groupBox2.Size = new System.Drawing.Size(229, 109);
+            this.groupBox2.Size = new System.Drawing.Size(191, 109);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "相机2";
@@ -449,17 +451,17 @@ namespace HYProject
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(229, 95);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(191, 95);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // label_Cam2_TOTAL1
             // 
             this.label_Cam2_TOTAL1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Cam2_TOTAL1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_Cam2_TOTAL1.ForeColor = System.Drawing.Color.Orange;
-            this.label_Cam2_TOTAL1.Location = new System.Drawing.Point(61, 63);
+            this.label_Cam2_TOTAL1.ForeColor = System.Drawing.Color.Blue;
+            this.label_Cam2_TOTAL1.Location = new System.Drawing.Point(51, 63);
             this.label_Cam2_TOTAL1.Name = "label_Cam2_TOTAL1";
-            this.label_Cam2_TOTAL1.Size = new System.Drawing.Size(50, 31);
+            this.label_Cam2_TOTAL1.Size = new System.Drawing.Size(40, 31);
             this.label_Cam2_TOTAL1.TabIndex = 11;
             this.label_Cam2_TOTAL1.Text = "0";
             this.label_Cam2_TOTAL1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -468,10 +470,10 @@ namespace HYProject
             // 
             this.label_Cam2_TOTAL2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Cam2_TOTAL2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_Cam2_TOTAL2.ForeColor = System.Drawing.Color.Orange;
-            this.label_Cam2_TOTAL2.Location = new System.Drawing.Point(175, 63);
+            this.label_Cam2_TOTAL2.ForeColor = System.Drawing.Color.Blue;
+            this.label_Cam2_TOTAL2.Location = new System.Drawing.Point(145, 63);
             this.label_Cam2_TOTAL2.Name = "label_Cam2_TOTAL2";
-            this.label_Cam2_TOTAL2.Size = new System.Drawing.Size(50, 31);
+            this.label_Cam2_TOTAL2.Size = new System.Drawing.Size(42, 31);
             this.label_Cam2_TOTAL2.TabIndex = 8;
             this.label_Cam2_TOTAL2.Text = "0";
             this.label_Cam2_TOTAL2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -479,25 +481,27 @@ namespace HYProject
             // label15
             // 
             this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label15.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label15.ForeColor = System.Drawing.Color.Orange;
-            this.label15.Location = new System.Drawing.Point(4, 63);
+            this.label15.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
+            this.label15.ForeColor = System.Drawing.Color.Blue;
+            this.label15.Location = new System.Drawing.Point(1, 63);
+            this.label15.Margin = new System.Windows.Forms.Padding(0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(50, 31);
+            this.label15.Size = new System.Drawing.Size(46, 31);
             this.label15.TabIndex = 5;
-            this.label15.Text = "TOTAL:";
+            this.label15.Text = "TOTAL";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label16
             // 
             this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label16.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label16.ForeColor = System.Drawing.Color.Orange;
-            this.label16.Location = new System.Drawing.Point(118, 63);
+            this.label16.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
+            this.label16.ForeColor = System.Drawing.Color.Blue;
+            this.label16.Location = new System.Drawing.Point(95, 63);
+            this.label16.Margin = new System.Windows.Forms.Padding(0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(50, 31);
+            this.label16.Size = new System.Drawing.Size(46, 31);
             this.label16.TabIndex = 2;
-            this.label16.Text = "TOTAL:";
+            this.label16.Text = "TOTAL";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label_Cam2_NG1
@@ -505,9 +509,9 @@ namespace HYProject
             this.label_Cam2_NG1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Cam2_NG1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label_Cam2_NG1.ForeColor = System.Drawing.Color.Red;
-            this.label_Cam2_NG1.Location = new System.Drawing.Point(61, 32);
+            this.label_Cam2_NG1.Location = new System.Drawing.Point(51, 32);
             this.label_Cam2_NG1.Name = "label_Cam2_NG1";
-            this.label_Cam2_NG1.Size = new System.Drawing.Size(50, 30);
+            this.label_Cam2_NG1.Size = new System.Drawing.Size(40, 30);
             this.label_Cam2_NG1.TabIndex = 10;
             this.label_Cam2_NG1.Text = "0";
             this.label_Cam2_NG1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -517,9 +521,9 @@ namespace HYProject
             this.label_Cam2_NG2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Cam2_NG2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label_Cam2_NG2.ForeColor = System.Drawing.Color.Red;
-            this.label_Cam2_NG2.Location = new System.Drawing.Point(175, 32);
+            this.label_Cam2_NG2.Location = new System.Drawing.Point(145, 32);
             this.label_Cam2_NG2.Name = "label_Cam2_NG2";
-            this.label_Cam2_NG2.Size = new System.Drawing.Size(50, 30);
+            this.label_Cam2_NG2.Size = new System.Drawing.Size(42, 30);
             this.label_Cam2_NG2.TabIndex = 7;
             this.label_Cam2_NG2.Text = "0";
             this.label_Cam2_NG2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -531,9 +535,9 @@ namespace HYProject
             this.label19.ForeColor = System.Drawing.Color.Green;
             this.label19.Location = new System.Drawing.Point(4, 1);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(50, 30);
+            this.label19.Size = new System.Drawing.Size(40, 30);
             this.label19.TabIndex = 0;
-            this.label19.Text = "OK:";
+            this.label19.Text = "OK";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label20
@@ -541,11 +545,11 @@ namespace HYProject
             this.label20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label20.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label20.ForeColor = System.Drawing.Color.Red;
-            this.label20.Location = new System.Drawing.Point(118, 32);
+            this.label20.Location = new System.Drawing.Point(98, 32);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(50, 30);
+            this.label20.Size = new System.Drawing.Size(40, 30);
             this.label20.TabIndex = 1;
-            this.label20.Text = "NG:";
+            this.label20.Text = "NG";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label21
@@ -555,9 +559,9 @@ namespace HYProject
             this.label21.ForeColor = System.Drawing.Color.Red;
             this.label21.Location = new System.Drawing.Point(4, 32);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(50, 30);
+            this.label21.Size = new System.Drawing.Size(40, 30);
             this.label21.TabIndex = 4;
-            this.label21.Text = "NG:";
+            this.label21.Text = "NG";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label_Cam2_OK2
@@ -565,9 +569,9 @@ namespace HYProject
             this.label_Cam2_OK2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Cam2_OK2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label_Cam2_OK2.ForeColor = System.Drawing.Color.Green;
-            this.label_Cam2_OK2.Location = new System.Drawing.Point(175, 1);
+            this.label_Cam2_OK2.Location = new System.Drawing.Point(145, 1);
             this.label_Cam2_OK2.Name = "label_Cam2_OK2";
-            this.label_Cam2_OK2.Size = new System.Drawing.Size(50, 30);
+            this.label_Cam2_OK2.Size = new System.Drawing.Size(42, 30);
             this.label_Cam2_OK2.TabIndex = 9;
             this.label_Cam2_OK2.Text = "0";
             this.label_Cam2_OK2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -577,9 +581,9 @@ namespace HYProject
             this.label_Cam2_OK1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Cam2_OK1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label_Cam2_OK1.ForeColor = System.Drawing.Color.Green;
-            this.label_Cam2_OK1.Location = new System.Drawing.Point(61, 1);
+            this.label_Cam2_OK1.Location = new System.Drawing.Point(51, 1);
             this.label_Cam2_OK1.Name = "label_Cam2_OK1";
-            this.label_Cam2_OK1.Size = new System.Drawing.Size(50, 30);
+            this.label_Cam2_OK1.Size = new System.Drawing.Size(40, 30);
             this.label_Cam2_OK1.TabIndex = 6;
             this.label_Cam2_OK1.Text = "0";
             this.label_Cam2_OK1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -589,11 +593,11 @@ namespace HYProject
             this.label24.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label24.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label24.ForeColor = System.Drawing.Color.Green;
-            this.label24.Location = new System.Drawing.Point(118, 1);
+            this.label24.Location = new System.Drawing.Point(98, 1);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(50, 30);
+            this.label24.Size = new System.Drawing.Size(40, 30);
             this.label24.TabIndex = 3;
-            this.label24.Text = "OK:";
+            this.label24.Text = "OK";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // groupBox1
@@ -605,7 +609,7 @@ namespace HYProject
             this.groupBox1.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(0);
-            this.groupBox1.Size = new System.Drawing.Size(229, 109);
+            this.groupBox1.Size = new System.Drawing.Size(191, 109);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "相机1";
@@ -638,17 +642,17 @@ namespace HYProject
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(229, 95);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(191, 95);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // label_Cam1_TOTAL1
             // 
             this.label_Cam1_TOTAL1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Cam1_TOTAL1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_Cam1_TOTAL1.ForeColor = System.Drawing.Color.Orange;
-            this.label_Cam1_TOTAL1.Location = new System.Drawing.Point(61, 63);
+            this.label_Cam1_TOTAL1.ForeColor = System.Drawing.Color.Blue;
+            this.label_Cam1_TOTAL1.Location = new System.Drawing.Point(51, 63);
             this.label_Cam1_TOTAL1.Name = "label_Cam1_TOTAL1";
-            this.label_Cam1_TOTAL1.Size = new System.Drawing.Size(50, 31);
+            this.label_Cam1_TOTAL1.Size = new System.Drawing.Size(40, 31);
             this.label_Cam1_TOTAL1.TabIndex = 11;
             this.label_Cam1_TOTAL1.Text = "0";
             this.label_Cam1_TOTAL1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -657,10 +661,10 @@ namespace HYProject
             // 
             this.label_Cam1_TOTAL2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Cam1_TOTAL2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_Cam1_TOTAL2.ForeColor = System.Drawing.Color.Orange;
-            this.label_Cam1_TOTAL2.Location = new System.Drawing.Point(175, 63);
+            this.label_Cam1_TOTAL2.ForeColor = System.Drawing.Color.Blue;
+            this.label_Cam1_TOTAL2.Location = new System.Drawing.Point(145, 63);
             this.label_Cam1_TOTAL2.Name = "label_Cam1_TOTAL2";
-            this.label_Cam1_TOTAL2.Size = new System.Drawing.Size(50, 31);
+            this.label_Cam1_TOTAL2.Size = new System.Drawing.Size(42, 31);
             this.label_Cam1_TOTAL2.TabIndex = 8;
             this.label_Cam1_TOTAL2.Text = "0";
             this.label_Cam1_TOTAL2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -668,25 +672,27 @@ namespace HYProject
             // label4
             // 
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.ForeColor = System.Drawing.Color.Orange;
-            this.label4.Location = new System.Drawing.Point(4, 63);
+            this.label4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.Blue;
+            this.label4.Location = new System.Drawing.Point(1, 63);
+            this.label4.Margin = new System.Windows.Forms.Padding(0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 31);
+            this.label4.Size = new System.Drawing.Size(46, 31);
             this.label4.TabIndex = 5;
-            this.label4.Text = "TOTAL:";
+            this.label4.Text = "TOTAL";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label3
             // 
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.ForeColor = System.Drawing.Color.Orange;
-            this.label3.Location = new System.Drawing.Point(118, 63);
+            this.label3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.Blue;
+            this.label3.Location = new System.Drawing.Point(95, 63);
+            this.label3.Margin = new System.Windows.Forms.Padding(0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 31);
+            this.label3.Size = new System.Drawing.Size(46, 31);
             this.label3.TabIndex = 2;
-            this.label3.Text = "TOTAL:";
+            this.label3.Text = "TOTAL";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label_Cam1_NG1
@@ -694,9 +700,9 @@ namespace HYProject
             this.label_Cam1_NG1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Cam1_NG1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label_Cam1_NG1.ForeColor = System.Drawing.Color.Red;
-            this.label_Cam1_NG1.Location = new System.Drawing.Point(61, 32);
+            this.label_Cam1_NG1.Location = new System.Drawing.Point(51, 32);
             this.label_Cam1_NG1.Name = "label_Cam1_NG1";
-            this.label_Cam1_NG1.Size = new System.Drawing.Size(50, 30);
+            this.label_Cam1_NG1.Size = new System.Drawing.Size(40, 30);
             this.label_Cam1_NG1.TabIndex = 10;
             this.label_Cam1_NG1.Text = "0";
             this.label_Cam1_NG1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -706,9 +712,9 @@ namespace HYProject
             this.label_Cam1_NG2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Cam1_NG2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label_Cam1_NG2.ForeColor = System.Drawing.Color.Red;
-            this.label_Cam1_NG2.Location = new System.Drawing.Point(175, 32);
+            this.label_Cam1_NG2.Location = new System.Drawing.Point(145, 32);
             this.label_Cam1_NG2.Name = "label_Cam1_NG2";
-            this.label_Cam1_NG2.Size = new System.Drawing.Size(50, 30);
+            this.label_Cam1_NG2.Size = new System.Drawing.Size(42, 30);
             this.label_Cam1_NG2.TabIndex = 7;
             this.label_Cam1_NG2.Text = "0";
             this.label_Cam1_NG2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -720,9 +726,9 @@ namespace HYProject
             this.label1.ForeColor = System.Drawing.Color.Green;
             this.label1.Location = new System.Drawing.Point(4, 1);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 30);
+            this.label1.Size = new System.Drawing.Size(40, 30);
             this.label1.TabIndex = 0;
-            this.label1.Text = "OK:";
+            this.label1.Text = "OK";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label2
@@ -730,11 +736,11 @@ namespace HYProject
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(118, 32);
+            this.label2.Location = new System.Drawing.Point(98, 32);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 30);
+            this.label2.Size = new System.Drawing.Size(40, 30);
             this.label2.TabIndex = 1;
-            this.label2.Text = "NG:";
+            this.label2.Text = "NG";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label5
@@ -744,9 +750,9 @@ namespace HYProject
             this.label5.ForeColor = System.Drawing.Color.Red;
             this.label5.Location = new System.Drawing.Point(4, 32);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 30);
+            this.label5.Size = new System.Drawing.Size(40, 30);
             this.label5.TabIndex = 4;
-            this.label5.Text = "NG:";
+            this.label5.Text = "NG";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label_Cam1_OK2
@@ -754,9 +760,9 @@ namespace HYProject
             this.label_Cam1_OK2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Cam1_OK2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label_Cam1_OK2.ForeColor = System.Drawing.Color.Green;
-            this.label_Cam1_OK2.Location = new System.Drawing.Point(175, 1);
+            this.label_Cam1_OK2.Location = new System.Drawing.Point(145, 1);
             this.label_Cam1_OK2.Name = "label_Cam1_OK2";
-            this.label_Cam1_OK2.Size = new System.Drawing.Size(50, 30);
+            this.label_Cam1_OK2.Size = new System.Drawing.Size(42, 30);
             this.label_Cam1_OK2.TabIndex = 9;
             this.label_Cam1_OK2.Text = "0";
             this.label_Cam1_OK2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -766,9 +772,9 @@ namespace HYProject
             this.label_Cam1_OK1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Cam1_OK1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label_Cam1_OK1.ForeColor = System.Drawing.Color.Green;
-            this.label_Cam1_OK1.Location = new System.Drawing.Point(61, 1);
+            this.label_Cam1_OK1.Location = new System.Drawing.Point(51, 1);
             this.label_Cam1_OK1.Name = "label_Cam1_OK1";
-            this.label_Cam1_OK1.Size = new System.Drawing.Size(50, 30);
+            this.label_Cam1_OK1.Size = new System.Drawing.Size(40, 30);
             this.label_Cam1_OK1.TabIndex = 6;
             this.label_Cam1_OK1.Text = "0";
             this.label_Cam1_OK1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -778,11 +784,11 @@ namespace HYProject
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label6.ForeColor = System.Drawing.Color.Green;
-            this.label6.Location = new System.Drawing.Point(118, 1);
+            this.label6.Location = new System.Drawing.Point(98, 1);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 30);
+            this.label6.Size = new System.Drawing.Size(40, 30);
             this.label6.TabIndex = 3;
-            this.label6.Text = "OK:";
+            this.label6.Text = "OK";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // splitter1
@@ -801,7 +807,7 @@ namespace HYProject
             this.panel_Log.Location = new System.Drawing.Point(0, 0);
             this.panel_Log.Margin = new System.Windows.Forms.Padding(0);
             this.panel_Log.Name = "panel_Log";
-            this.panel_Log.Size = new System.Drawing.Size(459, 109);
+            this.panel_Log.Size = new System.Drawing.Size(574, 109);
             this.panel_Log.TabIndex = 2;
             this.toolTip1.SetToolTip(this.panel_Log, "日志");
             // 
@@ -820,13 +826,13 @@ namespace HYProject
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(706, 3);
+            this.button1.Location = new System.Drawing.Point(720, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 9;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // menuStrip1
             // 
@@ -874,8 +880,8 @@ namespace HYProject
             this.产品库ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("产品库ToolStripMenuItem.Image")));
             this.产品库ToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.产品库ToolStripMenuItem.Name = "产品库ToolStripMenuItem";
-            this.产品库ToolStripMenuItem.Size = new System.Drawing.Size(116, 44);
-            this.产品库ToolStripMenuItem.Text = "产品库";
+            this.产品库ToolStripMenuItem.Size = new System.Drawing.Size(136, 44);
+            this.产品库ToolStripMenuItem.Text = "参数设置";
             this.产品库ToolStripMenuItem.Click += new System.EventHandler(this.Button3_Click);
             // 
             // 设置ToolStripMenuItem
@@ -896,7 +902,7 @@ namespace HYProject
             this.系统设置ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.系统设置ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("系统设置ToolStripMenuItem.Image")));
             this.系统设置ToolStripMenuItem.Name = "系统设置ToolStripMenuItem";
-            this.系统设置ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.系统设置ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.系统设置ToolStripMenuItem.Text = "系统设置";
             this.系统设置ToolStripMenuItem.Click += new System.EventHandler(this.系统设置ToolStripMenuItem_Click);
             // 
@@ -905,7 +911,7 @@ namespace HYProject
             this.用户设置ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.用户设置ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("用户设置ToolStripMenuItem.Image")));
             this.用户设置ToolStripMenuItem.Name = "用户设置ToolStripMenuItem";
-            this.用户设置ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.用户设置ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.用户设置ToolStripMenuItem.Text = "用户设置";
             this.用户设置ToolStripMenuItem.Click += new System.EventHandler(this.用户设置ToolStripMenuItem_Click);
             // 
@@ -919,7 +925,7 @@ namespace HYProject
             this.通讯设置ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.通讯设置ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("通讯设置ToolStripMenuItem.Image")));
             this.通讯设置ToolStripMenuItem.Name = "通讯设置ToolStripMenuItem";
-            this.通讯设置ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.通讯设置ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.通讯设置ToolStripMenuItem.Text = "通讯设置";
             this.通讯设置ToolStripMenuItem.Click += new System.EventHandler(this.通讯设置ToolStripMenuItem_Click);
             // 
@@ -962,7 +968,7 @@ namespace HYProject
             this.相机标定ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.相机标定ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("相机标定ToolStripMenuItem.Image")));
             this.相机标定ToolStripMenuItem.Name = "相机标定ToolStripMenuItem";
-            this.相机标定ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.相机标定ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.相机标定ToolStripMenuItem.Text = "相机标定";
             this.相机标定ToolStripMenuItem.Click += new System.EventHandler(this.相机标定ToolStripMenuItem_Click);
             // 
@@ -1147,8 +1153,8 @@ namespace HYProject
             // 
             this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(176, 17);
-            this.toolStripLabel1.Text = "深圳市恒越自动化科技有限公司";
+            this.toolStripLabel1.Size = new System.Drawing.Size(164, 17);
+            this.toolStripLabel1.Text = "深圳市图欣智能科技有限公司";
             // 
             // panel4
             // 
@@ -1176,9 +1182,8 @@ namespace HYProject
             // splitContainer_Main.Panel2
             // 
             this.toolTip1.SetToolTip(this.splitContainer_Main.Panel2, "数据面板");
-            this.splitContainer_Main.Panel2Collapsed = true;
             this.splitContainer_Main.Size = new System.Drawing.Size(1148, 519);
-            this.splitContainer_Main.SplitterDistance = 772;
+            this.splitContainer_Main.SplitterDistance = 847;
             this.splitContainer_Main.SplitterWidth = 1;
             this.splitContainer_Main.TabIndex = 0;
             // 
@@ -1189,7 +1194,7 @@ namespace HYProject
             this.pro_memory.BackEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
             this.pro_memory.CoreEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.pro_memory.IsShowCoreEllipseBorder = false;
-            this.pro_memory.Location = new System.Drawing.Point(860, 225);
+            this.pro_memory.Location = new System.Drawing.Point(720, 21);
             this.pro_memory.Margin = new System.Windows.Forms.Padding(0);
             this.pro_memory.MaxValue = 100;
             this.pro_memory.Name = "pro_memory";
@@ -1302,7 +1307,6 @@ namespace HYProject
         public ToolKit.HYControls.HYProcessEllipse pro_memory;
         private System.Windows.Forms.ToolStripMenuItem 日志ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 相机标定ToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -1348,6 +1352,7 @@ namespace HYProject
         public System.Windows.Forms.Label label_Cam2_NG2;
         public System.Windows.Forms.Label label_Cam2_OK2;
         public System.Windows.Forms.Label label_Cam2_OK1;
+        private System.Windows.Forms.Button button1;
         // private ToolKit.HYControls.CreateModelControl createModelControl1;
     }
 }

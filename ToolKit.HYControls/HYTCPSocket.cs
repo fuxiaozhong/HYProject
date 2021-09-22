@@ -36,13 +36,13 @@ namespace ToolKit.HYControls
             }
         }
 
-        private void SocketServer_ClientsConnect(Dictionary<string, Socket> clients)
+        private void SocketServer_ClientsConnect(Socket clients)
         {
-            cmb_clientList.DataSource = clients.Keys.ToArray();
-            if (clients.Keys.ToArray().Length == 0)
-            {
-                cmb_clientList.Text = "";
-            }
+            //cmb_clientList.DataSource = clients.Keys.ToArray();
+            //if (clients.Keys.ToArray().Length == 0)
+            //{
+            //    cmb_clientList.Text = "";
+            //}
         }
 
         private void SocketServer_SocketReceiveMessage(Socket client, string clientSocketIp, string message)

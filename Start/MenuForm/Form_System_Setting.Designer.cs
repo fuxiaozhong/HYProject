@@ -388,7 +388,7 @@ namespace HYProject.MenuForm
             this.check_startAutoRun.Text = "启动自动运行";
             this.check_startAutoRun.UseVisualStyleBackColor = false;
             // 
-            // Form_Setting
+            // Form_System_Setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -429,10 +429,11 @@ namespace HYProject.MenuForm
             this.HideTitle = true;
             this.HideUserButtom = false;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconImage = ((System.Drawing.Image)(resources.GetObject("$this.IconImage")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form_Setting";
+            this.Name = "Form_System_Setting";
             this.Text = "设置";
             this.Load += new System.EventHandler(this.Form_Setting_Load);
             this.Controls.SetChildIndex(this.label1, 0);

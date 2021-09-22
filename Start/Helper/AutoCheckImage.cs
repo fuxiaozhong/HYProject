@@ -37,8 +37,8 @@ namespace HYProject.Helper
                 }
                 else
                 {
-                    Console.WriteLine(fsinfo.FullName);//输出文件的全部路径
-                                                       //FileInfo fileInfo = new FileInfo(file);
+                    //Console.WriteLine(fsinfo.FullName);//输出文件的全部路径
+                    //FileInfo fileInfo = new FileInfo(file);
                     TimeSpan t = DateTime.Now - fsinfo.CreationTime;  //当前时间  减去 文件创建时间
                     int day = t.Days;
                     if (day > AppParam.Instance.Save_Image_Days)   //保存的时间 ;  单位：天

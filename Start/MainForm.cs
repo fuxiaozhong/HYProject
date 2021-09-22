@@ -37,14 +37,9 @@ namespace HYProject
         {
             get
             {
-                //先判断是否存在，不存在再加锁处理
                 if (instance == null)
                 {
-                    //在同一个时刻加了锁的那部分程序只有一个线程可以进入
-                    if (instance == null)
-                    {
-                        instance = new MainForm();
-                    }
+                    instance = new MainForm();
                 }
                 return instance;
             }
@@ -57,6 +52,10 @@ namespace HYProject
             CheckForIllegalCrossThreadCalls = false;
             //系统线程
             SystemThread.Start();
+
+            //this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ////设定字体大小为12px      
+            //this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -81,6 +80,7 @@ namespace HYProject
             //    DisplayForm.Instance.DisplayWindowCount = 1;
             //}
             DisplayForm.Instance.DisplayWindowCount = (int)Form_Global_System.Instance["显示数量"];
+
             //添加日志窗口
             panel_Log.Controls.Add(Form_Logs.Instance);
             Form_Logs.Instance.Show();
@@ -193,16 +193,16 @@ namespace HYProject
             AppParam.Instance.TCPSocketServer_Cam3?.Close();
             //TCP客户端关闭
             AppParam.Instance.TCPSocketClient?.Close();
+            //数据保存
+            DataLimit.Instance.Save();
+            //标定数据保存
+            Serialization.Save(CalibrationData.Instance, "CalibrationData");
             //光源关闭
             AppParam.Instance.lightSource?.CloseLightSource();
             //PLC关闭
             AppParam.Instance.Fx3uPLC?.ConnectClose();
-            //数据保存
-            DataLimit.Instance.Save();
             Thread.Sleep(1000);
         }
-
-        public bool tackTest = false;
 
         private void Button_Run_Click(object sender, EventArgs e)
         {
@@ -214,22 +214,6 @@ namespace HYProject
                 运行ToolStripMenuItem.Text = "停    止";
                 Log.WriteRunLog("开始运行...");
 
-                //Task.Factory.StartNew(() =>
-                //{
-                //    while (true)
-                //    {
-                //        if (AppParam.Instance.Runing == false)
-                //        {
-                //            break;
-                //        }
-                //        if (!tackTest)
-                //        {
-                //            tackTest = true;
-                //        }
-                //        Thread.Sleep(50);
-                //    }
-
-                //});
             }
             else
             {
@@ -258,7 +242,7 @@ namespace HYProject
                 return;
             }
             Form_Camera form_Camera = new Form_Camera();
-            form_Camera.ShowDialog();
+            form_Camera.Show();
         }
 
         private void MainForm_KeyUp(object sender, KeyEventArgs e)
@@ -299,7 +283,9 @@ namespace HYProject
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            Form_ProjectLibrary.Instance.Show();
+            //Form_ProjectLibrary.Instance.Show();
+
+            new Form_Product_Set().ShowDialog();
         }
 
         private void MainForm_UserClick(object sender, EventArgs e)
@@ -465,7 +451,7 @@ namespace HYProject
         private void 日志ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Plugin.Form_OldLog form = new Plugin.Form_OldLog();
-            form.ShowDialog();
+            form.Show();
         }
 
         private void 通讯设置ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -475,12 +461,26 @@ namespace HYProject
 
         private void 相机标定ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form_Robot_Calibration.Instance.ShowDialog();
+            Form_Robot_Calibration.Instance.Show();
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
             Cameras.Instance[""].Soft_Trigger();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            //HObject image = DisplayForm.Instance[0].Open_Image();
+            //Work.Cam3_Suction_Nozzle_Number = 1;
+            //Cam3_Work.Cam3_Work_Method(image);
+
+            Serialization.Save(CalibrationData.Instance, "CalibrationData");
+        }
+
+        private void 基准点示教ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

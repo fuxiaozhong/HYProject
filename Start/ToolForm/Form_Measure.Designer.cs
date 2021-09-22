@@ -127,6 +127,7 @@ namespace HYProject.ToolForm
             this.HideTitle = true;
             this.HideUserButtom = false;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconImage = ((System.Drawing.Image)(resources.GetObject("$this.IconImage")));
             this.Name = "Form_Measure";
             this.Text = "卡尺找边";
             this.Load += new System.EventHandler(this.Form_Measure_Load);

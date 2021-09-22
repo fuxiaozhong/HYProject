@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Reflection;
 
 using HalconDotNet;
 
@@ -44,7 +45,7 @@ namespace ToolKit.HalconTool.Model
 
         private int _CrossSize = 30;
 
-        [CategoryAttribute("卡尺宽度"), DescriptionAttribute("卡尺宽度")]
+        [CategoryAttribute("卡尺参数"), DescriptionAttribute("卡尺宽度")]
         public int CaliperWidth
         {
             get
@@ -58,7 +59,7 @@ namespace ToolKit.HalconTool.Model
             }
         }
 
-        [CategoryAttribute("卡尺数量"), DescriptionAttribute("卡尺数量")]
+        [CategoryAttribute("卡尺参数"), DescriptionAttribute("卡尺数量")]
         public int CaliperNumber
         {
             get
@@ -72,7 +73,7 @@ namespace ToolKit.HalconTool.Model
             }
         }
 
-        [CategoryAttribute("阈值0-255"), DescriptionAttribute("阈值0-255")]
+        [CategoryAttribute("卡尺参数"), DescriptionAttribute("阈值0-255")]
         public int AmplitudeThreshold
         {
             get
@@ -89,7 +90,7 @@ namespace ToolKit.HalconTool.Model
             }
         }
 
-        [CategoryAttribute("最小分数0-1"), DescriptionAttribute("最小分数0-1")]
+        [CategoryAttribute("卡尺参数"), DescriptionAttribute("最小分数0-1")]
         public double Min_Score
         {
             get
@@ -106,7 +107,7 @@ namespace ToolKit.HalconTool.Model
             }
         }
 
-        [CategoryAttribute("西格玛0.4-100"), DescriptionAttribute("西格玛0.4-100")]
+        [CategoryAttribute("卡尺参数"), DescriptionAttribute("西格玛0.4-100")]
         public double Sigma
         {
             get
@@ -123,7 +124,7 @@ namespace ToolKit.HalconTool.Model
             }
         }
 
-        [CategoryAttribute("要寻找的形状,line从左往右,其他由内往外"), DescriptionAttribute("要寻找的形状,\nline从左往右,\n其他由内往外")]
+        [CategoryAttribute("卡尺参数"), DescriptionAttribute("要寻找的形状,\nline从左往右,\n其他由内往外")]
         public MeasureShapes Shape
         {
             get
@@ -137,7 +138,7 @@ namespace ToolKit.HalconTool.Model
             }
         }
 
-        [CategoryAttribute("亮/暗或暗/亮边缘。"), DescriptionAttribute("亮/暗或暗/亮边缘。")]
+        [CategoryAttribute("卡尺参数"), DescriptionAttribute("亮/暗或暗/亮边缘。")]
         public MeasureTransition Transition
         {
             get
@@ -151,7 +152,7 @@ namespace ToolKit.HalconTool.Model
             }
         }
 
-        [CategoryAttribute("端点的选择。"), DescriptionAttribute("端点的选择。")]
+        [CategoryAttribute("卡尺参数"), DescriptionAttribute("端点的选择。")]
         public MeasureSelect Select
         {
             get
@@ -165,7 +166,7 @@ namespace ToolKit.HalconTool.Model
             }
         }
 
-        [CategoryAttribute("形状参数"), DescriptionAttribute("形状参数")]
+        [CategoryAttribute("卡尺参数"), DescriptionAttribute("形状参数")]
         public HTuple InputShapeParam
         {
             get
@@ -179,7 +180,7 @@ namespace ToolKit.HalconTool.Model
             }
         }
 
-        [CategoryAttribute("是否显示卡尺"), DescriptionAttribute("是否显示卡尺")]
+        [CategoryAttribute("显示参数"), DescriptionAttribute("是否显示卡尺")]
         public bool IsDispCaliper
         {
             get
@@ -193,7 +194,7 @@ namespace ToolKit.HalconTool.Model
             }
         }
 
-        [CategoryAttribute("是否显示点位十字架"), DescriptionAttribute("是否显示点位十字架")]
+        [CategoryAttribute("显示参数"), DescriptionAttribute("是否显示点位十字架")]
         public bool IsDispCross
         {
             get
@@ -207,7 +208,7 @@ namespace ToolKit.HalconTool.Model
             }
         }
 
-        [CategoryAttribute("点位十字架大小"), DescriptionAttribute("点位十字架大小")]
+        [CategoryAttribute("显示参数"), DescriptionAttribute("点位十字架大小")]
         public int CrossSize
         {
             get
@@ -221,7 +222,7 @@ namespace ToolKit.HalconTool.Model
             }
         }
 
-        [CategoryAttribute("是否显示输入的基准线"), DescriptionAttribute("是否显示输入的基准线")]
+        [CategoryAttribute("显示参数"), DescriptionAttribute("是否显示输入的基准线")]
         public bool IsDispInputRegion
         {
             get
@@ -235,7 +236,7 @@ namespace ToolKit.HalconTool.Model
             }
         }
 
-        [CategoryAttribute("单个卡尺的宽度"), DescriptionAttribute("单个卡尺的宽度")]
+        [CategoryAttribute("卡尺参数"), DescriptionAttribute("单个卡尺的宽度")]
         public int SingleCaliperWidth
         {
             get
@@ -249,7 +250,7 @@ namespace ToolKit.HalconTool.Model
             }
         }
 
-        [CategoryAttribute("每个计量对象成功拟合实例的最大数量"), DescriptionAttribute("每个计量对象成功拟合实例的最大数量")]
+        [CategoryAttribute("卡尺参数"), DescriptionAttribute("每个计量对象成功拟合实例的最大数量")]
         public int Num_Instances
         {
             get
@@ -261,6 +262,14 @@ namespace ToolKit.HalconTool.Model
             {
                 this.num_Instances = value;
             }
+        }
+
+
+        public object Colne()
+        {
+
+            return this.MemberwiseClone();
+
         }
     }
 

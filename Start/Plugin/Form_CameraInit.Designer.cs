@@ -29,6 +29,7 @@ namespace HYProject.Plugin
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_CameraInit));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -201,6 +202,8 @@ namespace HYProject.Plugin
             this.HideOrClose = false;
             this.HideTitle = true;
             this.HideUserButtom = false;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconImage = ((System.Drawing.Image)(resources.GetObject("$this.IconImage")));
             this.Name = "Form_CameraInit";
             this.Text = "相机初始化配置";
             this.Load += new System.EventHandler(this.Form_CameraInit_Load);

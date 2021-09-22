@@ -313,6 +313,7 @@ namespace ToolKit.CommunicAtion
             StateCH2 = false;
             StateCH3 = false;
             StateCH4 = false;
+            System.Threading.Thread.Sleep(100);
             if (COMSerailPortDevice != null && COMSerailPortDevice.IsOpen)
             {
                 COMSerailPortDevice.CloseSerialPort();
@@ -352,7 +353,7 @@ namespace ToolKit.CommunicAtion
         private void SetCH2Value()
         {
             if (lightSourceCompany == LightSourceCompany.盟拓)
-                SendOrder("bC" + _CH2.ToString("D3") + "OK");
+                SendOrder("BC" + _CH2.ToString("D3") + "OK");
             else
                 Send();
         }
@@ -384,7 +385,7 @@ namespace ToolKit.CommunicAtion
         private void SetCH2State()
         {
             if (lightSourceCompany == LightSourceCompany.盟拓)
-                SendOrder("A" + (_StateCH2 ? "ON" : "OF") + "OK");
+                SendOrder("B" + (_StateCH2 ? "ON" : "OF") + "OK");
             else
                 Send();
         }
@@ -392,7 +393,7 @@ namespace ToolKit.CommunicAtion
         private void SetCH3State()
         {
             if (lightSourceCompany == LightSourceCompany.盟拓)
-                SendOrder("A" + (_StateCH3 ? "ON" : "OF") + "OK");
+                SendOrder("C" + (_StateCH3 ? "ON" : "OF") + "OK");
             else
                 Send();
         }
@@ -400,7 +401,7 @@ namespace ToolKit.CommunicAtion
         private void SetCH4State()
         {
             if (lightSourceCompany == LightSourceCompany.盟拓)
-                SendOrder("A" + (_StateCH4 ? "ON" : "OF") + "OK");
+                SendOrder("D" + (_StateCH4 ? "ON" : "OF") + "OK");
             else
                 Send();
         }

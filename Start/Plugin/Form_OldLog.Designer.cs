@@ -29,6 +29,7 @@ namespace HYProject.Plugin
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_OldLog));
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -73,6 +74,8 @@ namespace HYProject.Plugin
             this.HideHelpButtom = false;
             this.HideTitle = true;
             this.HideUserButtom = false;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconImage = ((System.Drawing.Image)(resources.GetObject("$this.IconImage")));
             this.Name = "Form_OldLog";
             this.Text = "日志";
             this.Load += new System.EventHandler(this.Form_Load);

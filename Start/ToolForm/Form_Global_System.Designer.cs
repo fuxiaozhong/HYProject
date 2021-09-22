@@ -29,6 +29,7 @@ namespace HYProject.ToolForm
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Global_System));
             this.Global_Parameter_System = new ToolKit.HYControls.HYGlobalVariable();
             this.SuspendLayout();
             // 
@@ -50,6 +51,8 @@ namespace HYProject.ToolForm
             this.HideHelpButtom = false;
             this.HideTitle = true;
             this.HideUserButtom = false;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconImage = ((System.Drawing.Image)(resources.GetObject("$this.IconImage")));
             this.Name = "Form_Global_System";
             this.Text = "全局参数 - 系统变量";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Global_System_FormClosing);

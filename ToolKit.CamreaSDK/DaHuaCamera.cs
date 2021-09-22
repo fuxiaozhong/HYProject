@@ -137,6 +137,7 @@ namespace ToolKit.CamreaSDK
 
                         m_dev.StreamGrabber.SetBufferCount(8);
                         m_dev.StreamGrabber.ImageGrabbed += OnImageGrabbed;//注册采集回调函数
+                        m_dev.ConnectionLost += M_dev_ConnectionLost;
                         m_dev.TriggerSet.Open(TriggerSourceEnum.Software);
                         WriteLog("相机初始化成功");
                         CameraLogs?.Invoke(_CameraNmae, "相机初始化成功");
@@ -151,6 +152,11 @@ namespace ToolKit.CamreaSDK
             }
 
             return false;
+        }
+
+        private void M_dev_ConnectionLost(object sender, EventArgs e)
+        {
+            //System.Windows.Forms.MessageBox.Show(_CameraNmae+"掉线");
         }
 
         private void OnImageGrabbed(object sender, GrabbedEventArgs e)

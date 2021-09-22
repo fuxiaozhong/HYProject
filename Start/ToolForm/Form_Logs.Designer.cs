@@ -29,6 +29,7 @@ namespace HYProject.ToolForm
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Logs));
             this.hyLogs1 = new ToolKit.HYControls.HYLogs();
             this.SuspendLayout();
             // 
@@ -49,6 +50,8 @@ namespace HYProject.ToolForm
             this.HideHelpButtom = false;
             this.HideTitle = true;
             this.HideUserButtom = false;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconImage = ((System.Drawing.Image)(resources.GetObject("$this.IconImage")));
             this.Name = "Form_Logs";
             this.Text = "日志";
             this.Controls.SetChildIndex(this.hyLogs1, 0);

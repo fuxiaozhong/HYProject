@@ -53,8 +53,8 @@ namespace HYProject.Helper
                 catch (Exception)
                 {
                 }
-                Thread.Sleep(10);
-                Application.DoEvents();
+                Thread.Sleep(100);
+
             }
         }
     }

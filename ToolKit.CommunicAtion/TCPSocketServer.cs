@@ -13,7 +13,8 @@ namespace ToolKit.CommunicAtion
     {
         public delegate void _SocketReceiveMessage(Socket client, string clientSocketIp, string message);
 
-        public delegate void _ClientsConnect(Dictionary<string, Socket> clients);
+       // public delegate void _ClientsConnect(Dictionary<string, Socket> clients);
+        public delegate void _ClientsConnect(Socket clients);
 
         /// <summary>
         /// 接受消息回调函数
@@ -24,6 +25,7 @@ namespace ToolKit.CommunicAtion
         /// 客户端连接触发事件
         /// </summary>
         public event _ClientsConnect ClientsConnect;
+        public event _ClientsConnect ClientsLoss;
 
         private string _ip = string.Empty;
         private int _port = 0;
@@ -143,6 +145,7 @@ namespace ToolKit.CommunicAtion
                     {
                         if (clients[(clients.Keys.ToArray()[i])].Poll(1000, SelectMode.SelectRead))
                         {
+                            ClientsLoss?.Invoke(clients[(clients.Keys.ToArray()[i])]);
                             Console.WriteLine("客户端{0}已掉线,删除成功", (clients.Keys.ToArray()[i]));
                             clients.Remove((clients.Keys.ToArray()[i]));
                         }
@@ -170,7 +173,7 @@ namespace ToolKit.CommunicAtion
                     Socket clientSocket = _socket.Accept();
 
                     clients.Add(clientSocket.RemoteEndPoint.ToString(), clientSocket);
-                    ClientsConnect?.Invoke(clients);
+                    ClientsConnect?.Invoke(clientSocket);
                     Console.WriteLine("客户端{0}连接成功", clientSocket.RemoteEndPoint.ToString());
                     Thread thread = new Thread(ReceiveMessage);
                     thread.Name = "ReceiveMessage";

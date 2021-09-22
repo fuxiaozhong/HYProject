@@ -828,7 +828,7 @@ namespace ToolKit.HalconTool
                 hv_MetrologyHandle.Dispose();
                 HOperatorSet.CreateMetrologyModel(out hv_MetrologyHandle);
                 HTuple hv_Width, hv_Height;
-                winControl?.Disp_Image(image);
+                //winControl?.Disp_Image(image);
                 HOperatorSet.GetImageSize(image, out hv_Width, out hv_Height);
                 //设置计量对象的图像大小
                 HOperatorSet.SetMetrologyModelImageSize(hv_MetrologyHandle, hv_Width, hv_Height);

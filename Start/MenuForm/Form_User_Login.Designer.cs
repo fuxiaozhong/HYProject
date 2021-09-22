@@ -197,7 +197,7 @@ namespace HYProject.MenuForm
             this.开发人员ToolStripMenuItem.Text = "开发人员";
             this.开发人员ToolStripMenuItem.Click += new System.EventHandler(this.ContextMenuStrip1_Click);
             // 
-            // Form_User
+            // Form_User_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -222,9 +222,10 @@ namespace HYProject.MenuForm
             this.HideTitle = true;
             this.HideUserButtom = false;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconImage = ((System.Drawing.Image)(resources.GetObject("$this.IconImage")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form_User";
+            this.Name = "Form_User_Login";
             this.ShowInTaskbar = false;
             this.Text = "深圳市恒越自动化科技有限公司";
             this.Load += new System.EventHandler(this.Form_User_Load);

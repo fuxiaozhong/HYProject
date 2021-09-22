@@ -54,6 +54,7 @@ namespace HYProject.ToolForm
             this.HideTitle = true;
             this.HideUserButtom = false;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconImage = ((System.Drawing.Image)(resources.GetObject("$this.IconImage")));
             this.Name = "Form_Global_User";
             this.Text = "全局参数 - 用户变量";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_GlobalOptions_FormClosing);

@@ -30,7 +30,7 @@ namespace HYProject
             {
                 while (flag)
                 {
-                    if (stopwatch.ElapsedMilliseconds >= 10 * 1000)
+                    if (stopwatch.ElapsedMilliseconds >= 30 * 1000)
                     {
                         HYMessageBox.ShowError("程序初始化超时:10S");
                         DialogResult = DialogResult.OK;
@@ -57,45 +57,46 @@ namespace HYProject
                 AppParam.Instance.TCPSocketServer_Cam1 = new ToolKit.CommunicAtion.TCPSocketServer(AppParam.Instance.TCPServerIPAddress_Cam1, AppParam.Instance.TCPServerPort_Cam1);
                 AppParam.Instance.TCPSocketServer_Cam1.SocketReceiveMessage += Work.TCPSocketServer_SocketReceiveMessage1;
                 AppParam.Instance.TCPSocketServer_Cam1.ClientsConnect += Work.TCPSocketServer_ClientsConnect1;
+                AppParam.Instance.TCPSocketServer_Cam1.ClientsLoss += Work.TCPSocketServer_ClientsLoss1;
                 Log.WriteRunLog(AppParam.Instance.TCPSocketServer_Cam1.StartListen() ? "Cam1_TCP服务器打开成功" : "Cam1_TCP服务器打开失败");
 
                 AppParam.Instance.TCPSocketServer_Cam2 = new ToolKit.CommunicAtion.TCPSocketServer(AppParam.Instance.TCPServerIPAddress_Cam2, AppParam.Instance.TCPServerPort_Cam2);
                 AppParam.Instance.TCPSocketServer_Cam2.SocketReceiveMessage += Work.TCPSocketServer_SocketReceiveMessage2;
                 AppParam.Instance.TCPSocketServer_Cam2.ClientsConnect += Work.TCPSocketServer_ClientsConnect2;
+                AppParam.Instance.TCPSocketServer_Cam2.ClientsLoss += Work.TCPSocketServer_ClientsLoss2;
                 Log.WriteRunLog(AppParam.Instance.TCPSocketServer_Cam2.StartListen() ? "Cam2_TCP服务器打开成功" : "Cam2_TCP服务器打开失败");
 
                 AppParam.Instance.TCPSocketServer_Cam3 = new ToolKit.CommunicAtion.TCPSocketServer(AppParam.Instance.TCPServerIPAddress_Cam3, AppParam.Instance.TCPServerPort_Cam3);
                 AppParam.Instance.TCPSocketServer_Cam3.SocketReceiveMessage += Work.TCPSocketServer_SocketReceiveMessage3;
                 AppParam.Instance.TCPSocketServer_Cam3.ClientsConnect += Work.TCPSocketServer_ClientsConnect3;
+                AppParam.Instance.TCPSocketServer_Cam3.ClientsLoss += Work.TCPSocketServer_ClientsLoss3;
                 Log.WriteRunLog(AppParam.Instance.TCPSocketServer_Cam3.StartListen() ? "Cam3_TCP服务器打开成功" : "Cam3_TCP服务器打开失败");
 
-                //AppParam.Instance.TCPSocketClient = new ToolKit.CommunicAtion.TCPSocketClient(AppParam.Instance.TCPClientIPAddress, AppParam.Instance.TCPClientPort);
-                //AppParam.Instance.TCPSocketClient.SocketReceiveMessage += Work.TCPSocketClient_SocketReceiveMessage;
-                //Log.WriteRunLog(AppParam.Instance.TCPSocketClient.Connect_server() ? "TCP客户端连接成功" : "TCP客户端连接失败");
+                CalibrationData.Instance = (CalibrationData)Serialization.Read("CalibrationData");
 
+                if (AppParam.Instance.lightSource.OpenLightSource(AppParam.Instance.LightSourcePortName,
+                                                             AppParam.Instance.LightSourceBaudRate,
+                                                             AppParam.Instance.LightSourceParity,
+                                                             AppParam.Instance.LightSourceDataBits,
+                                                             AppParam.Instance.LightSourceStopBits))
+                {
 
+                    AppParam.Instance.lightSource.StateCH1 = true;
+                    AppParam.Instance.lightSource.StateCH2 = true;
+                    AppParam.Instance.lightSource.StateCH3 = true;
+                    AppParam.Instance.lightSource.StateCH4 = true;
+                    Thread.Sleep(200);
+                    AppParam.Instance.lightSource.StateCH1 = false;
+                    AppParam.Instance.lightSource.StateCH2 = false;
+                    AppParam.Instance.lightSource.StateCH3 = false;
+                    AppParam.Instance.lightSource.StateCH4 = false;
+                    Log.WriteRunLog("光源连接成功");
 
-                //if (AppParam.Instance.lightSource.OpenLightSource(AppParam.Instance.LightSourcePortName,
-                //                                             AppParam.Instance.LightSourceBaudRate,
-                //                                             AppParam.Instance.LightSourceParity,
-                //                                             AppParam.Instance.LightSourceDataBits,
-                //                                             AppParam.Instance.LightSourceStopBits))
-                //{
-                //    Log.WriteRunLog("光源连接成功");
-                //    AppParam.Instance.lightSource.StateCH1 = true;
-                //    AppParam.Instance.lightSource.StateCH2 = true;
-                //    AppParam.Instance.lightSource.StateCH3 = true;
-                //    AppParam.Instance.lightSource.StateCH4 = true;
-                //    Thread.Sleep(100);
-                //    AppParam.Instance.lightSource.StateCH1 = false;
-                //    AppParam.Instance.lightSource.StateCH2 = false;
-                //    AppParam.Instance.lightSource.StateCH3 = false;
-                //    AppParam.Instance.lightSource.StateCH4 = false;
-                //}
-                //else
-                //{
-                //    Log.WriteErrorLog("光源连接失败");
-                //}
+                }
+                else
+                {
+                    Log.WriteErrorLog("光源连接失败");
+                }
 
                 //参数PLC
                 //if (AppParam.Instance.Fx3uPLC == null)
@@ -128,7 +129,7 @@ namespace HYProject
             {
                 while (label3.Width <= this.Width)
                 {
-                    label3.Width += 5;
+                    label3.Width += 2;
                     label3.Text = ((double)label3.Width / (double)this.Width * 100).ToString("0.00") + "%";
                     if ((double)label3.Width / (double)this.Width * 100 >= 100)
                     {

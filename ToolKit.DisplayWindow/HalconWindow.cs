@@ -424,14 +424,15 @@ namespace ToolKit.DisplayWindow
         /// <param name="size"></param>
         /// <param name="angle"></param>
         /// <param name="colorName"></param>
-        public void Disp_Cross(HTuple row, HTuple column, HTuple size, string colorName)
+        public void Disp_Cross(HTuple row, HTuple column, HTuple size,HTuple phi, string colorName)
         {
             this.Cross.Add(new CrossPoint()
             {
                 row = row,
                 column = column,
                 size = size,
-                ColorName = colorName
+                ColorName = colorName,
+                phi = phi
             });
             if (Regex.IsMatch(colorName, @"^[0-9]+$"))
             {
@@ -1701,6 +1702,7 @@ namespace ToolKit.DisplayWindow
         public HTuple row;
         public HTuple column;
         public HTuple size;
+        public HTuple phi;
         public string ColorName;
     }
 

@@ -152,11 +152,12 @@ namespace HYProject.Model
             {
                 case CameraType.大华相机:
                     DaHuaCamera dahua = new DaHuaCamera();
-                    if (dahua.Open(cameraName))
+                    dahua.IsSaveLog2Disk = true;
+                    if (dahua.Open(cameraName, cameraName+ ".mvcfg"))
                     {
                         Log.WriteRunLog("相机:" + cameraName + "打开成功");
                         AddCamera(cameraName, dahua);
-                        dahua.IsSaveLog2Disk = true;
+                        
                         dahua.ImageProcessEvent += Camera_ImageProcessEvent;
                     }
                     else

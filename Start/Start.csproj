@@ -79,6 +79,9 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
       <HintPath>..\packages\Portable.BouncyCastle.1.8.6\lib\net40\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
+    <Reference Include="DotNetZip, Version=1.15.0.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetZip.1.15.0\lib\net40\DotNetZip.dll</HintPath>
+    </Reference>
     <Reference Include="halcondotnet">
       <HintPath>..\DLL\halcondotnet.dll</HintPath>
     </Reference>
@@ -126,6 +129,9 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="UIAutomationProvider" />
+    <Reference Include="unvell.ReoGrid, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\unvell.ReoGrid.dll.3.0.0\lib\net40\unvell.ReoGrid.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
@@ -187,6 +193,12 @@
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\Robot_Point.cs" />
     <Compile Include="Model\Work.cs" />
+    <Compile Include="Plugin\Form_Angle_Calibration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plugin\Form_Angle_Calibration.Designer.cs">
+      <DependentUpon>Form_Angle_Calibration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Plugin\Form_TCPSocketSetting.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +231,12 @@
     </Compile>
     <Compile Include="ToolForm\DisplayForm.Designer.cs">
       <DependentUpon>DisplayForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolForm\Form_Product_Set.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolForm\Form_Product_Set.Designer.cs">
+      <DependentUpon>Form_Product_Set.cs</DependentUpon>
     </Compile>
     <Compile Include="ToolForm\Form_Logs.cs">
       <SubType>Form</SubType>
@@ -310,6 +328,9 @@
     <EmbeddedResource Include="MenuForm\Form_User_Setting.resx">
       <DependentUpon>Form_User_Setting.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Plugin\Form_Angle_Calibration.resx">
+      <DependentUpon>Form_Angle_Calibration.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Plugin\Form_TCPSocketSetting.resx">
       <DependentUpon>Form_TCPSocketSetting.cs</DependentUpon>
     </EmbeddedResource>
@@ -333,6 +354,9 @@
     </Compile>
     <EmbeddedResource Include="ToolForm\DisplayForm.resx">
       <DependentUpon>DisplayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolForm\Form_Product_Set.resx">
+      <DependentUpon>Form_Product_Set.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ToolForm\Form_Logs.resx">
       <DependentUpon>Form_Logs.cs</DependentUpon>
