@@ -2135,7 +2135,7 @@ namespace HYProject.Plugin
             this.HideTitle = true;
             this.HideUserButtom = false;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.IconImage = ((System.Drawing.Image)(resources.GetObject("$this.IconImage")));
+            this.IconImage = global::HYProject.Properties.Resources.logo;
             this.Name = "Form_Robot_Calibration";
             this.Text = "标定";
             this.Activated += new System.EventHandler(this.Form_Robot_Calibration_Activated);

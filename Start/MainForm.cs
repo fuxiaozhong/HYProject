@@ -395,8 +395,7 @@ namespace HYProject
         }
         private void BackUp(object sender, EventArgs e)
         {
-
-            Directory.SetCurrentDirectory(Directory.GetParent(System.Windows.Forms.Application.StartupPath).FullName);
+            //Directory.SetCurrentDirectory(Directory.GetParent(System.Windows.Forms.Application.StartupPath).FullName);
             string parentPath = Directory.GetCurrentDirectory();
             if (!Directory.Exists(parentPath + "\\BackUp"))
             {
@@ -464,23 +463,10 @@ namespace HYProject
             Form_Robot_Calibration.Instance.Show();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            Cameras.Instance[""].Soft_Trigger();
-        }
-
         private void button1_Click_1(object sender, EventArgs e)
         {
-            //HObject image = DisplayForm.Instance[0].Open_Image();
-            //Work.Cam3_Suction_Nozzle_Number = 1;
-            //Cam3_Work.Cam3_Work_Method(image);
-
-            Serialization.Save(CalibrationData.Instance, "CalibrationData");
-        }
-
-        private void 基准点示教ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
 
         }
+
     }
 }

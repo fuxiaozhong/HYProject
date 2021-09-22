@@ -263,7 +263,7 @@ namespace HYProject.Plugin
             this.HideTitle = true;
             this.HideUserButtom = false;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.IconImage = ((System.Drawing.Image)(resources.GetObject("$this.IconImage")));
+            this.IconImage = global::HYProject.Properties.Resources.logo;
             this.Name = "Form_TCPSocketSetting";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Controls.SetChildIndex(this.label1, 0);

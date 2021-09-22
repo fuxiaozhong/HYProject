@@ -382,7 +382,7 @@ namespace HYProject.MenuForm
             this.HideTitle = true;
             this.HideUserButtom = false;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.IconImage = ((System.Drawing.Image)(resources.GetObject("$this.IconImage")));
+            this.IconImage = global::HYProject.Properties.Resources.logo;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Form_Camera";

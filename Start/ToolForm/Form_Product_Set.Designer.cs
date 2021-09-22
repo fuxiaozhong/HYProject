@@ -33,6 +33,8 @@ namespace HYProject.ToolForm
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button49 = new System.Windows.Forms.Button();
+            this.button50 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,6 +44,8 @@ namespace HYProject.ToolForm
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button12 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button48 = new System.Windows.Forms.Button();
+            this.button39 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,6 +57,8 @@ namespace HYProject.ToolForm
             this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button44 = new System.Windows.Forms.Button();
+            this.button45 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -62,6 +68,8 @@ namespace HYProject.ToolForm
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.button18 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button46 = new System.Windows.Forms.Button();
+            this.button47 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -73,6 +81,8 @@ namespace HYProject.ToolForm
             this.propertyGrid2 = new System.Windows.Forms.PropertyGrid();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.button42 = new System.Windows.Forms.Button();
+            this.button43 = new System.Windows.Forms.Button();
             this.button25 = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -82,6 +92,8 @@ namespace HYProject.ToolForm
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.button30 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.button41 = new System.Windows.Forms.Button();
+            this.button40 = new System.Windows.Forms.Button();
             this.button31 = new System.Windows.Forms.Button();
             this.button32 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -95,18 +107,6 @@ namespace HYProject.ToolForm
             this.panel1 = new System.Windows.Forms.Panel();
             this.button37 = new System.Windows.Forms.Button();
             this.button38 = new System.Windows.Forms.Button();
-            this.button39 = new System.Windows.Forms.Button();
-            this.button40 = new System.Windows.Forms.Button();
-            this.button41 = new System.Windows.Forms.Button();
-            this.button42 = new System.Windows.Forms.Button();
-            this.button43 = new System.Windows.Forms.Button();
-            this.button44 = new System.Windows.Forms.Button();
-            this.button45 = new System.Windows.Forms.Button();
-            this.button46 = new System.Windows.Forms.Button();
-            this.button47 = new System.Windows.Forms.Button();
-            this.button48 = new System.Windows.Forms.Button();
-            this.button49 = new System.Windows.Forms.Button();
-            this.button50 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -163,6 +163,36 @@ namespace HYProject.ToolForm
             this.groupBox2.TabIndex = 61;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "2 号吸嘴";
+            // 
+            // button49
+            // 
+            this.button49.BackColor = System.Drawing.Color.Teal;
+            this.button49.FlatAppearance.BorderSize = 0;
+            this.button49.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
+            this.button49.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
+            this.button49.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button49.Location = new System.Drawing.Point(134, 90);
+            this.button49.Name = "button49";
+            this.button49.Size = new System.Drawing.Size(122, 29);
+            this.button49.TabIndex = 70;
+            this.button49.Text = "显示基准点";
+            this.button49.UseVisualStyleBackColor = false;
+            this.button49.Click += new System.EventHandler(this.button49_Click);
+            // 
+            // button50
+            // 
+            this.button50.BackColor = System.Drawing.Color.Teal;
+            this.button50.FlatAppearance.BorderSize = 0;
+            this.button50.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
+            this.button50.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
+            this.button50.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button50.Location = new System.Drawing.Point(6, 90);
+            this.button50.Name = "button50";
+            this.button50.Size = new System.Drawing.Size(122, 29);
+            this.button50.TabIndex = 69;
+            this.button50.Text = "基准点示教";
+            this.button50.UseVisualStyleBackColor = false;
+            this.button50.Click += new System.EventHandler(this.button50_Click);
             // 
             // button6
             // 
@@ -296,6 +326,36 @@ namespace HYProject.ToolForm
             this.groupBox1.TabIndex = 50;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "1 号吸嘴";
+            // 
+            // button48
+            // 
+            this.button48.BackColor = System.Drawing.Color.Teal;
+            this.button48.FlatAppearance.BorderSize = 0;
+            this.button48.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
+            this.button48.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
+            this.button48.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button48.Location = new System.Drawing.Point(134, 85);
+            this.button48.Name = "button48";
+            this.button48.Size = new System.Drawing.Size(122, 29);
+            this.button48.TabIndex = 68;
+            this.button48.Text = "显示基准点";
+            this.button48.UseVisualStyleBackColor = false;
+            this.button48.Click += new System.EventHandler(this.button48_Click);
+            // 
+            // button39
+            // 
+            this.button39.BackColor = System.Drawing.Color.Teal;
+            this.button39.FlatAppearance.BorderSize = 0;
+            this.button39.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
+            this.button39.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
+            this.button39.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button39.Location = new System.Drawing.Point(6, 85);
+            this.button39.Name = "button39";
+            this.button39.Size = new System.Drawing.Size(122, 29);
+            this.button39.TabIndex = 61;
+            this.button39.Text = "基准点示教";
+            this.button39.UseVisualStyleBackColor = false;
+            this.button39.Click += new System.EventHandler(this.button39_Click);
             // 
             // button5
             // 
@@ -450,6 +510,36 @@ namespace HYProject.ToolForm
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "2 号吸嘴";
             // 
+            // button44
+            // 
+            this.button44.BackColor = System.Drawing.Color.Teal;
+            this.button44.FlatAppearance.BorderSize = 0;
+            this.button44.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
+            this.button44.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
+            this.button44.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button44.Location = new System.Drawing.Point(134, 85);
+            this.button44.Name = "button44";
+            this.button44.Size = new System.Drawing.Size(122, 29);
+            this.button44.TabIndex = 67;
+            this.button44.Text = "显示基准点";
+            this.button44.UseVisualStyleBackColor = false;
+            this.button44.Click += new System.EventHandler(this.button44_Click);
+            // 
+            // button45
+            // 
+            this.button45.BackColor = System.Drawing.Color.Teal;
+            this.button45.FlatAppearance.BorderSize = 0;
+            this.button45.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
+            this.button45.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
+            this.button45.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button45.Location = new System.Drawing.Point(6, 85);
+            this.button45.Name = "button45";
+            this.button45.Size = new System.Drawing.Size(122, 29);
+            this.button45.TabIndex = 66;
+            this.button45.Text = "基准点示教";
+            this.button45.UseVisualStyleBackColor = false;
+            this.button45.Click += new System.EventHandler(this.button45_Click);
+            // 
             // button13
             // 
             this.button13.BackColor = System.Drawing.Color.Teal;
@@ -582,6 +672,36 @@ namespace HYProject.ToolForm
             this.groupBox4.TabIndex = 63;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "1 号吸嘴";
+            // 
+            // button46
+            // 
+            this.button46.BackColor = System.Drawing.Color.Teal;
+            this.button46.FlatAppearance.BorderSize = 0;
+            this.button46.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
+            this.button46.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
+            this.button46.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button46.Location = new System.Drawing.Point(134, 85);
+            this.button46.Name = "button46";
+            this.button46.Size = new System.Drawing.Size(122, 29);
+            this.button46.TabIndex = 67;
+            this.button46.Text = "显示基准点";
+            this.button46.UseVisualStyleBackColor = false;
+            this.button46.Click += new System.EventHandler(this.button46_Click);
+            // 
+            // button47
+            // 
+            this.button47.BackColor = System.Drawing.Color.Teal;
+            this.button47.FlatAppearance.BorderSize = 0;
+            this.button47.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
+            this.button47.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
+            this.button47.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button47.Location = new System.Drawing.Point(6, 85);
+            this.button47.Name = "button47";
+            this.button47.Size = new System.Drawing.Size(122, 29);
+            this.button47.TabIndex = 66;
+            this.button47.Text = "基准点示教";
+            this.button47.UseVisualStyleBackColor = false;
+            this.button47.Click += new System.EventHandler(this.button47_Click);
             // 
             // button19
             // 
@@ -736,6 +856,36 @@ namespace HYProject.ToolForm
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "2 号吸嘴";
             // 
+            // button42
+            // 
+            this.button42.BackColor = System.Drawing.Color.Teal;
+            this.button42.FlatAppearance.BorderSize = 0;
+            this.button42.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
+            this.button42.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
+            this.button42.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button42.Location = new System.Drawing.Point(134, 85);
+            this.button42.Name = "button42";
+            this.button42.Size = new System.Drawing.Size(122, 29);
+            this.button42.TabIndex = 65;
+            this.button42.Text = "显示基准点";
+            this.button42.UseVisualStyleBackColor = false;
+            this.button42.Click += new System.EventHandler(this.button42_Click);
+            // 
+            // button43
+            // 
+            this.button43.BackColor = System.Drawing.Color.Teal;
+            this.button43.FlatAppearance.BorderSize = 0;
+            this.button43.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
+            this.button43.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
+            this.button43.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button43.Location = new System.Drawing.Point(6, 85);
+            this.button43.Name = "button43";
+            this.button43.Size = new System.Drawing.Size(122, 29);
+            this.button43.TabIndex = 64;
+            this.button43.Text = "基准点示教";
+            this.button43.UseVisualStyleBackColor = false;
+            this.button43.Click += new System.EventHandler(this.button43_Click);
+            // 
             // button25
             // 
             this.button25.BackColor = System.Drawing.Color.Teal;
@@ -868,6 +1018,36 @@ namespace HYProject.ToolForm
             this.groupBox6.TabIndex = 63;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "1 号吸嘴";
+            // 
+            // button41
+            // 
+            this.button41.BackColor = System.Drawing.Color.Teal;
+            this.button41.FlatAppearance.BorderSize = 0;
+            this.button41.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
+            this.button41.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
+            this.button41.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button41.Location = new System.Drawing.Point(134, 85);
+            this.button41.Name = "button41";
+            this.button41.Size = new System.Drawing.Size(122, 29);
+            this.button41.TabIndex = 63;
+            this.button41.Text = "显示基准点";
+            this.button41.UseVisualStyleBackColor = false;
+            this.button41.Click += new System.EventHandler(this.button41_Click);
+            // 
+            // button40
+            // 
+            this.button40.BackColor = System.Drawing.Color.Teal;
+            this.button40.FlatAppearance.BorderSize = 0;
+            this.button40.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
+            this.button40.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
+            this.button40.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button40.Location = new System.Drawing.Point(6, 85);
+            this.button40.Name = "button40";
+            this.button40.Size = new System.Drawing.Size(122, 29);
+            this.button40.TabIndex = 62;
+            this.button40.Text = "基准点示教";
+            this.button40.UseVisualStyleBackColor = false;
+            this.button40.Click += new System.EventHandler(this.button40_Click);
             // 
             // button31
             // 
@@ -1037,187 +1217,7 @@ namespace HYProject.ToolForm
             this.button38.UseVisualStyleBackColor = false;
             this.button38.Click += new System.EventHandler(this.button38_Click);
             // 
-            // button39
-            // 
-            this.button39.BackColor = System.Drawing.Color.Teal;
-            this.button39.FlatAppearance.BorderSize = 0;
-            this.button39.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
-            this.button39.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
-            this.button39.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button39.Location = new System.Drawing.Point(6, 85);
-            this.button39.Name = "button39";
-            this.button39.Size = new System.Drawing.Size(122, 29);
-            this.button39.TabIndex = 61;
-            this.button39.Text = "基准点示教";
-            this.button39.UseVisualStyleBackColor = false;
-            this.button39.Click += new System.EventHandler(this.button39_Click);
-            // 
-            // button40
-            // 
-            this.button40.BackColor = System.Drawing.Color.Teal;
-            this.button40.FlatAppearance.BorderSize = 0;
-            this.button40.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
-            this.button40.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
-            this.button40.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button40.Location = new System.Drawing.Point(6, 85);
-            this.button40.Name = "button40";
-            this.button40.Size = new System.Drawing.Size(122, 29);
-            this.button40.TabIndex = 62;
-            this.button40.Text = "基准点示教";
-            this.button40.UseVisualStyleBackColor = false;
-            this.button40.Click += new System.EventHandler(this.button40_Click);
-            // 
-            // button41
-            // 
-            this.button41.BackColor = System.Drawing.Color.Teal;
-            this.button41.FlatAppearance.BorderSize = 0;
-            this.button41.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
-            this.button41.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
-            this.button41.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button41.Location = new System.Drawing.Point(134, 85);
-            this.button41.Name = "button41";
-            this.button41.Size = new System.Drawing.Size(122, 29);
-            this.button41.TabIndex = 63;
-            this.button41.Text = "显示基准点";
-            this.button41.UseVisualStyleBackColor = false;
-            this.button41.Click += new System.EventHandler(this.button41_Click);
-            // 
-            // button42
-            // 
-            this.button42.BackColor = System.Drawing.Color.Teal;
-            this.button42.FlatAppearance.BorderSize = 0;
-            this.button42.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
-            this.button42.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
-            this.button42.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button42.Location = new System.Drawing.Point(134, 85);
-            this.button42.Name = "button42";
-            this.button42.Size = new System.Drawing.Size(122, 29);
-            this.button42.TabIndex = 65;
-            this.button42.Text = "显示基准点";
-            this.button42.UseVisualStyleBackColor = false;
-            this.button42.Click += new System.EventHandler(this.button42_Click);
-            // 
-            // button43
-            // 
-            this.button43.BackColor = System.Drawing.Color.Teal;
-            this.button43.FlatAppearance.BorderSize = 0;
-            this.button43.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
-            this.button43.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
-            this.button43.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button43.Location = new System.Drawing.Point(6, 85);
-            this.button43.Name = "button43";
-            this.button43.Size = new System.Drawing.Size(122, 29);
-            this.button43.TabIndex = 64;
-            this.button43.Text = "基准点示教";
-            this.button43.UseVisualStyleBackColor = false;
-            this.button43.Click += new System.EventHandler(this.button43_Click);
-            // 
-            // button44
-            // 
-            this.button44.BackColor = System.Drawing.Color.Teal;
-            this.button44.FlatAppearance.BorderSize = 0;
-            this.button44.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
-            this.button44.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
-            this.button44.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button44.Location = new System.Drawing.Point(134, 85);
-            this.button44.Name = "button44";
-            this.button44.Size = new System.Drawing.Size(122, 29);
-            this.button44.TabIndex = 67;
-            this.button44.Text = "显示基准点";
-            this.button44.UseVisualStyleBackColor = false;
-            this.button44.Click += new System.EventHandler(this.button44_Click);
-            // 
-            // button45
-            // 
-            this.button45.BackColor = System.Drawing.Color.Teal;
-            this.button45.FlatAppearance.BorderSize = 0;
-            this.button45.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
-            this.button45.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
-            this.button45.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button45.Location = new System.Drawing.Point(6, 85);
-            this.button45.Name = "button45";
-            this.button45.Size = new System.Drawing.Size(122, 29);
-            this.button45.TabIndex = 66;
-            this.button45.Text = "基准点示教";
-            this.button45.UseVisualStyleBackColor = false;
-            this.button45.Click += new System.EventHandler(this.button45_Click);
-            // 
-            // button46
-            // 
-            this.button46.BackColor = System.Drawing.Color.Teal;
-            this.button46.FlatAppearance.BorderSize = 0;
-            this.button46.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
-            this.button46.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
-            this.button46.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button46.Location = new System.Drawing.Point(134, 85);
-            this.button46.Name = "button46";
-            this.button46.Size = new System.Drawing.Size(122, 29);
-            this.button46.TabIndex = 67;
-            this.button46.Text = "显示基准点";
-            this.button46.UseVisualStyleBackColor = false;
-            this.button46.Click += new System.EventHandler(this.button46_Click);
-            // 
-            // button47
-            // 
-            this.button47.BackColor = System.Drawing.Color.Teal;
-            this.button47.FlatAppearance.BorderSize = 0;
-            this.button47.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
-            this.button47.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
-            this.button47.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button47.Location = new System.Drawing.Point(6, 85);
-            this.button47.Name = "button47";
-            this.button47.Size = new System.Drawing.Size(122, 29);
-            this.button47.TabIndex = 66;
-            this.button47.Text = "基准点示教";
-            this.button47.UseVisualStyleBackColor = false;
-            this.button47.Click += new System.EventHandler(this.button47_Click);
-            // 
-            // button48
-            // 
-            this.button48.BackColor = System.Drawing.Color.Teal;
-            this.button48.FlatAppearance.BorderSize = 0;
-            this.button48.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
-            this.button48.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
-            this.button48.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button48.Location = new System.Drawing.Point(134, 85);
-            this.button48.Name = "button48";
-            this.button48.Size = new System.Drawing.Size(122, 29);
-            this.button48.TabIndex = 68;
-            this.button48.Text = "显示基准点";
-            this.button48.UseVisualStyleBackColor = false;
-            this.button48.Click += new System.EventHandler(this.button48_Click);
-            // 
-            // button49
-            // 
-            this.button49.BackColor = System.Drawing.Color.Teal;
-            this.button49.FlatAppearance.BorderSize = 0;
-            this.button49.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
-            this.button49.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
-            this.button49.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button49.Location = new System.Drawing.Point(134, 90);
-            this.button49.Name = "button49";
-            this.button49.Size = new System.Drawing.Size(122, 29);
-            this.button49.TabIndex = 70;
-            this.button49.Text = "显示基准点";
-            this.button49.UseVisualStyleBackColor = false;
-            this.button49.Click += new System.EventHandler(this.button49_Click);
-            // 
-            // button50
-            // 
-            this.button50.BackColor = System.Drawing.Color.Teal;
-            this.button50.FlatAppearance.BorderSize = 0;
-            this.button50.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
-            this.button50.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
-            this.button50.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button50.Location = new System.Drawing.Point(6, 90);
-            this.button50.Name = "button50";
-            this.button50.Size = new System.Drawing.Size(122, 29);
-            this.button50.TabIndex = 69;
-            this.button50.Text = "基准点示教";
-            this.button50.UseVisualStyleBackColor = false;
-            this.button50.Click += new System.EventHandler(this.button50_Click);
-            // 
-            // Form1
+            // Form_Product_Set
             // 
             this.ClientSize = new System.Drawing.Size(1028, 524);
             this.Controls.Add(this.button38);
@@ -1230,8 +1230,8 @@ namespace HYProject.ToolForm
             this.HideTitle = true;
             this.HideUserButtom = false;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.IconImage = ((System.Drawing.Image)(resources.GetObject("$this.IconImage")));
-            this.Name = "Form1";
+            this.IconImage = global::HYProject.Properties.Resources.logo;
+            this.Name = "Form_Product_Set";
             this.Text = "产品参数设置";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);

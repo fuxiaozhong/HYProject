@@ -253,6 +253,7 @@ namespace HYProject.ToolForm
             this.HideTitle = true;
             this.HideUserButtom = false;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconImage = global::HYProject.Properties.Resources.logo;
             this.Name = "Form_DataSheet";
             this.Text = "测量数据表";
             this.Controls.SetChildIndex(this.dataGridView1, 0);

@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace ToolKit.HYControls
 {
-    public partial class GlobalVariableUpdate : Form
+    public partial class GlobalVariableUpdate : HYForm.HYBaseForm
     {
         public GlobalVariableUpdate(ref string type, ref string name, ref string value, ref string mark)
         {

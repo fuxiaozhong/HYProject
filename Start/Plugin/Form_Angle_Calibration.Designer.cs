@@ -321,7 +321,7 @@ namespace HYProject.Plugin
             this.HideTitle = true;
             this.HideUserButtom = false;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.IconImage = ((System.Drawing.Image)(resources.GetObject("$this.IconImage")));
+            this.IconImage = global::HYProject.Properties.Resources.logo;
             this.Name = "Form_Angle_Calibration";
             this.Text = "角度标定";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Angle_Calibration_FormClosing);

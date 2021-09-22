@@ -79,5 +79,13 @@ namespace HYProject.MenuForm
             ToolStripMenuItem toolStripMenuItem = sender as ToolStripMenuItem;
             textBox_username.Text = toolStripMenuItem.Text;
         }
+
+        private void Form_User_Login_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Button1_Click(sender, e);
+            }
+        }
     }
 }

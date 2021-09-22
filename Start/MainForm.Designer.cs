@@ -902,7 +902,7 @@ namespace HYProject
             this.系统设置ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.系统设置ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("系统设置ToolStripMenuItem.Image")));
             this.系统设置ToolStripMenuItem.Name = "系统设置ToolStripMenuItem";
-            this.系统设置ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.系统设置ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.系统设置ToolStripMenuItem.Text = "系统设置";
             this.系统设置ToolStripMenuItem.Click += new System.EventHandler(this.系统设置ToolStripMenuItem_Click);
             // 
@@ -911,7 +911,7 @@ namespace HYProject
             this.用户设置ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.用户设置ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("用户设置ToolStripMenuItem.Image")));
             this.用户设置ToolStripMenuItem.Name = "用户设置ToolStripMenuItem";
-            this.用户设置ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.用户设置ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.用户设置ToolStripMenuItem.Text = "用户设置";
             this.用户设置ToolStripMenuItem.Click += new System.EventHandler(this.用户设置ToolStripMenuItem_Click);
             // 
@@ -925,7 +925,7 @@ namespace HYProject
             this.通讯设置ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.通讯设置ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("通讯设置ToolStripMenuItem.Image")));
             this.通讯设置ToolStripMenuItem.Name = "通讯设置ToolStripMenuItem";
-            this.通讯设置ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.通讯设置ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.通讯设置ToolStripMenuItem.Text = "通讯设置";
             this.通讯设置ToolStripMenuItem.Click += new System.EventHandler(this.通讯设置ToolStripMenuItem_Click);
             // 
@@ -968,7 +968,7 @@ namespace HYProject
             this.相机标定ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.相机标定ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("相机标定ToolStripMenuItem.Image")));
             this.相机标定ToolStripMenuItem.Name = "相机标定ToolStripMenuItem";
-            this.相机标定ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.相机标定ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.相机标定ToolStripMenuItem.Text = "相机标定";
             this.相机标定ToolStripMenuItem.Click += new System.EventHandler(this.相机标定ToolStripMenuItem_Click);
             // 

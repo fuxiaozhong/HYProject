@@ -52,7 +52,7 @@ namespace HYProject.ToolForm
             this.HideTitle = true;
             this.HideUserButtom = false;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.IconImage = ((System.Drawing.Image)(resources.GetObject("$this.IconImage")));
+            this.IconImage = global::HYProject.Properties.Resources.logo;
             this.Name = "Form_Global_System";
             this.Text = "全局参数 - 系统变量";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Global_System_FormClosing);

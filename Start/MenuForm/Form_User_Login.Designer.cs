@@ -222,13 +222,14 @@ namespace HYProject.MenuForm
             this.HideTitle = true;
             this.HideUserButtom = false;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.IconImage = ((System.Drawing.Image)(resources.GetObject("$this.IconImage")));
+            this.IconImage = global::HYProject.Properties.Resources.logo;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form_User_Login";
             this.ShowInTaskbar = false;
             this.Text = "深圳市恒越自动化科技有限公司";
             this.Load += new System.EventHandler(this.Form_User_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form_User_Login_KeyDown);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.button1, 0);
             this.Controls.SetChildIndex(this.button2, 0);
