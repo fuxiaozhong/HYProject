@@ -63,12 +63,8 @@ namespace ToolKit.HYControls.HYForm
             set
             {
                 this._HideOrClose = value;
-
             }
         }
-
-
-
 
         [CategoryAttribute("其他"), DescriptionAttribute("隐藏或者显示最小化按钮")]
         public bool HideMinButtom

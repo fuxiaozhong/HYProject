@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using ToolKit.CommunicAtion;
@@ -18,7 +11,9 @@ namespace ToolKit.HYControls
         {
             InitializeComponent();
         }
+
         private TCPSocketClient socketClient;
+
         private void Button1_Click(object sender, EventArgs e)
         {
             socketClient = new TCPSocketClient(textBox1.Text, int.Parse(textBox2.Text));
@@ -35,12 +30,14 @@ namespace ToolKit.HYControls
                 MessageBox.Show("连接超时");
             }
         }
+
         private void SocketClient_SocketReceiveMessage(string serverSocketIp, string message)
         {
-            richTextBox2.AppendText("["+serverSocketIp + "] : " + message + "\n");
+            richTextBox2.AppendText("[" + serverSocketIp + "] : " + message + "\n");
             richTextBox2.SelectionStart = richTextBox2.TextLength;
             richTextBox2.ScrollToCaret();
         }
+
         private void Button2_Click(object sender, EventArgs e)
         {
             try

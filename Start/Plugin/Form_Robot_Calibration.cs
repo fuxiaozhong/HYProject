@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -11,8 +8,6 @@ using System.Windows.Forms;
 using HalconDotNet;
 
 using HYProject.Model;
-
-using NPOI.SS.Formula.Functions;
 
 using ToolKit.DisplayWindow;
 
@@ -41,31 +36,29 @@ namespace HYProject.Plugin
                 return halconWindow1;
             }
         }
+
         private Form_Robot_Calibration()
         {
             InitializeComponent();
             CheckForIllegalCrossThreadCalls = false;
         }
+
         public void ClearData(int CamStep)
         {
-
             if (CamStep == 1)
             {
                 dataGridView_Cam1.Rows.Clear();
-
             }
             else if (CamStep == 2)
             {
                 dataGridView_Cam2.Rows.Clear();
-
             }
             else if (CamStep == 3)
             {
                 dataGridView_Cam3.Rows.Clear();
             }
-
-
         }
+
         public void Disp_order(string order)
         {
             this.Invoke(new Action(delegate
@@ -105,7 +98,6 @@ namespace HYProject.Plugin
                     dataGridView_Cam2.Rows[index].Cells[2].Value = Column.ToString("0.00000");
                     dataGridView_Cam2.Rows[index].Cells[3].Value = RobotX.ToString("0.00000");
                     dataGridView_Cam2.Rows[index].Cells[4].Value = RobotY.ToString("0.00000");
-
                 }
                 else if (CamStep == 3)
                 {
@@ -116,12 +108,8 @@ namespace HYProject.Plugin
                     dataGridView_Cam3.Rows[index].Cells[3].Value = RobotX.ToString("0.00000");
                     dataGridView_Cam3.Rows[index].Cells[4].Value = RobotY.ToString("0.00000");
                 }
-
             }));
-
-
         }
-
 
         public RobotPoint CenterRotation(RobotPoint p1, RobotPoint p2, RobotPoint p3)
         {
@@ -170,8 +158,6 @@ namespace HYProject.Plugin
             return xyr;
         }
 
-
-
         private void Form_Robot_Calibration_Load(object sender, EventArgs e)
         {
             Task.Factory.StartNew(() =>
@@ -180,8 +166,6 @@ namespace HYProject.Plugin
                 {
                     try
                     {
-
-
                         label75.Text = Work.Cam1_Calibration_Mode ? "标定模式" : "待机模式";
                         label75.BackColor = Work.Cam1_Calibration_Mode ? Color.Green : Color.Cyan;
 
@@ -190,7 +174,6 @@ namespace HYProject.Plugin
 
                         label77.Text = Work.Cam3_Calibration_Mode ? "标定模式" : "待机模式";
                         label77.BackColor = Work.Cam3_Calibration_Mode ? Color.Green : Color.Cyan;
-
                     }
                     catch (Exception)
                     {
@@ -205,7 +188,6 @@ namespace HYProject.Plugin
             textBox_Cam2_minScore2.Text = CalibrationData.Instance.Cam2_minScore2.ToString("0.00000");
             textBox_Cam3_minScore1.Text = CalibrationData.Instance.Cam3_minScore1.ToString("0.00000");
             textBox_Cam3_minScore2.Text = CalibrationData.Instance.Cam3_minScore2.ToString("0.00000");
-
 
             textBox_Cam1_Point1_X1.Text = CalibrationData.Instance.Cam1_Rotate1_Point1.X.ToString("0.00000");
             textBox_Cam1_Point1_Y1.Text = CalibrationData.Instance.Cam1_Rotate1_Point1.Y.ToString("0.00000");
@@ -276,7 +258,6 @@ namespace HYProject.Plugin
             text_Cam3_Standard_Point2_Y.Text = CalibrationData.Instance.Cam3_Standard2_Point.Y.ToString("0.00000");
             text_Cam3_Standard_Point2_U.Text = CalibrationData.Instance.Cam3_Standard2_Point.U.ToString("0.00000");
 
-
             for (int i = 0; i < CalibrationData.Instance.Cam1_Robot_Location.Count; i++)
             {
                 int index = dataGridView_Cam1.Rows.Add();
@@ -286,7 +267,6 @@ namespace HYProject.Plugin
                 dataGridView_Cam1.Rows[index].Cells[2].Value = CalibrationData.Instance.Cam1_Pixel_Location[i].Y;
                 dataGridView_Cam1.Rows[index].Cells[3].Value = CalibrationData.Instance.Cam1_Robot_Location[i].X;
                 dataGridView_Cam1.Rows[index].Cells[4].Value = CalibrationData.Instance.Cam1_Robot_Location[i].Y;
-
             }
 
             for (int i = 0; i < CalibrationData.Instance.Cam2_Robot_Location.Count; i++)
@@ -298,7 +278,6 @@ namespace HYProject.Plugin
                 dataGridView_Cam2.Rows[index].Cells[2].Value = CalibrationData.Instance.Cam2_Pixel_Location[i].Y;
                 dataGridView_Cam2.Rows[index].Cells[3].Value = CalibrationData.Instance.Cam2_Robot_Location[i].X;
                 dataGridView_Cam2.Rows[index].Cells[4].Value = CalibrationData.Instance.Cam2_Robot_Location[i].Y;
-
             }
             for (int i = 0; i < CalibrationData.Instance.Cam3_Robot_Location.Count; i++)
             {
@@ -308,15 +287,11 @@ namespace HYProject.Plugin
                 dataGridView_Cam3.Rows[index].Cells[2].Value = CalibrationData.Instance.Cam3_Pixel_Location[i].Y;
                 dataGridView_Cam3.Rows[index].Cells[3].Value = CalibrationData.Instance.Cam3_Robot_Location[i].X;
                 dataGridView_Cam3.Rows[index].Cells[4].Value = CalibrationData.Instance.Cam3_Robot_Location[i].Y;
-
             }
-
         }
-
 
         public void SaveData()
         {
-
             CalibrationData.Instance.Cam1_minScore1 = double.Parse(textBox_Cam1_minScore1.Text.Trim());
             CalibrationData.Instance.Cam1_minScore2 = double.Parse(textBox_Cam1_minScore2.Text.Trim());
             CalibrationData.Instance.Cam2_minScore1 = double.Parse(textBox_Cam2_minScore1.Text.Trim());
@@ -347,8 +322,6 @@ namespace HYProject.Plugin
             CalibrationData.Instance.Cam1_Standard2_Point.Y = double.Parse(text_Cam1_Standard_Point2_Y.Text.Trim());
             CalibrationData.Instance.Cam1_Standard2_Point.U = double.Parse(text_Cam1_Standard_Point2_U.Text.Trim());
 
-
-
             CalibrationData.Instance.Cam2_Rotate1_Point1.X = double.Parse(textBox_Cam2_Point1_X1.Text.Trim());
             CalibrationData.Instance.Cam2_Rotate1_Point1.Y = double.Parse(textBox_Cam2_Point1_Y1.Text.Trim());
             CalibrationData.Instance.Cam2_Rotate1_Point2.X = double.Parse(textBox_Cam2_Point1_X2.Text.Trim());
@@ -371,8 +344,6 @@ namespace HYProject.Plugin
             CalibrationData.Instance.Cam2_Standard2_Point.X = double.Parse(text_Cam2_Standard_Point2_X.Text.Trim());
             CalibrationData.Instance.Cam2_Standard2_Point.Y = double.Parse(text_Cam2_Standard_Point2_Y.Text.Trim());
             CalibrationData.Instance.Cam2_Standard2_Point.U = double.Parse(text_Cam2_Standard_Point2_U.Text.Trim());
-
-
 
             CalibrationData.Instance.Cam3_Rotate1_Point1.X = double.Parse(textBox_Cam3_Point1_X1.Text.Trim());
             CalibrationData.Instance.Cam3_Rotate1_Point1.Y = double.Parse(textBox_Cam3_Point1_Y1.Text.Trim());
@@ -403,7 +374,6 @@ namespace HYProject.Plugin
             CalibrationData.Instance.Cam2_Pixel_Location = new List<RobotPoint>();
             CalibrationData.Instance.Cam3_Robot_Location = new List<RobotPoint>();
             CalibrationData.Instance.Cam3_Pixel_Location = new List<RobotPoint>();
-
 
             for (int i = 0; i < dataGridView_Cam1.Rows.Count - 1; i++)
             {
@@ -483,7 +453,6 @@ namespace HYProject.Plugin
                 SaveData();
                 AppParam.Instance.Save_To_File();
                 Log.WriteRunLog("相机1 自动标定完成");
-
             }
             else if (CamIndex == 2)
             {
@@ -593,7 +562,6 @@ namespace HYProject.Plugin
                 SaveData();
                 AppParam.Instance.Save_To_File();
                 Log.WriteRunLog("相机3 自动标定完成");
-
             }
         }
 
@@ -611,8 +579,6 @@ namespace HYProject.Plugin
             }
             try
             {
-
-
                 HTuple Row = new HTuple();
                 HTuple Column = new HTuple();
                 HTuple X = new HTuple();
@@ -699,7 +665,6 @@ namespace HYProject.Plugin
             }
         }
 
-
         private void Button5_Click(object sender, EventArgs e)
         {
             textBox_Cam1_Point1_X1.Text = dataGridView_Cam1.Rows[4].Cells[1].Value.ToString();
@@ -715,11 +680,9 @@ namespace HYProject.Plugin
             HTuple Point1_X3 = double.Parse(textBox_Cam1_Point1_X3.Text);
             HTuple Point1_Y3 = double.Parse(textBox_Cam1_Point1_Y3.Text);
 
-
             RobotPoint Center_Point = CenterRotation(new RobotPoint() { X = Point1_X1.D, Y = Point1_Y1.D },
                                                     new RobotPoint() { X = Point1_X2.D, Y = Point1_Y2.D },
                                                     new RobotPoint() { X = Point1_X3.D, Y = Point1_Y3.D });
-
 
             if (Center_Point.X != 9999)
             {
@@ -731,11 +694,8 @@ namespace HYProject.Plugin
             {
                 ShowWarn("标定失败");
             }
-
-
-
-
         }
+
         private void Button6_Click(object sender, EventArgs e)
         {
             textBox_Cam1_Point2_X1.Text = dataGridView_Cam1.Rows[11].Cells[1].Value.ToString();
@@ -750,7 +710,6 @@ namespace HYProject.Plugin
             HTuple Point2_Y2 = double.Parse(textBox_Cam1_Point2_Y2.Text);
             HTuple Point2_X3 = double.Parse(textBox_Cam1_Point2_X3.Text);
             HTuple Point2_Y3 = double.Parse(textBox_Cam1_Point2_Y3.Text);
-
 
             RobotPoint Center_Point = CenterRotation(new RobotPoint() { X = Point2_X1.D, Y = Point2_Y1.D }, new RobotPoint() { X = Point2_X2.D, Y = Point2_Y2.D },
 
@@ -784,12 +743,9 @@ namespace HYProject.Plugin
             HTuple Point1_X3 = double.Parse(textBox_Cam2_Point1_X3.Text);
             HTuple Point1_Y3 = double.Parse(textBox_Cam2_Point1_Y3.Text);
 
-
             RobotPoint Center_Point = CenterRotation(new RobotPoint() { X = Point1_X1.D, Y = Point1_Y1.D }, new RobotPoint() { X = Point1_X2.D, Y = Point1_Y2.D },
 
                                                     new RobotPoint() { X = Point1_X3.D, Y = Point1_Y3.D });
-
-
 
             if (Center_Point.X != 9999)
             {
@@ -818,7 +774,6 @@ namespace HYProject.Plugin
             HTuple Point1_X3 = double.Parse(textBox_Cam2_Point2_X3.Text);
             HTuple Point1_Y3 = double.Parse(textBox_Cam2_Point2_Y3.Text);
 
-
             RobotPoint Center_Point = CenterRotation(new RobotPoint() { X = Point1_X1.D, Y = Point1_Y1.D }, new RobotPoint() { X = Point1_X2.D, Y = Point1_Y2.D },
 
                                                     new RobotPoint() { X = Point1_X3.D, Y = Point1_Y3.D });
@@ -833,7 +788,6 @@ namespace HYProject.Plugin
             {
                 ShowWarn("标定失败");
             }
-
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -865,7 +819,6 @@ namespace HYProject.Plugin
             {
                 ShowWarn("标定失败");
             }
-
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -884,7 +837,6 @@ namespace HYProject.Plugin
             HTuple Point1_X3 = double.Parse(textBox_Cam3_Point2_X3.Text);
             HTuple Point1_Y3 = double.Parse(textBox_Cam3_Point2_Y3.Text);
 
-
             RobotPoint Center_Point = CenterRotation(new RobotPoint() { X = Point1_X1.D, Y = Point1_Y1.D }, new RobotPoint() { X = Point1_X2.D, Y = Point1_Y2.D },
 
                                                     new RobotPoint() { X = Point1_X3.D, Y = Point1_Y3.D });
@@ -899,7 +851,6 @@ namespace HYProject.Plugin
             {
                 ShowWarn("标定失败");
             }
-
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -972,18 +923,14 @@ namespace HYProject.Plugin
 
         private void groupBox3_Enter(object sender, EventArgs e)
         {
-
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void Form_Robot_Calibration_Activated(object sender, EventArgs e)
         {
-
-
         }
 
         private void button15_Click(object sender, EventArgs e)
@@ -992,4 +939,3 @@ namespace HYProject.Plugin
         }
     }
 }
-

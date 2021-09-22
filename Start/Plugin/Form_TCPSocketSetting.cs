@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
 
 namespace HYProject.Plugin
 {
@@ -49,7 +43,6 @@ namespace HYProject.Plugin
             {
                 ShowError(ex.Message);
             }
-
         }
 
         private void HslButton2_Click(object sender, EventArgs e)

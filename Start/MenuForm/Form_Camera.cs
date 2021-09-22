@@ -2,7 +2,6 @@
 using System.Windows.Forms;
 
 using HYProject.Model;
-using HYProject.ToolForm;
 
 using ToolKit.HYControls.HYForm;
 
@@ -17,7 +16,6 @@ namespace HYProject.MenuForm
 
         private void Form_Camera_Load(object sender, EventArgs e)
         {
-
             AppParam.Instance.lightSource.OpenAllCH();
 
             //初始化相机  列举相机列表

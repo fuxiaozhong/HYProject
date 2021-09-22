@@ -3,23 +3,12 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Messaging;
 using System.Reflection;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
-using HalconDotNet;
-
-using HYProject.Helper;
 using HYProject.ToolForm;
-
-using NPOI.SS.Formula.Functions;
-
-using ToolKit.HYControls.HYForm;
-
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace HYProject
 {
@@ -32,35 +21,41 @@ namespace HYProject
         /// 锁
         /// </summary>
         private static object obj = new object();
+
         /// <summary>
         /// 配置文件
         /// </summary>
         private static string m_logFile;
+
         /// <summary>
         /// 日志类型对象
         /// </summary>
         private static Dictionary<string, log4net.ILog> m_lstLog = new Dictionary<string, log4net.ILog>();
+
         /// <summary>
         /// 显示队列
         /// </summary>
         private static ConcurrentQueue<LogInfo> Dispqueues = new ConcurrentQueue<LogInfo>();
+
         /// <summary>
         /// 显示线程
         /// </summary>
         private static Thread DispLog;
+
         /// <summary>
         /// 删除文件线程
         /// </summary>
         private static Thread _DeleteLogFile;
+
         /// <summary>
         /// 保存CSV队列
         /// </summary>
         private static ConcurrentQueue<LogInfo> SaveCSVQueues = new ConcurrentQueue<LogInfo>();
+
         /// <summary>
         /// 保存CSV线程
         /// </summary>
         private static Thread SaveSCV;
-
 
         /// <summary>
         /// 初始化
@@ -90,6 +85,7 @@ namespace HYProject
             SaveSCV.Name = "保存日志文件到CSV";
             SaveSCV.Start();
         }
+
         /// <summary>
         /// 添加队列
         /// </summary>
@@ -100,6 +96,7 @@ namespace HYProject
             Dispqueues.Enqueue(new LogInfo() { datetime = DateTime.Now, type = type, message = message });
             SaveCSVQueues.Enqueue(new LogInfo() { datetime = DateTime.Now, type = type, message = message });
         }
+
         /// <summary>
         /// 异步显示日志到窗口
         /// </summary>
@@ -121,9 +118,11 @@ namespace HYProject
                         case "警告":
                             Form_Logs.Instance.OutputMsg(logMessage.message, System.Drawing.Color.Orange);
                             break;
+
                         case "异常":
                             Form_Logs.Instance.OutputMsg(logMessage.message, System.Drawing.Color.Red);
                             break;
+
                         case "正常":
                             Form_Logs.Instance.OutputMsg(logMessage.message, System.Drawing.Color.Green);
                             break;
@@ -135,6 +134,7 @@ namespace HYProject
                 }
             }
         }
+
         /// <summary>
         /// 到期自动删除日志文件
         /// </summary>
@@ -170,8 +170,6 @@ namespace HYProject
             }
         }
 
-
-
         /// <summary>
         /// 功能描述:写入警告日志
         /// </summary>
@@ -181,13 +179,11 @@ namespace HYProject
             if (strWarnLog.Contains(","))
             {
                 strWarnLog = strWarnLog.Replace(',', '，');
-
             }
             if (m_lstLog["warn_logo"].IsWarnEnabled)
             {
                 m_lstLog["warn_logo"].Warn(strWarnLog);
                 DispMessage(strWarnLog, "警告");
-
             }
         }
 
@@ -201,7 +197,6 @@ namespace HYProject
             if (strErrLog.Contains(","))
             {
                 strErrLog = strErrLog.Replace(',', '，');
-
             }
             if (m_lstLog["error_logo"].IsErrorEnabled)
             {
@@ -211,7 +206,6 @@ namespace HYProject
 
                 m_lstLog["error_logo"].Error("<类名:" + methodBase.ReflectedType.Name + ">   <方法名:" + methodBase.Name + ">   <信息:" + strErrLog + ">", ex);
                 DispMessage(strErrLog, "异常");
-
             }
         }
 
@@ -224,16 +218,13 @@ namespace HYProject
             if (runmessage.Contains(","))
             {
                 runmessage = runmessage.Replace(',', '，');
-
             }
             if (m_lstLog["run_logo"].IsErrorEnabled)
             {
                 m_lstLog["run_logo"].Info(runmessage);
                 DispMessage(runmessage, "正常");
-
             }
         }
-
 
         /// <summary>
         /// 保存日志到csv

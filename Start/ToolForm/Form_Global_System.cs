@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 
-using Org.BouncyCastle.Asn1.X509;
-
 using ToolKit.HYControls.HYForm;
 
 namespace HYProject.ToolForm
@@ -22,10 +20,10 @@ namespace HYProject.ToolForm
                 if (instance == null)
                 {
                     //在同一个时刻加了锁的那部分程序只有一个线程可以进入
-                        if (instance == null)
-                        {
-                            instance = new Form_Global_System();
-                        }
+                    if (instance == null)
+                    {
+                        instance = new Form_Global_System();
+                    }
                 }
                 instance.Read();
                 return instance;
@@ -72,7 +70,6 @@ namespace HYProject.ToolForm
         {
             if (Global_Parameter_System.GetData().Count == 0)
             {
-
                 Global_Parameter_System.Add("String", "日期格式", "yyyy-MM-dd HH:mm:ss", "时间格式");
                 Global_Parameter_System.Add("String", "标题栏", "视觉软件", "软件标题");
                 Global_Parameter_System.Add("String", "版本号", "v1.0.0", "软件版本号");
@@ -97,7 +94,6 @@ namespace HYProject.ToolForm
                 Global_Parameter_System.Add("Bool", "TCP客户端", "true", "菜单按钮显示状态");
                 Global_Parameter_System.Add("Bool", "数据面板", "true", "右侧面板显示状态");
                 Global_Parameter_System.Add("Int", "显示数量", "3", "图像显示界面数量");
-
             }
         }
     }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
@@ -180,7 +179,6 @@ namespace ToolKit.DisplayWindow
         /// <param name="image"></param>
         public void Disp_Image(HObject image)
         {
-
             try
             {
                 if (image == null)
@@ -206,7 +204,6 @@ namespace ToolKit.DisplayWindow
                     ho_image.Dispose();
                     HOperatorSet.CopyImage(image, out ho_image);
                 }
-
 
                 HTuple _ImageWidth, _ImageHeight;
 
@@ -246,7 +243,6 @@ namespace ToolKit.DisplayWindow
             catch (Exception)
             {
             }
-
         }
 
         /// <summary>
@@ -424,7 +420,7 @@ namespace ToolKit.DisplayWindow
         /// <param name="size"></param>
         /// <param name="angle"></param>
         /// <param name="colorName"></param>
-        public void Disp_Cross(HTuple row, HTuple column, HTuple size,HTuple phi, string colorName)
+        public void Disp_Cross(HTuple row, HTuple column, HTuple size, HTuple phi, string colorName)
         {
             this.Cross.Add(new CrossPoint()
             {
@@ -1458,11 +1454,6 @@ namespace ToolKit.DisplayWindow
             return circle;
         }
 
-
-
-
-
-
         /// <summary>
         /// Bitmap转PP24格式HObject
         /// </summary>
@@ -1478,7 +1469,6 @@ namespace ToolKit.DisplayWindow
                 BitmapData srcBmpData = bmp.LockBits(rect, ImageLockMode.ReadOnly, PixelFormat.Format24bppRgb);
                 HOperatorSet.GenImageInterleaved(out image, srcBmpData.Scan0, "bgr", bmp.Width, bmp.Height, 0, "byte", 0, 0, 0, 0, -1, 0);
                 bmp.UnlockBits(srcBmpData);
-
             }
             catch
             {
@@ -1498,18 +1488,18 @@ namespace ToolKit.DisplayWindow
                 Rectangle rect = new Rectangle(0, 0, bmp.Width, bmp.Height);
 
                 BitmapData bmp_data = bmp.LockBits(rect, ImageLockMode.ReadOnly, PixelFormat.Format24bppRgb);
-                byte[] arrayR = new byte[bmp_data.Width * bmp_data.Height];//红色数组 
-                byte[] arrayG = new byte[bmp_data.Width * bmp_data.Height];//绿色数组 
-                byte[] arrayB = new byte[bmp_data.Width * bmp_data.Height];//蓝色数组 
+                byte[] arrayR = new byte[bmp_data.Width * bmp_data.Height];//红色数组
+                byte[] arrayG = new byte[bmp_data.Width * bmp_data.Height];//绿色数组
+                byte[] arrayB = new byte[bmp_data.Width * bmp_data.Height];//蓝色数组
                 unsafe
                 {
-                    byte* pBmp = (byte*)bmp_data.Scan0;//BitMap的头指针 
-                                                       //下面的循环分别提取出红绿蓝三色放入三个数组 
+                    byte* pBmp = (byte*)bmp_data.Scan0;//BitMap的头指针
+                                                       //下面的循环分别提取出红绿蓝三色放入三个数组
                     for (int R = 0; R < bmp_data.Height; R++)
                     {
                         for (int C = 0; C < bmp_data.Width; C++)
                         {
-                            //因为内存BitMap的储存方式，行宽用Stride算，C*3是因为这是三通道，另外BitMap是按BGR储存的 
+                            //因为内存BitMap的储存方式，行宽用Stride算，C*3是因为这是三通道，另外BitMap是按BGR储存的
                             byte* pBase = pBmp + bmp_data.Stride * R + C * 3;
                             arrayR[R * bmp_data.Width + C] = *(pBase + 2);
                             arrayG[R * bmp_data.Width + C] = *(pBase + 1);
@@ -1520,18 +1510,15 @@ namespace ToolKit.DisplayWindow
                     {
                         HOperatorSet.GenImage3(out image, "byte", bmp_data.Width, bmp_data.Height,
                                                                    new IntPtr(pR), new IntPtr(pG), new IntPtr(pB));
-                        //如果这里报错，仔细看看前面有没有写错 
+                        //如果这里报错，仔细看看前面有没有写错
                     }
                 }
-
-
             }
             catch
             {
                 image = null;
             }
         }
-
 
         /// <summary>
         /// Bitmap转PP24格式HObject
@@ -1606,6 +1593,7 @@ namespace ToolKit.DisplayWindow
                 throw ex;
             }
         }
+
         /// <summary>
         /// HObject转24位Bitmap
         /// </summary>
@@ -1647,8 +1635,6 @@ namespace ToolKit.DisplayWindow
                 throw ex;
             }
         }
-
-
     }
 
     public struct Ellipse

@@ -65,32 +65,16 @@ namespace HYProject.ToolForm
                 product = new Product();
             }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             Serialization.Save2(product, AppParam.Instance.ProductLibrary + "\\" + ProductName + ".HYProduct");
             HYMessageBox.Show("保存成功");
         }
 
         private void Form_ProductOperation_Load(object sender, EventArgs e)
         {
-
         }
 
         private void HyCreateModel1_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

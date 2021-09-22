@@ -10,7 +10,6 @@ namespace HYProject.Model
     {
         private static Cameras instance;
 
-
         /// <summary>
         /// 初始化当前类(单例模式)
         /// </summary>
@@ -22,10 +21,10 @@ namespace HYProject.Model
                 if (instance == null)
                 {
                     //在同一个时刻加了锁的那部分程序只有一个线程可以进入
-                        if (instance == null)
-                        {
-                            instance = new Cameras();
-                        }
+                    if (instance == null)
+                    {
+                        instance = new Cameras();
+                    }
                 }
                 return instance;
             }
@@ -153,11 +152,11 @@ namespace HYProject.Model
                 case CameraType.大华相机:
                     DaHuaCamera dahua = new DaHuaCamera();
                     dahua.IsSaveLog2Disk = true;
-                    if (dahua.Open(cameraName, cameraName+ ".mvcfg"))
+                    if (dahua.Open(cameraName, cameraName + ".mvcfg"))
                     {
                         Log.WriteRunLog("相机:" + cameraName + "打开成功");
                         AddCamera(cameraName, dahua);
-                        
+
                         dahua.ImageProcessEvent += Camera_ImageProcessEvent;
                     }
                     else
@@ -195,6 +194,7 @@ namespace HYProject.Model
                         Log.WriteErrorLog("相机:" + cameraName + "打开失败");
                     }
                     break;
+
                 case CameraType.Halcon:
                     HalconCamera halconCamera = new HalconCamera();
                     if (halconCamera.Open(cameraName))
@@ -219,7 +219,6 @@ namespace HYProject.Model
         /// <param name="ho_image">图片</param>
         public void Camera_ImageProcessEvent(string cameraName, HalconDotNet.HObject ho_image)
         {
-
             Log.WriteRunLog(cameraName + "接收到图像开始处理......");
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();

@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+using HalconDotNet;
+
 using HYProject.Plugin;
 using HYProject.ToolForm;
-using HalconDotNet;
 
 namespace HYProject.Model
 {
@@ -29,16 +27,11 @@ namespace HYProject.Model
                 DisplayForm.Instance[1].Disp_Image(ho_image);
                 DisplayForm.Instance[1].Disp_Message("相机2 1号吸嘴", 16, 10, 10, "blue");
 
-
-
                 HTuple Row;
                 HTuple Column;
                 HTuple Angle;
 
-
                 result = Work.Test(DisplayForm.Instance[1], ho_image, "Cam2", 1, out Row, out Column, out Angle);
-
-
 
                 if (result)
                 {
@@ -49,16 +42,13 @@ namespace HYProject.Model
 
                     HOperatorSet.AffineTransPoint2d(CalibrationData.Instance.Cam2_HomMat2d, Row, Column, out Robot_x, out Robot_y);
 
-
                     //角度需要在计算
 
                     double AbsAngle = Math.Abs(Angle.D);
 
                     RobotPoint RotateAnglePoint = Work.RotateAngle(CalibrationData.Instance.Cam2_Rotate_Center1_Point, 90 - AbsAngle, new RobotPoint() { X = Row.D, Y = Column.D });
 
-
                     HOperatorSet.AffineTransPoint2d(CalibrationData.Instance.Cam2_HomMat2d, new HTuple(RotateAnglePoint.X), new HTuple(RotateAnglePoint.Y), out Robot_x, out Robot_y);
-
 
                     X = Robot_x.D;
                     Y = Robot_y.D;
@@ -69,14 +59,6 @@ namespace HYProject.Model
                 {
                     Log.WriteErrorLog("定位失败：[" + Row.D.ToString("0.00000") + "," + Column.D.ToString("0.00000") + "," + Angle.D.ToString("0.00000") + "]");
                 }
-
-
-
-
-
-
-
-
 
                 AppParam.Instance.TCPSocketServer_Cam2.SendMessage("&OBG,1,1," + (result ? "1" : "0") + "," + X.ToString("0.00000") + "," + Y.ToString("0.00000") + "," + U.ToString("0.00000"));
                 Work.SaveImage("相机2", "1号吸嘴", result, DisplayForm.Instance[1]);
@@ -95,16 +77,11 @@ namespace HYProject.Model
                 DisplayForm.Instance[4].Disp_Image(ho_image);
                 DisplayForm.Instance[4].Disp_Message("相机2 2号吸嘴", 16, 10, 10, "blue");
 
-
                 HTuple Row;
                 HTuple Column;
                 HTuple Angle;
 
-
                 result = Work.Test(DisplayForm.Instance[4], ho_image, "Cam2", 2, out Row, out Column, out Angle);
-
-
-
 
                 if (result)
                 {
@@ -115,16 +92,13 @@ namespace HYProject.Model
 
                     HOperatorSet.AffineTransPoint2d(CalibrationData.Instance.Cam2_HomMat2d, Row, Column, out Robot_x, out Robot_y);
 
-
                     //角度需要在计算
 
                     double AbsAngle = Math.Abs(Angle.D);
 
                     RobotPoint RotateAnglePoint = Work.RotateAngle(CalibrationData.Instance.Cam2_Rotate_Center2_Point, 90 - AbsAngle, new RobotPoint() { X = Row.D, Y = Column.D });
 
-
                     HOperatorSet.AffineTransPoint2d(CalibrationData.Instance.Cam2_HomMat2d, new HTuple(RotateAnglePoint.X), new HTuple(RotateAnglePoint.Y), out Robot_x, out Robot_y);
-
 
                     X = Robot_x.D;
                     Y = Robot_y.D;
@@ -135,18 +109,6 @@ namespace HYProject.Model
                 {
                     Log.WriteErrorLog("定位失败：[" + Row.D.ToString("0.00000") + "," + Column.D.ToString("0.00000") + "," + Angle.D.ToString("0.00000") + "]");
                 }
-
-
-
-
-
-
-
-
-
-
-
-
 
                 AppParam.Instance.TCPSocketServer_Cam2.SendMessage("&OBG,1,2," + (result ? "1" : "0") + "," + X.ToString("0.00000") + "," + Y.ToString("0.00000") + "," + U.ToString("0.00000"));
                 Work.SaveImage("相机2", "2号吸嘴", result, DisplayForm.Instance[4]);
@@ -160,14 +122,12 @@ namespace HYProject.Model
                 }
             }
             AppParam.Instance.lightSource.StateCH2 = false;
-
         }
+
         private static void Cam2_Calibration(HalconDotNet.HObject ho_image)
         {
             try
             {
-
-
                 if (Work.Cam2_Calibration_Mode)
                 {
                     Form_Robot_Calibration.Instance.Window.Disp_Image(ho_image);
@@ -225,7 +185,6 @@ namespace HYProject.Model
                             Form_Robot_Calibration.Instance.AddData(2, Column.D, Row.D, Work.Cam3_X1, Work.Cam3_Y1);
                             AppParam.Instance.TCPSocketServer_Cam2.SendMessage("&CAE,1");
                             Log.WriteRunLog("相机2 回复指令 ： & CAE, 1");
-
                         }
                         else
                         {
@@ -241,7 +200,6 @@ namespace HYProject.Model
                             Form_Robot_Calibration.Instance.Auto(2);
                         }
                     }
-
                 }
             }
             catch (Exception)
@@ -249,7 +207,6 @@ namespace HYProject.Model
                 AppParam.Instance.TCPSocketServer_Cam2.SendMessage("&CAE,0");
             }
             AppParam.Instance.lightSource.StateCH2 = false;
-
         }
 
         public static int Cam2_OK1
@@ -265,6 +222,7 @@ namespace HYProject.Model
                 MainForm.Instance.label_Cam2_TOTAL1.Text = (Cam2_OK1 + Cam2_NG1).ToString();
             }
         }
+
         public static int Cam2_NG1
         {
             get
@@ -278,7 +236,6 @@ namespace HYProject.Model
                 MainForm.Instance.label_Cam2_TOTAL1.Text = (Cam2_OK1 + Cam2_NG1).ToString();
             }
         }
-
 
         public static int Cam2_OK2
         {

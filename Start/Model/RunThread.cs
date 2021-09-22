@@ -1,9 +1,5 @@
 ﻿using System.Threading;
 
-using HslCommunication;
-
-using HYProject.Model;
-
 namespace HYProject
 {
     public class RunThread
@@ -28,13 +24,12 @@ namespace HYProject
                 {
                     //if (MainForm.Instance.tackTest)
                     //{
-                    //    
+                    //
                     //    Log.WriteRunLog("收到D10拍照信号: " + MainForm.Instance.tackTest);
                     //    Log.WriteRunLog("执行拍照命令: " + (Cameras.Instance["Cam1"].Soft_Trigger() ? "成功" : "失败"));
                     //    MainForm.Instance.tackTest = false;
                     //    Log.WriteRunLog("复位D10拍照信号: " + (!MainForm.Instance.tackTest ? "成功" : "失败"));
                     //}
-
 
                     //读取第一个拍照信号
                     //OperateResult<int> AoperateResult = AppParam.Instance.Fx3uPLC.ReadInt32("D10");

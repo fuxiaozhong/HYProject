@@ -4,14 +4,10 @@ using System.IO;
 using System.IO.Ports;
 using System.Runtime.Serialization.Formatters.Binary;
 
-using HalconDotNet;
-
 using HslCommunication;
 using HslCommunication.Profinet.Melsec;
 
 using HYProject.Model;
-
-using NPOI.SS.Formula.Functions;
 
 using ToolKit.CommunicAtion;
 using ToolKit.HalconTool.Model;
@@ -55,7 +51,6 @@ namespace HYProject
                             Directory.CreateDirectory(instance.Save_Data_Path);
                         }
                     }
-
                 }
                 return instance;
             }
@@ -118,7 +113,6 @@ namespace HYProject
         /// </summary>
         [NonSerialized]
         internal bool Runing = false;
-
 
         /// <summary>
         /// 是否保存图像
@@ -211,30 +205,32 @@ namespace HYProject
         /// 日志储存天数
         /// </summary>
         internal int Log_Save_Days = 7;
+
         /// <summary>
         /// 启动自动运行
         /// </summary>
         internal bool StartAutoRun;
+
         /// <summary>
         /// 操作员密码
         /// </summary>
         internal string OperatorPassword = "123456";
+
         /// <summary>
         /// 管理员密码
         /// </summary>
         internal string AdminPassword = "admin";
+
         /// <summary>
         /// 开发人员密码
         /// </summary>
         internal string DeveloperPassword = "develop";
 
-
-
-
         /// <summary>
         /// TCPSocketServer IP地址  相机1
         /// </summary>
         internal string TCPServerIPAddress_Cam1 = "127.0.0.1";
+
         /// <summary>
         /// TCPSocketServer 端口   相机1
         /// </summary>
@@ -244,6 +240,7 @@ namespace HYProject
         /// TCPSocketServer IP地址   相机2
         /// </summary>
         internal string TCPServerIPAddress_Cam2 = "127.0.0.1";
+
         /// <summary>
         /// TCPSocketServer 端口    相机2
         /// </summary>
@@ -253,19 +250,17 @@ namespace HYProject
         /// TCPSocketServer IP地址    相机3
         /// </summary>
         internal string TCPServerIPAddress_Cam3 = "127.0.0.1";
+
         /// <summary>
         /// TCPSocketServer 端口   相机3
         /// </summary>
         internal int TCPServerPort_Cam3 = 8502;
 
-
-
-
-
         /// <summary>
         /// TCPSocketClient IP地址
         /// </summary>
         internal string TCPClientIPAddress = "127.0.0.1";
+
         /// <summary>
         /// TCPSocketClient 端口
         /// </summary>
@@ -277,13 +272,11 @@ namespace HYProject
         [NonSerialized]
         internal TCPSocketServer TCPSocketServer_Cam1;
 
-
         /// <summary>
         /// TCPSocketServer 服务器对象  Cam2
         /// </summary>
         [NonSerialized]
         internal TCPSocketServer TCPSocketServer_Cam2;
-
 
         /// <summary>
         /// TCPSocketServer 服务器对象  Cam3
@@ -297,14 +290,12 @@ namespace HYProject
         [NonSerialized]
         internal TCPSocketClient TCPSocketClient;
 
-
         /// <summary>
         /// 产品数据
         /// </summary>
         internal Product product = new Product();
+
         internal bool Robot_Calibration_State;
-
-
 
         /// <summary>
         /// 保存对象到文件

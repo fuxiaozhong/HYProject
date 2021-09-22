@@ -1,14 +1,9 @@
-﻿using HalconDotNet;
+﻿using System;
+using System.Windows.Forms;
+
+using HalconDotNet;
 
 using HYProject.Model;
-
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
 
 using ToolKit.DisplayWindow;
 using ToolKit.HalconTool;
@@ -45,7 +40,6 @@ namespace HYProject.Plugin
         private void Form_Camera_ImageProcessEvent(string cameraName, HObject ho_image)
         {
             halconWindow1.Disp_Image(ho_image);
-
         }
 
         private void Form_Angle_Calibration_FormClosing(object sender, FormClosingEventArgs e)
@@ -59,8 +53,6 @@ namespace HYProject.Plugin
                 //重新绑定运行事件
                 Cameras.Instance[item].ImageProcessEvent += Cameras.Instance.Camera_ImageProcessEvent;
             }
-
-
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -70,15 +62,19 @@ namespace HYProject.Plugin
                 case "相机1":
                     Cameras.Instance["Cam1"].Soft_Trigger();
                     break;
+
                 case "相机2":
                     Cameras.Instance["Cam2"].Soft_Trigger();
                     break;
+
                 case "相机3":
                     Cameras.Instance["Cam3"].Soft_Trigger();
                     break;
             }
         }
-        MeasureParam measureParam;
+
+        private MeasureParam measureParam;
+
         private void button1_Click(object sender, EventArgs e)
         {
             Line line = halconWindow1.Draw_Line("blue");
@@ -97,7 +93,6 @@ namespace HYProject.Plugin
             halconWindow1.Disp_Region(arrow, "red", "margin");
             halconWindow1.Disp_Message("角度：" + Phi.TupleDeg(), 16, 10, 10, "blue");
             arrow.Dispose();
-
 
             if (comboBox1.Text == "相机1")
             {

@@ -1,6 +1,8 @@
-﻿using HalconDotNet;
-using System;
+﻿using System;
 using System.Drawing;
+
+using HalconDotNet;
+
 using ToolKit.HalconTool.Model;
 
 namespace HYProject.Model

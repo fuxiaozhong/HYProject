@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace HYProject.Plugin
 {
@@ -35,18 +29,18 @@ namespace HYProject.Plugin
 
         private void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
 
         private void ListBox1_DoubleClick(object sender, EventArgs e)
         {
-                if (listBox1.SelectedItems.Count > 0)
-                {
-                    string name = (string)listBox1.SelectedItems[0];
-                    string LogPath = System.Windows.Forms.Application.StartupPath + "\\Logs\\All\\" + name;
-                    dataGridView1.DataSource = OpenCSV(LogPath);
-                }
+            if (listBox1.SelectedItems.Count > 0)
+            {
+                string name = (string)listBox1.SelectedItems[0];
+                string LogPath = System.Windows.Forms.Application.StartupPath + "\\Logs\\All\\" + name;
+                dataGridView1.DataSource = OpenCSV(LogPath);
+            }
         }
+
         public static DataTable OpenCSV(string filePath)//从csv读取数据返回table
         {
             System.Text.Encoding encoding = GetType(filePath); //Encoding.ASCII;//
@@ -95,7 +89,6 @@ namespace HYProject.Plugin
                     catch
                     {
                     }
-
                 }
             }
             if (aryLine != null && aryLine.Length > 0)
@@ -107,6 +100,7 @@ namespace HYProject.Plugin
             fs.Close();
             return dt;
         }
+
         /// 给定文件的路径，读取文件的二进制数据，判断文件的编码类型
         /// <param name="FILE_NAME">文件路径</param>
         /// <returns>文件的编码类型</returns>

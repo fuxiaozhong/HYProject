@@ -92,6 +92,5 @@ namespace HYProject.Plugin
         {
             this.Close();
         }
-
     }
 }

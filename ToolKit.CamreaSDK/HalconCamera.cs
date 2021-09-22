@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 using HalconDotNet;
 
@@ -15,10 +8,11 @@ namespace ToolKit.CamreaSDK
     public class HalconCamera : ICamera
     {
         public override event ImageProcess ImageProcessEvent;
+
         public override event CameraLog CameraLogs;
 
         private HTuple CameraHandle;
-        Thread thread;
+        private Thread thread;
 
         public override bool Close()
         {
@@ -59,7 +53,6 @@ namespace ToolKit.CamreaSDK
             HOperatorSet.GetFramegrabberParam(CameraHandle, "TriggerMode", out mode);
             CameraLogs?.Invoke(_CameraNmae, "获取触发模式:" + mode.S.ToString());
             return mode.S.ToString();
-
         }
 
         public override string Get_TriggerSource()
@@ -96,21 +89,21 @@ namespace ToolKit.CamreaSDK
                 HOperatorSet.CloseAllFramegrabbers();
                 return false;
             }
-
         }
 
         private void tm_Tick(object sender, EventArgs e)
         {
-            autoEvent.Set(); //通知阻塞的线程继续执行  
+            autoEvent.Set(); //通知阻塞的线程继续执行
         }
 
         private System.Windows.Forms.Timer tm = new System.Windows.Forms.Timer();
-        AutoResetEvent autoEvent = new AutoResetEvent(false);
+        private AutoResetEvent autoEvent = new AutoResetEvent(false);
+
         private void GetImage()
         {
             while (true)
             {
-                autoEvent.WaitOne();  //阻塞当前线程，等待通知以继续执行  
+                autoEvent.WaitOne();  //阻塞当前线程，等待通知以继续执行
                 HOperatorSet.GenEmptyObj(out ho_Image);
                 ho_Image.Dispose();
                 //异步图像抓取（out 图像，句柄，默认值-1）
@@ -156,7 +149,9 @@ namespace ToolKit.CamreaSDK
             HOperatorSet.SetFramegrabberParam(CameraHandle, "TriggerSource", value);
             return true;
         }
-        HObject ho_Image;
+
+        private HObject ho_Image;
+
         public override bool Soft_Trigger()
         {
             autoEvent.Set();
@@ -168,7 +163,5 @@ namespace ToolKit.CamreaSDK
             tm.Start();
             return true;
         }
-
-
     }
 }

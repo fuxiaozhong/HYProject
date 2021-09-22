@@ -1,16 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using HalconDotNet;
-using System.Threading.Tasks;
 
-using HYProject.Helper;
-using HYProject.ToolForm;
-using NPOI.OpenXmlFormats.Vml;
-using ToolKit.DisplayWindow;
+using HalconDotNet;
+
 using HYProject.Plugin;
+using HYProject.ToolForm;
 
 namespace HYProject.Model
 {
@@ -23,14 +16,11 @@ namespace HYProject.Model
             double Y = 0.000;
             double U = 0.000;
 
-
             if (Work.Cam1_Calibration_Mode)
             {
                 Cam1_Calibration(ho_image);
                 return;
             }
-
-
 
             //1号吸嘴定位
             if (Work.Cam1_Suction_Nozzle_Number == 1)
@@ -38,13 +28,9 @@ namespace HYProject.Model
                 DisplayForm.Instance[0].Disp_Image(ho_image);
                 DisplayForm.Instance[0].Disp_Message("相机1 1号吸嘴", 16, 10, 10, "blue");
 
-
-
-
                 HTuple Row;
                 HTuple Column;
                 HTuple Angle;
-
 
                 result = Work.Test(DisplayForm.Instance[0], ho_image, "Cam1", 1, out Row, out Column, out Angle);
 
@@ -57,16 +43,13 @@ namespace HYProject.Model
 
                     HOperatorSet.AffineTransPoint2d(CalibrationData.Instance.Cam1_HomMat2d, Row, Column, out Robot_x, out Robot_y);
 
-
                     //角度需要在计算
 
                     double AbsAngle = Math.Abs(Angle.D);
 
                     RobotPoint RotateAnglePoint = Work.RotateAngle(CalibrationData.Instance.Cam1_Rotate_Center1_Point, 90 - AbsAngle, new RobotPoint() { X = Row.D, Y = Column.D });
 
-
                     HOperatorSet.AffineTransPoint2d(CalibrationData.Instance.Cam1_HomMat2d, new HTuple(RotateAnglePoint.X), new HTuple(RotateAnglePoint.Y), out Robot_x, out Robot_y);
-
 
                     X = Robot_x.D;
                     Y = Robot_y.D;
@@ -77,12 +60,6 @@ namespace HYProject.Model
                 {
                     Log.WriteErrorLog("定位失败：[" + Row.D.ToString("0.00000") + "," + Column.D.ToString("0.00000") + "," + Angle.D.ToString("0.00000") + "]");
                 }
-
-
-
-
-
-
 
                 AppParam.Instance.TCPSocketServer_Cam1.SendMessage("&OBG,1,1," + (result ? "1" : "0") + "," + X.ToString("0.00000") + "," + Y.ToString("0.00000") + "," + U.ToString("0.00000"));
                 Work.SaveImage("相机1", "1号吸嘴", result, DisplayForm.Instance[0]);
@@ -105,12 +82,7 @@ namespace HYProject.Model
                 HTuple Column;
                 HTuple Angle;
 
-
                 result = Work.Test(DisplayForm.Instance[3], ho_image, "Cam1", 2, out Row, out Column, out Angle);
-
-
-
-
 
                 if (result)
                 {
@@ -121,16 +93,13 @@ namespace HYProject.Model
 
                     HOperatorSet.AffineTransPoint2d(CalibrationData.Instance.Cam1_HomMat2d, Row, Column, out Robot_x, out Robot_y);
 
-
                     //角度需要在计算
 
                     double AbsAngle = Math.Abs(Angle.D);
 
                     RobotPoint RotateAnglePoint = Work.RotateAngle(CalibrationData.Instance.Cam1_Rotate_Center2_Point, 90 - AbsAngle, new RobotPoint() { X = Row.D, Y = Column.D });
 
-
                     HOperatorSet.AffineTransPoint2d(CalibrationData.Instance.Cam1_HomMat2d, new HTuple(RotateAnglePoint.X), new HTuple(RotateAnglePoint.Y), out Robot_x, out Robot_y);
-
 
                     X = Robot_x.D;
                     Y = Robot_y.D;
@@ -141,14 +110,6 @@ namespace HYProject.Model
                 {
                     Log.WriteErrorLog("定位失败：[" + Row.D.ToString("0.00000") + "," + Column.D.ToString("0.00000") + "," + Angle.D.ToString("0.00000") + "]");
                 }
-
-
-
-
-
-
-
-
 
                 AppParam.Instance.TCPSocketServer_Cam1.SendMessage("&OBG,1,2," + (result ? "1" : "0") + "," + X.ToString("0.00000") + "," + Y.ToString("0.00000") + "," + U.ToString("0.00000"));
                 Work.SaveImage("相机1", "2号吸嘴", result, DisplayForm.Instance[3]);
@@ -163,18 +124,14 @@ namespace HYProject.Model
             }
 
             AppParam.Instance.lightSource.StateCH1 = false;
-
-
         }
+
         private static void Cam1_Calibration(HalconDotNet.HObject ho_image)
         {
             try
             {
-
-
                 if (Work.Cam1_Calibration_Mode)
                 {
-
                     Form_Robot_Calibration.Instance.Window.Disp_Image(ho_image);
                     if (Work.Cam1_Suction_Nozzle_Number == 1)
                     {
@@ -213,7 +170,6 @@ namespace HYProject.Model
                             Work.Cam1_Suction_Nozzle_Number = -1;
                             Log.WriteRunLog("相机1 9点标定+1号吸嘴旋转标定结束");
                         }
-
                     }
                     else if (Work.Cam1_Suction_Nozzle_Number == 2)
                     {
@@ -242,7 +198,6 @@ namespace HYProject.Model
                         {
                             AppParam.Instance.TCPSocketServer_Cam1.SendMessage("&CAE,0");
                             Log.WriteRunLog("相机1 回复指令 ： & CAE, 0");
-
                         }
 
                         if (Work.Cam1_Calibration_Index == 10)
@@ -253,7 +208,6 @@ namespace HYProject.Model
                             Form_Robot_Calibration.Instance.Auto(1);
                         }
                     }
-
                 }
             }
             catch (Exception)
@@ -262,18 +216,6 @@ namespace HYProject.Model
             }
             AppParam.Instance.lightSource.StateCH1 = false;
         }
-
-
-
-
-
-
-
-
-
-
-
-
 
         public static int Cam1_OK1
         {
@@ -288,6 +230,7 @@ namespace HYProject.Model
                 MainForm.Instance.label_Cam1_TOTAL1.Text = (Cam1_OK1 + Cam1_NG1).ToString();
             }
         }
+
         public static int Cam1_NG1
         {
             get
@@ -301,7 +244,6 @@ namespace HYProject.Model
                 MainForm.Instance.label_Cam1_TOTAL1.Text = (Cam1_OK1 + Cam1_NG1).ToString();
             }
         }
-
 
         public static int Cam1_OK2
         {

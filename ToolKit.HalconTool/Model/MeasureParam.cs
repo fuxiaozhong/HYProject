@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Reflection;
 
 using HalconDotNet;
 
@@ -264,12 +263,9 @@ namespace ToolKit.HalconTool.Model
             }
         }
 
-
         public object Colne()
         {
-
             return this.MemberwiseClone();
-
         }
     }
 

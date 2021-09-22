@@ -22,7 +22,6 @@ namespace HYProject
 
         private void Welcome_Load(object sender, EventArgs e)
         {
-
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
             bool flag = true;
@@ -80,7 +79,6 @@ namespace HYProject
                                                              AppParam.Instance.LightSourceDataBits,
                                                              AppParam.Instance.LightSourceStopBits))
                 {
-
                     AppParam.Instance.lightSource.StateCH1 = true;
                     AppParam.Instance.lightSource.StateCH2 = true;
                     AppParam.Instance.lightSource.StateCH3 = true;
@@ -91,7 +89,6 @@ namespace HYProject
                     AppParam.Instance.lightSource.StateCH3 = false;
                     AppParam.Instance.lightSource.StateCH4 = false;
                     Log.WriteRunLog("光源连接成功");
-
                 }
                 else
                 {
@@ -141,8 +138,6 @@ namespace HYProject
                 }
             });
         }
-
-
 
         private void Label4_Click(object sender, EventArgs e)
         {

@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using ToolKit.HalconTool;
+
 using HalconDotNet;
-using ToolKit.DisplayWindow;
+
 using HYProject.Model;
-using NPOI.SS.Formula.Functions;
+
+using ToolKit.DisplayWindow;
+using ToolKit.HalconTool;
 
 namespace HYProject.ToolForm
 {
@@ -89,7 +86,6 @@ namespace HYProject.ToolForm
                 HOperatorSet.CopyImage(image, out AppParam.Instance.product.Cam1_Image1);
                 image.Dispose();
             }
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -99,7 +95,6 @@ namespace HYProject.ToolForm
             {
                 AppParam.Instance.product.Cam1_Top1.Shape = ToolKit.HalconTool.Model.MeasureShapes.line;
                 AppParam.Instance.product.Cam1_Top1.InputShapeParam = new HTuple(line.start_row, line.start_column, line.end_row, line.end_column);
-
             }
             else if (comboBox1.Text == "Button")
             {
@@ -116,8 +111,6 @@ namespace HYProject.ToolForm
                 AppParam.Instance.product.Cam1_Right1.Shape = ToolKit.HalconTool.Model.MeasureShapes.line;
                 AppParam.Instance.product.Cam1_Right1.InputShapeParam = new HTuple(line.start_row, line.start_column, line.end_row, line.end_column);
             }
-
-
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -127,7 +120,6 @@ namespace HYProject.ToolForm
 
         private void button5_Click(object sender, EventArgs e)
         {
-
             halconWindow1.Disp_Image(AppParam.Instance.product.Cam1_Image1);
             Test(1, 1);
             //HObject InvertImage;
@@ -172,7 +164,6 @@ namespace HYProject.ToolForm
             //HOperatorSet.GenRegionLine(out LeftLine, LeftUpRow, LeftUpColumn, LeftDownRow, LeftDownColumn);
             //HOperatorSet.LineOrientation(LeftDownRow, LeftDownColumn, LeftUpRow, LeftUpColumn, out Phi);
 
-
             //halconWindow1.Disp_Region(Line1, "green", "margin");
             //halconWindow1.Disp_Region(Line2, "green", "margin");
             //halconWindow1.Disp_Cross(LeftUpRow, LeftUpColumn, 200, "green");
@@ -182,15 +173,12 @@ namespace HYProject.ToolForm
             //halconWindow1.Disp_Cross(CenterRow, CenterColumn, 200, "green");
 
             //halconWindow1.Disp_Message("Row:" + CenterRow.D + "\nColumn:" + CenterColumn + "\nAngle:" + Phi.TupleDeg().D, 16, 10, 10, "green");
-
         }
 
         public void Test(int CamIndex, int NozzleIndex)
         {
             try
             {
-
-
                 HObject InvertImage;
                 HOperatorSet.GenEmptyObj(out InvertImage);
                 HTuple Top = new HTuple(0.0, 0.0, 0.0, 0.0);
@@ -286,7 +274,6 @@ namespace HYProject.ToolForm
                 HOperatorSet.GenRegionLine(out LeftLine, LeftUpRow, LeftUpColumn, LeftDownRow, LeftDownColumn);
                 HOperatorSet.LineOrientation(LeftDownRow, LeftDownColumn, LeftUpRow, LeftUpColumn, out Phi);
 
-
                 halconWindow1.Disp_Region(Line1, "green", "margin");
                 halconWindow1.Disp_Region(Line2, "green", "margin");
                 halconWindow1.Disp_Cross(LeftUpRow, LeftUpColumn, 200, Phi, "green");
@@ -337,7 +324,6 @@ namespace HYProject.ToolForm
             {
                 AppParam.Instance.product.Cam1_Top2.Shape = ToolKit.HalconTool.Model.MeasureShapes.line;
                 AppParam.Instance.product.Cam1_Top2.InputShapeParam = new HTuple(line.start_row, line.start_column, line.end_row, line.end_column);
-
             }
             else if (comboBox2.Text == "Button")
             {
@@ -533,7 +519,6 @@ namespace HYProject.ToolForm
             {
                 AppParam.Instance.product.Cam2_Top1.Shape = ToolKit.HalconTool.Model.MeasureShapes.line;
                 AppParam.Instance.product.Cam2_Top1.InputShapeParam = new HTuple(line.start_row, line.start_column, line.end_row, line.end_column);
-
             }
             else if (comboBox4.Text == "Button")
             {
@@ -559,7 +544,6 @@ namespace HYProject.ToolForm
             {
                 AppParam.Instance.product.Cam2_Top2.Shape = ToolKit.HalconTool.Model.MeasureShapes.line;
                 AppParam.Instance.product.Cam2_Top2.InputShapeParam = new HTuple(line.start_row, line.start_column, line.end_row, line.end_column);
-
             }
             else if (comboBox3.Text == "Button")
             {
@@ -630,7 +614,6 @@ namespace HYProject.ToolForm
         {
             halconWindow1.Disp_Image(AppParam.Instance.product.Cam2_Image1);
             Test(2, 1);
-
         }
 
         private void button13_Click(object sender, EventArgs e)
@@ -750,7 +733,6 @@ namespace HYProject.ToolForm
             {
                 AppParam.Instance.product.Cam3_Top1.Shape = ToolKit.HalconTool.Model.MeasureShapes.line;
                 AppParam.Instance.product.Cam3_Top1.InputShapeParam = new HTuple(line.start_row, line.start_column, line.end_row, line.end_column);
-
             }
             else if (comboBox6.Text == "Button")
             {
@@ -776,7 +758,6 @@ namespace HYProject.ToolForm
             {
                 AppParam.Instance.product.Cam3_Top2.Shape = ToolKit.HalconTool.Model.MeasureShapes.line;
                 AppParam.Instance.product.Cam3_Top2.InputShapeParam = new HTuple(line.start_row, line.start_column, line.end_row, line.end_column);
-
             }
             else if (comboBox5.Text == "Button")
             {
@@ -889,18 +870,23 @@ namespace HYProject.ToolForm
                         HOperatorSet.CopyImage(ho_image, out AppParam.Instance.product.Cam1_Image1);
 
                         break;
+
                     case 12:
                         HOperatorSet.CopyImage(ho_image, out AppParam.Instance.product.Cam1_Image2);
                         break;
+
                     case 21:
                         HOperatorSet.CopyImage(ho_image, out AppParam.Instance.product.Cam2_Image1);
                         break;
+
                     case 22:
                         HOperatorSet.CopyImage(ho_image, out AppParam.Instance.product.Cam2_Image2);
                         break;
+
                     case 31:
                         HOperatorSet.CopyImage(ho_image, out AppParam.Instance.product.Cam3_Image1);
                         break;
+
                     case 32:
                         HOperatorSet.CopyImage(ho_image, out AppParam.Instance.product.Cam3_Image2);
                         break;
@@ -924,7 +910,9 @@ namespace HYProject.ToolForm
                 Cameras.Instance[item].ImageProcessEvent += Cameras.Instance.Camera_ImageProcessEvent;
             }
         }
-        int index = 0;
+
+        private int index = 0;
+
         private void button36_Click(object sender, EventArgs e)
         {
             index = 31;
@@ -977,7 +965,6 @@ namespace HYProject.ToolForm
 
             HOperatorSet.SmallestRectangle2(ho_SelectedRegions, out hv_Row1, out hv_Column1, out _, out Length1, out Length2);
 
-
             halconWindow1.Disp_Cross(hv_Row1 + Length2, hv_Column1 - Length1, 300, 0, "blue");
             AppParam.Instance.product.Cam3_Image1_Standard_Row = hv_Row1 + Length2;
             AppParam.Instance.product.Cam3_Image1_Standard_Column = hv_Column1 - Length1;
@@ -1022,12 +1009,10 @@ namespace HYProject.ToolForm
 
             HOperatorSet.SmallestRectangle2(ho_SelectedRegions, out hv_Row1, out hv_Column1, out _, out Length1, out Length2);
 
-
             halconWindow1.Disp_Cross(hv_Row1 + Length2, hv_Column1 + Length1, 300, 0, "blue");
             AppParam.Instance.product.Cam3_Image2_Standard_Row = hv_Row1 + Length2;
             AppParam.Instance.product.Cam3_Image2_Standard_Column = hv_Column1 + Length1;
             AppParam.Instance.product.Cam3_Image2_Standard_Rectangle1 = rectangle.rectangle1;
-
         }
 
         private void button47_Click(object sender, EventArgs e)
@@ -1057,7 +1042,6 @@ namespace HYProject.ToolForm
             hv_Row1.Dispose(); hv_Column1.Dispose(); Length1.Dispose(); Length2.Dispose();
 
             HOperatorSet.SmallestRectangle2(ho_SelectedRegions, out hv_Row1, out hv_Column1, out _, out Length1, out Length2);
-
 
             halconWindow1.Disp_Cross(hv_Row1 + Length2, hv_Column1 - Length1, 300, 0, "blue");
 
@@ -1104,7 +1088,6 @@ namespace HYProject.ToolForm
 
             HOperatorSet.SmallestRectangle2(ho_SelectedRegions, out hv_Row1, out hv_Column1, out _, out Length1, out Length2);
 
-
             halconWindow1.Disp_Cross(hv_Row1 + Length2, hv_Column1 - Length1, 300, 0, "blue");
             AppParam.Instance.product.Cam1_Image1_Standard_Row = hv_Row1 + Length2;
             AppParam.Instance.product.Cam1_Image1_Standard_Column = hv_Column1 - Length1;
@@ -1119,14 +1102,12 @@ namespace HYProject.ToolForm
         {
             halconWindow1.Disp_Region(AppParam.Instance.product.Cam1_Image1_Standard_Rectangle1, "blue", "margin");
             halconWindow1.Disp_Cross(AppParam.Instance.product.Cam1_Image1_Standard_Row, AppParam.Instance.product.Cam1_Image1_Standard_Column, 300, 0, "blue");
-
         }
 
         private void button42_Click(object sender, EventArgs e)
         {
             halconWindow1.Disp_Region(AppParam.Instance.product.Cam3_Image2_Standard_Rectangle1, "blue", "margin");
             halconWindow1.Disp_Cross(AppParam.Instance.product.Cam3_Image2_Standard_Row, AppParam.Instance.product.Cam3_Image2_Standard_Column, 300, 0, "blue");
-
         }
 
         private void button45_Click(object sender, EventArgs e)
@@ -1157,7 +1138,6 @@ namespace HYProject.ToolForm
 
             HOperatorSet.SmallestRectangle2(ho_SelectedRegions, out hv_Row1, out hv_Column1, out _, out Length1, out Length2);
 
-
             halconWindow1.Disp_Cross(hv_Row1 + Length2, hv_Column1 + Length1, 300, 0, "blue");
             AppParam.Instance.product.Cam2_Image2_Standard_Row = hv_Row1 + Length2;
             AppParam.Instance.product.Cam2_Image2_Standard_Column = hv_Column1 + Length1;
@@ -1168,7 +1148,6 @@ namespace HYProject.ToolForm
         {
             halconWindow1.Disp_Region(AppParam.Instance.product.Cam2_Image2_Standard_Rectangle1, "blue", "margin");
             halconWindow1.Disp_Cross(AppParam.Instance.product.Cam2_Image2_Standard_Row, AppParam.Instance.product.Cam2_Image2_Standard_Column, 300, 0, "blue");
-
         }
 
         private void button50_Click(object sender, EventArgs e)
@@ -1198,7 +1177,6 @@ namespace HYProject.ToolForm
             hv_Row1.Dispose(); hv_Column1.Dispose(); Length1.Dispose(); Length2.Dispose();
 
             HOperatorSet.SmallestRectangle2(ho_SelectedRegions, out hv_Row1, out hv_Column1, out _, out Length1, out Length2);
-
 
             halconWindow1.Disp_Cross(hv_Row1 + Length2, hv_Column1 + Length1, 300, 0, "blue");
             AppParam.Instance.product.Cam1_Image2_Standard_Row = hv_Row1 + Length2;

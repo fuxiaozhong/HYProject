@@ -1,15 +1,8 @@
 ﻿using System;
-using System.ComponentModel;
-using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Runtime.InteropServices;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Shapes;
 
 using HalconDotNet;
 
@@ -19,13 +12,7 @@ using HYProject.Model;
 using HYProject.Plugin;
 using HYProject.ToolForm;
 
-using ICSharpCode.SharpZipLib.Checksum;
-using ICSharpCode.SharpZipLib.Zip;
-
-using ToolKit.CamreaSDK;
 using ToolKit.HYControls.HYForm;
-
-using static ToolKit.CamreaSDK.ICamera;
 
 namespace HYProject
 {
@@ -54,13 +41,12 @@ namespace HYProject
             SystemThread.Start();
 
             //this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ////设定字体大小为12px      
+            ////设定字体大小为12px
             //this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
             if (AppParam.Instance.RunStateMax)
                 this.WindowState = FormWindowState.Maximized;
             else
@@ -213,7 +199,6 @@ namespace HYProject
                 AppParam.Instance.Runing = true;
                 运行ToolStripMenuItem.Text = "停    止";
                 Log.WriteRunLog("开始运行...");
-
             }
             else
             {
@@ -351,7 +336,6 @@ namespace HYProject
 
         private void 系统变量ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
         Login:
             if (AppParam.Instance.Power == "开发人员")
             {
@@ -383,16 +367,14 @@ namespace HYProject
             form_PLC.Show();
         }
 
-
         private void 备份ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             HYForm_Waiting form_Waiting = new HYForm_Waiting(BackUp, "正在备份,请稍等!");
             if (form_Waiting.ShowDialog(this) == DialogResult.OK)
             {
-
             }
-
         }
+
         private void BackUp(object sender, EventArgs e)
         {
             //Directory.SetCurrentDirectory(Directory.GetParent(System.Windows.Forms.Application.StartupPath).FullName);
@@ -406,7 +388,6 @@ namespace HYProject
             ShowNormal("备份成功," + parentPath + "\\BackUp\\视觉软件" + DateTime.Now.ToString("yyyy-MM-dd") + "备份.zip");
         }
 
-
         private void 重启ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CloseEvent(null, null); Thread.Sleep(500);
@@ -414,8 +395,6 @@ namespace HYProject
             //关闭当前实例
             System.Diagnostics.Process.GetCurrentProcess().Kill();
         }
-
-
 
         private void 系统设置ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -429,7 +408,6 @@ namespace HYProject
             form_User_Setting.ShowDialog();
         }
 
-
         private void TCP客户端ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowNormal("暂未开发");
@@ -441,10 +419,8 @@ namespace HYProject
             form_TCPSocketSetting.ShowDialog();
         }
 
-
         private void 系统操作ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
         }
 
         private void 日志ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -455,7 +431,6 @@ namespace HYProject
 
         private void 通讯设置ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
         }
 
         private void 相机标定ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -465,8 +440,6 @@ namespace HYProject
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
         }
-
     }
 }

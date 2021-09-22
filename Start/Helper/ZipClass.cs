@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using ICSharpCode.SharpZipLib.Checksum;
 using ICSharpCode.SharpZipLib.Zip;
@@ -18,12 +15,12 @@ namespace HYProject.Helper
         /// <summary>
         /// 所有文件缓存
         /// </summary>
-        List<string> files = new List<string>();
+        private List<string> files = new List<string>();
 
         /// <summary>
         /// 所有空目录缓存
         /// </summary>
-        List<string> paths = new List<string>();
+        private List<string> paths = new List<string>();
 
         /// <summary>
         /// 压缩单个文件
@@ -94,7 +91,6 @@ namespace HYProject.Helper
             {
                 try
                 {
-
                     FileStream fileStream = File.OpenRead(file);//打开压缩文件
                     byte[] buffer = new byte[fileStream.Length];
                     fileStream.Read(buffer, 0, buffer.Length);
@@ -116,7 +112,6 @@ namespace HYProject.Helper
                 }
                 catch (Exception)
                 {
-
                     continue;
                 }
             }

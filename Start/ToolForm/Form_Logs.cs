@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace HYProject.ToolForm
@@ -34,6 +29,7 @@ namespace HYProject.ToolForm
                 return _Form_Logs;
             }
         }
+
         private Form_Logs()
         {
             InitializeComponent();

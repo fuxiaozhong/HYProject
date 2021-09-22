@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 
@@ -25,6 +24,7 @@ namespace HYProject.Helper
                 Thread.Sleep(1000 * 10);//10S检查一次
             }
         }
+
         private static void Director(string dir)
         {
             DirectoryInfo d = new DirectoryInfo(dir);
@@ -48,9 +48,6 @@ namespace HYProject.Helper
                     }
                 }
             }
-
-
         }
-
     }
 }

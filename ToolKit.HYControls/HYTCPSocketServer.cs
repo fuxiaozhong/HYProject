@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using ToolKit.CommunicAtion;
@@ -21,7 +14,6 @@ namespace ToolKit.HYControls
         }
 
         private TCPSocketServer socketServer;
-
 
         private void Button4_Click_1(object sender, EventArgs e)
         {
@@ -40,7 +32,8 @@ namespace ToolKit.HYControls
                 MessageBox.Show("打开失败");
             }
         }
-        private void SocketServer_ClientsConnect( Socket clients)
+
+        private void SocketServer_ClientsConnect(Socket clients)
         {
             //cmb_clientList.DataSource = clients.Keys.ToArray();
             //if (clients.Keys.ToArray().Length == 0)

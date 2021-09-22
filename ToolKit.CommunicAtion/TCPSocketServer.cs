@@ -13,7 +13,7 @@ namespace ToolKit.CommunicAtion
     {
         public delegate void _SocketReceiveMessage(Socket client, string clientSocketIp, string message);
 
-       // public delegate void _ClientsConnect(Dictionary<string, Socket> clients);
+        // public delegate void _ClientsConnect(Dictionary<string, Socket> clients);
         public delegate void _ClientsConnect(Socket clients);
 
         /// <summary>
@@ -25,14 +25,17 @@ namespace ToolKit.CommunicAtion
         /// 客户端连接触发事件
         /// </summary>
         public event _ClientsConnect ClientsConnect;
+
         public event _ClientsConnect ClientsLoss;
 
         private string _ip = string.Empty;
         private int _port = 0;
         private Socket _socket = null;
         private byte[] buffer = new byte[1024 * 1024 * 2];
+
         [NonSerialized]
         public Dictionary<string, Socket> clients = new Dictionary<string, Socket>();
+
         [NonSerialized]
         private bool isOpen;
 

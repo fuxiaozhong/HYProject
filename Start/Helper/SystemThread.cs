@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading;
-using System.Windows.Forms;
 
 using HYProject.ToolForm;
 
@@ -54,7 +53,6 @@ namespace HYProject.Helper
                 {
                 }
                 Thread.Sleep(100);
-
             }
         }
     }

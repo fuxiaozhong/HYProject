@@ -3,7 +3,6 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-using HYProject.Helper;
 using HYProject.MenuForm;
 
 using Application = System.Windows.Forms.Application;
